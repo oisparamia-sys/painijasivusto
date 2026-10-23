@@ -87,6 +87,8 @@ function combined(items = localCompetitions) {
 }
 let importNumber = 0;
 let importing = false;
+let profileState = null;
+let profileOpener = null;
 
 function status(message, kind = "") {
   $("#status").textContent = message;
@@ -143,7 +145,9 @@ function refreshFilters() {
   $("#delete").disabled = importing || !localCompetitions.some(item => identity(item) === $("#competition").value);
   $("#selection").textContent = $("#competition").value === "demo"
     ? "Näytössä on esimerkkikilpailu. Omat kilpailusi säilyvät tallessa."
-    : "Haussa mukana " + items.length + " kilpailua.";
+    : items.length === 1
+      ? "Valittuna: " + items[0].title + (items[0].details ? " · " + items[0].details : "")
+      : "Haussa mukana " + items.length + " kilpailua.";
   $("#data-summary").textContent = sharedCompetitions.length + " yhteistä kilpailua, " +
     sharedCompetitions.reduce((sum, item) => sum + item.rows.length, 0) +
     " tulosta. Omia tuonteja tässä selaimessa: " + localCompetitions.length + ".";
@@ -179,7 +183,18 @@ function render() {
       badge.className = "place " + ({1:"gold",2:"silver",3:"bronze"}[result.place] || "");
       badge.textContent = result.place + ".";
       cell.append(badge); row.append(cell);
-      [result.name, result.club, result.category, result.weight + " kg", item.title, item.details || "–"]
+      const nameCell = document.createElement("td");
+      const nameButton = document.createElement("button");
+      nameButton.type = "button";
+      nameButton.className = "name-button";
+      nameButton.textContent = result.name;
+      nameButton.dataset.name = normalizePerson(result.name);
+      nameButton.dataset.club = normalizePerson(result.club);
+      nameButton.setAttribute("aria-label", "Näytä tulokset: " + result.name + ", " + result.club);
+      nameButton.addEventListener("click", () => openProfile(result.name, result.club,
+        $("#competition").value === "demo", nameButton));
+      nameCell.append(nameButton); row.append(nameCell);
+      [result.club, result.category, result.weight + " kg", item.title, item.details || "–"]
         .forEach(value => {
           const td = document.createElement("td");
           td.textContent = value; row.append(td);
@@ -190,7 +205,205 @@ function render() {
   $("#results").replaceChildren(fragment);
   $("#count").textContent = count === 1 ? "1 tulos" : count + " tulosta";
   $("#empty").hidden = count > 0;
+  if (profileState) renderProfile();
+  renderCompetitionList();
 }
+function normalizePerson(value) {
+  return value.normalize("NFC").trim().replace(/\s+/g, " ").toLocaleLowerCase("fi");
+}
+function profileCompetitions() {
+  return profileState.demoOnly ? [demo] : competitions;
+}
+function competitionDate(item) {
+  const match = (item.details || item.title).match(/\b(\d{1,2})[./](\d{1,2})[./](\d{4})\b/);
+  if (!match) return -Infinity;
+  const day = Number(match[1]), month = Number(match[2]), year = Number(match[3]);
+  const timestamp = Date.UTC(year, month - 1, day);
+  const date = new Date(timestamp);
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
+    ? timestamp : -Infinity;
+}
+function openProfile(name, club, demoOnly = false, opener = null) {
+  if (opener) profileOpener = opener;
+  profileState = { name, club, demoOnly };
+  $("#search-view").hidden = true;
+  $("#competition-view").hidden = true;
+  $("#nav-results").setAttribute("aria-pressed", "true");
+  $("#nav-competitions").setAttribute("aria-pressed", "false");
+  $("#wrestler-view").hidden = false;
+  renderProfile();
+  $("#wrestler-title").focus();
+}
+function closeProfile() {
+  profileState = null;
+  $("#wrestler-view").hidden = true;
+  $("#search-view").hidden = false;
+  const target = profileOpener?.isConnected ? profileOpener : $("#search");
+  target.focus();
+  profileOpener = null;
+}
+function renderProfile() {
+  if (!profileState) return;
+  const nameKey = normalizePerson(profileState.name);
+  const clubKey = normalizePerson(profileState.club);
+  const entries = [];
+  const otherClubs = new Map();
+  profileCompetitions().forEach(item => {
+    item.rows.forEach(result => {
+      if (normalizePerson(result.name) !== nameKey) return;
+      if (normalizePerson(result.club) === clubKey) entries.push({ item, result });
+      else otherClubs.set(normalizePerson(result.club), result.club);
+    });
+  });
+  entries.sort((a, b) => {
+    const left = competitionDate(a.item), right = competitionDate(b.item);
+    if (left !== right) return left > right ? -1 : 1;
+    return a.item.title.localeCompare(b.item.title, "fi") || a.result.place - b.result.place;
+  });
+  $("#wrestler-title").textContent = profileState.name;
+  $("#wrestler-club").textContent = profileState.club;
+  $("#wrestler-scope").textContent = profileState.demoOnly
+    ? "Yhteenveto esimerkkikilpailusta."
+    : "Yhteenveto kaikista tämän sivun yhteisistä kilpailuista ja omista tuonneistasi. Haun rajaukset eivät rajoita tätä näkymää.";
+  const summary = $("#wrestler-summary");
+  summary.replaceChildren();
+  const stats = [
+    ["Kilpailuja", new Set(entries.map(entry => identity(entry.item))).size],
+    ["Tulosrivejä", entries.length],
+    ["1. sijoja", entries.filter(entry => entry.result.place === 1).length],
+    ["2. sijoja", entries.filter(entry => entry.result.place === 2).length],
+    ["3. sijoja", entries.filter(entry => entry.result.place === 3).length]
+  ];
+  stats.forEach(([label, number]) => {
+    const card = document.createElement("div");
+    const term = document.createElement("dt"), value = document.createElement("dd");
+    term.textContent = label; value.textContent = String(number);
+    card.append(term, value); summary.append(card);
+  });
+  const tbody = $("#wrestler-results");
+  const fragment = document.createDocumentFragment();
+  entries.forEach(({item, result}) => {
+    const row = document.createElement("tr"), cell = document.createElement("td");
+    const badge = document.createElement("span");
+    badge.className = "place " + ({1:"gold",2:"silver",3:"bronze"}[result.place] || "");
+    badge.textContent = result.place + ".";
+    cell.append(badge); row.append(cell);
+    [item.title, item.details || "–", result.category, result.weight + " kg"].forEach(value => {
+      const td = document.createElement("td"); td.textContent = value; row.append(td);
+    });
+    const sourceCell = document.createElement("td");
+    sourceCell.textContent = "–";
+    if (item.source) {
+      try {
+        const url = new URL(item.source);
+        if (url.protocol === "https:" && url.hostname === "turniereklassisch.ringerdb.de") {
+          const link = document.createElement("a");
+          link.href = url.href; link.target = "_blank"; link.rel = "noopener noreferrer";
+          link.textContent = "Tulossivu ↗";
+          link.setAttribute("aria-label", "Alkuperäinen tulossivu: " + item.title);
+          sourceCell.replaceChildren(link);
+        }
+      } catch { /* Virheellistä linkkiä ei näytetä. */ }
+    }
+    row.append(sourceCell); fragment.append(row);
+  });
+  tbody.replaceChildren(fragment);
+  $("#wrestler-empty").hidden = entries.length > 0;
+  const alternatives = $("#same-name-options");
+  alternatives.replaceChildren();
+  [...otherClubs.values()].sort((a,b) => a.localeCompare(b,"fi")).forEach(club => {
+    const button = document.createElement("button");
+    button.type = "button"; button.textContent = club;
+    button.addEventListener("click", () => openProfile(profileState.name, club, profileState.demoOnly));
+    alternatives.append(button);
+  });
+  $("#same-name-clubs").hidden = otherClubs.size === 0;
+}
+
+function showView(view, focus = true) {
+  profileState = null;
+  profileOpener = null;
+  $("#wrestler-view").hidden = true;
+  $("#search-view").hidden = view !== "results";
+  $("#competition-view").hidden = view !== "competitions";
+  $("#nav-results").setAttribute("aria-pressed", String(view === "results"));
+  $("#nav-competitions").setAttribute("aria-pressed", String(view === "competitions"));
+  if (view === "competitions") renderCompetitionList();
+  if (focus) $(view === "results" ? "#results-heading" : "#competition-heading").focus();
+}
+function openCompetition(item) {
+  $("#competition").value = identity(item);
+  $("#search").value = "";
+  $("#club").value = "";
+  $("#category").value = "";
+  refreshFilters();
+  showView("results");
+}
+function renderCompetitionList() {
+  const query = normalizePerson($("#competition-query").value);
+  const sort = $("#competition-sort").value;
+  const filtered = competitions.filter(item =>
+    normalizePerson(item.title + " " + item.details).includes(query)
+  );
+  filtered.sort((a, b) => {
+    if (sort !== "name") {
+      const left = competitionDate(a), right = competitionDate(b);
+      if (left !== right) {
+        if (left === -Infinity) return 1;
+        if (right === -Infinity) return -1;
+        return sort === "oldest" ? left - right : right - left;
+      }
+    }
+    return a.title.localeCompare(b.title, "fi") || a.details.localeCompare(b.details, "fi");
+  });
+  const list = $("#competition-list");
+  const fragment = document.createDocumentFragment();
+  filtered.forEach(item => {
+    const card = document.createElement("li");
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+    const details = document.createElement("p");
+    details.className = "hint";
+    details.textContent = item.details || "Päivämäärää ja paikkaa ei tunnistettu.";
+    const counts = document.createElement("p");
+    const clubs = new Set(item.rows.map(row => normalizePerson(row.club))).size;
+    counts.textContent = item.rows.length + " tulosriviä · " + clubs + " seuraa";
+    const origin = document.createElement("p");
+    origin.className = "hint";
+    const isShared = sharedCompetitions.some(shared => identity(shared) === identity(item));
+    const isLocal = localCompetitions.some(local => identity(local) === identity(item));
+    origin.textContent = isShared
+      ? isLocal ? "Yhteinen kilpailu · oma tuontiversio käytössä" : "Yhteinen kilpailu"
+      : "Oma tuonti · vain tässä selaimessa";
+    const actions = document.createElement("div");
+    actions.className = "competition-actions";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "competition-open";
+    button.textContent = "Näytä tulokset";
+    button.setAttribute("aria-label", "Näytä tulokset: " + item.title + " " + item.details);
+    button.addEventListener("click", () => openCompetition(item));
+    actions.append(button);
+    if (item.source) {
+      try {
+        const url = new URL(item.source);
+        if (url.protocol === "https:" && url.hostname === "turniereklassisch.ringerdb.de") {
+          const link = document.createElement("a");
+          link.href = url.href; link.target = "_blank"; link.rel = "noopener noreferrer";
+          link.textContent = "Alkuperäinen tulossivu ↗";
+          actions.append(link);
+        }
+      } catch { /* Virheellistä lähdelinkkiä ei näytetä. */ }
+    }
+    card.append(title, details, counts, origin, actions);
+    fragment.append(card);
+  });
+  list.replaceChildren(fragment);
+  $("#competition-count").textContent = filtered.length + " kilpailua · " +
+    filtered.reduce((sum, item) => sum + item.rows.length, 0) + " tulosriviä";
+  $("#competition-empty").hidden = filtered.length > 0;
+}
+
 function restore() {
   try {
     const raw = localStorage.getItem(KEY);
@@ -302,4 +515,9 @@ $("#competition").addEventListener("change", refreshFilters);
 $("#search").addEventListener("input", render);
 $("#club").addEventListener("change", render);
 $("#category").addEventListener("change", render);
+$("#nav-results").addEventListener("click", () => showView("results"));
+$("#nav-competitions").addEventListener("click", () => showView("competitions"));
+$("#competition-query").addEventListener("input", renderCompetitionList);
+$("#competition-sort").addEventListener("change", renderCompetitionList);
+$("#back-to-results").addEventListener("click", closeProfile);
 restore();
