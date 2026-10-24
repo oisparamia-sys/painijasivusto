@@ -1,10 +1,10 @@
 "use strict";
 
-// LigaDB-lähteistä 23.10.2026 tallennettu kilpailuaineisto.
-// Tämä tiedosto ei hae tietoja verkosta.
+// Painijatulosten yhteinen kilpailuaineisto.
 window.PAINI_SHARED_DATA = {
   "version": 1,
-  "snapshotDate": "2026-10-23",
+  "snapshotDate": "2026-10-24",
+  "exportedAt": "2026-10-24T18:04:02.694Z",
   "competitions": [
     {
       "title": "Symppis painit",
@@ -3653,6 +3653,737 @@ window.PAINI_SHARED_DATA = {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
       "textSource": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983_tab.txt",
       "fileInfo": "Yhteinen kilpailuaineisto · 2025-12-04_Tampere.txt"
+    },
+    {
+      "title": "Symppispainit+Piirinmestaruuskisat",
+      "details": "Vantaa, 26.4.2025",
+      "rows": [
+        {
+          "place": 1,
+          "name": "Lassi Karjula",
+          "club": "Vantaan Sampo",
+          "weight": "17",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Eelis Pitkähalme",
+          "club": "Vantaan Sampo",
+          "weight": "17",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Tomas Massinen",
+          "club": "Vantaan Sampo",
+          "weight": "17",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Adam Anas",
+          "club": "Vantaan Sampo",
+          "weight": "21",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Roni Tallberg",
+          "club": "Järvenpään Voimailijat",
+          "weight": "21",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Kevin Seuna",
+          "club": "Vantaan Sampo",
+          "weight": "21",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Kondrad Eklund",
+          "club": "Porvoon Weikot",
+          "weight": "21",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Akseli Jukarainen",
+          "club": "Vantaan Sampo",
+          "weight": "22",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Mattias Vainika",
+          "club": "Vantaan Sampo",
+          "weight": "22",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Viola Nyström",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "22",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Daniel Kuivalainen",
+          "club": "Lohjan Voimailijat",
+          "weight": "22",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 5,
+          "name": "Jerkko Lindström",
+          "club": "Kirkkonummen Urheilijat",
+          "weight": "22",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Aaron Halonen",
+          "club": "Porvoon Weikot",
+          "weight": "23",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Olavi Vuorialho",
+          "club": "Helsingin Haka",
+          "weight": "23",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Luca Lindfors",
+          "club": "Vantaan Sampo",
+          "weight": "23",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Matias Massinen",
+          "club": "Vantaan Sampo",
+          "weight": "23",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 5,
+          "name": "Iivo Suvanto",
+          "club": "Järvenpään Voimailijat",
+          "weight": "23",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Devin Johansson",
+          "club": "Porvoon Weikot",
+          "weight": "24",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Theodor Graf",
+          "club": "Karkkilan Urheilijat",
+          "weight": "24",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Niki Grönholm",
+          "club": "Järvenpään Voimailijat",
+          "weight": "24",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Joona Ansio",
+          "club": "Vantaan Sampo",
+          "weight": "24",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Eemil Hietala",
+          "club": "Ylä-Tikkurilan Kipinä",
+          "weight": "26",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Kasmir Eklund",
+          "club": "Porvoon Weikot",
+          "weight": "26",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Dominic Lindberg",
+          "club": "Porvoon Weikot",
+          "weight": "26",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Kasper Karell",
+          "club": "Vantaan Sampo",
+          "weight": "26",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 5,
+          "name": "Lauri Henriksson",
+          "club": "Porvoon Weikot",
+          "weight": "26",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Nikolas Kokko",
+          "club": "Nummelan Voimalilijat",
+          "weight": "27",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Elias Kinnunen",
+          "club": "Porvoon Weikot",
+          "weight": "27",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Oiva Alhonen",
+          "club": "Lohjan Voimailijat",
+          "weight": "27",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Toivo Pitkähalme",
+          "club": "Vantaan Sampo",
+          "weight": "27",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 5,
+          "name": "Niklas Merivirta",
+          "club": "Vantaan Sampo",
+          "weight": "27",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Alpo Pasma",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "29",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Oliver Jaakkola",
+          "club": "Vantaan Sampo",
+          "weight": "29",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Vili Gustafsson",
+          "club": "Porvoon Weikot",
+          "weight": "29",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Hugo Grönholm",
+          "club": "Järvenpään Voimailijat",
+          "weight": "29",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Rasmus Tojkander",
+          "club": "Espoon Urheilijat",
+          "weight": "31",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Miko Loippo",
+          "club": "Helsingin Tarmo",
+          "weight": "31",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Zulfikar Taleb",
+          "club": "Helsingin Tarmo",
+          "weight": "31",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Baidar Kuntonen",
+          "club": "Järvenpään Voimailijat",
+          "weight": "31",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 5,
+          "name": "Teemu Turtiainen",
+          "club": "Vantaan Sampo",
+          "weight": "31",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Sauli Kippola",
+          "club": "Helsingin Haka",
+          "weight": "32",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Mikael Saarikoski",
+          "club": "Helsingin Tarmo",
+          "weight": "32",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Lucas Heinonen",
+          "club": "Vantaan Sampo",
+          "weight": "32",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Sisu Ojanen",
+          "club": "Helsingin Haka",
+          "weight": "33",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Ville Salo",
+          "club": "Porvoon Weikot",
+          "weight": "33",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Vilho Pylkkönen",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "33",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Mea Hjort",
+          "club": "Helsingin Haka",
+          "weight": "33",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Akseli Volanto",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "38",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Samuel Sulima",
+          "club": "Karkkilan Urheilijat",
+          "weight": "38",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Santtu Korpijaakko",
+          "club": "Lohjan Voimailijat",
+          "weight": "38",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Wiktor Chladny",
+          "club": "Porvoon Weikot",
+          "weight": "38",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Pyry Järvinen",
+          "club": "Vantaan Sampo",
+          "weight": "42",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Elmeri Anttila",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "42",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Eemil Kippola",
+          "club": "Helsingin Haka",
+          "weight": "49",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Jessika Utriainen",
+          "club": "Karkkilan Urheilijat",
+          "weight": "49",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Osku Tallberg",
+          "club": "Järvenpään Voimailijat",
+          "weight": "49",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Oiva Hauta-Aho",
+          "club": "Ylä-Tikkurilan Kipinä",
+          "weight": "49",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Ivan Tsyhychko",
+          "club": "Kirkkonummen Urheilijat",
+          "weight": "62",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Hugo Maasikas",
+          "club": "Vantaan Sampo",
+          "weight": "62",
+          "category": "Symppis Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Mari-Liis Vainika",
+          "club": "Vantaan Sampo",
+          "weight": "27",
+          "category": "Symppis Tytöt"
+        },
+        {
+          "place": 2,
+          "name": "Nuppu Utriainen",
+          "club": "Karkkilan Urheilijat",
+          "weight": "27",
+          "category": "Symppis Tytöt"
+        },
+        {
+          "place": 1,
+          "name": "Alma Casalegno",
+          "club": "Järvenpään Voimailijat",
+          "weight": "31",
+          "category": "Symppis Tytöt"
+        },
+        {
+          "place": 2,
+          "name": "Inna Volanto",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "31",
+          "category": "Symppis Tytöt"
+        },
+        {
+          "place": 3,
+          "name": "Meeri Volanto",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "31",
+          "category": "Symppis Tytöt"
+        },
+        {
+          "place": 1,
+          "name": "Yoseph Lomtadze",
+          "club": "Kirkkonummen Urheilijat",
+          "weight": "24",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Luca Lindfors",
+          "club": "Vantaan Sampo",
+          "weight": "24",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Iivo Suvanto",
+          "club": "Järvenpään Voimailijat",
+          "weight": "24",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Niki Grönholm",
+          "club": "Järvenpään Voimailijat",
+          "weight": "24",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Luukas Rautiainen",
+          "club": "Helsingin Haka",
+          "weight": "28",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Furkan Abbassoy",
+          "club": "Vantaan Sampo",
+          "weight": "28",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 3,
+          "name": "August Mehmeti",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "28",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Alpo Pasma",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "28",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 5,
+          "name": "Nuppu Utriainen",
+          "club": "Karkkilan Urheilijat",
+          "weight": "28",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Joonas Rautiainen",
+          "club": "Helsingin Haka",
+          "weight": "29",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Benjamin Stykki",
+          "club": "Kirkkonummen Urheilijat",
+          "weight": "29",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Lukas Tilli",
+          "club": "Helsingin Haka",
+          "weight": "29",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Baidar Kuntonen",
+          "club": "Järvenpään Voimailijat",
+          "weight": "29",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 5,
+          "name": "Hugo Grönholm",
+          "club": "Järvenpään Voimailijat",
+          "weight": "29",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Rasmus Tojkander",
+          "club": "Espoon Urheilijat",
+          "weight": "31",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Benjam Buss",
+          "club": "Vantaan Sampo",
+          "weight": "31",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Rasmus Kymäläinen",
+          "club": "Helsingin Haka",
+          "weight": "31",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Eino Juppi",
+          "club": "Vantaan Sampo",
+          "weight": "36",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Akseli Volanto",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "36",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Santtu Korpijaakko",
+          "club": "Lohjan Voimailijat",
+          "weight": "36",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Pavel Tsaruk",
+          "club": "Vantaan Sampo",
+          "weight": "38",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Elmo Korhonen",
+          "club": "Vantaan Sampo",
+          "weight": "38",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Erik Jonsson",
+          "club": "Helsingin Haka",
+          "weight": "38",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Eino Laine",
+          "club": "Ylä-Tikkurilan Kipinä",
+          "weight": "38",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Valtteri Kotilainen",
+          "club": "Kirkkonummen Urheilijat",
+          "weight": "43",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Kalle Lehtola",
+          "club": "Helsingin Haka",
+          "weight": "43",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Inna Volanto",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "43",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Mio Mesimäki",
+          "club": "Kirkkonummen Urheilijat",
+          "weight": "50",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 2,
+          "name": "Eemil Kippola",
+          "club": "Helsingin Haka",
+          "weight": "50",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 3,
+          "name": "Mialiis Vainika",
+          "club": "Vantaan Sampo",
+          "weight": "50",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 4,
+          "name": "Osku Tallberg",
+          "club": "Järvenpään Voimailijat",
+          "weight": "50",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Ivan Tsyhychko",
+          "club": "Kirkkonummen Urheilijat",
+          "weight": "62",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Felix Flythström",
+          "club": "Vantaan Sampo",
+          "weight": "75",
+          "category": "Pm Pojat"
+        },
+        {
+          "place": 1,
+          "name": "Milla Tilli",
+          "club": "Helsingin Haka",
+          "weight": "23",
+          "category": "Pm Tytöt"
+        },
+        {
+          "place": 2,
+          "name": "Viola Nyström",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "23",
+          "category": "Pm Tytöt"
+        },
+        {
+          "place": 1,
+          "name": "Alma Casalegno",
+          "club": "Järvenpään Voimailijat",
+          "weight": "31",
+          "category": "Pm Tytöt"
+        },
+        {
+          "place": 2,
+          "name": "Aino Ilkka",
+          "club": "Helsingin Haka",
+          "weight": "31",
+          "category": "Pm Tytöt"
+        },
+        {
+          "place": 3,
+          "name": "Inna Volanto",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "31",
+          "category": "Pm Tytöt"
+        },
+        {
+          "place": 4,
+          "name": "Meeri Volanto",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "31",
+          "category": "Pm Tytöt"
+        }
+      ],
+      "skipped": 0,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Vantaa/indexFIN.htm",
+      "textSource": "",
+      "fileInfo": "Yhteinen kilpailuaineisto · 2025-04-26_Vantaa (4).txt"
     }
   ]
 };
