@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painijatulokset – aineiston ylläpito</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#17253c;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:28px 18px}h1{font-size:clamp(28px,5vw,38px)}section{background:white;border:1px solid #dfe7ef;border-radius:16px;padding:22px;margin:22px 0}p{line-height:1.7}.hint{font-size:14px;color:#58677c}.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}button,input{font:inherit;border:1px solid #cbd5e1;border-radius:8px;padding:12px;background:white;color:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}.primary{background:#2357bf;color:white;border-color:#2357bf}.status{padding:14px;background:#edf2fa;border-radius:10px;white-space:pre-line;overflow-wrap:anywhere}.status[data-kind="error"]{background:#fff0ee;color:#8f2921}.status[data-kind="success"]{background:#e7f5ec;color:#215c37}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left}th,td{padding:12px;border-bottom:1px solid #e5eaf2;vertical-align:top}th{font-size:14px;color:#58677c}td{font-size:14px}details{border:1px solid #dfe7ef;border-radius:10px;padding:14px;margin:14px 0;overflow-wrap:anywhere}summary{cursor:pointer;font-weight:650}label{display:block;font-size:14px;font-weight:650;margin:16px 0 8px}input[type=url]{width:100%}input[type=file]{max-width:100%}button:focus-visible,input:focus-visible{outline:3px solid #95b9ff;outline-offset:3px}.badge{background:#eaf1ff;padding:3px 8px;border-radius:6px}[hidden]{display:none!important}
+</style>
+
+</head>
+<body><main>
+<h1>Kilpailuaineiston ylläpito</h1>
+<p>Tarkista uudet tulostiedostot ja muodosta sivuston yhteinen data.js-tiedosto.</p>
+<p class="hint">Työkalu aloittaa samassa kansiossa olevasta data.js-tiedostosta. Sivuston selaimeen tekemät omat tuonnit eivät tule automaattisesti mukaan. Tiedostoja ei lähetetä verkkoon.</p>
+<section aria-labelledby="current-title">
+<h2 id="current-title">1. Nykyinen aineisto</h2>
+<p id="dataset-summary"></p>
+<div class="scroll"><table aria-label="Työaineiston kilpailut"><thead><tr><th scope="col">Kilpailu</th><th scope="col">Paikka ja aika</th><th scope="col">Tulosrivejä</th></tr></thead><tbody id="dataset-rows"></tbody></table></div>
+</section>
+<section aria-labelledby="import-title">
+<h2 id="import-title">2. Valitse tulostiedostot</h2>
+<label for="files">LigaDB:n tab-erotellut .txt- tai .tsv-tiedostot</label>
+<input id="files" type="file" multiple accept=".txt,.tsv,text/plain,text/tab-separated-values" disabled>
+<p class="hint">Voit valita monta tiedostoa kerralla. Kilpailu tunnistetaan nimen ja paikka-/päivämäärärivin perusteella. Tarkista nämä ennen hyväksymistä, jotta eri kilpailut eivät korvaa toisiaan.</p>
+<p id="status" class="status" role="status" aria-live="polite">Luetaan yhteistä aineistoa…</p>
+<div id="preview" hidden>
+<h3>Esikatselu</h3>
+<p id="preview-summary"></p>
+<div id="preview-entries"></div>
+<div id="preview-errors" hidden><h3>Tuonnin ulkopuolelle jäävät tiedostot</h3><ul id="error-list"></ul></div>
+<p class="hint">Hyväksyminen ottaa mukaan vain alla esikatsellut kelvolliset tiedostot. Muutoksia ei vielä tallenneta sivuston tiedostoihin.</p>
+<div class="actions">
+<button id="apply" type="button" class="primary" disabled>Hyväksy esikatsellut muutokset</button>
+<button id="discard" type="button">Hylkää esikatselu</button>
+</div>
+</div>
+</section>
+<section aria-labelledby="export-title">
+<h2 id="export-title">3. Lataa päivitetty aineisto</h2>
+<p>Kun olet hyväksynyt muutokset, lataa kokonainen uusi data.js. Se sisältää myös aiemmat kilpailut.</p>
+<button id="export" class="primary" type="button" disabled>Lataa data.js</button>
+<p class="hint">Ladattu tiedosto ei korvaa projektin tiedostoa automaattisesti. Säilytä vanha versio, siirrä lataamasi tiedosto alkuperäiseen painijasivusto-kansioon nimellä data.js ja tarkista sivu Safarissa. Lähetä muutos GitHubiin vasta tarkistuksen jälkeen.</p>
+<p class="hint">Hyväksytyt muutokset ovat tämän ylläpitosivun muistissa, kunnes lataat uuden data.js-tiedoston. Sivun päivittäminen aloittaa uudelleen projektin nykyisestä tiedostosta.</p>
+</section>
+<noscript>Tämä työkalu tarvitsee JavaScriptin.</noscript>
+</main>
+<script src="data.js" defer></script>
+<script src="yllapito.js" defer></script>
+</body></html>
