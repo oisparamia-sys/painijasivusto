@@ -134,7 +134,7 @@ function appendRows(parent, title, rows) {
 }
 function renderPreview(errors) {
   const parent = $("#preview-entries"); parent.replaceChildren();
-  let added = 0, updated = 0, unchanged = 0;
+  let added = 0, updated = 0, unchanged = 0, warned = 0;
   pending.forEach((entry, index) => {
     if (!entry.previous) added++;
     else if (entry.diff.added.length || entry.diff.removed.length) updated++;
@@ -148,6 +148,22 @@ function renderPreview(errors) {
       ", jälkeen " + entry.item.rows.length + ". Lisättyjä/uusia rivejä " + entry.diff.added.length +
       ", poistuvia/korvautuvia rivejä " + entry.diff.removed.length + ".";
     details.append(summary, info);
+    const possibleDuplicates = duplicateCompetitions(entry.item, [...work.values(), ...pending.map(e => e.item)]);
+    if (possibleDuplicates.length) {
+      warned++;
+      details.open = true;
+      const warning = document.createElement("div"); warning.className = "duplicate-warning";
+      const note = document.createElement("p");
+      note.textContent = "Mahdollinen kaksoiskilpailu: samalla paikkakunnalla ja päivämäärällä löytyi eri nimisiä kilpailuja:";
+      const list = document.createElement("ul");
+      possibleDuplicates.forEach(item => {
+        const li = document.createElement("li"); li.textContent = item.title + " · " + item.details;
+        list.append(li);
+      });
+      const help = document.createElement("p");
+      help.textContent = "Tarkista, ovatko nämä eri kilpailuja vai sama kilpailu eri nimellä. Hyväksyminen lisää eri nimisen kilpailun erillisenä. Voit hylätä esikatselun ja tarkistaa tulostiedoston nimen. Varoitus ei muuta tai yhdistä tietoja.";
+      warning.append(note, list, help); details.append(warning);
+    }
     if (entry.item.skipped) {
       const note = document.createElement("p"); note.className = "hint";
       note.textContent = "Ohitettuja Tyhjä- tai toistuvia rivejä: " + entry.item.skipped + ".";
@@ -168,6 +184,8 @@ function renderPreview(errors) {
   });
   $("#preview-summary").textContent = "Uusia kilpailuja: " + added + ". Päivittyviä: " + updated +
     ". Tuloksiltaan ennallaan: " + unchanged + ". Tuonnin ulkopuolelle jääviä tiedostoja: " + errors.length + ".";
+  $("#duplicate-summary").hidden = warned === 0;
+  $("#duplicate-summary").textContent = warned + " tuonnin kilpailussa on mahdollinen kaksoiskilpailu. Tarkista alla avatut kilpailut ennen hyväksymistä. Samana päivänä voidaan järjestää myös eri kilpailuja.";
   $("#error-list").replaceChildren();
   errors.forEach(message => { const li = document.createElement("li"); li.textContent = message; $("#error-list").append(li); });
   $("#preview-errors").hidden = !errors.length;
@@ -286,4 +304,28 @@ function renderYearSummary() {
     });
   $("#year-total-competitions").textContent = String(work.size);
   $("#year-total-results").textContent = String(totalResults);
+}
+
+function competitionLocationDate(item) {
+  const match = item.details.match(/\b(\d{1,2})(?:\.?\s*[-–]\s*(\d{1,2}))?[./](\d{1,2})[./](\d{4})\b/);
+  if (!match) return null;
+  const first = Number(match[1]), last = Number(match[2] || match[1]), month = Number(match[3]), year = Number(match[4]);
+  for (const day of [first,last]) {
+    const date = new Date(Date.UTC(year,month-1,day));
+    if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month-1 || date.getUTCDate() !== day) return null;
+  }
+  if (last < first) return null;
+  const location = item.details.slice(0,match.index).normalize("NFC").toLocaleLowerCase("fi").replace(/[,;:]+/g," ").trim().replace(/\s+/g," ");
+  if (!location) return null;
+  return JSON.stringify([location,year,month,first,last]);
+}
+function duplicateCompetitions(item, candidates) {
+  const key = competitionLocationDate(item);
+  if (!key) return [];
+  const seen = new Set();
+  return candidates.filter(other => {
+    const id = identity(other);
+    if (id === identity(item) || seen.has(id) || competitionLocationDate(other) !== key) return false;
+    seen.add(id); return true;
+  });
 }

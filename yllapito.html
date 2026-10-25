@@ -6,7 +6,7 @@
 <title>Painijatulokset – aineiston ylläpito</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#17253c;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:28px 18px}h1{font-size:clamp(28px,5vw,38px)}section{background:white;border:1px solid #dfe7ef;border-radius:16px;padding:22px;margin:22px 0}p{line-height:1.7}.hint{font-size:14px;color:#58677c}.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}button,input{font:inherit;border:1px solid #cbd5e1;border-radius:8px;padding:12px;background:white;color:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}.primary{background:#2357bf;color:white;border-color:#2357bf}.status{padding:14px;background:#edf2fa;border-radius:10px;white-space:pre-line;overflow-wrap:anywhere}.status[data-kind="error"]{background:#fff0ee;color:#8f2921}.status[data-kind="success"]{background:#e7f5ec;color:#215c37}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left}th,td{padding:12px;border-bottom:1px solid #e5eaf2;vertical-align:top}th{font-size:14px;color:#58677c}td{font-size:14px}details{border:1px solid #dfe7ef;border-radius:10px;padding:14px;margin:14px 0;overflow-wrap:anywhere}summary{cursor:pointer;font-weight:650}label{display:block;font-size:14px;font-weight:650;margin:16px 0 8px}input[type=url]{width:100%}input[type=file]{max-width:100%}button:focus-visible,input:focus-visible{outline:3px solid #95b9ff;outline-offset:3px}.badge{background:#eaf1ff;padding:3px 8px;border-radius:6px}[hidden]{display:none!important}
-</style>
+.duplicate-warning{padding:14px;background:#fff4d8;color:#684600;border-radius:8px;overflow-wrap:anywhere}</style>
 
 </head>
 <body><main>
@@ -36,6 +36,7 @@
 <div id="preview" hidden>
 <h3>Esikatselu</h3>
 <p id="preview-summary"></p>
+<p id="duplicate-summary" class="duplicate-warning" role="status" hidden></p>
 <div id="preview-entries"></div>
 <div id="preview-errors" hidden><h3>Tuonnin ulkopuolelle jäävät tiedostot</h3><ul id="error-list"></ul></div>
 <p class="hint">Hyväksyminen ottaa mukaan vain alla esikatsellut kelvolliset tiedostot. Muutoksia ei vielä tallenneta sivuston tiedostoihin.</p>
@@ -55,7 +56,7 @@
 </section>
 <noscript>Tämä työkalu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="data.js?v=20261025-year-summary1" defer></script>
-<script src="athlete-registry.js?v=20261025-year-summary1" defer></script>
-<script src="yllapito.js?v=20261025-year-summary1" defer></script>
+<script src="data.js?v=20261025-competition-warning1" defer></script>
+<script src="athlete-registry.js?v=20261025-competition-warning1" defer></script>
+<script src="yllapito.js?v=20261025-competition-warning1" defer></script>
 </body></html>
