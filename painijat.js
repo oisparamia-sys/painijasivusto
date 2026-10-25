@@ -70,22 +70,36 @@
     $("#duplicate-prev").disabled = duplicatePage === 0; $("#duplicate-next").disabled = duplicatePage >= pages-1;
     shown.forEach((group,i) => {
       const card = node("article",undefined,"duplicate-group"), heading = node("h3",group.names.join(" / "));
-      card.append(heading,node("p",group.records.length+" aktiivista tunnusta · vertaa lähdetiedot ennen yhdistämistä","hint"));
+      card.append(heading,node("p",group.records.length+" aktiivista tunnusta · vertaa lähdetiedot ennen yhdistämistä. Kapealla näytöllä voit vierittää vertailua sivusuunnassa","hint"));
+      const scroll = node("div",undefined,"comparison-scroll");
       const columns = node("div",undefined,"duplicate-records");
+      columns.style.setProperty("--comparison-count", String(group.records.length));
       group.records.forEach(entry => {
         const record = node("div",undefined,"duplicate-record"); record.dataset.athleteId = entry.athlete.id;
-        record.append(node("h4",entry.athlete.name),node("p",entry.athlete.id),
-          node("p",entry.athlete.status === "reviewed" ? "Tarkistettu merkintä" : "Tarkistamaton tulosryhmä","hint"),
-          node("p","Seura / paikkakunta lähteessä: " + [...entry.clubs].join(", ")));
+        const header = node("div",undefined,"comparison-cell");
+        header.append(node("h4",entry.athlete.name),node("p",entry.athlete.id),
+          node("p",entry.athlete.status === "reviewed" ? "Tarkistettu merkintä" : "Tarkistamaton tulosryhmä","hint"));
+        const field = (label, values) => {
+          const cell = node("div",undefined,"comparison-cell");
+          cell.append(node("h5",label));
+          const list = node("ul"); values.forEach(value => list.append(node("li",value)));
+          cell.append(list); return cell;
+        };
         const competitions = [...new Map(entry.results.map(({item}) => [R.compKey(item),item])).values()];
-        record.append(node("p",entry.count + " tulosta · " + competitions.length + " kilpailua"));
-        const list = node("ul"); competitions.forEach(item => list.append(node("li",item.title+" · "+item.details))); record.append(list);
-        const details = node("details"), resultList = node("ul"); details.append(node("summary","Näytä kaikki tulokset"));
+        record.append(header,
+          field("Seurat / paikkakunnat lähteessä", [...entry.clubs]),
+          field("Kilpailut ja päivämäärät", competitions.map(item => item.title+" · "+item.details)),
+          field("Ikäluokat", [...new Set(entry.results.map(({row}) => row.category))]),
+          field("Painoluokat", [...new Set(entry.results.map(({row}) => row.weight+" kg"))]),
+          node("p",entry.count + " tulosta · " + competitions.length + " kilpailua","comparison-cell"));
+        const details = node("details",undefined,"comparison-cell"), resultList = node("ul"); details.append(node("summary","Näytä kaikki tulokset"));
         entry.results.forEach(({item,row}) => resultList.append(node("li",item.title+" · "+item.details+" · "+row.name+" · "+row.club+" · "+row.category+" · "+row.weight+" kg · sija "+row.place+" · "+row.resultId)));
         details.append(resultList); record.append(details);
-        const open = node("button","Avaa tämä merkintä"); open.type = "button"; open.addEventListener("click",()=>choosePerson(entry.athlete.id)); record.append(open); columns.append(record);
+        const actions = node("div",undefined,"comparison-cell");
+        const open = node("button","Avaa tämä merkintä"); open.type = "button"; open.addEventListener("click",()=>choosePerson(entry.athlete.id)); actions.append(open); record.append(actions); columns.append(record);
       });
-      card.append(columns);
+      scroll.append(columns);
+      card.append(scroll);
       const controls = node("div",undefined,"duplicate-merge"), targetLabel=node("label","Säilytettävä tunnus"),sourceLabel=node("label","Siirrettävä tunnus");
       const target=node("select"),source=node("select"); target.id="duplicate-target-"+i; source.id="duplicate-source-"+i;
       target.className="duplicate-target"; source.className="duplicate-source"; targetLabel.htmlFor=target.id; sourceLabel.htmlFor=source.id;

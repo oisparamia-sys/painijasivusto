@@ -4,6 +4,14 @@
 <link rel="stylesheet" href="style.css?v=20261025-identity1">
 <style>
 main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,2fr);gap:20px}.registry-layout>.card{min-width:0}#person-list{width:100%;height:330px}#person-search,#target-search,#target-person,#person-name,#split-name{width:100%}.check-label{display:flex;align-items:center;gap:10px;font-weight:400}.check-label input{min-width:20px;min-height:20px}#identity-rows td{white-space:normal;overflow-wrap:anywhere}#identity-rows input{min-width:22px;min-height:22px}#person-list option{padding:8px}#confirm-panel{border:2px solid #2357bf;padding:18px;border-radius:12px;margin-top:20px}#changes-list{padding-left:24px;overflow-wrap:anywhere}#editor h2,#editor p{overflow-wrap:anywhere}.status{white-space:pre-line}button:disabled{opacity:.5}@media(max-width:750px){.registry-layout{grid-template-columns:1fr}.table-wrap{overflow-x:auto}#identity-table{display:table;min-width:620px;white-space:normal}#identity-table thead{position:static;width:auto;height:auto;clip-path:none}#identity-table tbody{display:table-row-group}#identity-table tr{display:table-row;border:0;padding:0}#identity-table td{display:table-cell;padding:10px}#identity-table td::before{display:none}}
+
+.comparison-scroll{overflow-x:auto;margin:14px 0}
+.duplicate-records{display:grid;grid-template-columns:repeat(var(--comparison-count),minmax(230px,1fr));gap:0 14px;align-items:stretch}
+.duplicate-record{display:grid;grid-template-rows:subgrid;grid-row:span 8;gap:0;padding:0;align-items:stretch}
+.comparison-cell{min-width:0;padding:14px;margin:0!important;border-bottom:1px solid #dfe7ef}
+.comparison-cell h5{font:inherit;font-weight:650;margin:0 0 8px}
+.comparison-cell ul{margin:0}
+.comparison-cell button{margin:0}
 </style></head><body><main>
 <h1>Painijamerkintöjen ylläpito</h1>
 <p>Yhdistä merkintöjä vain, kun olet varmistanut niiden kuuluvan samalle henkilölle. Tunnus ei itsessään todista henkilöllisyyttä.</p>
@@ -24,6 +32,14 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 </section>
 <style>
 #duplicate-search{width:100%}.duplicate-group{border:1px solid #dfe7ef;border-radius:12px;padding:18px;margin:16px 0;overflow-wrap:anywhere}.duplicate-records{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}.duplicate-record{min-width:0;background:#f7f9fc;border-radius:10px;padding:14px}.duplicate-record h4{margin:0 0 8px}.duplicate-record p{margin:8px 0}.duplicate-record li{margin:8px 0}.duplicate-merge{margin-top:16px}.duplicate-merge select{width:100%;min-width:0}.duplicate-group h3{margin-top:0}.duplicate-group button{white-space:normal;max-width:100%}.duplicate-record ul{padding-left:20px}#editor-title{scroll-margin-top:20px}
+
+.comparison-scroll{overflow-x:auto;margin:14px 0}
+.duplicate-records{display:grid;grid-template-columns:repeat(var(--comparison-count),minmax(230px,1fr));gap:0 14px;align-items:stretch}
+.duplicate-record{display:grid;grid-template-rows:subgrid;grid-row:span 8;gap:0;padding:0;align-items:stretch}
+.comparison-cell{min-width:0;padding:14px;margin:0!important;border-bottom:1px solid #dfe7ef}
+.comparison-cell h5{font:inherit;font-weight:650;margin:0 0 8px}
+.comparison-cell ul{margin:0}
+.comparison-cell button{margin:0}
 </style>
 <div class="registry-layout">
 <section class="card" aria-labelledby="list-title"><h2 id="list-title">1. Etsi merkintä</h2>
@@ -50,4 +66,4 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 </section></div>
 <section class="card"><h2>Muutoshistoria</h2><p class="hint">Viimeisimmät 20 muutosta näytetään alla. Peruminen toimii myös ladatun data.js-tiedoston uudelleen avaamisen jälkeen. Tunnusnumeroita ei käytetä uudelleen. Historia kulkee data.js-tiedoston mukana.</p><ol id="changes-list"></ol></section>
 <noscript>Työkalu tarvitsee JavaScriptin.</noscript>
-</main><script src="data.js?v=20261025-duplicates1" defer></script><script src="athlete-registry.js?v=20261025-duplicates1" defer></script><script src="painijat.js?v=20261025-duplicates1" defer></script></body></html>
+</main><script src="data.js?v=20261025-aligned1" defer></script><script src="athlete-registry.js?v=20261025-aligned1" defer></script><script src="painijat.js?v=20261025-aligned1" defer></script></body></html>
