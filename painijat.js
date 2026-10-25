@@ -71,6 +71,21 @@
     shown.forEach((group,i) => {
       const card = node("article",undefined,"duplicate-group"), heading = node("h3",group.names.join(" / "));
       card.append(heading,node("p",group.records.length+" aktiivista tunnusta · vertaa lähdetiedot ennen yhdistämistä. Kapealla näytöllä voit vierittää vertailua sivusuunnassa","hint"));
+      const comparisonValues = entry => ({
+        clubs: [...entry.clubs],
+        competitions: [...new Map(entry.results.map(({item}) => [R.compKey(item),item])).values()].map(item => item.title+" · "+item.details),
+        categories: [...new Set(entry.results.map(({row}) => row.category))],
+        weights: [...new Set(entry.results.map(({row}) => row.weight+" kg"))]
+      });
+      const shared = new Map();
+      group.records.forEach(entry => Object.entries(comparisonValues(entry)).forEach(([field,values]) => {
+        new Set(values.map(value => R.norm(value))).forEach(value => {
+          const key = JSON.stringify([field,value]);
+          if (!shared.has(key)) shared.set(key,new Set());
+          shared.get(key).add(entry.athlete.id);
+        });
+      }));
+      card.append(node("p","Korostettu tieto esiintyy vähintään kahdessa tämän ryhmän merkinnässä. Samat tiedot eivät yksin todista, että kyseessä on sama henkilö.","hint"));
       const scroll = node("div",undefined,"comparison-scroll");
       const columns = node("div",undefined,"duplicate-records");
       columns.style.setProperty("--comparison-count", String(group.records.length));
@@ -79,18 +94,29 @@
         const header = node("div",undefined,"comparison-cell");
         header.append(node("h4",entry.athlete.name),node("p",entry.athlete.id),
           node("p",entry.athlete.status === "reviewed" ? "Tarkistettu merkintä" : "Tarkistamaton tulosryhmä","hint"));
-        const field = (label, values) => {
+        const field = (label, values, fieldKey) => {
           const cell = node("div",undefined,"comparison-cell");
           cell.append(node("h5",label));
-          const list = node("ul"); values.forEach(value => list.append(node("li",value)));
+          const list = node("ul"); values.forEach(value => {
+            const li = node("li",value);
+            const matches = shared.get(JSON.stringify([fieldKey,R.norm(value)]));
+            if (matches?.size > 1) {
+              li.className = "shared-comparison-value";
+              const badge = node("span","Yhteinen · " + matches.size + " merkintää","shared-comparison-label");
+              const others = [...matches].filter(id => id !== entry.athlete.id);
+              badge.setAttribute("aria-label", "Sama tieto myös tunnuksilla " + others.join(", "));
+              li.append(document.createTextNode(" "),badge);
+            }
+            list.append(li);
+          });
           cell.append(list); return cell;
         };
         const competitions = [...new Map(entry.results.map(({item}) => [R.compKey(item),item])).values()];
         record.append(header,
-          field("Seurat / paikkakunnat lähteessä", [...entry.clubs]),
-          field("Kilpailut ja päivämäärät", competitions.map(item => item.title+" · "+item.details)),
-          field("Ikäluokat", [...new Set(entry.results.map(({row}) => row.category))]),
-          field("Painoluokat", [...new Set(entry.results.map(({row}) => row.weight+" kg"))]),
+          field("Seurat / paikkakunnat lähteessä", [...entry.clubs], "clubs"),
+          field("Kilpailut ja päivämäärät", competitions.map(item => item.title+" · "+item.details), "competitions"),
+          field("Ikäluokat", [...new Set(entry.results.map(({row}) => row.category))], "categories"),
+          field("Painoluokat", [...new Set(entry.results.map(({row}) => row.weight+" kg"))], "weights"),
           node("p",entry.count + " tulosta · " + competitions.length + " kilpailua","comparison-cell"));
         const details = node("details",undefined,"comparison-cell"), resultList = node("ul"); details.append(node("summary","Näytä kaikki tulokset"));
         entry.results.forEach(({item,row}) => resultList.append(node("li",item.title+" · "+item.details+" · "+row.name+" · "+row.club+" · "+row.category+" · "+row.weight+" kg · sija "+row.place+" · "+row.resultId)));
