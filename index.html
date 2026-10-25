@@ -14,19 +14,8 @@
   <button id="nav-results" type="button" aria-pressed="true">Tuloshaku</button>
   <button id="nav-competitions" type="button" aria-pressed="false">Kilpailut</button>
 </nav>
-<p>Hae painijan tuloksia yhteisestä kilpailuaineistosta tai tuo lisää kilpailuja omaan selaimeesi.</p>
-<section class="card" aria-label="Tulosten tuonti">
-<h2>Tuo omia kilpailutuloksia</h2>
-<p class="hint">Valitse LigaDB:n tab-eroteltu .txt-tulosluettelo. Voit valita useita tiedostoja samalla kertaa.</p>
-<div class="actions">
-<input id="file" class="hidden-input" type="file" multiple accept=".txt,.tsv,text/plain,text/tab-separated-values">
-<label for="file" class="file-button">Valitse tulostiedostot</label>
-<button id="delete" type="button" disabled>Poista oma tuonti</button>
-</div>
-<div id="status" class="status" role="status" aria-live="polite">Yhteiset kilpailutulokset ovat käytettävissä ilman tiedostojen tuontia.</div>
-<p class="hint">Omat tuonnit tallennetaan automaattisesti vain tähän selaimeen. Ne eivät siirry muille kävijöille. Saman kilpailun uusi tuonti päivittää sen tulokset. Kilpailu tunnistetaan tiedoston otsikon ja paikka-/päivämäärärivin perusteella.</p>
-<p class="hint">Käytä samaa selainta ja pidä tämä HTML-tiedosto samassa paikassa samalla nimellä. Säilytä alkuperäiset .txt-tiedostot: selaintietojen poistaminen voi poistaa tallennukset. Yksityisen selauksen tallennus ei säily istunnon päätyttyä.</p>
-</section>
+<p>Hae painijan tuloksia nimellä ja rajaa niitä vuoden, painimuodon, kilpailun tai seuran mukaan.</p>
+<div id="status" class="status" role="status" aria-live="polite" hidden></div>
 <section id="search-view" class="card" aria-label="Tuloshaku">
 <p id="data-summary" class="hint"></p>
 <div class="filters">
@@ -39,7 +28,7 @@
 <div class="field"><label for="category">Ikäluokka</label><select id="category"></select></div>
 </div>
 <div class="actions"><button id="reset-filters" type="button" aria-describedby="reset-filters-hint">Tyhjennä hakuehdot</button></div>
-<p id="reset-filters-hint" class="hint">Palauttaa kaikki tulokset näkyviin. Kilpailut ja omat tuonnit säilyvät tallessa.</p>
+<p id="reset-filters-hint" class="hint">Tyhjentää hakuehdot ja palauttaa kaikki tulokset näkyviin. Tuloksia ei poisteta.</p>
 <p class="hint">Avaa painijan tulosnäkymä napsauttamalla hänen nimeään. Päivämäärättömät kilpailut ovat aikajärjestyksessä viimeisinä. Painijan omassa näkymässä näkyvät kaikkien vuosien tulokset.</p>
 <p class="hint">Painimuoto perustuu lähdesivun sarjatietoon. Puuttuva tieto näkyy muodossa ”Ei vahvistettu”.</p>
 <p id="selection" class="hint"></p>
@@ -53,7 +42,7 @@
 </section>
 <section id="competition-view" class="card" aria-labelledby="competition-heading" hidden>
   <h2 id="competition-heading" tabindex="-1">Kilpailut</h2>
-  <p class="hint">Etsi kilpailun nimellä, paikkakunnalla tai päivämäärällä. Tässä näkyvät yhteiset kilpailut ja tähän selaimeen tekemäsi omat tuonnit.</p>
+  <p class="hint">Etsi kilpailun nimellä, paikkakunnalla tai päivämäärällä. Tässä näkyvät sivuston kilpailuaineistoon kuuluvat kilpailut.</p>
   <div class="filters">
     <div class="field">
       <label for="competition-query">Etsi kilpailua</label>
@@ -98,7 +87,7 @@
   </div>
   <p id="wrestler-empty" class="hint" hidden>Tälle nimelle ja seuralle ei enää löydy tuloksia nykyisestä aineistosta.</p>
 </section>
-<footer>Lähde: RingerDB / LigaDB. Omalla koneella käytettävä kokeilu. Automaattista verkkohakua ei vielä ole.</footer>
+<footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineisto ei päivity automaattisesti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
 <script src="data.js" defer></script>
