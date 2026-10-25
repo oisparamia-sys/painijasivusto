@@ -31,11 +31,13 @@
 <p id="data-summary" class="hint"></p>
 <div class="filters">
 <div class="field"><label for="competition">Kilpailu</label><select id="competition"></select></div>
+<div class="field"><label for="result-year">Vuosi</label><select id="result-year"></select></div>
+<div class="field"><label for="result-sort">Tulosten järjestys</label><select id="result-sort"><option value="newest">Uusimmat ensin</option><option value="oldest">Vanhimmat ensin</option><option value="place">Paras sijoitus ensin</option></select></div>
 <div class="field"><label for="search">Painijan nimi</label><input id="search" type="search" placeholder="Kirjoita nimi…"></div>
 <div class="field"><label for="club">Seura</label><select id="club"></select></div>
 <div class="field"><label for="category">Ikäluokka</label><select id="category"></select></div>
 </div>
-<p class="hint">Avaa painijan tulosnäkymä napsauttamalla hänen nimeään.</p>
+<p class="hint">Avaa painijan tulosnäkymä napsauttamalla hänen nimeään. Päivämäärättömät kilpailut ovat aikajärjestyksessä viimeisinä. Painijan omassa näkymässä näkyvät kaikkien vuosien tulokset.</p>
 <p id="selection" class="hint"></p>
 <p id="source-line" class="hint" hidden></p>
 <div class="heading"><h2 id="results-heading" tabindex="-1">Kilpailutulokset</h2><span id="count" role="status" aria-live="polite"></span></div>

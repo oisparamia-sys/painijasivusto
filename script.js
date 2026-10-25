@@ -138,7 +138,17 @@ function selectedCompetitions() {
   return selected ? competitions.filter(item => identity(item) === selected) : competitions;
 }
 function refreshFilters() {
-  const items = selectedCompetitions();
+  const allItems = selectedCompetitions();
+  const years = allItems.map(resultYear);
+  options($("#result-year"), years, "Kaikki vuodet");
+  // Näytä vuodet uusimmasta vanhimpaan, päivämäärättömät lopussa.
+  const yearSelect = $("#result-year");
+  [...yearSelect.options].slice(1).sort((a,b) => {
+    if (a.value === "Ei päivämäärää") return 1;
+    if (b.value === "Ei päivämäärää") return -1;
+    return Number(b.value) - Number(a.value);
+  }).forEach(option => yearSelect.append(option));
+  const items = yearFilteredCompetitions();
   const rows = items.flatMap(item => item.rows);
   options($("#club"), rows.map(row => row.club), "Kaikki seurat");
   options($("#category"), rows.map(row => row.category), "Kaikki ikäluokat");
@@ -171,8 +181,9 @@ function render() {
   const query = $("#search").value.trim().toLocaleLowerCase("fi");
   const fragment = document.createDocumentFragment();
   let count = 0;
-  selectedCompetitions().forEach(item => {
-    item.rows.forEach(result => {
+  const entries = yearFilteredCompetitions().flatMap(item => item.rows.map(result => ({item, result})));
+  entries.sort(compareResults);
+  entries.forEach(({item, result}) => {
       if (!result.name.toLocaleLowerCase("fi").includes(query) ||
         ($("#club").value && result.club !== $("#club").value) ||
         ($("#category").value && result.category !== $("#category").value)) return;
@@ -201,7 +212,6 @@ function render() {
         });
       labelResultRow(row, "results");
       fragment.append(row);
-    });
   });
   $("#results").replaceChildren(fragment);
   $("#count").textContent = count === 1 ? "1 tulos" : count + " tulosta";
@@ -513,6 +523,8 @@ $("#delete").addEventListener("click", () => {
   status("Oma tuonti poistettiin tästä selaimesta. Jos kilpailu kuuluu yhteiseen aineistoon, sen yhteinen versio näkyy edelleen. Alkuperäistä .txt-tiedostoa ei poistettu.");
 });
 $("#competition").addEventListener("change", refreshFilters);
+$("#result-year").addEventListener("change", refreshFilters);
+$("#result-sort").addEventListener("change", render);
 $("#search").addEventListener("input", render);
 $("#club").addEventListener("change", render);
 $("#category").addEventListener("change", render);
@@ -528,4 +540,25 @@ function labelResultRow(row, bodyId) {
   Array.from(row.cells).forEach((cell, index) => {
     cell.dataset.label = headers[index].textContent;
   });
+}
+
+function resultYear(item) {
+  const date = competitionDate(item);
+  return Number.isFinite(date) ? String(new Date(date).getUTCFullYear()) : "Ei päivämäärää";
+}
+function yearFilteredCompetitions() {
+  const year = $("#result-year").value;
+  return selectedCompetitions().filter(item => !year || resultYear(item) === year);
+}
+function compareResults(a, b) {
+  const order = $("#result-sort").value;
+  if (order === "place" && a.result.place !== b.result.place) return a.result.place - b.result.place;
+  const left = competitionDate(a.item), right = competitionDate(b.item);
+  if (left !== right) {
+    if (!Number.isFinite(left)) return 1;
+    if (!Number.isFinite(right)) return -1;
+    return order === "oldest" ? left - right : right - left;
+  }
+  // Samana päivänä säilytetään lähdeaineiston sarjajärjestys.
+  return 0;
 }
