@@ -12,6 +12,7 @@ const athleteRecords = new Map((registryReady ? sharedData.athleteRegistry.athle
 
 let profileState = null;
 let profileOpener = null;
+const defaultPageTitle = document.title;
 
 function status(message, kind = "") {
   $("#status").hidden = false;
@@ -147,12 +148,14 @@ function competitionDate(item) {
   return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
     ? timestamp : -Infinity;
 }
-function openProfile(athleteId, opener = null) {
+function openProfile(athleteId, opener = null, updateUrl = true) {
   if (!registryReady) return;
   athleteId = window.PainiRegistry.resolve(sharedData, athleteId);
   if (!athleteId || !athleteRecords.has(athleteId)) return;
   if (opener) profileOpener = opener;
+  clearProfileLinkError();
   profileState = { athleteId };
+  if (updateUrl) writeProfileRoute(athleteId);
   $("#search-view").hidden = true;
   $("#competition-view").hidden = true;
   $("#nav-results").setAttribute("aria-pressed", "true");
@@ -162,6 +165,8 @@ function openProfile(athleteId, opener = null) {
   $("#wrestler-title").focus();
 }
 function closeProfile() {
+  writeProfileRoute(null);
+  document.title = defaultPageTitle;
   profileState = null;
   $("#wrestler-view").hidden = true;
   $("#search-view").hidden = false;
@@ -194,6 +199,9 @@ function renderProfile() {
     return a.item.title.localeCompare(b.item.title, "fi") || a.result.place - b.result.place;
   });
   $("#wrestler-title").textContent = athlete.name;
+  document.title = athlete.name + " – Painijatulokset";
+  $("#wrestler-share-url").value = profileAddress(athlete.id);
+  $("#share-status").textContent = "";
   $("#wrestler-id").textContent = athlete.id + " · " + (athlete.status === "reviewed" ? "Ylläpito tarkistanut yhdistämisen" : "Tarkistamaton tulosryhmä");
   $("#wrestler-aliases").textContent = "Nimet lähdetuloksissa: " + [...originalNames].join(", ");
   $("#wrestler-club").textContent = "Seurat tuloksissa: " + [...new Set(entries.map(e => e.result.club))].sort((a,b) => a.localeCompare(b,"fi")).join(", ");
@@ -254,7 +262,9 @@ function renderProfile() {
   $("#same-name-clubs").hidden = alternativesById.size === 0;
 }
 
-function showView(view, focus = true) {
+function showView(view, focus = true, updateUrl = true) {
+  if (updateUrl) writeProfileRoute(null);
+  document.title = defaultPageTitle;
   profileState = null;
   profileOpener = null;
   $("#wrestler-view").hidden = true;
@@ -396,3 +406,59 @@ function styleLabel(item, row) {
 function matchesStyle(item, row) {
   return !$("#result-style").value || resultStyle(item, row) === $("#result-style").value;
 }
+
+// Stable share links use the site's own ID; source names and clubs stay out of the URL.
+function profileAddress(athleteId) {
+  // A file opened on the maintainer's Mac should still produce a public share link.
+  const address = new URL(location.protocol === "file:" ? "https://oisparamia-sys.github.io/painijasivusto/" : location.href);
+  address.search = "";
+  address.hash = new URLSearchParams({painija:athleteId}).toString();
+  return address.href;
+}
+function writeProfileRoute(athleteId, replace = false) {
+  const address = new URL(location.href);
+  if (!athleteId && !new URLSearchParams(address.hash.slice(1)).has("painija")) return;
+  address.hash = athleteId ? new URLSearchParams({painija:athleteId}).toString() : "";
+  if (address.href === location.href) return;
+  try { history[replace ? "replaceState" : "pushState"](null,"",address.href); }
+  catch { /* A restricted local preview can still display the shareable address. */ }
+}
+function clearProfileLinkError() {
+  if ($("#status").dataset.reason === "profile-link") {
+    $("#status").hidden = true; $("#status").textContent = ""; delete $("#status").dataset.reason;
+  }
+}
+function routeProfileFromUrl() {
+  const params = new URLSearchParams(location.hash.slice(1));
+  if (!params.has("painija")) { clearProfileLinkError(); if (profileState) showView("results",false,false); return; }
+  if (!registryReady) return;
+  const requested = params.get("painija");
+  const resolved = /^painija-\d{6,}$/.test(requested) ? window.PainiRegistry.resolve(sharedData,requested) : null;
+  const person = athleteRecords.get(resolved);
+  if (!person || person.mergedInto) {
+    showView("results",false,false);
+    status("Linkin painijatunnusta ei löytynyt tästä aineistosta. Voit etsiä painijaa nimellä tai avata toisen linkin.","error");
+    $("#status").dataset.reason = "profile-link"; return;
+  }
+  if (profileState?.athleteId !== resolved) openProfile(resolved,null,false);
+  clearProfileLinkError();
+  if (resolved !== requested) writeProfileRoute(resolved,true);
+}
+$("#copy-wrestler-link").addEventListener("click",async () => {
+  if (!profileState) return;
+  const athleteId = profileState.athleteId;
+  const address = profileAddress(athleteId);
+  try {
+    if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
+    await navigator.clipboard.writeText(address);
+    if (profileState?.athleteId !== athleteId) return;
+    $("#share-status").textContent = "Painijan linkki kopioitu. Voit liittää sen viestiin.";
+  } catch {
+    if (profileState?.athleteId !== athleteId) return;
+    const input = $("#wrestler-share-url"); input.focus(); input.select();
+    $("#share-status").textContent = "Kopioi valittu osoite käsin ja liitä se viestiin.";
+  }
+});
+window.addEventListener("popstate",routeProfileFromUrl);
+window.addEventListener("hashchange",routeProfileFromUrl);
+routeProfileFromUrl();

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painijatulokset</title>
-<link rel="stylesheet" href="style.css?v=20261025-identity1">
+<link rel="stylesheet" href="style.css?v=20261025-profilelinks1">
 </head>
 <body>
 <header><div>Painijatulokset</div></header>
@@ -67,6 +67,12 @@
   <p id="wrestler-id" class="hint"></p>
   <p id="wrestler-aliases" class="hint"></p>
   <p id="wrestler-club" class="profile-club"></p>
+  <div class="profile-share">
+    <label for="wrestler-share-url">Linkki tähän painijanäkymään</label>
+    <input id="wrestler-share-url" type="text" readonly spellcheck="false">
+    <button id="copy-wrestler-link" type="button">Kopioi painijan linkki</button>
+    <p id="share-status" class="hint" role="status" aria-live="polite"></p>
+  </div>
   <p id="wrestler-scope" class="hint"></p>
   <p class="hint">Tulokset on liitetty sivuston omaan pysyvään tunnukseen. Alkuperäiset nimi–seura-ryhmät ovat tarkistamattomia: samaan ryhmään voi kuulua samannimisiä henkilöitä. Ylläpito voi yhdistää tai erottaa merkintöjä tarkistuksen jälkeen.</p>
   <dl id="wrestler-summary" class="profile-summary"></dl>
@@ -92,9 +98,9 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineisto ei päivity automaattisesti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="data.js?v=20261025-identity1" defer></script>
-<script src="athlete-registry.js?v=20261025-identity1" defer></script>
-<script src="script.js?v=20261025-identity1" defer></script>
+<script src="data.js?v=20261025-profilelinks1" defer></script>
+<script src="athlete-registry.js?v=20261025-profilelinks1" defer></script>
+<script src="script.js?v=20261025-profilelinks1" defer></script>
 </body>
 </html>
 
