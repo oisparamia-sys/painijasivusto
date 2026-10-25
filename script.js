@@ -5,7 +5,10 @@ const sharedReady = sharedData && sharedData.version === 1 &&
   Array.isArray(sharedData.competitions) && sharedData.competitions.every(valid) &&
   new Set(sharedData.competitions.map(identity)).size === sharedData.competitions.length;
 const sharedCompetitions = sharedReady ? sharedData.competitions : [];
-let competitions = [...sharedCompetitions];
+const competitions = [...sharedCompetitions];
+let registryReady = false;
+try { window.PainiRegistry.validate(sharedData); registryReady = true; } catch { /* Results remain readable if the registry has not loaded. */ }
+const athleteRecords = new Map((registryReady ? sharedData.athleteRegistry.athletes : []).map(a => [a.id, a]));
 
 let profileState = null;
 let profileOpener = null;
@@ -93,7 +96,7 @@ function render() {
   const entries = yearFilteredCompetitions().flatMap(item => item.rows.map(result => ({item, result})));
   entries.sort(compareResults);
   entries.forEach(({item, result}) => {
-      if (!matchesStyle(item, result) || !result.name.toLocaleLowerCase("fi").includes(query) ||
+      if (!matchesStyle(item, result) || !((result.name + " " + (athleteRecords.get(result.athleteId)?.name || "")).toLocaleLowerCase("fi").includes(query)) ||
         ($("#club").value && result.club !== $("#club").value) ||
         ($("#category").value && result.category !== $("#category").value)) return;
       count++;
@@ -108,11 +111,12 @@ function render() {
       nameButton.type = "button";
       nameButton.className = "name-button";
       nameButton.textContent = result.name;
+      nameButton.dataset.athleteId = result.athleteId || "";
+      nameButton.disabled = !registryReady;
       nameButton.dataset.name = normalizePerson(result.name);
       nameButton.dataset.club = normalizePerson(result.club);
       nameButton.setAttribute("aria-label", "Näytä tulokset: " + result.name + ", " + result.club);
-      nameButton.addEventListener("click", () => openProfile(result.name, result.club,
-        nameButton));
+      nameButton.addEventListener("click", () => openProfile(result.athleteId, nameButton));
       nameCell.append(nameButton); row.append(nameCell);
       [result.club, result.category, result.weight + " kg", item.title, item.details || "–", styleLabel(item, result)]
         .forEach(value => {
@@ -143,9 +147,12 @@ function competitionDate(item) {
   return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
     ? timestamp : -Infinity;
 }
-function openProfile(name, club, opener = null) {
+function openProfile(athleteId, opener = null) {
+  if (!registryReady) return;
+  athleteId = window.PainiRegistry.resolve(sharedData, athleteId);
+  if (!athleteId || !athleteRecords.has(athleteId)) return;
   if (opener) profileOpener = opener;
-  profileState = { name, club };
+  profileState = { athleteId };
   $("#search-view").hidden = true;
   $("#competition-view").hidden = true;
   $("#nav-results").setAttribute("aria-pressed", "true");
@@ -164,24 +171,32 @@ function closeProfile() {
 }
 function renderProfile() {
   if (!profileState) return;
-  const nameKey = normalizePerson(profileState.name);
-  const clubKey = normalizePerson(profileState.club);
+  const athlete = athleteRecords.get(profileState.athleteId);
   const entries = [];
-  const otherClubs = new Map();
-  profileCompetitions().forEach(item => {
-    item.rows.forEach(result => {
-      if (normalizePerson(result.name) !== nameKey) return;
-      if (normalizePerson(result.club) === clubKey) entries.push({ item, result });
-      else otherClubs.set(normalizePerson(result.club), result.club);
-    });
-  });
+  profileCompetitions().forEach(item => item.rows.forEach(result => {
+    if (result.athleteId === athlete.id) entries.push({ item, result });
+  }));
+  const originalNames = new Set(entries.map(e => e.result.name));
+  const nameKeys = new Set([...originalNames, athlete.name].map(normalizePerson));
+  const alternativesById = new Map();
+  profileCompetitions().forEach(item => item.rows.forEach(result => {
+    if (result.athleteId !== athlete.id && nameKeys.has(normalizePerson(result.name))) {
+      const other = athleteRecords.get(result.athleteId);
+      if (other && !other.mergedInto) {
+        if (!alternativesById.has(other.id)) alternativesById.set(other.id, { athlete: other, clubs: new Set() });
+        alternativesById.get(other.id).clubs.add(result.club);
+      }
+    }
+  }));
   entries.sort((a, b) => {
     const left = competitionDate(a.item), right = competitionDate(b.item);
     if (left !== right) return left > right ? -1 : 1;
     return a.item.title.localeCompare(b.item.title, "fi") || a.result.place - b.result.place;
   });
-  $("#wrestler-title").textContent = profileState.name;
-  $("#wrestler-club").textContent = profileState.club;
+  $("#wrestler-title").textContent = athlete.name;
+  $("#wrestler-id").textContent = athlete.id + " · " + (athlete.status === "reviewed" ? "Ylläpito tarkistanut yhdistämisen" : "Tarkistamaton tulosryhmä");
+  $("#wrestler-aliases").textContent = "Nimet lähdetuloksissa: " + [...originalNames].join(", ");
+  $("#wrestler-club").textContent = "Seurat tuloksissa: " + [...new Set(entries.map(e => e.result.club))].sort((a,b) => a.localeCompare(b,"fi")).join(", ");
   $("#wrestler-scope").textContent = "Yhteenveto kaikista tämän sivun kilpailuista. Haun rajaukset eivät rajoita tätä näkymää.";
   const summary = $("#wrestler-summary");
   summary.replaceChildren();
@@ -231,13 +246,12 @@ function renderProfile() {
   $("#wrestler-empty").hidden = entries.length > 0;
   const alternatives = $("#same-name-options");
   alternatives.replaceChildren();
-  [...otherClubs.values()].sort((a,b) => a.localeCompare(b,"fi")).forEach(club => {
+  [...alternativesById.values()].sort((a,b) => a.athlete.name.localeCompare(b.athlete.name,"fi")).forEach(({athlete: other, clubs}) => {
     const button = document.createElement("button");
-    button.type = "button"; button.textContent = club;
-    button.addEventListener("click", () => openProfile(profileState.name, club));
-    alternatives.append(button);
+    button.type = "button"; button.textContent = other.name + " · " + [...clubs].join(", ") + " · " + other.id;
+    button.addEventListener("click", () => openProfile(other.id)); alternatives.append(button);
   });
-  $("#same-name-clubs").hidden = otherClubs.size === 0;
+  $("#same-name-clubs").hidden = alternativesById.size === 0;
 }
 
 function showView(view, focus = true) {
@@ -341,6 +355,7 @@ $("#competition-query").addEventListener("input", renderCompetitionList);
 $("#competition-sort").addEventListener("change", renderCompetitionList);
 $("#back-to-results").addEventListener("click", closeProfile);
 refresh();
+if (sharedReady && !registryReady) status("Painijarekisteri ei latautunut. Tulokset näkyvät, mutta nimilinkit ovat poissa käytöstä. Päivitä sivu.", "error");
 if (!sharedReady) status("Kilpailuaineisto ei latautunut. Päivitä sivu tai kokeile myöhemmin uudelleen.", "error");
 
 function labelResultRow(row, bodyId) {

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painijatulokset</title>
-<link rel="stylesheet" href="style.css?v=20261025-public2">
+<link rel="stylesheet" href="style.css?v=20261025-identity1">
 </head>
 <body>
 <header><div>Painijatulokset</div></header>
@@ -64,13 +64,15 @@
 <section id="wrestler-view" class="card" aria-labelledby="wrestler-title" hidden>
   <button id="back-to-results" type="button">← Takaisin hakutuloksiin</button>
   <h2 id="wrestler-title" tabindex="-1"></h2>
+  <p id="wrestler-id" class="hint"></p>
+  <p id="wrestler-aliases" class="hint"></p>
   <p id="wrestler-club" class="profile-club"></p>
   <p id="wrestler-scope" class="hint"></p>
-  <p class="hint">Tulokset yhdistetään saman nimen ja seuran perusteella. Lähdeaineistossa ei ole yksilöllistä painijatunnusta. Saman seuran samannimisiä henkilöitä ei voida erottaa, ja seuranvaihdokset näkyvät erillisissä näkymissä.</p>
+  <p class="hint">Tulokset on liitetty sivuston omaan pysyvään tunnukseen. Alkuperäiset nimi–seura-ryhmät ovat tarkistamattomia: samaan ryhmään voi kuulua samannimisiä henkilöitä. Ylläpito voi yhdistää tai erottaa merkintöjä tarkistuksen jälkeen.</p>
   <dl id="wrestler-summary" class="profile-summary"></dl>
   <div id="same-name-clubs" class="same-name-clubs" hidden>
-    <h3>Sama nimi muissa seuroissa</h3>
-    <p class="hint">Nämä tulokset ovat erillään. Kyseessä voi olla toinen henkilö tai seuranvaihdos.</p>
+    <h3>Samannimisiä erillisiä merkintöjä</h3>
+    <p class="hint">Näitä merkintöjä ei ole yhdistetty tähän tunnukseen. Kyseessä voi olla eri henkilö tai vahvistamaton seuranvaihdos.</p>
     <div id="same-name-options" class="actions"></div>
   </div>
   <h3>Kaikki tämän nimen ja seuran tulokset</h3>
@@ -90,8 +92,9 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineisto ei päivity automaattisesti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="data.js?v=20261025-public2" defer></script>
-<script src="script.js?v=20261025-public2" defer></script>
+<script src="data.js?v=20261025-identity1" defer></script>
+<script src="athlete-registry.js?v=20261025-identity1" defer></script>
+<script src="script.js?v=20261025-identity1" defer></script>
 </body>
 </html>
 

@@ -11,8 +11,9 @@
 </head>
 <body><main>
 <h1>Kilpailuaineiston ylläpito</h1>
-<p>Tarkista uudet tulostiedostot ja muodosta sivuston yhteinen data.js-tiedosto.</p>
-<p class="hint">Työkalu aloittaa samassa kansiossa olevasta data.js-tiedostosta. Sivuston selaimeen tekemät omat tuonnit eivät tule automaattisesti mukaan. Tiedostoja ei lähetetä verkkoon.</p>
+<p><a href="painijat.html">Avaa painijamerkintöjen ylläpito</a></p>
+<p>Tarkista uudet tulostiedostot ja muodosta sivuston yhteinen data.js?v=20261025-identity1-tiedosto.</p>
+<p class="hint">Työkalu aloittaa samassa kansiossa olevasta data.js?v=20261025-identity1-tiedostosta. Sivuston selaimeen tekemät omat tuonnit eivät tule automaattisesti mukaan. Tiedostoja ei lähetetä verkkoon.</p>
 <section aria-labelledby="current-title">
 <h2 id="current-title">1. Nykyinen aineisto</h2>
 <p id="dataset-summary"></p>
@@ -38,13 +39,15 @@
 </section>
 <section aria-labelledby="export-title">
 <h2 id="export-title">3. Lataa päivitetty aineisto</h2>
-<p>Kun olet hyväksynyt muutokset, lataa kokonainen uusi data.js. Se sisältää myös aiemmat kilpailut.</p>
-<button id="export" class="primary" type="button" disabled>Lataa data.js</button>
-<p class="hint">Ladattu tiedosto ei korvaa projektin tiedostoa automaattisesti. Säilytä vanha versio, siirrä lataamasi tiedosto alkuperäiseen painijasivusto-kansioon nimellä data.js ja tarkista sivu Safarissa. Lähetä muutos GitHubiin vasta tarkistuksen jälkeen.</p>
-<p class="hint">Hyväksytyt muutokset ovat tämän ylläpitosivun muistissa, kunnes lataat uuden data.js-tiedoston. Sivun päivittäminen aloittaa uudelleen projektin nykyisestä tiedostosta.</p>
+<p>Kun olet hyväksynyt muutokset, lataa kokonainen uusi data.js?v=20261025-identity1. Se sisältää myös aiemmat kilpailut.</p>
+<button id="undo-import" type="button" disabled>Peru viimeisin hyväksytty muutos</button>
+<button id="export" class="primary" type="button" disabled>Lataa data.js?v=20261025-identity1</button>
+<p class="hint">Ladattu tiedosto ei korvaa projektin tiedostoa automaattisesti. Säilytä vanha versio, siirrä lataamasi tiedosto alkuperäiseen painijasivusto-kansioon nimellä data.js?v=20261025-identity1 ja tarkista sivu Safarissa. Lähetä muutos GitHubiin vasta tarkistuksen jälkeen.</p>
+<p class="hint">Hyväksytyt muutokset ovat tämän ylläpitosivun muistissa, kunnes lataat uuden data.js?v=20261025-identity1-tiedoston. Sivun päivittäminen aloittaa uudelleen projektin nykyisestä tiedostosta. Säilytä päivitetty data.js?v=20261025-identity1 ennen kuin avaat toisen ylläpitotyökalun. Uudet tulokset saavat omat tarkistamattomat tunnukset; sama nimi ei yhdistä niitä aiempiin henkilöihin.</p>
 </section>
 <noscript>Tämä työkalu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="data.js" defer></script>
-<script src="yllapito.js" defer></script>
+<script src="data.js?v=20261025-identity1" defer></script>
+<script src="athlete-registry.js?v=20261025-identity1" defer></script>
+<script src="yllapito.js?v=20261025-identity1" defer></script>
 </body></html>

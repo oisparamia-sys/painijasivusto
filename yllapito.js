@@ -5,7 +5,7 @@
       if (firstGroup < 0) throw new Error("Sarjoja ei löytynyt. Valitse nimenomaan tab-eroteltu tulosluettelo, ei ottelutiedostoa tai HTML-sivua.");
       const header = lines.slice(0, firstGroup).map(line => line.trim()).filter(Boolean);
       if (!header.length) throw new Error("Tiedostosta puuttuu kilpailun nimi.");
-      const dateLine = header.find(line => /\d{1,2}\.\d{1,2}\.\d{4}/.test(line) && line !== header[0]) || "";
+      const dateLine = header.find(line => /\d{1,2}[./]\d{1,2}[./]\d{4}/.test(line) && line !== header[0]) || "";
       const rows = [];
       const seen = new Set();
       let group = null;
@@ -60,6 +60,9 @@ function identity(item) {
     value.trim().replace(/\s+/g, " ").toLocaleLowerCase("fi")));
 }
 const $ = selector => document.querySelector(selector);
+const R = window.PainiRegistry;
+let dataset = null;
+let dirty = false;
 let work = new Map();
 let pending = null;
 let busy = false;
@@ -90,6 +93,7 @@ function renderWork() {
     $("#dataset-rows").append(tr);
   }
   $("#dataset-summary").textContent = work.size + " kilpailua · " + rows + " tulosriviä";
+  $("#undo-import").disabled = !ready || busy || pending !== null || !dataset?.athleteRegistry.history.length;
   $("#files").disabled = !ready || busy || pending !== null;
   $("#export").disabled = !ready || busy || pending !== null;
   $("#apply").disabled = busy || !pending || !pending.length;
@@ -206,9 +210,11 @@ $("#apply").addEventListener("click", () => {
       return;
     }
   }
-  const next = new Map(work);
-  pending.forEach(entry => next.set(identity(entry.item), entry.item));
-  work = next; pending = null;
+  try {
+    const nextDataset = R.importCompetitions(dataset, pending.map(entry => entry.item));
+    dataset = nextDataset; dirty = true;
+    work = new Map(dataset.competitions.map(item => [identity(item), item])); pending = null;
+  } catch (error) { say("Tuontia ei hyväksytty: " + error.message + " Aiempi aineisto säilyi ennallaan.", "error"); return; }
   $("#preview").hidden = true; renderWork();
   say("Muutokset hyväksyttiin työaineistoon. Lataa nyt uusi data.js. Projektin tiedostoa ei vielä muutettu.", "success");
 });
@@ -221,9 +227,7 @@ function exportSource() {
   if (!ready || busy || pending !== null || !work.size || ![...work.values()].every(safeItem)) throw new Error("Aineisto ei ole valmis vientiin.");
   const now = new Date();
   const date = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
-  const payload = { version: 1, snapshotDate: date, exportedAt: now.toISOString(), competitions: [...work.values()] };
-  const json = JSON.stringify(payload, null, 2).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
-  return '"use strict";\n\n// Painijatulosten yhteinen kilpailuaineisto.\nwindow.PAINI_SHARED_DATA = ' + json + ';\n';
+  return R.exportSource({ ...dataset, snapshotDate: date, competitions: [...work.values()] });
 }
 $("#export").addEventListener("click", () => {
   try {
@@ -238,9 +242,18 @@ $("#export").addEventListener("click", () => {
 try {
   const data = window.PAINI_SHARED_DATA;
   if (!data || data.version !== 1 || !Array.isArray(data.competitions) || !data.competitions.length || !data.competitions.every(safeItem)) throw new Error("data.js puuttuu tai sen sisältö ei kelpaa.");
-  work = new Map(data.competitions.map(item => [identity(item), JSON.parse(JSON.stringify(item))]));
+  R.validate(data);
+  dataset = JSON.parse(JSON.stringify(data));
+  work = new Map(dataset.competitions.map(item => [identity(item), item]));
   if (work.size !== data.competitions.length) throw new Error("data.js sisältää saman kilpailun useasti.");
   ready = true;
   say("Nykyinen yhteinen aineisto luettiin. Voit valita uudet tulostiedostot tai ladata tästä aineistosta kopion.", "success");
 } catch (error) { say("Ylläpitoa ei voitu avata: " + error.message + " Pidä yllapito.html, yllapito.js ja data.js samassa kansiossa.", "error"); }
 renderWork();
+
+$("#undo-import").addEventListener("click", () => {
+  if (!ready || busy || pending !== null) return;
+  try { dataset = R.undo(dataset); dirty = true; work = new Map(dataset.competitions.map(item => [identity(item), item])); renderWork(); say("Viimeisin muutos peruttiin. Lataa uusi data.js tallentaaksesi perumisen.", "success"); }
+  catch (error) { say(error.message, "error"); }
+});
+window.addEventListener("beforeunload", event => { if (dirty) { event.preventDefault(); event.returnValue = ""; } });

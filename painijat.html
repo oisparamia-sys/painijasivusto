@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painijamerkintöjen ylläpito</title>
+<link rel="stylesheet" href="style.css?v=20261025-identity1">
+<style>
+main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,2fr);gap:20px}.registry-layout>.card{min-width:0}#person-list{width:100%;height:330px}#person-search,#target-search,#target-person,#person-name,#split-name{width:100%}.check-label{display:flex;align-items:center;gap:10px;font-weight:400}.check-label input{min-width:20px;min-height:20px}#identity-rows td{white-space:normal;overflow-wrap:anywhere}#identity-rows input{min-width:22px;min-height:22px}#person-list option{padding:8px}#confirm-panel{border:2px solid #2357bf;padding:18px;border-radius:12px;margin-top:20px}#changes-list{padding-left:24px;overflow-wrap:anywhere}#editor h2,#editor p{overflow-wrap:anywhere}.status{white-space:pre-line}button:disabled{opacity:.5}@media(max-width:750px){.registry-layout{grid-template-columns:1fr}.table-wrap{overflow-x:auto}#identity-table{display:table;min-width:620px;white-space:normal}#identity-table thead{position:static;width:auto;height:auto;clip-path:none}#identity-table tbody{display:table-row-group}#identity-table tr{display:table-row;border:0;padding:0}#identity-table td{display:table-cell;padding:10px}#identity-table td::before{display:none}}
+</style></head><body><main>
+<h1>Painijamerkintöjen ylläpito</h1>
+<p>Yhdistä merkintöjä vain, kun olet varmistanut niiden kuuluvan samalle henkilölle. Tunnus ei itsessään todista henkilöllisyyttä.</p>
+<p class="hint">Muutokset ovat tämän välilehden muistissa. Lataa lopuksi data.js ja vie se projektikansioon. Julkinen sivu muuttuu vasta GitHubiin lähettämisen jälkeen. Älä muokkaa aineistoa samanaikaisesti toisessa ylläpitovälilehdessä.</p>
+<p id="registry-status" class="status" role="status" aria-live="polite">Luetaan rekisteriä…</p>
+<div class="card"><p id="registry-summary"></p><div class="actions">
+<button id="export-registry" type="button" disabled>Lataa päivitetty data.js</button>
+<button id="undo-registry" type="button" disabled>Peru viimeisin muutos</button>
+</div><p id="unsaved" class="hint">Ei tallentamattomia muutoksia.</p></div>
+<div class="registry-layout">
+<section class="card" aria-labelledby="list-title"><h2 id="list-title">1. Etsi merkintä</h2>
+<label for="person-search">Nimi, seura tai tunnus</label><input id="person-search" type="search" placeholder="Kirjoita nimi tai painija-…" disabled>
+<label class="check-label"><input id="only-unreviewed" type="checkbox" disabled>Vain tarkistamattomat</label>
+<p id="person-count" class="hint"></p><label for="person-list">Hakutulokset</label><select id="person-list" size="10" disabled></select>
+</section>
+<section id="editor" class="card" aria-labelledby="editor-title" hidden>
+<h2 id="editor-title">2. Tarkista merkintä</h2><p id="person-details"></p>
+<p id="original-names" class="hint"></p>
+<label for="person-name">Näkymässä käytettävä nimi</label><input id="person-name" type="text">
+<label class="check-label"><input id="person-reviewed" type="checkbox">Olen tarkistanut, että kaikki tämän tunnuksen tulokset kuuluvat samalle henkilölle.</label>
+<button id="save-person" type="button">Esikatsele nimen ja tarkistuksen tallennus</button>
+<h3>Yhdistä tähän merkintään</h3>
+<p class="hint">Alla valitun merkinnän kaikki tulokset siirtyvät nykyiselle tunnukselle. Nykyinen tunnus säilyy. Vanha tunnus säilytetään yhdistämisviittauksena. Yhdistetty merkintä palautuu tarkistamattomaksi.</p>
+<label for="target-search">Etsi siirrettävä merkintä nimellä, seuralla tai tunnuksella</label><input id="target-search" type="search">
+<label for="target-person">Siirrettävä merkintä</label><select id="target-person"><option value="">Kirjoita ensin hakusana</option></select>
+<button id="preview-merge" type="button">Esikatsele yhdistäminen</button>
+<h3>Tunnukseen liitetyt tulokset</h3><p class="hint">Alkuperäisiä nimiä, seuroja tai kilpailutuloksia ei muuteta. Rasti valitsee tuloksen erotettavaksi uudelle tunnukselle.</p>
+<div class="table-wrap"><table id="identity-table" aria-label="Valitse erotettavat tulokset"><thead><tr><th scope="col">Valitse</th><th scope="col">Kilpailu</th><th scope="col">Lähteen nimi ja seura</th><th scope="col">Sarja ja sija</th><th scope="col">Tulostunnus</th></tr></thead><tbody id="identity-rows"></tbody></table></div>
+<label for="split-name">Erotettavan merkinnän nimi</label><input id="split-name" type="text">
+<button id="preview-split" type="button">Esikatsele valittujen tulosten erottaminen</button>
+<div id="confirm-panel" hidden><h3>3. Vahvista muutos</h3><p id="confirm-text"></p><div class="actions"><button id="apply-identity" type="button">Hyväksy esikatseltu muutos</button><button id="cancel-identity" type="button">Hylkää esikatselu</button></div></div>
+</section></div>
+<section class="card"><h2>Muutoshistoria</h2><p class="hint">Viimeisimmät 20 muutosta näytetään alla. Peruminen toimii myös ladatun data.js-tiedoston uudelleen avaamisen jälkeen. Tunnusnumeroita ei käytetä uudelleen. Historia kulkee data.js-tiedoston mukana.</p><ol id="changes-list"></ol></section>
+<noscript>Työkalu tarvitsee JavaScriptin.</noscript>
+</main><script src="data.js?v=20261025-identity1" defer></script><script src="athlete-registry.js?v=20261025-identity1" defer></script><script src="painijat.js?v=20261025-identity1" defer></script></body></html>
