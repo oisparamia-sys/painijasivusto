@@ -29402,7 +29402,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "29",
           "category": "Aloittelijat",
           "resultId": "tulos-003177",
-          "athleteId": "painija-002786"
+          "athleteId": "painija-000372"
         },
         {
           "place": 4,
@@ -48413,7 +48413,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "37",
           "category": "GR U11",
           "resultId": "tulos-005252",
-          "athleteId": "painija-004861"
+          "athleteId": "painija-000372"
         },
         {
           "place": 4,
@@ -63965,7 +63965,8 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-002786",
         "name": "Olavi Suomalainen",
-        "status": "unreviewed"
+        "status": "unreviewed",
+        "mergedInto": "painija-000372"
       },
       {
         "id": "painija-002787",
@@ -74340,7 +74341,8 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-004861",
         "name": "Olavi Suomalainen",
-        "status": "unreviewed"
+        "status": "unreviewed",
+        "mergedInto": "painija-000372"
       },
       {
         "id": "painija-004862",
@@ -147482,8 +147484,136 @@ window.PAINI_SHARED_DATA = {
             }
           }
         ]
+      },
+      {
+        "label": "Yhdistä painija-002786 → painija-000372",
+        "kind": "identity",
+        "at": "2026-10-25T18:45:00.391Z",
+        "people": [
+          {
+            "id": "painija-000372",
+            "before": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "reviewed"
+            },
+            "after": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-002786",
+            "before": {
+              "id": "painija-002786",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-002786",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000372"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "resultId": "tulos-003177",
+            "before": "painija-002786",
+            "after": "painija-000372"
+          }
+        ],
+        "competitions": []
+      },
+      {
+        "label": "Muokkaa merkintää: painija-000372",
+        "kind": "identity",
+        "at": "2026-10-25T18:45:08.800Z",
+        "people": [
+          {
+            "id": "painija-000372",
+            "before": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "reviewed"
+            }
+          }
+        ],
+        "assignments": [],
+        "competitions": []
+      },
+      {
+        "label": "Yhdistä painija-004861 → painija-000372",
+        "kind": "identity",
+        "at": "2026-10-25T18:45:16.914Z",
+        "people": [
+          {
+            "id": "painija-000372",
+            "before": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "reviewed"
+            },
+            "after": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-004861",
+            "before": {
+              "id": "painija-004861",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-004861",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000372"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "resultId": "tulos-005252",
+            "before": "painija-004861",
+            "after": "painija-000372"
+          }
+        ],
+        "competitions": []
+      },
+      {
+        "label": "Muokkaa merkintää: painija-000372",
+        "kind": "identity",
+        "at": "2026-10-25T18:45:24.022Z",
+        "people": [
+          {
+            "id": "painija-000372",
+            "before": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "reviewed"
+            }
+          }
+        ],
+        "assignments": [],
+        "competitions": []
       }
     ]
   },
-  "exportedAt": "2026-10-25T18:28:25.839Z"
+  "exportedAt": "2026-10-25T18:45:36.297Z"
 };
