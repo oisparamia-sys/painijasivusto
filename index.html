@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painijatulokset</title>
-<link rel="stylesheet" href="style.css?v=20261025-profilelinks1">
+<link rel="stylesheet" href="style.css?v=20261025-pagination1">
 </head>
 <body>
 <header><div>Painijatulokset</div></header>
@@ -34,10 +34,21 @@
 <p id="selection" class="hint"></p>
 <p id="source-line" class="hint" hidden></p>
 <div class="heading"><h2 id="results-heading" tabindex="-1">Kilpailutulokset</h2><span id="count" role="status" aria-live="polite"></span></div>
+<p id="result-range" class="hint" role="status" aria-live="polite"></p>
+<nav class="result-pagination" aria-label="Tuloslistan sivut ylhäällä" hidden>
+<button class="results-prev" type="button" aria-controls="results">← Edellinen</button>
+<span class="result-page"></span>
+<button class="results-next" type="button" aria-controls="results">Seuraava →</button>
+</nav>
 <div class="table-wrap"><table aria-label="Kilpailujen sijoitukset">
 <thead><tr><th scope="col">Sija</th><th scope="col">Painija</th><th scope="col">Seura</th><th scope="col">Ikäluokka</th><th scope="col">Painoluokka</th><th scope="col">Kilpailu</th><th scope="col">Paikka ja aika</th><th scope="col">Painimuoto</th></tr></thead>
 <tbody id="results"></tbody>
 </table></div>
+<nav class="result-pagination" aria-label="Tuloslistan sivut alhaalla" hidden>
+<button class="results-prev" type="button" aria-controls="results">← Edellinen</button>
+<span class="result-page"></span>
+<button class="results-next" type="button" aria-controls="results">Seuraava →</button>
+</nav>
 <p id="empty" hidden>Hakuehdoilla ei löytynyt tuloksia. Kokeile poistaa rajauksia.</p>
 </section>
 <section id="competition-view" class="card" aria-labelledby="competition-heading" hidden>
@@ -98,9 +109,9 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineisto ei päivity automaattisesti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="data.js?v=20261025-profilelinks1" defer></script>
-<script src="athlete-registry.js?v=20261025-profilelinks1" defer></script>
-<script src="script.js?v=20261025-profilelinks1" defer></script>
+<script src="data.js?v=20261025-pagination1" defer></script>
+<script src="athlete-registry.js?v=20261025-pagination1" defer></script>
+<script src="script.js?v=20261025-pagination1" defer></script>
 </body>
 </html>
 

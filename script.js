@@ -13,6 +13,9 @@ const athleteRecords = new Map((registryReady ? sharedData.athleteRegistry.athle
 let profileState = null;
 let profileOpener = null;
 const defaultPageTitle = document.title;
+const resultsPerPage = 50;
+let resultsPage = 0;
+let lastResultsPage = 0;
 
 function status(message, kind = "") {
   $("#status").hidden = false;
@@ -90,18 +93,31 @@ function refreshFilters() {
   sourceLine.hidden = !sourceLine.childElementCount;
   render();
 }
-function render() {
+function render(keepPage = false) {
+  if (keepPage !== true) resultsPage = 0;
   const query = $("#search").value.trim().toLocaleLowerCase("fi");
   const fragment = document.createDocumentFragment();
-  let count = 0;
-  const entries = yearFilteredCompetitions().flatMap(item => item.rows.map(result => ({item, result})));
+  const entries = yearFilteredCompetitions().flatMap(item => item.rows.map(result => ({item, result}))).filter(({item,result}) =>
+    matchesStyle(item,result) &&
+    (result.name + " " + (athleteRecords.get(result.athleteId)?.name || "")).toLocaleLowerCase("fi").includes(query) &&
+    (!$("#club").value || result.club === $("#club").value) &&
+    (!$("#category").value || result.category === $("#category").value)
+  );
   entries.sort(compareResults);
-  entries.forEach(({item, result}) => {
-      if (!matchesStyle(item, result) || !((result.name + " " + (athleteRecords.get(result.athleteId)?.name || "")).toLocaleLowerCase("fi").includes(query)) ||
-        ($("#club").value && result.club !== $("#club").value) ||
-        ($("#category").value && result.category !== $("#category").value)) return;
-      count++;
+  const count = entries.length;
+  lastResultsPage = Math.max(0,Math.ceil(count/resultsPerPage)-1);
+  resultsPage = Math.max(0,Math.min(resultsPage,lastResultsPage));
+  const first = resultsPage*resultsPerPage;
+  const visible = entries.slice(first,first+resultsPerPage);
+  $("#result-range").hidden = count === 0;
+  $("#result-range").textContent = count ? "Näytetään tulokset " + (first+1) + "–" + (first+visible.length) + " / " + count + ". Haku ja rajaukset koskevat koko aineistoa." : "";
+  document.querySelectorAll(".result-pagination").forEach(el => { el.hidden = count <= resultsPerPage; });
+  document.querySelectorAll(".result-page").forEach(el => { el.textContent = "Sivu " + (resultsPage+1) + " / " + (lastResultsPage+1); });
+  document.querySelectorAll(".results-prev").forEach(button => { button.disabled = resultsPage === 0; });
+  document.querySelectorAll(".results-next").forEach(button => { button.disabled = resultsPage === lastResultsPage; });
+  visible.forEach(({item, result}) => {
       const row = document.createElement("tr");
+      row.dataset.resultId = result.resultId;
       const cell = document.createElement("td");
       const badge = document.createElement("span");
       badge.className = "place " + ({1:"gold",2:"silver",3:"bronze"}[result.place] || "");
@@ -345,6 +361,14 @@ function renderCompetitionList() {
   $("#competition-empty").hidden = filtered.length > 0;
 }
 
+document.querySelectorAll(".results-prev").forEach(button => button.addEventListener("click", () => {
+  if (resultsPage === 0) return;
+  resultsPage--; render(true); $("#results-heading").focus();
+}));
+document.querySelectorAll(".results-next").forEach(button => button.addEventListener("click", () => {
+  if (resultsPage >= lastResultsPage) return;
+  resultsPage++; render(true); $("#results-heading").focus();
+}));
 $("#reset-filters").addEventListener("click", () => {
   ["competition", "search", "club", "category", "result-style", "result-year"].forEach(id => {
     document.getElementById(id).value = "";
