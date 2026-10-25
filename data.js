@@ -6257,7 +6257,7 @@ window.PAINI_SHARED_DATA = {
           "club": "Kuopion Kisa-Veikot",
           "weight": "44",
           "category": "Pojat U13",
-          "athleteId": "painija-000597",
+          "athleteId": "painija-000372",
           "resultId": "tulos-000679"
         },
         {
@@ -15488,7 +15488,7 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-000372",
         "name": "Olavi Suomalainen",
-        "status": "unreviewed"
+        "status": "reviewed"
       },
       {
         "id": "painija-000373",
@@ -16613,7 +16613,8 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-000597",
         "name": "Olavi Suomalainen",
-        "status": "unreviewed"
+        "status": "unreviewed",
+        "mergedInto": "painija-000372"
       },
       {
         "id": "painija-000598",
@@ -19081,7 +19082,59 @@ window.PAINI_SHARED_DATA = {
         "status": "unreviewed"
       }
     ],
-    "history": []
+    "history": [
+      {
+        "label": "Yhdistä painija-000597 → painija-000372",
+        "kind": "identity",
+        "at": "2026-10-25T14:07:18.931Z",
+        "people": [
+          {
+            "id": "painija-000597",
+            "before": {
+              "id": "painija-000597",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-000597",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000372"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "resultId": "tulos-000679",
+            "before": "painija-000597",
+            "after": "painija-000372"
+          }
+        ],
+        "competitions": []
+      },
+      {
+        "label": "Muokkaa merkintää: painija-000372",
+        "kind": "identity",
+        "at": "2026-10-25T14:09:30.147Z",
+        "people": [
+          {
+            "id": "painija-000372",
+            "before": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-000372",
+              "name": "Olavi Suomalainen",
+              "status": "reviewed"
+            }
+          }
+        ],
+        "assignments": [],
+        "competitions": []
+      }
+    ]
   },
-  "exportedAt": "2026-10-25T13:32:44.154Z"
+  "exportedAt": "2026-10-25T14:09:54.865Z"
 };
