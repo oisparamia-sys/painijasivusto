@@ -82,6 +82,7 @@ function safeItem(item) {
   return valid(item) && validSource(item.source || "") && validSource(item.textSource || "");
 }
 function renderWork() {
+  renderYearSummary();
   $("#dataset-rows").replaceChildren();
   let rows = 0;
   for (const item of work.values()) {
@@ -257,3 +258,32 @@ $("#undo-import").addEventListener("click", () => {
   catch (error) { say(error.message, "error"); }
 });
 window.addEventListener("beforeunload", event => { if (dirty) { event.preventDefault(); event.returnValue = ""; } });
+
+function summaryYear(item) {
+  const match = (item.details || "").match(/\b\d{1,2}(?:\s*[-–]\s*\d{1,2})?[./]\d{1,2}[./](\d{4})\b/);
+  return match ? match[1] : "Ei päivämäärää";
+}
+function renderYearSummary() {
+  const years = new Map();
+  let totalResults = 0;
+  for (const item of work.values()) {
+    const year = summaryYear(item);
+    if (!years.has(year)) years.set(year, {competitions: 0, results: 0});
+    const counts = years.get(year);
+    counts.competitions++; counts.results += item.rows.length;
+    totalResults += item.rows.length;
+  }
+  const body = $("#year-summary-rows");
+  body.replaceChildren();
+  [...years].sort(([a],[b]) => a === "Ei päivämäärää" ? 1 : b === "Ei päivämäärää" ? -1 : Number(b)-Number(a))
+    .forEach(([year, counts]) => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th"); th.scope = "row"; th.textContent = year; tr.append(th);
+      [counts.competitions, counts.results].forEach(value => {
+        const td = document.createElement("td"); td.textContent = String(value); tr.append(td);
+      });
+      body.append(tr);
+    });
+  $("#year-total-competitions").textContent = String(work.size);
+  $("#year-total-results").textContent = String(totalResults);
+}

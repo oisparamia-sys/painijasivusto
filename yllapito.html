@@ -12,11 +12,19 @@
 <body><main>
 <h1>Kilpailuaineiston ylläpito</h1>
 <p><a href="painijat.html">Avaa painijamerkintöjen ylläpito</a></p>
-<p>Tarkista uudet tulostiedostot ja muodosta sivuston yhteinen data.js?v=20261025-identity1-tiedosto.</p>
-<p class="hint">Työkalu aloittaa samassa kansiossa olevasta data.js?v=20261025-identity1-tiedostosta. Sivuston selaimeen tekemät omat tuonnit eivät tule automaattisesti mukaan. Tiedostoja ei lähetetä verkkoon.</p>
+<p>Tarkista uudet tulostiedostot ja muodosta sivuston yhteinen data.js.</p>
+<p class="hint">Työkalu aloittaa samassa kansiossa olevasta data.js. Sivuston selaimeen tekemät omat tuonnit eivät tule automaattisesti mukaan. Tiedostoja ei lähetetä verkkoon.</p>
 <section aria-labelledby="current-title">
 <h2 id="current-title">1. Nykyinen aineisto</h2>
 <p id="dataset-summary"></p>
+<h3>Aineisto vuosittain</h3>
+<p class="hint">Taulukko päivittyy, kun hyväksyt tai perut tuonnin. Luvut kertovat tämän työaineiston sisällöstä. Tulosrivit eivät tarkoita eri painijoiden määrää.</p>
+<div class="scroll"><table aria-label="Kilpailujen ja tulosrivien määrät vuosittain">
+<thead><tr><th scope="col">Vuosi</th><th scope="col">Kilpailuja</th><th scope="col">Tulosrivejä</th></tr></thead>
+<tbody id="year-summary-rows"></tbody>
+<tfoot><tr><th scope="row">Yhteensä</th><td id="year-total-competitions"></td><td id="year-total-results"></td></tr></tfoot>
+</table></div>
+<h3>Kaikki kilpailut</h3>
 <div class="scroll"><table aria-label="Työaineiston kilpailut"><thead><tr><th scope="col">Kilpailu</th><th scope="col">Paikka ja aika</th><th scope="col">Tulosrivejä</th></tr></thead><tbody id="dataset-rows"></tbody></table></div>
 </section>
 <section aria-labelledby="import-title">
@@ -39,15 +47,15 @@
 </section>
 <section aria-labelledby="export-title">
 <h2 id="export-title">3. Lataa päivitetty aineisto</h2>
-<p>Kun olet hyväksynyt muutokset, lataa kokonainen uusi data.js?v=20261025-identity1. Se sisältää myös aiemmat kilpailut.</p>
+<p>Kun olet hyväksynyt muutokset, lataa kokonainen uusi data.js. Se sisältää myös aiemmat kilpailut.</p>
 <button id="undo-import" type="button" disabled>Peru viimeisin hyväksytty muutos</button>
-<button id="export" class="primary" type="button" disabled>Lataa data.js?v=20261025-identity1</button>
-<p class="hint">Ladattu tiedosto ei korvaa projektin tiedostoa automaattisesti. Säilytä vanha versio, siirrä lataamasi tiedosto alkuperäiseen painijasivusto-kansioon nimellä data.js?v=20261025-identity1 ja tarkista sivu Safarissa. Lähetä muutos GitHubiin vasta tarkistuksen jälkeen.</p>
-<p class="hint">Hyväksytyt muutokset ovat tämän ylläpitosivun muistissa, kunnes lataat uuden data.js?v=20261025-identity1-tiedoston. Sivun päivittäminen aloittaa uudelleen projektin nykyisestä tiedostosta. Säilytä päivitetty data.js?v=20261025-identity1 ennen kuin avaat toisen ylläpitotyökalun. Uudet tulokset saavat omat tarkistamattomat tunnukset; sama nimi ei yhdistä niitä aiempiin henkilöihin.</p>
+<button id="export" class="primary" type="button" disabled>Lataa data.js</button>
+<p class="hint">Ladattu tiedosto ei korvaa projektin tiedostoa automaattisesti. Säilytä vanha versio, siirrä lataamasi tiedosto alkuperäiseen painijasivusto-kansioon nimellä data.js ja tarkista sivu Safarissa. Lähetä muutos GitHubiin vasta tarkistuksen jälkeen.</p>
+<p class="hint">Hyväksytyt muutokset ovat tämän ylläpitosivun muistissa, kunnes lataat uuden data.js. Sivun päivittäminen aloittaa uudelleen projektin nykyisestä tiedostosta. Säilytä päivitetty data.js ennen kuin avaat toisen ylläpitotyökalun. Uudet tulokset saavat omat tarkistamattomat tunnukset; sama nimi ei yhdistä niitä aiempiin henkilöihin.</p>
 </section>
 <noscript>Tämä työkalu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="data.js?v=20261025-identity1" defer></script>
-<script src="athlete-registry.js?v=20261025-identity1" defer></script>
-<script src="yllapito.js?v=20261025-identity1" defer></script>
+<script src="data.js?v=20261025-year-summary1" defer></script>
+<script src="athlete-registry.js?v=20261025-year-summary1" defer></script>
+<script src="yllapito.js?v=20261025-year-summary1" defer></script>
 </body></html>
