@@ -133,3 +133,6 @@ a { color: #174ba9; }
 .placement-legend li { display: flex; align-items: center; gap: 10px; margin: 12px 0; overflow-wrap: anywhere; }
 .placement-swatch { display: inline-block; width: 14px; height: 14px; flex: 0 0 14px; border-radius: 3px; }
 @media (max-width: 420px) { .placement-layout { flex-direction: column; align-items: flex-start; gap: 12px; } }
+
+.profile-year-filter { margin: 20px 0; max-width: 320px; }
+.profile-year-filter select { width: 100%; min-height: 44px; font-size: 16px; }

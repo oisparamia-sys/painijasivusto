@@ -3677,7 +3677,7 @@ window.PAINI_SHARED_DATA = {
           "club": "Pori",
           "weight": "45",
           "category": "Pojat 11 - 13v",
-          "athleteId": "painija-000397",
+          "athleteId": "painija-000067",
           "resultId": "tulos-000403"
         },
         {
@@ -10450,7 +10450,7 @@ window.PAINI_SHARED_DATA = {
           "club": "Pori",
           "weight": "51",
           "category": "Pojat 11 - 13v",
-          "athleteId": "painija-000397",
+          "athleteId": "painija-000067",
           "resultId": "tulos-001138"
         },
         {
@@ -18386,7 +18386,7 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-000067",
         "name": "Oliver Isokorpi",
-        "status": "unreviewed"
+        "status": "reviewed"
       },
       {
         "id": "painija-000068",
@@ -20036,7 +20036,8 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-000397",
         "name": "Oliver Isokorpi",
-        "status": "unreviewed"
+        "status": "unreviewed",
+        "mergedInto": "painija-000067"
       },
       {
         "id": "painija-000398",
@@ -34739,8 +34740,64 @@ window.PAINI_SHARED_DATA = {
             }
           }
         ]
+      },
+      {
+        "label": "Yhdistä painija-000397 → painija-000067",
+        "kind": "identity",
+        "at": "2026-10-25T16:22:48.748Z",
+        "people": [
+          {
+            "id": "painija-000397",
+            "before": {
+              "id": "painija-000397",
+              "name": "Oliver Isokorpi",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-000397",
+              "name": "Oliver Isokorpi",
+              "status": "unreviewed",
+              "mergedInto": "painija-000067"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "resultId": "tulos-000403",
+            "before": "painija-000397",
+            "after": "painija-000067"
+          },
+          {
+            "resultId": "tulos-001138",
+            "before": "painija-000397",
+            "after": "painija-000067"
+          }
+        ],
+        "competitions": []
+      },
+      {
+        "label": "Muokkaa merkintää: painija-000067",
+        "kind": "identity",
+        "at": "2026-10-25T16:22:56.940Z",
+        "people": [
+          {
+            "id": "painija-000067",
+            "before": {
+              "id": "painija-000067",
+              "name": "Oliver Isokorpi",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-000067",
+              "name": "Oliver Isokorpi",
+              "status": "reviewed"
+            }
+          }
+        ],
+        "assignments": [],
+        "competitions": []
       }
     ]
   },
-  "exportedAt": "2026-10-25T14:52:24.893Z"
+  "exportedAt": "2026-10-25T16:23:15.129Z"
 };

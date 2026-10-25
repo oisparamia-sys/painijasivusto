@@ -174,7 +174,7 @@ function openProfile(athleteId, opener = null, updateUrl = true) {
   if (!profileState) resultsScroll = {x: window.scrollX, y: window.scrollY};
   if (opener) profileOpener = opener;
   clearProfileLinkError();
-  profileState = { athleteId };
+  profileState = { athleteId, year: "" };
   if (updateUrl) writeProfileRoute(athleteId);
   $("#search-view").hidden = true;
   $("#competition-view").hidden = true;
@@ -206,11 +206,21 @@ function closeProfile(updateUrl = true) {
 function renderProfile() {
   if (!profileState) return;
   const athlete = athleteRecords.get(profileState.athleteId);
-  const entries = [];
+  const allEntries = [];
   profileCompetitions().forEach(item => item.rows.forEach(result => {
-    if (result.athleteId === athlete.id) entries.push({ item, result });
+    if (result.athleteId === athlete.id) allEntries.push({ item, result });
   }));
-  const originalNames = new Set(entries.map(e => e.result.name));
+  const yearSelect = $("#wrestler-year");
+  options(yearSelect, allEntries.map(e => resultYear(e.item)), "Kaikki vuodet");
+  [...yearSelect.options].slice(1).sort((a,b) => {
+    if (a.value === "Ei päivämäärää") return 1;
+    if (b.value === "Ei päivämäärää") return -1;
+    return Number(b.value)-Number(a.value);
+  }).forEach(option => yearSelect.append(option));
+  yearSelect.value = profileState.year;
+  if (yearSelect.selectedIndex < 0) { yearSelect.value = ""; profileState.year = ""; }
+  const entries = allEntries.filter(e => !profileState.year || resultYear(e.item) === profileState.year);
+  const originalNames = new Set(allEntries.map(e => e.result.name));
   const nameKeys = new Set([...originalNames, athlete.name].map(normalizePerson));
   const alternativesById = new Map();
   profileCompetitions().forEach(item => item.rows.forEach(result => {
@@ -234,7 +244,7 @@ function renderProfile() {
   $("#wrestler-id").textContent = athlete.id + " · " + (athlete.status === "reviewed" ? "Ylläpito tarkistanut yhdistämisen" : "Tarkistamaton tulosryhmä");
   $("#wrestler-aliases").textContent = "Nimet lähdetuloksissa: " + [...originalNames].join(", ");
   $("#wrestler-club").textContent = "Seurat tuloksissa: " + [...new Set(entries.map(e => e.result.club))].sort((a,b) => a.localeCompare(b,"fi")).join(", ");
-  $("#wrestler-scope").textContent = "Yhteenveto kaikista tämän sivun kilpailuista. Haun rajaukset eivät rajoita tätä näkymää.";
+  $("#wrestler-scope").textContent = (profileState.year ? (profileState.year === "Ei päivämäärää" ? "Tulokset ilman tunnistettua päivämäärää." : "Vuoden " + profileState.year + " tulokset.") : "Kaikkien vuosien tulokset.") + " Yhteenveto, kuvaaja ja tuloslista koskevat valittua vuotta. Päähaun rajaukset eivät vaikuta tähän näkymään.";
   const summary = $("#wrestler-summary");
   summary.replaceChildren();
   const stats = [
@@ -562,3 +572,9 @@ function renderPlacementChart(entries) {
   ring.style.background = total ? "conic-gradient(" + segments.join(", ") + ")" : "none";
   ring.setAttribute("aria-label", total + " tulosta. " + descriptions.join(". "));
 }
+
+$("#wrestler-year").addEventListener("change", () => {
+  if (!profileState) return;
+  profileState.year = $("#wrestler-year").value;
+  renderProfile();
+});
