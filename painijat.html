@@ -13,6 +13,18 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 <button id="export-registry" type="button" disabled>Lataa päivitetty data.js</button>
 <button id="undo-registry" type="button" disabled>Peru viimeisin muutos</button>
 </div><p id="unsaved" class="hint">Ei tallentamattomia muutoksia.</p></div>
+<section class="card" aria-labelledby="duplicates-title">
+<h2 id="duplicates-title">Mahdolliset kaksoismerkinnät</h2>
+<p>Sama nimi esiintyy usealla aktiivisella tunnuksella. Vertaile alla olevia lähdetietoja. Sama nimi ei yksin tarkoita samaa henkilöä. Mitään ei yhdistetä automaattisesti.</p>
+<label for="duplicate-search">Etsi nimeä, seuraa, kilpailua tai tunnusta</label>
+<input id="duplicate-search" type="search" placeholder="Esimerkiksi Olavi Suomalainen" disabled>
+<p id="duplicate-count" class="hint" role="status" aria-live="polite"></p>
+<div id="duplicate-groups"></div>
+<div class="actions"><button id="duplicate-prev" type="button" disabled>Edelliset</button><span id="duplicate-page" class="hint"></span><button id="duplicate-next" type="button" disabled>Seuraavat</button></div>
+</section>
+<style>
+#duplicate-search{width:100%}.duplicate-group{border:1px solid #dfe7ef;border-radius:12px;padding:18px;margin:16px 0;overflow-wrap:anywhere}.duplicate-records{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}.duplicate-record{min-width:0;background:#f7f9fc;border-radius:10px;padding:14px}.duplicate-record h4{margin:0 0 8px}.duplicate-record p{margin:8px 0}.duplicate-record li{margin:8px 0}.duplicate-merge{margin-top:16px}.duplicate-merge select{width:100%;min-width:0}.duplicate-group h3{margin-top:0}.duplicate-group button{white-space:normal;max-width:100%}.duplicate-record ul{padding-left:20px}#editor-title{scroll-margin-top:20px}
+</style>
 <div class="registry-layout">
 <section class="card" aria-labelledby="list-title"><h2 id="list-title">1. Etsi merkintä</h2>
 <label for="person-search">Nimi, seura tai tunnus</label><input id="person-search" type="search" placeholder="Kirjoita nimi tai painija-…" disabled>
@@ -20,7 +32,7 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 <p id="person-count" class="hint"></p><label for="person-list">Hakutulokset</label><select id="person-list" size="10" disabled></select>
 </section>
 <section id="editor" class="card" aria-labelledby="editor-title" hidden>
-<h2 id="editor-title">2. Tarkista merkintä</h2><p id="person-details"></p>
+<h2 id="editor-title" tabindex="-1">2. Tarkista merkintä</h2><p id="person-details"></p>
 <p id="original-names" class="hint"></p>
 <label for="person-name">Näkymässä käytettävä nimi</label><input id="person-name" type="text">
 <label class="check-label"><input id="person-reviewed" type="checkbox">Olen tarkistanut, että kaikki tämän tunnuksen tulokset kuuluvat samalle henkilölle.</label>
@@ -38,4 +50,4 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 </section></div>
 <section class="card"><h2>Muutoshistoria</h2><p class="hint">Viimeisimmät 20 muutosta näytetään alla. Peruminen toimii myös ladatun data.js-tiedoston uudelleen avaamisen jälkeen. Tunnusnumeroita ei käytetä uudelleen. Historia kulkee data.js-tiedoston mukana.</p><ol id="changes-list"></ol></section>
 <noscript>Työkalu tarvitsee JavaScriptin.</noscript>
-</main><script src="data.js?v=20261025-identity1" defer></script><script src="athlete-registry.js?v=20261025-identity1" defer></script><script src="painijat.js?v=20261025-identity1" defer></script></body></html>
+</main><script src="data.js?v=20261025-duplicates1" defer></script><script src="athlete-registry.js?v=20261025-duplicates1" defer></script><script src="painijat.js?v=20261025-duplicates1" defer></script></body></html>
