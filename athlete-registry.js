@@ -27,6 +27,11 @@
         current = people.get(current.mergedInto); check(current, "Yhdistämisen kohdetta ei löydy.");
       }
     });
+    reg.athletes.forEach(a => {
+      if (a.distinctFrom === undefined) return;
+      check(Array.isArray(a.distinctFrom) && new Set(a.distinctFrom).size === a.distinctFrom.length && a.distinctFrom.every(id => people.has(id) && id !== a.id), "Eri henkilöiksi merkittyjen tunnukset eivät kelpaa.");
+      a.distinctFrom.forEach(id => check(resolve(data,a.id) !== resolve(data,id), "Eri henkilöiksi merkityt tunnukset on yhdistetty."));
+    });
     const ids = new Set(), competitionIds = new Set();
     data.competitions.forEach(c => {
       check(typeof c.title === "string" && typeof c.details === "string" && typeof c.fileInfo === "string" && Array.isArray(c.rows) && c.rows.length > 0, "Kilpailun tiedot eivät kelpaa.");
@@ -98,8 +103,38 @@
     check(sourceId !== targetId, "Et voi yhdistää merkintää itseensä.");
     return transaction(input, "Yhdistä " + sourceId + " → " + targetId, "identity", data => {
       const source = active(data, sourceId), target = active(data, targetId);
+      check(!areDifferent(data, sourceId, targetId), "Tunnukset on merkitty eri henkilöiksi. Peru merkintä ennen yhdistämistä.");
       rows(data).filter(r => r.athleteId === sourceId).forEach(r => { r.athleteId = targetId; });
       source.mergedInto = targetId; source.status = "unreviewed"; target.status = "unreviewed";
+    });
+  }
+  function differentPairs(data) {
+    const pairs = new Map();
+    data.athleteRegistry.athletes.forEach(person => (person.distinctFrom || []).forEach(other => {
+      const a = resolve(data,person.id), b = resolve(data,other);
+      if (a && b && a !== b) { const pair = [a,b].sort(); pairs.set(JSON.stringify(pair),pair); }
+    }));
+    return [...pairs.values()];
+  }
+  function areDifferent(data, a, b) {
+    const left = resolve(data,a), right = resolve(data,b);
+    return differentPairs(data).some(pair => pair.includes(left) && pair.includes(right));
+  }
+  function setDifferent(input, a, b, different = true) {
+    check(a !== b, "Valitse kaksi eri tunnusta.");
+    return transaction(input, (different ? "Merkitse eri henkilöiksi: " : "Peru eri henkilöiden merkintä: ") + a + " / " + b, "identity", data => {
+      const left = active(data,a), right = active(data,b);
+      if (different) {
+        left.distinctFrom = [...new Set([...(left.distinctFrom || []),b])];
+        right.distinctFrom = [...new Set([...(right.distinctFrom || []),a])];
+      } else {
+        data.athleteRegistry.athletes.forEach(person => {
+          if (!person.distinctFrom) return;
+          const own = resolve(data,person.id);
+          person.distinctFrom = person.distinctFrom.filter(id => !((own === a && resolve(data,id) === b) || (own === b && resolve(data,id) === a)));
+          if (!person.distinctFrom.length) delete person.distinctFrom;
+        });
+      }
     });
   }
   function split(input, sourceId, resultIds, name) {
@@ -162,5 +197,5 @@
     const json = JSON.stringify(payload, null, 2).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
     return '"use strict";\nwindow.PAINI_SHARED_DATA = ' + json + ';\n';
   }
-  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve });
+  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve, differentPairs, areDifferent, setDifferent });
 })(typeof window === "undefined" ? globalThis : window);

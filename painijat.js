@@ -32,6 +32,8 @@
     const byMembership = new Map();
     byName.forEach(group => {
       if (group.records.size < 2) return;
+      const ids = [...group.records.keys()];
+      if (!ids.some((id,i) => ids.slice(i+1).some(other => !R.areDifferent(data,id,other)))) return;
       const key = [...group.records.keys()].sort().join("|");
       if (!byMembership.has(key)) byMembership.set(key,{names:new Set(),records:group.records});
       group.names.forEach(name => byMembership.get(key).names.add(name));
@@ -58,6 +60,7 @@
     preview("Siirretään kaikki " + records.get(sourceId).count + " tulosta merkinnältä ”" + label(records.get(sourceId)) + "” merkinnälle ”" + label(records.get(targetId)) + "”. Säilyvä tunnus: " + targetId + ". Yhdistämisen jälkeen merkintä on tarkistamaton. Hyväksy vain, jos tiedät merkintöjen tarkoittavan samaa henkilöä.", () => R.merge(data, sourceId, targetId), targetId);
   }
   function renderDuplicates() {
+    renderDifferentPeople();
     const groups = duplicateGroups(), query = R.norm($("#duplicate-search").value);
     const found = groups.filter(group => R.norm([
       ...group.names,...group.records.flatMap(entry => [entry.athlete.id,...entry.names,...entry.clubs,
@@ -138,7 +141,34 @@
       target.addEventListener("change",()=>{cancel();updateSources();}); source.addEventListener("change",cancel); updateSources();
       const merge=node("button","Esikatsele näiden yhdistäminen");merge.type="button";merge.className="duplicate-preview";
       merge.addEventListener("click",()=>{if(!source.value)return say("Valitse siirrettävä tunnus vertailun alta.","error");startMerge(source.value,target.value);});
-      controls.append(targetLabel,target,sourceLabel,source,merge);card.append(controls);parent.append(card);
+      const separate = node("button","Merkitse nämä eri henkilöiksi"); separate.type="button"; separate.className="different-preview";
+      separate.addEventListener("click",()=>{
+        if (!source.value) return say("Valitse kaksi vertailtavaa tunnusta yllä olevista valinnoista.","error");
+        preview("Merkitään " + source.value + " ja " + target.value + " eri henkilöiksi. Näiden kahden välistä kaksoismerkintäehdotusta ei enää näytetä. Tulokset ja tunnukset säilyvät ennallaan. Hyväksy vain, jos tiedät kyseessä olevan eri henkilöt.",()=>R.setDifferent(data,source.value,target.value),target.value);
+      });
+      const relation = node("p",undefined,"hint");
+      const updateRelation = () => {
+        const known = source.value && R.areDifferent(data,source.value,target.value);
+        separate.disabled = !!known;
+        merge.disabled = !!known;
+        relation.textContent = known ? "Nämä tunnukset on jo merkitty eri henkilöiksi. Merkinnän voi perua alla kohdassa Eri henkilöiksi merkityt." : "Valitse molemmat tunnukset ennen yhdistämistä tai eri henkilöiksi merkitsemistä.";
+      };
+      target.addEventListener("change",updateRelation); source.addEventListener("change",updateRelation); updateRelation();
+      controls.append(targetLabel,target,sourceLabel,source,merge,separate,relation);card.append(controls);parent.append(card);
+    });
+  }
+  function renderDifferentPeople() {
+    const parent = $("#different-people-list"); parent.replaceChildren();
+    const pairs = R.differentPairs(data);
+    $("#different-people-count").textContent = pairs.length + " tarkistettua tunnusparia.";
+    const query = R.norm($("#duplicate-search").value);
+    const records = index();
+    pairs.filter(pair => R.norm(pair.map(id => records.has(id) ? label(records.get(id)) : id).join(" ")).includes(query)).slice(0,100).forEach(([a,b]) => {
+      const li = node("li");
+      li.append(node("p",[a,b].map(id=>records.has(id)?label(records.get(id)):id).join(" / ")));
+      const button = node("button","Peru eri henkilöiksi merkitseminen");button.type="button";button.className="different-restore";
+      button.addEventListener("click",()=>preview("Poistetaan eri henkilöiden merkintä tunnusten " + a + " ja " + b + " väliltä. Mahdollinen kaksoismerkintäehdotus palaa tarkistettavaksi. Tunnuksia ei yhdistetä.",()=>R.setDifferent(data,a,b,false),a));
+      li.append(button);parent.append(li);
     });
   }
   function label(entry) {
