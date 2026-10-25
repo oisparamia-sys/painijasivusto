@@ -199,6 +199,7 @@ function render() {
           const td = document.createElement("td");
           td.textContent = value; row.append(td);
         });
+      labelResultRow(row, "results");
       fragment.append(row);
     });
   });
@@ -305,7 +306,7 @@ function renderProfile() {
         }
       } catch { /* Virheellistä linkkiä ei näytetä. */ }
     }
-    row.append(sourceCell); fragment.append(row);
+    row.append(sourceCell); labelResultRow(row, "wrestler-results"); fragment.append(row);
   });
   tbody.replaceChildren(fragment);
   $("#wrestler-empty").hidden = entries.length > 0;
@@ -521,3 +522,10 @@ $("#competition-query").addEventListener("input", renderCompetitionList);
 $("#competition-sort").addEventListener("change", renderCompetitionList);
 $("#back-to-results").addEventListener("click", closeProfile);
 restore();
+
+function labelResultRow(row, bodyId) {
+  const headers = document.getElementById(bodyId).closest("table").querySelectorAll("thead th");
+  Array.from(row.cells).forEach((cell, index) => {
+    cell.dataset.label = headers[index].textContent;
+  });
+}
