@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painijatulokset</title>
-<link rel="stylesheet" href="style.css?v=20261025-search-return1">
+<link rel="stylesheet" href="style.css?v=20261025-ring1">
 </head>
 <body>
 <header><div>Painijatulokset</div></header>
@@ -88,6 +88,15 @@
   <p id="wrestler-scope" class="hint"></p>
   <p class="hint">Tulokset on liitetty sivuston omaan pysyvään tunnukseen. Alkuperäiset nimi–seura-ryhmät ovat tarkistamattomia: samaan ryhmään voi kuulua samannimisiä henkilöitä. Ylläpito voi yhdistää tai erottaa merkintöjä tarkistuksen jälkeen.</p>
   <dl id="wrestler-summary" class="profile-summary"></dl>
+  <section class="placement-chart" aria-labelledby="placement-heading">
+    <h3 id="placement-heading">Sijoitusten jakauma</h3>
+    <p class="hint">Jokainen tulosrivi lasketaan kerran. Muut sijoitukset tarkoittavat sijoja 4 ja siitä eteenpäin.</p>
+    <div class="placement-layout">
+      <div id="placement-ring" class="placement-ring" role="img"><div class="placement-center"><strong id="placement-total"></strong><span>tulosta</span></div></div>
+      <ul id="placement-legend" class="placement-legend"></ul>
+    </div>
+    <p id="placement-empty" class="hint" hidden>Ei tuloksia kuvaajaa varten.</p>
+  </section>
   <div id="same-name-clubs" class="same-name-clubs" hidden>
     <h3>Samannimisiä erillisiä merkintöjä</h3>
     <p class="hint">Näitä merkintöjä ei ole yhdistetty tähän tunnukseen. Kyseessä voi olla eri henkilö tai vahvistamaton seuranvaihdos.</p>
@@ -110,9 +119,9 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineisto ei päivity automaattisesti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="data.js?v=20261025-search-return1" defer></script>
-<script src="athlete-registry.js?v=20261025-search-return1" defer></script>
-<script src="script.js?v=20261025-search-return1" defer></script>
+<script src="data.js?v=20261025-ring1" defer></script>
+<script src="athlete-registry.js?v=20261025-ring1" defer></script>
+<script src="script.js?v=20261025-ring1" defer></script>
 </body>
 </html>
 

@@ -101,7 +101,7 @@ function render(keepPage = false) {
   const fragment = document.createDocumentFragment();
   const entries = yearFilteredCompetitions().flatMap(item => item.rows.map(result => ({item, result}))).filter(({item,result}) =>
     matchesStyle(item,result) &&
-    (result.name + " " + (athleteRecords.get(result.athleteId)?.name || "")).toLocaleLowerCase("fi").includes(query) &&
+    (matchesCompetitionQuery(result.name, query) || matchesCompetitionQuery(athleteRecords.get(result.athleteId)?.name || "", query)) &&
     (!$("#club").value || result.club === $("#club").value) &&
     (!$("#category").value || result.category === $("#category").value)
   );
@@ -250,6 +250,7 @@ function renderProfile() {
     term.textContent = label; value.textContent = String(number);
     card.append(term, value); summary.append(card);
   });
+  renderPlacementChart(entries);
   const tbody = $("#wrestler-results");
   const fragment = document.createDocumentFragment();
   entries.forEach(({item, result}) => {
@@ -313,7 +314,7 @@ function openCompetition(item) {
   refreshFilters();
   showView("results");
 }
-// Approximate matching is limited to competition search, never athlete identities.
+// Approximate matching filters visible results only; it never changes athlete identities.
 function searchWords(value) {
   return value.normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase("fi").match(/[\p{L}\p{N}]+/gu) || [];
 }
@@ -331,6 +332,7 @@ function wordDistance(a, b) {
 function matchesCompetitionQuery(text, query) {
   const words = searchWords(text);
   return searchWords(query).every(token => words.some(word => {
+    if (/\d/u.test(token)) return word.startsWith(token);
     if (word.includes(token)) return true;
     if (token.length < 3 || /\d/u.test(token) || /\d/u.test(word)) return false;
     const tolerance = token.length >= 7 ? 2 : 1;
@@ -523,3 +525,40 @@ $("#copy-wrestler-link").addEventListener("click",async () => {
 window.addEventListener("popstate",routeProfileFromUrl);
 window.addEventListener("hashchange",routeProfileFromUrl);
 routeProfileFromUrl();
+
+function renderPlacementChart(entries) {
+  const labels = ["Voitot (1. sija)", "2. sija", "3. sija", "Muut sijoitukset"];
+  const colors = ["#b58113", "#64748b", "#b86a38", "#2456aa"];
+  const counts = [0, 0, 0, 0];
+  entries.forEach(({result}) => counts[Math.min(result.place, 4)-1]++);
+  const total = entries.length;
+  const ring = $("#placement-ring");
+  const legend = $("#placement-legend");
+  legend.replaceChildren();
+  $("#placement-total").textContent = String(total);
+  $("#placement-empty").hidden = total > 0;
+  ring.hidden = total === 0;
+  legend.hidden = total === 0;
+  let angle = 0;
+  const segments = [];
+  const descriptions = [];
+  counts.forEach((count, index) => {
+    const percent = total ? count/total*100 : 0;
+    const formatted = new Intl.NumberFormat("fi-FI", {maximumFractionDigits: 1}).format(percent);
+    if (count) {
+      segments.push(colors[index] + " " + angle + "% " + (angle+percent) + "%");
+      angle += percent;
+    }
+    const li = document.createElement("li");
+    const swatch = document.createElement("span");
+    swatch.className = "placement-swatch";
+    swatch.style.backgroundColor = colors[index];
+    swatch.setAttribute("aria-hidden", "true");
+    const text = document.createElement("span");
+    text.textContent = labels[index] + ": " + count + " (" + formatted + " %)";
+    li.append(swatch, text); legend.append(li);
+    descriptions.push(text.textContent);
+  });
+  ring.style.background = total ? "conic-gradient(" + segments.join(", ") + ")" : "none";
+  ring.setAttribute("aria-label", total + " tulosta. " + descriptions.join(". "));
+}
