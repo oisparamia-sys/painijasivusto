@@ -6293,7 +6293,7 @@ window.PAINI_SHARED_DATA = {
           "club": "Kuopion Kisa-Veikot",
           "weight": "54",
           "category": "Pojat U13",
-          "athleteId": "painija-000601",
+          "athleteId": "painija-000410",
           "resultId": "tulos-000683"
         },
         {
@@ -15678,7 +15678,7 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-000410",
         "name": "Esa Niskanen",
-        "status": "unreviewed"
+        "status": "reviewed"
       },
       {
         "id": "painija-000411",
@@ -16634,7 +16634,8 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-000601",
         "name": "Esa Niskanen",
-        "status": "unreviewed"
+        "status": "unreviewed",
+        "mergedInto": "painija-000410"
       },
       {
         "id": "painija-000602",
@@ -19133,8 +19134,59 @@ window.PAINI_SHARED_DATA = {
         ],
         "assignments": [],
         "competitions": []
+      },
+      {
+        "label": "Yhdistä painija-000601 → painija-000410",
+        "kind": "identity",
+        "at": "2026-10-25T14:25:24.907Z",
+        "people": [
+          {
+            "id": "painija-000601",
+            "before": {
+              "id": "painija-000601",
+              "name": "Esa Niskanen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-000601",
+              "name": "Esa Niskanen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000410"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "resultId": "tulos-000683",
+            "before": "painija-000601",
+            "after": "painija-000410"
+          }
+        ],
+        "competitions": []
+      },
+      {
+        "label": "Muokkaa merkintää: painija-000410",
+        "kind": "identity",
+        "at": "2026-10-25T14:25:37.702Z",
+        "people": [
+          {
+            "id": "painija-000410",
+            "before": {
+              "id": "painija-000410",
+              "name": "Esa Niskanen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-000410",
+              "name": "Esa Niskanen",
+              "status": "reviewed"
+            }
+          }
+        ],
+        "assignments": [],
+        "competitions": []
       }
     ]
   },
-  "exportedAt": "2026-10-25T14:09:54.865Z"
+  "exportedAt": "2026-10-25T14:25:47.735Z"
 };
