@@ -525,6 +525,13 @@ $("#delete").addEventListener("click", () => {
   refresh();
   status("Oma tuonti poistettiin tästä selaimesta. Jos kilpailu kuuluu yhteiseen aineistoon, sen yhteinen versio näkyy edelleen. Alkuperäistä .txt-tiedostoa ei poistettu.");
 });
+$("#reset-filters").addEventListener("click", () => {
+  ["competition", "search", "club", "category", "result-style", "result-year"].forEach(id => {
+    document.getElementById(id).value = "";
+  });
+  $("#result-sort").value = "newest";
+  refreshFilters();
+});
 $("#competition").addEventListener("change", refreshFilters);
 $("#result-style").addEventListener("change", refreshFilters);
 $("#result-year").addEventListener("change", refreshFilters);
