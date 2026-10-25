@@ -1,6 +1,4 @@
 "use strict";
-
-// Painijatulosten yhteinen kilpailuaineisto.
 window.PAINI_SHARED_DATA = {
   "version": 1,
   "snapshotDate": "2026-10-24",
@@ -245,7 +243,15 @@ window.PAINI_SHARED_DATA = {
       "skipped": 0,
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Karkkila/indexFIN.htm",
       "textSource": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Karkkila/FIN686317952_tab.txt",
-      "fileInfo": "Yhteinen kilpailuaineisto · 2025-02-15_Karkkila.txt"
+      "fileInfo": "Yhteinen kilpailuaineisto · 2025-02-15_Karkkila.txt",
+      "categoryStyles": {
+        "Tytöt": "freestyle",
+        "Pojat": "greco"
+      },
+      "styleSources": {
+        "Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Karkkila/FIN68631795217tlges.htm",
+        "Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Karkkila/FIN68631795224tlges.htm"
+      }
     },
     {
       "title": "Tampereen Voimailijat Ikäkausikilpailut",
@@ -773,7 +779,25 @@ window.PAINI_SHARED_DATA = {
       "skipped": 0,
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/indexFIN.htm",
       "textSource": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN78274944_tab.txt",
-      "fileInfo": "Yhteinen kilpailuaineisto · 2025-03-08_Tampere.txt"
+      "fileInfo": "Yhteinen kilpailuaineisto · 2025-03-08_Tampere.txt",
+      "categoryStyles": {
+        "U9 Tytöt": "freestyle",
+        "U9 Pojat": "greco",
+        "U12 Tytöt": "freestyle",
+        "U12 Pojat": "greco",
+        "U15 Pojat": "greco",
+        "U17 Tytöt": "freestyle",
+        "U17 Pojat": "greco"
+      },
+      "styleSources": {
+        "U9 Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494441tlges.htm",
+        "U9 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494442tlges.htm",
+        "U12 Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494443tlges.htm",
+        "U12 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494444tlges.htm",
+        "U15 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494446tlges.htm",
+        "U17 Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494447tlges.htm",
+        "U17 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494448tlges.htm"
+      }
     },
     {
       "title": "Kr painin KLL SM-kilpailut",
@@ -3177,7 +3201,25 @@ window.PAINI_SHARED_DATA = {
       "skipped": 0,
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/indexFIN.htm",
       "textSource": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/FIN1226367360_tab.txt",
-      "fileInfo": "Yhteinen kilpailuaineisto · 2025-05-17_Ilmajoki.txt"
+      "fileInfo": "Yhteinen kilpailuaineisto · 2025-05-17_Ilmajoki.txt",
+      "categoryStyles": {
+        "Pojat 7 - 10v": "greco",
+        "Pojat 14 - 16v": "greco",
+        "Pojat 17 - 20v": "greco",
+        "Tytöt 7 - 10v": "greco",
+        "Tytöt 15 - 20v": "greco",
+        "Tytöt 11 - 14v": "greco",
+        "Pojat 11 - 13v": "greco"
+      },
+      "styleSources": {
+        "Pojat 7 - 10v": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/FIN122636736021tlges.htm",
+        "Pojat 14 - 16v": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/FIN122636736022tlges.htm",
+        "Pojat 17 - 20v": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/FIN122636736023tlges.htm",
+        "Tytöt 7 - 10v": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/FIN122636736024tlges.htm",
+        "Tytöt 15 - 20v": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/FIN122636736025tlges.htm",
+        "Tytöt 11 - 14v": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/FIN122636736026tlges.htm",
+        "Pojat 11 - 13v": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/FIN122636736027tlges.htm"
+      }
     },
     {
       "title": "TaPs painit 20.05.2025",
@@ -3397,7 +3439,23 @@ window.PAINI_SHARED_DATA = {
       "skipped": 0,
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/indexFIN.htm",
       "textSource": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/FIN1583210879_tab.txt",
-      "fileInfo": "Yhteinen kilpailuaineisto · 2025-05-20_Tampere.txt"
+      "fileInfo": "Yhteinen kilpailuaineisto · 2025-05-20_Tampere.txt",
+      "categoryStyles": {
+        "Pojat U12": "greco",
+        "Pojat U15": "greco",
+        "Pojat U09": "greco",
+        "Tytöt U17": "freestyle",
+        "Tytöt ja Pojat U17": "freestyle",
+        "Tytöt ja Pojat U15": "freestyle"
+      },
+      "styleSources": {
+        "Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/FIN15832108791tlges.htm",
+        "Pojat U15": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/FIN15832108792tlges.htm",
+        "Pojat U09": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/FIN15832108793tlges.htm",
+        "Tytöt U17": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/FIN15832108794tlges.htm",
+        "Tytöt ja Pojat U17": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/FIN15832108795tlges.htm",
+        "Tytöt ja Pojat U15": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/FIN15832108796tlges.htm"
+      }
     },
     {
       "title": "TaPs painit 4.12.2025",
@@ -3652,7 +3710,17 @@ window.PAINI_SHARED_DATA = {
       "skipped": 1,
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
       "textSource": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983_tab.txt",
-      "fileInfo": "Yhteinen kilpailuaineisto · 2025-12-04_Tampere.txt"
+      "fileInfo": "Yhteinen kilpailuaineisto · 2025-12-04_Tampere.txt",
+      "categoryStyles": {
+        "Pojat U12": "freestyle",
+        "Tytöt ja pojat U17": "freestyle",
+        "Tytöt ja Pojat U12": "freestyle"
+      },
+      "styleSources": {
+        "Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN16971779831tlges.htm",
+        "Tytöt ja pojat U17": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN16971779832tlges.htm",
+        "Tytöt ja Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN16971779835tlges.htm"
+      }
     },
     {
       "title": "Symppispainit+Piirinmestaruuskisat",
@@ -4383,7 +4451,19 @@ window.PAINI_SHARED_DATA = {
       "skipped": 0,
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Vantaa/indexFIN.htm",
       "textSource": "",
-      "fileInfo": "Yhteinen kilpailuaineisto · 2025-04-26_Vantaa (4).txt"
+      "fileInfo": "Yhteinen kilpailuaineisto · 2025-04-26_Vantaa (4).txt",
+      "categoryStyles": {
+        "Symppis Pojat": "greco",
+        "Symppis Tytöt": "freestyle",
+        "Pm Pojat": "greco",
+        "Pm Tytöt": "freestyle"
+      },
+      "styleSources": {
+        "Symppis Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Vantaa/FIN167686182434tlges.htm",
+        "Symppis Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Vantaa/FIN167686182435tlges.htm",
+        "Pm Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Vantaa/FIN167686182436tlges.htm",
+        "Pm Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Vantaa/FIN167686182437tlges.htm"
+      }
     }
   ]
 };

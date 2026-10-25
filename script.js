@@ -81,7 +81,7 @@ function combined(items = localCompetitions) {
   const merged = new Map(sharedCompetitions.map(item => [identity(item), item]));
   items.forEach(item => {
     const previous = merged.get(identity(item));
-    merged.set(identity(item), { ...item, source: previous?.source || "" });
+    merged.set(identity(item), { ...item, source: previous?.source || "", categoryStyles: previous?.categoryStyles || {}, styleSources: previous?.styleSources || {} });
   });
   return [...merged.values()];
 }
@@ -149,7 +149,7 @@ function refreshFilters() {
     return Number(b.value) - Number(a.value);
   }).forEach(option => yearSelect.append(option));
   const items = yearFilteredCompetitions();
-  const rows = items.flatMap(item => item.rows);
+  const rows = items.flatMap(item => item.rows.filter(row => matchesStyle(item, row)));
   options($("#club"), rows.map(row => row.club), "Kaikki seurat");
   options($("#category"), rows.map(row => row.category), "Kaikki ikäluokat");
   $("#delete").disabled = importing || !localCompetitions.some(item => identity(item) === $("#competition").value);
@@ -184,7 +184,7 @@ function render() {
   const entries = yearFilteredCompetitions().flatMap(item => item.rows.map(result => ({item, result})));
   entries.sort(compareResults);
   entries.forEach(({item, result}) => {
-      if (!result.name.toLocaleLowerCase("fi").includes(query) ||
+      if (!matchesStyle(item, result) || !result.name.toLocaleLowerCase("fi").includes(query) ||
         ($("#club").value && result.club !== $("#club").value) ||
         ($("#category").value && result.category !== $("#category").value)) return;
       count++;
@@ -205,7 +205,7 @@ function render() {
       nameButton.addEventListener("click", () => openProfile(result.name, result.club,
         $("#competition").value === "demo", nameButton));
       nameCell.append(nameButton); row.append(nameCell);
-      [result.club, result.category, result.weight + " kg", item.title, item.details || "–"]
+      [result.club, result.category, result.weight + " kg", item.title, item.details || "–", styleLabel(item, result)]
         .forEach(value => {
           const td = document.createElement("td");
           td.textContent = value; row.append(td);
@@ -316,7 +316,9 @@ function renderProfile() {
         }
       } catch { /* Virheellistä linkkiä ei näytetä. */ }
     }
-    row.append(sourceCell); labelResultRow(row, "wrestler-results"); fragment.append(row);
+    row.append(sourceCell);
+    const styleCell = document.createElement("td"); styleCell.textContent = styleLabel(item, result); row.append(styleCell);
+    labelResultRow(row, "wrestler-results"); fragment.append(row);
   });
   tbody.replaceChildren(fragment);
   $("#wrestler-empty").hidden = entries.length > 0;
@@ -343,6 +345,7 @@ function showView(view, focus = true) {
   if (focus) $(view === "results" ? "#results-heading" : "#competition-heading").focus();
 }
 function openCompetition(item) {
+  $("#result-style").value = "";
   $("#competition").value = identity(item);
   $("#search").value = "";
   $("#club").value = "";
@@ -523,6 +526,7 @@ $("#delete").addEventListener("click", () => {
   status("Oma tuonti poistettiin tästä selaimesta. Jos kilpailu kuuluu yhteiseen aineistoon, sen yhteinen versio näkyy edelleen. Alkuperäistä .txt-tiedostoa ei poistettu.");
 });
 $("#competition").addEventListener("change", refreshFilters);
+$("#result-style").addEventListener("change", refreshFilters);
 $("#result-year").addEventListener("change", refreshFilters);
 $("#result-sort").addEventListener("change", render);
 $("#search").addEventListener("input", render);
@@ -561,4 +565,15 @@ function compareResults(a, b) {
   }
   // Samana päivänä säilytetään lähdeaineiston sarjajärjestys.
   return 0;
+}
+
+function resultStyle(item, row) {
+  const code = item.categoryStyles?.[row.category];
+  return ["greco", "freestyle", "women"].includes(code) ? code : "unknown";
+}
+function styleLabel(item, row) {
+  return {greco:"Kreikkalais-roomalainen", freestyle:"Vapaapaini", women:"Naispaini", unknown:"Ei vahvistettu"}[resultStyle(item, row)];
+}
+function matchesStyle(item, row) {
+  return !$("#result-style").value || resultStyle(item, row) === $("#result-style").value;
 }

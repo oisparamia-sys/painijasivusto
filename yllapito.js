@@ -184,7 +184,7 @@ $("#files").addEventListener("change", async event => {
         const id = identity(parsed);
         if (seen.has(id)) throw new Error("Sama kilpailu on jo tämän erän esikatselussa. Tämä tiedosto jätettiin pois; tarkista esikatseltu versio.");
         const previous = work.get(id);
-        const item = { ...parsed, source: previous?.source || "", textSource: previous?.textSource || "", fileInfo: "Yhteinen kilpailuaineisto · " + file.name };
+        const item = { ...parsed, categoryStyles: previous?.categoryStyles || {}, styleSources: previous?.styleSources || {}, source: previous?.source || "", textSource: previous?.textSource || "", fileInfo: "Yhteinen kilpailuaineisto · " + file.name };
         if (!safeItem(item)) throw new Error("Kilpailun tiedot eivät kelpaa vientiin.");
         seen.add(id);
         entries.push({ fileName: file.name, item, previous, diff: difference(previous, item) });

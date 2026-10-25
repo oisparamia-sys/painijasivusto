@@ -31,6 +31,7 @@
 <p id="data-summary" class="hint"></p>
 <div class="filters">
 <div class="field"><label for="competition">Kilpailu</label><select id="competition"></select></div>
+<div class="field"><label for="result-style">Painimuoto</label><select id="result-style"><option value="">Kaikki painimuodot</option><option value="greco">Kreikkalais-roomalainen</option><option value="freestyle">Vapaapaini</option><option value="women">Naispaini</option><option value="unknown">Ei vahvistettu</option></select></div>
 <div class="field"><label for="result-year">Vuosi</label><select id="result-year"></select></div>
 <div class="field"><label for="result-sort">Tulosten järjestys</label><select id="result-sort"><option value="newest">Uusimmat ensin</option><option value="oldest">Vanhimmat ensin</option><option value="place">Paras sijoitus ensin</option></select></div>
 <div class="field"><label for="search">Painijan nimi</label><input id="search" type="search" placeholder="Kirjoita nimi…"></div>
@@ -38,11 +39,12 @@
 <div class="field"><label for="category">Ikäluokka</label><select id="category"></select></div>
 </div>
 <p class="hint">Avaa painijan tulosnäkymä napsauttamalla hänen nimeään. Päivämäärättömät kilpailut ovat aikajärjestyksessä viimeisinä. Painijan omassa näkymässä näkyvät kaikkien vuosien tulokset.</p>
+<p class="hint">Painimuoto perustuu lähdesivun sarjatietoon. Puuttuva tieto näkyy muodossa ”Ei vahvistettu”.</p>
 <p id="selection" class="hint"></p>
 <p id="source-line" class="hint" hidden></p>
 <div class="heading"><h2 id="results-heading" tabindex="-1">Kilpailutulokset</h2><span id="count" role="status" aria-live="polite"></span></div>
 <div class="table-wrap"><table aria-label="Kilpailujen sijoitukset">
-<thead><tr><th scope="col">Sija</th><th scope="col">Painija</th><th scope="col">Seura</th><th scope="col">Ikäluokka</th><th scope="col">Painoluokka</th><th scope="col">Kilpailu</th><th scope="col">Paikka ja aika</th></tr></thead>
+<thead><tr><th scope="col">Sija</th><th scope="col">Painija</th><th scope="col">Seura</th><th scope="col">Ikäluokka</th><th scope="col">Painoluokka</th><th scope="col">Kilpailu</th><th scope="col">Paikka ja aika</th><th scope="col">Painimuoto</th></tr></thead>
 <tbody id="results"></tbody>
 </table></div>
 <p id="empty" hidden>Hakuehdoilla ei löytynyt tuloksia. Kokeile poistaa rajauksia.</p>
@@ -87,7 +89,7 @@
       <thead><tr>
         <th scope="col">Sija</th><th scope="col">Kilpailu</th>
         <th scope="col">Paikka ja aika</th><th scope="col">Ikäluokka</th>
-        <th scope="col">Painoluokka</th><th scope="col">Lähde</th>
+        <th scope="col">Painoluokka</th><th scope="col">Lähde</th><th scope="col">Painimuoto</th>
       </tr></thead>
       <tbody id="wrestler-results"></tbody>
     </table>

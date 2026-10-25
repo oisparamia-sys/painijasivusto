@@ -106,3 +106,7 @@ a { color: #174ba9; }
   #results td:nth-child(4), #results td:nth-child(5) { display: block; }
   #results td:nth-child(4)::before, #results td:nth-child(5)::before { min-width: 0; }
 }
+
+@media (max-width: 700px) {
+  #results td:nth-child(8), #wrestler-results td:nth-child(7) { grid-column: 1 / -1; }
+}
