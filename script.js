@@ -12,6 +12,8 @@ const athleteRecords = new Map((registryReady ? sharedData.athleteRegistry.athle
 
 let profileState = null;
 let profileOpener = null;
+let resultsScroll = null;
+let restoreGeneration = 0;
 const defaultPageTitle = document.title;
 const resultsPerPage = 50;
 let resultsPage = 0;
@@ -168,6 +170,8 @@ function openProfile(athleteId, opener = null, updateUrl = true) {
   if (!registryReady) return;
   athleteId = window.PainiRegistry.resolve(sharedData, athleteId);
   if (!athleteId || !athleteRecords.has(athleteId)) return;
+  restoreGeneration++;
+  if (!profileState) resultsScroll = {x: window.scrollX, y: window.scrollY};
   if (opener) profileOpener = opener;
   clearProfileLinkError();
   profileState = { athleteId };
@@ -180,14 +184,23 @@ function openProfile(athleteId, opener = null, updateUrl = true) {
   renderProfile();
   $("#wrestler-title").focus();
 }
-function closeProfile() {
-  writeProfileRoute(null);
+function closeProfile(updateUrl = true) {
+  if (updateUrl) writeProfileRoute(null);
   document.title = defaultPageTitle;
   profileState = null;
   $("#wrestler-view").hidden = true;
   $("#search-view").hidden = false;
   const target = profileOpener?.isConnected ? profileOpener : $("#search");
-  target.focus();
+  target.focus({preventScroll: true});
+  const saved = resultsScroll;
+  const generation = ++restoreGeneration;
+  if (saved) {
+    window.scrollTo({left: saved.x, top: saved.y, behavior: "instant"});
+    requestAnimationFrame(() => {
+      if (!profileState && generation === restoreGeneration)
+        window.scrollTo({left: saved.x, top: saved.y, behavior: "instant"});
+    });
+  }
   profileOpener = null;
 }
 function renderProfile() {
@@ -300,11 +313,35 @@ function openCompetition(item) {
   refreshFilters();
   showView("results");
 }
+// Approximate matching is limited to competition search, never athlete identities.
+function searchWords(value) {
+  return value.normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase("fi").match(/[\p{L}\p{N}]+/gu) || [];
+}
+function wordDistance(a, b) {
+  const rows = Array.from({length: a.length + 1}, () => Array(b.length + 1).fill(0));
+  for (let i = 0; i <= a.length; i++) rows[i][0] = i;
+  for (let j = 0; j <= b.length; j++) rows[0][j] = j;
+  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
+    rows[i][j] = Math.min(rows[i-1][j]+1, rows[i][j-1]+1, rows[i-1][j-1]+(a[i-1] === b[j-1] ? 0 : 1));
+    if (i > 1 && j > 1 && a[i-1] === b[j-2] && a[i-2] === b[j-1])
+      rows[i][j] = Math.min(rows[i][j], rows[i-2][j-2]+1);
+  }
+  return rows[a.length][b.length];
+}
+function matchesCompetitionQuery(text, query) {
+  const words = searchWords(text);
+  return searchWords(query).every(token => words.some(word => {
+    if (word.includes(token)) return true;
+    if (token.length < 3 || /\d/u.test(token) || /\d/u.test(word)) return false;
+    const tolerance = token.length >= 7 ? 2 : 1;
+    return Math.abs(word.length-token.length) <= tolerance && wordDistance(token,word) <= tolerance;
+  }));
+}
 function renderCompetitionList() {
   const query = normalizePerson($("#competition-query").value);
   const sort = $("#competition-sort").value;
   const filtered = competitions.filter(item =>
-    normalizePerson(item.title + " " + item.details).includes(query)
+    matchesCompetitionQuery(item.title + " " + item.details, query)
   );
   filtered.sort((a, b) => {
     if (sort !== "name") {
@@ -454,7 +491,7 @@ function clearProfileLinkError() {
 }
 function routeProfileFromUrl() {
   const params = new URLSearchParams(location.hash.slice(1));
-  if (!params.has("painija")) { clearProfileLinkError(); if (profileState) showView("results",false,false); return; }
+  if (!params.has("painija")) { clearProfileLinkError(); if (profileState) closeProfile(false); return; }
   if (!registryReady) return;
   const requested = params.get("painija");
   const resolved = /^painija-\d{6,}$/.test(requested) ? window.PainiRegistry.resolve(sharedData,requested) : null;

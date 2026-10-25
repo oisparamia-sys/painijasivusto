@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painijatulokset</title>
-<link rel="stylesheet" href="style.css?v=20261025-pagination1">
+<link rel="stylesheet" href="style.css?v=20261025-search-return1">
 </head>
 <body>
 <header><div>Painijatulokset</div></header>
@@ -57,7 +57,8 @@
   <div class="filters">
     <div class="field">
       <label for="competition-query">Etsi kilpailua</label>
-      <input id="competition-query" type="search" placeholder="Esimerkiksi Tampere tai 2025…">
+      <input aria-describedby="competition-search-help" id="competition-query" type="search" placeholder="Esimerkiksi Tampere tai 2026…">
+      <p id="competition-search-help" class="hint">Voit hakea nimellä, paikkakunnalla tai vuodella. Haku sietää pieniä kirjoitusvirheitä.</p>
     </div>
     <div class="field">
       <label for="competition-sort">Järjestys</label>
@@ -109,9 +110,9 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineisto ei päivity automaattisesti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="data.js?v=20261025-pagination1" defer></script>
-<script src="athlete-registry.js?v=20261025-pagination1" defer></script>
-<script src="script.js?v=20261025-pagination1" defer></script>
+<script src="data.js?v=20261025-search-return1" defer></script>
+<script src="athlete-registry.js?v=20261025-search-return1" defer></script>
+<script src="script.js?v=20261025-search-return1" defer></script>
 </body>
 </html>
 
