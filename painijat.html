@@ -20,6 +20,12 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 <p>Yhdistä merkintöjä vain, kun olet varmistanut niiden kuuluvan samalle henkilölle. Tunnus ei itsessään todista henkilöllisyyttä.</p>
 <p class="hint">Muutokset ovat tämän välilehden muistissa. Lataa lopuksi data.js ja vie se projektikansioon. Julkinen sivu muuttuu vasta GitHubiin lähettämisen jälkeen. Älä muokkaa aineistoa samanaikaisesti toisessa ylläpitovälilehdessä.</p>
 <p id="registry-status" class="status" role="status" aria-live="polite">Luetaan rekisteriä…</p>
+<section id="confirm-panel" class="card" aria-labelledby="confirm-heading" hidden>
+<h2 id="confirm-heading" tabindex="-1">Vahvista muutos</h2>
+<p id="confirm-overview"></p>
+<details id="confirm-details"><summary>Näytä esikatsellut muutokset kokonaan</summary><p id="confirm-text" style="white-space:pre-line;overflow-wrap:anywhere"></p></details>
+<div class="actions"><button id="apply-identity" type="button">Hyväksy esikatseltu muutos</button><button id="cancel-identity" type="button">Hylkää esikatselu</button></div>
+</section>
 <div class="card"><p id="registry-summary"></p><div class="actions">
 <button id="export-registry" type="button" disabled>Lataa päivitetty data.js</button>
 <button id="undo-registry" type="button" disabled>Peru viimeisin muutos</button>
@@ -89,8 +95,8 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 <div class="table-wrap"><table id="identity-table" aria-label="Valitse erotettavat tulokset"><thead><tr><th scope="col">Valitse</th><th scope="col">Kilpailu</th><th scope="col">Lähteen nimi ja seura</th><th scope="col">Sarja ja sija</th><th scope="col">Tulostunnus</th></tr></thead><tbody id="identity-rows"></tbody></table></div>
 <label for="split-name">Erotettavan merkinnän nimi</label><input id="split-name" type="text">
 <button id="preview-split" type="button">Esikatsele valittujen tulosten erottaminen</button>
-<div id="confirm-panel" hidden><h3>3. Vahvista muutos</h3><p id="confirm-text" style="white-space:pre-line"></p><div class="actions"><button id="apply-identity" type="button">Hyväksy esikatseltu muutos</button><button id="cancel-identity" type="button">Hylkää esikatselu</button></div></div>
+
 </section></div>
 <section class="card"><h2>Muutoshistoria</h2><p class="hint">Viimeisimmät 20 muutosta näytetään alla. Peruminen toimii myös ladatun data.js-tiedoston uudelleen avaamisen jälkeen. Tunnusnumeroita ei käytetä uudelleen. Historia kulkee data.js-tiedoston mukana.</p><ol id="changes-list"></ol></section>
 <noscript>Työkalu tarvitsee JavaScriptin.</noscript>
-</main><script src="data.js?v=20261026-name-club1" defer></script><script src="athlete-registry.js?v=20261026-name-club1" defer></script><script src="painijat.js?v=20261026-name-club1" defer></script></body></html>
+</main><script src="data.js?v=20261026-preview-fix1" defer></script><script src="athlete-registry.js?v=20261026-preview-fix1" defer></script><script src="painijat.js?v=20261026-preview-fix1" defer></script></body></html>

@@ -314,8 +314,11 @@
     try {
       const next = compute(); // Validate and compute on a copy before asking the editor to apply it.
       pending = { next, nextId }; $("#confirm-text").textContent = text;
+      $("#confirm-overview").textContent = text.split("\n")[0];
+      $("#confirm-details").open = !text.includes("\n");
       $("#confirm-panel").hidden = false; $("#export-registry").disabled = true; $("#undo-registry").disabled = true;
-      $("#apply-identity").focus();
+      $("#confirm-heading").focus({preventScroll:true});
+      $("#confirm-panel").scrollIntoView({block:"start"});
     } catch (error) { say(error.message, "error"); }
   }
   $("#auto-name-club").addEventListener("click",()=>{
