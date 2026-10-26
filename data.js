@@ -32276,7 +32276,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "32",
           "category": "Pojat 7 - 13v",
           "resultId": "tulos-003491",
-          "athleteId": "painija-003100"
+          "athleteId": "painija-000975"
         },
         {
           "place": 4,
@@ -66479,7 +66479,8 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-003100",
         "name": "Vili Hulttinen",
-        "status": "unreviewed"
+        "status": "unreviewed",
+        "mergedInto": "painija-000975"
       },
       {
         "id": "painija-003101",
@@ -189473,8 +189474,37 @@ window.PAINI_SHARED_DATA = {
           }
         ],
         "competitions": []
+      },
+      {
+        "label": "Yhdistä painija-003100 → painija-000975",
+        "kind": "identity",
+        "at": "2026-10-26T18:01:11.220Z",
+        "people": [
+          {
+            "id": "painija-003100",
+            "before": {
+              "id": "painija-003100",
+              "name": "Vili Hulttinen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-003100",
+              "name": "Vili Hulttinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000975"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "resultId": "tulos-003491",
+            "before": "painija-003100",
+            "after": "painija-000975"
+          }
+        ],
+        "competitions": []
       }
     ]
   },
-  "exportedAt": "2026-10-26T17:14:42.714Z"
+  "exportedAt": "2026-10-26T18:01:15.815Z"
 };
