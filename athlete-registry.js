@@ -169,7 +169,49 @@
       person.name = name.trim(); person.status = reviewed ? "reviewed" : "unreviewed";
     });
   }
-  function importCompetitions(input, incoming) {
+  function nameClubPlan(data) {
+    validate(data);
+    const people = new Map(data.athleteRegistry.athletes.filter(a=>!a.mergedInto).map(a=>[a.id,a]));
+    const counts = new Map(); rows(data).forEach(r=>counts.set(r.athleteId,(counts.get(r.athleteId)||0)+1));
+    const groups = new Map();
+    data.competitions.forEach(comp=>{
+      if (/\bkll\b|koululiikuntaliit/i.test(comp.title)) return;
+      comp.rows.forEach(row=>{
+        const name=norm(row.name),club=norm(row.club);
+        if (name.split(" ").length<2) return;
+        const key=JSON.stringify([name,club]);
+        if(!groups.has(key)) groups.set(key,{name:row.name,club:row.club,ids:new Set()});
+        groups.get(key).ids.add(row.athleteId);
+      });
+    });
+    const candidates=[...groups.values()].filter(group=>group.ids.size>1);
+    const memberships=new Map(); candidates.forEach(group=>group.ids.forEach(id=>memberships.set(id,(memberships.get(id)||0)+1)));
+    const distinct=new Set(differentPairs(data).map(pair=>JSON.stringify(pair)));
+    const plan=[],skipped=[];
+    candidates.forEach(group=>{
+      const ids=[...group.ids];
+      const blocked=ids.some((id,i)=>ids.slice(i+1).some(other=>distinct.has(JSON.stringify([id,other].sort()))));
+      const ambiguous=ids.some(id=>memberships.get(id)>1);
+      if(blocked||ambiguous){skipped.push({name:group.name,club:group.club,reason:blocked?"Merkitty eri henkilöiksi":"Tunnus kuuluu useaan mahdolliseen nimi–seura-ryhmään"});return;}
+      ids.sort((a,b)=>(people.get(b).status==="reviewed")-(people.get(a).status==="reviewed")||(counts.get(b)||0)-(counts.get(a)||0)||a.localeCompare(b));
+      const [target,...sources]=ids;
+      plan.push({name:group.name,club:group.club,target,sources,results:sources.reduce((n,id)=>n+(counts.get(id)||0),0)});
+    });
+    return {groups:plan,skipped,mergedProfiles:plan.reduce((n,g)=>n+g.sources.length,0),movedResults:plan.reduce((n,g)=>n+g.results,0)};
+  }
+  function applyNameClub(data, plan) {
+    const people=new Map(data.athleteRegistry.athletes.map(a=>[a.id,a]));
+    const assignment=new Map();
+    plan.groups.forEach(group=>{
+      const target=people.get(group.target); target.status="unreviewed";
+      group.sources.forEach(id=>{const source=people.get(id);source.mergedInto=group.target;source.status="unreviewed";assignment.set(id,group.target);});
+    });
+    rows(data).forEach(row=>{if(assignment.has(row.athleteId))row.athleteId=assignment.get(row.athleteId);});
+  }
+  function autoMergeNameClub(input) {
+    return transaction(input,"Yhdistä sama nimi ja seura", "identity", data=>applyNameClub(data,nameClubPlan(data)));
+  }
+  function importCompetitions(input, incoming, options = {}) {
     return transaction(input, "Hyväksy kilpailutuonti (" + incoming.length + ")", "import", data => {
       const work = new Map(data.competitions.map(c => [compKey(c), c])), seen = new Set();
       incoming.forEach(original => {
@@ -190,6 +232,7 @@
         work.set(key, c);
       });
       data.competitions = [...work.values()];
+      if (options.autoMergeNameClub === true) applyNameClub(data,nameClubPlan(data));
     });
   }
   function undo(input) {
@@ -213,5 +256,5 @@
     const json = JSON.stringify(payload, null, 2).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
     return '"use strict";\nwindow.PAINI_SHARED_DATA = ' + json + ';\n';
   }
-  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve, differentPairs, areDifferent, setDifferent, mergeMany });
+  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve, differentPairs, areDifferent, setDifferent, mergeMany, nameClubPlan, autoMergeNameClub });
 })(typeof window === "undefined" ? globalThis : window);

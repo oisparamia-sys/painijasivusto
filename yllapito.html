@@ -32,6 +32,9 @@
 <label for="files">LigaDB:n tab-erotellut .txt- tai .tsv-tiedostot</label>
 <input id="files" type="file" multiple accept=".txt,.tsv,text/plain,text/tab-separated-values" disabled>
 <p class="hint">Voit valita monta tiedostoa kerralla. Kilpailu tunnistetaan nimen ja paikka-/päivämäärärivin perusteella. Tarkista nämä ennen hyväksymistä, jotta eri kilpailut eivät korvaa toisiaan.</p>
+<label style="display:flex;gap:10px;align-items:flex-start"><input id="auto-merge-name-club" type="checkbox" checked> Yhdistä tuonnin hyväksymisen yhteydessä saman koko nimen ja seuran merkinnät automaattisesti koko työaineistossa.</label>
+<p class="hint">KLL:n kaupunkimerkinnät ja eri henkilöiksi merkityt parit jätetään ulkopuolelle. Sama nimi ja seura voivat kuulua myös eri henkilöille. Yhdistämiset sisältyvät tuonnin perumiseen.</p>
+<p id="auto-import-summary" class="hint"></p>
 <p id="status" class="status" role="status" aria-live="polite">Luetaan yhteistä aineistoa…</p>
 <div id="preview" hidden>
 <h3>Esikatselu</h3>
@@ -56,7 +59,7 @@
 </section>
 <noscript>Tämä työkalu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="data.js?v=20261025-competition-warning1" defer></script>
-<script src="athlete-registry.js?v=20261025-competition-warning1" defer></script>
-<script src="yllapito.js?v=20261025-competition-warning1" defer></script>
+<script src="data.js?v=20261026-name-club1" defer></script>
+<script src="athlete-registry.js?v=20261026-name-club1" defer></script>
+<script src="yllapito.js?v=20261026-name-club1" defer></script>
 </body></html>

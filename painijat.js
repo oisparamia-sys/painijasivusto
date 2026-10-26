@@ -192,6 +192,11 @@
       li.append(button);parent.append(li);
     });
   }
+  function renderAutoSummary() {
+    const plan=R.nameClubPlan(data);
+    $("#auto-summary").textContent=plan.groups.length+" yhdistettävää ryhmää · "+plan.mergedProfiles+" poistuvaa erillistä profiilia · "+plan.movedResults+" siirtyvää tulosta. Tarkistettavaksi jää "+plan.skipped.length+" moniselitteistä tai eri henkilöiksi merkittyä ryhmää.";
+    $("#auto-name-club").disabled=!plan.groups.length;
+  }
   function preferredPair(a,b) {
     const rank = x => x.athlete.status === "reviewed" ? 1 : 0;
     return [a,b].sort((x,y)=>rank(y)-rank(x)||y.count-x.count||x.athlete.id.localeCompare(y.athlete.id));
@@ -303,7 +308,7 @@
     $("#unsaved").textContent = dirty ? "Työaineistossa on muutoksia. Lataa päivitetty data.js ennen sivun sulkemista." : "Ei tallentamattomia muutoksia.";
     const list = $("#changes-list"); list.replaceChildren();
     data.athleteRegistry.history.slice(-20).reverse().forEach(h => { const li = document.createElement("li"); li.textContent = h.label + " · " + h.at; list.append(li); });
-    selectedPairs.clear(); renderList(); renderEditor(); renderDuplicates(); renderStrong();
+    renderAutoSummary(); selectedPairs.clear(); renderList(); renderEditor(); renderDuplicates(); renderStrong();
   }
   function preview(text, compute, nextId = selectedId) {
     try {
@@ -313,6 +318,12 @@
       $("#apply-identity").focus();
     } catch (error) { say(error.message, "error"); }
   }
+  $("#auto-name-club").addEventListener("click",()=>{
+    if(!data)return;
+    const plan=R.nameClubPlan(data);if(!plan.groups.length)return;
+    const lines=plan.groups.map(g=>g.name+" · "+g.club+": "+g.sources.join(", ")+" → "+g.target+" ("+g.results+" tulosta)");
+    preview("Yhdistetään automaattisesti "+plan.groups.length+" ryhmää samalla koko nimellä ja seuralla. "+plan.mergedProfiles+" erillistä profiilia yhdistyy ja "+plan.movedResults+" tulosta siirtyy.\n\n"+lines.join("\n")+"\n\nKoko ajon voi perua yhdellä painalluksella. Hyväksymisen jälkeen lataa päivitetty data.js.",()=>R.autoMergeNameClub(data),plan.groups[0].target);
+  });
   $("#strong-search").addEventListener("input",()=>{cancel();strongPage=0;renderStrong();});
   $("#strong-prev").addEventListener("click",()=>{cancel();strongPage--;renderStrong();});
   $("#strong-next").addEventListener("click",()=>{cancel();strongPage++;renderStrong();});
