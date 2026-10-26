@@ -3,6 +3,8 @@
   const $ = selector => document.querySelector(selector), R = window.PainiRegistry;
   let data, selectedId = "", pending = null, dirty = false;
   let duplicatePage = 0;
+  let strongPage = 0;
+  const selectedPairs = new Map();
   const duplicatePageSize = 10;
   const say = (text, kind = "") => { $("#registry-status").textContent = text; $("#registry-status").dataset.kind = kind; };
   const people = () => data.athleteRegistry.athletes.filter(a => !a.mergedInto);
@@ -16,6 +18,14 @@
     data.competitions.forEach(item => item.rows.forEach(row => {
       const x = map.get(row.athleteId); x.names.add(row.name); x.matchNames.add(row.name); x.clubs.add(row.club); x.count++; x.results.push({item,row});
     })); return map;
+  }
+  let relationData = null, relationKeys = new Set();
+  function knownDifferent(a,b) {
+    if (relationData !== data) {
+      relationKeys = new Set(R.differentPairs(data).map(pair=>JSON.stringify([...pair].sort())));
+      relationData = data;
+    }
+    return relationKeys.has(JSON.stringify([a,b].sort()));
   }
   function duplicateGroups() {
     const byName = new Map();
@@ -33,7 +43,7 @@
     byName.forEach(group => {
       if (group.records.size < 2) return;
       const ids = [...group.records.keys()];
-      if (!ids.some((id,i) => ids.slice(i+1).some(other => !R.areDifferent(data,id,other)))) return;
+      if (!ids.some((id,i) => ids.slice(i+1).some(other => !knownDifferent(id,other)))) return;
       const key = [...group.records.keys()].sort().join("|");
       if (!byMembership.has(key)) byMembership.set(key,{names:new Set(),records:group.records});
       group.names.forEach(name => byMembership.get(key).names.add(name));
@@ -129,6 +139,17 @@
       });
       scroll.append(columns);
       card.append(scroll);
+      const quick = node("div",undefined,"actions");
+      for (let a=0;a<group.records.length;a++) for (let b=a+1;b<group.records.length;b++) {
+        const pair=[group.records[a],group.records[b]];
+        if (knownDifferent(pair[0].athlete.id,pair[1].athlete.id)) continue;
+        const [targetEntry,sourceEntry]=preferredPair(pair[0],pair[1]);
+        const button=node("button","Yhdistä " + sourceEntry.athlete.id + " → " + targetEntry.athlete.id);
+        button.type="button";button.className="quick-merge";
+        button.addEventListener("click",()=>startMerge(sourceEntry.athlete.id,targetEntry.athlete.id));
+        quick.append(button);
+      }
+      card.append(node("p","Pikayhdistäminen säilyttää ensisijaisesti tarkistetun tunnuksen, muuten eniten tuloksia sisältävän tunnuksen. Voit vaihtaa suunnan alla olevista valinnoista.","hint"),quick);
       const controls = node("div",undefined,"duplicate-merge"), targetLabel=node("label","Säilytettävä tunnus"),sourceLabel=node("label","Siirrettävä tunnus");
       const target=node("select"),source=node("select"); target.id="duplicate-target-"+i; source.id="duplicate-source-"+i;
       target.className="duplicate-target"; source.className="duplicate-source"; targetLabel.htmlFor=target.id; sourceLabel.htmlFor=source.id;
@@ -148,7 +169,7 @@
       });
       const relation = node("p",undefined,"hint");
       const updateRelation = () => {
-        const known = source.value && R.areDifferent(data,source.value,target.value);
+        const known = source.value && knownDifferent(source.value,target.value);
         separate.disabled = !!known;
         merge.disabled = !!known;
         relation.textContent = known ? "Nämä tunnukset on jo merkitty eri henkilöiksi. Merkinnän voi perua alla kohdassa Eri henkilöiksi merkityt." : "Valitse molemmat tunnukset ennen yhdistämistä tai eri henkilöiksi merkitsemistä.";
@@ -170,6 +191,71 @@
       button.addEventListener("click",()=>preview("Poistetaan eri henkilöiden merkintä tunnusten " + a + " ja " + b + " väliltä. Mahdollinen kaksoismerkintäehdotus palaa tarkistettavaksi. Tunnuksia ei yhdistetä.",()=>R.setDifferent(data,a,b,false),a));
       li.append(button);parent.append(li);
     });
+  }
+  function preferredPair(a,b) {
+    const rank = x => x.athlete.status === "reviewed" ? 1 : 0;
+    return [a,b].sort((x,y)=>rank(y)-rank(x)||y.count-x.count||x.athlete.id.localeCompare(y.athlete.id));
+  }
+  function strongEvidence(a,b) {
+    if (!a.count || !b.count || knownDifferent(a.athlete.id,b.athlete.id)) return null;
+    const names = new Set([...a.matchNames].map(R.norm));
+    if (![...b.matchNames].some(name=>names.has(R.norm(name)))) return null;
+    const comps = new Set(a.results.map(e=>R.compKey(e.item)));
+    if (b.results.some(e=>comps.has(R.compKey(e.item)))) return null;
+    for (const left of a.results) for (const right of b.results) {
+      if (/\bkll\b|koululiikuntaliit/i.test(left.item.title+" "+right.item.title)) continue;
+      const yearA=left.item.details.match(/\b20\d{2}\b/),yearB=right.item.details.match(/\b20\d{2}\b/);
+      if (!yearA || !yearB || Math.abs(Number(yearA[0])-Number(yearB[0]))>1) continue;
+      if (R.norm(left.row.club)!==R.norm(right.row.club) || R.norm(left.row.category)!==R.norm(right.row.category) || R.norm(left.row.weight)!==R.norm(right.row.weight)) continue;
+      return {club:left.row.club,category:left.row.category,weight:left.row.weight, left,right};
+    }
+    return null;
+  }
+  function strongCandidates() {
+    const found = new Map();
+    duplicateGroups().forEach(group=>{
+      for(let i=0;i<group.records.length;i++) for(let j=i+1;j<group.records.length;j++) {
+        const a=group.records[i],b=group.records[j],key=[a.athlete.id,b.athlete.id].sort().join("|");
+        if(found.has(key)) continue;
+        const evidence=strongEvidence(a,b);if(!evidence)continue;
+        const [target,source]=preferredPair(a,b);found.set(key,{key,target,source,evidence});
+      }
+    });return [...found.values()];
+  }
+  function selectionStatus() {
+    $("#strong-selected").textContent = selectedPairs.size + " tarkistettua paria valittu. Sama tunnus voi olla vain yhdessä erän parissa.";
+    $("#strong-apply").disabled = !selectedPairs.size;
+  }
+  function renderStrong() {
+    const query=R.norm($("#strong-search").value);
+    const candidates=strongCandidates().filter(p=>R.norm(label(p.target)+" "+label(p.source)).includes(query));
+    const pages=Math.max(1,Math.ceil(candidates.length/10));strongPage=Math.min(strongPage,pages-1);
+    $("#strong-count").textContent=candidates.length+" vahvaa ehdotusta. Tarkista kilpailut ennen valintaa.";
+    $("#strong-page").textContent="Sivu "+(strongPage+1)+" / "+pages;
+    $("#strong-prev").disabled=strongPage===0;$("#strong-next").disabled=strongPage===pages-1;
+    const list=$("#strong-list");list.replaceChildren();
+    candidates.slice(strongPage*10,strongPage*10+10).forEach(pair=>{
+      const card=node("article",undefined,"strong-pair");
+      const labelEl=node("label"),box=node("input");box.type="checkbox";box.className="strong-select";box.checked=selectedPairs.has(pair.key);
+      labelEl.append(box,node("span",pair.target.athlete.name+" · "+pair.source.athlete.id+" → "+pair.target.athlete.id));card.append(labelEl);
+      const e=pair.evidence;
+      card.append(node("p","Täsmäävät: nimi · seura "+e.club+" · ikäluokka "+e.category+" · painoluokka "+e.weight+" kg"));
+      card.append(node("p",e.left.item.title+" · "+e.left.item.details+" / "+e.right.item.title+" · "+e.right.item.details));
+      card.append(node("p","Säilyy: "+label(pair.target)+". Siirretään: "+label(pair.source),"hint"));
+      box.addEventListener("change",()=>{
+        cancel();
+        if(box.checked){
+          const ids=[pair.target.athlete.id,pair.source.athlete.id];
+          if([...selectedPairs.values()].some(p=>ids.includes(p.target.athlete.id)||ids.includes(p.source.athlete.id))){box.checked=false;return say("Sama tunnus on jo valitussa parissa. Yhdistä ensin valittu pari ja tarkista jäljelle jäävä ehdotus uudelleen.","error");}
+          selectedPairs.set(pair.key,pair);
+        }else selectedPairs.delete(pair.key);
+        selectionStatus();
+      });
+      const compare=node("button","Vertaa kaikkia tuloksia");compare.type="button";
+      compare.addEventListener("click",()=>{$("#duplicate-search").value=pair.target.athlete.id;duplicatePage=0;renderDuplicates();$("#duplicates-title").scrollIntoView({block:"start"});});
+      const merge=node("button","Yhdistä tämä pari");merge.type="button";merge.className="strong-merge";merge.addEventListener("click",()=>startMerge(pair.source.athlete.id,pair.target.athlete.id));
+      card.append(compare,merge);list.append(card);
+    });selectionStatus();
   }
   function label(entry) {
     return entry.athlete.name + " · " + entry.athlete.id + " · " + [...entry.clubs].join(", ") + " · " + entry.count + " tulosta" + (entry.athlete.status === "reviewed" ? " · tarkistettu" : " · tarkistamaton");
@@ -217,7 +303,7 @@
     $("#unsaved").textContent = dirty ? "Työaineistossa on muutoksia. Lataa päivitetty data.js ennen sivun sulkemista." : "Ei tallentamattomia muutoksia.";
     const list = $("#changes-list"); list.replaceChildren();
     data.athleteRegistry.history.slice(-20).reverse().forEach(h => { const li = document.createElement("li"); li.textContent = h.label + " · " + h.at; list.append(li); });
-    renderList(); renderEditor(); renderDuplicates();
+    selectedPairs.clear(); renderList(); renderEditor(); renderDuplicates(); renderStrong();
   }
   function preview(text, compute, nextId = selectedId) {
     try {
@@ -227,6 +313,15 @@
       $("#apply-identity").focus();
     } catch (error) { say(error.message, "error"); }
   }
+  $("#strong-search").addEventListener("input",()=>{cancel();strongPage=0;renderStrong();});
+  $("#strong-prev").addEventListener("click",()=>{cancel();strongPage--;renderStrong();});
+  $("#strong-next").addEventListener("click",()=>{cancel();strongPage++;renderStrong();});
+  $("#strong-apply").addEventListener("click",()=>{
+    const pairs=[...selectedPairs.values()];if(!pairs.length)return;
+    const mapping=pairs.map(p=>[p.source.athlete.id,p.target.athlete.id]);
+    const text="Yhdistetään "+pairs.length+" itse tarkistamaasi paria:\n"+pairs.map(p=>p.source.athlete.name+": "+p.source.athlete.id+" → "+p.target.athlete.id+" ("+p.source.count+" siirtyvää tulosta)").join("\n")+"\nKoko erän voi perua yhdellä Peru viimeisin muutos -painalluksella. Tallenna lopuksi data.js.";
+    preview(text,()=>R.mergeMany(data,mapping),pairs[0].target.athlete.id);
+  });
   $("#person-search").addEventListener("input", renderList);
   $("#duplicate-search").addEventListener("input",()=>{cancel();duplicatePage=0;renderDuplicates();});
   $("#duplicate-prev").addEventListener("click",()=>{cancel();duplicatePage--;renderDuplicates();});
@@ -268,7 +363,7 @@
   window.addEventListener("beforeunload", event => { if (dirty) { event.preventDefault(); event.returnValue = ""; } });
   try {
     R.validate(window.PAINI_SHARED_DATA); data = JSON.parse(JSON.stringify(window.PAINI_SHARED_DATA));
-    ["#person-search", "#person-list", "#only-unreviewed", "#duplicate-search"].forEach(selector => { $(selector).disabled = false; }); render();
+    ["#person-search", "#person-list", "#only-unreviewed", "#duplicate-search", "#strong-search"].forEach(selector => { $(selector).disabled = false; }); render();
     say("Rekisteri luettu. Mahdollisten kaksoismerkintöjen lista auttaa vertailussa. Nykyiset yhdistämiset ja tarkistustilat säilyvät; ehdotukset eivät muuta aineistoa.", "success");
   } catch (error) { say("Rekisteriä ei voitu avata: " + error.message + " Pidä data.js, athlete-registry.js, painijat.html, painijat.js ja style.css samassa kansiossa.", "error"); }
 })();

@@ -108,6 +108,22 @@
       source.mergedInto = targetId; source.status = "unreviewed"; target.status = "unreviewed";
     });
   }
+  function mergeMany(input, pairs) {
+    check(Array.isArray(pairs) && pairs.length > 0, "Valitse vähintään yksi ehdotus.");
+    const used = new Set();
+    pairs.forEach(([source,target]) => {
+      check(source !== target && !used.has(source) && !used.has(target), "Sama tunnus esiintyy useassa valinnassa. Yhdistä nämä ehdotukset yksi kerrallaan.");
+      used.add(source); used.add(target);
+    });
+    return transaction(input, "Yhdistä valitut ehdotukset (" + pairs.length + ")", "identity", data => {
+      pairs.forEach(([sourceId,targetId]) => {
+        const source = active(data,sourceId), target = active(data,targetId);
+        check(!areDifferent(data,sourceId,targetId), "Eri henkilöiksi merkittyä paria ei voi yhdistää.");
+        rows(data).filter(r=>r.athleteId===sourceId).forEach(r=>{r.athleteId=targetId;});
+        source.mergedInto=targetId; source.status="unreviewed"; target.status="unreviewed";
+      });
+    });
+  }
   function differentPairs(data) {
     const pairs = new Map();
     data.athleteRegistry.athletes.forEach(person => (person.distinctFrom || []).forEach(other => {
@@ -197,5 +213,5 @@
     const json = JSON.stringify(payload, null, 2).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
     return '"use strict";\nwindow.PAINI_SHARED_DATA = ' + json + ';\n';
   }
-  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve, differentPairs, areDifferent, setDifferent });
+  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve, differentPairs, areDifferent, setDifferent, mergeMany });
 })(typeof window === "undefined" ? globalThis : window);
