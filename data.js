@@ -36619,7 +36619,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "48",
           "category": "Pojat 13v",
           "resultId": "tulos-003968",
-          "athleteId": "painija-003577"
+          "athleteId": "painija-003018"
         },
         {
           "place": 3,
@@ -65126,7 +65126,7 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-003018",
         "name": "Aatos Pelto-Lampola",
-        "status": "unreviewed"
+        "status": "reviewed"
       },
       {
         "id": "painija-003019",
@@ -67921,7 +67921,8 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-003577",
         "name": "Aatos Pelto-Lampola",
-        "status": "unreviewed"
+        "status": "unreviewed",
+        "mergedInto": "painija-003018"
       },
       {
         "id": "painija-003578",
@@ -147612,8 +147613,59 @@ window.PAINI_SHARED_DATA = {
         ],
         "assignments": [],
         "competitions": []
+      },
+      {
+        "label": "Yhdistä painija-003577 → painija-003018",
+        "kind": "identity",
+        "at": "2026-10-26T16:31:04.252Z",
+        "people": [
+          {
+            "id": "painija-003577",
+            "before": {
+              "id": "painija-003577",
+              "name": "Aatos Pelto-Lampola",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-003577",
+              "name": "Aatos Pelto-Lampola",
+              "status": "unreviewed",
+              "mergedInto": "painija-003018"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "resultId": "tulos-003968",
+            "before": "painija-003577",
+            "after": "painija-003018"
+          }
+        ],
+        "competitions": []
+      },
+      {
+        "label": "Muokkaa merkintää: painija-003018",
+        "kind": "identity",
+        "at": "2026-10-26T16:31:13.099Z",
+        "people": [
+          {
+            "id": "painija-003018",
+            "before": {
+              "id": "painija-003018",
+              "name": "Aatos Pelto-Lampola",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-003018",
+              "name": "Aatos Pelto-Lampola",
+              "status": "reviewed"
+            }
+          }
+        ],
+        "assignments": [],
+        "competitions": []
       }
     ]
   },
-  "exportedAt": "2026-10-25T18:45:36.297Z"
+  "exportedAt": "2026-10-26T16:31:26.459Z"
 };
