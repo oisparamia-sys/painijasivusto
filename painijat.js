@@ -4,6 +4,7 @@
   let data, selectedId = "", pending = null, dirty = false;
   let duplicatePage = 0;
   let strongPage = 0;
+  let kllPage = 0;
   const selectedPairs = new Map();
   const duplicatePageSize = 10;
   const say = (text, kind = "") => { $("#registry-status").textContent = text; $("#registry-status").dataset.kind = kind; };
@@ -192,6 +193,63 @@
       li.append(button);parent.append(li);
     });
   }
+  function isKll(item) { return /\bkll\b|koululiikuntaliit/i.test(item.title); }
+  function kllCandidates() {
+    const found=new Map();
+    duplicateGroups().forEach(group=>{
+      for(let i=0;i<group.records.length;i++)for(let j=i+1;j<group.records.length;j++){
+        const a=group.records[i],b=group.records[j];
+        if(knownDifferent(a.athlete.id,b.athlete.id))continue;
+        let kll,club;
+        if(a.results.some(e=>isKll(e.item)) && !a.results.some(e=>!isKll(e.item)) && b.results.some(e=>!isKll(e.item))){kll=a;club=b;}
+        else if(b.results.some(e=>isKll(e.item)) && !b.results.some(e=>!isKll(e.item)) && a.results.some(e=>!isKll(e.item))){kll=b;club=a;}
+        else continue;
+        const key=[a.athlete.id,b.athlete.id].sort().join("|");
+        found.set(key,{kll,club});
+      }
+    });return [...found.values()];
+  }
+  function renderKll() {
+    const query=R.norm($("#kll-search").value);
+    const candidates=kllCandidates().filter(p=>R.norm(label(p.kll)+" "+label(p.club)).includes(query));
+    const pages=Math.max(1,Math.ceil(candidates.length/10));kllPage=Math.min(kllPage,pages-1);
+    $("#kll-count").textContent=candidates.length+" tarkistettavaa paria. Sama nimi ei yksin varmista henkilöllisyyttä.";
+    $("#kll-page").textContent="Sivu "+(kllPage+1)+" / "+pages;
+    $("#kll-prev").disabled=kllPage===0;$("#kll-next").disabled=kllPage===pages-1;
+    const parent=$("#kll-list");parent.replaceChildren();
+    candidates.slice(kllPage*10,kllPage*10+10).forEach(pair=>{
+      const card=node("article",undefined,"kll-pair");card.append(node("h3",pair.kll.athlete.name));
+      const wrap=node("div",undefined,"table-wrap"),table=node("table",undefined,"kll-table");table.setAttribute("aria-label","KLL- ja seuraprofiilin vertailu: "+pair.kll.athlete.name);
+      const head=node("thead"),hr=node("tr");["Tieto","KLL-merkintä","Seuraprofiili"].forEach(text=>{const th=node("th",text);th.scope="col";hr.append(th);});head.append(hr);table.append(head);
+      const body=node("tbody");
+      const values=(entry,type)=>{
+        if(type==="profile")return [entry.athlete.name,entry.athlete.id];
+        const records=type==="source"&&entry===pair.club?entry.results.filter(e=>!isKll(e.item)):entry.results;
+        if(type==="source")return [...new Set(records.map(e=>e.row.club))];
+        if(type==="competition")return [...new Set(records.map(e=>e.item.title+" · "+e.item.details))];
+        if(type==="category")return [...new Set(records.map(e=>e.row.category))];
+        if(type==="weight")return [...new Set(records.map(e=>e.row.weight+" kg"))];
+        return [entry.count+" tulosta koko profiilissa"];
+      };
+      [["Nimi ja tunnus","profile"],["Paikkakunta / seura lähteessä","source"],["Kilpailut ja päivämäärät","competition"],["Ikäluokat","category"],["Painoluokat","weight"],["Tulosmäärä","count"]].forEach(([title,type])=>{
+        const tr=node("tr"),th=node("th",title);th.scope="row";tr.append(th);
+        const left=values(pair.kll,type),right=values(pair.club,type);
+        [left,right].forEach((items,i)=>{
+          const td=node("td"),list=node("ul");items.forEach(value=>{
+            const li=node("li",value);
+            if(["category","weight"].includes(type) && (i?left:right).some(other=>R.norm(other)===R.norm(value))){li.className="shared-comparison-value";li.append(node("span","Sama lähdetieto","shared-comparison-label"));}
+            list.append(li);
+          });td.append(list);tr.append(td);
+        });body.append(tr);
+      });table.append(body);wrap.append(table);card.append(wrap);
+      const [target,source]=preferredPair(pair.kll,pair.club);
+      card.append(node("p","Yhdistettäessä säilyy "+target.athlete.id+". Alkuperäiset paikkakunta- ja seuratiedot säilyvät tulosriveillä.","hint"));
+      const actions=node("div",undefined,"actions"),merge=node("button","Yhdistä nämä profiilit"),different=node("button","Nämä ovat eri henkilöt");merge.type="button";different.type="button";merge.className="kll-merge";different.className="kll-different";
+      merge.addEventListener("click",()=>startMerge(source.athlete.id,target.athlete.id));
+      different.addEventListener("click",()=>preview("Merkitään "+pair.kll.athlete.id+" ja "+pair.club.athlete.id+" eri henkilöiksi. Tuloksia ei siirretä. Päätöksen voi perua.",()=>R.setDifferent(data,pair.kll.athlete.id,pair.club.athlete.id),target.athlete.id));
+      actions.append(merge,different);card.append(actions);parent.append(card);
+    });
+  }
   function renderAutoSummary() {
     const plan=R.nameClubPlan(data);
     $("#auto-summary").textContent=plan.groups.length+" yhdistettävää ryhmää · "+plan.mergedProfiles+" poistuvaa erillistä profiilia · "+plan.movedResults+" siirtyvää tulosta. Tarkistettavaksi jää "+plan.skipped.length+" moniselitteistä tai eri henkilöiksi merkittyä ryhmää.";
@@ -308,7 +366,7 @@
     $("#unsaved").textContent = dirty ? "Työaineistossa on muutoksia. Lataa päivitetty data.js ennen sivun sulkemista." : "Ei tallentamattomia muutoksia.";
     const list = $("#changes-list"); list.replaceChildren();
     data.athleteRegistry.history.slice(-20).reverse().forEach(h => { const li = document.createElement("li"); li.textContent = h.label + " · " + h.at; list.append(li); });
-    renderAutoSummary(); selectedPairs.clear(); renderList(); renderEditor(); renderDuplicates(); renderStrong();
+    renderAutoSummary(); selectedPairs.clear(); renderList(); renderEditor(); renderDuplicates(); renderStrong(); renderKll();
   }
   function preview(text, compute, nextId = selectedId) {
     try {
@@ -321,6 +379,9 @@
       $("#confirm-panel").scrollIntoView({block:"start"});
     } catch (error) { say(error.message, "error"); }
   }
+  $("#kll-search").addEventListener("input",()=>{cancel();kllPage=0;renderKll();});
+  $("#kll-prev").addEventListener("click",()=>{cancel();kllPage--;renderKll();});
+  $("#kll-next").addEventListener("click",()=>{cancel();kllPage++;renderKll();});
   $("#auto-name-club").addEventListener("click",()=>{
     if(!data)return;
     const plan=R.nameClubPlan(data);if(!plan.groups.length)return;
@@ -377,7 +438,7 @@
   window.addEventListener("beforeunload", event => { if (dirty) { event.preventDefault(); event.returnValue = ""; } });
   try {
     R.validate(window.PAINI_SHARED_DATA); data = JSON.parse(JSON.stringify(window.PAINI_SHARED_DATA));
-    ["#person-search", "#person-list", "#only-unreviewed", "#duplicate-search", "#strong-search"].forEach(selector => { $(selector).disabled = false; }); render();
+    ["#person-search", "#person-list", "#only-unreviewed", "#duplicate-search", "#strong-search", "#kll-search"].forEach(selector => { $(selector).disabled = false; }); render();
     say("Rekisteri luettu. Mahdollisten kaksoismerkintöjen lista auttaa vertailussa. Nykyiset yhdistämiset ja tarkistustilat säilyvät; ehdotukset eivät muuta aineistoa.", "success");
   } catch (error) { say("Rekisteriä ei voitu avata: " + error.message + " Pidä data.js, athlete-registry.js, painijat.html, painijat.js ja style.css samassa kansiossa.", "error"); }
 })();
