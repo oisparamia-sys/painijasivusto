@@ -1,0 +1,57 @@
+name: Kilpailujen automaattihaku
+on:
+  schedule:
+    - cron: '23 2 * * *'
+  workflow_dispatch:
+    inputs:
+      year:
+        description: 'Haettavat vuodet (auto = uusin vuosi, sunnuntaisin kaikki)'
+        type: choice
+        default: auto
+        options: [auto, all, '2022', '2023', '2024', '2025', '2026']
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: kilpailuhaku
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Hae ja tarkista lähteet
+        env:
+          SEARCH_YEAR: ${{ inputs.year || 'auto' }}
+        run: python tools/collect.py "$SEARCH_YEAR"
+      - name: Päivitä aineisto
+        run: node tools/update-data.cjs
+      - name: Tallenna muutokset GitHubiin
+        run: |
+          if ! git diff --quiet -- data.js; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data.js
+            git commit -m "Päivitä kilpailut automaattihaulla"
+            git push origin HEAD:main
+          fi
+      - name: Pyydä sivuston julkaisu
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+      - name: Säilytä hakuraportti
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kilpailuhaun-raportti
+          path: hakuraportti.md
+          if-no-files-found: ignore
