@@ -20,6 +20,7 @@
       await load('athlete-registry.js?v=20261027-fresh1');
       if (status) { status.hidden = true; status.textContent = ''; }
       await load('script.js?v=20261027-fresh1');
+      window.dispatchEvent(new Event('paini-data-ready'));
     } catch (error) {
       if (status) {
         status.hidden = false; status.dataset.kind = 'error';
