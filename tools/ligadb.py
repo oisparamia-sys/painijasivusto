@@ -47,6 +47,19 @@ def html_results(page):
   if group['count'] is not None and len(group['rows'])+group['unranked']!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
  return groups
 
+def usable_tab(text):
+ active=False;found=False
+ for line in text.splitlines():
+  if not line.strip():continue
+  if re.match(r'^\s*\d+(?:[.,]\d+)?\s*kg\s*\t',line,re.I):active=True;continue
+  if not active:continue
+  cells=[c.strip() for c in line.split('\t')]
+  while cells and not cells[0]:cells.pop(0)
+  if cells and cells[0].casefold() in ['tyhjä','tyhja']:continue
+  if len(cells)!=3 or not re.fullmatch(r'[1-9]\d*\.',cells[0]) or not cells[1] or not cells[2]:return False
+  found=True
+ return active and found
+
 def competition(url):
  if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/indexFIN\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
  s=get(url);alllinks=links(s);raw=[u for u in alllinks if '_tab.txt' in u]
@@ -80,8 +93,12 @@ def competition(url):
    pages.append(dict(category=category,style=code,count=sum(len(g['rows']) for g in complete),url=pageurl));generated+=complete
  if not pages:raise ValueError('Sarjakohtaisia tulosluetteloita ei löytynyt')
  # HTML is the fallback for sources that do not publish a tab-separated file.
+ rawtext=None;rawurl=''
  if len(raw)==1 and not warnings:
-  rawurl=urllib.parse.urljoin(url,raw[0]);text=get(rawurl)
+  rawurl=urllib.parse.urljoin(url,raw[0])
+  try:rawtext=get(rawurl)
+  except Exception:rawtext=None
+ if rawtext is not None and usable_tab(rawtext):text=rawtext
  else:
   header=re.search(r'<a\b[^>]*href\s*=\s*["\']indexFIN\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
   if not header:raise ValueError('Kilpailun nimeä ja päivämäärää ei tunnistettu')
