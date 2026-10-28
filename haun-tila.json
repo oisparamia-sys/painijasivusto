@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-28T03:04:31.313Z",
+  "updatedAt": "2026-10-27T19:30:38.897Z",
+  "competitions": 145,
+  "results": 16594,
+  "added": 0,
+  "changed": 0,
+  "unchanged": 27,
+  "changes": [],
+  "errors": [
+    {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260822_Oulu/indexFIN.htm",
+      "error": "Tab-eroteltua tulosluetteloa ei löytynyt"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260415_Tampere/indexFIN.htm",
+      "error": "Tab-eroteltua tulosluetteloa ei löytynyt"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260415_Vaasa/indexFIN.htm",
+      "error": "Tab-eroteltua tulosluetteloa ei löytynyt"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "error": "Tab-eroteltua tulosluetteloa ei löytynyt"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260606_Turku/indexFIN.htm",
+      "error": "Sarjan osallistujamäärää tai painimuotoa ei voitu varmistaa"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260919_Muhos/indexFIN.htm",
+      "error": "Tab-eroteltua tulosluetteloa ei löytynyt"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Kotka/indexFIN.htm",
+      "error": "Tab-eroteltua tulosluetteloa ei löytynyt"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261028_Vaasa/indexFIN.htm",
+      "error": "Tab-eroteltua tulosluetteloa ei löytynyt"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+      "error": "Tiedoston rivin 88 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
+      "error": "Tiedoston rivin 22 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/indexFIN.htm",
+      "error": "Tiedoston rivin 302 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+      "error": "Tiedoston rivin 23 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260418_Pori/indexFIN.htm",
+      "error": "Tiedoston rivin 185 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/indexFIN.htm",
+      "error": "Tiedoston rivin 49 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/indexFIN.htm",
+      "error": "Tiedoston rivin 103 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
+      "error": "Tiedoston rivin 49 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm",
+      "error": "Sarjavastaavuus puuttuu: Ystävyysottelut"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
+      "error": "Tiedoston rivin 180 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Ylistaro/indexFIN.htm",
+      "error": "Tiedoston rivin 42 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+      "error": "Tiedoston rivin 242 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm",
+      "error": "Tiedoston rivin 43 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
+    }
+  ]
+}
