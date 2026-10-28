@@ -1,38 +1,13 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-28T14:33:01.495Z",
+  "checkedAt": "2026-10-28T14:51:46.436Z",
   "updatedAt": "2026-10-28T14:33:01.495Z",
   "competitions": 203,
   "results": 24053,
-  "added": 3,
+  "added": 0,
   "changed": 0,
-  "unchanged": 186,
-  "changes": [
-    {
-      "partial": false,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexENG.htm",
-      "kind": "added",
-      "title": "Helsinki Open 2022",
-      "details": "Helsinki, 10.-11.12.2022",
-      "rows": 549
-    },
-    {
-      "partial": false,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231202_Helsinki/indexENG.htm",
-      "kind": "added",
-      "title": "Helsinki Open Wrestling Tournament 2023",
-      "details": "Helsinki, 02.-3.12.2023",
-      "rows": 603
-    },
-    {
-      "partial": false,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexENG.htm",
-      "kind": "added",
-      "title": "Helsinki Open Wrestling Tournament 2024",
-      "details": "Helsinki, 14.-15.12.2024",
-      "rows": 712
-    }
-  ],
+  "unchanged": 189,
+  "changes": [],
   "partial": [
     {
       "title": "Uolevi Setälän muistopainit",
