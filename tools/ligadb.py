@@ -2,6 +2,8 @@
 import http.server, urllib.request, urllib.parse, json, re, html, pathlib, webbrowser, threading
 ROOT=pathlib.Path(__file__).resolve().parent
 HOST='turniereklassisch.ringerdb.de'
+# Verified English result pages for invalid Finnish links in the catalogue.
+SOURCE_ALIASES={'https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexENG.htm', 'https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm'}
 def get(url):
  u=urllib.parse.urlparse(url)
  if u.scheme!='https' or u.hostname not in [HOST,'www.ringerdb.de']:raise ValueError('Lähdeosoite ei kelpaa')
@@ -21,7 +23,7 @@ def catalog(year):
  for link in links(s):
   link=link.replace('http://','https://').replace('www.liga-db.de/Turniere/','turniereklassisch.ringerdb.de/')
   if re.match(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/'+str(year)+r'/FI/[^/]+/index(?:FIN|ENG)\.htm$',link,re.I):
-   urls.append(re.sub(r'index(?:FIN|ENG)\.htm$','indexFIN.htm',link,flags=re.I))
+   urls.append(SOURCE_ALIASES.get(link,link))
  if not urls:raise ValueError('Luettelosta ei löytynyt tuloslinkkejä. Lähteen rakenne voi olla muuttunut.')
  return sorted(set(urls))
 def clean(value):
@@ -33,7 +35,7 @@ def html_results(page):
   if len(cells)<3:continue
   weight=re.fullmatch(r'(\d+(?:[.,]\d+)?)\s*kg',cells[0],re.I)
   if weight:
-   count=re.fullmatch(r'(\d+) Osallistujaa?',cells[2],re.I)
+   count=re.fullmatch(r'(\d+) (?:Osallistujaa?|Participants?)',cells[2],re.I)
    if not count and cells[2]:raise ValueError('Painoluokan osallistujamäärää ei tunnistettu')
    current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]) if count else None,rows=[],unranked=0);groups.append(current)
   elif current:
@@ -61,13 +63,14 @@ def usable_tab(text):
  return active and found
 
 def competition(url):
- if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/indexFIN\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
+ url=SOURCE_ALIASES.get(url,url)
+ if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/index(?:FIN|ENG)\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
  s=get(url);alllinks=links(s);raw=[u for u in alllinks if '_tab.txt' in u]
  pages=[];generated=[];warnings=[]
  for link in alllinks:
   if 'tlges.htm' not in link:continue
   pageurl=urllib.parse.urljoin(url,link);page=get(pageurl);plain=clean(page)
-  m=re.search(r'Täyd\. tulosluettelo (.*) - (.*?) \((\d+) Osallistujaa\)',plain)
+  m=re.search(r'(?:Täyd\. tulosluettelo|List of winners complete) (.*) - (.*?) \((\d+) (?:Osallistujaa|Participants?)\)',plain)
   groups=html_results(page)
   if m:category,style,count=m[1],m[2],int(m[3])
   elif groups:
@@ -78,7 +81,7 @@ def competition(url):
    # Only an explicit style word in the official category is accepted.
    style='Vapaa' if re.search(r'\bvapaa(?:paini)?\b',category,re.I) else 'Kr.room.' if re.search(r'\bkr[. ]|kreikkalais',category,re.I) else ''
   else:raise ValueError('Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa')
-  code={'Kr.room.':'greco','Vapaa':'freestyle'}.get(style)
+  code={'Kr.room.':'greco','Vapaa':'freestyle','Greco-Roman':'greco','Greco Roman':'greco','Free style':'freestyle','Freestyle':'freestyle'}.get(style)
   if not code:raise ValueError('Painimuotoa ei ole ilmoitettu lähteessä: '+category)
   if sum(len(g['rows'])+g['unranked'] for g in groups)!=count:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
   if any(g['category'].casefold()!=category.casefold() for g in groups):raise ValueError('Sarjan otsikko ja painoluokat eroavat')
@@ -100,7 +103,7 @@ def competition(url):
   except Exception:rawtext=None
  if rawtext is not None and usable_tab(rawtext):text=rawtext
  else:
-  header=re.search(r'<a\b[^>]*href\s*=\s*["\']indexFIN\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
+  header=re.search(r'<a\b[^>]*href\s*=\s*["\']index(?:FIN|ENG)\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
   if not header:raise ValueError('Kilpailun nimeä ja päivämäärää ei tunnistettu')
   parts=re.split(r'<br\s*/?>',header[1],flags=re.I)
   if len(parts)!=2:raise ValueError('Kilpailun otsikon rakenne ei kelpaa')
