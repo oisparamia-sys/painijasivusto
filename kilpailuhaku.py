@@ -24,20 +24,65 @@ def catalog(year):
    urls.append(re.sub(r'index(?:FIN|ENG)\.htm$','indexFIN.htm',link,flags=re.I))
  if not urls:raise ValueError('Luettelosta ei löytynyt tuloslinkkejä. Lähteen rakenne voi olla muuttunut.')
  return sorted(set(urls))
+def clean(value):
+ return re.sub(r'\s+',' ',html.unescape(re.sub(r'<[^>]+>',' ',value))).strip()
+def html_results(page):
+ groups=[];current=None
+ for tr in re.findall(r'<tr\b[^>]*>(.*?)</tr>',page,re.I|re.S):
+  cells=[clean(x) for x in re.findall(r'<td\b[^>]*>(.*?)</td>',tr,re.I|re.S)]
+  if len(cells)<3:continue
+  weight=re.fullmatch(r'(\d+(?:[.,]\d+)?)\s*kg',cells[0],re.I)
+  if weight:
+   count=re.fullmatch(r'(\d+) Osallistujaa',cells[2])
+   if not count:raise ValueError('Painoluokan osallistujamäärää ei tunnistettu')
+   current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]),rows=[]);groups.append(current)
+  elif current:
+   rank=re.fullmatch(r'(\d+)\.',cells[0])
+   if rank and int(rank[1])>0 and cells[1] and cells[2]:current['rows'].append([cells[0],cells[1],cells[2]])
+   elif cells[0].lower()=='tyhjä':continue
+   elif any(re.search(r'NR\d+\.htm',x,re.I) for x in [tr]):raise ValueError('Osallistujalla ei ole vahvistettua sijoitusta')
+ for group in groups:
+  if len(group['rows'])!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
+ return groups
+
 def competition(url):
  if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/indexFIN\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
- s=get(url);alllinks=links(s);raw=[x for x in alllinks if '_tab.txt' in x]
- if len(raw)!=1:raise ValueError('Tab-eroteltua tulosluetteloa ei löytynyt')
- rawurl=urllib.parse.urljoin(url,raw[0]);text=get(rawurl);pages=[]
+ s=get(url);alllinks=links(s);raw=[u for u in alllinks if '_tab.txt' in u]
+ pages=[];generated=[]
  for link in alllinks:
   if 'tlges.htm' not in link:continue
-  pageurl=urllib.parse.urljoin(url,link);plain=html.unescape(re.sub('<[^>]+>',' ',get(pageurl)));plain=re.sub(r'\s+',' ',plain)
+  pageurl=urllib.parse.urljoin(url,link);page=get(pageurl);plain=clean(page)
   m=re.search(r'Täyd\. tulosluettelo (.*) - (.*?) \((\d+) Osallistujaa\)',plain)
-  if not m:raise ValueError('Sarjan osallistujamäärää tai painimuotoa ei voitu varmistaa')
-  style={'Kr.room.':'greco','Vapaa':'freestyle'}.get(m[2])
-  if not style:raise ValueError('Tuntematon painimuoto: '+m[2])
-  pages.append(dict(category=m[1],style=style,count=int(m[3]),url=pageurl))
+  groups=html_results(page)
+  if m:category,style,count=m[1],m[2],int(m[3])
+  elif groups:
+   categories=set(g['category'] for g in groups)
+   if len(categories)!=1:raise ValueError('HTML-sivun ikäluokat ovat ristiriidassa')
+   category=next(iter(categories));count=sum(g['count'] for g in groups)
+   # Only an explicit style word in the official category is accepted.
+   style='Vapaa' if re.search(r'\bvapaa\b',category,re.I) else 'Kr.room.' if re.search(r'\bkr[. ]|kreikkalais',category,re.I) else ''
+  else:raise ValueError('Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa')
+  code={'Kr.room.':'greco','Vapaa':'freestyle'}.get(style)
+  if not code:raise ValueError('Painimuotoa ei ole ilmoitettu lähteessä: '+category)
+  if sum(g['count'] for g in groups)!=count:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
+  if any(g['category'].casefold()!=category.casefold() for g in groups):raise ValueError('Sarjan otsikko ja painoluokat eroavat')
+  pages.append(dict(category=category,style=code,count=count,url=pageurl));generated+=groups
  if not pages:raise ValueError('Sarjakohtaisia tulosluetteloita ei löytynyt')
+ # HTML is the fallback for sources that do not publish a tab-separated file.
+ if len(raw)==1:
+  rawurl=urllib.parse.urljoin(url,raw[0]);text=get(rawurl)
+ else:
+  header=re.search(r'<a\b[^>]*href\s*=\s*["\']indexFIN\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
+  if not header:raise ValueError('Kilpailun nimeä ja päivämäärää ei tunnistettu')
+  parts=re.split(r'<br\s*/?>',header[1],flags=re.I)
+  if len(parts)!=2:raise ValueError('Kilpailun otsikon rakenne ei kelpaa')
+  title,details=map(clean,parts)
+  if not title or not re.search(r'\d{1,2}[./]\d{1,2}[./]20\d{2}',details):raise ValueError('Kilpailun päivämäärä puuttuu')
+  lines=[title,details,'']
+  for group in generated:
+   lines.append(group['weight']+' kg\t'+group['category']+'\t('+str(group['count'])+' Osallistujaa)')
+   lines += ['\t'+'\t'.join(row) for row in group['rows']]
+  text='\n'.join(lines);rawurl=''
  return dict(text=text,source=url,textSource=rawurl,pages=pages)
 class Handler(http.server.SimpleHTTPRequestHandler):
  def __init__(self,*a,**kw):super().__init__(*a,directory=str(ROOT),**kw)
