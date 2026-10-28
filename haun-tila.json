@@ -1,66 +1,773 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-28T14:01:30.073Z",
-  "updatedAt": "2026-10-28T14:01:30.073Z",
-  "competitions": 200,
-  "results": 22189,
-  "added": 8,
-  "changed": 1,
-  "unchanged": 177,
+  "checkedAt": "2026-10-28T14:33:01.495Z",
+  "updatedAt": "2026-10-28T14:33:01.495Z",
+  "competitions": 203,
+  "results": 24053,
+  "added": 3,
+  "changed": 0,
+  "unchanged": 186,
   "changes": [
     {
-      "kind": "updated",
-      "title": "Miesten ja Naisten vapaapainin SM-kilpailut",
-      "details": "Helsinki, 29.10.2022",
-      "rows": 54
+      "partial": false,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexENG.htm",
+      "kind": "added",
+      "title": "Helsinki Open 2022",
+      "details": "Helsinki, 10.-11.12.2022",
+      "rows": 549
     },
     {
+      "partial": false,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231202_Helsinki/indexENG.htm",
       "kind": "added",
-      "title": "Kalle Mäkisen muistopainit",
-      "details": "Turku, 10.9.2022",
-      "rows": 301
+      "title": "Helsinki Open Wrestling Tournament 2023",
+      "details": "Helsinki, 02.-3.12.2023",
+      "rows": 603
     },
     {
+      "partial": false,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexENG.htm",
       "kind": "added",
-      "title": "Järvenpää Cup (Penan painit)",
-      "details": "Tuusula, 24.9.2022",
-      "rows": 146
+      "title": "Helsinki Open Wrestling Tournament 2024",
+      "details": "Helsinki, 14.-15.12.2024",
+      "rows": 712
+    }
+  ],
+  "partial": [
+    {
+      "title": "Uolevi Setälän muistopainit",
+      "details": "Tampere, 17.9.2022",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Tampere/indexFIN.htm",
+      "rows": 144,
+      "notes": [
+        {
+          "category": "Tytöt 17v",
+          "weight": "65",
+          "excluded": 2,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Tampere/FIN143280575921tlges.htm"
+        }
+      ],
+      "status": "unchanged"
     },
     {
-      "kind": "added",
-      "title": "Avoimet Uudenmaan aluemestaruuskilpailut vp",
-      "details": "Janakkala, 22.10.2022",
-      "rows": 75
+      "title": "VVV Cup - Nuorten Suomi Cup",
+      "details": "Vaasa, 12/11/2022",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/indexFIN.htm",
+      "rows": 260,
+      "notes": [
+        {
+          "category": "Yst",
+          "weight": "6",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/FIN35018380835tlges.htm"
+        }
+      ],
+      "status": "unchanged"
     },
     {
-      "kind": "added",
-      "title": "Turun Voimamiesten ikäkausipainit",
-      "details": "Turku, 10.6.2023",
-      "rows": 106
+      "title": "Länsi-Suomen avoimet vapaapainin aluem. kilpailut",
+      "details": "Vaasa, 03/12/2022",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "rows": 59,
+      "notes": [
+        {
+          "category": "U17 Tytöt Aluem.",
+          "weight": "28",
+          "excluded": 2,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595134tlges.htm"
+        },
+        {
+          "category": "Aloittelijat, Tytöt",
+          "weight": "32",
+          "excluded": 2,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595129tlges.htm"
+        },
+        {
+          "category": "Aloittelijat, Tytöt",
+          "weight": "36",
+          "excluded": 2,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595129tlges.htm"
+        },
+        {
+          "category": "Aloittelijat, Pojat",
+          "weight": "22",
+          "excluded": 6,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm"
+        },
+        {
+          "category": "Aloittelijat, Pojat",
+          "weight": "25",
+          "excluded": 3,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm"
+        },
+        {
+          "category": "Aloittelijat, Pojat",
+          "weight": "28",
+          "excluded": 9,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm"
+        },
+        {
+          "category": "Aloittelijat, Pojat",
+          "weight": "32",
+          "excluded": 11,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm"
+        },
+        {
+          "category": "Aloittelijat, Pojat",
+          "weight": "45",
+          "excluded": 3,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm"
+        }
+      ],
+      "status": "unchanged"
     },
     {
-      "kind": "added",
-      "title": "FFC 1 ja Champions Cup 5/6",
-      "details": "Laitila, 26/04/2025",
-      "rows": 75
+      "title": "Champions Cup osakilpailu 4/6",
+      "details": "Helsinki, 2.9.2023",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/indexFIN.htm",
+      "rows": 25,
+      "notes": [
+        {
+          "category": "Champions Cup U17",
+          "weight": "47",
+          "excluded": 5,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/FIN1499993623tlges.htm"
+        },
+        {
+          "category": "Champions Cup U17",
+          "weight": "71",
+          "excluded": 4,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/FIN1499993623tlges.htm"
+        }
+      ],
+      "status": "unchanged"
     },
     {
-      "kind": "added",
-      "title": "Tapsan Painit",
-      "details": "Muhos, 20.9.2025",
-      "rows": 127
+      "title": "Nuorisoturnaus",
+      "details": "Ilmajoki, 30.9.2023",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/indexFIN.htm",
+      "rows": 208,
+      "notes": [
+        {
+          "category": "Pojat U9",
+          "weight": "34",
+          "excluded": 9,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/FIN146082240040tlges.htm"
+        },
+        {
+          "category": "Pojat U15",
+          "weight": "62",
+          "excluded": 9,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/FIN146082240039tlges.htm"
+        }
+      ],
+      "status": "unchanged"
     },
     {
-      "kind": "added",
-      "title": "Luoman Cup",
-      "details": "Ylistaro, 12/09/2026",
-      "rows": 142
+      "title": "VVV Cup - Nuorten Suomi Cup",
+      "details": "Vaasa, Variskan koulu, 11/11/2023",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "rows": 175,
+      "notes": [
+        {
+          "category": "WW 17 NSC",
+          "weight": "57",
+          "excluded": 3,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500734tlges.htm"
+        },
+        {
+          "category": "WW 9",
+          "weight": "33",
+          "excluded": 3,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500733tlges.htm"
+        },
+        {
+          "category": "GR 12",
+          "weight": "33",
+          "excluded": 4,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm"
+        },
+        {
+          "category": "GR 12",
+          "weight": "36",
+          "excluded": 5,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm"
+        },
+        {
+          "category": "GR 12",
+          "weight": "52",
+          "excluded": 4,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm"
+        },
+        {
+          "category": "GR 12",
+          "weight": "57",
+          "excluded": 4,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm"
+        },
+        {
+          "category": "GR 9",
+          "weight": "23",
+          "excluded": 4,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500730tlges.htm"
+        },
+        {
+          "category": "GR 9",
+          "weight": "25",
+          "excluded": 5,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500730tlges.htm"
+        },
+        {
+          "category": "WW 12",
+          "weight": "38",
+          "excluded": 3,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500728tlges.htm"
+        },
+        {
+          "category": "GR 15",
+          "weight": "75",
+          "excluded": 4,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500726tlges.htm"
+        }
+      ],
+      "status": "unchanged"
     },
     {
-      "kind": "added",
-      "title": "Nuoriso-turnaus",
-      "details": "Ilmajoki, 26.9.2026",
-      "rows": 152
+      "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2024",
+      "details": "Nokia, 6.4.2024",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nokia/indexFIN.htm",
+      "rows": 74,
+      "notes": [
+        {
+          "category": "Pojat 12",
+          "weight": "50",
+          "excluded": 3,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nokia/FIN131330086311tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Pertti Ukkola Turnaus",
+      "details": "Tampere, 18.5.2024",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/indexFIN.htm",
+      "rows": 118,
+      "notes": [
+        {
+          "category": "Ystävyysottelut",
+          "weight": "50",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/FIN2441359364tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Pertti Ukkola Turnaus",
+      "details": "Ylöjärvi, 5.4.2025",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Tampere/indexFIN.htm",
+      "rows": 59,
+      "notes": [
+        {
+          "category": "Ystävyysottelut",
+          "weight": "57",
+          "excluded": 4,
+          "unranked": 4,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Tampere/FIN17886990074tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2025",
+      "details": "Nokia, 3.5.2025",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/indexFIN.htm",
+      "rows": 61,
+      "notes": [
+        {
+          "category": "Pojat Ystävyysottelu",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/FIN127663347115tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "ViVo Cup",
+      "details": "Ylivieska, 3.5.2025",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/indexFIN.htm",
+      "rows": 95,
+      "notes": [
+        {
+          "category": "Ystävyysottelu tytöt",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/FIN26993497630tlges.htm"
+        },
+        {
+          "category": "Ystävyysottelu",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/FIN26993497629tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Aikuisharrastajien painikilpailut VI",
+      "details": "Helsinki, 22/11/2025",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/indexFIN.htm",
+      "rows": 21,
+      "notes": [
+        {
+          "category": "Ystävyysottelut",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/FIN55029798421tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Kurun Ryhdin Marraspainit 2025",
+      "details": "Kuru, 29.11.2025",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/indexFIN.htm",
+      "rows": 54,
+      "notes": [
+        {
+          "category": "YST Tytöt",
+          "weight": "33",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/FIN22717273618tlges.htm"
+        },
+        {
+          "category": "YST Tytöt",
+          "weight": "44",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/FIN22717273618tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Raimo ja Esko Taskisen muistopainit",
+      "details": "Kemi, 7.2.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+      "rows": 171,
+      "notes": [
+        {
+          "category": "Extra pojat",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940741tlges.htm"
+        },
+        {
+          "category": "Extra pojat",
+          "weight": "2",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940741tlges.htm"
+        },
+        {
+          "category": "Extra tytöt",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940740tlges.htm"
+        },
+        {
+          "category": "Extra tytöt",
+          "weight": "2",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940740tlges.htm"
+        },
+        {
+          "category": "Pojat U15",
+          "weight": "58",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940725tlges.htm"
+        },
+        {
+          "category": "Pojat U15",
+          "weight": "59",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940725tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Taisto Kangasniemen XXVI muistopainit",
+      "details": "Tampere, 14.2.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/indexFIN.htm",
+      "rows": 200,
+      "notes": [
+        {
+          "category": "Ystävyys",
+          "weight": "39",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/FIN18041280014tlges.htm"
+        },
+        {
+          "category": "Ystävyys",
+          "weight": "60",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/FIN18041280014tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Olavi Niemen muistopainit ja Lo-Suomen av. AM kilp",
+      "details": "Pori, 18.4.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260418_Pori/indexFIN.htm",
+      "rows": 111,
+      "notes": [
+        {
+          "category": "Ystävyys",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260418_Pori/FIN79962969621tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Pertti Ukkola Turnaus",
+      "details": "Tampere, 2.5.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/indexFIN.htm",
+      "rows": 66,
+      "notes": [
+        {
+          "category": "Ystävyysottelut",
+          "weight": "75",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/FIN2260913924tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2026",
+      "details": "Nokia, 9.5.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/indexFIN.htm",
+      "rows": 61,
+      "notes": [
+        {
+          "category": "Tytöt Ystävyysottelu",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/FIN76774643214tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Vivo Cup",
+      "details": "Ylivieska, 9.5.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "rows": 4,
+      "notes": [
+        {
+          "category": "Tytöt U15",
+          "weight": "54",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131237tlges.htm"
+        },
+        {
+          "category": "Tytöt U11",
+          "weight": "40",
+          "excluded": 5,
+          "unranked": 5,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131234tlges.htm"
+        },
+        {
+          "category": "Pojat U11",
+          "weight": "28",
+          "excluded": 5,
+          "unranked": 5,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131231tlges.htm"
+        },
+        {
+          "category": "Pojat U11",
+          "weight": "35",
+          "excluded": 6,
+          "unranked": 6,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131231tlges.htm"
+        },
+        {
+          "category": "Pojat U11",
+          "weight": "36",
+          "excluded": 4,
+          "unranked": 4,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131231tlges.htm"
+        },
+        {
+          "category": "Pojat U11",
+          "weight": "44",
+          "excluded": 5,
+          "unranked": 5,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131231tlges.htm"
+        },
+        {
+          "category": "Alokastytöt",
+          "weight": "26",
+          "excluded": 5,
+          "unranked": 5,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131239tlges.htm"
+        },
+        {
+          "category": "Alokastytöt",
+          "weight": "28",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131239tlges.htm"
+        },
+        {
+          "category": "Alokastytöt",
+          "weight": "33",
+          "excluded": 4,
+          "unranked": 4,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131239tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "23",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "24",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "26",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "28",
+          "excluded": 5,
+          "unranked": 5,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "29",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "31",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "32",
+          "excluded": 6,
+          "unranked": 6,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "35",
+          "excluded": 5,
+          "unranked": 5,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "41",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Alokaspojat",
+          "weight": "61",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
+        },
+        {
+          "category": "Tytöt U13",
+          "weight": "42",
+          "excluded": 4,
+          "unranked": 4,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131227tlges.htm"
+        },
+        {
+          "category": "Tytöt U13",
+          "weight": "55",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131227tlges.htm"
+        },
+        {
+          "category": "Pojat U15",
+          "weight": "52",
+          "excluded": 5,
+          "unranked": 5,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131225tlges.htm"
+        },
+        {
+          "category": "Pojat U9",
+          "weight": "30",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131224tlges.htm"
+        },
+        {
+          "category": "Pojat U9",
+          "weight": "33",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131224tlges.htm"
+        },
+        {
+          "category": "Pojat U13",
+          "weight": "40",
+          "excluded": 4,
+          "unranked": 4,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm"
+        },
+        {
+          "category": "Pojat U13",
+          "weight": "46",
+          "excluded": 4,
+          "unranked": 4,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm"
+        },
+        {
+          "category": "Pojat U13",
+          "weight": "49",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm"
+        },
+        {
+          "category": "Pojat U13",
+          "weight": "52",
+          "excluded": 4,
+          "unranked": 4,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm"
+        },
+        {
+          "category": "Pojat U13",
+          "weight": "61",
+          "excluded": 3,
+          "unranked": 3,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm"
+        },
+        {
+          "category": "Pojat U13",
+          "weight": "69",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Kemi Cup",
+      "details": "Kemi, 12.9.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
+      "rows": 106,
+      "notes": [
+        {
+          "category": "Extra",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/FIN173879334344tlges.htm"
+        }
+      ],
+      "status": "unchanged"
+    },
+    {
+      "title": "Tampere Cup",
+      "details": "Lempäälä, 24.10.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm",
+      "rows": 79,
+      "notes": [
+        {
+          "category": "Pojat 17v",
+          "weight": "65",
+          "excluded": 2,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/FIN61386790417tlges.htm"
+        },
+        {
+          "category": "Freundschaftskämpfe",
+          "weight": "60",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/FIN61386790416tlges.htm"
+        },
+        {
+          "category": "Pojat 17vp",
+          "weight": "60",
+          "excluded": 5,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/FIN6138679043tlges.htm"
+        }
+      ],
+      "status": "unchanged"
     }
   ],
   "errors": [
@@ -69,24 +776,24 @@
       "error": "Osallistujarivin rakennetta ei tunnistettu"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexFIN.htm",
-      "error": "HTTP Error 404: Not Found"
+      "source": "https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexENG.htm",
+      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Senior"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexFIN.htm",
-      "error": "HTTP Error 404: Not Found"
+      "source": "https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexENG.htm",
+      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Senior"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/FT/2023/FI/231209_Ilmajoki/indexFIN.htm",
-      "error": "Sarjakohtaisia tulosluetteloita ei löytynyt"
+      "source": "https://turniereklassisch.ringerdb.de/FT/2023/FI/231209_Ilmajoki/indexENG.htm",
+      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Senior"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexFIN.htm",
-      "error": "HTTP Error 404: Not Found"
+      "source": "https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexENG.htm",
+      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Senior"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexFIN.htm",
-      "error": "HTTP Error 404: Not Found"
+      "source": "https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexENG.htm",
+      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Senior"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260822_Oulu/indexFIN.htm",
@@ -95,10 +802,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Muhos/indexFIN.htm",
       "error": "Sarjakohtaisia tulosluetteloita ei löytynyt"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexFIN.htm",
-      "error": "HTTP Error 404: Not Found"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm",
@@ -125,10 +828,6 @@
       "error": "HTML-tulosmäärä ei täsmää painoluokassa 59"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231202_Helsinki/indexFIN.htm",
-      "error": "Sarjakohtaisia tulosluetteloita ei löytynyt"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/indexFIN.htm",
       "error": "HTML-tulosmäärä ei täsmää painoluokassa 55"
     },
@@ -145,24 +844,20 @@
       "error": "Sarjan ja painoluokkien osallistujamäärät eroavat"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexFIN.htm",
-      "error": "HTTP Error 404: Not Found"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250416_Tampere/indexFIN.htm",
       "error": "HTTP Error 404: Not Found"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexFIN.htm",
-      "error": "HTTP Error 404: Not Found"
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexENG.htm",
+      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Boys U13 2012->"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251209_Kouvola/indexFIN.htm",
       "error": "Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexFIN.htm",
-      "error": "HTTP Error 404: Not Found"
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm",
+      "error": "Painimuotoa ei ole ilmoitettu lähteessä: FS U9 BOYS AND GIRLS"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
@@ -201,20 +896,8 @@
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Tampere/indexFIN.htm",
-      "error": "Osittainen tuonti: Tytöt 17v 65 kg jätetty kokonaan pois (2 osallistujaa), koska 1 sijoitusta puuttuu"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Hyvinkaeae/indexFIN.htm",
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/indexFIN.htm",
-      "error": "Osittainen tuonti: Yst 6 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
-      "error": "Osittainen tuonti: U17 Tytöt Aluem. 28 kg jätetty kokonaan pois (2 osallistujaa), koska 1 sijoitusta puuttuu; Aloittelijat, Tytöt 32 kg jätetty kokonaan pois (2 osallistujaa), koska 1 sijoitusta puuttuu; Aloittelijat, Tytöt 36 kg jätetty kokonaan pois (2 osallistujaa), koska 1 sijoitusta puuttuu; Aloittelijat, Pojat 22 kg jätetty kokonaan pois (6 osallistujaa), koska 1 sijoitusta puuttuu; Aloittelijat, Pojat 25 kg jätetty kokonaan pois (3 osallistujaa), koska 1 sijoitusta puuttuu; Aloittelijat, Pojat 28 kg jätetty kokonaan pois (9 osallistujaa), koska 2 sijoitusta puuttuu; Aloittelijat, Pojat 32 kg jätetty kokonaan pois (11 osallistujaa), koska 1 sijoitusta puuttuu; Aloittelijat, Pojat 45 kg jätetty kokonaan pois (3 osallistujaa), koska 1 sijoitusta puuttuu"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae1/indexFIN.htm",
@@ -229,14 +912,6 @@
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/indexFIN.htm",
-      "error": "Osittainen tuonti: Champions Cup U17 47 kg jätetty kokonaan pois (5 osallistujaa), koska 1 sijoitusta puuttuu; Champions Cup U17 71 kg jätetty kokonaan pois (4 osallistujaa), koska 1 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/indexFIN.htm",
-      "error": "Osittainen tuonti: Pojat U9 34 kg jätetty kokonaan pois (9 osallistujaa), koska 2 sijoitusta puuttuu; Pojat U15 62 kg jätetty kokonaan pois (9 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Tuusula/indexFIN.htm",
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
     },
@@ -245,20 +920,8 @@
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
-      "error": "Osittainen tuonti: WW 17 NSC 57 kg jätetty kokonaan pois (3 osallistujaa), koska 1 sijoitusta puuttuu; WW 9 33 kg jätetty kokonaan pois (3 osallistujaa), koska 1 sijoitusta puuttuu; GR 12 33 kg jätetty kokonaan pois (4 osallistujaa), koska 1 sijoitusta puuttuu; GR 12 36 kg jätetty kokonaan pois (5 osallistujaa), koska 1 sijoitusta puuttuu; GR 12 52 kg jätetty kokonaan pois (4 osallistujaa), koska 2 sijoitusta puuttuu; GR 12 57 kg jätetty kokonaan pois (4 osallistujaa), koska 1 sijoitusta puuttuu; GR 9 23 kg jätetty kokonaan pois (4 osallistujaa), koska 1 sijoitusta puuttuu; GR 9 25 kg jätetty kokonaan pois (5 osallistujaa), koska 1 sijoitusta puuttuu; WW 12 38 kg jätetty kokonaan pois (3 osallistujaa), koska 1 sijoitusta puuttuu; GR 15 75 kg jätetty kokonaan pois (4 osallistujaa), koska 1 sijoitusta puuttuu"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja1/indexFIN.htm",
       "error": "Mahdollinen kaksoiskilpailu; tarkista käsin"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nokia/indexFIN.htm",
-      "error": "Osittainen tuonti: Pojat 12 50 kg jätetty kokonaan pois (3 osallistujaa), koska 1 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/indexFIN.htm",
-      "error": "Osittainen tuonti: Ystävyysottelut 50 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240615_Jaervenpaeae/indexFIN.htm",
@@ -267,18 +930,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240914_Jaervenpaeae/indexFIN.htm",
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Tampere/indexFIN.htm",
-      "error": "Osittainen tuonti: Ystävyysottelut 57 kg jätetty kokonaan pois (4 osallistujaa), koska 4 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/indexFIN.htm",
-      "error": "Osittainen tuonti: Pojat Ystävyysottelu 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/indexFIN.htm",
-      "error": "Osittainen tuonti: Ystävyysottelu tytöt 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Ystävyysottelu 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250614_Jaervenpaeae/indexFIN.htm",
@@ -293,56 +944,12 @@
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/indexFIN.htm",
-      "error": "Osittainen tuonti: Ystävyysottelut 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/indexFIN.htm",
-      "error": "Osittainen tuonti: YST Tytöt 33 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; YST Tytöt 44 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
-      "error": "Osittainen tuonti: Pojat U12 23 kg jätetty kokonaan pois (3 osallistujaa), koska 1 sijoitusta puuttuu"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
       "error": "Tulosmäärä pieneni; tarkista käsin"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
-      "error": "Osittainen tuonti: Extra pojat 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Extra pojat 2 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Extra tytöt 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Extra tytöt 2 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Pojat U15 58 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Pojat U15 59 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/indexFIN.htm",
-      "error": "Osittainen tuonti: Ystävyys 39 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Ystävyys 60 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260418_Pori/indexFIN.htm",
-      "error": "Osittainen tuonti: Ystävyys 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/indexFIN.htm",
-      "error": "Osittainen tuonti: Ystävyysottelut 75 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/indexFIN.htm",
-      "error": "Osittainen tuonti: Tytöt Ystävyysottelu 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
-      "error": "Osittainen tuonti: Tytöt U15 54 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Tytöt U11 40 kg jätetty kokonaan pois (5 osallistujaa), koska 5 sijoitusta puuttuu; Pojat U11 28 kg jätetty kokonaan pois (5 osallistujaa), koska 5 sijoitusta puuttuu; Pojat U11 35 kg jätetty kokonaan pois (6 osallistujaa), koska 6 sijoitusta puuttuu; Pojat U11 36 kg jätetty kokonaan pois (4 osallistujaa), koska 4 sijoitusta puuttuu; Pojat U11 44 kg jätetty kokonaan pois (5 osallistujaa), koska 5 sijoitusta puuttuu; Alokastytöt 26 kg jätetty kokonaan pois (5 osallistujaa), koska 5 sijoitusta puuttuu; Alokastytöt 28 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Alokastytöt 33 kg jätetty kokonaan pois (4 osallistujaa), koska 4 sijoitusta puuttuu; Alokaspojat 23 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Alokaspojat 24 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Alokaspojat 26 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Alokaspojat 28 kg jätetty kokonaan pois (5 osallistujaa), koska 5 sijoitusta puuttuu; Alokaspojat 29 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Alokaspojat 31 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Alokaspojat 32 kg jätetty kokonaan pois (6 osallistujaa), koska 6 sijoitusta puuttuu; Alokaspojat 35 kg jätetty kokonaan pois (5 osallistujaa), koska 5 sijoitusta puuttuu; Alokaspojat 41 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Alokaspojat 61 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Tytöt U13 42 kg jätetty kokonaan pois (4 osallistujaa), koska 4 sijoitusta puuttuu; Tytöt U13 55 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Pojat U15 52 kg jätetty kokonaan pois (5 osallistujaa), koska 5 sijoitusta puuttuu; Pojat U9 30 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Pojat U9 33 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Pojat U13 40 kg jätetty kokonaan pois (4 osallistujaa), koska 4 sijoitusta puuttuu; Pojat U13 46 kg jätetty kokonaan pois (4 osallistujaa), koska 4 sijoitusta puuttuu; Pojat U13 49 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Pojat U13 52 kg jätetty kokonaan pois (4 osallistujaa), koska 4 sijoitusta puuttuu; Pojat U13 61 kg jätetty kokonaan pois (3 osallistujaa), koska 3 sijoitusta puuttuu; Pojat U13 69 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm",
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelut"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
-      "error": "Osittainen tuonti: Extra 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm",
-      "error": "Osittainen tuonti: Pojat 17v 65 kg jätetty kokonaan pois (2 osallistujaa), koska 1 sijoitusta puuttuu; Freundschaftskämpfe 60 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu; Pojat 17vp 60 kg jätetty kokonaan pois (5 osallistujaa), koska 1 sijoitusta puuttuu"
     }
   ]
 }
