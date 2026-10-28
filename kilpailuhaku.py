@@ -35,20 +35,22 @@ def html_results(page):
   if weight:
    count=re.fullmatch(r'(\d+) Osallistujaa?',cells[2],re.I)
    if not count and cells[2]:raise ValueError('Painoluokan osallistujamäärää ei tunnistettu')
-   current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]) if count else None,rows=[]);groups.append(current)
+   current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]) if count else None,rows=[],unranked=0);groups.append(current)
   elif current:
    rank=re.fullmatch(r'(\d+)\.',cells[0])
    if rank and int(rank[1])>0 and cells[1] and cells[2]:current['rows'].append([cells[0],cells[1],cells[2]])
    elif cells[0].lower()=='tyhjä':continue
-   elif any(re.search(r'NR\d+\.htm',x,re.I) for x in [tr]):raise ValueError('Osallistujalla ei ole vahvistettua sijoitusta')
+   elif re.search(r'NR\d+\.htm',tr,re.I):
+    if cells[0] not in ['', '0.', '0'] or not cells[1] or not cells[2]:raise ValueError('Osallistujarivin rakennetta ei tunnistettu')
+    current['unranked']+=1
  for group in groups:
-  if group['count'] is not None and len(group['rows'])!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
+  if group['count'] is not None and len(group['rows'])+group['unranked']!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
  return groups
 
 def competition(url):
  if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/indexFIN\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
  s=get(url);alllinks=links(s);raw=[u for u in alllinks if '_tab.txt' in u]
- pages=[];generated=[]
+ pages=[];generated=[];warnings=[]
  for link in alllinks:
   if 'tlges.htm' not in link:continue
   pageurl=urllib.parse.urljoin(url,link);page=get(pageurl);plain=clean(page)
@@ -65,14 +67,20 @@ def competition(url):
   else:raise ValueError('Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa')
   code={'Kr.room.':'greco','Vapaa':'freestyle'}.get(style)
   if not code:raise ValueError('Painimuotoa ei ole ilmoitettu lähteessä: '+category)
-  if sum(len(g['rows']) for g in groups)!=count:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
+  if sum(len(g['rows'])+g['unranked'] for g in groups)!=count:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
   if any(g['category'].casefold()!=category.casefold() for g in groups):raise ValueError('Sarjan otsikko ja painoluokat eroavat')
   for g in groups:
    if g['count'] is None:g['count']=len(g['rows'])
-  pages.append(dict(category=category,style=code,count=count,url=pageurl));generated+=groups
+  complete=[]
+  for g in groups:
+   if g['unranked']:
+    warnings.append(dict(category=category,weight=g['weight'],excluded=len(g['rows'])+g['unranked'],unranked=g['unranked'],source=pageurl))
+   else:complete.append(g)
+  if complete:
+   pages.append(dict(category=category,style=code,count=sum(len(g['rows']) for g in complete),url=pageurl));generated+=complete
  if not pages:raise ValueError('Sarjakohtaisia tulosluetteloita ei löytynyt')
  # HTML is the fallback for sources that do not publish a tab-separated file.
- if len(raw)==1:
+ if len(raw)==1 and not warnings:
   rawurl=urllib.parse.urljoin(url,raw[0]);text=get(rawurl)
  else:
   header=re.search(r'<a\b[^>]*href\s*=\s*["\']indexFIN\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
@@ -86,7 +94,7 @@ def competition(url):
    lines.append(group['weight']+' kg\t'+group['category']+'\t('+str(group['count'])+' Osallistujaa)')
    lines += ['\t'+'\t'.join(row) for row in group['rows']]
   text='\n'.join(lines);rawurl=''
- return dict(text=text,source=url,textSource=rawurl,pages=pages)
+ return dict(text=text,source=url,textSource=rawurl,pages=pages,warnings=warnings)
 class Handler(http.server.SimpleHTTPRequestHandler):
  def __init__(self,*a,**kw):super().__init__(*a,directory=str(ROOT),**kw)
  def log_message(self,*args):pass

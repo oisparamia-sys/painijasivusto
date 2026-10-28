@@ -4,7 +4,11 @@ function update(base,R,payload){
  R.validate(base);const existing=new Map(base.competitions.map(c=>[R.compKey(c),c])),incoming=[],seen=new Set(),errors=[...payload.errors],log=[],changes=[];let unchanged=0;
  const sig=c=>JSON.stringify(c.rows.map(r=>JSON.stringify([r.name,r.club,r.category,r.weight,r.place])).sort());
  for(const response of payload.items){try{
-  const item=parseLigaDB(response.text);if(item.skipped)throw Error('Ohitettuja rivejä');
+  const item=parseLigaDB(response.text);
+  if(response.warnings?.length){
+   item.importNotes=response.warnings;
+   errors.push({source:response.source,error:'Osittainen tuonti: '+response.warnings.map(w=>w.category+' '+w.weight+' kg jätetty kokonaan pois ('+w.excluded+' osallistujaa), koska '+w.unranked+' sijoitusta puuttuu').join('; ')});
+  }if(item.skipped)throw Error('Ohitettuja rivejä');
   item.categoryStyles={};item.styleSources={};
   for(const category of new Set(item.rows.map(r=>r.category))){const pages=response.pages.filter(p=>R.norm(p.category)===R.norm(category));if(pages.length!==1)throw Error('Sarjavastaavuus puuttuu: '+category);const p=pages[0];if(!['greco','freestyle'].includes(p.style)||item.rows.filter(r=>r.category===category).length!==p.count)throw Error('Sarjan määrä/painimuoto ei täsmää');item.categoryStyles[category]=p.style;item.styleSources[category]=p.url;}
   if(item.rows.length!==response.pages.reduce((n,p)=>n+p.count,0))throw Error('Kokonaistulosmäärä ei täsmää');
