@@ -1,138 +1,66 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-28T07:15:42.810Z",
-  "updatedAt": "2026-10-28T07:15:42.810Z",
-  "competitions": 192,
-  "results": 21065,
-  "added": 21,
-  "changed": 0,
-  "unchanged": 156,
+  "checkedAt": "2026-10-28T14:01:30.073Z",
+  "updatedAt": "2026-10-28T14:01:30.073Z",
+  "competitions": 200,
+  "results": 22189,
+  "added": 8,
+  "changed": 1,
+  "unchanged": 177,
   "changes": [
     {
-      "kind": "added",
-      "title": "Uolevi Setälän muistopainit",
-      "details": "Tampere, 17.9.2022",
-      "rows": 144
-    },
-    {
-      "kind": "added",
-      "title": "VVV Cup - Nuorten Suomi Cup",
-      "details": "Vaasa, 12/11/2022",
-      "rows": 260
-    },
-    {
-      "kind": "added",
-      "title": "Länsi-Suomen avoimet vapaapainin aluem. kilpailut",
-      "details": "Vaasa, 03/12/2022",
-      "rows": 59
-    },
-    {
-      "kind": "added",
-      "title": "Champions Cup osakilpailu 4/6",
-      "details": "Helsinki, 2.9.2023",
-      "rows": 25
-    },
-    {
-      "kind": "added",
-      "title": "Nuorisoturnaus",
-      "details": "Ilmajoki, 30.9.2023",
-      "rows": 208
-    },
-    {
-      "kind": "added",
-      "title": "VVV Cup - Nuorten Suomi Cup",
-      "details": "Vaasa, Variskan koulu, 11/11/2023",
-      "rows": 175
-    },
-    {
-      "kind": "added",
-      "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2024",
-      "details": "Nokia, 6.4.2024",
-      "rows": 74
-    },
-    {
-      "kind": "added",
-      "title": "Pertti Ukkola Turnaus",
-      "details": "Tampere, 18.5.2024",
-      "rows": 118
-    },
-    {
-      "kind": "added",
-      "title": "Pertti Ukkola Turnaus",
-      "details": "Ylöjärvi, 5.4.2025",
-      "rows": 59
-    },
-    {
-      "kind": "added",
-      "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2025",
-      "details": "Nokia, 3.5.2025",
-      "rows": 61
-    },
-    {
-      "kind": "added",
-      "title": "ViVo Cup",
-      "details": "Ylivieska, 3.5.2025",
-      "rows": 95
-    },
-    {
-      "kind": "added",
-      "title": "Aikuisharrastajien painikilpailut VI",
-      "details": "Helsinki, 22/11/2025",
-      "rows": 21
-    },
-    {
-      "kind": "added",
-      "title": "Kurun Ryhdin Marraspainit 2025",
-      "details": "Kuru, 29.11.2025",
+      "kind": "updated",
+      "title": "Miesten ja Naisten vapaapainin SM-kilpailut",
+      "details": "Helsinki, 29.10.2022",
       "rows": 54
     },
     {
       "kind": "added",
-      "title": "Raimo ja Esko Taskisen muistopainit",
-      "details": "Kemi, 7.2.2026",
-      "rows": 171
+      "title": "Kalle Mäkisen muistopainit",
+      "details": "Turku, 10.9.2022",
+      "rows": 301
     },
     {
       "kind": "added",
-      "title": "Taisto Kangasniemen XXVI muistopainit",
-      "details": "Tampere, 14.2.2026",
-      "rows": 200
+      "title": "Järvenpää Cup (Penan painit)",
+      "details": "Tuusula, 24.9.2022",
+      "rows": 146
     },
     {
       "kind": "added",
-      "title": "Olavi Niemen muistopainit ja Lo-Suomen av. AM kilp",
-      "details": "Pori, 18.4.2026",
-      "rows": 111
+      "title": "Avoimet Uudenmaan aluemestaruuskilpailut vp",
+      "details": "Janakkala, 22.10.2022",
+      "rows": 75
     },
     {
       "kind": "added",
-      "title": "Pertti Ukkola Turnaus",
-      "details": "Tampere, 2.5.2026",
-      "rows": 66
-    },
-    {
-      "kind": "added",
-      "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2026",
-      "details": "Nokia, 9.5.2026",
-      "rows": 61
-    },
-    {
-      "kind": "added",
-      "title": "Vivo Cup",
-      "details": "Ylivieska, 9.5.2026",
-      "rows": 4
-    },
-    {
-      "kind": "added",
-      "title": "Kemi Cup",
-      "details": "Kemi, 12.9.2026",
+      "title": "Turun Voimamiesten ikäkausipainit",
+      "details": "Turku, 10.6.2023",
       "rows": 106
     },
     {
       "kind": "added",
-      "title": "Tampere Cup",
-      "details": "Lempäälä, 24.10.2026",
-      "rows": 79
+      "title": "FFC 1 ja Champions Cup 5/6",
+      "details": "Laitila, 26/04/2025",
+      "rows": 75
+    },
+    {
+      "kind": "added",
+      "title": "Tapsan Painit",
+      "details": "Muhos, 20.9.2025",
+      "rows": 127
+    },
+    {
+      "kind": "added",
+      "title": "Luoman Cup",
+      "details": "Ylistaro, 12/09/2026",
+      "rows": 142
+    },
+    {
+      "kind": "added",
+      "title": "Nuoriso-turnaus",
+      "details": "Ilmajoki, 26.9.2026",
+      "rows": 152
     }
   ],
   "errors": [
@@ -269,32 +197,16 @@
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/indexFIN.htm",
-      "error": "Tiedoston rivin 6 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220618_Jaervenpaeae/indexFIN.htm",
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Turku/indexFIN.htm",
-      "error": "Tiedoston rivin 146 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Tampere/indexFIN.htm",
       "error": "Osittainen tuonti: Tytöt 17v 65 kg jätetty kokonaan pois (2 osallistujaa), koska 1 sijoitusta puuttuu"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Tuusula/indexFIN.htm",
-      "error": "Tiedoston rivin 170 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Hyvinkaeae/indexFIN.htm",
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/indexFIN.htm",
-      "error": "Tiedoston rivin 127 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/indexFIN.htm",
@@ -315,10 +227,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/indexFIN.htm",
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230610_Turku/indexFIN.htm",
-      "error": "Tiedoston rivin 12 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/indexFIN.htm",
@@ -365,10 +273,6 @@
       "error": "Osittainen tuonti: Ystävyysottelut 57 kg jätetty kokonaan pois (4 osallistujaa), koska 4 sijoitusta puuttuu"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm",
-      "error": "Tiedoston rivin 129 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/indexFIN.htm",
       "error": "Osittainen tuonti: Pojat Ystävyysottelu 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
     },
@@ -383,10 +287,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Jaervenpaeae/indexFIN.htm",
       "error": "Sarjavastaavuus puuttuu: Ystävyysottelu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Muhos/indexFIN.htm",
-      "error": "Tiedoston rivin 6 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251004_Hyvinkaeae/indexFIN.htm",
@@ -439,14 +339,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
       "error": "Osittainen tuonti: Extra 1 kg jätetty kokonaan pois (2 osallistujaa), koska 2 sijoitusta puuttuu"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Ylistaro/indexFIN.htm",
-      "error": "Tiedoston rivin 42 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
-      "error": "Tiedoston rivin 242 rakennetta ei tunnistettu. Tuonti keskeytettiin, jotta tuloksia ei jäisi huomaamatta pois."
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm",
