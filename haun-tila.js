@@ -13,8 +13,13 @@
     }
     const summary=$('#scan-report-summary');if(!summary)return;
     if(!report){summary.textContent=missing?'Hakuraporttia ei vielä ole saatavilla. Käynnistä päivitetty automaattihaku kerran GitHub Actionsissa.':'Luetaan hakuraporttia…';return;}
-    summary.textContent='Haku tarkistettu '+time(report.checkedAt)+'. Lisätty '+report.added+' kilpailua, päivitetty '+report.changed+', ennallaan '+report.unchanged+'. Tarkistettavia lähteitä '+report.errors.length+'. Raportin aineistossa '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' tulosta.';
-    for(const [selector,values] of [['#scan-changes',report.changes.map(c=>(c.kind==='added'?'Lisätty: ':'Päivitetty: ')+c.title+' · '+c.details+' · '+c.rows+' tulosta')],['#scan-errors',report.errors.map(e=>e.source+' — '+e.error)]]){
+    const blocked=report.errors.filter(e=>!e.error.startsWith('Osittainen tuonti:'));
+    const legacy=report.errors.filter(e=>e.error.startsWith('Osittainen tuonti:')&&!blocked.some(b=>b.source===e.source));
+    const partial=Array.isArray(report.partial)?report.partial:[];
+    summary.textContent='Haku tarkistettu '+time(report.checkedAt)+'. Lisätty yhteensä '+report.added+' kilpailua, päivitetty '+report.changed+', ennallaan '+report.unchanged+'. Osittaisia kilpailuja '+(partial.length+legacy.length)+'. Tuomatta jääneitä lähteitä '+blocked.length+'. Raportin aineistossa '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' tulosta.';
+    const partialLines=partial.map(c=>c.title+' · '+c.details+' — mukana '+c.rows+' tulosta ('+({added:'lisätty tällä haulla',updated:'päivitetty tällä haulla',unchanged:'jo aineistossa, ennallaan'}[c.status]||'aineistossa')+'). Puuttuvat painoluokat: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', '));
+    partialLines.push(...legacy.map(e=>e.source+' — '+e.error+' (Vanhan raportin huomio; tuonnin tila vahvistuu seuraavalla haulla.)'));
+    for(const [selector,values] of [['#scan-changes',report.changes.filter(c=>!c.partial).map(c=>(c.kind==='added'?'Lisätty: ':'Päivitetty: ')+c.title+' · '+c.details+' · '+c.rows+' tulosta')],['#scan-partial',partialLines],['#scan-errors',blocked.map(e=>e.source+' — '+e.error)]]){
       const list=$(selector);if(!list)continue;list.replaceChildren();for(const value of values.length?values:['Ei merkintöjä.']){const li=document.createElement('li');li.textContent=value;list.append(li);}
     }
   }
