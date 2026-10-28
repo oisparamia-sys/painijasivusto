@@ -33,16 +33,16 @@ def html_results(page):
   if len(cells)<3:continue
   weight=re.fullmatch(r'(\d+(?:[.,]\d+)?)\s*kg',cells[0],re.I)
   if weight:
-   count=re.fullmatch(r'(\d+) Osallistujaa',cells[2])
-   if not count:raise ValueError('Painoluokan osallistujamäärää ei tunnistettu')
-   current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]),rows=[]);groups.append(current)
+   count=re.fullmatch(r'(\d+) Osallistujaa?',cells[2],re.I)
+   if not count and cells[2]:raise ValueError('Painoluokan osallistujamäärää ei tunnistettu')
+   current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]) if count else None,rows=[]);groups.append(current)
   elif current:
    rank=re.fullmatch(r'(\d+)\.',cells[0])
    if rank and int(rank[1])>0 and cells[1] and cells[2]:current['rows'].append([cells[0],cells[1],cells[2]])
    elif cells[0].lower()=='tyhjä':continue
    elif any(re.search(r'NR\d+\.htm',x,re.I) for x in [tr]):raise ValueError('Osallistujalla ei ole vahvistettua sijoitusta')
  for group in groups:
-  if len(group['rows'])!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
+  if group['count'] is not None and len(group['rows'])!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
  return groups
 
 def competition(url):
@@ -56,16 +56,19 @@ def competition(url):
   groups=html_results(page)
   if m:category,style,count=m[1],m[2],int(m[3])
   elif groups:
+   if any(g['count'] is None for g in groups):raise ValueError('Osallistujamäärää ei ole ilmoitettu sarjalle eikä kaikille painoluokille')
    categories=set(g['category'] for g in groups)
    if len(categories)!=1:raise ValueError('HTML-sivun ikäluokat ovat ristiriidassa')
    category=next(iter(categories));count=sum(g['count'] for g in groups)
    # Only an explicit style word in the official category is accepted.
-   style='Vapaa' if re.search(r'\bvapaa\b',category,re.I) else 'Kr.room.' if re.search(r'\bkr[. ]|kreikkalais',category,re.I) else ''
+   style='Vapaa' if re.search(r'\bvapaa(?:paini)?\b',category,re.I) else 'Kr.room.' if re.search(r'\bkr[. ]|kreikkalais',category,re.I) else ''
   else:raise ValueError('Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa')
   code={'Kr.room.':'greco','Vapaa':'freestyle'}.get(style)
   if not code:raise ValueError('Painimuotoa ei ole ilmoitettu lähteessä: '+category)
-  if sum(g['count'] for g in groups)!=count:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
+  if sum(len(g['rows']) for g in groups)!=count:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
   if any(g['category'].casefold()!=category.casefold() for g in groups):raise ValueError('Sarjan otsikko ja painoluokat eroavat')
+  for g in groups:
+   if g['count'] is None:g['count']=len(g['rows'])
   pages.append(dict(category=category,style=code,count=count,url=pageurl));generated+=groups
  if not pages:raise ValueError('Sarjakohtaisia tulosluetteloita ei löytynyt')
  # HTML is the fallback for sources that do not publish a tab-separated file.
