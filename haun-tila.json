@@ -1,150 +1,30 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-28T06:38:57.987Z",
-  "updatedAt": "2026-10-28T06:38:57.987Z",
-  "competitions": 168,
-  "results": 18628,
-  "added": 23,
+  "checkedAt": "2026-10-28T06:55:55.877Z",
+  "updatedAt": "2026-10-28T06:55:55.877Z",
+  "competitions": 171,
+  "results": 18914,
+  "added": 3,
   "changed": 0,
-  "unchanged": 130,
+  "unchanged": 153,
   "changes": [
     {
       "kind": "added",
-      "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2022",
-      "details": "Nokia, 12.3.2022",
+      "title": "Kamppailupäivät - SotUL 2023",
+      "details": "Sodankylä, 25.-26.10.2023",
       "rows": 59
     },
     {
       "kind": "added",
-      "title": "Mitalipainit",
-      "details": "Vaasa, 23/03/2022",
-      "rows": 67
-    },
-    {
-      "kind": "added",
-      "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2022",
-      "details": "Nokia, 2.4.2022",
-      "rows": 47
-    },
-    {
-      "kind": "added",
-      "title": "Olavi Niemen muistopainit",
-      "details": "Pori, 2.4.2022",
-      "rows": 120
-    },
-    {
-      "kind": "added",
-      "title": "KOKKO-KALLE GAMES",
-      "details": "Kokkola, 10.4.2022",
-      "rows": 217
-    },
-    {
-      "kind": "added",
-      "title": "Ruissalon Painit",
-      "details": "Turku, 2.7.2022",
-      "rows": 66
-    },
-    {
-      "kind": "added",
-      "title": "Luoman Oy Cup",
-      "details": "Ylistaro, 01/10/2022",
-      "rows": 99
-    },
-    {
-      "kind": "added",
-      "title": "Pertsan Painit - Nuorten Suomi Cupin osakilpailu",
-      "details": "Sodankylä, 22/10/2022",
-      "rows": 84
-    },
-    {
-      "kind": "added",
-      "title": "Kurun Ryhdin Marraspainit 2022",
-      "details": "Kuru, 5.11.2022",
-      "rows": 70
-    },
-    {
-      "kind": "added",
-      "title": "Tampere Cup",
-      "details": "Tampere, 19.11.2022",
-      "rows": 111
-    },
-    {
-      "kind": "added",
-      "title": "Eero Tapio Turnaus",
-      "details": "Haukipudas, 25.3.2023",
+      "title": "Kamppailupäivät - SotUL 2024",
+      "details": "Kankaanpää, 30.-31.10.2024",
       "rows": 132
     },
     {
       "kind": "added",
-      "title": "Olavi Niemen muistopainit",
-      "details": "Pori, 1.4.2023",
-      "rows": 127
-    },
-    {
-      "kind": "added",
-      "title": "Tampere Cup",
-      "details": "Tampere, 25.11.2023",
-      "rows": 125
-    },
-    {
-      "kind": "added",
-      "title": "Olavi Niemen muistopainit",
-      "details": "Pori, 20.4.2024",
-      "rows": 99
-    },
-    {
-      "kind": "added",
-      "title": "Barents Summer Games",
-      "details": "Kemi, 25.8.2024",
-      "rows": 40
-    },
-    {
-      "kind": "added",
-      "title": "Tapsan Painit",
-      "details": "Muhos, 7.9.2024",
-      "rows": 97
-    },
-    {
-      "kind": "added",
-      "title": "TaPs painit 28.11.2024",
-      "details": "Tampere, 28.11.2024",
-      "rows": 29
-    },
-    {
-      "kind": "added",
-      "title": "TWM ikäkausipainit",
-      "details": "Turku, 7.6.2025",
-      "rows": 111
-    },
-    {
-      "kind": "added",
-      "title": "Nääshalli painit 25.9.2025",
-      "details": "Tampere, 25.9.2025",
-      "rows": 52
-    },
-    {
-      "kind": "added",
-      "title": "Joulumaapainit",
-      "details": "Rovaniemi, 29.11.2025",
-      "rows": 120
-    },
-    {
-      "kind": "added",
-      "title": "Nääshallin mestaruuskilpailut",
-      "details": "Tampere, 15.4.2026",
-      "rows": 41
-    },
-    {
-      "kind": "added",
-      "title": "VVV Mitalipainit",
-      "details": "Vaasa, 15/04/2026",
-      "rows": 33
-    },
-    {
-      "kind": "added",
-      "title": "Tapsan Painit",
-      "details": "Muhos, 19.9.2026",
-      "rows": 88
+      "title": "TWM Ikäkausipainit",
+      "details": "Turku, 6.6.2026",
+      "rows": 95
     }
   ],
   "errors": [
@@ -229,10 +109,6 @@
       "error": "Osallistujalla ei ole vahvistettua sijoitusta"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231025_Sodankylae/indexFIN.htm",
-      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Vapaapaini"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
       "error": "Osallistujalla ei ole vahvistettua sijoitusta"
     },
@@ -250,7 +126,7 @@
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240427_Vaasa/indexFIN.htm",
-      "error": "Painoluokan osallistujamäärää ei tunnistettu"
+      "error": "Sarjan ja painoluokkien osallistujamäärät eroavat"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/indexFIN.htm",
@@ -261,12 +137,8 @@
       "error": "HTML-tulosmäärä ei täsmää painoluokassa 39"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241030_Kankaanpaeae/indexFIN.htm",
-      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Naiset Vapaapaini"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Botniahalli/indexFIN.htm",
-      "error": "Painoluokan osallistujamäärää ei tunnistettu"
+      "error": "Sarjan ja painoluokkien osallistujamäärät eroavat"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexFIN.htm",
@@ -306,7 +178,7 @@
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251209_Kouvola/indexFIN.htm",
-      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Vapaapaini"
+      "error": "Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexFIN.htm",
@@ -347,10 +219,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
       "error": "HTML-tulosmäärä ei täsmää painoluokassa 70"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260606_Turku/indexFIN.htm",
-      "error": "Painimuotoa ei ole ilmoitettu lähteessä: Ystävyys Vapaapaini"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
