@@ -136,3 +136,8 @@ a { color: #174ba9; }
 
 .profile-year-filter { margin: 20px 0; max-width: 320px; }
 .profile-year-filter select { width: 100%; min-height: 44px; font-size: 16px; }
+
+.partial-results-badge{display:block;width:fit-content;max-width:100%;margin:6px 0;padding:4px 8px;background:#fff2cd;color:#684500;border-radius:6px;font-size:13px;font-weight:650;white-space:normal}
+.partial-results-note{background:#fff8e7;color:#4f3d19;border:1px solid #e7d4a0;padding:16px;border-radius:10px;margin:16px 0;overflow-wrap:anywhere}
+.partial-results-note p{margin:8px 0}
+.partial-results-note[hidden]{display:none}

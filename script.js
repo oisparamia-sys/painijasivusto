@@ -93,6 +93,26 @@ function refreshFilters() {
     } catch { /* Virheellistä lähdelinkkiä ei näytetä. */ }
   }
   sourceLine.hidden = !sourceLine.childElementCount;
+  const partialNote = $("#partial-results-note");
+  partialNote.replaceChildren();
+  const partialItems = items.filter(item=>partialNotes(item).length);
+  partialNote.hidden = !partialItems.length;
+  if (items.length === 1 && partialItems.length) {
+    const item = items[0];
+    partialNote.append(partialBadge(item));
+    const text = document.createElement("p");
+    text.textContent = "Mukana ovat kokonaan sijoitetut painoluokat. Seuraavat painoluokat puuttuvat, koska lähteestä puuttuu osallistujien sijoituksia:";
+    const list = document.createElement("ul");
+    partialNotes(item).forEach(note=>{
+      const li = document.createElement("li");
+      li.textContent = note.category + " · " + note.weight + " kg";
+      list.append(li);
+    });
+    partialNote.append(text,list);
+    const link = originalResultsLink(item); if(link)partialNote.append(link);
+  } else if (partialItems.length) {
+    partialNote.textContent = "Haussa on mukana " + partialItems.length + " kilpailua, joiden tulokset ovat osittaiset. Näet puuttuvat painoluokat valitsemalla kilpailun.";
+  }
   render();
 }
 function render(keepPage = false) {
@@ -138,9 +158,9 @@ function render(keepPage = false) {
       nameButton.addEventListener("click", () => openProfile(result.athleteId, nameButton));
       nameCell.append(nameButton); row.append(nameCell);
       [result.club, result.category, result.weight + " kg", item.title, item.details || "–", styleLabel(item, result)]
-        .forEach(value => {
+        .forEach((value,index) => {
           const td = document.createElement("td");
-          td.textContent = value; row.append(td);
+          td.textContent = value; if(index === 3 && partialNotes(item).length)td.append(partialBadge(item)); row.append(td);
         });
       labelResultRow(row, "results");
       fragment.append(row);
@@ -269,8 +289,8 @@ function renderProfile() {
     badge.className = "place " + ({1:"gold",2:"silver",3:"bronze"}[result.place] || "");
     badge.textContent = result.place + ".";
     cell.append(badge); row.append(cell);
-    [item.title, item.details || "–", result.category, result.weight + " kg"].forEach(value => {
-      const td = document.createElement("td"); td.textContent = value; row.append(td);
+    [item.title, item.details || "–", result.category, result.weight + " kg"].forEach((value,index) => {
+      const td = document.createElement("td"); td.textContent = value; if(index === 0 && partialNotes(item).length)td.append(partialBadge(item)); row.append(td);
     });
     const sourceCell = document.createElement("td");
     sourceCell.textContent = "–";
@@ -401,7 +421,12 @@ function renderCompetitionList() {
         }
       } catch { /* Virheellistä lähdelinkkiä ei näytetä. */ }
     }
-    card.append(title, details, counts, origin, actions);
+    card.append(title);
+    if(partialNotes(item).length) {
+      card.append(partialBadge(item));
+      const hint=document.createElement("p");hint.className="hint";hint.textContent="Osa painoluokista puuttuu. Näytä tulokset nähdäksesi puuttuvat luokat.";card.append(hint);
+    }
+    card.append(details, counts, origin, actions);
     fragment.append(card);
   });
   list.replaceChildren(fragment);
@@ -578,3 +603,18 @@ $("#wrestler-year").addEventListener("change", () => {
   profileState.year = $("#wrestler-year").value;
   renderProfile();
 });
+
+function partialNotes(item) {
+  return Array.isArray(item.importNotes) ? item.importNotes.filter(note=>note && typeof note.category === "string" && typeof note.weight === "string") : [];
+}
+function partialBadge(item) {
+  const badge=document.createElement("span");badge.className="partial-results-badge";badge.textContent="Tulokset osittaiset";
+  badge.setAttribute("title", "Kilpailusta puuttuvat: " + partialNotes(item).map(n=>n.category+" "+n.weight+" kg").join(", "));
+  return badge;
+}
+function originalResultsLink(item) {
+  try {
+    const url=new URL(item.source);if(url.protocol!=="https:"||url.hostname!=="turniereklassisch.ringerdb.de")return null;
+    const a=document.createElement("a");a.href=url.href;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Katso alkuperäinen tulossivu ↗";return a;
+  }catch{return null;}
+}

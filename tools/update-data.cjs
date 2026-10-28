@@ -13,7 +13,7 @@ function update(base,R,payload){
   for(const category of new Set(item.rows.map(r=>r.category))){const pages=response.pages.filter(p=>R.norm(p.category)===R.norm(category));if(pages.length!==1)throw Error('Sarjavastaavuus puuttuu: '+category);const p=pages[0];if(!['greco','freestyle'].includes(p.style)||item.rows.filter(r=>r.category===category).length!==p.count)throw Error('Sarjan määrä/painimuoto ei täsmää');item.categoryStyles[category]=p.style;item.styleSources[category]=p.url;}
   if(item.rows.length!==response.pages.reduce((n,p)=>n+p.count,0))throw Error('Kokonaistulosmäärä ei täsmää');
   const key=R.compKey(item),old=existing.get(key);if(seen.has(key))throw Error('Toistuva kilpailu samassa haussa');seen.add(key);
-  if(old&&sig(old)===sig(item)){unchanged++;continue;}
+  if(old&&sig(old)===sig(item)&&JSON.stringify(old.importNotes||[])===JSON.stringify(item.importNotes||[])){unchanged++;continue;}
   // Avoid silently deleting existing results if an official page becomes partial.
   if(old&&item.rows.length<old.rows.length)throw Error('Tulosmäärä pieneni; tarkista käsin');
   if(!old&&base.competitions.some(c=>c.source===response.source||R.norm(c.details)===R.norm(item.details)))throw Error('Mahdollinen kaksoiskilpailu; tarkista käsin');

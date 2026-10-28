@@ -19,7 +19,7 @@
       if (!window.PAINI_SHARED_DATA || !Array.isArray(window.PAINI_SHARED_DATA.competitions)) throw new Error('data.js');
       await load('athlete-registry.js?v=20261027-fresh1');
       if (status) { status.hidden = true; status.textContent = ''; }
-      await load('script.js?v=20261027-fresh1');
+      await load('script.js?v=20261028-partial1');
       window.dispatchEvent(new Event('paini-data-ready'));
     } catch (error) {
       if (status) {
