@@ -1,172 +1,36 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-29T19:30:02.214Z",
-  "updatedAt": "2026-10-29T19:30:02.214Z",
-  "competitions": 225,
-  "results": 26146,
-  "added": 17,
-  "changed": 3,
-  "unchanged": 191,
+  "checkedAt": "2026-10-29T19:49:29.979Z",
+  "updatedAt": "2026-10-29T19:49:29.979Z",
+  "competitions": 226,
+  "results": 26310,
+  "added": 1,
+  "changed": 2,
+  "unchanged": 209,
   "changes": [
     {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/LM/2024/FI/241102_Simpele/indexFIN.htm",
+      "partial": false,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Muhos/indexFIN.htm",
       "kind": "added",
-      "title": "Avoimet Itä-Suomen aluemestaruuskilpailut(vp)",
-      "details": "Simpele, 2.11.2024",
-      "rows": 70
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/LM/2025/FI/251108_Simpele/indexFIN.htm",
-      "kind": "added",
-      "title": "Avoimet Itä-Suomen AM-kilpailut",
-      "details": "Simpele, 8.11.2025",
-      "rows": 90
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220305_Vaajakoski/indexFIN.htm",
-      "kind": "added",
-      "title": "OP Keski-Suomi painiturnaus",
-      "details": "Vaajakoski, 5.3.2022",
-      "rows": 148
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220618_Jaervenpaeae/indexFIN.htm",
-      "kind": "added",
-      "title": "Finlandia Freestyle Cup",
-      "details": "Järvenpää, 18.6.2022",
-      "rows": 102
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Tuusula/indexFIN.htm",
-      "kind": "updated",
-      "title": "Järvenpää Cup (Penan painit)",
-      "details": "Tuusula, 24.9.2022",
-      "rows": 146
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Hyvinkaeae/indexFIN.htm",
-      "kind": "added",
-      "title": "Finlandia Freestyle Cup",
-      "details": "Hyvinkää, 1.10.2022",
-      "rows": 123
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/indexFIN.htm",
-      "kind": "updated",
-      "title": "Avoimet Uudenmaan aluemestaruuskilpailut vp",
-      "details": "Janakkala, 22.10.2022",
-      "rows": 75
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/indexFIN.htm",
-      "kind": "added",
-      "title": "Finlandia freestyle cup+Champions cup",
-      "details": "Tampere, 18.3.2023",
-      "rows": 101
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm",
-      "kind": "added",
-      "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2023",
-      "details": "Nokia, 15.4.2023",
-      "rows": 66
+      "title": "Tapsan Painit",
+      "details": "Muhos, 10/09/2022",
+      "rows": 92
     },
     {
       "partial": true,
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "kind": "added",
+      "kind": "updated",
       "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2023",
       "details": "Nokia, 13.5.2023",
-      "rows": 10
+      "rows": 74
     },
     {
       "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Tuusula/indexFIN.htm",
-      "kind": "added",
-      "title": "Järvenpää Cup, Penan Painit",
-      "details": "Tuusula, 30.9.2023",
-      "rows": 102
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Kuopio/indexFIN.htm",
-      "kind": "added",
-      "title": "Itä-Suomen avoimet aluemestaruuskilpailut(KKV)",
-      "details": "Kuopio, 11.11.2023",
-      "rows": 82
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/indexFIN.htm",
-      "kind": "added",
-      "title": "Nääshalli mestaruuskilpailu 13.3.2024",
-      "details": "Tampere, 13.3.2024",
-      "rows": 47
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240427_Vaasa/indexFIN.htm",
-      "kind": "added",
-      "title": "KLL:n mestaruuskilpailut, kr",
-      "details": "Vaasa, 27/04/2024",
-      "rows": 325
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240615_Jaervenpaeae/indexFIN.htm",
-      "kind": "added",
-      "title": "Finlandia freestyle cup",
-      "details": "Järvenpää, 15.6.2024",
-      "rows": 77
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/indexFIN.htm",
-      "kind": "added",
-      "title": "Nääshalli painit .10.10.2024",
-      "details": "Tampere, 10.10.2024",
-      "rows": 46
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Botniahalli/indexFIN.htm",
-      "kind": "added",
-      "title": "VVV Cup",
-      "details": "Mustasaari, Botniahalli, 09/11/2024",
-      "rows": 200
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
       "kind": "updated",
-      "title": "FFC 1 ja Champions Cup 5/6",
-      "details": "Laitila, 26/04/2025",
-      "rows": 75
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250614_Jaervenpaeae/indexFIN.htm",
-      "kind": "added",
-      "title": "FFC & Champions Cup 6/6",
-      "details": "Järvenpää, 14.6.2025",
-      "rows": 49
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Jaervenpaeae/indexFIN.htm",
-      "kind": "added",
-      "title": "P. Asikaniuksen muistopainit / AM kilpailut",
-      "details": "Järvenpää, 20.9.2025",
-      "rows": 153
+      "title": "Vivo Cup",
+      "details": "Ylivieska, 9.5.2026",
+      "rows": 12
     }
   ],
   "partial": [
@@ -184,7 +48,7 @@
           "source": "https://turniereklassisch.ringerdb.de/LM/2024/FI/241102_Simpele/FIN1178788223_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Avoimet Itä-Suomen AM-kilpailut",
@@ -207,7 +71,7 @@
           "source": "https://turniereklassisch.ringerdb.de/LM/2025/FI/251108_Simpele/FIN398778752_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "OP Keski-Suomi painiturnaus",
@@ -279,7 +143,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220305_Vaajakoski/FIN1209262463_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Finlandia Freestyle Cup",
@@ -309,7 +173,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220618_Jaervenpaeae/FIN109928832_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Uolevi Setälän muistopainit",
@@ -341,7 +205,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Tuusula/FIN929489280_tab.txt"
         }
       ],
-      "status": "updated"
+      "status": "unchanged"
     },
     {
       "title": "Finlandia Freestyle Cup",
@@ -364,7 +228,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Hyvinkaeae/FIN1053221248_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Avoimet Uudenmaan aluemestaruuskilpailut vp",
@@ -387,7 +251,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/FIN2020827519_tab.txt"
         }
       ],
-      "status": "updated"
+      "status": "unchanged"
     },
     {
       "title": "VVV Cup - Nuorten Suomi Cup",
@@ -554,7 +418,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/FIN382558592_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2023",
@@ -591,42 +455,14 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/FIN3307196161tlges.htm"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2023",
       "details": "Nokia, 13.5.2023",
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "rows": 10,
+      "rows": 74,
       "notes": [
-        {
-          "category": "YST Tytöt 12",
-          "weight": "2",
-          "excluded": 2,
-          "unranked": 2,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386884tlges.htm"
-        },
-        {
-          "category": "YST Tytöt 12",
-          "weight": "4",
-          "excluded": 2,
-          "unranked": 2,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386884tlges.htm"
-        },
-        {
-          "category": "YST Tytöt 12",
-          "weight": "5",
-          "excluded": 2,
-          "unranked": 2,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386884tlges.htm"
-        },
-        {
-          "category": "YST Pojat 12",
-          "weight": "2",
-          "excluded": 2,
-          "unranked": 2,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386883tlges.htm"
-        },
         {
           "category": "Tytöt 12",
           "weight": "22",
@@ -643,111 +479,13 @@
         },
         {
           "category": "Pojat 12",
-          "weight": "20",
-          "excluded": 3,
-          "unranked": 3,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "24",
-          "excluded": 4,
-          "unranked": 4,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "25",
-          "excluded": 4,
-          "unranked": 4,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "26",
-          "excluded": 3,
-          "unranked": 3,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "27",
-          "excluded": 4,
-          "unranked": 4,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "28",
-          "excluded": 3,
-          "unranked": 3,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "29",
-          "excluded": 3,
-          "unranked": 3,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "32",
-          "excluded": 4,
-          "unranked": 4,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "33",
-          "excluded": 2,
-          "unranked": 2,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "34",
-          "excluded": 6,
-          "unranked": 6,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "35",
-          "excluded": 7,
-          "unranked": 6,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "37",
-          "excluded": 3,
-          "unranked": 3,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "39",
-          "excluded": 4,
-          "unranked": 4,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
-          "weight": "48",
-          "excluded": 6,
-          "unranked": 6,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
-        },
-        {
-          "category": "Pojat 12",
           "weight": "63",
           "excluded": 1,
           "unranked": 1,
           "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm"
         }
       ],
-      "status": "added"
+      "status": "updated"
     },
     {
       "title": "Champions Cup osakilpailu 4/6",
@@ -809,7 +547,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Tuusula/FIN932405632_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Itä-Suomen avoimet aluemestaruuskilpailut(KKV)",
@@ -825,7 +563,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Kuopio/FIN857989504_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "VVV Cup - Nuorten Suomi Cup",
@@ -927,7 +665,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/FIN21366951675tlges.htm"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2024",
@@ -959,7 +697,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240427_Vaasa/FIN97873958423tlges.htm"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Pertti Ukkola Turnaus",
@@ -1005,7 +743,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240615_Jaervenpaeae/FIN1445388671_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Nääshalli painit .10.10.2024",
@@ -1042,7 +780,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/FIN13353537277tlges.htm"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "VVV Cup",
@@ -1058,7 +796,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Botniahalli/FIN181589644738tlges.htm"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Pertti Ukkola Turnaus",
@@ -1118,7 +856,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/FIN223109504_tab.txt"
         }
       ],
-      "status": "updated"
+      "status": "unchanged"
     },
     {
       "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2025",
@@ -1173,7 +911,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250614_Jaervenpaeae/FIN1668276608_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "P. Asikaniuksen muistopainit / AM kilpailut",
@@ -1203,7 +941,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Jaervenpaeae/FIN1005838720_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Aikuisharrastajien painikilpailut VI",
@@ -1423,15 +1161,8 @@
       "title": "Vivo Cup",
       "details": "Ylivieska, 9.5.2026",
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
-      "rows": 4,
+      "rows": 12,
       "notes": [
-        {
-          "category": "Tytöt U15",
-          "weight": "54",
-          "excluded": 2,
-          "unranked": 2,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131237tlges.htm"
-        },
         {
           "category": "Tytöt U11",
           "weight": "40",
@@ -1546,13 +1277,6 @@
         },
         {
           "category": "Alokaspojat",
-          "weight": "41",
-          "excluded": 2,
-          "unranked": 2,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm"
-        },
-        {
-          "category": "Alokaspojat",
           "weight": "61",
           "excluded": 3,
           "unranked": 3,
@@ -1563,13 +1287,6 @@
           "weight": "42",
           "excluded": 4,
           "unranked": 4,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131227tlges.htm"
-        },
-        {
-          "category": "Tytöt U13",
-          "weight": "55",
-          "excluded": 2,
-          "unranked": 2,
           "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131227tlges.htm"
         },
         {
@@ -1627,16 +1344,9 @@
           "excluded": 3,
           "unranked": 3,
           "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm"
-        },
-        {
-          "category": "Pojat U13",
-          "weight": "69",
-          "excluded": 2,
-          "unranked": 2,
-          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm"
         }
       ],
-      "status": "unchanged"
+      "status": "updated"
     },
     {
       "title": "TaPs painit 12.5.2026",
@@ -1803,10 +1513,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260822_Oulu/indexFIN.htm",
       "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Muhos/indexFIN.htm",
-      "error": "Tulosluetteloissa ei ole vielä vahvistettuja sijoituksia"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm",
