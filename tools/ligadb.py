@@ -37,7 +37,7 @@ def html_results(page):
   if weight:
    count=re.fullmatch(r'(\d+) (?:Osallistujaa?|Participants?)',cells[2],re.I)
    if not count and cells[2]:raise ValueError('Painoluokan osallistujamäärää ei tunnistettu')
-   current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]) if count else None,rows=[],unranked=0);groups.append(current)
+   current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]) if count else None,rows=[],unranked=0,people=[]);groups.append(current)
   elif current:
    rank=re.fullmatch(r'(\d+)\.',cells[0])
    if rank and int(rank[1])>0 and cells[1] and cells[2]:current['rows'].append([cells[0],cells[1],cells[2]])
@@ -45,9 +45,31 @@ def html_results(page):
    elif re.search(r'NR\d+\.htm',tr,re.I) or (len(cells)==3 and cells[0] in ['', '0.', '0'] and cells[1] and cells[2]):
     if cells[0] not in ['', '0.', '0'] or not cells[1] or not cells[2]:raise ValueError('Osallistujarivin rakennetta ei tunnistettu')
     current['unranked']+=1
+   if (rank and int(rank[1])>0) or (cells[0] in ['', '0.', '0'] and cells[1] and cells[2]):current['people'].append((cells[1].casefold(),cells[2].casefold()))
  for group in groups:
   if group['count'] is not None and len(group['rows'])+group['unranked']!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
  return groups
+
+def confirmed_weight(group, pageurl, category_link, available_links):
+ # The aggregate list may be stale while the individual weight list is final.
+ if not group['unranked']:return group
+ prefix=category_link.rsplit('/',1)[-1].removesuffix('tlges.htm')
+ expected=prefix+group['weight']+'.htm'
+ candidates=[link for link in available_links if link.rsplit('/',1)[-1]==expected]
+ if len(set(candidates))!=1:return group
+ weighturl=urllib.parse.urljoin(pageurl,candidates[0])
+ # Do not lose the already validated other weights if a fallback is unavailable.
+ try:groups=html_results(get(weighturl))
+ except (OSError, ValueError):return group
+ if len(groups)!=1:raise ValueError('Painoluokan erillisen tuloslistan rakenne on ristiriitainen')
+ final=groups[0]
+ if final['weight']!=group['weight'] or final['category'].casefold()!=group['category'].casefold():raise ValueError('Painoluokan erillinen tuloslista ei vastaa sarjaa')
+ if final['unranked']:return group
+ if final['count'] is None or final['count']!=group['count'] or len(final['rows'])!=group['count']:raise ValueError('Painoluokan erillisen tuloslistan osallistujamäärä ei täsmää')
+ # Compare actual identities, not row order: final standings reorder entrants.
+ people=lambda rows:sorted((clean(row[1]).casefold(),clean(row[2]).casefold()) for row in rows)
+ if people(final['rows'])!=sorted(group['people']):raise ValueError('Painoluokan erillisen tuloslistan osallistujat eivät täsmää')
+ return final
 
 def usable_tab(text):
  active=False;found=False
@@ -66,7 +88,7 @@ def competition(url):
  url=SOURCE_ALIASES.get(url,url)
  if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/index(?:FIN|ENG)\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
  s=get(url);alllinks=links(s);raw=[u for u in alllinks if '_tab.txt' in u]
- pages=[];generated=[];warnings=[]
+ pages=[];generated=[];warnings=[];recovered=False
  for link in alllinks:
   if 'tlges.htm' not in link:continue
   pageurl=urllib.parse.urljoin(url,link);page=get(pageurl);plain=clean(page)
@@ -86,7 +108,10 @@ def competition(url):
   if sum(len(g['rows'])+g['unranked'] for g in groups)!=count:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
   if any(g['category'].casefold()!=category.casefold() for g in groups):raise ValueError('Sarjan otsikko ja painoluokat eroavat')
   for g in groups:
-   if g['count'] is None:g['count']=len(g['rows'])
+   if g['count'] is None:g['count']=len(g['rows'])+g['unranked']
+  original_unranked=sum(g['unranked'] for g in groups)
+  groups=[confirmed_weight(g,pageurl,link,links(page)) for g in groups]
+  recovered=recovered or sum(g['unranked'] for g in groups)<original_unranked
   complete=[]
   for g in groups:
    if g['unranked']:
@@ -115,7 +140,7 @@ def competition(url):
    if (category.casefold(),weight) not in known and not any(w['category'].casefold()==category.casefold() and w['weight']==weight for w in warnings):
     if not re.search(r'ystävyys',category,re.I):raise ValueError('Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: '+category)
     warnings.append(dict(category=category,weight=weight,excluded=int(h[3]),unranked=0,source=rawurl))
- if rawtext is not None and not warnings and usable_tab(rawtext):text=rawtext
+ if rawtext is not None and not warnings and not recovered and usable_tab(rawtext):text=rawtext
  else:
   header=re.search(r'<a\b[^>]*href\s*=\s*["\']index(?:FIN|ENG)\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
   if not header:raise ValueError('Kilpailun nimeä ja päivämäärää ei tunnistettu')
