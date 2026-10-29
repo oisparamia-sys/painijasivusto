@@ -205344,6 +205344,36 @@ window.PAINI_SHARED_DATA = {
         }
       ],
       "skipped": 0,
+      "importNotes": [
+        {
+          "category": "Ystävyysottelu",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelu",
+          "weight": "2",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelu",
+          "weight": "3",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelu",
+          "weight": "4",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+        }
+      ],
       "categoryStyles": {
         "GR U9": "greco",
         "GR U11": "greco",
@@ -205368,7 +205398,7 @@ window.PAINI_SHARED_DATA = {
       },
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
       "textSource": "",
-      "fileInfo": "LigaDB · ajastettu haku · 2026-10-28"
+      "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
     },
     {
       "title": "Helsinki Open 2022",
@@ -222805,12 +222835,2352 @@ window.PAINI_SHARED_DATA = {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261028_Vaasa/indexFIN.htm",
       "textSource": "",
       "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
+    },
+    {
+      "title": "Nokian Pyryn Sarjapainit 2.osakilpailu 2026",
+      "details": "Nokia, 7.2.2026",
+      "rows": [
+        {
+          "place": 1,
+          "name": "Paavo Tuominen",
+          "club": "Porin Painimiehet",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024115",
+          "athleteId": "painija-014961"
+        },
+        {
+          "place": 2,
+          "name": "Thomas Haasmaa",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024116",
+          "athleteId": "painija-020427"
+        },
+        {
+          "place": 3,
+          "name": "Leino Immonen",
+          "club": "Nokian Pyry",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024117",
+          "athleteId": "painija-020428"
+        },
+        {
+          "place": 4,
+          "name": "Julius Juoperi",
+          "club": "Nokian Pyry",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024118",
+          "athleteId": "painija-020429"
+        },
+        {
+          "place": 5,
+          "name": "Frans Hakala",
+          "club": "Porin Painimiehet",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024119",
+          "athleteId": "painija-020425"
+        },
+        {
+          "place": 6,
+          "name": "Otso Rotgers",
+          "club": "Tampereen Voimailijat",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024120",
+          "athleteId": "painija-016113"
+        },
+        {
+          "place": 1,
+          "name": "Max Rajala",
+          "club": "KOOVEE",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024121",
+          "athleteId": "painija-014114"
+        },
+        {
+          "place": 2,
+          "name": "Elias Ala-Rämi",
+          "club": "Nokian Pyry",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024122",
+          "athleteId": "painija-019648"
+        },
+        {
+          "place": 3,
+          "name": "Lauri Niemi",
+          "club": "Nokian Pyry",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024123",
+          "athleteId": "painija-001392"
+        },
+        {
+          "place": 4,
+          "name": "Leo Vuorinen",
+          "club": "Nokian Pyry",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024124",
+          "athleteId": "painija-011773"
+        },
+        {
+          "place": 5,
+          "name": "Kasper Alakastari",
+          "club": "Nokian Pyry",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024125",
+          "athleteId": "painija-019854"
+        },
+        {
+          "place": 6,
+          "name": "Jaro Järvi",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024126",
+          "athleteId": "painija-023735"
+        },
+        {
+          "place": 1,
+          "name": "Hugo Leponen",
+          "club": "Tampereen Painiseura",
+          "weight": "24",
+          "category": "Pojat 12",
+          "resultId": "tulos-024127",
+          "athleteId": "painija-000456"
+        },
+        {
+          "place": 2,
+          "name": "Ilmari Järvenpää",
+          "club": "Porin Painimiehet",
+          "weight": "24",
+          "category": "Pojat 12",
+          "resultId": "tulos-024128",
+          "athleteId": "painija-020436"
+        },
+        {
+          "place": 3,
+          "name": "Akseli Ala-Rämi",
+          "club": "Nokian Pyry",
+          "weight": "24",
+          "category": "Pojat 12",
+          "resultId": "tulos-024129",
+          "athleteId": "painija-019457"
+        },
+        {
+          "place": 4,
+          "name": "Leo Haapala",
+          "club": "Kankaanpään Urheilijat",
+          "weight": "24",
+          "category": "Pojat 12",
+          "resultId": "tulos-024130",
+          "athleteId": "painija-019866"
+        },
+        {
+          "place": 1,
+          "name": "Veikko Rantala",
+          "club": "Nokian Pyry",
+          "weight": "26",
+          "category": "Pojat 12",
+          "resultId": "tulos-024131",
+          "athleteId": "painija-011774"
+        },
+        {
+          "place": 2,
+          "name": "Kaihan Nabizada",
+          "club": "Tampereen Painiseura",
+          "weight": "26",
+          "category": "Pojat 12",
+          "resultId": "tulos-024132",
+          "athleteId": "painija-000485"
+        },
+        {
+          "place": 1,
+          "name": "Emil Hietala",
+          "club": "Ylä-Tikkurilan Kipinä",
+          "weight": "28",
+          "category": "Pojat 12",
+          "resultId": "tulos-024133",
+          "athleteId": "painija-002389"
+        },
+        {
+          "place": 2,
+          "name": "Daniel Karimi",
+          "club": "Tampereen Painiseura",
+          "weight": "28",
+          "category": "Pojat 12",
+          "resultId": "tulos-024134",
+          "athleteId": "painija-000452"
+        },
+        {
+          "place": 3,
+          "name": "Iiro Hörkkö",
+          "club": "Viialan Pyry",
+          "weight": "28",
+          "category": "Pojat 12",
+          "resultId": "tulos-024135",
+          "athleteId": "painija-019863"
+        },
+        {
+          "place": 4,
+          "name": "Toivo Lindberg",
+          "club": "Porin Painimiehet",
+          "weight": "28",
+          "category": "Pojat 12",
+          "resultId": "tulos-024136",
+          "athleteId": "painija-019407"
+        },
+        {
+          "place": 5,
+          "name": "Rohan Nabizada",
+          "club": "Tampereen Painiseura",
+          "weight": "28",
+          "category": "Pojat 12",
+          "resultId": "tulos-024137",
+          "athleteId": "painija-000486"
+        },
+        {
+          "place": 1,
+          "name": "Paavo Leppänen",
+          "club": "Nokian Pyry",
+          "weight": "29",
+          "category": "Pojat 12",
+          "resultId": "tulos-024138",
+          "athleteId": "painija-003819"
+        },
+        {
+          "place": 2,
+          "name": "Eliel Kotipelto",
+          "club": "KOOVEE",
+          "weight": "29",
+          "category": "Pojat 12",
+          "resultId": "tulos-024139",
+          "athleteId": "painija-011766"
+        },
+        {
+          "place": 3,
+          "name": "Eino Järvelä",
+          "club": "Kurun Ryhti",
+          "weight": "29",
+          "category": "Pojat 12",
+          "resultId": "tulos-024140",
+          "athleteId": "painija-001273"
+        },
+        {
+          "place": 4,
+          "name": "Urho Lehtonen",
+          "club": "Porin Painimiehet",
+          "weight": "29",
+          "category": "Pojat 12",
+          "resultId": "tulos-024141",
+          "athleteId": "painija-023750"
+        },
+        {
+          "place": 1,
+          "name": "Edvin Siitari",
+          "club": "Porin Painimiehet",
+          "weight": "32",
+          "category": "Pojat 12",
+          "resultId": "tulos-024142",
+          "athleteId": "painija-020447"
+        },
+        {
+          "place": 2,
+          "name": "Miika Järvelä",
+          "club": "Kurun Ryhti",
+          "weight": "32",
+          "category": "Pojat 12",
+          "resultId": "tulos-024143",
+          "athleteId": "painija-001414"
+        },
+        {
+          "place": 3,
+          "name": "Kosti Uusiheikkilä",
+          "club": "Porin Painimiehet",
+          "weight": "32",
+          "category": "Pojat 12",
+          "resultId": "tulos-024144",
+          "athleteId": "painija-020449"
+        },
+        {
+          "place": 4,
+          "name": "Joel Siljamäki",
+          "club": "Nokian Pyry",
+          "weight": "32",
+          "category": "Pojat 12",
+          "resultId": "tulos-024145",
+          "athleteId": "painija-023754"
+        },
+        {
+          "place": 1,
+          "name": "Ilmari Lyly",
+          "club": "Kurun Ryhti",
+          "weight": "34",
+          "category": "Pojat 12",
+          "resultId": "tulos-024146",
+          "athleteId": "painija-000946"
+        },
+        {
+          "place": 2,
+          "name": "Ilmari Tuominen",
+          "club": "Porin Painimiehet",
+          "weight": "34",
+          "category": "Pojat 12",
+          "resultId": "tulos-024147",
+          "athleteId": "painija-014931"
+        },
+        {
+          "place": 3,
+          "name": "Elias Kannisto",
+          "club": "Tampereen Painiseura",
+          "weight": "34",
+          "category": "Pojat 12",
+          "resultId": "tulos-024148",
+          "athleteId": "painija-000453"
+        },
+        {
+          "place": 4,
+          "name": "Oodi Kurkinen",
+          "club": "Porin Painimiehet",
+          "weight": "34",
+          "category": "Pojat 12",
+          "resultId": "tulos-024149",
+          "athleteId": "painija-020452"
+        },
+        {
+          "place": 1,
+          "name": "Eemil Hakala",
+          "club": "Porin Painimiehet",
+          "weight": "36",
+          "category": "Pojat 12",
+          "resultId": "tulos-024150",
+          "athleteId": "painija-020454"
+        },
+        {
+          "place": 2,
+          "name": "Konsta Leinonen",
+          "club": "Nokian Pyry",
+          "weight": "36",
+          "category": "Pojat 12",
+          "resultId": "tulos-024151",
+          "athleteId": "painija-020455"
+        },
+        {
+          "place": 3,
+          "name": "Otto Rantala",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "36",
+          "category": "Pojat 12",
+          "resultId": "tulos-024152",
+          "athleteId": "painija-019418"
+        },
+        {
+          "place": 4,
+          "name": "Samuel Välimäki",
+          "club": "Kankaanpään Urheilijat",
+          "weight": "36",
+          "category": "Pojat 12",
+          "resultId": "tulos-024153",
+          "athleteId": "painija-019849"
+        },
+        {
+          "place": 1,
+          "name": "Jimi Kukkonen",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "38",
+          "category": "Pojat 12",
+          "resultId": "tulos-024154",
+          "athleteId": "painija-014236"
+        },
+        {
+          "place": 2,
+          "name": "Samu Järvelä",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "38",
+          "category": "Pojat 12",
+          "resultId": "tulos-024155",
+          "athleteId": "painija-014124"
+        },
+        {
+          "place": 3,
+          "name": "Elias Seifi",
+          "club": "Tampereen Painiseura",
+          "weight": "38",
+          "category": "Pojat 12",
+          "resultId": "tulos-024156",
+          "athleteId": "painija-001308"
+        },
+        {
+          "place": 1,
+          "name": "Leo Kannisto",
+          "club": "Tampereen Painiseura",
+          "weight": "40",
+          "category": "Pojat 12",
+          "resultId": "tulos-024157",
+          "athleteId": "painija-000444"
+        },
+        {
+          "place": 2,
+          "name": "Niilo Loikkanen",
+          "club": "Nokian Pyry",
+          "weight": "40",
+          "category": "Pojat 12",
+          "resultId": "tulos-024158",
+          "athleteId": "painija-003833"
+        },
+        {
+          "place": 3,
+          "name": "Veikko Vaaja",
+          "club": "Nokian Pyry",
+          "weight": "40",
+          "category": "Pojat 12",
+          "resultId": "tulos-024159",
+          "athleteId": "painija-019684"
+        },
+        {
+          "place": 1,
+          "name": "Venni Niemi",
+          "club": "Nokian Pyry",
+          "weight": "48",
+          "category": "Pojat 12",
+          "resultId": "tulos-024160",
+          "athleteId": "painija-001316"
+        },
+        {
+          "place": 2,
+          "name": "Huugo Tuunainen",
+          "club": "Kankaanpään Urheilijat",
+          "weight": "48",
+          "category": "Pojat 12",
+          "resultId": "tulos-024161",
+          "athleteId": "painija-014970"
+        },
+        {
+          "place": 3,
+          "name": "Niki Pärnänen",
+          "club": "Nokian Pyry",
+          "weight": "48",
+          "category": "Pojat 12",
+          "resultId": "tulos-024162",
+          "athleteId": "painija-001331"
+        },
+        {
+          "place": 4,
+          "name": "Olavi Vartia",
+          "club": "Tampereen Painiseura",
+          "weight": "48",
+          "category": "Pojat 12",
+          "resultId": "tulos-024163",
+          "athleteId": "painija-000478"
+        },
+        {
+          "place": 5,
+          "name": "Elia Salonen",
+          "club": "Nokian Pyry",
+          "weight": "48",
+          "category": "Pojat 12",
+          "resultId": "tulos-024164",
+          "athleteId": "painija-011799"
+        },
+        {
+          "place": 1,
+          "name": "Tuomas Salmela",
+          "club": "Nokian Pyry",
+          "weight": "55",
+          "category": "Pojat 12",
+          "resultId": "tulos-024165",
+          "athleteId": "painija-020115"
+        },
+        {
+          "place": 2,
+          "name": "Niila Sulander",
+          "club": "Nokian Pyry",
+          "weight": "55",
+          "category": "Pojat 12",
+          "resultId": "tulos-024166",
+          "athleteId": "painija-001365"
+        },
+        {
+          "place": 3,
+          "name": "Eetu Juvonen",
+          "club": "Nokian Pyry",
+          "weight": "55",
+          "category": "Pojat 12",
+          "resultId": "tulos-024167",
+          "athleteId": "painija-001067"
+        },
+        {
+          "place": 1,
+          "name": "Paavo Pihlajämäki",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "60",
+          "category": "Pojat 12",
+          "resultId": "tulos-024168",
+          "athleteId": "painija-020470"
+        },
+        {
+          "place": 2,
+          "name": "Leo Niukkonen",
+          "club": "Tampereen Painiseura",
+          "weight": "60",
+          "category": "Pojat 12",
+          "resultId": "tulos-024169",
+          "athleteId": "painija-000451"
+        },
+        {
+          "place": 3,
+          "name": "Melik Aydin",
+          "club": "Nokian Pyry",
+          "weight": "60",
+          "category": "Pojat 12",
+          "resultId": "tulos-024170",
+          "athleteId": "painija-020160"
+        },
+        {
+          "place": 1,
+          "name": "Isa Sallansalo",
+          "club": "Kurun Ryhti",
+          "weight": "24",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024171",
+          "athleteId": "painija-011818"
+        },
+        {
+          "place": 2,
+          "name": "Iris Petäjäniemi",
+          "club": "Kurun Ryhti",
+          "weight": "24",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024172",
+          "athleteId": "painija-019826"
+        },
+        {
+          "place": 3,
+          "name": "Sofia Tuomensalo-Porkka",
+          "club": "Nokian Pyry",
+          "weight": "24",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024173",
+          "athleteId": "painija-019825"
+        },
+        {
+          "place": 1,
+          "name": "Hilda Vartia",
+          "club": "Tampereen Painiseura",
+          "weight": "28",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024174",
+          "athleteId": "painija-000484"
+        },
+        {
+          "place": 2,
+          "name": "Miisa Koskinen",
+          "club": "Nokian Pyry",
+          "weight": "28",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024175",
+          "athleteId": "painija-019703"
+        },
+        {
+          "place": 3,
+          "name": "Elsi Rintala",
+          "club": "Kurun Ryhti",
+          "weight": "28",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024176",
+          "athleteId": "painija-011822"
+        },
+        {
+          "place": 1,
+          "name": "Evella Kauko",
+          "club": "Nokian Pyry",
+          "weight": "35",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024177",
+          "athleteId": "painija-001420"
+        },
+        {
+          "place": 2,
+          "name": "Loviisa Harjuketo",
+          "club": "Nokian Pyry",
+          "weight": "35",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024178",
+          "athleteId": "painija-020480"
+        },
+        {
+          "place": 3,
+          "name": "Emma Tiainen",
+          "club": "Porin Painimiehet",
+          "weight": "35",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024179",
+          "athleteId": "painija-014975"
+        },
+        {
+          "place": 4,
+          "name": "Siiri Aho",
+          "club": "Nokian Pyry",
+          "weight": "35",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024180",
+          "athleteId": "painija-000968"
+        },
+        {
+          "place": 1,
+          "name": "Sofia Stenroth",
+          "club": "Nokian Pyry",
+          "weight": "60",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024181",
+          "athleteId": "painija-001438"
+        },
+        {
+          "place": 2,
+          "name": "Ellen Kangas",
+          "club": "Nokian Pyry",
+          "weight": "60",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024182",
+          "athleteId": "painija-016373"
+        }
+      ],
+      "skipped": 0,
+      "importNotes": [
+        {
+          "category": "Tytöt 12",
+          "weight": "41",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/FIN10872344312tlges.htm"
+        }
+      ],
+      "categoryStyles": {
+        "Pojat 12": "greco",
+        "Tytöt 12": "freestyle"
+      },
+      "styleSources": {
+        "Pojat 12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/FIN108723443111tlges.htm",
+        "Tytöt 12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/FIN10872344312tlges.htm"
+      },
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
+      "textSource": "",
+      "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
+    },
+    {
+      "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2026",
+      "details": "Nokia, 28.3.2026",
+      "rows": [
+        {
+          "place": 1,
+          "name": "Frans Hakala",
+          "club": "Porin Painimiehet",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024183",
+          "athleteId": "painija-020425"
+        },
+        {
+          "place": 2,
+          "name": "Paavo Tuominen",
+          "club": "Porin Painimiehet",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024184",
+          "athleteId": "painija-014961"
+        },
+        {
+          "place": 3,
+          "name": "Julius Juoperi",
+          "club": "Nokian Pyry",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024185",
+          "athleteId": "painija-020429"
+        },
+        {
+          "place": 4,
+          "name": "Leino Immonen",
+          "club": "Nokian Pyry",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024186",
+          "athleteId": "painija-020428"
+        },
+        {
+          "place": 5,
+          "name": "Aleksi Mannila",
+          "club": "Nokian Pyry",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024187",
+          "athleteId": "painija-020430"
+        },
+        {
+          "place": 6,
+          "name": "Thomas Haasmaa",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "20",
+          "category": "Pojat 12",
+          "resultId": "tulos-024188",
+          "athleteId": "painija-020427"
+        },
+        {
+          "place": 1,
+          "name": "Lauri Niemi",
+          "club": "Nokian Pyry",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024189",
+          "athleteId": "painija-001392"
+        },
+        {
+          "place": 2,
+          "name": "Max Rajala",
+          "club": "KOOVEE",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024190",
+          "athleteId": "painija-014114"
+        },
+        {
+          "place": 3,
+          "name": "Elias Ala-Rämi",
+          "club": "Nokian Pyry",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024191",
+          "athleteId": "painija-019648"
+        },
+        {
+          "place": 4,
+          "name": "Jaro Järvi",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "22",
+          "category": "Pojat 12",
+          "resultId": "tulos-024192",
+          "athleteId": "painija-023735"
+        },
+        {
+          "place": 1,
+          "name": "Hugo Leponen",
+          "club": "Tampereen Painiseura",
+          "weight": "24",
+          "category": "Pojat 12",
+          "resultId": "tulos-024193",
+          "athleteId": "painija-000456"
+        },
+        {
+          "place": 2,
+          "name": "Ilmari Järvenpää",
+          "club": "Porin Painimiehet",
+          "weight": "24",
+          "category": "Pojat 12",
+          "resultId": "tulos-024194",
+          "athleteId": "painija-020436"
+        },
+        {
+          "place": 3,
+          "name": "Leo Haapala",
+          "club": "Kankaanpään Urheilijat",
+          "weight": "24",
+          "category": "Pojat 12",
+          "resultId": "tulos-024195",
+          "athleteId": "painija-019866"
+        },
+        {
+          "place": 1,
+          "name": "Veikko Rantala",
+          "club": "Nokian Pyry",
+          "weight": "26",
+          "category": "Pojat 12",
+          "resultId": "tulos-024196",
+          "athleteId": "painija-011774"
+        },
+        {
+          "place": 2,
+          "name": "Aukusti Kuusinen",
+          "club": "Kankaanpään Urheilijat",
+          "weight": "26",
+          "category": "Pojat 12",
+          "resultId": "tulos-024197",
+          "athleteId": "painija-019646"
+        },
+        {
+          "place": 3,
+          "name": "Ayaan Narra",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "26",
+          "category": "Pojat 12",
+          "resultId": "tulos-024198",
+          "athleteId": "painija-020403"
+        },
+        {
+          "place": 4,
+          "name": "Konsta Love",
+          "club": "Mäntän Valo",
+          "weight": "26",
+          "category": "Pojat 12",
+          "resultId": "tulos-024199",
+          "athleteId": "painija-023808"
+        },
+        {
+          "place": 1,
+          "name": "Emil Hietala",
+          "club": "Ylä-Tikkurilan Kipinä",
+          "weight": "28",
+          "category": "Pojat 12",
+          "resultId": "tulos-024200",
+          "athleteId": "painija-002389"
+        },
+        {
+          "place": 2,
+          "name": "Iiro Hörkkö",
+          "club": "Viialan Pyry",
+          "weight": "28",
+          "category": "Pojat 12",
+          "resultId": "tulos-024201",
+          "athleteId": "painija-019863"
+        },
+        {
+          "place": 3,
+          "name": "Lauri Asunto",
+          "club": "Nokian Pyry",
+          "weight": "28",
+          "category": "Pojat 12",
+          "resultId": "tulos-024202",
+          "athleteId": "painija-011772"
+        },
+        {
+          "place": 4,
+          "name": "Toivo Lindberg",
+          "club": "Porin Painimiehet",
+          "weight": "28",
+          "category": "Pojat 12",
+          "resultId": "tulos-024203",
+          "athleteId": "painija-019407"
+        },
+        {
+          "place": 1,
+          "name": "Edvin Siitari",
+          "club": "Porin Painimiehet",
+          "weight": "32",
+          "category": "Pojat 12",
+          "resultId": "tulos-024204",
+          "athleteId": "painija-020447"
+        },
+        {
+          "place": 2,
+          "name": "Kosti Uusiheikkilä",
+          "club": "Porin Painimiehet",
+          "weight": "32",
+          "category": "Pojat 12",
+          "resultId": "tulos-024205",
+          "athleteId": "painija-020449"
+        },
+        {
+          "place": 1,
+          "name": "Ilmari Tuominen",
+          "club": "Porin Painimiehet",
+          "weight": "34",
+          "category": "Pojat 12",
+          "resultId": "tulos-024206",
+          "athleteId": "painija-014931"
+        },
+        {
+          "place": 2,
+          "name": "Benjamin Mäkelä",
+          "club": "Mäntän Valo",
+          "weight": "34",
+          "category": "Pojat 12",
+          "resultId": "tulos-024207",
+          "athleteId": "painija-023816"
+        },
+        {
+          "place": 3,
+          "name": "Oodi Kurkinen",
+          "club": "Porin Painimiehet",
+          "weight": "34",
+          "category": "Pojat 12",
+          "resultId": "tulos-024208",
+          "athleteId": "painija-020452"
+        },
+        {
+          "place": 4,
+          "name": "Elias Kannisto",
+          "club": "Tampereen Painiseura",
+          "weight": "34",
+          "category": "Pojat 12",
+          "resultId": "tulos-024209",
+          "athleteId": "painija-000453"
+        },
+        {
+          "place": 1,
+          "name": "Eemil Hakala",
+          "club": "Porin Painimiehet",
+          "weight": "36",
+          "category": "Pojat 12",
+          "resultId": "tulos-024210",
+          "athleteId": "painija-020454"
+        },
+        {
+          "place": 2,
+          "name": "Otto Rantala",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "36",
+          "category": "Pojat 12",
+          "resultId": "tulos-024211",
+          "athleteId": "painija-019418"
+        },
+        {
+          "place": 3,
+          "name": "Samuel Välimäki",
+          "club": "Kankaanpään Urheilijat",
+          "weight": "36",
+          "category": "Pojat 12",
+          "resultId": "tulos-024212",
+          "athleteId": "painija-019849"
+        },
+        {
+          "place": 4,
+          "name": "Konsta Leinonen",
+          "club": "Nokian Pyry",
+          "weight": "36",
+          "category": "Pojat 12",
+          "resultId": "tulos-024213",
+          "athleteId": "painija-020455"
+        },
+        {
+          "place": 1,
+          "name": "Jimi Kukkonen",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "38",
+          "category": "Pojat 12",
+          "resultId": "tulos-024214",
+          "athleteId": "painija-014236"
+        },
+        {
+          "place": 2,
+          "name": "Elias Seifi",
+          "club": "Tampereen Painiseura",
+          "weight": "38",
+          "category": "Pojat 12",
+          "resultId": "tulos-024215",
+          "athleteId": "painija-001308"
+        },
+        {
+          "place": 3,
+          "name": "Valtteri Poutanen",
+          "club": "Porin Painimiehet",
+          "weight": "38",
+          "category": "Pojat 12",
+          "resultId": "tulos-024216",
+          "athleteId": "painija-019668"
+        },
+        {
+          "place": 4,
+          "name": "Samu Järvelä",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "38",
+          "category": "Pojat 12",
+          "resultId": "tulos-024217",
+          "athleteId": "painija-014124"
+        },
+        {
+          "place": 1,
+          "name": "Oiva Hämäläinen",
+          "club": "KOOVEE",
+          "weight": "40",
+          "category": "Pojat 12",
+          "resultId": "tulos-024218",
+          "athleteId": "painija-010505"
+        },
+        {
+          "place": 2,
+          "name": "Niilo Loikkanen",
+          "club": "Nokian Pyry",
+          "weight": "40",
+          "category": "Pojat 12",
+          "resultId": "tulos-024219",
+          "athleteId": "painija-003833"
+        },
+        {
+          "place": 3,
+          "name": "Leo Kannisto",
+          "club": "Tampereen Painiseura",
+          "weight": "40",
+          "category": "Pojat 12",
+          "resultId": "tulos-024220",
+          "athleteId": "painija-000444"
+        },
+        {
+          "place": 1,
+          "name": "Niki Pärnänen",
+          "club": "Nokian Pyry",
+          "weight": "48",
+          "category": "Pojat 12",
+          "resultId": "tulos-024221",
+          "athleteId": "painija-001331"
+        },
+        {
+          "place": 2,
+          "name": "Huugo Tuunainen",
+          "club": "Kankaanpään Urheilijat",
+          "weight": "48",
+          "category": "Pojat 12",
+          "resultId": "tulos-024222",
+          "athleteId": "painija-014970"
+        },
+        {
+          "place": 3,
+          "name": "Venni Niemi",
+          "club": "Nokian Pyry",
+          "weight": "48",
+          "category": "Pojat 12",
+          "resultId": "tulos-024223",
+          "athleteId": "painija-001316"
+        },
+        {
+          "place": 4,
+          "name": "Olavi Vartia",
+          "club": "Tampereen Painiseura",
+          "weight": "48",
+          "category": "Pojat 12",
+          "resultId": "tulos-024224",
+          "athleteId": "painija-000478"
+        },
+        {
+          "place": 1,
+          "name": "Niila Sulander",
+          "club": "Nokian Pyry",
+          "weight": "55",
+          "category": "Pojat 12",
+          "resultId": "tulos-024225",
+          "athleteId": "painija-001365"
+        },
+        {
+          "place": 2,
+          "name": "Eetu Juvonen",
+          "club": "Nokian Pyry",
+          "weight": "55",
+          "category": "Pojat 12",
+          "resultId": "tulos-024226",
+          "athleteId": "painija-001067"
+        },
+        {
+          "place": 3,
+          "name": "Tuukka Niemi",
+          "club": "Nokian Pyry",
+          "weight": "55",
+          "category": "Pojat 12",
+          "resultId": "tulos-024227",
+          "athleteId": "painija-009762"
+        },
+        {
+          "place": 1,
+          "name": "Paavo Pihlajämäki",
+          "club": "Valkeakosken Kosken-Pojat",
+          "weight": "60",
+          "category": "Pojat 12",
+          "resultId": "tulos-024228",
+          "athleteId": "painija-020470"
+        },
+        {
+          "place": 2,
+          "name": "Melik Aydin",
+          "club": "Nokian Pyry",
+          "weight": "60",
+          "category": "Pojat 12",
+          "resultId": "tulos-024229",
+          "athleteId": "painija-020160"
+        },
+        {
+          "place": 1,
+          "name": "Malla Tiainen",
+          "club": "Porin Painimiehet",
+          "weight": "24",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024230",
+          "athleteId": "painija-014973"
+        },
+        {
+          "place": 2,
+          "name": "Isa Sallansalo",
+          "club": "Kurun Ryhti",
+          "weight": "24",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024231",
+          "athleteId": "painija-011818"
+        },
+        {
+          "place": 3,
+          "name": "Sofia Tuomensalo-Porkka",
+          "club": "Nokian Pyry",
+          "weight": "24",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024232",
+          "athleteId": "painija-019825"
+        },
+        {
+          "place": 4,
+          "name": "Iris Petäjäniemi",
+          "club": "Kurun Ryhti",
+          "weight": "24",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024233",
+          "athleteId": "painija-019826"
+        },
+        {
+          "place": 1,
+          "name": "Hilda Vartia",
+          "club": "Tampereen Painiseura",
+          "weight": "28",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024234",
+          "athleteId": "painija-000484"
+        },
+        {
+          "place": 2,
+          "name": "Miisa Koskinen",
+          "club": "Nokian Pyry",
+          "weight": "28",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024235",
+          "athleteId": "painija-019703"
+        },
+        {
+          "place": 3,
+          "name": "Elsi Rintala",
+          "club": "Kurun Ryhti",
+          "weight": "28",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024236",
+          "athleteId": "painija-011822"
+        },
+        {
+          "place": 1,
+          "name": "Loviisa Harjuketo",
+          "club": "Nokian Pyry",
+          "weight": "35",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024237",
+          "athleteId": "painija-020480"
+        },
+        {
+          "place": 2,
+          "name": "Emma Tianen",
+          "club": "Porin Painimiehet",
+          "weight": "35",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024238",
+          "athleteId": "painija-020482"
+        },
+        {
+          "place": 3,
+          "name": "Roosa Pensaari",
+          "club": "Nokian Pyry",
+          "weight": "35",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024239",
+          "athleteId": "painija-019706"
+        },
+        {
+          "place": 4,
+          "name": "Auroora Isotupa",
+          "club": "Nokian Pyry",
+          "weight": "35",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024240",
+          "athleteId": "painija-023849"
+        },
+        {
+          "place": 1,
+          "name": "Sofia Stenroth",
+          "club": "Nokian Pyry",
+          "weight": "60",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024241",
+          "athleteId": "painija-001438"
+        },
+        {
+          "place": 2,
+          "name": "Ellen Kangas",
+          "club": "Nokian Pyry",
+          "weight": "60",
+          "category": "Tytöt 12",
+          "resultId": "tulos-024242",
+          "athleteId": "painija-016373"
+        }
+      ],
+      "skipped": 0,
+      "importNotes": [
+        {
+          "category": "Tytöt Ystävyysottelu",
+          "weight": "2",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838314tlges.htm"
+        },
+        {
+          "category": "Tytöt Ystävyysottelu",
+          "weight": "3",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838314tlges.htm"
+        },
+        {
+          "category": "Pojat 12",
+          "weight": "30",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838311tlges.htm"
+        },
+        {
+          "category": "Tytöt 12",
+          "weight": "41",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN17070083832tlges.htm"
+        }
+      ],
+      "categoryStyles": {
+        "Pojat 12": "greco",
+        "Tytöt 12": "freestyle"
+      },
+      "styleSources": {
+        "Pojat 12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838311tlges.htm",
+        "Tytöt 12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN17070083832tlges.htm"
+      },
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+      "textSource": "",
+      "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
+    },
+    {
+      "title": "TaPs painit 12.5.2026",
+      "details": "Tampere, 12.5.2026",
+      "rows": [
+        {
+          "place": 1,
+          "name": "Kaihan Nabizaba",
+          "club": "Tampereen Painiseura",
+          "weight": "26",
+          "category": "Pojat U12",
+          "resultId": "tulos-024243",
+          "athleteId": "painija-017914"
+        },
+        {
+          "place": 2,
+          "name": "Iivari Peltola",
+          "club": "Tampereen Painiseura",
+          "weight": "26",
+          "category": "Pojat U12",
+          "resultId": "tulos-024244",
+          "athleteId": "painija-016109"
+        },
+        {
+          "place": 3,
+          "name": "Aatos Koskela",
+          "club": "Tampereen Painiseura",
+          "weight": "26",
+          "category": "Pojat U12",
+          "resultId": "tulos-024245",
+          "athleteId": "painija-016118"
+        },
+        {
+          "place": 1,
+          "name": "Eetu Radmer-Jensen",
+          "club": "Tampereen Painiseura",
+          "weight": "32",
+          "category": "Pojat U12",
+          "resultId": "tulos-024246",
+          "athleteId": "painija-001409"
+        },
+        {
+          "place": 2,
+          "name": "Daniel Karimi",
+          "club": "Tampereen Painiseura",
+          "weight": "32",
+          "category": "Pojat U12",
+          "resultId": "tulos-024247",
+          "athleteId": "painija-000452"
+        },
+        {
+          "place": 3,
+          "name": "Elias Kannisto",
+          "club": "Tampereen Painiseura",
+          "weight": "32",
+          "category": "Pojat U12",
+          "resultId": "tulos-024248",
+          "athleteId": "painija-000453"
+        },
+        {
+          "place": 1,
+          "name": "Noel Kontuniemi",
+          "club": "Tampereen Painiseura",
+          "weight": "35",
+          "category": "Pojat U12",
+          "resultId": "tulos-024249",
+          "athleteId": "painija-000460"
+        },
+        {
+          "place": 2,
+          "name": "Alex Ahonen",
+          "club": "Tampereen Painiseura",
+          "weight": "35",
+          "category": "Pojat U12",
+          "resultId": "tulos-024250",
+          "athleteId": "painija-000458"
+        },
+        {
+          "place": 3,
+          "name": "Darek Kampus",
+          "club": "Tampereen Painiseura",
+          "weight": "35",
+          "category": "Pojat U12",
+          "resultId": "tulos-024251",
+          "athleteId": "painija-000475"
+        },
+        {
+          "place": 4,
+          "name": "Roni Ahokas",
+          "club": "Tampereen Painiseura",
+          "weight": "35",
+          "category": "Pojat U12",
+          "resultId": "tulos-024252",
+          "athleteId": "painija-000457"
+        },
+        {
+          "place": 1,
+          "name": "Elias Seifi",
+          "club": "Tampereen Painiseura",
+          "weight": "42",
+          "category": "Pojat U12",
+          "resultId": "tulos-024253",
+          "athleteId": "painija-001308"
+        },
+        {
+          "place": 2,
+          "name": "Feliks Tuomonen",
+          "club": "Tampereen Painiseura",
+          "weight": "42",
+          "category": "Pojat U12",
+          "resultId": "tulos-024254",
+          "athleteId": "painija-000476"
+        },
+        {
+          "place": 3,
+          "name": "Frans Tuomonen",
+          "club": "Tampereen Painiseura",
+          "weight": "42",
+          "category": "Pojat U12",
+          "resultId": "tulos-024255",
+          "athleteId": "painija-000477"
+        },
+        {
+          "place": 1,
+          "name": "Olavi Vartia",
+          "club": "Tampereen Painiseura",
+          "weight": "53",
+          "category": "Pojat U12",
+          "resultId": "tulos-024256",
+          "athleteId": "painija-000478"
+        },
+        {
+          "place": 2,
+          "name": "Kaspar Kampus",
+          "club": "Tampereen Painiseura",
+          "weight": "53",
+          "category": "Pojat U12",
+          "resultId": "tulos-024257",
+          "athleteId": "painija-000479"
+        },
+        {
+          "place": 1,
+          "name": "Eelis Wihinen",
+          "club": "Tampereen Painiseura",
+          "weight": "45",
+          "category": "Pojat U15",
+          "resultId": "tulos-024258",
+          "athleteId": "painija-000466"
+        },
+        {
+          "place": 2,
+          "name": "Patrick Olan",
+          "club": "Tampereen Painiseura",
+          "weight": "45",
+          "category": "Pojat U15",
+          "resultId": "tulos-024259",
+          "athleteId": "painija-000467"
+        },
+        {
+          "place": 3,
+          "name": "Saku Mäkipelto",
+          "club": "Tampereen Painiseura",
+          "weight": "45",
+          "category": "Pojat U15",
+          "resultId": "tulos-024260",
+          "athleteId": "painija-000447"
+        },
+        {
+          "place": 4,
+          "name": "Leo Kannisto",
+          "club": "Tampereen Painiseura",
+          "weight": "45",
+          "category": "Pojat U15",
+          "resultId": "tulos-024261",
+          "athleteId": "painija-000444"
+        },
+        {
+          "place": 5,
+          "name": "Joel Olan",
+          "club": "Tampereen Painiseura",
+          "weight": "45",
+          "category": "Pojat U15",
+          "resultId": "tulos-024262",
+          "athleteId": "painija-000448"
+        },
+        {
+          "place": 1,
+          "name": "Joona Pekkanen",
+          "club": "Tampereen Painiseura",
+          "weight": "29",
+          "category": "Tytöt ja Pojat U12",
+          "resultId": "tulos-024263",
+          "athleteId": "painija-000454"
+        },
+        {
+          "place": 2,
+          "name": "Meri Eronen",
+          "club": "Tampereen Painiseura",
+          "weight": "29",
+          "category": "Tytöt ja Pojat U12",
+          "resultId": "tulos-024264",
+          "athleteId": "painija-000488"
+        },
+        {
+          "place": 3,
+          "name": "Rohan Nabizaba",
+          "club": "Tampereen Painiseura",
+          "weight": "29",
+          "category": "Tytöt ja Pojat U12",
+          "resultId": "tulos-024265",
+          "athleteId": "painija-017920"
+        },
+        {
+          "place": 4,
+          "name": "Otso Koskela",
+          "club": "Tampereen Painiseura",
+          "weight": "29",
+          "category": "Tytöt ja Pojat U12",
+          "resultId": "tulos-024266",
+          "athleteId": "painija-000489"
+        },
+        {
+          "place": 1,
+          "name": "Hugo Leponen",
+          "club": "Tampereen Painiseura",
+          "weight": "30",
+          "category": "Tytöt ja Pojat U12",
+          "resultId": "tulos-024267",
+          "athleteId": "painija-000456"
+        },
+        {
+          "place": 2,
+          "name": "Aku Tapio",
+          "club": "Tampereen Painiseura",
+          "weight": "30",
+          "category": "Tytöt ja Pojat U12",
+          "resultId": "tulos-024268",
+          "athleteId": "painija-016125"
+        },
+        {
+          "place": 3,
+          "name": "Hilda Vartia",
+          "club": "Tampereen Painiseura",
+          "weight": "30",
+          "category": "Tytöt ja Pojat U12",
+          "resultId": "tulos-024269",
+          "athleteId": "painija-000484"
+        }
+      ],
+      "skipped": 0,
+      "importNotes": [
+        {
+          "category": "Pojat U17",
+          "weight": "70",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217609tlges.htm"
+        },
+        {
+          "category": "Tytöt ja Pojat U15",
+          "weight": "47",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217607tlges.htm"
+        }
+      ],
+      "categoryStyles": {
+        "Pojat U12": "greco",
+        "Pojat U15": "greco",
+        "Tytöt ja Pojat U12": "freestyle"
+      },
+      "styleSources": {
+        "Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217601tlges.htm",
+        "Pojat U15": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217606tlges.htm",
+        "Tytöt ja Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217605tlges.htm"
+      },
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
+      "textSource": "",
+      "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
+    },
+    {
+      "title": "FFC & Champions Cup 7/7",
+      "details": "Järvenpää, 13.6.2026",
+      "rows": [
+        {
+          "place": 1,
+          "name": "Alex Zaitsev",
+          "club": "Järvenpään Voimailijat",
+          "weight": "24",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024270",
+          "athleteId": "painija-000632"
+        },
+        {
+          "place": 2,
+          "name": "Tamim Ahmed",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "24",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024271",
+          "athleteId": "painija-000882"
+        },
+        {
+          "place": 3,
+          "name": "Seid Syla",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "24",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024272",
+          "athleteId": "painija-000881"
+        },
+        {
+          "place": 4,
+          "name": "Roni Tallberg",
+          "club": "Järvenpään Voimailijat",
+          "weight": "24",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024273",
+          "athleteId": "painija-000011"
+        },
+        {
+          "place": 5,
+          "name": "Matias Kokkonen",
+          "club": "Helsingin Haka",
+          "weight": "24",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024274",
+          "athleteId": "painija-013132"
+        },
+        {
+          "place": 1,
+          "name": "Imran Mohamud",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "26",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024275",
+          "athleteId": "painija-000884"
+        },
+        {
+          "place": 2,
+          "name": "Mahaur Amiri",
+          "club": "Vantaan Sampo",
+          "weight": "26",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024276",
+          "athleteId": "painija-023885"
+        },
+        {
+          "place": 3,
+          "name": "Siar Musa",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "26",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024277",
+          "athleteId": "painija-000885"
+        },
+        {
+          "place": 4,
+          "name": "Aurora Dean",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "26",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024278",
+          "athleteId": "painija-021612"
+        },
+        {
+          "place": 5,
+          "name": "Niki Grönholm",
+          "club": "Järvenpään Voimailijat",
+          "weight": "26",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024279",
+          "athleteId": "painija-000505"
+        },
+        {
+          "place": 5,
+          "name": "Tim Paasonen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "26",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024280",
+          "athleteId": "painija-000613"
+        },
+        {
+          "place": 7,
+          "name": "Voitto Kaskinen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "26",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024281",
+          "athleteId": "painija-000887"
+        },
+        {
+          "place": 1,
+          "name": "Muhammad Yandiev",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "29",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024282",
+          "athleteId": "painija-000890"
+        },
+        {
+          "place": 2,
+          "name": "Niilo Takala",
+          "club": "Järvenpään Voimailijat",
+          "weight": "29",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024283",
+          "athleteId": "painija-000634"
+        },
+        {
+          "place": 3,
+          "name": "Oliver Bäck",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "29",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024284",
+          "athleteId": "painija-000891"
+        },
+        {
+          "place": 4,
+          "name": "Robben Dedinca",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "29",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024285",
+          "athleteId": "painija-000892"
+        },
+        {
+          "place": 1,
+          "name": "Mari-Liis Vainika",
+          "club": "Vantaan Sampo",
+          "weight": "32",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024286",
+          "athleteId": "painija-000004"
+        },
+        {
+          "place": 2,
+          "name": "Omar Rashidi",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "32",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024287",
+          "athleteId": "painija-023896"
+        },
+        {
+          "place": 3,
+          "name": "Hugo Grönholm",
+          "club": "Järvenpään Voimailijat",
+          "weight": "32",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024288",
+          "athleteId": "painija-000021"
+        },
+        {
+          "place": 4,
+          "name": "Mikko Peltonen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "32",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024289",
+          "athleteId": "painija-000894"
+        },
+        {
+          "place": 5,
+          "name": "Artagnes Strengell",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "32",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024290",
+          "athleteId": "painija-016040"
+        },
+        {
+          "place": 1,
+          "name": "Malik Musa",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "36",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024291",
+          "athleteId": "painija-000893"
+        },
+        {
+          "place": 2,
+          "name": "Arion Musa",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "36",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024292",
+          "athleteId": "painija-001262"
+        },
+        {
+          "place": 3,
+          "name": "Arbanit Musa",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "36",
+          "category": "U9 Pojat FFC",
+          "resultId": "tulos-024293",
+          "athleteId": "painija-000897"
+        },
+        {
+          "place": 1,
+          "name": "Aino Setälä",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "47",
+          "category": "U13 Tytöt FFC",
+          "resultId": "tulos-024294",
+          "athleteId": "painija-000573"
+        },
+        {
+          "place": 2,
+          "name": "Helmi Suomalainen",
+          "club": "Voikkaan Viesti",
+          "weight": "47",
+          "category": "U13 Tytöt FFC",
+          "resultId": "tulos-024295",
+          "athleteId": "painija-000574"
+        },
+        {
+          "place": 3,
+          "name": "Ella Sihvonen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "47",
+          "category": "U13 Tytöt FFC",
+          "resultId": "tulos-024296",
+          "athleteId": "painija-000671"
+        },
+        {
+          "place": 4,
+          "name": "Elina Kangasniemi",
+          "club": "Järvenpään Voimailijat",
+          "weight": "47",
+          "category": "U13 Tytöt FFC",
+          "resultId": "tulos-024297",
+          "athleteId": "painija-000050"
+        },
+        {
+          "place": 1,
+          "name": "Adele Hoot",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "61",
+          "category": "U13 Tytöt FFC",
+          "resultId": "tulos-024298",
+          "athleteId": "painija-000577"
+        },
+        {
+          "place": 2,
+          "name": "Mialiis Vainika",
+          "club": "Vantaan Sampo",
+          "weight": "61",
+          "category": "U13 Tytöt FFC",
+          "resultId": "tulos-024299",
+          "athleteId": "painija-000550"
+        },
+        {
+          "place": 1,
+          "name": "Aleksanteri Kougappi",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "31",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024300",
+          "athleteId": "painija-000918"
+        },
+        {
+          "place": 2,
+          "name": "Augustus Lampila",
+          "club": "Vantaan Sampo",
+          "weight": "31",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024301",
+          "athleteId": "painija-000921"
+        },
+        {
+          "place": 3,
+          "name": "Khamzat Meserbiev",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "31",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024302",
+          "athleteId": "painija-000920"
+        },
+        {
+          "place": 4,
+          "name": "Muhammadali Hasanov",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "31",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024303",
+          "athleteId": "painija-000928"
+        },
+        {
+          "place": 1,
+          "name": "Ali Baigiraev",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "33",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024304",
+          "athleteId": "painija-000923"
+        },
+        {
+          "place": 2,
+          "name": "Leart Neli",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "33",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024305",
+          "athleteId": "painija-000924"
+        },
+        {
+          "place": 3,
+          "name": "Kaleb Dean",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "33",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024306",
+          "athleteId": "painija-000925"
+        },
+        {
+          "place": 4,
+          "name": "Ilyas Mohamud",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "33",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024307",
+          "athleteId": "painija-000927"
+        },
+        {
+          "place": 5,
+          "name": "Salmaan Ali",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "33",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024308",
+          "athleteId": "painija-000929"
+        },
+        {
+          "place": 5,
+          "name": "Benjamin Stykki",
+          "club": "Vantaan Sampo",
+          "weight": "33",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024309",
+          "athleteId": "painija-000635"
+        },
+        {
+          "place": 1,
+          "name": "Oiva Alanen",
+          "club": "Järvenpään Voimailijat",
+          "weight": "36",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024310",
+          "athleteId": "painija-000052"
+        },
+        {
+          "place": 2,
+          "name": "Ajan Musa",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "36",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024311",
+          "athleteId": "painija-000932"
+        },
+        {
+          "place": 3,
+          "name": "Anuar Miftari",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "36",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024312",
+          "athleteId": "painija-000937"
+        },
+        {
+          "place": 4,
+          "name": "Marlo Kolu",
+          "club": "Lahden Ahkera",
+          "weight": "36",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024313",
+          "athleteId": "painija-000620"
+        },
+        {
+          "place": 5,
+          "name": "Aroandes Strengell",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "36",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024314",
+          "athleteId": "painija-000586"
+        },
+        {
+          "place": 1,
+          "name": "Huzeifa Yandiev",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "38",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024315",
+          "athleteId": "painija-000944"
+        },
+        {
+          "place": 2,
+          "name": "Husein Junusov",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "38",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024316",
+          "athleteId": "painija-000936"
+        },
+        {
+          "place": 3,
+          "name": "Zakaria Rashidi",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "38",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024317",
+          "athleteId": "painija-000939"
+        },
+        {
+          "place": 1,
+          "name": "Albarra Tsitskiev",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "41",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024318",
+          "athleteId": "painija-000942"
+        },
+        {
+          "place": 2,
+          "name": "William Pham",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "41",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024319",
+          "athleteId": "painija-000943"
+        },
+        {
+          "place": 3,
+          "name": "Benjamin Anttila",
+          "club": "Espoon Urheilijat",
+          "weight": "41",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024320",
+          "athleteId": "painija-000641"
+        },
+        {
+          "place": 1,
+          "name": "Valtteri Kotilainen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "52",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024321",
+          "athleteId": "painija-000603"
+        },
+        {
+          "place": 2,
+          "name": "Teo Paasonen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "52",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024322",
+          "athleteId": "painija-000602"
+        },
+        {
+          "place": 3,
+          "name": "Arttu Reinikainen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "52",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024323",
+          "athleteId": "painija-000653"
+        },
+        {
+          "place": 4,
+          "name": "Valter Niinimäki",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "52",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024324",
+          "athleteId": "painija-023933"
+        },
+        {
+          "place": 5,
+          "name": "Juho Malmari",
+          "club": "Espoon Urheilijat",
+          "weight": "52",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024325",
+          "athleteId": "painija-012633"
+        },
+        {
+          "place": 1,
+          "name": "Eetu Markkula",
+          "club": "Janakkalan Paini-Ilves",
+          "weight": "55",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024326",
+          "athleteId": "painija-001028"
+        },
+        {
+          "place": 2,
+          "name": "Aleksandr Ljapor",
+          "club": "Järvenpään Voimailijat",
+          "weight": "55",
+          "category": "U13 Pojat FFC",
+          "resultId": "tulos-024327",
+          "athleteId": "painija-001051"
+        },
+        {
+          "place": 1,
+          "name": "Dzhamalbek Dzhambekov",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "65",
+          "category": "CC Miehet",
+          "resultId": "tulos-024328",
+          "athleteId": "painija-023937"
+        },
+        {
+          "place": 2,
+          "name": "Muhammad Nalgiev",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "65",
+          "category": "CC Miehet",
+          "resultId": "tulos-024329",
+          "athleteId": "painija-023938"
+        },
+        {
+          "place": 3,
+          "name": "Maximus Purmonen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "65",
+          "category": "CC Miehet",
+          "resultId": "tulos-024330",
+          "athleteId": "painija-000656"
+        },
+        {
+          "place": 1,
+          "name": "Joona Hakola",
+          "club": "Järvenpään Voimailijat",
+          "weight": "74",
+          "category": "CC Miehet",
+          "resultId": "tulos-024331",
+          "athleteId": "painija-000876"
+        },
+        {
+          "place": 2,
+          "name": "Jere Pekkarinen",
+          "club": "Espoon Urheilijat",
+          "weight": "74",
+          "category": "CC Miehet",
+          "resultId": "tulos-024332",
+          "athleteId": "painija-006415"
+        },
+        {
+          "place": 3,
+          "name": "Saad Ahmed",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "74",
+          "category": "CC Miehet",
+          "resultId": "tulos-024333",
+          "athleteId": "painija-001095"
+        },
+        {
+          "place": 1,
+          "name": "Miko Elkala",
+          "club": "Lahden Ahkera",
+          "weight": "92",
+          "category": "CC Miehet",
+          "resultId": "tulos-024334",
+          "athleteId": "painija-001103"
+        },
+        {
+          "place": 2,
+          "name": "Obaidullah Azim Zada",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "92",
+          "category": "CC Miehet",
+          "resultId": "tulos-024335",
+          "athleteId": "painija-001100"
+        },
+        {
+          "place": 1,
+          "name": "Sisu Rantonen",
+          "club": "Harjun Woima Jyväskylä",
+          "weight": "45",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024336",
+          "athleteId": "painija-007406"
+        },
+        {
+          "place": 2,
+          "name": "Hasan Junusov",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "45",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024337",
+          "athleteId": "painija-000949"
+        },
+        {
+          "place": 3,
+          "name": "Ville-Kalle Kuisma",
+          "club": "Hyvinkään Painiklubi",
+          "weight": "45",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024338",
+          "athleteId": "painija-000561"
+        },
+        {
+          "place": 1,
+          "name": "Viljo Takala",
+          "club": "Järvenpään Voimailijat",
+          "weight": "48",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024339",
+          "athleteId": "painija-000646"
+        },
+        {
+          "place": 2,
+          "name": "Jalo Ojansivu",
+          "club": "Janakkalan Paini-Ilves",
+          "weight": "48",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024340",
+          "athleteId": "painija-000647"
+        },
+        {
+          "place": 3,
+          "name": "Kaapo Takkinen",
+          "club": "Harjun Woima Jyväskylä",
+          "weight": "48",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024341",
+          "athleteId": "painija-003851"
+        },
+        {
+          "place": 1,
+          "name": "Eetu Tammelin",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "51",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024342",
+          "athleteId": "painija-000564"
+        },
+        {
+          "place": 2,
+          "name": "Gianluca Leino",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "51",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024343",
+          "athleteId": "painija-000648"
+        },
+        {
+          "place": 1,
+          "name": "Urho Susi",
+          "club": "Järvenpään Voimailijat",
+          "weight": "55",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024344",
+          "athleteId": "painija-000901"
+        },
+        {
+          "place": 2,
+          "name": "Aaron Raiskinmäki",
+          "club": "Rauman Voimailijat",
+          "weight": "55",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024345",
+          "athleteId": "painija-003411"
+        },
+        {
+          "place": 3,
+          "name": "Ilkka Niemi",
+          "club": "Janakkalan Paini-Ilves",
+          "weight": "55",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024346",
+          "athleteId": "painija-000652"
+        },
+        {
+          "place": 4,
+          "name": "Lorik Neli",
+          "club": "Freestyle Wrestling Legacy",
+          "weight": "55",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024347",
+          "athleteId": "painija-000905"
+        },
+        {
+          "place": 1,
+          "name": "Otto Lipponen",
+          "club": "Järvenpään Voimailijat",
+          "weight": "60",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024348",
+          "athleteId": "painija-001759"
+        },
+        {
+          "place": 2,
+          "name": "Amjad Khaled",
+          "club": "Vantaan Sampo",
+          "weight": "60",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024349",
+          "athleteId": "painija-000660"
+        },
+        {
+          "place": 3,
+          "name": "Osku Tallberg",
+          "club": "Järvenpään Voimailijat",
+          "weight": "60",
+          "category": "U17 Pojat FFC",
+          "resultId": "tulos-024350",
+          "athleteId": "painija-000535"
+        },
+        {
+          "place": 1,
+          "name": "Inka Mälkönen",
+          "club": "Lahden Ahkera",
+          "weight": "69",
+          "category": "U17 Tytöt FFC",
+          "resultId": "tulos-024351",
+          "athleteId": "painija-002686"
+        },
+        {
+          "place": 2,
+          "name": "Erika Purmonen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "69",
+          "category": "U17 Tytöt FFC",
+          "resultId": "tulos-024352",
+          "athleteId": "painija-003900"
+        },
+        {
+          "place": 3,
+          "name": "Paloma Grönfors",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "69",
+          "category": "U17 Tytöt FFC",
+          "resultId": "tulos-024353",
+          "athleteId": "painija-002433"
+        },
+        {
+          "place": 1,
+          "name": "Mea Purmonen",
+          "club": "Helsingin Paini-Miehet",
+          "weight": "68",
+          "category": "Naiset FFC",
+          "resultId": "tulos-024354",
+          "athleteId": "painija-001089"
+        },
+        {
+          "place": 2,
+          "name": "Ronja Nevalainen",
+          "club": "Kouvolan Painijat",
+          "weight": "68",
+          "category": "Naiset FFC",
+          "resultId": "tulos-024355",
+          "athleteId": "painija-005205"
+        },
+        {
+          "place": 1,
+          "name": "Maiju Siltala",
+          "club": "Pilkanmaan Pilke",
+          "weight": "76",
+          "category": "Naiset FFC",
+          "resultId": "tulos-024356",
+          "athleteId": "painija-023965"
+        }
+      ],
+      "skipped": 0,
+      "importNotes": [
+        {
+          "category": "Ystävyysottelut",
+          "weight": "50",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN1916952959_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelut",
+          "weight": "67",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN1916952959_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelut",
+          "weight": "69",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN1916952959_tab.txt"
+        }
+      ],
+      "categoryStyles": {
+        "U9 Pojat FFC": "freestyle",
+        "U13 Tytöt FFC": "freestyle",
+        "U13 Pojat FFC": "freestyle",
+        "CC Miehet": "freestyle",
+        "U17 Pojat FFC": "freestyle",
+        "U17 Tytöt FFC": "freestyle",
+        "Naiset FFC": "freestyle"
+      },
+      "styleSources": {
+        "U9 Pojat FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295941tlges.htm",
+        "U13 Tytöt FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295940tlges.htm",
+        "U13 Pojat FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295939tlges.htm",
+        "CC Miehet": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295933tlges.htm",
+        "U17 Pojat FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295932tlges.htm",
+        "U17 Tytöt FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295931tlges.htm",
+        "Naiset FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295918tlges.htm"
+      },
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm",
+      "textSource": "",
+      "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
     }
   ],
   "athleteRegistry": {
     "version": 1,
-    "nextAthlete": 23724,
-    "nextResult": 24115,
+    "nextAthlete": 23966,
+    "nextResult": 24357,
     "athletes": [
       {
         "id": "painija-000001",
@@ -356738,6 +359108,1446 @@ window.PAINI_SHARED_DATA = {
         "name": "Helen Kupari",
         "status": "unreviewed",
         "mergedInto": "painija-001464"
+      },
+      {
+        "id": "painija-023724",
+        "name": "Paavo Tuominen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014961"
+      },
+      {
+        "id": "painija-023725",
+        "name": "Thomas Haasmaa",
+        "status": "unreviewed",
+        "mergedInto": "painija-020427"
+      },
+      {
+        "id": "painija-023726",
+        "name": "Leino Immonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-020428"
+      },
+      {
+        "id": "painija-023727",
+        "name": "Julius Juoperi",
+        "status": "unreviewed",
+        "mergedInto": "painija-020429"
+      },
+      {
+        "id": "painija-023728",
+        "name": "Frans Hakala",
+        "status": "unreviewed",
+        "mergedInto": "painija-020425"
+      },
+      {
+        "id": "painija-023729",
+        "name": "Otso Rotgers",
+        "status": "unreviewed",
+        "mergedInto": "painija-016113"
+      },
+      {
+        "id": "painija-023730",
+        "name": "Max Rajala",
+        "status": "unreviewed",
+        "mergedInto": "painija-014114"
+      },
+      {
+        "id": "painija-023731",
+        "name": "Elias Ala-Rämi",
+        "status": "unreviewed",
+        "mergedInto": "painija-019648"
+      },
+      {
+        "id": "painija-023732",
+        "name": "Lauri Niemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-001392"
+      },
+      {
+        "id": "painija-023733",
+        "name": "Leo Vuorinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-011773"
+      },
+      {
+        "id": "painija-023734",
+        "name": "Kasper Alakastari",
+        "status": "unreviewed",
+        "mergedInto": "painija-019854"
+      },
+      {
+        "id": "painija-023735",
+        "name": "Jaro Järvi",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023736",
+        "name": "Hugo Leponen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000456"
+      },
+      {
+        "id": "painija-023737",
+        "name": "Ilmari Järvenpää",
+        "status": "unreviewed",
+        "mergedInto": "painija-020436"
+      },
+      {
+        "id": "painija-023738",
+        "name": "Akseli Ala-Rämi",
+        "status": "unreviewed",
+        "mergedInto": "painija-019457"
+      },
+      {
+        "id": "painija-023739",
+        "name": "Leo Haapala",
+        "status": "unreviewed",
+        "mergedInto": "painija-019866"
+      },
+      {
+        "id": "painija-023740",
+        "name": "Veikko Rantala",
+        "status": "unreviewed",
+        "mergedInto": "painija-011774"
+      },
+      {
+        "id": "painija-023741",
+        "name": "Kaihan Nabizada",
+        "status": "unreviewed",
+        "mergedInto": "painija-000485"
+      },
+      {
+        "id": "painija-023742",
+        "name": "Emil Hietala",
+        "status": "unreviewed",
+        "mergedInto": "painija-002389"
+      },
+      {
+        "id": "painija-023743",
+        "name": "Daniel Karimi",
+        "status": "unreviewed",
+        "mergedInto": "painija-000452"
+      },
+      {
+        "id": "painija-023744",
+        "name": "Iiro Hörkkö",
+        "status": "unreviewed",
+        "mergedInto": "painija-019863"
+      },
+      {
+        "id": "painija-023745",
+        "name": "Toivo Lindberg",
+        "status": "unreviewed",
+        "mergedInto": "painija-019407"
+      },
+      {
+        "id": "painija-023746",
+        "name": "Rohan Nabizada",
+        "status": "unreviewed",
+        "mergedInto": "painija-000486"
+      },
+      {
+        "id": "painija-023747",
+        "name": "Paavo Leppänen",
+        "status": "unreviewed",
+        "mergedInto": "painija-003819"
+      },
+      {
+        "id": "painija-023748",
+        "name": "Eliel Kotipelto",
+        "status": "unreviewed",
+        "mergedInto": "painija-011766"
+      },
+      {
+        "id": "painija-023749",
+        "name": "Eino Järvelä",
+        "status": "unreviewed",
+        "mergedInto": "painija-001273"
+      },
+      {
+        "id": "painija-023750",
+        "name": "Urho Lehtonen",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023751",
+        "name": "Edvin Siitari",
+        "status": "unreviewed",
+        "mergedInto": "painija-020447"
+      },
+      {
+        "id": "painija-023752",
+        "name": "Miika Järvelä",
+        "status": "unreviewed",
+        "mergedInto": "painija-001414"
+      },
+      {
+        "id": "painija-023753",
+        "name": "Kosti Uusiheikkilä",
+        "status": "unreviewed",
+        "mergedInto": "painija-020449"
+      },
+      {
+        "id": "painija-023754",
+        "name": "Joel Siljamäki",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023755",
+        "name": "Ilmari Lyly",
+        "status": "unreviewed",
+        "mergedInto": "painija-000946"
+      },
+      {
+        "id": "painija-023756",
+        "name": "Ilmari Tuominen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014931"
+      },
+      {
+        "id": "painija-023757",
+        "name": "Elias Kannisto",
+        "status": "unreviewed",
+        "mergedInto": "painija-000453"
+      },
+      {
+        "id": "painija-023758",
+        "name": "Oodi Kurkinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-020452"
+      },
+      {
+        "id": "painija-023759",
+        "name": "Eemil Hakala",
+        "status": "unreviewed",
+        "mergedInto": "painija-020454"
+      },
+      {
+        "id": "painija-023760",
+        "name": "Konsta Leinonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-020455"
+      },
+      {
+        "id": "painija-023761",
+        "name": "Otto Rantala",
+        "status": "unreviewed",
+        "mergedInto": "painija-019418"
+      },
+      {
+        "id": "painija-023762",
+        "name": "Samuel Välimäki",
+        "status": "unreviewed",
+        "mergedInto": "painija-019849"
+      },
+      {
+        "id": "painija-023763",
+        "name": "Jimi Kukkonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014236"
+      },
+      {
+        "id": "painija-023764",
+        "name": "Samu Järvelä",
+        "status": "unreviewed",
+        "mergedInto": "painija-014124"
+      },
+      {
+        "id": "painija-023765",
+        "name": "Elias Seifi",
+        "status": "unreviewed",
+        "mergedInto": "painija-001308"
+      },
+      {
+        "id": "painija-023766",
+        "name": "Leo Kannisto",
+        "status": "unreviewed",
+        "mergedInto": "painija-000444"
+      },
+      {
+        "id": "painija-023767",
+        "name": "Niilo Loikkanen",
+        "status": "unreviewed",
+        "mergedInto": "painija-003833"
+      },
+      {
+        "id": "painija-023768",
+        "name": "Veikko Vaaja",
+        "status": "unreviewed",
+        "mergedInto": "painija-019684"
+      },
+      {
+        "id": "painija-023769",
+        "name": "Venni Niemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-001316"
+      },
+      {
+        "id": "painija-023770",
+        "name": "Huugo Tuunainen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014970"
+      },
+      {
+        "id": "painija-023771",
+        "name": "Niki Pärnänen",
+        "status": "unreviewed",
+        "mergedInto": "painija-001331"
+      },
+      {
+        "id": "painija-023772",
+        "name": "Olavi Vartia",
+        "status": "unreviewed",
+        "mergedInto": "painija-000478"
+      },
+      {
+        "id": "painija-023773",
+        "name": "Elia Salonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-011799"
+      },
+      {
+        "id": "painija-023774",
+        "name": "Tuomas Salmela",
+        "status": "unreviewed",
+        "mergedInto": "painija-020115"
+      },
+      {
+        "id": "painija-023775",
+        "name": "Niila Sulander",
+        "status": "unreviewed",
+        "mergedInto": "painija-001365"
+      },
+      {
+        "id": "painija-023776",
+        "name": "Eetu Juvonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-001067"
+      },
+      {
+        "id": "painija-023777",
+        "name": "Paavo Pihlajämäki",
+        "status": "unreviewed",
+        "mergedInto": "painija-020470"
+      },
+      {
+        "id": "painija-023778",
+        "name": "Leo Niukkonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000451"
+      },
+      {
+        "id": "painija-023779",
+        "name": "Melik Aydin",
+        "status": "unreviewed",
+        "mergedInto": "painija-020160"
+      },
+      {
+        "id": "painija-023780",
+        "name": "Isa Sallansalo",
+        "status": "unreviewed",
+        "mergedInto": "painija-011818"
+      },
+      {
+        "id": "painija-023781",
+        "name": "Iris Petäjäniemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-019826"
+      },
+      {
+        "id": "painija-023782",
+        "name": "Sofia Tuomensalo-Porkka",
+        "status": "unreviewed",
+        "mergedInto": "painija-019825"
+      },
+      {
+        "id": "painija-023783",
+        "name": "Hilda Vartia",
+        "status": "unreviewed",
+        "mergedInto": "painija-000484"
+      },
+      {
+        "id": "painija-023784",
+        "name": "Miisa Koskinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-019703"
+      },
+      {
+        "id": "painija-023785",
+        "name": "Elsi Rintala",
+        "status": "unreviewed",
+        "mergedInto": "painija-011822"
+      },
+      {
+        "id": "painija-023786",
+        "name": "Evella Kauko",
+        "status": "unreviewed",
+        "mergedInto": "painija-001420"
+      },
+      {
+        "id": "painija-023787",
+        "name": "Loviisa Harjuketo",
+        "status": "unreviewed",
+        "mergedInto": "painija-020480"
+      },
+      {
+        "id": "painija-023788",
+        "name": "Emma Tiainen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014975"
+      },
+      {
+        "id": "painija-023789",
+        "name": "Siiri Aho",
+        "status": "unreviewed",
+        "mergedInto": "painija-000968"
+      },
+      {
+        "id": "painija-023790",
+        "name": "Sofia Stenroth",
+        "status": "unreviewed",
+        "mergedInto": "painija-001438"
+      },
+      {
+        "id": "painija-023791",
+        "name": "Ellen Kangas",
+        "status": "unreviewed",
+        "mergedInto": "painija-016373"
+      },
+      {
+        "id": "painija-023792",
+        "name": "Frans Hakala",
+        "status": "unreviewed",
+        "mergedInto": "painija-020425"
+      },
+      {
+        "id": "painija-023793",
+        "name": "Paavo Tuominen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014961"
+      },
+      {
+        "id": "painija-023794",
+        "name": "Julius Juoperi",
+        "status": "unreviewed",
+        "mergedInto": "painija-020429"
+      },
+      {
+        "id": "painija-023795",
+        "name": "Leino Immonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-020428"
+      },
+      {
+        "id": "painija-023796",
+        "name": "Aleksi Mannila",
+        "status": "unreviewed",
+        "mergedInto": "painija-020430"
+      },
+      {
+        "id": "painija-023797",
+        "name": "Thomas Haasmaa",
+        "status": "unreviewed",
+        "mergedInto": "painija-020427"
+      },
+      {
+        "id": "painija-023798",
+        "name": "Lauri Niemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-001392"
+      },
+      {
+        "id": "painija-023799",
+        "name": "Max Rajala",
+        "status": "unreviewed",
+        "mergedInto": "painija-014114"
+      },
+      {
+        "id": "painija-023800",
+        "name": "Elias Ala-Rämi",
+        "status": "unreviewed",
+        "mergedInto": "painija-019648"
+      },
+      {
+        "id": "painija-023801",
+        "name": "Jaro Järvi",
+        "status": "unreviewed",
+        "mergedInto": "painija-023735"
+      },
+      {
+        "id": "painija-023802",
+        "name": "Hugo Leponen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000456"
+      },
+      {
+        "id": "painija-023803",
+        "name": "Ilmari Järvenpää",
+        "status": "unreviewed",
+        "mergedInto": "painija-020436"
+      },
+      {
+        "id": "painija-023804",
+        "name": "Leo Haapala",
+        "status": "unreviewed",
+        "mergedInto": "painija-019866"
+      },
+      {
+        "id": "painija-023805",
+        "name": "Veikko Rantala",
+        "status": "unreviewed",
+        "mergedInto": "painija-011774"
+      },
+      {
+        "id": "painija-023806",
+        "name": "Aukusti Kuusinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-019646"
+      },
+      {
+        "id": "painija-023807",
+        "name": "Ayaan Narra",
+        "status": "unreviewed",
+        "mergedInto": "painija-020403"
+      },
+      {
+        "id": "painija-023808",
+        "name": "Konsta Love",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023809",
+        "name": "Emil Hietala",
+        "status": "unreviewed",
+        "mergedInto": "painija-002389"
+      },
+      {
+        "id": "painija-023810",
+        "name": "Iiro Hörkkö",
+        "status": "unreviewed",
+        "mergedInto": "painija-019863"
+      },
+      {
+        "id": "painija-023811",
+        "name": "Lauri Asunto",
+        "status": "unreviewed",
+        "mergedInto": "painija-011772"
+      },
+      {
+        "id": "painija-023812",
+        "name": "Toivo Lindberg",
+        "status": "unreviewed",
+        "mergedInto": "painija-019407"
+      },
+      {
+        "id": "painija-023813",
+        "name": "Edvin Siitari",
+        "status": "unreviewed",
+        "mergedInto": "painija-020447"
+      },
+      {
+        "id": "painija-023814",
+        "name": "Kosti Uusiheikkilä",
+        "status": "unreviewed",
+        "mergedInto": "painija-020449"
+      },
+      {
+        "id": "painija-023815",
+        "name": "Ilmari Tuominen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014931"
+      },
+      {
+        "id": "painija-023816",
+        "name": "Benjamin Mäkelä",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023817",
+        "name": "Oodi Kurkinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-020452"
+      },
+      {
+        "id": "painija-023818",
+        "name": "Elias Kannisto",
+        "status": "unreviewed",
+        "mergedInto": "painija-000453"
+      },
+      {
+        "id": "painija-023819",
+        "name": "Eemil Hakala",
+        "status": "unreviewed",
+        "mergedInto": "painija-020454"
+      },
+      {
+        "id": "painija-023820",
+        "name": "Otto Rantala",
+        "status": "unreviewed",
+        "mergedInto": "painija-019418"
+      },
+      {
+        "id": "painija-023821",
+        "name": "Samuel Välimäki",
+        "status": "unreviewed",
+        "mergedInto": "painija-019849"
+      },
+      {
+        "id": "painija-023822",
+        "name": "Konsta Leinonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-020455"
+      },
+      {
+        "id": "painija-023823",
+        "name": "Jimi Kukkonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014236"
+      },
+      {
+        "id": "painija-023824",
+        "name": "Elias Seifi",
+        "status": "unreviewed",
+        "mergedInto": "painija-001308"
+      },
+      {
+        "id": "painija-023825",
+        "name": "Valtteri Poutanen",
+        "status": "unreviewed",
+        "mergedInto": "painija-019668"
+      },
+      {
+        "id": "painija-023826",
+        "name": "Samu Järvelä",
+        "status": "unreviewed",
+        "mergedInto": "painija-014124"
+      },
+      {
+        "id": "painija-023827",
+        "name": "Oiva Hämäläinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-010505"
+      },
+      {
+        "id": "painija-023828",
+        "name": "Niilo Loikkanen",
+        "status": "unreviewed",
+        "mergedInto": "painija-003833"
+      },
+      {
+        "id": "painija-023829",
+        "name": "Leo Kannisto",
+        "status": "unreviewed",
+        "mergedInto": "painija-000444"
+      },
+      {
+        "id": "painija-023830",
+        "name": "Niki Pärnänen",
+        "status": "unreviewed",
+        "mergedInto": "painija-001331"
+      },
+      {
+        "id": "painija-023831",
+        "name": "Huugo Tuunainen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014970"
+      },
+      {
+        "id": "painija-023832",
+        "name": "Venni Niemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-001316"
+      },
+      {
+        "id": "painija-023833",
+        "name": "Olavi Vartia",
+        "status": "unreviewed",
+        "mergedInto": "painija-000478"
+      },
+      {
+        "id": "painija-023834",
+        "name": "Niila Sulander",
+        "status": "unreviewed",
+        "mergedInto": "painija-001365"
+      },
+      {
+        "id": "painija-023835",
+        "name": "Eetu Juvonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-001067"
+      },
+      {
+        "id": "painija-023836",
+        "name": "Tuukka Niemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-009762"
+      },
+      {
+        "id": "painija-023837",
+        "name": "Paavo Pihlajämäki",
+        "status": "unreviewed",
+        "mergedInto": "painija-020470"
+      },
+      {
+        "id": "painija-023838",
+        "name": "Melik Aydin",
+        "status": "unreviewed",
+        "mergedInto": "painija-020160"
+      },
+      {
+        "id": "painija-023839",
+        "name": "Malla Tiainen",
+        "status": "unreviewed",
+        "mergedInto": "painija-014973"
+      },
+      {
+        "id": "painija-023840",
+        "name": "Isa Sallansalo",
+        "status": "unreviewed",
+        "mergedInto": "painija-011818"
+      },
+      {
+        "id": "painija-023841",
+        "name": "Sofia Tuomensalo-Porkka",
+        "status": "unreviewed",
+        "mergedInto": "painija-019825"
+      },
+      {
+        "id": "painija-023842",
+        "name": "Iris Petäjäniemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-019826"
+      },
+      {
+        "id": "painija-023843",
+        "name": "Hilda Vartia",
+        "status": "unreviewed",
+        "mergedInto": "painija-000484"
+      },
+      {
+        "id": "painija-023844",
+        "name": "Miisa Koskinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-019703"
+      },
+      {
+        "id": "painija-023845",
+        "name": "Elsi Rintala",
+        "status": "unreviewed",
+        "mergedInto": "painija-011822"
+      },
+      {
+        "id": "painija-023846",
+        "name": "Loviisa Harjuketo",
+        "status": "unreviewed",
+        "mergedInto": "painija-020480"
+      },
+      {
+        "id": "painija-023847",
+        "name": "Emma Tianen",
+        "status": "unreviewed",
+        "mergedInto": "painija-020482"
+      },
+      {
+        "id": "painija-023848",
+        "name": "Roosa Pensaari",
+        "status": "unreviewed",
+        "mergedInto": "painija-019706"
+      },
+      {
+        "id": "painija-023849",
+        "name": "Auroora Isotupa",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023850",
+        "name": "Sofia Stenroth",
+        "status": "unreviewed",
+        "mergedInto": "painija-001438"
+      },
+      {
+        "id": "painija-023851",
+        "name": "Ellen Kangas",
+        "status": "unreviewed",
+        "mergedInto": "painija-016373"
+      },
+      {
+        "id": "painija-023852",
+        "name": "Kaihan Nabizaba",
+        "status": "unreviewed",
+        "mergedInto": "painija-017914"
+      },
+      {
+        "id": "painija-023853",
+        "name": "Iivari Peltola",
+        "status": "unreviewed",
+        "mergedInto": "painija-016109"
+      },
+      {
+        "id": "painija-023854",
+        "name": "Aatos Koskela",
+        "status": "unreviewed",
+        "mergedInto": "painija-016118"
+      },
+      {
+        "id": "painija-023855",
+        "name": "Eetu Radmer-Jensen",
+        "status": "unreviewed",
+        "mergedInto": "painija-001409"
+      },
+      {
+        "id": "painija-023856",
+        "name": "Daniel Karimi",
+        "status": "unreviewed",
+        "mergedInto": "painija-000452"
+      },
+      {
+        "id": "painija-023857",
+        "name": "Elias Kannisto",
+        "status": "unreviewed",
+        "mergedInto": "painija-000453"
+      },
+      {
+        "id": "painija-023858",
+        "name": "Noel Kontuniemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-000460"
+      },
+      {
+        "id": "painija-023859",
+        "name": "Alex Ahonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000458"
+      },
+      {
+        "id": "painija-023860",
+        "name": "Darek Kampus",
+        "status": "unreviewed",
+        "mergedInto": "painija-000475"
+      },
+      {
+        "id": "painija-023861",
+        "name": "Roni Ahokas",
+        "status": "unreviewed",
+        "mergedInto": "painija-000457"
+      },
+      {
+        "id": "painija-023862",
+        "name": "Elias Seifi",
+        "status": "unreviewed",
+        "mergedInto": "painija-001308"
+      },
+      {
+        "id": "painija-023863",
+        "name": "Feliks Tuomonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000476"
+      },
+      {
+        "id": "painija-023864",
+        "name": "Frans Tuomonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000477"
+      },
+      {
+        "id": "painija-023865",
+        "name": "Olavi Vartia",
+        "status": "unreviewed",
+        "mergedInto": "painija-000478"
+      },
+      {
+        "id": "painija-023866",
+        "name": "Kaspar Kampus",
+        "status": "unreviewed",
+        "mergedInto": "painija-000479"
+      },
+      {
+        "id": "painija-023867",
+        "name": "Eelis Wihinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000466"
+      },
+      {
+        "id": "painija-023868",
+        "name": "Patrick Olan",
+        "status": "unreviewed",
+        "mergedInto": "painija-000467"
+      },
+      {
+        "id": "painija-023869",
+        "name": "Saku Mäkipelto",
+        "status": "unreviewed",
+        "mergedInto": "painija-000447"
+      },
+      {
+        "id": "painija-023870",
+        "name": "Leo Kannisto",
+        "status": "unreviewed",
+        "mergedInto": "painija-000444"
+      },
+      {
+        "id": "painija-023871",
+        "name": "Joel Olan",
+        "status": "unreviewed",
+        "mergedInto": "painija-000448"
+      },
+      {
+        "id": "painija-023872",
+        "name": "Joona Pekkanen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000454"
+      },
+      {
+        "id": "painija-023873",
+        "name": "Meri Eronen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000488"
+      },
+      {
+        "id": "painija-023874",
+        "name": "Rohan Nabizaba",
+        "status": "unreviewed",
+        "mergedInto": "painija-017920"
+      },
+      {
+        "id": "painija-023875",
+        "name": "Otso Koskela",
+        "status": "unreviewed",
+        "mergedInto": "painija-000489"
+      },
+      {
+        "id": "painija-023876",
+        "name": "Hugo Leponen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000456"
+      },
+      {
+        "id": "painija-023877",
+        "name": "Aku Tapio",
+        "status": "unreviewed",
+        "mergedInto": "painija-016125"
+      },
+      {
+        "id": "painija-023878",
+        "name": "Hilda Vartia",
+        "status": "unreviewed",
+        "mergedInto": "painija-000484"
+      },
+      {
+        "id": "painija-023879",
+        "name": "Alex Zaitsev",
+        "status": "unreviewed",
+        "mergedInto": "painija-000632"
+      },
+      {
+        "id": "painija-023880",
+        "name": "Tamim Ahmed",
+        "status": "unreviewed",
+        "mergedInto": "painija-000882"
+      },
+      {
+        "id": "painija-023881",
+        "name": "Seid Syla",
+        "status": "unreviewed",
+        "mergedInto": "painija-000881"
+      },
+      {
+        "id": "painija-023882",
+        "name": "Roni Tallberg",
+        "status": "unreviewed",
+        "mergedInto": "painija-000011"
+      },
+      {
+        "id": "painija-023883",
+        "name": "Matias Kokkonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-013132"
+      },
+      {
+        "id": "painija-023884",
+        "name": "Imran Mohamud",
+        "status": "unreviewed",
+        "mergedInto": "painija-000884"
+      },
+      {
+        "id": "painija-023885",
+        "name": "Mahaur Amiri",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023886",
+        "name": "Siar Musa",
+        "status": "unreviewed",
+        "mergedInto": "painija-000885"
+      },
+      {
+        "id": "painija-023887",
+        "name": "Aurora Dean",
+        "status": "unreviewed",
+        "mergedInto": "painija-021612"
+      },
+      {
+        "id": "painija-023888",
+        "name": "Niki Grönholm",
+        "status": "unreviewed",
+        "mergedInto": "painija-000505"
+      },
+      {
+        "id": "painija-023889",
+        "name": "Tim Paasonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000613"
+      },
+      {
+        "id": "painija-023890",
+        "name": "Voitto Kaskinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000887"
+      },
+      {
+        "id": "painija-023891",
+        "name": "Muhammad Yandiev",
+        "status": "unreviewed",
+        "mergedInto": "painija-000890"
+      },
+      {
+        "id": "painija-023892",
+        "name": "Niilo Takala",
+        "status": "unreviewed",
+        "mergedInto": "painija-000634"
+      },
+      {
+        "id": "painija-023893",
+        "name": "Oliver Bäck",
+        "status": "unreviewed",
+        "mergedInto": "painija-000891"
+      },
+      {
+        "id": "painija-023894",
+        "name": "Robben Dedinca",
+        "status": "unreviewed",
+        "mergedInto": "painija-000892"
+      },
+      {
+        "id": "painija-023895",
+        "name": "Mari-Liis Vainika",
+        "status": "unreviewed",
+        "mergedInto": "painija-000004"
+      },
+      {
+        "id": "painija-023896",
+        "name": "Omar Rashidi",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023897",
+        "name": "Hugo Grönholm",
+        "status": "unreviewed",
+        "mergedInto": "painija-000021"
+      },
+      {
+        "id": "painija-023898",
+        "name": "Mikko Peltonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000894"
+      },
+      {
+        "id": "painija-023899",
+        "name": "Artagnes Strengell",
+        "status": "unreviewed",
+        "mergedInto": "painija-016040"
+      },
+      {
+        "id": "painija-023900",
+        "name": "Malik Musa",
+        "status": "unreviewed",
+        "mergedInto": "painija-000893"
+      },
+      {
+        "id": "painija-023901",
+        "name": "Arion Musa",
+        "status": "unreviewed",
+        "mergedInto": "painija-001262"
+      },
+      {
+        "id": "painija-023902",
+        "name": "Arbanit Musa",
+        "status": "unreviewed",
+        "mergedInto": "painija-000897"
+      },
+      {
+        "id": "painija-023903",
+        "name": "Aino Setälä",
+        "status": "unreviewed",
+        "mergedInto": "painija-000573"
+      },
+      {
+        "id": "painija-023904",
+        "name": "Helmi Suomalainen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000574"
+      },
+      {
+        "id": "painija-023905",
+        "name": "Ella Sihvonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000671"
+      },
+      {
+        "id": "painija-023906",
+        "name": "Elina Kangasniemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-000050"
+      },
+      {
+        "id": "painija-023907",
+        "name": "Adele Hoot",
+        "status": "unreviewed",
+        "mergedInto": "painija-000577"
+      },
+      {
+        "id": "painija-023908",
+        "name": "Mialiis Vainika",
+        "status": "unreviewed",
+        "mergedInto": "painija-000550"
+      },
+      {
+        "id": "painija-023909",
+        "name": "Aleksanteri Kougappi",
+        "status": "unreviewed",
+        "mergedInto": "painija-000918"
+      },
+      {
+        "id": "painija-023910",
+        "name": "Augustus Lampila",
+        "status": "unreviewed",
+        "mergedInto": "painija-000921"
+      },
+      {
+        "id": "painija-023911",
+        "name": "Khamzat Meserbiev",
+        "status": "unreviewed",
+        "mergedInto": "painija-000920"
+      },
+      {
+        "id": "painija-023912",
+        "name": "Muhammadali Hasanov",
+        "status": "unreviewed",
+        "mergedInto": "painija-000928"
+      },
+      {
+        "id": "painija-023913",
+        "name": "Ali Baigiraev",
+        "status": "unreviewed",
+        "mergedInto": "painija-000923"
+      },
+      {
+        "id": "painija-023914",
+        "name": "Leart Neli",
+        "status": "unreviewed",
+        "mergedInto": "painija-000924"
+      },
+      {
+        "id": "painija-023915",
+        "name": "Kaleb Dean",
+        "status": "unreviewed",
+        "mergedInto": "painija-000925"
+      },
+      {
+        "id": "painija-023916",
+        "name": "Ilyas Mohamud",
+        "status": "unreviewed",
+        "mergedInto": "painija-000927"
+      },
+      {
+        "id": "painija-023917",
+        "name": "Salmaan Ali",
+        "status": "unreviewed",
+        "mergedInto": "painija-000929"
+      },
+      {
+        "id": "painija-023918",
+        "name": "Benjamin Stykki",
+        "status": "unreviewed",
+        "mergedInto": "painija-000635"
+      },
+      {
+        "id": "painija-023919",
+        "name": "Oiva Alanen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000052"
+      },
+      {
+        "id": "painija-023920",
+        "name": "Ajan Musa",
+        "status": "unreviewed",
+        "mergedInto": "painija-000932"
+      },
+      {
+        "id": "painija-023921",
+        "name": "Anuar Miftari",
+        "status": "unreviewed",
+        "mergedInto": "painija-000937"
+      },
+      {
+        "id": "painija-023922",
+        "name": "Marlo Kolu",
+        "status": "unreviewed",
+        "mergedInto": "painija-000620"
+      },
+      {
+        "id": "painija-023923",
+        "name": "Aroandes Strengell",
+        "status": "unreviewed",
+        "mergedInto": "painija-000586"
+      },
+      {
+        "id": "painija-023924",
+        "name": "Huzeifa Yandiev",
+        "status": "unreviewed",
+        "mergedInto": "painija-000944"
+      },
+      {
+        "id": "painija-023925",
+        "name": "Husein Junusov",
+        "status": "unreviewed",
+        "mergedInto": "painija-000936"
+      },
+      {
+        "id": "painija-023926",
+        "name": "Zakaria Rashidi",
+        "status": "unreviewed",
+        "mergedInto": "painija-000939"
+      },
+      {
+        "id": "painija-023927",
+        "name": "Albarra Tsitskiev",
+        "status": "unreviewed",
+        "mergedInto": "painija-000942"
+      },
+      {
+        "id": "painija-023928",
+        "name": "William Pham",
+        "status": "unreviewed",
+        "mergedInto": "painija-000943"
+      },
+      {
+        "id": "painija-023929",
+        "name": "Benjamin Anttila",
+        "status": "unreviewed",
+        "mergedInto": "painija-000641"
+      },
+      {
+        "id": "painija-023930",
+        "name": "Valtteri Kotilainen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000603"
+      },
+      {
+        "id": "painija-023931",
+        "name": "Teo Paasonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000602"
+      },
+      {
+        "id": "painija-023932",
+        "name": "Arttu Reinikainen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000653"
+      },
+      {
+        "id": "painija-023933",
+        "name": "Valter Niinimäki",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023934",
+        "name": "Juho Malmari",
+        "status": "unreviewed",
+        "mergedInto": "painija-012633"
+      },
+      {
+        "id": "painija-023935",
+        "name": "Eetu Markkula",
+        "status": "unreviewed",
+        "mergedInto": "painija-001028"
+      },
+      {
+        "id": "painija-023936",
+        "name": "Aleksandr Ljapor",
+        "status": "unreviewed",
+        "mergedInto": "painija-001051"
+      },
+      {
+        "id": "painija-023937",
+        "name": "Dzhamalbek Dzhambekov",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023938",
+        "name": "Muhammad Nalgiev",
+        "status": "unreviewed"
+      },
+      {
+        "id": "painija-023939",
+        "name": "Maximus Purmonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-000656"
+      },
+      {
+        "id": "painija-023940",
+        "name": "Joona Hakola",
+        "status": "unreviewed",
+        "mergedInto": "painija-000876"
+      },
+      {
+        "id": "painija-023941",
+        "name": "Jere Pekkarinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-006415"
+      },
+      {
+        "id": "painija-023942",
+        "name": "Saad Ahmed",
+        "status": "unreviewed",
+        "mergedInto": "painija-001095"
+      },
+      {
+        "id": "painija-023943",
+        "name": "Miko Elkala",
+        "status": "unreviewed",
+        "mergedInto": "painija-001103"
+      },
+      {
+        "id": "painija-023944",
+        "name": "Obaidullah Azim Zada",
+        "status": "unreviewed",
+        "mergedInto": "painija-001100"
+      },
+      {
+        "id": "painija-023945",
+        "name": "Sisu Rantonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-007406"
+      },
+      {
+        "id": "painija-023946",
+        "name": "Hasan Junusov",
+        "status": "unreviewed",
+        "mergedInto": "painija-000949"
+      },
+      {
+        "id": "painija-023947",
+        "name": "Ville-Kalle Kuisma",
+        "status": "unreviewed",
+        "mergedInto": "painija-000561"
+      },
+      {
+        "id": "painija-023948",
+        "name": "Viljo Takala",
+        "status": "unreviewed",
+        "mergedInto": "painija-000646"
+      },
+      {
+        "id": "painija-023949",
+        "name": "Jalo Ojansivu",
+        "status": "unreviewed",
+        "mergedInto": "painija-000647"
+      },
+      {
+        "id": "painija-023950",
+        "name": "Kaapo Takkinen",
+        "status": "unreviewed",
+        "mergedInto": "painija-003851"
+      },
+      {
+        "id": "painija-023951",
+        "name": "Eetu Tammelin",
+        "status": "unreviewed",
+        "mergedInto": "painija-000564"
+      },
+      {
+        "id": "painija-023952",
+        "name": "Gianluca Leino",
+        "status": "unreviewed",
+        "mergedInto": "painija-000648"
+      },
+      {
+        "id": "painija-023953",
+        "name": "Urho Susi",
+        "status": "unreviewed",
+        "mergedInto": "painija-000901"
+      },
+      {
+        "id": "painija-023954",
+        "name": "Aaron Raiskinmäki",
+        "status": "unreviewed",
+        "mergedInto": "painija-003411"
+      },
+      {
+        "id": "painija-023955",
+        "name": "Ilkka Niemi",
+        "status": "unreviewed",
+        "mergedInto": "painija-000652"
+      },
+      {
+        "id": "painija-023956",
+        "name": "Lorik Neli",
+        "status": "unreviewed",
+        "mergedInto": "painija-000905"
+      },
+      {
+        "id": "painija-023957",
+        "name": "Otto Lipponen",
+        "status": "unreviewed",
+        "mergedInto": "painija-001759"
+      },
+      {
+        "id": "painija-023958",
+        "name": "Amjad Khaled",
+        "status": "unreviewed",
+        "mergedInto": "painija-000660"
+      },
+      {
+        "id": "painija-023959",
+        "name": "Osku Tallberg",
+        "status": "unreviewed",
+        "mergedInto": "painija-000535"
+      },
+      {
+        "id": "painija-023960",
+        "name": "Inka Mälkönen",
+        "status": "unreviewed",
+        "mergedInto": "painija-002686"
+      },
+      {
+        "id": "painija-023961",
+        "name": "Erika Purmonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-003900"
+      },
+      {
+        "id": "painija-023962",
+        "name": "Paloma Grönfors",
+        "status": "unreviewed",
+        "mergedInto": "painija-002433"
+      },
+      {
+        "id": "painija-023963",
+        "name": "Mea Purmonen",
+        "status": "unreviewed",
+        "mergedInto": "painija-001089"
+      },
+      {
+        "id": "painija-023964",
+        "name": "Ronja Nevalainen",
+        "status": "unreviewed",
+        "mergedInto": "painija-005205"
+      },
+      {
+        "id": "painija-023965",
+        "name": "Maiju Siltala",
+        "status": "unreviewed"
       }
     ],
     "history": [
@@ -824859,9 +828669,7616 @@ window.PAINI_SHARED_DATA = {
             }
           }
         ]
+      },
+      {
+        "label": "Hyväksy kilpailutuonti (5)",
+        "kind": "import",
+        "at": "2026-10-29T19:23:15.149Z",
+        "people": [
+          {
+            "id": "painija-023724",
+            "before": null,
+            "after": {
+              "id": "painija-023724",
+              "name": "Paavo Tuominen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014961"
+            }
+          },
+          {
+            "id": "painija-023725",
+            "before": null,
+            "after": {
+              "id": "painija-023725",
+              "name": "Thomas Haasmaa",
+              "status": "unreviewed",
+              "mergedInto": "painija-020427"
+            }
+          },
+          {
+            "id": "painija-023726",
+            "before": null,
+            "after": {
+              "id": "painija-023726",
+              "name": "Leino Immonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-020428"
+            }
+          },
+          {
+            "id": "painija-023727",
+            "before": null,
+            "after": {
+              "id": "painija-023727",
+              "name": "Julius Juoperi",
+              "status": "unreviewed",
+              "mergedInto": "painija-020429"
+            }
+          },
+          {
+            "id": "painija-023728",
+            "before": null,
+            "after": {
+              "id": "painija-023728",
+              "name": "Frans Hakala",
+              "status": "unreviewed",
+              "mergedInto": "painija-020425"
+            }
+          },
+          {
+            "id": "painija-023729",
+            "before": null,
+            "after": {
+              "id": "painija-023729",
+              "name": "Otso Rotgers",
+              "status": "unreviewed",
+              "mergedInto": "painija-016113"
+            }
+          },
+          {
+            "id": "painija-023730",
+            "before": null,
+            "after": {
+              "id": "painija-023730",
+              "name": "Max Rajala",
+              "status": "unreviewed",
+              "mergedInto": "painija-014114"
+            }
+          },
+          {
+            "id": "painija-023731",
+            "before": null,
+            "after": {
+              "id": "painija-023731",
+              "name": "Elias Ala-Rämi",
+              "status": "unreviewed",
+              "mergedInto": "painija-019648"
+            }
+          },
+          {
+            "id": "painija-023732",
+            "before": null,
+            "after": {
+              "id": "painija-023732",
+              "name": "Lauri Niemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-001392"
+            }
+          },
+          {
+            "id": "painija-023733",
+            "before": null,
+            "after": {
+              "id": "painija-023733",
+              "name": "Leo Vuorinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-011773"
+            }
+          },
+          {
+            "id": "painija-023734",
+            "before": null,
+            "after": {
+              "id": "painija-023734",
+              "name": "Kasper Alakastari",
+              "status": "unreviewed",
+              "mergedInto": "painija-019854"
+            }
+          },
+          {
+            "id": "painija-023735",
+            "before": null,
+            "after": {
+              "id": "painija-023735",
+              "name": "Jaro Järvi",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023736",
+            "before": null,
+            "after": {
+              "id": "painija-023736",
+              "name": "Hugo Leponen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000456"
+            }
+          },
+          {
+            "id": "painija-023737",
+            "before": null,
+            "after": {
+              "id": "painija-023737",
+              "name": "Ilmari Järvenpää",
+              "status": "unreviewed",
+              "mergedInto": "painija-020436"
+            }
+          },
+          {
+            "id": "painija-023738",
+            "before": null,
+            "after": {
+              "id": "painija-023738",
+              "name": "Akseli Ala-Rämi",
+              "status": "unreviewed",
+              "mergedInto": "painija-019457"
+            }
+          },
+          {
+            "id": "painija-023739",
+            "before": null,
+            "after": {
+              "id": "painija-023739",
+              "name": "Leo Haapala",
+              "status": "unreviewed",
+              "mergedInto": "painija-019866"
+            }
+          },
+          {
+            "id": "painija-023740",
+            "before": null,
+            "after": {
+              "id": "painija-023740",
+              "name": "Veikko Rantala",
+              "status": "unreviewed",
+              "mergedInto": "painija-011774"
+            }
+          },
+          {
+            "id": "painija-023741",
+            "before": null,
+            "after": {
+              "id": "painija-023741",
+              "name": "Kaihan Nabizada",
+              "status": "unreviewed",
+              "mergedInto": "painija-000485"
+            }
+          },
+          {
+            "id": "painija-023742",
+            "before": null,
+            "after": {
+              "id": "painija-023742",
+              "name": "Emil Hietala",
+              "status": "unreviewed",
+              "mergedInto": "painija-002389"
+            }
+          },
+          {
+            "id": "painija-023743",
+            "before": null,
+            "after": {
+              "id": "painija-023743",
+              "name": "Daniel Karimi",
+              "status": "unreviewed",
+              "mergedInto": "painija-000452"
+            }
+          },
+          {
+            "id": "painija-023744",
+            "before": null,
+            "after": {
+              "id": "painija-023744",
+              "name": "Iiro Hörkkö",
+              "status": "unreviewed",
+              "mergedInto": "painija-019863"
+            }
+          },
+          {
+            "id": "painija-023745",
+            "before": null,
+            "after": {
+              "id": "painija-023745",
+              "name": "Toivo Lindberg",
+              "status": "unreviewed",
+              "mergedInto": "painija-019407"
+            }
+          },
+          {
+            "id": "painija-023746",
+            "before": null,
+            "after": {
+              "id": "painija-023746",
+              "name": "Rohan Nabizada",
+              "status": "unreviewed",
+              "mergedInto": "painija-000486"
+            }
+          },
+          {
+            "id": "painija-023747",
+            "before": null,
+            "after": {
+              "id": "painija-023747",
+              "name": "Paavo Leppänen",
+              "status": "unreviewed",
+              "mergedInto": "painija-003819"
+            }
+          },
+          {
+            "id": "painija-023748",
+            "before": null,
+            "after": {
+              "id": "painija-023748",
+              "name": "Eliel Kotipelto",
+              "status": "unreviewed",
+              "mergedInto": "painija-011766"
+            }
+          },
+          {
+            "id": "painija-023749",
+            "before": null,
+            "after": {
+              "id": "painija-023749",
+              "name": "Eino Järvelä",
+              "status": "unreviewed",
+              "mergedInto": "painija-001273"
+            }
+          },
+          {
+            "id": "painija-023750",
+            "before": null,
+            "after": {
+              "id": "painija-023750",
+              "name": "Urho Lehtonen",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023751",
+            "before": null,
+            "after": {
+              "id": "painija-023751",
+              "name": "Edvin Siitari",
+              "status": "unreviewed",
+              "mergedInto": "painija-020447"
+            }
+          },
+          {
+            "id": "painija-023752",
+            "before": null,
+            "after": {
+              "id": "painija-023752",
+              "name": "Miika Järvelä",
+              "status": "unreviewed",
+              "mergedInto": "painija-001414"
+            }
+          },
+          {
+            "id": "painija-023753",
+            "before": null,
+            "after": {
+              "id": "painija-023753",
+              "name": "Kosti Uusiheikkilä",
+              "status": "unreviewed",
+              "mergedInto": "painija-020449"
+            }
+          },
+          {
+            "id": "painija-023754",
+            "before": null,
+            "after": {
+              "id": "painija-023754",
+              "name": "Joel Siljamäki",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023755",
+            "before": null,
+            "after": {
+              "id": "painija-023755",
+              "name": "Ilmari Lyly",
+              "status": "unreviewed",
+              "mergedInto": "painija-000946"
+            }
+          },
+          {
+            "id": "painija-023756",
+            "before": null,
+            "after": {
+              "id": "painija-023756",
+              "name": "Ilmari Tuominen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014931"
+            }
+          },
+          {
+            "id": "painija-023757",
+            "before": null,
+            "after": {
+              "id": "painija-023757",
+              "name": "Elias Kannisto",
+              "status": "unreviewed",
+              "mergedInto": "painija-000453"
+            }
+          },
+          {
+            "id": "painija-023758",
+            "before": null,
+            "after": {
+              "id": "painija-023758",
+              "name": "Oodi Kurkinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-020452"
+            }
+          },
+          {
+            "id": "painija-023759",
+            "before": null,
+            "after": {
+              "id": "painija-023759",
+              "name": "Eemil Hakala",
+              "status": "unreviewed",
+              "mergedInto": "painija-020454"
+            }
+          },
+          {
+            "id": "painija-023760",
+            "before": null,
+            "after": {
+              "id": "painija-023760",
+              "name": "Konsta Leinonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-020455"
+            }
+          },
+          {
+            "id": "painija-023761",
+            "before": null,
+            "after": {
+              "id": "painija-023761",
+              "name": "Otto Rantala",
+              "status": "unreviewed",
+              "mergedInto": "painija-019418"
+            }
+          },
+          {
+            "id": "painija-023762",
+            "before": null,
+            "after": {
+              "id": "painija-023762",
+              "name": "Samuel Välimäki",
+              "status": "unreviewed",
+              "mergedInto": "painija-019849"
+            }
+          },
+          {
+            "id": "painija-023763",
+            "before": null,
+            "after": {
+              "id": "painija-023763",
+              "name": "Jimi Kukkonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014236"
+            }
+          },
+          {
+            "id": "painija-023764",
+            "before": null,
+            "after": {
+              "id": "painija-023764",
+              "name": "Samu Järvelä",
+              "status": "unreviewed",
+              "mergedInto": "painija-014124"
+            }
+          },
+          {
+            "id": "painija-023765",
+            "before": null,
+            "after": {
+              "id": "painija-023765",
+              "name": "Elias Seifi",
+              "status": "unreviewed",
+              "mergedInto": "painija-001308"
+            }
+          },
+          {
+            "id": "painija-023766",
+            "before": null,
+            "after": {
+              "id": "painija-023766",
+              "name": "Leo Kannisto",
+              "status": "unreviewed",
+              "mergedInto": "painija-000444"
+            }
+          },
+          {
+            "id": "painija-023767",
+            "before": null,
+            "after": {
+              "id": "painija-023767",
+              "name": "Niilo Loikkanen",
+              "status": "unreviewed",
+              "mergedInto": "painija-003833"
+            }
+          },
+          {
+            "id": "painija-023768",
+            "before": null,
+            "after": {
+              "id": "painija-023768",
+              "name": "Veikko Vaaja",
+              "status": "unreviewed",
+              "mergedInto": "painija-019684"
+            }
+          },
+          {
+            "id": "painija-023769",
+            "before": null,
+            "after": {
+              "id": "painija-023769",
+              "name": "Venni Niemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-001316"
+            }
+          },
+          {
+            "id": "painija-023770",
+            "before": null,
+            "after": {
+              "id": "painija-023770",
+              "name": "Huugo Tuunainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014970"
+            }
+          },
+          {
+            "id": "painija-023771",
+            "before": null,
+            "after": {
+              "id": "painija-023771",
+              "name": "Niki Pärnänen",
+              "status": "unreviewed",
+              "mergedInto": "painija-001331"
+            }
+          },
+          {
+            "id": "painija-023772",
+            "before": null,
+            "after": {
+              "id": "painija-023772",
+              "name": "Olavi Vartia",
+              "status": "unreviewed",
+              "mergedInto": "painija-000478"
+            }
+          },
+          {
+            "id": "painija-023773",
+            "before": null,
+            "after": {
+              "id": "painija-023773",
+              "name": "Elia Salonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-011799"
+            }
+          },
+          {
+            "id": "painija-023774",
+            "before": null,
+            "after": {
+              "id": "painija-023774",
+              "name": "Tuomas Salmela",
+              "status": "unreviewed",
+              "mergedInto": "painija-020115"
+            }
+          },
+          {
+            "id": "painija-023775",
+            "before": null,
+            "after": {
+              "id": "painija-023775",
+              "name": "Niila Sulander",
+              "status": "unreviewed",
+              "mergedInto": "painija-001365"
+            }
+          },
+          {
+            "id": "painija-023776",
+            "before": null,
+            "after": {
+              "id": "painija-023776",
+              "name": "Eetu Juvonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-001067"
+            }
+          },
+          {
+            "id": "painija-023777",
+            "before": null,
+            "after": {
+              "id": "painija-023777",
+              "name": "Paavo Pihlajämäki",
+              "status": "unreviewed",
+              "mergedInto": "painija-020470"
+            }
+          },
+          {
+            "id": "painija-023778",
+            "before": null,
+            "after": {
+              "id": "painija-023778",
+              "name": "Leo Niukkonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000451"
+            }
+          },
+          {
+            "id": "painija-023779",
+            "before": null,
+            "after": {
+              "id": "painija-023779",
+              "name": "Melik Aydin",
+              "status": "unreviewed",
+              "mergedInto": "painija-020160"
+            }
+          },
+          {
+            "id": "painija-023780",
+            "before": null,
+            "after": {
+              "id": "painija-023780",
+              "name": "Isa Sallansalo",
+              "status": "unreviewed",
+              "mergedInto": "painija-011818"
+            }
+          },
+          {
+            "id": "painija-023781",
+            "before": null,
+            "after": {
+              "id": "painija-023781",
+              "name": "Iris Petäjäniemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-019826"
+            }
+          },
+          {
+            "id": "painija-023782",
+            "before": null,
+            "after": {
+              "id": "painija-023782",
+              "name": "Sofia Tuomensalo-Porkka",
+              "status": "unreviewed",
+              "mergedInto": "painija-019825"
+            }
+          },
+          {
+            "id": "painija-023783",
+            "before": null,
+            "after": {
+              "id": "painija-023783",
+              "name": "Hilda Vartia",
+              "status": "unreviewed",
+              "mergedInto": "painija-000484"
+            }
+          },
+          {
+            "id": "painija-023784",
+            "before": null,
+            "after": {
+              "id": "painija-023784",
+              "name": "Miisa Koskinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-019703"
+            }
+          },
+          {
+            "id": "painija-023785",
+            "before": null,
+            "after": {
+              "id": "painija-023785",
+              "name": "Elsi Rintala",
+              "status": "unreviewed",
+              "mergedInto": "painija-011822"
+            }
+          },
+          {
+            "id": "painija-023786",
+            "before": null,
+            "after": {
+              "id": "painija-023786",
+              "name": "Evella Kauko",
+              "status": "unreviewed",
+              "mergedInto": "painija-001420"
+            }
+          },
+          {
+            "id": "painija-023787",
+            "before": null,
+            "after": {
+              "id": "painija-023787",
+              "name": "Loviisa Harjuketo",
+              "status": "unreviewed",
+              "mergedInto": "painija-020480"
+            }
+          },
+          {
+            "id": "painija-023788",
+            "before": null,
+            "after": {
+              "id": "painija-023788",
+              "name": "Emma Tiainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014975"
+            }
+          },
+          {
+            "id": "painija-023789",
+            "before": null,
+            "after": {
+              "id": "painija-023789",
+              "name": "Siiri Aho",
+              "status": "unreviewed",
+              "mergedInto": "painija-000968"
+            }
+          },
+          {
+            "id": "painija-023790",
+            "before": null,
+            "after": {
+              "id": "painija-023790",
+              "name": "Sofia Stenroth",
+              "status": "unreviewed",
+              "mergedInto": "painija-001438"
+            }
+          },
+          {
+            "id": "painija-023791",
+            "before": null,
+            "after": {
+              "id": "painija-023791",
+              "name": "Ellen Kangas",
+              "status": "unreviewed",
+              "mergedInto": "painija-016373"
+            }
+          },
+          {
+            "id": "painija-023792",
+            "before": null,
+            "after": {
+              "id": "painija-023792",
+              "name": "Frans Hakala",
+              "status": "unreviewed",
+              "mergedInto": "painija-020425"
+            }
+          },
+          {
+            "id": "painija-023793",
+            "before": null,
+            "after": {
+              "id": "painija-023793",
+              "name": "Paavo Tuominen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014961"
+            }
+          },
+          {
+            "id": "painija-023794",
+            "before": null,
+            "after": {
+              "id": "painija-023794",
+              "name": "Julius Juoperi",
+              "status": "unreviewed",
+              "mergedInto": "painija-020429"
+            }
+          },
+          {
+            "id": "painija-023795",
+            "before": null,
+            "after": {
+              "id": "painija-023795",
+              "name": "Leino Immonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-020428"
+            }
+          },
+          {
+            "id": "painija-023796",
+            "before": null,
+            "after": {
+              "id": "painija-023796",
+              "name": "Aleksi Mannila",
+              "status": "unreviewed",
+              "mergedInto": "painija-020430"
+            }
+          },
+          {
+            "id": "painija-023797",
+            "before": null,
+            "after": {
+              "id": "painija-023797",
+              "name": "Thomas Haasmaa",
+              "status": "unreviewed",
+              "mergedInto": "painija-020427"
+            }
+          },
+          {
+            "id": "painija-023798",
+            "before": null,
+            "after": {
+              "id": "painija-023798",
+              "name": "Lauri Niemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-001392"
+            }
+          },
+          {
+            "id": "painija-023799",
+            "before": null,
+            "after": {
+              "id": "painija-023799",
+              "name": "Max Rajala",
+              "status": "unreviewed",
+              "mergedInto": "painija-014114"
+            }
+          },
+          {
+            "id": "painija-023800",
+            "before": null,
+            "after": {
+              "id": "painija-023800",
+              "name": "Elias Ala-Rämi",
+              "status": "unreviewed",
+              "mergedInto": "painija-019648"
+            }
+          },
+          {
+            "id": "painija-023801",
+            "before": null,
+            "after": {
+              "id": "painija-023801",
+              "name": "Jaro Järvi",
+              "status": "unreviewed",
+              "mergedInto": "painija-023735"
+            }
+          },
+          {
+            "id": "painija-023802",
+            "before": null,
+            "after": {
+              "id": "painija-023802",
+              "name": "Hugo Leponen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000456"
+            }
+          },
+          {
+            "id": "painija-023803",
+            "before": null,
+            "after": {
+              "id": "painija-023803",
+              "name": "Ilmari Järvenpää",
+              "status": "unreviewed",
+              "mergedInto": "painija-020436"
+            }
+          },
+          {
+            "id": "painija-023804",
+            "before": null,
+            "after": {
+              "id": "painija-023804",
+              "name": "Leo Haapala",
+              "status": "unreviewed",
+              "mergedInto": "painija-019866"
+            }
+          },
+          {
+            "id": "painija-023805",
+            "before": null,
+            "after": {
+              "id": "painija-023805",
+              "name": "Veikko Rantala",
+              "status": "unreviewed",
+              "mergedInto": "painija-011774"
+            }
+          },
+          {
+            "id": "painija-023806",
+            "before": null,
+            "after": {
+              "id": "painija-023806",
+              "name": "Aukusti Kuusinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-019646"
+            }
+          },
+          {
+            "id": "painija-023807",
+            "before": null,
+            "after": {
+              "id": "painija-023807",
+              "name": "Ayaan Narra",
+              "status": "unreviewed",
+              "mergedInto": "painija-020403"
+            }
+          },
+          {
+            "id": "painija-023808",
+            "before": null,
+            "after": {
+              "id": "painija-023808",
+              "name": "Konsta Love",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023809",
+            "before": null,
+            "after": {
+              "id": "painija-023809",
+              "name": "Emil Hietala",
+              "status": "unreviewed",
+              "mergedInto": "painija-002389"
+            }
+          },
+          {
+            "id": "painija-023810",
+            "before": null,
+            "after": {
+              "id": "painija-023810",
+              "name": "Iiro Hörkkö",
+              "status": "unreviewed",
+              "mergedInto": "painija-019863"
+            }
+          },
+          {
+            "id": "painija-023811",
+            "before": null,
+            "after": {
+              "id": "painija-023811",
+              "name": "Lauri Asunto",
+              "status": "unreviewed",
+              "mergedInto": "painija-011772"
+            }
+          },
+          {
+            "id": "painija-023812",
+            "before": null,
+            "after": {
+              "id": "painija-023812",
+              "name": "Toivo Lindberg",
+              "status": "unreviewed",
+              "mergedInto": "painija-019407"
+            }
+          },
+          {
+            "id": "painija-023813",
+            "before": null,
+            "after": {
+              "id": "painija-023813",
+              "name": "Edvin Siitari",
+              "status": "unreviewed",
+              "mergedInto": "painija-020447"
+            }
+          },
+          {
+            "id": "painija-023814",
+            "before": null,
+            "after": {
+              "id": "painija-023814",
+              "name": "Kosti Uusiheikkilä",
+              "status": "unreviewed",
+              "mergedInto": "painija-020449"
+            }
+          },
+          {
+            "id": "painija-023815",
+            "before": null,
+            "after": {
+              "id": "painija-023815",
+              "name": "Ilmari Tuominen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014931"
+            }
+          },
+          {
+            "id": "painija-023816",
+            "before": null,
+            "after": {
+              "id": "painija-023816",
+              "name": "Benjamin Mäkelä",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023817",
+            "before": null,
+            "after": {
+              "id": "painija-023817",
+              "name": "Oodi Kurkinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-020452"
+            }
+          },
+          {
+            "id": "painija-023818",
+            "before": null,
+            "after": {
+              "id": "painija-023818",
+              "name": "Elias Kannisto",
+              "status": "unreviewed",
+              "mergedInto": "painija-000453"
+            }
+          },
+          {
+            "id": "painija-023819",
+            "before": null,
+            "after": {
+              "id": "painija-023819",
+              "name": "Eemil Hakala",
+              "status": "unreviewed",
+              "mergedInto": "painija-020454"
+            }
+          },
+          {
+            "id": "painija-023820",
+            "before": null,
+            "after": {
+              "id": "painija-023820",
+              "name": "Otto Rantala",
+              "status": "unreviewed",
+              "mergedInto": "painija-019418"
+            }
+          },
+          {
+            "id": "painija-023821",
+            "before": null,
+            "after": {
+              "id": "painija-023821",
+              "name": "Samuel Välimäki",
+              "status": "unreviewed",
+              "mergedInto": "painija-019849"
+            }
+          },
+          {
+            "id": "painija-023822",
+            "before": null,
+            "after": {
+              "id": "painija-023822",
+              "name": "Konsta Leinonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-020455"
+            }
+          },
+          {
+            "id": "painija-023823",
+            "before": null,
+            "after": {
+              "id": "painija-023823",
+              "name": "Jimi Kukkonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014236"
+            }
+          },
+          {
+            "id": "painija-023824",
+            "before": null,
+            "after": {
+              "id": "painija-023824",
+              "name": "Elias Seifi",
+              "status": "unreviewed",
+              "mergedInto": "painija-001308"
+            }
+          },
+          {
+            "id": "painija-023825",
+            "before": null,
+            "after": {
+              "id": "painija-023825",
+              "name": "Valtteri Poutanen",
+              "status": "unreviewed",
+              "mergedInto": "painija-019668"
+            }
+          },
+          {
+            "id": "painija-023826",
+            "before": null,
+            "after": {
+              "id": "painija-023826",
+              "name": "Samu Järvelä",
+              "status": "unreviewed",
+              "mergedInto": "painija-014124"
+            }
+          },
+          {
+            "id": "painija-023827",
+            "before": null,
+            "after": {
+              "id": "painija-023827",
+              "name": "Oiva Hämäläinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-010505"
+            }
+          },
+          {
+            "id": "painija-023828",
+            "before": null,
+            "after": {
+              "id": "painija-023828",
+              "name": "Niilo Loikkanen",
+              "status": "unreviewed",
+              "mergedInto": "painija-003833"
+            }
+          },
+          {
+            "id": "painija-023829",
+            "before": null,
+            "after": {
+              "id": "painija-023829",
+              "name": "Leo Kannisto",
+              "status": "unreviewed",
+              "mergedInto": "painija-000444"
+            }
+          },
+          {
+            "id": "painija-023830",
+            "before": null,
+            "after": {
+              "id": "painija-023830",
+              "name": "Niki Pärnänen",
+              "status": "unreviewed",
+              "mergedInto": "painija-001331"
+            }
+          },
+          {
+            "id": "painija-023831",
+            "before": null,
+            "after": {
+              "id": "painija-023831",
+              "name": "Huugo Tuunainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014970"
+            }
+          },
+          {
+            "id": "painija-023832",
+            "before": null,
+            "after": {
+              "id": "painija-023832",
+              "name": "Venni Niemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-001316"
+            }
+          },
+          {
+            "id": "painija-023833",
+            "before": null,
+            "after": {
+              "id": "painija-023833",
+              "name": "Olavi Vartia",
+              "status": "unreviewed",
+              "mergedInto": "painija-000478"
+            }
+          },
+          {
+            "id": "painija-023834",
+            "before": null,
+            "after": {
+              "id": "painija-023834",
+              "name": "Niila Sulander",
+              "status": "unreviewed",
+              "mergedInto": "painija-001365"
+            }
+          },
+          {
+            "id": "painija-023835",
+            "before": null,
+            "after": {
+              "id": "painija-023835",
+              "name": "Eetu Juvonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-001067"
+            }
+          },
+          {
+            "id": "painija-023836",
+            "before": null,
+            "after": {
+              "id": "painija-023836",
+              "name": "Tuukka Niemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-009762"
+            }
+          },
+          {
+            "id": "painija-023837",
+            "before": null,
+            "after": {
+              "id": "painija-023837",
+              "name": "Paavo Pihlajämäki",
+              "status": "unreviewed",
+              "mergedInto": "painija-020470"
+            }
+          },
+          {
+            "id": "painija-023838",
+            "before": null,
+            "after": {
+              "id": "painija-023838",
+              "name": "Melik Aydin",
+              "status": "unreviewed",
+              "mergedInto": "painija-020160"
+            }
+          },
+          {
+            "id": "painija-023839",
+            "before": null,
+            "after": {
+              "id": "painija-023839",
+              "name": "Malla Tiainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-014973"
+            }
+          },
+          {
+            "id": "painija-023840",
+            "before": null,
+            "after": {
+              "id": "painija-023840",
+              "name": "Isa Sallansalo",
+              "status": "unreviewed",
+              "mergedInto": "painija-011818"
+            }
+          },
+          {
+            "id": "painija-023841",
+            "before": null,
+            "after": {
+              "id": "painija-023841",
+              "name": "Sofia Tuomensalo-Porkka",
+              "status": "unreviewed",
+              "mergedInto": "painija-019825"
+            }
+          },
+          {
+            "id": "painija-023842",
+            "before": null,
+            "after": {
+              "id": "painija-023842",
+              "name": "Iris Petäjäniemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-019826"
+            }
+          },
+          {
+            "id": "painija-023843",
+            "before": null,
+            "after": {
+              "id": "painija-023843",
+              "name": "Hilda Vartia",
+              "status": "unreviewed",
+              "mergedInto": "painija-000484"
+            }
+          },
+          {
+            "id": "painija-023844",
+            "before": null,
+            "after": {
+              "id": "painija-023844",
+              "name": "Miisa Koskinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-019703"
+            }
+          },
+          {
+            "id": "painija-023845",
+            "before": null,
+            "after": {
+              "id": "painija-023845",
+              "name": "Elsi Rintala",
+              "status": "unreviewed",
+              "mergedInto": "painija-011822"
+            }
+          },
+          {
+            "id": "painija-023846",
+            "before": null,
+            "after": {
+              "id": "painija-023846",
+              "name": "Loviisa Harjuketo",
+              "status": "unreviewed",
+              "mergedInto": "painija-020480"
+            }
+          },
+          {
+            "id": "painija-023847",
+            "before": null,
+            "after": {
+              "id": "painija-023847",
+              "name": "Emma Tianen",
+              "status": "unreviewed",
+              "mergedInto": "painija-020482"
+            }
+          },
+          {
+            "id": "painija-023848",
+            "before": null,
+            "after": {
+              "id": "painija-023848",
+              "name": "Roosa Pensaari",
+              "status": "unreviewed",
+              "mergedInto": "painija-019706"
+            }
+          },
+          {
+            "id": "painija-023849",
+            "before": null,
+            "after": {
+              "id": "painija-023849",
+              "name": "Auroora Isotupa",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023850",
+            "before": null,
+            "after": {
+              "id": "painija-023850",
+              "name": "Sofia Stenroth",
+              "status": "unreviewed",
+              "mergedInto": "painija-001438"
+            }
+          },
+          {
+            "id": "painija-023851",
+            "before": null,
+            "after": {
+              "id": "painija-023851",
+              "name": "Ellen Kangas",
+              "status": "unreviewed",
+              "mergedInto": "painija-016373"
+            }
+          },
+          {
+            "id": "painija-023852",
+            "before": null,
+            "after": {
+              "id": "painija-023852",
+              "name": "Kaihan Nabizaba",
+              "status": "unreviewed",
+              "mergedInto": "painija-017914"
+            }
+          },
+          {
+            "id": "painija-023853",
+            "before": null,
+            "after": {
+              "id": "painija-023853",
+              "name": "Iivari Peltola",
+              "status": "unreviewed",
+              "mergedInto": "painija-016109"
+            }
+          },
+          {
+            "id": "painija-023854",
+            "before": null,
+            "after": {
+              "id": "painija-023854",
+              "name": "Aatos Koskela",
+              "status": "unreviewed",
+              "mergedInto": "painija-016118"
+            }
+          },
+          {
+            "id": "painija-023855",
+            "before": null,
+            "after": {
+              "id": "painija-023855",
+              "name": "Eetu Radmer-Jensen",
+              "status": "unreviewed",
+              "mergedInto": "painija-001409"
+            }
+          },
+          {
+            "id": "painija-023856",
+            "before": null,
+            "after": {
+              "id": "painija-023856",
+              "name": "Daniel Karimi",
+              "status": "unreviewed",
+              "mergedInto": "painija-000452"
+            }
+          },
+          {
+            "id": "painija-023857",
+            "before": null,
+            "after": {
+              "id": "painija-023857",
+              "name": "Elias Kannisto",
+              "status": "unreviewed",
+              "mergedInto": "painija-000453"
+            }
+          },
+          {
+            "id": "painija-023858",
+            "before": null,
+            "after": {
+              "id": "painija-023858",
+              "name": "Noel Kontuniemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-000460"
+            }
+          },
+          {
+            "id": "painija-023859",
+            "before": null,
+            "after": {
+              "id": "painija-023859",
+              "name": "Alex Ahonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000458"
+            }
+          },
+          {
+            "id": "painija-023860",
+            "before": null,
+            "after": {
+              "id": "painija-023860",
+              "name": "Darek Kampus",
+              "status": "unreviewed",
+              "mergedInto": "painija-000475"
+            }
+          },
+          {
+            "id": "painija-023861",
+            "before": null,
+            "after": {
+              "id": "painija-023861",
+              "name": "Roni Ahokas",
+              "status": "unreviewed",
+              "mergedInto": "painija-000457"
+            }
+          },
+          {
+            "id": "painija-023862",
+            "before": null,
+            "after": {
+              "id": "painija-023862",
+              "name": "Elias Seifi",
+              "status": "unreviewed",
+              "mergedInto": "painija-001308"
+            }
+          },
+          {
+            "id": "painija-023863",
+            "before": null,
+            "after": {
+              "id": "painija-023863",
+              "name": "Feliks Tuomonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000476"
+            }
+          },
+          {
+            "id": "painija-023864",
+            "before": null,
+            "after": {
+              "id": "painija-023864",
+              "name": "Frans Tuomonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000477"
+            }
+          },
+          {
+            "id": "painija-023865",
+            "before": null,
+            "after": {
+              "id": "painija-023865",
+              "name": "Olavi Vartia",
+              "status": "unreviewed",
+              "mergedInto": "painija-000478"
+            }
+          },
+          {
+            "id": "painija-023866",
+            "before": null,
+            "after": {
+              "id": "painija-023866",
+              "name": "Kaspar Kampus",
+              "status": "unreviewed",
+              "mergedInto": "painija-000479"
+            }
+          },
+          {
+            "id": "painija-023867",
+            "before": null,
+            "after": {
+              "id": "painija-023867",
+              "name": "Eelis Wihinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000466"
+            }
+          },
+          {
+            "id": "painija-023868",
+            "before": null,
+            "after": {
+              "id": "painija-023868",
+              "name": "Patrick Olan",
+              "status": "unreviewed",
+              "mergedInto": "painija-000467"
+            }
+          },
+          {
+            "id": "painija-023869",
+            "before": null,
+            "after": {
+              "id": "painija-023869",
+              "name": "Saku Mäkipelto",
+              "status": "unreviewed",
+              "mergedInto": "painija-000447"
+            }
+          },
+          {
+            "id": "painija-023870",
+            "before": null,
+            "after": {
+              "id": "painija-023870",
+              "name": "Leo Kannisto",
+              "status": "unreviewed",
+              "mergedInto": "painija-000444"
+            }
+          },
+          {
+            "id": "painija-023871",
+            "before": null,
+            "after": {
+              "id": "painija-023871",
+              "name": "Joel Olan",
+              "status": "unreviewed",
+              "mergedInto": "painija-000448"
+            }
+          },
+          {
+            "id": "painija-023872",
+            "before": null,
+            "after": {
+              "id": "painija-023872",
+              "name": "Joona Pekkanen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000454"
+            }
+          },
+          {
+            "id": "painija-023873",
+            "before": null,
+            "after": {
+              "id": "painija-023873",
+              "name": "Meri Eronen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000488"
+            }
+          },
+          {
+            "id": "painija-023874",
+            "before": null,
+            "after": {
+              "id": "painija-023874",
+              "name": "Rohan Nabizaba",
+              "status": "unreviewed",
+              "mergedInto": "painija-017920"
+            }
+          },
+          {
+            "id": "painija-023875",
+            "before": null,
+            "after": {
+              "id": "painija-023875",
+              "name": "Otso Koskela",
+              "status": "unreviewed",
+              "mergedInto": "painija-000489"
+            }
+          },
+          {
+            "id": "painija-023876",
+            "before": null,
+            "after": {
+              "id": "painija-023876",
+              "name": "Hugo Leponen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000456"
+            }
+          },
+          {
+            "id": "painija-023877",
+            "before": null,
+            "after": {
+              "id": "painija-023877",
+              "name": "Aku Tapio",
+              "status": "unreviewed",
+              "mergedInto": "painija-016125"
+            }
+          },
+          {
+            "id": "painija-023878",
+            "before": null,
+            "after": {
+              "id": "painija-023878",
+              "name": "Hilda Vartia",
+              "status": "unreviewed",
+              "mergedInto": "painija-000484"
+            }
+          },
+          {
+            "id": "painija-023879",
+            "before": null,
+            "after": {
+              "id": "painija-023879",
+              "name": "Alex Zaitsev",
+              "status": "unreviewed",
+              "mergedInto": "painija-000632"
+            }
+          },
+          {
+            "id": "painija-023880",
+            "before": null,
+            "after": {
+              "id": "painija-023880",
+              "name": "Tamim Ahmed",
+              "status": "unreviewed",
+              "mergedInto": "painija-000882"
+            }
+          },
+          {
+            "id": "painija-023881",
+            "before": null,
+            "after": {
+              "id": "painija-023881",
+              "name": "Seid Syla",
+              "status": "unreviewed",
+              "mergedInto": "painija-000881"
+            }
+          },
+          {
+            "id": "painija-023882",
+            "before": null,
+            "after": {
+              "id": "painija-023882",
+              "name": "Roni Tallberg",
+              "status": "unreviewed",
+              "mergedInto": "painija-000011"
+            }
+          },
+          {
+            "id": "painija-023883",
+            "before": null,
+            "after": {
+              "id": "painija-023883",
+              "name": "Matias Kokkonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-013132"
+            }
+          },
+          {
+            "id": "painija-023884",
+            "before": null,
+            "after": {
+              "id": "painija-023884",
+              "name": "Imran Mohamud",
+              "status": "unreviewed",
+              "mergedInto": "painija-000884"
+            }
+          },
+          {
+            "id": "painija-023885",
+            "before": null,
+            "after": {
+              "id": "painija-023885",
+              "name": "Mahaur Amiri",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023886",
+            "before": null,
+            "after": {
+              "id": "painija-023886",
+              "name": "Siar Musa",
+              "status": "unreviewed",
+              "mergedInto": "painija-000885"
+            }
+          },
+          {
+            "id": "painija-023887",
+            "before": null,
+            "after": {
+              "id": "painija-023887",
+              "name": "Aurora Dean",
+              "status": "unreviewed",
+              "mergedInto": "painija-021612"
+            }
+          },
+          {
+            "id": "painija-023888",
+            "before": null,
+            "after": {
+              "id": "painija-023888",
+              "name": "Niki Grönholm",
+              "status": "unreviewed",
+              "mergedInto": "painija-000505"
+            }
+          },
+          {
+            "id": "painija-023889",
+            "before": null,
+            "after": {
+              "id": "painija-023889",
+              "name": "Tim Paasonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000613"
+            }
+          },
+          {
+            "id": "painija-023890",
+            "before": null,
+            "after": {
+              "id": "painija-023890",
+              "name": "Voitto Kaskinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000887"
+            }
+          },
+          {
+            "id": "painija-023891",
+            "before": null,
+            "after": {
+              "id": "painija-023891",
+              "name": "Muhammad Yandiev",
+              "status": "unreviewed",
+              "mergedInto": "painija-000890"
+            }
+          },
+          {
+            "id": "painija-023892",
+            "before": null,
+            "after": {
+              "id": "painija-023892",
+              "name": "Niilo Takala",
+              "status": "unreviewed",
+              "mergedInto": "painija-000634"
+            }
+          },
+          {
+            "id": "painija-023893",
+            "before": null,
+            "after": {
+              "id": "painija-023893",
+              "name": "Oliver Bäck",
+              "status": "unreviewed",
+              "mergedInto": "painija-000891"
+            }
+          },
+          {
+            "id": "painija-023894",
+            "before": null,
+            "after": {
+              "id": "painija-023894",
+              "name": "Robben Dedinca",
+              "status": "unreviewed",
+              "mergedInto": "painija-000892"
+            }
+          },
+          {
+            "id": "painija-023895",
+            "before": null,
+            "after": {
+              "id": "painija-023895",
+              "name": "Mari-Liis Vainika",
+              "status": "unreviewed",
+              "mergedInto": "painija-000004"
+            }
+          },
+          {
+            "id": "painija-023896",
+            "before": null,
+            "after": {
+              "id": "painija-023896",
+              "name": "Omar Rashidi",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023897",
+            "before": null,
+            "after": {
+              "id": "painija-023897",
+              "name": "Hugo Grönholm",
+              "status": "unreviewed",
+              "mergedInto": "painija-000021"
+            }
+          },
+          {
+            "id": "painija-023898",
+            "before": null,
+            "after": {
+              "id": "painija-023898",
+              "name": "Mikko Peltonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000894"
+            }
+          },
+          {
+            "id": "painija-023899",
+            "before": null,
+            "after": {
+              "id": "painija-023899",
+              "name": "Artagnes Strengell",
+              "status": "unreviewed",
+              "mergedInto": "painija-016040"
+            }
+          },
+          {
+            "id": "painija-023900",
+            "before": null,
+            "after": {
+              "id": "painija-023900",
+              "name": "Malik Musa",
+              "status": "unreviewed",
+              "mergedInto": "painija-000893"
+            }
+          },
+          {
+            "id": "painija-023901",
+            "before": null,
+            "after": {
+              "id": "painija-023901",
+              "name": "Arion Musa",
+              "status": "unreviewed",
+              "mergedInto": "painija-001262"
+            }
+          },
+          {
+            "id": "painija-023902",
+            "before": null,
+            "after": {
+              "id": "painija-023902",
+              "name": "Arbanit Musa",
+              "status": "unreviewed",
+              "mergedInto": "painija-000897"
+            }
+          },
+          {
+            "id": "painija-023903",
+            "before": null,
+            "after": {
+              "id": "painija-023903",
+              "name": "Aino Setälä",
+              "status": "unreviewed",
+              "mergedInto": "painija-000573"
+            }
+          },
+          {
+            "id": "painija-023904",
+            "before": null,
+            "after": {
+              "id": "painija-023904",
+              "name": "Helmi Suomalainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000574"
+            }
+          },
+          {
+            "id": "painija-023905",
+            "before": null,
+            "after": {
+              "id": "painija-023905",
+              "name": "Ella Sihvonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000671"
+            }
+          },
+          {
+            "id": "painija-023906",
+            "before": null,
+            "after": {
+              "id": "painija-023906",
+              "name": "Elina Kangasniemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-000050"
+            }
+          },
+          {
+            "id": "painija-023907",
+            "before": null,
+            "after": {
+              "id": "painija-023907",
+              "name": "Adele Hoot",
+              "status": "unreviewed",
+              "mergedInto": "painija-000577"
+            }
+          },
+          {
+            "id": "painija-023908",
+            "before": null,
+            "after": {
+              "id": "painija-023908",
+              "name": "Mialiis Vainika",
+              "status": "unreviewed",
+              "mergedInto": "painija-000550"
+            }
+          },
+          {
+            "id": "painija-023909",
+            "before": null,
+            "after": {
+              "id": "painija-023909",
+              "name": "Aleksanteri Kougappi",
+              "status": "unreviewed",
+              "mergedInto": "painija-000918"
+            }
+          },
+          {
+            "id": "painija-023910",
+            "before": null,
+            "after": {
+              "id": "painija-023910",
+              "name": "Augustus Lampila",
+              "status": "unreviewed",
+              "mergedInto": "painija-000921"
+            }
+          },
+          {
+            "id": "painija-023911",
+            "before": null,
+            "after": {
+              "id": "painija-023911",
+              "name": "Khamzat Meserbiev",
+              "status": "unreviewed",
+              "mergedInto": "painija-000920"
+            }
+          },
+          {
+            "id": "painija-023912",
+            "before": null,
+            "after": {
+              "id": "painija-023912",
+              "name": "Muhammadali Hasanov",
+              "status": "unreviewed",
+              "mergedInto": "painija-000928"
+            }
+          },
+          {
+            "id": "painija-023913",
+            "before": null,
+            "after": {
+              "id": "painija-023913",
+              "name": "Ali Baigiraev",
+              "status": "unreviewed",
+              "mergedInto": "painija-000923"
+            }
+          },
+          {
+            "id": "painija-023914",
+            "before": null,
+            "after": {
+              "id": "painija-023914",
+              "name": "Leart Neli",
+              "status": "unreviewed",
+              "mergedInto": "painija-000924"
+            }
+          },
+          {
+            "id": "painija-023915",
+            "before": null,
+            "after": {
+              "id": "painija-023915",
+              "name": "Kaleb Dean",
+              "status": "unreviewed",
+              "mergedInto": "painija-000925"
+            }
+          },
+          {
+            "id": "painija-023916",
+            "before": null,
+            "after": {
+              "id": "painija-023916",
+              "name": "Ilyas Mohamud",
+              "status": "unreviewed",
+              "mergedInto": "painija-000927"
+            }
+          },
+          {
+            "id": "painija-023917",
+            "before": null,
+            "after": {
+              "id": "painija-023917",
+              "name": "Salmaan Ali",
+              "status": "unreviewed",
+              "mergedInto": "painija-000929"
+            }
+          },
+          {
+            "id": "painija-023918",
+            "before": null,
+            "after": {
+              "id": "painija-023918",
+              "name": "Benjamin Stykki",
+              "status": "unreviewed",
+              "mergedInto": "painija-000635"
+            }
+          },
+          {
+            "id": "painija-023919",
+            "before": null,
+            "after": {
+              "id": "painija-023919",
+              "name": "Oiva Alanen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000052"
+            }
+          },
+          {
+            "id": "painija-023920",
+            "before": null,
+            "after": {
+              "id": "painija-023920",
+              "name": "Ajan Musa",
+              "status": "unreviewed",
+              "mergedInto": "painija-000932"
+            }
+          },
+          {
+            "id": "painija-023921",
+            "before": null,
+            "after": {
+              "id": "painija-023921",
+              "name": "Anuar Miftari",
+              "status": "unreviewed",
+              "mergedInto": "painija-000937"
+            }
+          },
+          {
+            "id": "painija-023922",
+            "before": null,
+            "after": {
+              "id": "painija-023922",
+              "name": "Marlo Kolu",
+              "status": "unreviewed",
+              "mergedInto": "painija-000620"
+            }
+          },
+          {
+            "id": "painija-023923",
+            "before": null,
+            "after": {
+              "id": "painija-023923",
+              "name": "Aroandes Strengell",
+              "status": "unreviewed",
+              "mergedInto": "painija-000586"
+            }
+          },
+          {
+            "id": "painija-023924",
+            "before": null,
+            "after": {
+              "id": "painija-023924",
+              "name": "Huzeifa Yandiev",
+              "status": "unreviewed",
+              "mergedInto": "painija-000944"
+            }
+          },
+          {
+            "id": "painija-023925",
+            "before": null,
+            "after": {
+              "id": "painija-023925",
+              "name": "Husein Junusov",
+              "status": "unreviewed",
+              "mergedInto": "painija-000936"
+            }
+          },
+          {
+            "id": "painija-023926",
+            "before": null,
+            "after": {
+              "id": "painija-023926",
+              "name": "Zakaria Rashidi",
+              "status": "unreviewed",
+              "mergedInto": "painija-000939"
+            }
+          },
+          {
+            "id": "painija-023927",
+            "before": null,
+            "after": {
+              "id": "painija-023927",
+              "name": "Albarra Tsitskiev",
+              "status": "unreviewed",
+              "mergedInto": "painija-000942"
+            }
+          },
+          {
+            "id": "painija-023928",
+            "before": null,
+            "after": {
+              "id": "painija-023928",
+              "name": "William Pham",
+              "status": "unreviewed",
+              "mergedInto": "painija-000943"
+            }
+          },
+          {
+            "id": "painija-023929",
+            "before": null,
+            "after": {
+              "id": "painija-023929",
+              "name": "Benjamin Anttila",
+              "status": "unreviewed",
+              "mergedInto": "painija-000641"
+            }
+          },
+          {
+            "id": "painija-023930",
+            "before": null,
+            "after": {
+              "id": "painija-023930",
+              "name": "Valtteri Kotilainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000603"
+            }
+          },
+          {
+            "id": "painija-023931",
+            "before": null,
+            "after": {
+              "id": "painija-023931",
+              "name": "Teo Paasonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000602"
+            }
+          },
+          {
+            "id": "painija-023932",
+            "before": null,
+            "after": {
+              "id": "painija-023932",
+              "name": "Arttu Reinikainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000653"
+            }
+          },
+          {
+            "id": "painija-023933",
+            "before": null,
+            "after": {
+              "id": "painija-023933",
+              "name": "Valter Niinimäki",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023934",
+            "before": null,
+            "after": {
+              "id": "painija-023934",
+              "name": "Juho Malmari",
+              "status": "unreviewed",
+              "mergedInto": "painija-012633"
+            }
+          },
+          {
+            "id": "painija-023935",
+            "before": null,
+            "after": {
+              "id": "painija-023935",
+              "name": "Eetu Markkula",
+              "status": "unreviewed",
+              "mergedInto": "painija-001028"
+            }
+          },
+          {
+            "id": "painija-023936",
+            "before": null,
+            "after": {
+              "id": "painija-023936",
+              "name": "Aleksandr Ljapor",
+              "status": "unreviewed",
+              "mergedInto": "painija-001051"
+            }
+          },
+          {
+            "id": "painija-023937",
+            "before": null,
+            "after": {
+              "id": "painija-023937",
+              "name": "Dzhamalbek Dzhambekov",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023938",
+            "before": null,
+            "after": {
+              "id": "painija-023938",
+              "name": "Muhammad Nalgiev",
+              "status": "unreviewed"
+            }
+          },
+          {
+            "id": "painija-023939",
+            "before": null,
+            "after": {
+              "id": "painija-023939",
+              "name": "Maximus Purmonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000656"
+            }
+          },
+          {
+            "id": "painija-023940",
+            "before": null,
+            "after": {
+              "id": "painija-023940",
+              "name": "Joona Hakola",
+              "status": "unreviewed",
+              "mergedInto": "painija-000876"
+            }
+          },
+          {
+            "id": "painija-023941",
+            "before": null,
+            "after": {
+              "id": "painija-023941",
+              "name": "Jere Pekkarinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-006415"
+            }
+          },
+          {
+            "id": "painija-023942",
+            "before": null,
+            "after": {
+              "id": "painija-023942",
+              "name": "Saad Ahmed",
+              "status": "unreviewed",
+              "mergedInto": "painija-001095"
+            }
+          },
+          {
+            "id": "painija-023943",
+            "before": null,
+            "after": {
+              "id": "painija-023943",
+              "name": "Miko Elkala",
+              "status": "unreviewed",
+              "mergedInto": "painija-001103"
+            }
+          },
+          {
+            "id": "painija-023944",
+            "before": null,
+            "after": {
+              "id": "painija-023944",
+              "name": "Obaidullah Azim Zada",
+              "status": "unreviewed",
+              "mergedInto": "painija-001100"
+            }
+          },
+          {
+            "id": "painija-023945",
+            "before": null,
+            "after": {
+              "id": "painija-023945",
+              "name": "Sisu Rantonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-007406"
+            }
+          },
+          {
+            "id": "painija-023946",
+            "before": null,
+            "after": {
+              "id": "painija-023946",
+              "name": "Hasan Junusov",
+              "status": "unreviewed",
+              "mergedInto": "painija-000949"
+            }
+          },
+          {
+            "id": "painija-023947",
+            "before": null,
+            "after": {
+              "id": "painija-023947",
+              "name": "Ville-Kalle Kuisma",
+              "status": "unreviewed",
+              "mergedInto": "painija-000561"
+            }
+          },
+          {
+            "id": "painija-023948",
+            "before": null,
+            "after": {
+              "id": "painija-023948",
+              "name": "Viljo Takala",
+              "status": "unreviewed",
+              "mergedInto": "painija-000646"
+            }
+          },
+          {
+            "id": "painija-023949",
+            "before": null,
+            "after": {
+              "id": "painija-023949",
+              "name": "Jalo Ojansivu",
+              "status": "unreviewed",
+              "mergedInto": "painija-000647"
+            }
+          },
+          {
+            "id": "painija-023950",
+            "before": null,
+            "after": {
+              "id": "painija-023950",
+              "name": "Kaapo Takkinen",
+              "status": "unreviewed",
+              "mergedInto": "painija-003851"
+            }
+          },
+          {
+            "id": "painija-023951",
+            "before": null,
+            "after": {
+              "id": "painija-023951",
+              "name": "Eetu Tammelin",
+              "status": "unreviewed",
+              "mergedInto": "painija-000564"
+            }
+          },
+          {
+            "id": "painija-023952",
+            "before": null,
+            "after": {
+              "id": "painija-023952",
+              "name": "Gianluca Leino",
+              "status": "unreviewed",
+              "mergedInto": "painija-000648"
+            }
+          },
+          {
+            "id": "painija-023953",
+            "before": null,
+            "after": {
+              "id": "painija-023953",
+              "name": "Urho Susi",
+              "status": "unreviewed",
+              "mergedInto": "painija-000901"
+            }
+          },
+          {
+            "id": "painija-023954",
+            "before": null,
+            "after": {
+              "id": "painija-023954",
+              "name": "Aaron Raiskinmäki",
+              "status": "unreviewed",
+              "mergedInto": "painija-003411"
+            }
+          },
+          {
+            "id": "painija-023955",
+            "before": null,
+            "after": {
+              "id": "painija-023955",
+              "name": "Ilkka Niemi",
+              "status": "unreviewed",
+              "mergedInto": "painija-000652"
+            }
+          },
+          {
+            "id": "painija-023956",
+            "before": null,
+            "after": {
+              "id": "painija-023956",
+              "name": "Lorik Neli",
+              "status": "unreviewed",
+              "mergedInto": "painija-000905"
+            }
+          },
+          {
+            "id": "painija-023957",
+            "before": null,
+            "after": {
+              "id": "painija-023957",
+              "name": "Otto Lipponen",
+              "status": "unreviewed",
+              "mergedInto": "painija-001759"
+            }
+          },
+          {
+            "id": "painija-023958",
+            "before": null,
+            "after": {
+              "id": "painija-023958",
+              "name": "Amjad Khaled",
+              "status": "unreviewed",
+              "mergedInto": "painija-000660"
+            }
+          },
+          {
+            "id": "painija-023959",
+            "before": null,
+            "after": {
+              "id": "painija-023959",
+              "name": "Osku Tallberg",
+              "status": "unreviewed",
+              "mergedInto": "painija-000535"
+            }
+          },
+          {
+            "id": "painija-023960",
+            "before": null,
+            "after": {
+              "id": "painija-023960",
+              "name": "Inka Mälkönen",
+              "status": "unreviewed",
+              "mergedInto": "painija-002686"
+            }
+          },
+          {
+            "id": "painija-023961",
+            "before": null,
+            "after": {
+              "id": "painija-023961",
+              "name": "Erika Purmonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-003900"
+            }
+          },
+          {
+            "id": "painija-023962",
+            "before": null,
+            "after": {
+              "id": "painija-023962",
+              "name": "Paloma Grönfors",
+              "status": "unreviewed",
+              "mergedInto": "painija-002433"
+            }
+          },
+          {
+            "id": "painija-023963",
+            "before": null,
+            "after": {
+              "id": "painija-023963",
+              "name": "Mea Purmonen",
+              "status": "unreviewed",
+              "mergedInto": "painija-001089"
+            }
+          },
+          {
+            "id": "painija-023964",
+            "before": null,
+            "after": {
+              "id": "painija-023964",
+              "name": "Ronja Nevalainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-005205"
+            }
+          },
+          {
+            "id": "painija-023965",
+            "before": null,
+            "after": {
+              "id": "painija-023965",
+              "name": "Maiju Siltala",
+              "status": "unreviewed"
+            }
+          }
+        ],
+        "assignments": [],
+        "competitions": [
+          {
+            "key": "[\"nuoriso-turnaus\",\"ilmajoki, 26.9.2026\"]",
+            "before": {
+              "title": "Nuoriso-turnaus",
+              "details": "Ilmajoki, 26.9.2026",
+              "rows": [
+                {
+                  "place": 1,
+                  "name": "Felix Hakola",
+                  "club": "Helsingin Haka",
+                  "weight": "24",
+                  "category": "GR U9",
+                  "resultId": "tulos-022039",
+                  "athleteId": "painija-001032"
+                },
+                {
+                  "place": 2,
+                  "name": "Peetu Hiltunen",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "24",
+                  "category": "GR U9",
+                  "resultId": "tulos-022040",
+                  "athleteId": "painija-013406"
+                },
+                {
+                  "place": 1,
+                  "name": "Väinö Jokiharju",
+                  "club": "Turun Voimamiehet",
+                  "weight": "30",
+                  "category": "GR U9",
+                  "resultId": "tulos-022041",
+                  "athleteId": "painija-014780"
+                },
+                {
+                  "place": 2,
+                  "name": "August Mehmeti",
+                  "club": "Helsingin Haka",
+                  "weight": "30",
+                  "category": "GR U9",
+                  "resultId": "tulos-022042",
+                  "athleteId": "painija-000633"
+                },
+                {
+                  "place": 3,
+                  "name": "Jonni Rosendal",
+                  "club": "Turun Voimamiehet",
+                  "weight": "30",
+                  "category": "GR U9",
+                  "resultId": "tulos-022043",
+                  "athleteId": "painija-018468"
+                },
+                {
+                  "place": 4,
+                  "name": "Eemeli Rintala",
+                  "club": "Teuvan Rivakka",
+                  "weight": "30",
+                  "category": "GR U9",
+                  "resultId": "tulos-022044",
+                  "athleteId": "painija-015411"
+                },
+                {
+                  "place": 1,
+                  "name": "Eemeli Latvala",
+                  "club": "Nurmon Jymy",
+                  "weight": "32",
+                  "category": "GR U9",
+                  "resultId": "tulos-022045",
+                  "athleteId": "painija-015426"
+                },
+                {
+                  "place": 2,
+                  "name": "Niilo Niemonen",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "32",
+                  "category": "GR U9",
+                  "resultId": "tulos-022046",
+                  "athleteId": "painija-001484"
+                },
+                {
+                  "place": 3,
+                  "name": "Joel Vuorenmaa",
+                  "club": "Nurmon Jymy",
+                  "weight": "32",
+                  "category": "GR U9",
+                  "resultId": "tulos-022047",
+                  "athleteId": "painija-014900"
+                },
+                {
+                  "place": 1,
+                  "name": "Luukas Rautiainen",
+                  "club": "Helsingin Haka",
+                  "weight": "35",
+                  "category": "GR U9",
+                  "resultId": "tulos-022048",
+                  "athleteId": "painija-000020"
+                },
+                {
+                  "place": 2,
+                  "name": "Elias Piikkilä",
+                  "club": "Nurmon Jymy",
+                  "weight": "35",
+                  "category": "GR U9",
+                  "resultId": "tulos-022049",
+                  "athleteId": "painija-012317"
+                },
+                {
+                  "place": 3,
+                  "name": "Eino Koskela",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "35",
+                  "category": "GR U9",
+                  "resultId": "tulos-022050",
+                  "athleteId": "painija-001266"
+                },
+                {
+                  "place": 1,
+                  "name": "Ilmari Tuominen",
+                  "club": "Porin Paini-Miehet",
+                  "weight": "40",
+                  "category": "GR U9",
+                  "resultId": "tulos-022051",
+                  "athleteId": "painija-003371"
+                },
+                {
+                  "place": 1,
+                  "name": "Eemil Geydarov",
+                  "club": "Nurmon Jymy",
+                  "weight": "48",
+                  "category": "GR U9",
+                  "resultId": "tulos-022052",
+                  "athleteId": "painija-010267"
+                },
+                {
+                  "place": 1,
+                  "name": "Aaron Suorauha",
+                  "club": "Laihian Luja",
+                  "weight": "30",
+                  "category": "GR U11",
+                  "resultId": "tulos-022053",
+                  "athleteId": "painija-001488"
+                },
+                {
+                  "place": 2,
+                  "name": "Nicolas Lammi",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "30",
+                  "category": "GR U11",
+                  "resultId": "tulos-022054",
+                  "athleteId": "painija-001271"
+                },
+                {
+                  "place": 3,
+                  "name": "Paavo Ahopelto",
+                  "club": "Nurmon Jymy",
+                  "weight": "30",
+                  "category": "GR U11",
+                  "resultId": "tulos-022055",
+                  "athleteId": "painija-004034"
+                },
+                {
+                  "place": 4,
+                  "name": "Karl-Jan Ström",
+                  "club": "Vaasan Toverit",
+                  "weight": "30",
+                  "category": "GR U11",
+                  "resultId": "tulos-022056",
+                  "athleteId": "painija-014890"
+                },
+                {
+                  "place": 1,
+                  "name": "Vilho Pakkala",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "32",
+                  "category": "GR U11",
+                  "resultId": "tulos-022057",
+                  "athleteId": "painija-001491"
+                },
+                {
+                  "place": 2,
+                  "name": "Eetu Malkola",
+                  "club": "Lapuan Virkiä",
+                  "weight": "32",
+                  "category": "GR U11",
+                  "resultId": "tulos-022058",
+                  "athleteId": "painija-001493"
+                },
+                {
+                  "place": 3,
+                  "name": "Emil Mandell",
+                  "club": "Vaasan Toverit",
+                  "weight": "32",
+                  "category": "GR U11",
+                  "resultId": "tulos-022059",
+                  "athleteId": "painija-014834"
+                },
+                {
+                  "place": 4,
+                  "name": "Otto Tuomikoski",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "32",
+                  "category": "GR U11",
+                  "resultId": "tulos-022060",
+                  "athleteId": "painija-001490"
+                },
+                {
+                  "place": 1,
+                  "name": "Anton Jäntti",
+                  "club": "Vaasan Toverit",
+                  "weight": "34",
+                  "category": "GR U11",
+                  "resultId": "tulos-022061",
+                  "athleteId": "painija-004035"
+                },
+                {
+                  "place": 2,
+                  "name": "Dewin Rosengård",
+                  "club": "Vaasan Toverit",
+                  "weight": "34",
+                  "category": "GR U11",
+                  "resultId": "tulos-022062",
+                  "athleteId": "painija-001495"
+                },
+                {
+                  "place": 3,
+                  "name": "Väinö Westerberg",
+                  "club": "Turun Voimamiehet",
+                  "weight": "34",
+                  "category": "GR U11",
+                  "resultId": "tulos-022063",
+                  "athleteId": "painija-001499"
+                },
+                {
+                  "place": 4,
+                  "name": "Niilo Ylituomaala",
+                  "club": "Lapuan Virkiä",
+                  "weight": "34",
+                  "category": "GR U11",
+                  "resultId": "tulos-022064",
+                  "athleteId": "painija-013420"
+                },
+                {
+                  "place": 1,
+                  "name": "Toivo Kilpeläinen",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "39",
+                  "category": "GR U11",
+                  "resultId": "tulos-022065",
+                  "athleteId": "painija-001505"
+                },
+                {
+                  "place": 2,
+                  "name": "Luka Horttana",
+                  "club": "Seinäjoen Paini-Miehet",
+                  "weight": "39",
+                  "category": "GR U11",
+                  "resultId": "tulos-022066",
+                  "athleteId": "painija-012353"
+                },
+                {
+                  "place": 3,
+                  "name": "Jimi Tunkkari",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "39",
+                  "category": "GR U11",
+                  "resultId": "tulos-022067",
+                  "athleteId": "painija-001509"
+                },
+                {
+                  "place": 1,
+                  "name": "Lauri Salomaa",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "45",
+                  "category": "GR U11",
+                  "resultId": "tulos-022068",
+                  "athleteId": "painija-001507"
+                },
+                {
+                  "place": 2,
+                  "name": "Väinö Koskela",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "45",
+                  "category": "GR U11",
+                  "resultId": "tulos-022069",
+                  "athleteId": "painija-001306"
+                },
+                {
+                  "place": 3,
+                  "name": "Pyry Perämäki",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "45",
+                  "category": "GR U11",
+                  "resultId": "tulos-022070",
+                  "athleteId": "painija-004364"
+                },
+                {
+                  "place": 4,
+                  "name": "Noam Aho",
+                  "club": "Nurmon Jymy",
+                  "weight": "45",
+                  "category": "GR U11",
+                  "resultId": "tulos-022071",
+                  "athleteId": "painija-021680"
+                },
+                {
+                  "place": 1,
+                  "name": "Leo Kannisto",
+                  "club": "Tampereen Painiseura",
+                  "weight": "49",
+                  "category": "GR U11",
+                  "resultId": "tulos-022072",
+                  "athleteId": "painija-000444"
+                },
+                {
+                  "place": 2,
+                  "name": "Jaakko Talja",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "49",
+                  "category": "GR U11",
+                  "resultId": "tulos-022073",
+                  "athleteId": "painija-001511"
+                },
+                {
+                  "place": 1,
+                  "name": "Oliver Niemi",
+                  "club": "Rauman Voimailijat",
+                  "weight": "55",
+                  "category": "GR U11",
+                  "resultId": "tulos-022074",
+                  "athleteId": "painija-000592"
+                },
+                {
+                  "place": 2,
+                  "name": "Leo Jokilehto",
+                  "club": "Koskelankylän Riento",
+                  "weight": "55",
+                  "category": "GR U11",
+                  "resultId": "tulos-022075",
+                  "athleteId": "painija-014868"
+                },
+                {
+                  "place": 3,
+                  "name": "Venni Niemi",
+                  "club": "Nokian Pyry",
+                  "weight": "55",
+                  "category": "GR U11",
+                  "resultId": "tulos-022076",
+                  "athleteId": "painija-001316"
+                },
+                {
+                  "place": 1,
+                  "name": "Noah Skrifvars",
+                  "club": "Vaasan Voima-Veikot",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022077",
+                  "athleteId": "painija-001556"
+                },
+                {
+                  "place": 2,
+                  "name": "Ilari Kulmala",
+                  "club": "Tampereen Painiseura",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022078",
+                  "athleteId": "painija-000084"
+                },
+                {
+                  "place": 3,
+                  "name": "Leo Tuominen",
+                  "club": "Laihian Luja",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022079",
+                  "athleteId": "painija-004617"
+                },
+                {
+                  "place": 4,
+                  "name": "Eeli Turpeinen",
+                  "club": "Harjun Woima",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022080",
+                  "athleteId": "painija-004123"
+                },
+                {
+                  "place": 5,
+                  "name": "Vilho Huhtamäki",
+                  "club": "Nurmon Jymy",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022081",
+                  "athleteId": "painija-000080"
+                },
+                {
+                  "place": 6,
+                  "name": "Atte Similä",
+                  "club": "Koskelankylän Riento",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022082",
+                  "athleteId": "painija-002460"
+                },
+                {
+                  "place": 7,
+                  "name": "Elmo Rintamäki",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022083",
+                  "athleteId": "painija-002976"
+                },
+                {
+                  "place": 1,
+                  "name": "Mitri Mäkelä",
+                  "club": "Turun Voimamiehet",
+                  "weight": "62",
+                  "category": "GR U15",
+                  "resultId": "tulos-022084",
+                  "athleteId": "painija-001064"
+                },
+                {
+                  "place": 2,
+                  "name": "Eemi Ylisoini",
+                  "club": "Nurmon Jymy",
+                  "weight": "62",
+                  "category": "GR U15",
+                  "resultId": "tulos-022085",
+                  "athleteId": "painija-013391"
+                },
+                {
+                  "place": 3,
+                  "name": "Rasmus Orell",
+                  "club": "Nurmon Jymy",
+                  "weight": "62",
+                  "category": "GR U15",
+                  "resultId": "tulos-022086",
+                  "athleteId": "painija-000086"
+                },
+                {
+                  "place": 1,
+                  "name": "Kaapro Vanharanta",
+                  "club": "Nurmon Jymy",
+                  "weight": "68",
+                  "category": "GR U15",
+                  "resultId": "tulos-022087",
+                  "athleteId": "painija-002908"
+                },
+                {
+                  "place": 2,
+                  "name": "Casper Ekström",
+                  "club": "Vaasan Voima-Veikot",
+                  "weight": "68",
+                  "category": "GR U15",
+                  "resultId": "tulos-022088",
+                  "athleteId": "painija-001559"
+                },
+                {
+                  "place": 3,
+                  "name": "Juho Huttunen",
+                  "club": "Lapin Lukko",
+                  "weight": "68",
+                  "category": "GR U15",
+                  "resultId": "tulos-022089",
+                  "athleteId": "painija-011652"
+                },
+                {
+                  "place": 4,
+                  "name": "Kaiku Parttimaa",
+                  "club": "Kuopion Kisa-Veikot",
+                  "weight": "68",
+                  "category": "GR U15",
+                  "resultId": "tulos-022090",
+                  "athleteId": "painija-007906"
+                },
+                {
+                  "place": 1,
+                  "name": "Peetu Purtanen",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "85",
+                  "category": "GR U15",
+                  "resultId": "tulos-022091",
+                  "athleteId": "painija-001562"
+                },
+                {
+                  "place": 2,
+                  "name": "Antti-Jussi Pelkonen",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "85",
+                  "category": "GR U15",
+                  "resultId": "tulos-022092",
+                  "athleteId": "painija-003016"
+                },
+                {
+                  "place": 1,
+                  "name": "Onni Luoma",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "23",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022093",
+                  "athleteId": "painija-013455"
+                },
+                {
+                  "place": 2,
+                  "name": "Eevert Rajamäki",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "23",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022094",
+                  "athleteId": "painija-001479"
+                },
+                {
+                  "place": 3,
+                  "name": "Leevi Malkola",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "23",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022095",
+                  "athleteId": "painija-015104"
+                },
+                {
+                  "place": 1,
+                  "name": "Urho Niemi",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022096",
+                  "athleteId": "painija-013783"
+                },
+                {
+                  "place": 2,
+                  "name": "Urho Mäensivu",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022097",
+                  "athleteId": "painija-015497"
+                },
+                {
+                  "place": 3,
+                  "name": "Aukusti Kuusinen",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022098",
+                  "athleteId": "painija-019646"
+                },
+                {
+                  "place": 4,
+                  "name": "Ukko Äkäslompolo",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022099",
+                  "athleteId": "painija-013784"
+                },
+                {
+                  "place": 5,
+                  "name": "Niko Riihimäki",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022100",
+                  "athleteId": "painija-013750"
+                },
+                {
+                  "place": 1,
+                  "name": "Maksym Hera",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "31",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022101",
+                  "athleteId": "painija-001494"
+                },
+                {
+                  "place": 2,
+                  "name": "Leo Kuusalo",
+                  "club": "Laihian Luja",
+                  "weight": "31",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022102",
+                  "athleteId": "painija-013788"
+                },
+                {
+                  "place": 3,
+                  "name": "Milo Thomas",
+                  "club": "Vaasan Voima-Veikot",
+                  "weight": "31",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022103",
+                  "athleteId": "painija-018140"
+                },
+                {
+                  "place": 4,
+                  "name": "Ayaan Narra",
+                  "club": "Valkeakosken Koskenpojat",
+                  "weight": "31",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022104",
+                  "athleteId": "painija-021713"
+                },
+                {
+                  "place": 1,
+                  "name": "Bogdan Panchenko",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022105",
+                  "athleteId": "painija-021597"
+                },
+                {
+                  "place": 2,
+                  "name": "Kyrylo Dorohan",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022106",
+                  "athleteId": "painija-021598"
+                },
+                {
+                  "place": 3,
+                  "name": "Justus Åtman",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022107",
+                  "athleteId": "painija-021716"
+                },
+                {
+                  "place": 4,
+                  "name": "Väinö Sarkaranta",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022108",
+                  "athleteId": "painija-013462"
+                },
+                {
+                  "place": 5,
+                  "name": "Joonas Koivisto",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022109",
+                  "athleteId": "painija-013424"
+                },
+                {
+                  "place": 1,
+                  "name": "Josephine Hägglund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "25",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022110",
+                  "athleteId": "painija-001544"
+                },
+                {
+                  "place": 2,
+                  "name": "Elsa Sarkaranta",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "25",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022111",
+                  "athleteId": "painija-013802"
+                },
+                {
+                  "place": 3,
+                  "name": "Amanda Autio",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "25",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022112",
+                  "athleteId": "painija-013468"
+                },
+                {
+                  "place": 1,
+                  "name": "Julianna Alakarhu",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "31",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022113",
+                  "athleteId": "painija-021639"
+                },
+                {
+                  "place": 2,
+                  "name": "Anni Pasto",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "31",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022114",
+                  "athleteId": "painija-020410"
+                },
+                {
+                  "place": 3,
+                  "name": "Charlotta Hägglund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "31",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022115",
+                  "athleteId": "painija-001459"
+                },
+                {
+                  "place": 1,
+                  "name": "Selma Saarikoski",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "35",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022116",
+                  "athleteId": "painija-013401"
+                },
+                {
+                  "place": 2,
+                  "name": "Iiris Kupari",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "35",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022117",
+                  "athleteId": "painija-001463"
+                },
+                {
+                  "place": 3,
+                  "name": "Helen Kupari",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "35",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022118",
+                  "athleteId": "painija-001464"
+                },
+                {
+                  "place": 1,
+                  "name": "Niki Mandell",
+                  "club": "Vaasan Toverit",
+                  "weight": "34",
+                  "category": "GR U13",
+                  "resultId": "tulos-022119",
+                  "athleteId": "painija-014734"
+                },
+                {
+                  "place": 2,
+                  "name": "Marian Hera",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "34",
+                  "category": "GR U13",
+                  "resultId": "tulos-022120",
+                  "athleteId": "painija-001520"
+                },
+                {
+                  "place": 1,
+                  "name": "Felix Lammi",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022121",
+                  "athleteId": "painija-001317"
+                },
+                {
+                  "place": 2,
+                  "name": "Pietari Nurmi",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022122",
+                  "athleteId": "painija-003514"
+                },
+                {
+                  "place": 3,
+                  "name": "Jasper Haverinen",
+                  "club": "Ylä-Tikkurilan Kipinä",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022123",
+                  "athleteId": "painija-000598"
+                },
+                {
+                  "place": 4,
+                  "name": "Urho Haapamäki",
+                  "club": "Seinäjoen Paini-Miehet",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022124",
+                  "athleteId": "painija-001523"
+                },
+                {
+                  "place": 5,
+                  "name": "Vertti Toimela",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022125",
+                  "athleteId": "painija-012348"
+                },
+                {
+                  "place": 6,
+                  "name": "Vilho-Paavo Seppänen",
+                  "club": "Nurmon Jymy",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022126",
+                  "athleteId": "painija-021735"
+                },
+                {
+                  "place": 7,
+                  "name": "Jiri Korpela",
+                  "club": "Lapuan Virkiä",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022127",
+                  "athleteId": "painija-012359"
+                },
+                {
+                  "place": 1,
+                  "name": "Leo Heikkinen",
+                  "club": "Ylä-Tikkurilan Kipinä",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022128",
+                  "athleteId": "painija-000065"
+                },
+                {
+                  "place": 2,
+                  "name": "Elmeri Parkko",
+                  "club": "Porvoon Weikot",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022129",
+                  "athleteId": "painija-000058"
+                },
+                {
+                  "place": 3,
+                  "name": "Kasperi Kulmala",
+                  "club": "Tampereen Painiseura",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022130",
+                  "athleteId": "painija-000054"
+                },
+                {
+                  "place": 4,
+                  "name": "Milko Hyväri",
+                  "club": "Lapin Lukko",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022131",
+                  "athleteId": "painija-004212"
+                },
+                {
+                  "place": 5,
+                  "name": "Hugo Hakola",
+                  "club": "Helsingin Haka",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022132",
+                  "athleteId": "painija-001015"
+                },
+                {
+                  "place": 6,
+                  "name": "Alexander Koivisto",
+                  "club": "Vaasan Toverit",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022133",
+                  "athleteId": "painija-004595"
+                },
+                {
+                  "place": 7,
+                  "name": "Reima Kuntola",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022134",
+                  "athleteId": "painija-001526"
+                },
+                {
+                  "place": 8,
+                  "name": "Jaakko Kinnari",
+                  "club": "Vaasan Toverit",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022135",
+                  "athleteId": "painija-001530"
+                },
+                {
+                  "place": 8,
+                  "name": "Eelis Wihinen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022136",
+                  "athleteId": "painija-000466"
+                },
+                {
+                  "place": 10,
+                  "name": "Eikka Honkaniemi",
+                  "club": "Nurmon Jymy",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022137",
+                  "athleteId": "painija-015444"
+                },
+                {
+                  "place": 1,
+                  "name": "Olavi Suomalainen",
+                  "club": "Kuopion Kisa-Veikot",
+                  "weight": "50",
+                  "category": "GR U13",
+                  "resultId": "tulos-022138",
+                  "athleteId": "painija-000372"
+                },
+                {
+                  "place": 2,
+                  "name": "Veikko Huhtamäki",
+                  "club": "Nurmon Jymy",
+                  "weight": "50",
+                  "category": "GR U13",
+                  "resultId": "tulos-022139",
+                  "athleteId": "painija-002938"
+                },
+                {
+                  "place": 3,
+                  "name": "Niilo Vuorio",
+                  "club": "Helsingin Tarmo",
+                  "weight": "50",
+                  "category": "GR U13",
+                  "resultId": "tulos-022140",
+                  "athleteId": "painija-000649"
+                },
+                {
+                  "place": 4,
+                  "name": "Aaron Laine",
+                  "club": "Turun Voimamiehet",
+                  "weight": "50",
+                  "category": "GR U13",
+                  "resultId": "tulos-022141",
+                  "athleteId": "painija-001810"
+                },
+                {
+                  "place": 1,
+                  "name": "Esa Niskanen",
+                  "club": "Kuopion Kisa-Veikot",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022142",
+                  "athleteId": "painija-000410"
+                },
+                {
+                  "place": 2,
+                  "name": "Manu Mäki-Töyli",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022143",
+                  "athleteId": "painija-001342"
+                },
+                {
+                  "place": 3,
+                  "name": "Väinö Myllymäki",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022144",
+                  "athleteId": "painija-002543"
+                },
+                {
+                  "place": 4,
+                  "name": "Santeri Kytöharju",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022145",
+                  "athleteId": "painija-001341"
+                },
+                {
+                  "place": 5,
+                  "name": "Luukas Salokas",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022146",
+                  "athleteId": "painija-001346"
+                },
+                {
+                  "place": 6,
+                  "name": "Onni Kohtala",
+                  "club": "Nurmon Jymy",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022147",
+                  "athleteId": "painija-003555"
+                },
+                {
+                  "place": 7,
+                  "name": "Caspher Hägglund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022148",
+                  "athleteId": "painija-001540"
+                },
+                {
+                  "place": 1,
+                  "name": "Oskari Leppinen",
+                  "club": "Laihian Luja",
+                  "weight": "60",
+                  "category": "GR U13",
+                  "resultId": "tulos-022149",
+                  "athleteId": "painija-001537"
+                },
+                {
+                  "place": 2,
+                  "name": "Abdulqahar Muomin",
+                  "club": "Turun Voimamiehet",
+                  "weight": "60",
+                  "category": "GR U13",
+                  "resultId": "tulos-022150",
+                  "athleteId": "painija-021759"
+                },
+                {
+                  "place": 1,
+                  "name": "Emil Tenev",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "70",
+                  "category": "GR U13",
+                  "resultId": "tulos-022151",
+                  "athleteId": "painija-000073"
+                },
+                {
+                  "place": 2,
+                  "name": "Mauno Salokorpi",
+                  "club": "Nurmon Jymy",
+                  "weight": "70",
+                  "category": "GR U13",
+                  "resultId": "tulos-022152",
+                  "athleteId": "painija-011556"
+                },
+                {
+                  "place": 3,
+                  "name": "Veikka Kempas",
+                  "club": "Nurmon Jymy",
+                  "weight": "70",
+                  "category": "GR U13",
+                  "resultId": "tulos-022153",
+                  "athleteId": "painija-012383"
+                },
+                {
+                  "place": 4,
+                  "name": "Jesper Kinkki",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "70",
+                  "category": "GR U13",
+                  "resultId": "tulos-022154",
+                  "athleteId": "painija-004070"
+                },
+                {
+                  "place": 1,
+                  "name": "Minttu Mäki-Töyli",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "30",
+                  "category": "WW U11",
+                  "resultId": "tulos-022155",
+                  "athleteId": "painija-001457"
+                },
+                {
+                  "place": 2,
+                  "name": "Milaya Rosengård",
+                  "club": "Vaasan Toverit",
+                  "weight": "30",
+                  "category": "WW U11",
+                  "resultId": "tulos-022156",
+                  "athleteId": "painija-001545"
+                },
+                {
+                  "place": 3,
+                  "name": "Senni Vuojolainen",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "30",
+                  "category": "WW U11",
+                  "resultId": "tulos-022157",
+                  "athleteId": "painija-001461"
+                },
+                {
+                  "place": 1,
+                  "name": "Ninni Mäki-Töyli",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "33",
+                  "category": "WW U11",
+                  "resultId": "tulos-022158",
+                  "athleteId": "painija-004379"
+                },
+                {
+                  "place": 2,
+                  "name": "Olivia Kulmala",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "33",
+                  "category": "WW U11",
+                  "resultId": "tulos-022159",
+                  "athleteId": "painija-001550"
+                },
+                {
+                  "place": 3,
+                  "name": "Selena Hakola",
+                  "club": "Helsingin Haka",
+                  "weight": "33",
+                  "category": "WW U11",
+                  "resultId": "tulos-022160",
+                  "athleteId": "painija-000663"
+                },
+                {
+                  "place": 4,
+                  "name": "Villa Mukkala",
+                  "club": "Nurmon Jymy",
+                  "weight": "33",
+                  "category": "WW U11",
+                  "resultId": "tulos-022161",
+                  "athleteId": "painija-001462"
+                },
+                {
+                  "place": 1,
+                  "name": "Ella Törmänen",
+                  "club": "Lapin Lukko",
+                  "weight": "37",
+                  "category": "WW U11",
+                  "resultId": "tulos-022162",
+                  "athleteId": "painija-014947"
+                },
+                {
+                  "place": 2,
+                  "name": "Pinja Takala",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "37",
+                  "category": "WW U11",
+                  "resultId": "tulos-022163",
+                  "athleteId": "painija-004719"
+                },
+                {
+                  "place": 1,
+                  "name": "Vilma Saarikoski",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022164",
+                  "athleteId": "painija-001431"
+                },
+                {
+                  "place": 2,
+                  "name": "Maikki Pihlajamäki",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022165",
+                  "athleteId": "painija-001428"
+                },
+                {
+                  "place": 3,
+                  "name": "Noomi Wiklund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022166",
+                  "athleteId": "painija-001465"
+                },
+                {
+                  "place": 4,
+                  "name": "Salla Kilpeläinen",
+                  "club": "Nurmon Jymy",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022167",
+                  "athleteId": "painija-001466"
+                },
+                {
+                  "place": 5,
+                  "name": "Venla Koivisto",
+                  "club": "Nurmon Jymy",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022168",
+                  "athleteId": "painija-013405"
+                },
+                {
+                  "place": 1,
+                  "name": "Anette Aikio",
+                  "club": "Lapin Lukko",
+                  "weight": "50",
+                  "category": "WW U15",
+                  "resultId": "tulos-022169",
+                  "athleteId": "painija-014822"
+                },
+                {
+                  "place": 2,
+                  "name": "Henni Aho",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "50",
+                  "category": "WW U15",
+                  "resultId": "tulos-022170",
+                  "athleteId": "painija-012333"
+                },
+                {
+                  "place": 3,
+                  "name": "Jenina Siloaho",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "50",
+                  "category": "WW U15",
+                  "resultId": "tulos-022171",
+                  "athleteId": "painija-010231"
+                },
+                {
+                  "place": 1,
+                  "name": "Emmi Korhonen",
+                  "club": "Lapin Lukko",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022172",
+                  "athleteId": "painija-014801"
+                },
+                {
+                  "place": 2,
+                  "name": "Mirjami Mäki",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022173",
+                  "athleteId": "painija-004376"
+                },
+                {
+                  "place": 3,
+                  "name": "Aada Törmänen",
+                  "club": "Lapin Lukko",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022174",
+                  "athleteId": "painija-014789"
+                },
+                {
+                  "place": 4,
+                  "name": "Siru Perämäki",
+                  "club": "Nurmon Jymy",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022175",
+                  "athleteId": "painija-001474"
+                },
+                {
+                  "place": 5,
+                  "name": "Serafina Palo",
+                  "club": "Nurmon Jymy",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022176",
+                  "athleteId": "painija-021785"
+                },
+                {
+                  "place": 6,
+                  "name": "Vilma Lampi",
+                  "club": "Nurmon Jymy",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022177",
+                  "athleteId": "painija-015618"
+                },
+                {
+                  "place": 1,
+                  "name": "Lotta Raninen",
+                  "club": "Lapin Lukko",
+                  "weight": "76",
+                  "category": "WW U15",
+                  "resultId": "tulos-022178",
+                  "athleteId": "painija-016187"
+                },
+                {
+                  "place": 2,
+                  "name": "Saaga Siivola",
+                  "club": "Lapin Lukko",
+                  "weight": "76",
+                  "category": "WW U15",
+                  "resultId": "tulos-022179",
+                  "athleteId": "painija-004269"
+                },
+                {
+                  "place": 1,
+                  "name": "Jami Kinnari",
+                  "club": "Laihian Luja",
+                  "weight": "60",
+                  "category": "GR U17",
+                  "resultId": "tulos-022180",
+                  "athleteId": "painija-003562"
+                },
+                {
+                  "place": 2,
+                  "name": "Mikkel Järf",
+                  "club": "Vaasan Voima-Veikot",
+                  "weight": "60",
+                  "category": "GR U17",
+                  "resultId": "tulos-022181",
+                  "athleteId": "painija-001452"
+                },
+                {
+                  "place": 1,
+                  "name": "Jonathan Hägglund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "71",
+                  "category": "GR U17",
+                  "resultId": "tulos-022182",
+                  "athleteId": "painija-002266"
+                },
+                {
+                  "place": 2,
+                  "name": "Topias Pienimäki",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "71",
+                  "category": "GR U17",
+                  "resultId": "tulos-022183",
+                  "athleteId": "painija-001565"
+                },
+                {
+                  "place": 3,
+                  "name": "Väinö Syri",
+                  "club": "Laihian Luja",
+                  "weight": "71",
+                  "category": "GR U17",
+                  "resultId": "tulos-022184",
+                  "athleteId": "painija-001453"
+                },
+                {
+                  "place": 4,
+                  "name": "Juho Takala",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "71",
+                  "category": "GR U17",
+                  "resultId": "tulos-022185",
+                  "athleteId": "painija-002484"
+                },
+                {
+                  "place": 1,
+                  "name": "Artturi Kohtala",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "80",
+                  "category": "GR U17",
+                  "resultId": "tulos-022186",
+                  "athleteId": "painija-002518"
+                },
+                {
+                  "place": 2,
+                  "name": "Oliver Anttila",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "80",
+                  "category": "GR U17",
+                  "resultId": "tulos-022187",
+                  "athleteId": "painija-002287"
+                },
+                {
+                  "place": 3,
+                  "name": "Kimi Jokilehto",
+                  "club": "Koskelankylän Riento",
+                  "weight": "80",
+                  "category": "GR U17",
+                  "resultId": "tulos-022188",
+                  "athleteId": "painija-002520"
+                },
+                {
+                  "place": 1,
+                  "name": "Otso Yli-Hannuksela",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "92",
+                  "category": "GR U17",
+                  "resultId": "tulos-022189",
+                  "athleteId": "painija-002285"
+                },
+                {
+                  "place": 2,
+                  "name": "Iisakki Iskala",
+                  "club": "Seinäjoen Paini-Miehet",
+                  "weight": "92",
+                  "category": "GR U17",
+                  "resultId": "tulos-022190",
+                  "athleteId": "painija-003984"
+                }
+              ],
+              "skipped": 0,
+              "categoryStyles": {
+                "GR U9": "greco",
+                "GR U11": "greco",
+                "GR U15": "greco",
+                "GR Aloittelijat": "greco",
+                "WW Aloittelijat": "freestyle",
+                "GR U13": "greco",
+                "WW U11": "freestyle",
+                "WW U15": "freestyle",
+                "GR U17": "greco"
+              },
+              "styleSources": {
+                "GR U9": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289639tlges.htm",
+                "GR U11": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289638tlges.htm",
+                "GR U15": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289637tlges.htm",
+                "GR Aloittelijat": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289646tlges.htm",
+                "WW Aloittelijat": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289645tlges.htm",
+                "GR U13": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289643tlges.htm",
+                "WW U11": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289641tlges.htm",
+                "WW U15": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289640tlges.htm",
+                "GR U17": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289619tlges.htm"
+              },
+              "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+              "textSource": "",
+              "fileInfo": "LigaDB · ajastettu haku · 2026-10-28"
+            },
+            "after": {
+              "title": "Nuoriso-turnaus",
+              "details": "Ilmajoki, 26.9.2026",
+              "rows": [
+                {
+                  "place": 1,
+                  "name": "Felix Hakola",
+                  "club": "Helsingin Haka",
+                  "weight": "24",
+                  "category": "GR U9",
+                  "resultId": "tulos-022039",
+                  "athleteId": "painija-001032"
+                },
+                {
+                  "place": 2,
+                  "name": "Peetu Hiltunen",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "24",
+                  "category": "GR U9",
+                  "resultId": "tulos-022040",
+                  "athleteId": "painija-013406"
+                },
+                {
+                  "place": 1,
+                  "name": "Väinö Jokiharju",
+                  "club": "Turun Voimamiehet",
+                  "weight": "30",
+                  "category": "GR U9",
+                  "resultId": "tulos-022041",
+                  "athleteId": "painija-014780"
+                },
+                {
+                  "place": 2,
+                  "name": "August Mehmeti",
+                  "club": "Helsingin Haka",
+                  "weight": "30",
+                  "category": "GR U9",
+                  "resultId": "tulos-022042",
+                  "athleteId": "painija-000633"
+                },
+                {
+                  "place": 3,
+                  "name": "Jonni Rosendal",
+                  "club": "Turun Voimamiehet",
+                  "weight": "30",
+                  "category": "GR U9",
+                  "resultId": "tulos-022043",
+                  "athleteId": "painija-018468"
+                },
+                {
+                  "place": 4,
+                  "name": "Eemeli Rintala",
+                  "club": "Teuvan Rivakka",
+                  "weight": "30",
+                  "category": "GR U9",
+                  "resultId": "tulos-022044",
+                  "athleteId": "painija-015411"
+                },
+                {
+                  "place": 1,
+                  "name": "Eemeli Latvala",
+                  "club": "Nurmon Jymy",
+                  "weight": "32",
+                  "category": "GR U9",
+                  "resultId": "tulos-022045",
+                  "athleteId": "painija-015426"
+                },
+                {
+                  "place": 2,
+                  "name": "Niilo Niemonen",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "32",
+                  "category": "GR U9",
+                  "resultId": "tulos-022046",
+                  "athleteId": "painija-001484"
+                },
+                {
+                  "place": 3,
+                  "name": "Joel Vuorenmaa",
+                  "club": "Nurmon Jymy",
+                  "weight": "32",
+                  "category": "GR U9",
+                  "resultId": "tulos-022047",
+                  "athleteId": "painija-014900"
+                },
+                {
+                  "place": 1,
+                  "name": "Luukas Rautiainen",
+                  "club": "Helsingin Haka",
+                  "weight": "35",
+                  "category": "GR U9",
+                  "resultId": "tulos-022048",
+                  "athleteId": "painija-000020"
+                },
+                {
+                  "place": 2,
+                  "name": "Elias Piikkilä",
+                  "club": "Nurmon Jymy",
+                  "weight": "35",
+                  "category": "GR U9",
+                  "resultId": "tulos-022049",
+                  "athleteId": "painija-012317"
+                },
+                {
+                  "place": 3,
+                  "name": "Eino Koskela",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "35",
+                  "category": "GR U9",
+                  "resultId": "tulos-022050",
+                  "athleteId": "painija-001266"
+                },
+                {
+                  "place": 1,
+                  "name": "Ilmari Tuominen",
+                  "club": "Porin Paini-Miehet",
+                  "weight": "40",
+                  "category": "GR U9",
+                  "resultId": "tulos-022051",
+                  "athleteId": "painija-003371"
+                },
+                {
+                  "place": 1,
+                  "name": "Eemil Geydarov",
+                  "club": "Nurmon Jymy",
+                  "weight": "48",
+                  "category": "GR U9",
+                  "resultId": "tulos-022052",
+                  "athleteId": "painija-010267"
+                },
+                {
+                  "place": 1,
+                  "name": "Aaron Suorauha",
+                  "club": "Laihian Luja",
+                  "weight": "30",
+                  "category": "GR U11",
+                  "resultId": "tulos-022053",
+                  "athleteId": "painija-001488"
+                },
+                {
+                  "place": 2,
+                  "name": "Nicolas Lammi",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "30",
+                  "category": "GR U11",
+                  "resultId": "tulos-022054",
+                  "athleteId": "painija-001271"
+                },
+                {
+                  "place": 3,
+                  "name": "Paavo Ahopelto",
+                  "club": "Nurmon Jymy",
+                  "weight": "30",
+                  "category": "GR U11",
+                  "resultId": "tulos-022055",
+                  "athleteId": "painija-004034"
+                },
+                {
+                  "place": 4,
+                  "name": "Karl-Jan Ström",
+                  "club": "Vaasan Toverit",
+                  "weight": "30",
+                  "category": "GR U11",
+                  "resultId": "tulos-022056",
+                  "athleteId": "painija-014890"
+                },
+                {
+                  "place": 1,
+                  "name": "Vilho Pakkala",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "32",
+                  "category": "GR U11",
+                  "resultId": "tulos-022057",
+                  "athleteId": "painija-001491"
+                },
+                {
+                  "place": 2,
+                  "name": "Eetu Malkola",
+                  "club": "Lapuan Virkiä",
+                  "weight": "32",
+                  "category": "GR U11",
+                  "resultId": "tulos-022058",
+                  "athleteId": "painija-001493"
+                },
+                {
+                  "place": 3,
+                  "name": "Emil Mandell",
+                  "club": "Vaasan Toverit",
+                  "weight": "32",
+                  "category": "GR U11",
+                  "resultId": "tulos-022059",
+                  "athleteId": "painija-014834"
+                },
+                {
+                  "place": 4,
+                  "name": "Otto Tuomikoski",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "32",
+                  "category": "GR U11",
+                  "resultId": "tulos-022060",
+                  "athleteId": "painija-001490"
+                },
+                {
+                  "place": 1,
+                  "name": "Anton Jäntti",
+                  "club": "Vaasan Toverit",
+                  "weight": "34",
+                  "category": "GR U11",
+                  "resultId": "tulos-022061",
+                  "athleteId": "painija-004035"
+                },
+                {
+                  "place": 2,
+                  "name": "Dewin Rosengård",
+                  "club": "Vaasan Toverit",
+                  "weight": "34",
+                  "category": "GR U11",
+                  "resultId": "tulos-022062",
+                  "athleteId": "painija-001495"
+                },
+                {
+                  "place": 3,
+                  "name": "Väinö Westerberg",
+                  "club": "Turun Voimamiehet",
+                  "weight": "34",
+                  "category": "GR U11",
+                  "resultId": "tulos-022063",
+                  "athleteId": "painija-001499"
+                },
+                {
+                  "place": 4,
+                  "name": "Niilo Ylituomaala",
+                  "club": "Lapuan Virkiä",
+                  "weight": "34",
+                  "category": "GR U11",
+                  "resultId": "tulos-022064",
+                  "athleteId": "painija-013420"
+                },
+                {
+                  "place": 1,
+                  "name": "Toivo Kilpeläinen",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "39",
+                  "category": "GR U11",
+                  "resultId": "tulos-022065",
+                  "athleteId": "painija-001505"
+                },
+                {
+                  "place": 2,
+                  "name": "Luka Horttana",
+                  "club": "Seinäjoen Paini-Miehet",
+                  "weight": "39",
+                  "category": "GR U11",
+                  "resultId": "tulos-022066",
+                  "athleteId": "painija-012353"
+                },
+                {
+                  "place": 3,
+                  "name": "Jimi Tunkkari",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "39",
+                  "category": "GR U11",
+                  "resultId": "tulos-022067",
+                  "athleteId": "painija-001509"
+                },
+                {
+                  "place": 1,
+                  "name": "Lauri Salomaa",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "45",
+                  "category": "GR U11",
+                  "resultId": "tulos-022068",
+                  "athleteId": "painija-001507"
+                },
+                {
+                  "place": 2,
+                  "name": "Väinö Koskela",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "45",
+                  "category": "GR U11",
+                  "resultId": "tulos-022069",
+                  "athleteId": "painija-001306"
+                },
+                {
+                  "place": 3,
+                  "name": "Pyry Perämäki",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "45",
+                  "category": "GR U11",
+                  "resultId": "tulos-022070",
+                  "athleteId": "painija-004364"
+                },
+                {
+                  "place": 4,
+                  "name": "Noam Aho",
+                  "club": "Nurmon Jymy",
+                  "weight": "45",
+                  "category": "GR U11",
+                  "resultId": "tulos-022071",
+                  "athleteId": "painija-021680"
+                },
+                {
+                  "place": 1,
+                  "name": "Leo Kannisto",
+                  "club": "Tampereen Painiseura",
+                  "weight": "49",
+                  "category": "GR U11",
+                  "resultId": "tulos-022072",
+                  "athleteId": "painija-000444"
+                },
+                {
+                  "place": 2,
+                  "name": "Jaakko Talja",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "49",
+                  "category": "GR U11",
+                  "resultId": "tulos-022073",
+                  "athleteId": "painija-001511"
+                },
+                {
+                  "place": 1,
+                  "name": "Oliver Niemi",
+                  "club": "Rauman Voimailijat",
+                  "weight": "55",
+                  "category": "GR U11",
+                  "resultId": "tulos-022074",
+                  "athleteId": "painija-000592"
+                },
+                {
+                  "place": 2,
+                  "name": "Leo Jokilehto",
+                  "club": "Koskelankylän Riento",
+                  "weight": "55",
+                  "category": "GR U11",
+                  "resultId": "tulos-022075",
+                  "athleteId": "painija-014868"
+                },
+                {
+                  "place": 3,
+                  "name": "Venni Niemi",
+                  "club": "Nokian Pyry",
+                  "weight": "55",
+                  "category": "GR U11",
+                  "resultId": "tulos-022076",
+                  "athleteId": "painija-001316"
+                },
+                {
+                  "place": 1,
+                  "name": "Noah Skrifvars",
+                  "club": "Vaasan Voima-Veikot",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022077",
+                  "athleteId": "painija-001556"
+                },
+                {
+                  "place": 2,
+                  "name": "Ilari Kulmala",
+                  "club": "Tampereen Painiseura",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022078",
+                  "athleteId": "painija-000084"
+                },
+                {
+                  "place": 3,
+                  "name": "Leo Tuominen",
+                  "club": "Laihian Luja",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022079",
+                  "athleteId": "painija-004617"
+                },
+                {
+                  "place": 4,
+                  "name": "Eeli Turpeinen",
+                  "club": "Harjun Woima",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022080",
+                  "athleteId": "painija-004123"
+                },
+                {
+                  "place": 5,
+                  "name": "Vilho Huhtamäki",
+                  "club": "Nurmon Jymy",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022081",
+                  "athleteId": "painija-000080"
+                },
+                {
+                  "place": 6,
+                  "name": "Atte Similä",
+                  "club": "Koskelankylän Riento",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022082",
+                  "athleteId": "painija-002460"
+                },
+                {
+                  "place": 7,
+                  "name": "Elmo Rintamäki",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "57",
+                  "category": "GR U15",
+                  "resultId": "tulos-022083",
+                  "athleteId": "painija-002976"
+                },
+                {
+                  "place": 1,
+                  "name": "Mitri Mäkelä",
+                  "club": "Turun Voimamiehet",
+                  "weight": "62",
+                  "category": "GR U15",
+                  "resultId": "tulos-022084",
+                  "athleteId": "painija-001064"
+                },
+                {
+                  "place": 2,
+                  "name": "Eemi Ylisoini",
+                  "club": "Nurmon Jymy",
+                  "weight": "62",
+                  "category": "GR U15",
+                  "resultId": "tulos-022085",
+                  "athleteId": "painija-013391"
+                },
+                {
+                  "place": 3,
+                  "name": "Rasmus Orell",
+                  "club": "Nurmon Jymy",
+                  "weight": "62",
+                  "category": "GR U15",
+                  "resultId": "tulos-022086",
+                  "athleteId": "painija-000086"
+                },
+                {
+                  "place": 1,
+                  "name": "Kaapro Vanharanta",
+                  "club": "Nurmon Jymy",
+                  "weight": "68",
+                  "category": "GR U15",
+                  "resultId": "tulos-022087",
+                  "athleteId": "painija-002908"
+                },
+                {
+                  "place": 2,
+                  "name": "Casper Ekström",
+                  "club": "Vaasan Voima-Veikot",
+                  "weight": "68",
+                  "category": "GR U15",
+                  "resultId": "tulos-022088",
+                  "athleteId": "painija-001559"
+                },
+                {
+                  "place": 3,
+                  "name": "Juho Huttunen",
+                  "club": "Lapin Lukko",
+                  "weight": "68",
+                  "category": "GR U15",
+                  "resultId": "tulos-022089",
+                  "athleteId": "painija-011652"
+                },
+                {
+                  "place": 4,
+                  "name": "Kaiku Parttimaa",
+                  "club": "Kuopion Kisa-Veikot",
+                  "weight": "68",
+                  "category": "GR U15",
+                  "resultId": "tulos-022090",
+                  "athleteId": "painija-007906"
+                },
+                {
+                  "place": 1,
+                  "name": "Peetu Purtanen",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "85",
+                  "category": "GR U15",
+                  "resultId": "tulos-022091",
+                  "athleteId": "painija-001562"
+                },
+                {
+                  "place": 2,
+                  "name": "Antti-Jussi Pelkonen",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "85",
+                  "category": "GR U15",
+                  "resultId": "tulos-022092",
+                  "athleteId": "painija-003016"
+                },
+                {
+                  "place": 1,
+                  "name": "Onni Luoma",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "23",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022093",
+                  "athleteId": "painija-013455"
+                },
+                {
+                  "place": 2,
+                  "name": "Eevert Rajamäki",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "23",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022094",
+                  "athleteId": "painija-001479"
+                },
+                {
+                  "place": 3,
+                  "name": "Leevi Malkola",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "23",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022095",
+                  "athleteId": "painija-015104"
+                },
+                {
+                  "place": 1,
+                  "name": "Urho Niemi",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022096",
+                  "athleteId": "painija-013783"
+                },
+                {
+                  "place": 2,
+                  "name": "Urho Mäensivu",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022097",
+                  "athleteId": "painija-015497"
+                },
+                {
+                  "place": 3,
+                  "name": "Aukusti Kuusinen",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022098",
+                  "athleteId": "painija-019646"
+                },
+                {
+                  "place": 4,
+                  "name": "Ukko Äkäslompolo",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022099",
+                  "athleteId": "painija-013784"
+                },
+                {
+                  "place": 5,
+                  "name": "Niko Riihimäki",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "27",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022100",
+                  "athleteId": "painija-013750"
+                },
+                {
+                  "place": 1,
+                  "name": "Maksym Hera",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "31",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022101",
+                  "athleteId": "painija-001494"
+                },
+                {
+                  "place": 2,
+                  "name": "Leo Kuusalo",
+                  "club": "Laihian Luja",
+                  "weight": "31",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022102",
+                  "athleteId": "painija-013788"
+                },
+                {
+                  "place": 3,
+                  "name": "Milo Thomas",
+                  "club": "Vaasan Voima-Veikot",
+                  "weight": "31",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022103",
+                  "athleteId": "painija-018140"
+                },
+                {
+                  "place": 4,
+                  "name": "Ayaan Narra",
+                  "club": "Valkeakosken Koskenpojat",
+                  "weight": "31",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022104",
+                  "athleteId": "painija-021713"
+                },
+                {
+                  "place": 1,
+                  "name": "Bogdan Panchenko",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022105",
+                  "athleteId": "painija-021597"
+                },
+                {
+                  "place": 2,
+                  "name": "Kyrylo Dorohan",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022106",
+                  "athleteId": "painija-021598"
+                },
+                {
+                  "place": 3,
+                  "name": "Justus Åtman",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022107",
+                  "athleteId": "painija-021716"
+                },
+                {
+                  "place": 4,
+                  "name": "Väinö Sarkaranta",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022108",
+                  "athleteId": "painija-013462"
+                },
+                {
+                  "place": 5,
+                  "name": "Joonas Koivisto",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "34",
+                  "category": "GR Aloittelijat",
+                  "resultId": "tulos-022109",
+                  "athleteId": "painija-013424"
+                },
+                {
+                  "place": 1,
+                  "name": "Josephine Hägglund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "25",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022110",
+                  "athleteId": "painija-001544"
+                },
+                {
+                  "place": 2,
+                  "name": "Elsa Sarkaranta",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "25",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022111",
+                  "athleteId": "painija-013802"
+                },
+                {
+                  "place": 3,
+                  "name": "Amanda Autio",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "25",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022112",
+                  "athleteId": "painija-013468"
+                },
+                {
+                  "place": 1,
+                  "name": "Julianna Alakarhu",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "31",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022113",
+                  "athleteId": "painija-021639"
+                },
+                {
+                  "place": 2,
+                  "name": "Anni Pasto",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "31",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022114",
+                  "athleteId": "painija-020410"
+                },
+                {
+                  "place": 3,
+                  "name": "Charlotta Hägglund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "31",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022115",
+                  "athleteId": "painija-001459"
+                },
+                {
+                  "place": 1,
+                  "name": "Selma Saarikoski",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "35",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022116",
+                  "athleteId": "painija-013401"
+                },
+                {
+                  "place": 2,
+                  "name": "Iiris Kupari",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "35",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022117",
+                  "athleteId": "painija-001463"
+                },
+                {
+                  "place": 3,
+                  "name": "Helen Kupari",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "35",
+                  "category": "WW Aloittelijat",
+                  "resultId": "tulos-022118",
+                  "athleteId": "painija-001464"
+                },
+                {
+                  "place": 1,
+                  "name": "Niki Mandell",
+                  "club": "Vaasan Toverit",
+                  "weight": "34",
+                  "category": "GR U13",
+                  "resultId": "tulos-022119",
+                  "athleteId": "painija-014734"
+                },
+                {
+                  "place": 2,
+                  "name": "Marian Hera",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "34",
+                  "category": "GR U13",
+                  "resultId": "tulos-022120",
+                  "athleteId": "painija-001520"
+                },
+                {
+                  "place": 1,
+                  "name": "Felix Lammi",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022121",
+                  "athleteId": "painija-001317"
+                },
+                {
+                  "place": 2,
+                  "name": "Pietari Nurmi",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022122",
+                  "athleteId": "painija-003514"
+                },
+                {
+                  "place": 3,
+                  "name": "Jasper Haverinen",
+                  "club": "Ylä-Tikkurilan Kipinä",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022123",
+                  "athleteId": "painija-000598"
+                },
+                {
+                  "place": 4,
+                  "name": "Urho Haapamäki",
+                  "club": "Seinäjoen Paini-Miehet",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022124",
+                  "athleteId": "painija-001523"
+                },
+                {
+                  "place": 5,
+                  "name": "Vertti Toimela",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022125",
+                  "athleteId": "painija-012348"
+                },
+                {
+                  "place": 6,
+                  "name": "Vilho-Paavo Seppänen",
+                  "club": "Nurmon Jymy",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022126",
+                  "athleteId": "painija-021735"
+                },
+                {
+                  "place": 7,
+                  "name": "Jiri Korpela",
+                  "club": "Lapuan Virkiä",
+                  "weight": "41",
+                  "category": "GR U13",
+                  "resultId": "tulos-022127",
+                  "athleteId": "painija-012359"
+                },
+                {
+                  "place": 1,
+                  "name": "Leo Heikkinen",
+                  "club": "Ylä-Tikkurilan Kipinä",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022128",
+                  "athleteId": "painija-000065"
+                },
+                {
+                  "place": 2,
+                  "name": "Elmeri Parkko",
+                  "club": "Porvoon Weikot",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022129",
+                  "athleteId": "painija-000058"
+                },
+                {
+                  "place": 3,
+                  "name": "Kasperi Kulmala",
+                  "club": "Tampereen Painiseura",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022130",
+                  "athleteId": "painija-000054"
+                },
+                {
+                  "place": 4,
+                  "name": "Milko Hyväri",
+                  "club": "Lapin Lukko",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022131",
+                  "athleteId": "painija-004212"
+                },
+                {
+                  "place": 5,
+                  "name": "Hugo Hakola",
+                  "club": "Helsingin Haka",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022132",
+                  "athleteId": "painija-001015"
+                },
+                {
+                  "place": 6,
+                  "name": "Alexander Koivisto",
+                  "club": "Vaasan Toverit",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022133",
+                  "athleteId": "painija-004595"
+                },
+                {
+                  "place": 7,
+                  "name": "Reima Kuntola",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022134",
+                  "athleteId": "painija-001526"
+                },
+                {
+                  "place": 8,
+                  "name": "Jaakko Kinnari",
+                  "club": "Vaasan Toverit",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022135",
+                  "athleteId": "painija-001530"
+                },
+                {
+                  "place": 8,
+                  "name": "Eelis Wihinen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022136",
+                  "athleteId": "painija-000466"
+                },
+                {
+                  "place": 10,
+                  "name": "Eikka Honkaniemi",
+                  "club": "Nurmon Jymy",
+                  "weight": "45",
+                  "category": "GR U13",
+                  "resultId": "tulos-022137",
+                  "athleteId": "painija-015444"
+                },
+                {
+                  "place": 1,
+                  "name": "Olavi Suomalainen",
+                  "club": "Kuopion Kisa-Veikot",
+                  "weight": "50",
+                  "category": "GR U13",
+                  "resultId": "tulos-022138",
+                  "athleteId": "painija-000372"
+                },
+                {
+                  "place": 2,
+                  "name": "Veikko Huhtamäki",
+                  "club": "Nurmon Jymy",
+                  "weight": "50",
+                  "category": "GR U13",
+                  "resultId": "tulos-022139",
+                  "athleteId": "painija-002938"
+                },
+                {
+                  "place": 3,
+                  "name": "Niilo Vuorio",
+                  "club": "Helsingin Tarmo",
+                  "weight": "50",
+                  "category": "GR U13",
+                  "resultId": "tulos-022140",
+                  "athleteId": "painija-000649"
+                },
+                {
+                  "place": 4,
+                  "name": "Aaron Laine",
+                  "club": "Turun Voimamiehet",
+                  "weight": "50",
+                  "category": "GR U13",
+                  "resultId": "tulos-022141",
+                  "athleteId": "painija-001810"
+                },
+                {
+                  "place": 1,
+                  "name": "Esa Niskanen",
+                  "club": "Kuopion Kisa-Veikot",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022142",
+                  "athleteId": "painija-000410"
+                },
+                {
+                  "place": 2,
+                  "name": "Manu Mäki-Töyli",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022143",
+                  "athleteId": "painija-001342"
+                },
+                {
+                  "place": 3,
+                  "name": "Väinö Myllymäki",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022144",
+                  "athleteId": "painija-002543"
+                },
+                {
+                  "place": 4,
+                  "name": "Santeri Kytöharju",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022145",
+                  "athleteId": "painija-001341"
+                },
+                {
+                  "place": 5,
+                  "name": "Luukas Salokas",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022146",
+                  "athleteId": "painija-001346"
+                },
+                {
+                  "place": 6,
+                  "name": "Onni Kohtala",
+                  "club": "Nurmon Jymy",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022147",
+                  "athleteId": "painija-003555"
+                },
+                {
+                  "place": 7,
+                  "name": "Caspher Hägglund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "55",
+                  "category": "GR U13",
+                  "resultId": "tulos-022148",
+                  "athleteId": "painija-001540"
+                },
+                {
+                  "place": 1,
+                  "name": "Oskari Leppinen",
+                  "club": "Laihian Luja",
+                  "weight": "60",
+                  "category": "GR U13",
+                  "resultId": "tulos-022149",
+                  "athleteId": "painija-001537"
+                },
+                {
+                  "place": 2,
+                  "name": "Abdulqahar Muomin",
+                  "club": "Turun Voimamiehet",
+                  "weight": "60",
+                  "category": "GR U13",
+                  "resultId": "tulos-022150",
+                  "athleteId": "painija-021759"
+                },
+                {
+                  "place": 1,
+                  "name": "Emil Tenev",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "70",
+                  "category": "GR U13",
+                  "resultId": "tulos-022151",
+                  "athleteId": "painija-000073"
+                },
+                {
+                  "place": 2,
+                  "name": "Mauno Salokorpi",
+                  "club": "Nurmon Jymy",
+                  "weight": "70",
+                  "category": "GR U13",
+                  "resultId": "tulos-022152",
+                  "athleteId": "painija-011556"
+                },
+                {
+                  "place": 3,
+                  "name": "Veikka Kempas",
+                  "club": "Nurmon Jymy",
+                  "weight": "70",
+                  "category": "GR U13",
+                  "resultId": "tulos-022153",
+                  "athleteId": "painija-012383"
+                },
+                {
+                  "place": 4,
+                  "name": "Jesper Kinkki",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "70",
+                  "category": "GR U13",
+                  "resultId": "tulos-022154",
+                  "athleteId": "painija-004070"
+                },
+                {
+                  "place": 1,
+                  "name": "Minttu Mäki-Töyli",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "30",
+                  "category": "WW U11",
+                  "resultId": "tulos-022155",
+                  "athleteId": "painija-001457"
+                },
+                {
+                  "place": 2,
+                  "name": "Milaya Rosengård",
+                  "club": "Vaasan Toverit",
+                  "weight": "30",
+                  "category": "WW U11",
+                  "resultId": "tulos-022156",
+                  "athleteId": "painija-001545"
+                },
+                {
+                  "place": 3,
+                  "name": "Senni Vuojolainen",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "30",
+                  "category": "WW U11",
+                  "resultId": "tulos-022157",
+                  "athleteId": "painija-001461"
+                },
+                {
+                  "place": 1,
+                  "name": "Ninni Mäki-Töyli",
+                  "club": "Ylistaron Kilpa-Veljet",
+                  "weight": "33",
+                  "category": "WW U11",
+                  "resultId": "tulos-022158",
+                  "athleteId": "painija-004379"
+                },
+                {
+                  "place": 2,
+                  "name": "Olivia Kulmala",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "33",
+                  "category": "WW U11",
+                  "resultId": "tulos-022159",
+                  "athleteId": "painija-001550"
+                },
+                {
+                  "place": 3,
+                  "name": "Selena Hakola",
+                  "club": "Helsingin Haka",
+                  "weight": "33",
+                  "category": "WW U11",
+                  "resultId": "tulos-022160",
+                  "athleteId": "painija-000663"
+                },
+                {
+                  "place": 4,
+                  "name": "Villa Mukkala",
+                  "club": "Nurmon Jymy",
+                  "weight": "33",
+                  "category": "WW U11",
+                  "resultId": "tulos-022161",
+                  "athleteId": "painija-001462"
+                },
+                {
+                  "place": 1,
+                  "name": "Ella Törmänen",
+                  "club": "Lapin Lukko",
+                  "weight": "37",
+                  "category": "WW U11",
+                  "resultId": "tulos-022162",
+                  "athleteId": "painija-014947"
+                },
+                {
+                  "place": 2,
+                  "name": "Pinja Takala",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "37",
+                  "category": "WW U11",
+                  "resultId": "tulos-022163",
+                  "athleteId": "painija-004719"
+                },
+                {
+                  "place": 1,
+                  "name": "Vilma Saarikoski",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022164",
+                  "athleteId": "painija-001431"
+                },
+                {
+                  "place": 2,
+                  "name": "Maikki Pihlajamäki",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022165",
+                  "athleteId": "painija-001428"
+                },
+                {
+                  "place": 3,
+                  "name": "Noomi Wiklund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022166",
+                  "athleteId": "painija-001465"
+                },
+                {
+                  "place": 4,
+                  "name": "Salla Kilpeläinen",
+                  "club": "Nurmon Jymy",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022167",
+                  "athleteId": "painija-001466"
+                },
+                {
+                  "place": 5,
+                  "name": "Venla Koivisto",
+                  "club": "Nurmon Jymy",
+                  "weight": "41",
+                  "category": "WW U11",
+                  "resultId": "tulos-022168",
+                  "athleteId": "painija-013405"
+                },
+                {
+                  "place": 1,
+                  "name": "Anette Aikio",
+                  "club": "Lapin Lukko",
+                  "weight": "50",
+                  "category": "WW U15",
+                  "resultId": "tulos-022169",
+                  "athleteId": "painija-014822"
+                },
+                {
+                  "place": 2,
+                  "name": "Henni Aho",
+                  "club": "Kauhavan Painimiehet",
+                  "weight": "50",
+                  "category": "WW U15",
+                  "resultId": "tulos-022170",
+                  "athleteId": "painija-012333"
+                },
+                {
+                  "place": 3,
+                  "name": "Jenina Siloaho",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "50",
+                  "category": "WW U15",
+                  "resultId": "tulos-022171",
+                  "athleteId": "painija-010231"
+                },
+                {
+                  "place": 1,
+                  "name": "Emmi Korhonen",
+                  "club": "Lapin Lukko",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022172",
+                  "athleteId": "painija-014801"
+                },
+                {
+                  "place": 2,
+                  "name": "Mirjami Mäki",
+                  "club": "Peräseinäjoen Toive",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022173",
+                  "athleteId": "painija-004376"
+                },
+                {
+                  "place": 3,
+                  "name": "Aada Törmänen",
+                  "club": "Lapin Lukko",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022174",
+                  "athleteId": "painija-014789"
+                },
+                {
+                  "place": 4,
+                  "name": "Siru Perämäki",
+                  "club": "Nurmon Jymy",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022175",
+                  "athleteId": "painija-001474"
+                },
+                {
+                  "place": 5,
+                  "name": "Serafina Palo",
+                  "club": "Nurmon Jymy",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022176",
+                  "athleteId": "painija-021785"
+                },
+                {
+                  "place": 6,
+                  "name": "Vilma Lampi",
+                  "club": "Nurmon Jymy",
+                  "weight": "58",
+                  "category": "WW U15",
+                  "resultId": "tulos-022177",
+                  "athleteId": "painija-015618"
+                },
+                {
+                  "place": 1,
+                  "name": "Lotta Raninen",
+                  "club": "Lapin Lukko",
+                  "weight": "76",
+                  "category": "WW U15",
+                  "resultId": "tulos-022178",
+                  "athleteId": "painija-016187"
+                },
+                {
+                  "place": 2,
+                  "name": "Saaga Siivola",
+                  "club": "Lapin Lukko",
+                  "weight": "76",
+                  "category": "WW U15",
+                  "resultId": "tulos-022179",
+                  "athleteId": "painija-004269"
+                },
+                {
+                  "place": 1,
+                  "name": "Jami Kinnari",
+                  "club": "Laihian Luja",
+                  "weight": "60",
+                  "category": "GR U17",
+                  "resultId": "tulos-022180",
+                  "athleteId": "painija-003562"
+                },
+                {
+                  "place": 2,
+                  "name": "Mikkel Järf",
+                  "club": "Vaasan Voima-Veikot",
+                  "weight": "60",
+                  "category": "GR U17",
+                  "resultId": "tulos-022181",
+                  "athleteId": "painija-001452"
+                },
+                {
+                  "place": 1,
+                  "name": "Jonathan Hägglund",
+                  "club": "Kokkolan Kipinä",
+                  "weight": "71",
+                  "category": "GR U17",
+                  "resultId": "tulos-022182",
+                  "athleteId": "painija-002266"
+                },
+                {
+                  "place": 2,
+                  "name": "Topias Pienimäki",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "71",
+                  "category": "GR U17",
+                  "resultId": "tulos-022183",
+                  "athleteId": "painija-001565"
+                },
+                {
+                  "place": 3,
+                  "name": "Väinö Syri",
+                  "club": "Laihian Luja",
+                  "weight": "71",
+                  "category": "GR U17",
+                  "resultId": "tulos-022184",
+                  "athleteId": "painija-001453"
+                },
+                {
+                  "place": 4,
+                  "name": "Juho Takala",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "71",
+                  "category": "GR U17",
+                  "resultId": "tulos-022185",
+                  "athleteId": "painija-002484"
+                },
+                {
+                  "place": 1,
+                  "name": "Artturi Kohtala",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "80",
+                  "category": "GR U17",
+                  "resultId": "tulos-022186",
+                  "athleteId": "painija-002518"
+                },
+                {
+                  "place": 2,
+                  "name": "Oliver Anttila",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "80",
+                  "category": "GR U17",
+                  "resultId": "tulos-022187",
+                  "athleteId": "painija-002287"
+                },
+                {
+                  "place": 3,
+                  "name": "Kimi Jokilehto",
+                  "club": "Koskelankylän Riento",
+                  "weight": "80",
+                  "category": "GR U17",
+                  "resultId": "tulos-022188",
+                  "athleteId": "painija-002520"
+                },
+                {
+                  "place": 1,
+                  "name": "Otso Yli-Hannuksela",
+                  "club": "Ilmajoen Kisailijat",
+                  "weight": "92",
+                  "category": "GR U17",
+                  "resultId": "tulos-022189",
+                  "athleteId": "painija-002285"
+                },
+                {
+                  "place": 2,
+                  "name": "Iisakki Iskala",
+                  "club": "Seinäjoen Paini-Miehet",
+                  "weight": "92",
+                  "category": "GR U17",
+                  "resultId": "tulos-022190",
+                  "athleteId": "painija-003984"
+                }
+              ],
+              "skipped": 0,
+              "importNotes": [
+                {
+                  "category": "Ystävyysottelu",
+                  "weight": "1",
+                  "excluded": 2,
+                  "unranked": 0,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+                },
+                {
+                  "category": "Ystävyysottelu",
+                  "weight": "2",
+                  "excluded": 2,
+                  "unranked": 0,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+                },
+                {
+                  "category": "Ystävyysottelu",
+                  "weight": "3",
+                  "excluded": 2,
+                  "unranked": 0,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+                },
+                {
+                  "category": "Ystävyysottelu",
+                  "weight": "4",
+                  "excluded": 2,
+                  "unranked": 0,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+                }
+              ],
+              "categoryStyles": {
+                "GR U9": "greco",
+                "GR U11": "greco",
+                "GR U15": "greco",
+                "GR Aloittelijat": "greco",
+                "WW Aloittelijat": "freestyle",
+                "GR U13": "greco",
+                "WW U11": "freestyle",
+                "WW U15": "freestyle",
+                "GR U17": "greco"
+              },
+              "styleSources": {
+                "GR U9": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289639tlges.htm",
+                "GR U11": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289638tlges.htm",
+                "GR U15": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289637tlges.htm",
+                "GR Aloittelijat": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289646tlges.htm",
+                "WW Aloittelijat": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289645tlges.htm",
+                "GR U13": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289643tlges.htm",
+                "WW U11": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289641tlges.htm",
+                "WW U15": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289640tlges.htm",
+                "GR U17": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN163603289619tlges.htm"
+              },
+              "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+              "textSource": "",
+              "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
+            }
+          },
+          {
+            "key": "[\"nokian pyryn sarjapainit 2.osakilpailu 2026\",\"nokia, 7.2.2026\"]",
+            "before": null,
+            "after": {
+              "title": "Nokian Pyryn Sarjapainit 2.osakilpailu 2026",
+              "details": "Nokia, 7.2.2026",
+              "rows": [
+                {
+                  "place": 1,
+                  "name": "Paavo Tuominen",
+                  "club": "Porin Painimiehet",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024115",
+                  "athleteId": "painija-014961"
+                },
+                {
+                  "place": 2,
+                  "name": "Thomas Haasmaa",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024116",
+                  "athleteId": "painija-020427"
+                },
+                {
+                  "place": 3,
+                  "name": "Leino Immonen",
+                  "club": "Nokian Pyry",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024117",
+                  "athleteId": "painija-020428"
+                },
+                {
+                  "place": 4,
+                  "name": "Julius Juoperi",
+                  "club": "Nokian Pyry",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024118",
+                  "athleteId": "painija-020429"
+                },
+                {
+                  "place": 5,
+                  "name": "Frans Hakala",
+                  "club": "Porin Painimiehet",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024119",
+                  "athleteId": "painija-020425"
+                },
+                {
+                  "place": 6,
+                  "name": "Otso Rotgers",
+                  "club": "Tampereen Voimailijat",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024120",
+                  "athleteId": "painija-016113"
+                },
+                {
+                  "place": 1,
+                  "name": "Max Rajala",
+                  "club": "KOOVEE",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024121",
+                  "athleteId": "painija-014114"
+                },
+                {
+                  "place": 2,
+                  "name": "Elias Ala-Rämi",
+                  "club": "Nokian Pyry",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024122",
+                  "athleteId": "painija-019648"
+                },
+                {
+                  "place": 3,
+                  "name": "Lauri Niemi",
+                  "club": "Nokian Pyry",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024123",
+                  "athleteId": "painija-001392"
+                },
+                {
+                  "place": 4,
+                  "name": "Leo Vuorinen",
+                  "club": "Nokian Pyry",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024124",
+                  "athleteId": "painija-011773"
+                },
+                {
+                  "place": 5,
+                  "name": "Kasper Alakastari",
+                  "club": "Nokian Pyry",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024125",
+                  "athleteId": "painija-019854"
+                },
+                {
+                  "place": 6,
+                  "name": "Jaro Järvi",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024126",
+                  "athleteId": "painija-023735"
+                },
+                {
+                  "place": 1,
+                  "name": "Hugo Leponen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "24",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024127",
+                  "athleteId": "painija-000456"
+                },
+                {
+                  "place": 2,
+                  "name": "Ilmari Järvenpää",
+                  "club": "Porin Painimiehet",
+                  "weight": "24",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024128",
+                  "athleteId": "painija-020436"
+                },
+                {
+                  "place": 3,
+                  "name": "Akseli Ala-Rämi",
+                  "club": "Nokian Pyry",
+                  "weight": "24",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024129",
+                  "athleteId": "painija-019457"
+                },
+                {
+                  "place": 4,
+                  "name": "Leo Haapala",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "24",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024130",
+                  "athleteId": "painija-019866"
+                },
+                {
+                  "place": 1,
+                  "name": "Veikko Rantala",
+                  "club": "Nokian Pyry",
+                  "weight": "26",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024131",
+                  "athleteId": "painija-011774"
+                },
+                {
+                  "place": 2,
+                  "name": "Kaihan Nabizada",
+                  "club": "Tampereen Painiseura",
+                  "weight": "26",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024132",
+                  "athleteId": "painija-000485"
+                },
+                {
+                  "place": 1,
+                  "name": "Emil Hietala",
+                  "club": "Ylä-Tikkurilan Kipinä",
+                  "weight": "28",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024133",
+                  "athleteId": "painija-002389"
+                },
+                {
+                  "place": 2,
+                  "name": "Daniel Karimi",
+                  "club": "Tampereen Painiseura",
+                  "weight": "28",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024134",
+                  "athleteId": "painija-000452"
+                },
+                {
+                  "place": 3,
+                  "name": "Iiro Hörkkö",
+                  "club": "Viialan Pyry",
+                  "weight": "28",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024135",
+                  "athleteId": "painija-019863"
+                },
+                {
+                  "place": 4,
+                  "name": "Toivo Lindberg",
+                  "club": "Porin Painimiehet",
+                  "weight": "28",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024136",
+                  "athleteId": "painija-019407"
+                },
+                {
+                  "place": 5,
+                  "name": "Rohan Nabizada",
+                  "club": "Tampereen Painiseura",
+                  "weight": "28",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024137",
+                  "athleteId": "painija-000486"
+                },
+                {
+                  "place": 1,
+                  "name": "Paavo Leppänen",
+                  "club": "Nokian Pyry",
+                  "weight": "29",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024138",
+                  "athleteId": "painija-003819"
+                },
+                {
+                  "place": 2,
+                  "name": "Eliel Kotipelto",
+                  "club": "KOOVEE",
+                  "weight": "29",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024139",
+                  "athleteId": "painija-011766"
+                },
+                {
+                  "place": 3,
+                  "name": "Eino Järvelä",
+                  "club": "Kurun Ryhti",
+                  "weight": "29",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024140",
+                  "athleteId": "painija-001273"
+                },
+                {
+                  "place": 4,
+                  "name": "Urho Lehtonen",
+                  "club": "Porin Painimiehet",
+                  "weight": "29",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024141",
+                  "athleteId": "painija-023750"
+                },
+                {
+                  "place": 1,
+                  "name": "Edvin Siitari",
+                  "club": "Porin Painimiehet",
+                  "weight": "32",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024142",
+                  "athleteId": "painija-020447"
+                },
+                {
+                  "place": 2,
+                  "name": "Miika Järvelä",
+                  "club": "Kurun Ryhti",
+                  "weight": "32",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024143",
+                  "athleteId": "painija-001414"
+                },
+                {
+                  "place": 3,
+                  "name": "Kosti Uusiheikkilä",
+                  "club": "Porin Painimiehet",
+                  "weight": "32",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024144",
+                  "athleteId": "painija-020449"
+                },
+                {
+                  "place": 4,
+                  "name": "Joel Siljamäki",
+                  "club": "Nokian Pyry",
+                  "weight": "32",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024145",
+                  "athleteId": "painija-023754"
+                },
+                {
+                  "place": 1,
+                  "name": "Ilmari Lyly",
+                  "club": "Kurun Ryhti",
+                  "weight": "34",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024146",
+                  "athleteId": "painija-000946"
+                },
+                {
+                  "place": 2,
+                  "name": "Ilmari Tuominen",
+                  "club": "Porin Painimiehet",
+                  "weight": "34",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024147",
+                  "athleteId": "painija-014931"
+                },
+                {
+                  "place": 3,
+                  "name": "Elias Kannisto",
+                  "club": "Tampereen Painiseura",
+                  "weight": "34",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024148",
+                  "athleteId": "painija-000453"
+                },
+                {
+                  "place": 4,
+                  "name": "Oodi Kurkinen",
+                  "club": "Porin Painimiehet",
+                  "weight": "34",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024149",
+                  "athleteId": "painija-020452"
+                },
+                {
+                  "place": 1,
+                  "name": "Eemil Hakala",
+                  "club": "Porin Painimiehet",
+                  "weight": "36",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024150",
+                  "athleteId": "painija-020454"
+                },
+                {
+                  "place": 2,
+                  "name": "Konsta Leinonen",
+                  "club": "Nokian Pyry",
+                  "weight": "36",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024151",
+                  "athleteId": "painija-020455"
+                },
+                {
+                  "place": 3,
+                  "name": "Otto Rantala",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "36",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024152",
+                  "athleteId": "painija-019418"
+                },
+                {
+                  "place": 4,
+                  "name": "Samuel Välimäki",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "36",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024153",
+                  "athleteId": "painija-019849"
+                },
+                {
+                  "place": 1,
+                  "name": "Jimi Kukkonen",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "38",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024154",
+                  "athleteId": "painija-014236"
+                },
+                {
+                  "place": 2,
+                  "name": "Samu Järvelä",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "38",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024155",
+                  "athleteId": "painija-014124"
+                },
+                {
+                  "place": 3,
+                  "name": "Elias Seifi",
+                  "club": "Tampereen Painiseura",
+                  "weight": "38",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024156",
+                  "athleteId": "painija-001308"
+                },
+                {
+                  "place": 1,
+                  "name": "Leo Kannisto",
+                  "club": "Tampereen Painiseura",
+                  "weight": "40",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024157",
+                  "athleteId": "painija-000444"
+                },
+                {
+                  "place": 2,
+                  "name": "Niilo Loikkanen",
+                  "club": "Nokian Pyry",
+                  "weight": "40",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024158",
+                  "athleteId": "painija-003833"
+                },
+                {
+                  "place": 3,
+                  "name": "Veikko Vaaja",
+                  "club": "Nokian Pyry",
+                  "weight": "40",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024159",
+                  "athleteId": "painija-019684"
+                },
+                {
+                  "place": 1,
+                  "name": "Venni Niemi",
+                  "club": "Nokian Pyry",
+                  "weight": "48",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024160",
+                  "athleteId": "painija-001316"
+                },
+                {
+                  "place": 2,
+                  "name": "Huugo Tuunainen",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "48",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024161",
+                  "athleteId": "painija-014970"
+                },
+                {
+                  "place": 3,
+                  "name": "Niki Pärnänen",
+                  "club": "Nokian Pyry",
+                  "weight": "48",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024162",
+                  "athleteId": "painija-001331"
+                },
+                {
+                  "place": 4,
+                  "name": "Olavi Vartia",
+                  "club": "Tampereen Painiseura",
+                  "weight": "48",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024163",
+                  "athleteId": "painija-000478"
+                },
+                {
+                  "place": 5,
+                  "name": "Elia Salonen",
+                  "club": "Nokian Pyry",
+                  "weight": "48",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024164",
+                  "athleteId": "painija-011799"
+                },
+                {
+                  "place": 1,
+                  "name": "Tuomas Salmela",
+                  "club": "Nokian Pyry",
+                  "weight": "55",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024165",
+                  "athleteId": "painija-020115"
+                },
+                {
+                  "place": 2,
+                  "name": "Niila Sulander",
+                  "club": "Nokian Pyry",
+                  "weight": "55",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024166",
+                  "athleteId": "painija-001365"
+                },
+                {
+                  "place": 3,
+                  "name": "Eetu Juvonen",
+                  "club": "Nokian Pyry",
+                  "weight": "55",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024167",
+                  "athleteId": "painija-001067"
+                },
+                {
+                  "place": 1,
+                  "name": "Paavo Pihlajämäki",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "60",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024168",
+                  "athleteId": "painija-020470"
+                },
+                {
+                  "place": 2,
+                  "name": "Leo Niukkonen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "60",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024169",
+                  "athleteId": "painija-000451"
+                },
+                {
+                  "place": 3,
+                  "name": "Melik Aydin",
+                  "club": "Nokian Pyry",
+                  "weight": "60",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024170",
+                  "athleteId": "painija-020160"
+                },
+                {
+                  "place": 1,
+                  "name": "Isa Sallansalo",
+                  "club": "Kurun Ryhti",
+                  "weight": "24",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024171",
+                  "athleteId": "painija-011818"
+                },
+                {
+                  "place": 2,
+                  "name": "Iris Petäjäniemi",
+                  "club": "Kurun Ryhti",
+                  "weight": "24",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024172",
+                  "athleteId": "painija-019826"
+                },
+                {
+                  "place": 3,
+                  "name": "Sofia Tuomensalo-Porkka",
+                  "club": "Nokian Pyry",
+                  "weight": "24",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024173",
+                  "athleteId": "painija-019825"
+                },
+                {
+                  "place": 1,
+                  "name": "Hilda Vartia",
+                  "club": "Tampereen Painiseura",
+                  "weight": "28",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024174",
+                  "athleteId": "painija-000484"
+                },
+                {
+                  "place": 2,
+                  "name": "Miisa Koskinen",
+                  "club": "Nokian Pyry",
+                  "weight": "28",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024175",
+                  "athleteId": "painija-019703"
+                },
+                {
+                  "place": 3,
+                  "name": "Elsi Rintala",
+                  "club": "Kurun Ryhti",
+                  "weight": "28",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024176",
+                  "athleteId": "painija-011822"
+                },
+                {
+                  "place": 1,
+                  "name": "Evella Kauko",
+                  "club": "Nokian Pyry",
+                  "weight": "35",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024177",
+                  "athleteId": "painija-001420"
+                },
+                {
+                  "place": 2,
+                  "name": "Loviisa Harjuketo",
+                  "club": "Nokian Pyry",
+                  "weight": "35",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024178",
+                  "athleteId": "painija-020480"
+                },
+                {
+                  "place": 3,
+                  "name": "Emma Tiainen",
+                  "club": "Porin Painimiehet",
+                  "weight": "35",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024179",
+                  "athleteId": "painija-014975"
+                },
+                {
+                  "place": 4,
+                  "name": "Siiri Aho",
+                  "club": "Nokian Pyry",
+                  "weight": "35",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024180",
+                  "athleteId": "painija-000968"
+                },
+                {
+                  "place": 1,
+                  "name": "Sofia Stenroth",
+                  "club": "Nokian Pyry",
+                  "weight": "60",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024181",
+                  "athleteId": "painija-001438"
+                },
+                {
+                  "place": 2,
+                  "name": "Ellen Kangas",
+                  "club": "Nokian Pyry",
+                  "weight": "60",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024182",
+                  "athleteId": "painija-016373"
+                }
+              ],
+              "skipped": 0,
+              "importNotes": [
+                {
+                  "category": "Tytöt 12",
+                  "weight": "41",
+                  "excluded": 1,
+                  "unranked": 1,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/FIN10872344312tlges.htm"
+                }
+              ],
+              "categoryStyles": {
+                "Pojat 12": "greco",
+                "Tytöt 12": "freestyle"
+              },
+              "styleSources": {
+                "Pojat 12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/FIN108723443111tlges.htm",
+                "Tytöt 12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/FIN10872344312tlges.htm"
+              },
+              "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
+              "textSource": "",
+              "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
+            }
+          },
+          {
+            "key": "[\"nokian pyryn sarjapainit 3.osakilpailu 2026\",\"nokia, 28.3.2026\"]",
+            "before": null,
+            "after": {
+              "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2026",
+              "details": "Nokia, 28.3.2026",
+              "rows": [
+                {
+                  "place": 1,
+                  "name": "Frans Hakala",
+                  "club": "Porin Painimiehet",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024183",
+                  "athleteId": "painija-020425"
+                },
+                {
+                  "place": 2,
+                  "name": "Paavo Tuominen",
+                  "club": "Porin Painimiehet",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024184",
+                  "athleteId": "painija-014961"
+                },
+                {
+                  "place": 3,
+                  "name": "Julius Juoperi",
+                  "club": "Nokian Pyry",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024185",
+                  "athleteId": "painija-020429"
+                },
+                {
+                  "place": 4,
+                  "name": "Leino Immonen",
+                  "club": "Nokian Pyry",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024186",
+                  "athleteId": "painija-020428"
+                },
+                {
+                  "place": 5,
+                  "name": "Aleksi Mannila",
+                  "club": "Nokian Pyry",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024187",
+                  "athleteId": "painija-020430"
+                },
+                {
+                  "place": 6,
+                  "name": "Thomas Haasmaa",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "20",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024188",
+                  "athleteId": "painija-020427"
+                },
+                {
+                  "place": 1,
+                  "name": "Lauri Niemi",
+                  "club": "Nokian Pyry",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024189",
+                  "athleteId": "painija-001392"
+                },
+                {
+                  "place": 2,
+                  "name": "Max Rajala",
+                  "club": "KOOVEE",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024190",
+                  "athleteId": "painija-014114"
+                },
+                {
+                  "place": 3,
+                  "name": "Elias Ala-Rämi",
+                  "club": "Nokian Pyry",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024191",
+                  "athleteId": "painija-019648"
+                },
+                {
+                  "place": 4,
+                  "name": "Jaro Järvi",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "22",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024192",
+                  "athleteId": "painija-023735"
+                },
+                {
+                  "place": 1,
+                  "name": "Hugo Leponen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "24",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024193",
+                  "athleteId": "painija-000456"
+                },
+                {
+                  "place": 2,
+                  "name": "Ilmari Järvenpää",
+                  "club": "Porin Painimiehet",
+                  "weight": "24",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024194",
+                  "athleteId": "painija-020436"
+                },
+                {
+                  "place": 3,
+                  "name": "Leo Haapala",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "24",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024195",
+                  "athleteId": "painija-019866"
+                },
+                {
+                  "place": 1,
+                  "name": "Veikko Rantala",
+                  "club": "Nokian Pyry",
+                  "weight": "26",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024196",
+                  "athleteId": "painija-011774"
+                },
+                {
+                  "place": 2,
+                  "name": "Aukusti Kuusinen",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "26",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024197",
+                  "athleteId": "painija-019646"
+                },
+                {
+                  "place": 3,
+                  "name": "Ayaan Narra",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "26",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024198",
+                  "athleteId": "painija-020403"
+                },
+                {
+                  "place": 4,
+                  "name": "Konsta Love",
+                  "club": "Mäntän Valo",
+                  "weight": "26",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024199",
+                  "athleteId": "painija-023808"
+                },
+                {
+                  "place": 1,
+                  "name": "Emil Hietala",
+                  "club": "Ylä-Tikkurilan Kipinä",
+                  "weight": "28",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024200",
+                  "athleteId": "painija-002389"
+                },
+                {
+                  "place": 2,
+                  "name": "Iiro Hörkkö",
+                  "club": "Viialan Pyry",
+                  "weight": "28",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024201",
+                  "athleteId": "painija-019863"
+                },
+                {
+                  "place": 3,
+                  "name": "Lauri Asunto",
+                  "club": "Nokian Pyry",
+                  "weight": "28",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024202",
+                  "athleteId": "painija-011772"
+                },
+                {
+                  "place": 4,
+                  "name": "Toivo Lindberg",
+                  "club": "Porin Painimiehet",
+                  "weight": "28",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024203",
+                  "athleteId": "painija-019407"
+                },
+                {
+                  "place": 1,
+                  "name": "Edvin Siitari",
+                  "club": "Porin Painimiehet",
+                  "weight": "32",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024204",
+                  "athleteId": "painija-020447"
+                },
+                {
+                  "place": 2,
+                  "name": "Kosti Uusiheikkilä",
+                  "club": "Porin Painimiehet",
+                  "weight": "32",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024205",
+                  "athleteId": "painija-020449"
+                },
+                {
+                  "place": 1,
+                  "name": "Ilmari Tuominen",
+                  "club": "Porin Painimiehet",
+                  "weight": "34",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024206",
+                  "athleteId": "painija-014931"
+                },
+                {
+                  "place": 2,
+                  "name": "Benjamin Mäkelä",
+                  "club": "Mäntän Valo",
+                  "weight": "34",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024207",
+                  "athleteId": "painija-023816"
+                },
+                {
+                  "place": 3,
+                  "name": "Oodi Kurkinen",
+                  "club": "Porin Painimiehet",
+                  "weight": "34",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024208",
+                  "athleteId": "painija-020452"
+                },
+                {
+                  "place": 4,
+                  "name": "Elias Kannisto",
+                  "club": "Tampereen Painiseura",
+                  "weight": "34",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024209",
+                  "athleteId": "painija-000453"
+                },
+                {
+                  "place": 1,
+                  "name": "Eemil Hakala",
+                  "club": "Porin Painimiehet",
+                  "weight": "36",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024210",
+                  "athleteId": "painija-020454"
+                },
+                {
+                  "place": 2,
+                  "name": "Otto Rantala",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "36",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024211",
+                  "athleteId": "painija-019418"
+                },
+                {
+                  "place": 3,
+                  "name": "Samuel Välimäki",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "36",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024212",
+                  "athleteId": "painija-019849"
+                },
+                {
+                  "place": 4,
+                  "name": "Konsta Leinonen",
+                  "club": "Nokian Pyry",
+                  "weight": "36",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024213",
+                  "athleteId": "painija-020455"
+                },
+                {
+                  "place": 1,
+                  "name": "Jimi Kukkonen",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "38",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024214",
+                  "athleteId": "painija-014236"
+                },
+                {
+                  "place": 2,
+                  "name": "Elias Seifi",
+                  "club": "Tampereen Painiseura",
+                  "weight": "38",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024215",
+                  "athleteId": "painija-001308"
+                },
+                {
+                  "place": 3,
+                  "name": "Valtteri Poutanen",
+                  "club": "Porin Painimiehet",
+                  "weight": "38",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024216",
+                  "athleteId": "painija-019668"
+                },
+                {
+                  "place": 4,
+                  "name": "Samu Järvelä",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "38",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024217",
+                  "athleteId": "painija-014124"
+                },
+                {
+                  "place": 1,
+                  "name": "Oiva Hämäläinen",
+                  "club": "KOOVEE",
+                  "weight": "40",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024218",
+                  "athleteId": "painija-010505"
+                },
+                {
+                  "place": 2,
+                  "name": "Niilo Loikkanen",
+                  "club": "Nokian Pyry",
+                  "weight": "40",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024219",
+                  "athleteId": "painija-003833"
+                },
+                {
+                  "place": 3,
+                  "name": "Leo Kannisto",
+                  "club": "Tampereen Painiseura",
+                  "weight": "40",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024220",
+                  "athleteId": "painija-000444"
+                },
+                {
+                  "place": 1,
+                  "name": "Niki Pärnänen",
+                  "club": "Nokian Pyry",
+                  "weight": "48",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024221",
+                  "athleteId": "painija-001331"
+                },
+                {
+                  "place": 2,
+                  "name": "Huugo Tuunainen",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "48",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024222",
+                  "athleteId": "painija-014970"
+                },
+                {
+                  "place": 3,
+                  "name": "Venni Niemi",
+                  "club": "Nokian Pyry",
+                  "weight": "48",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024223",
+                  "athleteId": "painija-001316"
+                },
+                {
+                  "place": 4,
+                  "name": "Olavi Vartia",
+                  "club": "Tampereen Painiseura",
+                  "weight": "48",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024224",
+                  "athleteId": "painija-000478"
+                },
+                {
+                  "place": 1,
+                  "name": "Niila Sulander",
+                  "club": "Nokian Pyry",
+                  "weight": "55",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024225",
+                  "athleteId": "painija-001365"
+                },
+                {
+                  "place": 2,
+                  "name": "Eetu Juvonen",
+                  "club": "Nokian Pyry",
+                  "weight": "55",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024226",
+                  "athleteId": "painija-001067"
+                },
+                {
+                  "place": 3,
+                  "name": "Tuukka Niemi",
+                  "club": "Nokian Pyry",
+                  "weight": "55",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024227",
+                  "athleteId": "painija-009762"
+                },
+                {
+                  "place": 1,
+                  "name": "Paavo Pihlajämäki",
+                  "club": "Valkeakosken Kosken-Pojat",
+                  "weight": "60",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024228",
+                  "athleteId": "painija-020470"
+                },
+                {
+                  "place": 2,
+                  "name": "Melik Aydin",
+                  "club": "Nokian Pyry",
+                  "weight": "60",
+                  "category": "Pojat 12",
+                  "resultId": "tulos-024229",
+                  "athleteId": "painija-020160"
+                },
+                {
+                  "place": 1,
+                  "name": "Malla Tiainen",
+                  "club": "Porin Painimiehet",
+                  "weight": "24",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024230",
+                  "athleteId": "painija-014973"
+                },
+                {
+                  "place": 2,
+                  "name": "Isa Sallansalo",
+                  "club": "Kurun Ryhti",
+                  "weight": "24",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024231",
+                  "athleteId": "painija-011818"
+                },
+                {
+                  "place": 3,
+                  "name": "Sofia Tuomensalo-Porkka",
+                  "club": "Nokian Pyry",
+                  "weight": "24",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024232",
+                  "athleteId": "painija-019825"
+                },
+                {
+                  "place": 4,
+                  "name": "Iris Petäjäniemi",
+                  "club": "Kurun Ryhti",
+                  "weight": "24",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024233",
+                  "athleteId": "painija-019826"
+                },
+                {
+                  "place": 1,
+                  "name": "Hilda Vartia",
+                  "club": "Tampereen Painiseura",
+                  "weight": "28",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024234",
+                  "athleteId": "painija-000484"
+                },
+                {
+                  "place": 2,
+                  "name": "Miisa Koskinen",
+                  "club": "Nokian Pyry",
+                  "weight": "28",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024235",
+                  "athleteId": "painija-019703"
+                },
+                {
+                  "place": 3,
+                  "name": "Elsi Rintala",
+                  "club": "Kurun Ryhti",
+                  "weight": "28",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024236",
+                  "athleteId": "painija-011822"
+                },
+                {
+                  "place": 1,
+                  "name": "Loviisa Harjuketo",
+                  "club": "Nokian Pyry",
+                  "weight": "35",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024237",
+                  "athleteId": "painija-020480"
+                },
+                {
+                  "place": 2,
+                  "name": "Emma Tianen",
+                  "club": "Porin Painimiehet",
+                  "weight": "35",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024238",
+                  "athleteId": "painija-020482"
+                },
+                {
+                  "place": 3,
+                  "name": "Roosa Pensaari",
+                  "club": "Nokian Pyry",
+                  "weight": "35",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024239",
+                  "athleteId": "painija-019706"
+                },
+                {
+                  "place": 4,
+                  "name": "Auroora Isotupa",
+                  "club": "Nokian Pyry",
+                  "weight": "35",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024240",
+                  "athleteId": "painija-023849"
+                },
+                {
+                  "place": 1,
+                  "name": "Sofia Stenroth",
+                  "club": "Nokian Pyry",
+                  "weight": "60",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024241",
+                  "athleteId": "painija-001438"
+                },
+                {
+                  "place": 2,
+                  "name": "Ellen Kangas",
+                  "club": "Nokian Pyry",
+                  "weight": "60",
+                  "category": "Tytöt 12",
+                  "resultId": "tulos-024242",
+                  "athleteId": "painija-016373"
+                }
+              ],
+              "skipped": 0,
+              "importNotes": [
+                {
+                  "category": "Tytöt Ystävyysottelu",
+                  "weight": "2",
+                  "excluded": 2,
+                  "unranked": 2,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838314tlges.htm"
+                },
+                {
+                  "category": "Tytöt Ystävyysottelu",
+                  "weight": "3",
+                  "excluded": 2,
+                  "unranked": 2,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838314tlges.htm"
+                },
+                {
+                  "category": "Pojat 12",
+                  "weight": "30",
+                  "excluded": 1,
+                  "unranked": 1,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838311tlges.htm"
+                },
+                {
+                  "category": "Tytöt 12",
+                  "weight": "41",
+                  "excluded": 1,
+                  "unranked": 1,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN17070083832tlges.htm"
+                }
+              ],
+              "categoryStyles": {
+                "Pojat 12": "greco",
+                "Tytöt 12": "freestyle"
+              },
+              "styleSources": {
+                "Pojat 12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838311tlges.htm",
+                "Tytöt 12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN17070083832tlges.htm"
+              },
+              "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+              "textSource": "",
+              "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
+            }
+          },
+          {
+            "key": "[\"taps painit 12.5.2026\",\"tampere, 12.5.2026\"]",
+            "before": null,
+            "after": {
+              "title": "TaPs painit 12.5.2026",
+              "details": "Tampere, 12.5.2026",
+              "rows": [
+                {
+                  "place": 1,
+                  "name": "Kaihan Nabizaba",
+                  "club": "Tampereen Painiseura",
+                  "weight": "26",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024243",
+                  "athleteId": "painija-017914"
+                },
+                {
+                  "place": 2,
+                  "name": "Iivari Peltola",
+                  "club": "Tampereen Painiseura",
+                  "weight": "26",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024244",
+                  "athleteId": "painija-016109"
+                },
+                {
+                  "place": 3,
+                  "name": "Aatos Koskela",
+                  "club": "Tampereen Painiseura",
+                  "weight": "26",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024245",
+                  "athleteId": "painija-016118"
+                },
+                {
+                  "place": 1,
+                  "name": "Eetu Radmer-Jensen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "32",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024246",
+                  "athleteId": "painija-001409"
+                },
+                {
+                  "place": 2,
+                  "name": "Daniel Karimi",
+                  "club": "Tampereen Painiseura",
+                  "weight": "32",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024247",
+                  "athleteId": "painija-000452"
+                },
+                {
+                  "place": 3,
+                  "name": "Elias Kannisto",
+                  "club": "Tampereen Painiseura",
+                  "weight": "32",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024248",
+                  "athleteId": "painija-000453"
+                },
+                {
+                  "place": 1,
+                  "name": "Noel Kontuniemi",
+                  "club": "Tampereen Painiseura",
+                  "weight": "35",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024249",
+                  "athleteId": "painija-000460"
+                },
+                {
+                  "place": 2,
+                  "name": "Alex Ahonen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "35",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024250",
+                  "athleteId": "painija-000458"
+                },
+                {
+                  "place": 3,
+                  "name": "Darek Kampus",
+                  "club": "Tampereen Painiseura",
+                  "weight": "35",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024251",
+                  "athleteId": "painija-000475"
+                },
+                {
+                  "place": 4,
+                  "name": "Roni Ahokas",
+                  "club": "Tampereen Painiseura",
+                  "weight": "35",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024252",
+                  "athleteId": "painija-000457"
+                },
+                {
+                  "place": 1,
+                  "name": "Elias Seifi",
+                  "club": "Tampereen Painiseura",
+                  "weight": "42",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024253",
+                  "athleteId": "painija-001308"
+                },
+                {
+                  "place": 2,
+                  "name": "Feliks Tuomonen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "42",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024254",
+                  "athleteId": "painija-000476"
+                },
+                {
+                  "place": 3,
+                  "name": "Frans Tuomonen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "42",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024255",
+                  "athleteId": "painija-000477"
+                },
+                {
+                  "place": 1,
+                  "name": "Olavi Vartia",
+                  "club": "Tampereen Painiseura",
+                  "weight": "53",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024256",
+                  "athleteId": "painija-000478"
+                },
+                {
+                  "place": 2,
+                  "name": "Kaspar Kampus",
+                  "club": "Tampereen Painiseura",
+                  "weight": "53",
+                  "category": "Pojat U12",
+                  "resultId": "tulos-024257",
+                  "athleteId": "painija-000479"
+                },
+                {
+                  "place": 1,
+                  "name": "Eelis Wihinen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "45",
+                  "category": "Pojat U15",
+                  "resultId": "tulos-024258",
+                  "athleteId": "painija-000466"
+                },
+                {
+                  "place": 2,
+                  "name": "Patrick Olan",
+                  "club": "Tampereen Painiseura",
+                  "weight": "45",
+                  "category": "Pojat U15",
+                  "resultId": "tulos-024259",
+                  "athleteId": "painija-000467"
+                },
+                {
+                  "place": 3,
+                  "name": "Saku Mäkipelto",
+                  "club": "Tampereen Painiseura",
+                  "weight": "45",
+                  "category": "Pojat U15",
+                  "resultId": "tulos-024260",
+                  "athleteId": "painija-000447"
+                },
+                {
+                  "place": 4,
+                  "name": "Leo Kannisto",
+                  "club": "Tampereen Painiseura",
+                  "weight": "45",
+                  "category": "Pojat U15",
+                  "resultId": "tulos-024261",
+                  "athleteId": "painija-000444"
+                },
+                {
+                  "place": 5,
+                  "name": "Joel Olan",
+                  "club": "Tampereen Painiseura",
+                  "weight": "45",
+                  "category": "Pojat U15",
+                  "resultId": "tulos-024262",
+                  "athleteId": "painija-000448"
+                },
+                {
+                  "place": 1,
+                  "name": "Joona Pekkanen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "29",
+                  "category": "Tytöt ja Pojat U12",
+                  "resultId": "tulos-024263",
+                  "athleteId": "painija-000454"
+                },
+                {
+                  "place": 2,
+                  "name": "Meri Eronen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "29",
+                  "category": "Tytöt ja Pojat U12",
+                  "resultId": "tulos-024264",
+                  "athleteId": "painija-000488"
+                },
+                {
+                  "place": 3,
+                  "name": "Rohan Nabizaba",
+                  "club": "Tampereen Painiseura",
+                  "weight": "29",
+                  "category": "Tytöt ja Pojat U12",
+                  "resultId": "tulos-024265",
+                  "athleteId": "painija-017920"
+                },
+                {
+                  "place": 4,
+                  "name": "Otso Koskela",
+                  "club": "Tampereen Painiseura",
+                  "weight": "29",
+                  "category": "Tytöt ja Pojat U12",
+                  "resultId": "tulos-024266",
+                  "athleteId": "painija-000489"
+                },
+                {
+                  "place": 1,
+                  "name": "Hugo Leponen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "30",
+                  "category": "Tytöt ja Pojat U12",
+                  "resultId": "tulos-024267",
+                  "athleteId": "painija-000456"
+                },
+                {
+                  "place": 2,
+                  "name": "Aku Tapio",
+                  "club": "Tampereen Painiseura",
+                  "weight": "30",
+                  "category": "Tytöt ja Pojat U12",
+                  "resultId": "tulos-024268",
+                  "athleteId": "painija-016125"
+                },
+                {
+                  "place": 3,
+                  "name": "Hilda Vartia",
+                  "club": "Tampereen Painiseura",
+                  "weight": "30",
+                  "category": "Tytöt ja Pojat U12",
+                  "resultId": "tulos-024269",
+                  "athleteId": "painija-000484"
+                }
+              ],
+              "skipped": 0,
+              "importNotes": [
+                {
+                  "category": "Pojat U17",
+                  "weight": "70",
+                  "excluded": 1,
+                  "unranked": 1,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217609tlges.htm"
+                },
+                {
+                  "category": "Tytöt ja Pojat U15",
+                  "weight": "47",
+                  "excluded": 1,
+                  "unranked": 1,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217607tlges.htm"
+                }
+              ],
+              "categoryStyles": {
+                "Pojat U12": "greco",
+                "Pojat U15": "greco",
+                "Tytöt ja Pojat U12": "freestyle"
+              },
+              "styleSources": {
+                "Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217601tlges.htm",
+                "Pojat U15": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217606tlges.htm",
+                "Tytöt ja Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217605tlges.htm"
+              },
+              "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
+              "textSource": "",
+              "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
+            }
+          },
+          {
+            "key": "[\"ffc & champions cup 7/7\",\"järvenpää, 13.6.2026\"]",
+            "before": null,
+            "after": {
+              "title": "FFC & Champions Cup 7/7",
+              "details": "Järvenpää, 13.6.2026",
+              "rows": [
+                {
+                  "place": 1,
+                  "name": "Alex Zaitsev",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "24",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024270",
+                  "athleteId": "painija-000632"
+                },
+                {
+                  "place": 2,
+                  "name": "Tamim Ahmed",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "24",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024271",
+                  "athleteId": "painija-000882"
+                },
+                {
+                  "place": 3,
+                  "name": "Seid Syla",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "24",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024272",
+                  "athleteId": "painija-000881"
+                },
+                {
+                  "place": 4,
+                  "name": "Roni Tallberg",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "24",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024273",
+                  "athleteId": "painija-000011"
+                },
+                {
+                  "place": 5,
+                  "name": "Matias Kokkonen",
+                  "club": "Helsingin Haka",
+                  "weight": "24",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024274",
+                  "athleteId": "painija-013132"
+                },
+                {
+                  "place": 1,
+                  "name": "Imran Mohamud",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "26",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024275",
+                  "athleteId": "painija-000884"
+                },
+                {
+                  "place": 2,
+                  "name": "Mahaur Amiri",
+                  "club": "Vantaan Sampo",
+                  "weight": "26",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024276",
+                  "athleteId": "painija-023885"
+                },
+                {
+                  "place": 3,
+                  "name": "Siar Musa",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "26",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024277",
+                  "athleteId": "painija-000885"
+                },
+                {
+                  "place": 4,
+                  "name": "Aurora Dean",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "26",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024278",
+                  "athleteId": "painija-021612"
+                },
+                {
+                  "place": 5,
+                  "name": "Niki Grönholm",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "26",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024279",
+                  "athleteId": "painija-000505"
+                },
+                {
+                  "place": 5,
+                  "name": "Tim Paasonen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "26",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024280",
+                  "athleteId": "painija-000613"
+                },
+                {
+                  "place": 7,
+                  "name": "Voitto Kaskinen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "26",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024281",
+                  "athleteId": "painija-000887"
+                },
+                {
+                  "place": 1,
+                  "name": "Muhammad Yandiev",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "29",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024282",
+                  "athleteId": "painija-000890"
+                },
+                {
+                  "place": 2,
+                  "name": "Niilo Takala",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "29",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024283",
+                  "athleteId": "painija-000634"
+                },
+                {
+                  "place": 3,
+                  "name": "Oliver Bäck",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "29",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024284",
+                  "athleteId": "painija-000891"
+                },
+                {
+                  "place": 4,
+                  "name": "Robben Dedinca",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "29",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024285",
+                  "athleteId": "painija-000892"
+                },
+                {
+                  "place": 1,
+                  "name": "Mari-Liis Vainika",
+                  "club": "Vantaan Sampo",
+                  "weight": "32",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024286",
+                  "athleteId": "painija-000004"
+                },
+                {
+                  "place": 2,
+                  "name": "Omar Rashidi",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "32",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024287",
+                  "athleteId": "painija-023896"
+                },
+                {
+                  "place": 3,
+                  "name": "Hugo Grönholm",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "32",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024288",
+                  "athleteId": "painija-000021"
+                },
+                {
+                  "place": 4,
+                  "name": "Mikko Peltonen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "32",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024289",
+                  "athleteId": "painija-000894"
+                },
+                {
+                  "place": 5,
+                  "name": "Artagnes Strengell",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "32",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024290",
+                  "athleteId": "painija-016040"
+                },
+                {
+                  "place": 1,
+                  "name": "Malik Musa",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "36",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024291",
+                  "athleteId": "painija-000893"
+                },
+                {
+                  "place": 2,
+                  "name": "Arion Musa",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "36",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024292",
+                  "athleteId": "painija-001262"
+                },
+                {
+                  "place": 3,
+                  "name": "Arbanit Musa",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "36",
+                  "category": "U9 Pojat FFC",
+                  "resultId": "tulos-024293",
+                  "athleteId": "painija-000897"
+                },
+                {
+                  "place": 1,
+                  "name": "Aino Setälä",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "47",
+                  "category": "U13 Tytöt FFC",
+                  "resultId": "tulos-024294",
+                  "athleteId": "painija-000573"
+                },
+                {
+                  "place": 2,
+                  "name": "Helmi Suomalainen",
+                  "club": "Voikkaan Viesti",
+                  "weight": "47",
+                  "category": "U13 Tytöt FFC",
+                  "resultId": "tulos-024295",
+                  "athleteId": "painija-000574"
+                },
+                {
+                  "place": 3,
+                  "name": "Ella Sihvonen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "47",
+                  "category": "U13 Tytöt FFC",
+                  "resultId": "tulos-024296",
+                  "athleteId": "painija-000671"
+                },
+                {
+                  "place": 4,
+                  "name": "Elina Kangasniemi",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "47",
+                  "category": "U13 Tytöt FFC",
+                  "resultId": "tulos-024297",
+                  "athleteId": "painija-000050"
+                },
+                {
+                  "place": 1,
+                  "name": "Adele Hoot",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "61",
+                  "category": "U13 Tytöt FFC",
+                  "resultId": "tulos-024298",
+                  "athleteId": "painija-000577"
+                },
+                {
+                  "place": 2,
+                  "name": "Mialiis Vainika",
+                  "club": "Vantaan Sampo",
+                  "weight": "61",
+                  "category": "U13 Tytöt FFC",
+                  "resultId": "tulos-024299",
+                  "athleteId": "painija-000550"
+                },
+                {
+                  "place": 1,
+                  "name": "Aleksanteri Kougappi",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "31",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024300",
+                  "athleteId": "painija-000918"
+                },
+                {
+                  "place": 2,
+                  "name": "Augustus Lampila",
+                  "club": "Vantaan Sampo",
+                  "weight": "31",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024301",
+                  "athleteId": "painija-000921"
+                },
+                {
+                  "place": 3,
+                  "name": "Khamzat Meserbiev",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "31",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024302",
+                  "athleteId": "painija-000920"
+                },
+                {
+                  "place": 4,
+                  "name": "Muhammadali Hasanov",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "31",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024303",
+                  "athleteId": "painija-000928"
+                },
+                {
+                  "place": 1,
+                  "name": "Ali Baigiraev",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "33",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024304",
+                  "athleteId": "painija-000923"
+                },
+                {
+                  "place": 2,
+                  "name": "Leart Neli",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "33",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024305",
+                  "athleteId": "painija-000924"
+                },
+                {
+                  "place": 3,
+                  "name": "Kaleb Dean",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "33",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024306",
+                  "athleteId": "painija-000925"
+                },
+                {
+                  "place": 4,
+                  "name": "Ilyas Mohamud",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "33",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024307",
+                  "athleteId": "painija-000927"
+                },
+                {
+                  "place": 5,
+                  "name": "Salmaan Ali",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "33",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024308",
+                  "athleteId": "painija-000929"
+                },
+                {
+                  "place": 5,
+                  "name": "Benjamin Stykki",
+                  "club": "Vantaan Sampo",
+                  "weight": "33",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024309",
+                  "athleteId": "painija-000635"
+                },
+                {
+                  "place": 1,
+                  "name": "Oiva Alanen",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "36",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024310",
+                  "athleteId": "painija-000052"
+                },
+                {
+                  "place": 2,
+                  "name": "Ajan Musa",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "36",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024311",
+                  "athleteId": "painija-000932"
+                },
+                {
+                  "place": 3,
+                  "name": "Anuar Miftari",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "36",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024312",
+                  "athleteId": "painija-000937"
+                },
+                {
+                  "place": 4,
+                  "name": "Marlo Kolu",
+                  "club": "Lahden Ahkera",
+                  "weight": "36",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024313",
+                  "athleteId": "painija-000620"
+                },
+                {
+                  "place": 5,
+                  "name": "Aroandes Strengell",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "36",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024314",
+                  "athleteId": "painija-000586"
+                },
+                {
+                  "place": 1,
+                  "name": "Huzeifa Yandiev",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "38",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024315",
+                  "athleteId": "painija-000944"
+                },
+                {
+                  "place": 2,
+                  "name": "Husein Junusov",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "38",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024316",
+                  "athleteId": "painija-000936"
+                },
+                {
+                  "place": 3,
+                  "name": "Zakaria Rashidi",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "38",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024317",
+                  "athleteId": "painija-000939"
+                },
+                {
+                  "place": 1,
+                  "name": "Albarra Tsitskiev",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "41",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024318",
+                  "athleteId": "painija-000942"
+                },
+                {
+                  "place": 2,
+                  "name": "William Pham",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "41",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024319",
+                  "athleteId": "painija-000943"
+                },
+                {
+                  "place": 3,
+                  "name": "Benjamin Anttila",
+                  "club": "Espoon Urheilijat",
+                  "weight": "41",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024320",
+                  "athleteId": "painija-000641"
+                },
+                {
+                  "place": 1,
+                  "name": "Valtteri Kotilainen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "52",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024321",
+                  "athleteId": "painija-000603"
+                },
+                {
+                  "place": 2,
+                  "name": "Teo Paasonen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "52",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024322",
+                  "athleteId": "painija-000602"
+                },
+                {
+                  "place": 3,
+                  "name": "Arttu Reinikainen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "52",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024323",
+                  "athleteId": "painija-000653"
+                },
+                {
+                  "place": 4,
+                  "name": "Valter Niinimäki",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "52",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024324",
+                  "athleteId": "painija-023933"
+                },
+                {
+                  "place": 5,
+                  "name": "Juho Malmari",
+                  "club": "Espoon Urheilijat",
+                  "weight": "52",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024325",
+                  "athleteId": "painija-012633"
+                },
+                {
+                  "place": 1,
+                  "name": "Eetu Markkula",
+                  "club": "Janakkalan Paini-Ilves",
+                  "weight": "55",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024326",
+                  "athleteId": "painija-001028"
+                },
+                {
+                  "place": 2,
+                  "name": "Aleksandr Ljapor",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "55",
+                  "category": "U13 Pojat FFC",
+                  "resultId": "tulos-024327",
+                  "athleteId": "painija-001051"
+                },
+                {
+                  "place": 1,
+                  "name": "Dzhamalbek Dzhambekov",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "65",
+                  "category": "CC Miehet",
+                  "resultId": "tulos-024328",
+                  "athleteId": "painija-023937"
+                },
+                {
+                  "place": 2,
+                  "name": "Muhammad Nalgiev",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "65",
+                  "category": "CC Miehet",
+                  "resultId": "tulos-024329",
+                  "athleteId": "painija-023938"
+                },
+                {
+                  "place": 3,
+                  "name": "Maximus Purmonen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "65",
+                  "category": "CC Miehet",
+                  "resultId": "tulos-024330",
+                  "athleteId": "painija-000656"
+                },
+                {
+                  "place": 1,
+                  "name": "Joona Hakola",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "74",
+                  "category": "CC Miehet",
+                  "resultId": "tulos-024331",
+                  "athleteId": "painija-000876"
+                },
+                {
+                  "place": 2,
+                  "name": "Jere Pekkarinen",
+                  "club": "Espoon Urheilijat",
+                  "weight": "74",
+                  "category": "CC Miehet",
+                  "resultId": "tulos-024332",
+                  "athleteId": "painija-006415"
+                },
+                {
+                  "place": 3,
+                  "name": "Saad Ahmed",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "74",
+                  "category": "CC Miehet",
+                  "resultId": "tulos-024333",
+                  "athleteId": "painija-001095"
+                },
+                {
+                  "place": 1,
+                  "name": "Miko Elkala",
+                  "club": "Lahden Ahkera",
+                  "weight": "92",
+                  "category": "CC Miehet",
+                  "resultId": "tulos-024334",
+                  "athleteId": "painija-001103"
+                },
+                {
+                  "place": 2,
+                  "name": "Obaidullah Azim Zada",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "92",
+                  "category": "CC Miehet",
+                  "resultId": "tulos-024335",
+                  "athleteId": "painija-001100"
+                },
+                {
+                  "place": 1,
+                  "name": "Sisu Rantonen",
+                  "club": "Harjun Woima Jyväskylä",
+                  "weight": "45",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024336",
+                  "athleteId": "painija-007406"
+                },
+                {
+                  "place": 2,
+                  "name": "Hasan Junusov",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "45",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024337",
+                  "athleteId": "painija-000949"
+                },
+                {
+                  "place": 3,
+                  "name": "Ville-Kalle Kuisma",
+                  "club": "Hyvinkään Painiklubi",
+                  "weight": "45",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024338",
+                  "athleteId": "painija-000561"
+                },
+                {
+                  "place": 1,
+                  "name": "Viljo Takala",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "48",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024339",
+                  "athleteId": "painija-000646"
+                },
+                {
+                  "place": 2,
+                  "name": "Jalo Ojansivu",
+                  "club": "Janakkalan Paini-Ilves",
+                  "weight": "48",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024340",
+                  "athleteId": "painija-000647"
+                },
+                {
+                  "place": 3,
+                  "name": "Kaapo Takkinen",
+                  "club": "Harjun Woima Jyväskylä",
+                  "weight": "48",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024341",
+                  "athleteId": "painija-003851"
+                },
+                {
+                  "place": 1,
+                  "name": "Eetu Tammelin",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "51",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024342",
+                  "athleteId": "painija-000564"
+                },
+                {
+                  "place": 2,
+                  "name": "Gianluca Leino",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "51",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024343",
+                  "athleteId": "painija-000648"
+                },
+                {
+                  "place": 1,
+                  "name": "Urho Susi",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "55",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024344",
+                  "athleteId": "painija-000901"
+                },
+                {
+                  "place": 2,
+                  "name": "Aaron Raiskinmäki",
+                  "club": "Rauman Voimailijat",
+                  "weight": "55",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024345",
+                  "athleteId": "painija-003411"
+                },
+                {
+                  "place": 3,
+                  "name": "Ilkka Niemi",
+                  "club": "Janakkalan Paini-Ilves",
+                  "weight": "55",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024346",
+                  "athleteId": "painija-000652"
+                },
+                {
+                  "place": 4,
+                  "name": "Lorik Neli",
+                  "club": "Freestyle Wrestling Legacy",
+                  "weight": "55",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024347",
+                  "athleteId": "painija-000905"
+                },
+                {
+                  "place": 1,
+                  "name": "Otto Lipponen",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "60",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024348",
+                  "athleteId": "painija-001759"
+                },
+                {
+                  "place": 2,
+                  "name": "Amjad Khaled",
+                  "club": "Vantaan Sampo",
+                  "weight": "60",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024349",
+                  "athleteId": "painija-000660"
+                },
+                {
+                  "place": 3,
+                  "name": "Osku Tallberg",
+                  "club": "Järvenpään Voimailijat",
+                  "weight": "60",
+                  "category": "U17 Pojat FFC",
+                  "resultId": "tulos-024350",
+                  "athleteId": "painija-000535"
+                },
+                {
+                  "place": 1,
+                  "name": "Inka Mälkönen",
+                  "club": "Lahden Ahkera",
+                  "weight": "69",
+                  "category": "U17 Tytöt FFC",
+                  "resultId": "tulos-024351",
+                  "athleteId": "painija-002686"
+                },
+                {
+                  "place": 2,
+                  "name": "Erika Purmonen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "69",
+                  "category": "U17 Tytöt FFC",
+                  "resultId": "tulos-024352",
+                  "athleteId": "painija-003900"
+                },
+                {
+                  "place": 3,
+                  "name": "Paloma Grönfors",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "69",
+                  "category": "U17 Tytöt FFC",
+                  "resultId": "tulos-024353",
+                  "athleteId": "painija-002433"
+                },
+                {
+                  "place": 1,
+                  "name": "Mea Purmonen",
+                  "club": "Helsingin Paini-Miehet",
+                  "weight": "68",
+                  "category": "Naiset FFC",
+                  "resultId": "tulos-024354",
+                  "athleteId": "painija-001089"
+                },
+                {
+                  "place": 2,
+                  "name": "Ronja Nevalainen",
+                  "club": "Kouvolan Painijat",
+                  "weight": "68",
+                  "category": "Naiset FFC",
+                  "resultId": "tulos-024355",
+                  "athleteId": "painija-005205"
+                },
+                {
+                  "place": 1,
+                  "name": "Maiju Siltala",
+                  "club": "Pilkanmaan Pilke",
+                  "weight": "76",
+                  "category": "Naiset FFC",
+                  "resultId": "tulos-024356",
+                  "athleteId": "painija-023965"
+                }
+              ],
+              "skipped": 0,
+              "importNotes": [
+                {
+                  "category": "Ystävyysottelut",
+                  "weight": "50",
+                  "excluded": 2,
+                  "unranked": 0,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN1916952959_tab.txt"
+                },
+                {
+                  "category": "Ystävyysottelut",
+                  "weight": "67",
+                  "excluded": 2,
+                  "unranked": 0,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN1916952959_tab.txt"
+                },
+                {
+                  "category": "Ystävyysottelut",
+                  "weight": "69",
+                  "excluded": 2,
+                  "unranked": 0,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN1916952959_tab.txt"
+                }
+              ],
+              "categoryStyles": {
+                "U9 Pojat FFC": "freestyle",
+                "U13 Tytöt FFC": "freestyle",
+                "U13 Pojat FFC": "freestyle",
+                "CC Miehet": "freestyle",
+                "U17 Pojat FFC": "freestyle",
+                "U17 Tytöt FFC": "freestyle",
+                "Naiset FFC": "freestyle"
+              },
+              "styleSources": {
+                "U9 Pojat FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295941tlges.htm",
+                "U13 Tytöt FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295940tlges.htm",
+                "U13 Pojat FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295939tlges.htm",
+                "CC Miehet": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295933tlges.htm",
+                "U17 Pojat FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295932tlges.htm",
+                "U17 Tytöt FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295931tlges.htm",
+                "Naiset FFC": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN191695295918tlges.htm"
+              },
+              "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm",
+              "textSource": "",
+              "fileInfo": "LigaDB · ajastettu haku · 2026-10-29"
+            }
+          }
+        ]
       }
     ]
   },
-  "exportedAt": "2026-10-29T03:06:49.678Z",
-  "updatedAt": "2026-10-29T03:06:49.498Z"
+  "exportedAt": "2026-10-29T19:23:15.291Z",
+  "updatedAt": "2026-10-29T19:23:15.167Z"
 };

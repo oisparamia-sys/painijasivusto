@@ -1,20 +1,52 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-29T03:06:49.498Z",
-  "updatedAt": "2026-10-29T03:06:49.498Z",
-  "competitions": 204,
-  "results": 24113,
-  "added": 1,
-  "changed": 0,
+  "checkedAt": "2026-10-29T19:23:15.167Z",
+  "updatedAt": "2026-10-29T19:23:15.167Z",
+  "competitions": 208,
+  "results": 24355,
+  "added": 4,
+  "changed": 1,
   "unchanged": 41,
   "changes": [
     {
-      "partial": false,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261028_Vaasa/indexFIN.htm",
+      "partial": true,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
       "kind": "added",
-      "title": "VVV Mitalipainit",
-      "details": "Vaasa, 28/10/2026",
+      "title": "Nokian Pyryn Sarjapainit 2.osakilpailu 2026",
+      "details": "Nokia, 7.2.2026",
+      "rows": 68
+    },
+    {
+      "partial": true,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+      "kind": "added",
+      "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2026",
+      "details": "Nokia, 28.3.2026",
       "rows": 60
+    },
+    {
+      "partial": true,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
+      "kind": "added",
+      "title": "TaPs painit 12.5.2026",
+      "details": "Tampere, 12.5.2026",
+      "rows": 27
+    },
+    {
+      "partial": true,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm",
+      "kind": "added",
+      "title": "FFC & Champions Cup 7/7",
+      "details": "Järvenpää, 13.6.2026",
+      "rows": 87
+    },
+    {
+      "partial": true,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+      "kind": "updated",
+      "title": "Nuoriso-turnaus",
+      "details": "Ilmajoki, 26.9.2026",
+      "rows": 152
     }
   ],
   "partial": [
@@ -70,6 +102,22 @@
       "status": "unchanged"
     },
     {
+      "title": "Nokian Pyryn Sarjapainit 2.osakilpailu 2026",
+      "details": "Nokia, 7.2.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
+      "rows": 68,
+      "notes": [
+        {
+          "category": "Tytöt 12",
+          "weight": "41",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/FIN10872344312tlges.htm"
+        }
+      ],
+      "status": "added"
+    },
+    {
       "title": "Taisto Kangasniemen XXVI muistopainit",
       "details": "Tampere, 14.2.2026",
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/indexFIN.htm",
@@ -91,6 +139,43 @@
         }
       ],
       "status": "unchanged"
+    },
+    {
+      "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2026",
+      "details": "Nokia, 28.3.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+      "rows": 60,
+      "notes": [
+        {
+          "category": "Tytöt Ystävyysottelu",
+          "weight": "2",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838314tlges.htm"
+        },
+        {
+          "category": "Tytöt Ystävyysottelu",
+          "weight": "3",
+          "excluded": 2,
+          "unranked": 2,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838314tlges.htm"
+        },
+        {
+          "category": "Pojat 12",
+          "weight": "30",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838311tlges.htm"
+        },
+        {
+          "category": "Tytöt 12",
+          "weight": "41",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN17070083832tlges.htm"
+        }
+      ],
+      "status": "added"
     },
     {
       "title": "Olavi Niemen muistopainit ja Lo-Suomen av. AM kilp",
@@ -360,6 +445,59 @@
       "status": "unchanged"
     },
     {
+      "title": "TaPs painit 12.5.2026",
+      "details": "Tampere, 12.5.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
+      "rows": 27,
+      "notes": [
+        {
+          "category": "Pojat U17",
+          "weight": "70",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217609tlges.htm"
+        },
+        {
+          "category": "Tytöt ja Pojat U15",
+          "weight": "47",
+          "excluded": 1,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217607tlges.htm"
+        }
+      ],
+      "status": "added"
+    },
+    {
+      "title": "FFC & Champions Cup 7/7",
+      "details": "Järvenpää, 13.6.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm",
+      "rows": 87,
+      "notes": [
+        {
+          "category": "Ystävyysottelut",
+          "weight": "50",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN1916952959_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelut",
+          "weight": "67",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN1916952959_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelut",
+          "weight": "69",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/FIN1916952959_tab.txt"
+        }
+      ],
+      "status": "added"
+    },
+    {
       "title": "Kemi Cup",
       "details": "Kemi, 12.9.2026",
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
@@ -374,6 +512,43 @@
         }
       ],
       "status": "unchanged"
+    },
+    {
+      "title": "Nuoriso-turnaus",
+      "details": "Ilmajoki, 26.9.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+      "rows": 152,
+      "notes": [
+        {
+          "category": "Ystävyysottelu",
+          "weight": "1",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelu",
+          "weight": "2",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelu",
+          "weight": "3",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelu",
+          "weight": "4",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt"
+        }
+      ],
+      "status": "updated"
     },
     {
       "title": "Tampere Cup",
@@ -409,27 +584,11 @@
   "errors": [
     {
       "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260822_Oulu/indexFIN.htm",
-      "error": "Sarjakohtaisia tulosluetteloita ei löytynyt"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
-      "error": "HTML-tulosmäärä ei täsmää painoluokassa 41"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
-      "error": "HTML-tulosmäärä ei täsmää painoluokassa 30"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
-      "error": "HTML-tulosmäärä ei täsmää painoluokassa 70"
+      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Kotka/indexFIN.htm",
-      "error": "Sarjakohtaisia tulosluetteloita ei löytynyt"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm",
-      "error": "Sarjavastaavuus puuttuu: Ystävyysottelut"
+      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
     }
   ]
 }
