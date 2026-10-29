@@ -42,7 +42,7 @@ def html_results(page):
    rank=re.fullmatch(r'(\d+)\.',cells[0])
    if rank and int(rank[1])>0 and cells[1] and cells[2]:current['rows'].append([cells[0],cells[1],cells[2]])
    elif cells[0].lower()=='tyhjä':continue
-   elif re.search(r'NR\d+\.htm',tr,re.I):
+   elif re.search(r'NR\d+\.htm',tr,re.I) or (len(cells)==3 and cells[0] in ['', '0.', '0'] and cells[1] and cells[2]):
     if cells[0] not in ['', '0.', '0'] or not cells[1] or not cells[2]:raise ValueError('Osallistujarivin rakennetta ei tunnistettu')
     current['unranked']+=1
  for group in groups:
@@ -94,14 +94,28 @@ def competition(url):
    else:complete.append(g)
   if complete:
    pages.append(dict(category=category,style=code,count=sum(len(g['rows']) for g in complete),url=pageurl));generated+=complete
- if not pages:raise ValueError('Sarjakohtaisia tulosluetteloita ei löytynyt')
+ if not pages:
+  if warnings:raise ValueError('Tulosluetteloissa ei ole vielä vahvistettuja sijoituksia')
+  if any(re.search(r'mld\d+\.htm$', u, re.I) for u in alllinks):raise ValueError('Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia')
+  raise ValueError('Sarjakohtaisia tulosluetteloita ei löytynyt')
  # HTML is the fallback for sources that do not publish a tab-separated file.
  rawtext=None;rawurl=''
- if len(raw)==1 and not warnings:
+ if len(raw)==1:
   rawurl=urllib.parse.urljoin(url,raw[0])
   try:rawtext=get(rawurl)
   except Exception:rawtext=None
- if rawtext is not None and usable_tab(rawtext):text=rawtext
+ # The downloadable file may include friendship classes absent from the
+ # official category pages. Use only validated HTML results in that case.
+ if rawtext is not None:
+  known={(g['category'].casefold(),g['weight']) for g in generated}
+  for line in rawtext.splitlines():
+   h=re.fullmatch(r'\s*(\d+(?:[.,]\d+)?)\s*kg\t([^\t]+)\t\((\d+) Osallistujaa\)\s*',line,re.I)
+   if not h:continue
+   category=h[2].strip();weight=h[1].replace(',','.')
+   if (category.casefold(),weight) not in known and not any(w['category'].casefold()==category.casefold() and w['weight']==weight for w in warnings):
+    if not re.search(r'ystävyys',category,re.I):raise ValueError('Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: '+category)
+    warnings.append(dict(category=category,weight=weight,excluded=int(h[3]),unranked=0,source=rawurl))
+ if rawtext is not None and not warnings and usable_tab(rawtext):text=rawtext
  else:
   header=re.search(r'<a\b[^>]*href\s*=\s*["\']index(?:FIN|ENG)\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
   if not header:raise ValueError('Kilpailun nimeä ja päivämäärää ei tunnistettu')
