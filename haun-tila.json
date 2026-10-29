@@ -1,13 +1,22 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-28T17:44:56.628Z",
-  "updatedAt": "2026-10-28T14:33:01.495Z",
-  "competitions": 203,
-  "results": 24053,
-  "added": 0,
+  "checkedAt": "2026-10-29T03:06:49.498Z",
+  "updatedAt": "2026-10-29T03:06:49.498Z",
+  "competitions": 204,
+  "results": 24113,
+  "added": 1,
   "changed": 0,
   "unchanged": 41,
-  "changes": [],
+  "changes": [
+    {
+      "partial": false,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261028_Vaasa/indexFIN.htm",
+      "kind": "added",
+      "title": "VVV Mitalipainit",
+      "details": "Vaasa, 28/10/2026",
+      "rows": 60
+    }
+  ],
   "partial": [
     {
       "title": "Raimo ja Esko Taskisen muistopainit",
@@ -416,10 +425,6 @@
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Kotka/indexFIN.htm",
-      "error": "Sarjakohtaisia tulosluetteloita ei löytynyt"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261028_Vaasa/indexFIN.htm",
       "error": "Sarjakohtaisia tulosluetteloita ei löytynyt"
     },
     {
