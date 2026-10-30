@@ -9,16 +9,31 @@
   const duplicatePageSize = 10;
   const say = (text, kind = "") => { $("#registry-status").textContent = text; $("#registry-status").dataset.kind = kind; };
   const people = () => data.athleteRegistry.athletes.filter(a => !a.mergedInto);
-  const entries = id => data.competitions.flatMap(item => item.rows.filter(row => row.athleteId === id).map(row => ({item, row})));
+  const entries = id => index().get(id)?.results || [];
+  // Registry operations return new data objects; caches belong to one snapshot.
+  let indexedData = null, indexedRecords = null, groupedData = null, groupedRecords = null;
+  let autoData = null, autoPlan = null;
+  function nameClubPlan() {
+    if (autoData !== data) { autoPlan = R.nameClubPlan(data); autoData = data; }
+    return autoPlan;
+  }
   function index() {
+    if (indexedData === data) return indexedRecords;
+    const allPeople = new Map(data.athleteRegistry.athletes.map(a => [a.id,a]));
+    const resolved = new Map();
+    const resolve = id => {
+      const path = []; let current = id;
+      while (!resolved.has(current) && allPeople.get(current)?.mergedInto) { path.push(current); current = allPeople.get(current).mergedInto; }
+      current = resolved.get(current) || current; path.forEach(old => resolved.set(old,current)); resolved.set(id,current); return current;
+    };
     const map = new Map(people().map(a => [a.id, { athlete:a, names:new Set([a.name]), matchNames:new Set([a.name]), clubs:new Set(), count:0, results:[] }]));
     data.athleteRegistry.athletes.filter(a => a.mergedInto).forEach(a => {
-      const entry = map.get(R.resolve(data, a.id));
+      const entry = map.get(resolve(a.id));
       if (entry) { entry.names.add(a.id); entry.names.add(a.name); entry.matchNames.add(a.name); }
     });
     data.competitions.forEach(item => item.rows.forEach(row => {
       const x = map.get(row.athleteId); x.names.add(row.name); x.matchNames.add(row.name); x.clubs.add(row.club); x.count++; x.results.push({item,row});
-    })); return map;
+    })); indexedData = data; indexedRecords = map; return map;
   }
   let relationData = null, relationKeys = new Set();
   function knownDifferent(a,b) {
@@ -29,6 +44,7 @@
     return relationKeys.has(JSON.stringify([a,b].sort()));
   }
   function duplicateGroups() {
+    if (groupedData === data) return groupedRecords;
     const byName = new Map();
     [...index().values()].filter(x => x.count > 0).forEach(entry => {
       // Different spellings/accents are not guessed to be the same name.
@@ -49,10 +65,11 @@
       if (!byMembership.has(key)) byMembership.set(key,{names:new Set(),records:group.records});
       group.names.forEach(name => byMembership.get(key).names.add(name));
     });
-    return [...byMembership.values()].map(group => ({
+    groupedRecords = [...byMembership.values()].map(group => ({
       names:[...group.names].sort((a,b)=>a.localeCompare(b,"fi")),
       records:[...group.records.values()].sort((a,b)=>a.athlete.id.localeCompare(b.athlete.id))
     })).sort((a,b)=>a.names[0].localeCompare(b.names[0],"fi"));
+    groupedData = data; return groupedRecords;
   }
   function node(tag,text,className) {
     const el = document.createElement(tag); if (text !== undefined) el.textContent = text;
@@ -251,7 +268,7 @@
     });
   }
   function renderAutoSummary() {
-    const plan=R.nameClubPlan(data);
+    const plan=nameClubPlan();
     $("#auto-summary").textContent=plan.groups.length+" yhdistettävää ryhmää · "+plan.mergedProfiles+" poistuvaa erillistä profiilia · "+plan.movedResults+" siirtyvää tulosta. Tarkistettavaksi jää "+plan.skipped.length+" moniselitteistä tai eri henkilöiksi merkittyä ryhmää.";
     $("#auto-name-club").disabled=!plan.groups.length;
   }
@@ -384,7 +401,7 @@
   $("#kll-next").addEventListener("click",()=>{cancel();kllPage++;renderKll();});
   $("#auto-name-club").addEventListener("click",()=>{
     if(!data)return;
-    const plan=R.nameClubPlan(data);if(!plan.groups.length)return;
+    const plan=nameClubPlan();if(!plan.groups.length)return;
     const lines=plan.groups.map(g=>g.name+" · "+g.club+": "+g.sources.join(", ")+" → "+g.target+" ("+g.results+" tulosta)");
     preview("Yhdistetään automaattisesti "+plan.groups.length+" ryhmää samalla koko nimellä ja seuralla. "+plan.mergedProfiles+" erillistä profiilia yhdistyy ja "+plan.movedResults+" tulosta siirtyy.\n\n"+lines.join("\n")+"\n\nKoko ajon voi perua yhdellä painalluksella. Hyväksymisen jälkeen lataa päivitetty data.js.",()=>R.autoMergeNameClub(data),plan.groups[0].target);
   });
@@ -437,7 +454,7 @@
   });
   window.addEventListener("beforeunload", event => { if (dirty) { event.preventDefault(); event.returnValue = ""; } });
   try {
-    R.validate(window.PAINI_SHARED_DATA); data = JSON.parse(JSON.stringify(window.PAINI_SHARED_DATA));
+    R.validate(window.PAINI_SHARED_DATA); data = window.PAINI_SHARED_DATA;
     ["#person-search", "#person-list", "#only-unreviewed", "#duplicate-search", "#strong-search", "#kll-search"].forEach(selector => { $(selector).disabled = false; }); render();
     say("Rekisteri luettu. Mahdollisten kaksoismerkintöjen lista auttaa vertailussa. Nykyiset yhdistämiset ja tarkistustilat säilyvät; ehdotukset eivät muuta aineistoa.", "success");
   } catch (error) { say("Rekisteriä ei voitu avata: " + error.message + " Pidä data.js, athlete-registry.js, painijat.html, painijat.js ja style.css samassa kansiossa.", "error"); }
