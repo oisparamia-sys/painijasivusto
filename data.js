@@ -94494,7 +94494,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "36",
           "category": "Pojat 7 - 10v",
           "resultId": "tulos-010265",
-          "athleteId": "painija-009874"
+          "athleteId": "painija-000372"
         },
         {
           "place": 15,
@@ -302404,7 +302404,8 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-009874",
         "name": "Olavi Suomalainen",
-        "status": "unreviewed"
+        "status": "unreviewed",
+        "mergedInto": "painija-000372"
       },
       {
         "id": "painija-009875",
@@ -925681,9 +925682,38 @@ window.PAINI_SHARED_DATA = {
           }
         ],
         "competitions": []
+      },
+      {
+        "label": "Yhdistä painija-009874 → painija-000372",
+        "kind": "identity",
+        "at": "2026-10-30T20:45:17.621Z",
+        "people": [
+          {
+            "id": "painija-009874",
+            "before": {
+              "id": "painija-009874",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-009874",
+              "name": "Olavi Suomalainen",
+              "status": "unreviewed",
+              "mergedInto": "painija-000372"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "resultId": "tulos-010265",
+            "before": "painija-009874",
+            "after": "painija-000372"
+          }
+        ],
+        "competitions": []
       }
     ]
   },
-  "exportedAt": "2026-10-30T20:43:00.799Z",
+  "exportedAt": "2026-10-30T20:45:39.561Z",
   "updatedAt": "2026-10-30T20:16:55.989Z"
 };
