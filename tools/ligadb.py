@@ -40,12 +40,14 @@ def html_results(page):
    current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]) if count else None,rows=[],unranked=0,people=[]);groups.append(current)
   elif current:
    rank=re.fullmatch(r'(\d+)\.',cells[0])
+   # Dq is an official non-numeric outcome, never a finishing place.
+   nonnumeric=cells[0] in ['', '0.', '0'] or cells[0].casefold()=='dq'
    if rank and int(rank[1])>0 and cells[1] and cells[2]:current['rows'].append([cells[0],cells[1],cells[2]])
    elif cells[0].lower()=='tyhjä':continue
-   elif re.search(r'NR\d+\.htm',tr,re.I) or (len(cells)==3 and cells[0] in ['', '0.', '0'] and cells[1] and cells[2]):
-    if cells[0] not in ['', '0.', '0'] or not cells[1] or not cells[2]:raise ValueError('Osallistujarivin rakennetta ei tunnistettu')
+   elif re.search(r'NR\d+\.htm',tr,re.I) or (len(cells)==3 and nonnumeric and cells[1] and cells[2]):
+    if not nonnumeric or not cells[1] or not cells[2]:raise ValueError('Osallistujarivin rakennetta ei tunnistettu')
     current['unranked']+=1
-   if (rank and int(rank[1])>0) or (cells[0] in ['', '0.', '0'] and cells[1] and cells[2]):current['people'].append((cells[1].casefold(),cells[2].casefold()))
+   if (rank and int(rank[1])>0) or (nonnumeric and cells[1] and cells[2]):current['people'].append((cells[1].casefold(),cells[2].casefold()))
  for group in groups:
   if group['count'] is not None and len(group['rows'])+group['unranked']!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
  return groups
