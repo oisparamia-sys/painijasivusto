@@ -52,6 +52,7 @@ function refresh(selected = "") {
     item.title + (item.details ? " · " + item.details : ""), identity(item)
   )));
   select.value = selected;
+  $("#competition-search").value = competitions.find(item => identity(item) === selected)?.title || "";
   refreshFilters();
 }
 function selectedCompetitions() {
@@ -59,6 +60,8 @@ function selectedCompetitions() {
   return selected ? competitions.filter(item => identity(item) === selected) : competitions;
 }
 function refreshFilters() {
+  const chosen = competitions.find(item => identity(item) === $("#competition").value);
+  if (chosen) $("#competition-search").value = chosen.title + (chosen.details ? " · " + chosen.details : "");
   const allItems = selectedCompetitions();
   const years = allItems.map(resultYear);
   options($("#result-year"), years, "Kaikki vuodet");
@@ -435,6 +438,78 @@ function renderCompetitionList() {
   $("#competition-empty").hidden = filtered.length > 0;
 }
 
+// Searchable competition chooser. Filtering never changes identities or source data.
+function competitionPicker({inputId, rootId, listId, panelId, countId, allowAll, choose, changed}) {
+  const input = document.getElementById(inputId), root = document.getElementById(rootId);
+  const list = document.getElementById(listId), panel = document.getElementById(panelId), count = document.getElementById(countId);
+  let choices = [], active = -1;
+  function close() {
+    panel.hidden = true; active = -1; input.setAttribute("aria-expanded","false");
+    input.removeAttribute("aria-activedescendant");
+    list.querySelectorAll('[aria-selected="true"]').forEach(option => option.setAttribute("aria-selected","false"));
+  }
+  function highlight(index) {
+    if (!choices.length) return;
+    active = (index + choices.length) % choices.length;
+    [...list.children].forEach((option,i) => option.setAttribute("aria-selected",String(i === active)));
+    const option = list.children[active]; input.setAttribute("aria-activedescendant",option.id);
+    option.scrollIntoView({block:"nearest"});
+  }
+  function select(index) {
+    if (index < 0 || index >= choices.length) return;
+    const item = choices[index]; close(); choose(item);
+  }
+  function show() {
+    const query = input.value.trim();
+    const matches = competitions.filter(item => matchesCompetitionQuery(item.title+" "+item.details,query));
+    const tokens = searchWords(query);
+    const quality = item => {
+      const words = searchWords(item.title+" "+item.details);
+      return tokens.reduce((score,token) => score + (words.includes(token) ? 3 : words.some(word => word.startsWith(token)) ? 2 : words.some(word => word.includes(token)) ? 1 : 0),0);
+    };
+    matches.sort((a,b) => quality(b)-quality(a) || competitionDate(b)-competitionDate(a) || a.title.localeCompare(b.title,"fi") || a.details.localeCompare(b.details,"fi"));
+    choices = allowAll && !query ? [null,...matches] : matches; active = -1;
+    list.replaceChildren(); input.removeAttribute("aria-activedescendant");
+    choices.forEach((item,index) => {
+      const option = document.createElement("li"); option.id = listId+"-"+index;
+      option.setAttribute("role","option"); option.setAttribute("aria-selected","false");
+      const title = document.createElement("strong"); title.textContent = item?.title || "Kaikki kilpailut"; option.append(title);
+      const details = document.createElement("span"); details.textContent = item ? item.details : "Poista kilpailurajaus"; option.append(details);
+      option.addEventListener("mousedown",event => event.preventDefault());
+      option.addEventListener("click",() => select(index)); list.append(option);
+    });
+    count.textContent = matches.length ? matches.length+" sopivaa kilpailua. Valitse kilpailu tai käytä nuolinäppäimiä ja Enteriä." : "Kilpailuja ei löytynyt. Kokeile lyhyempää hakua tai pelkkää paikkakuntaa.";
+    panel.hidden = false; input.setAttribute("aria-expanded","true");
+  }
+  input.addEventListener("input",() => { if (changed) changed(); show(); });
+  input.addEventListener("focus",show);
+  input.addEventListener("click",() => { if (panel.hidden) show(); });
+  input.addEventListener("keydown",event => {
+    if (event.key === "Escape") { event.preventDefault(); close(); }
+    else if (event.key === "Tab") close();
+    else if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault(); if (panel.hidden) show();
+      highlight(active === -1 ? (event.key === "ArrowDown" ? 0 : choices.length-1) : active+(event.key === "ArrowDown" ? 1 : -1));
+    } else if (event.key === "Enter" && !panel.hidden) { event.preventDefault(); select(active < 0 ? 0 : active); }
+  });
+  document.addEventListener("pointerdown",event => { if (!root.contains(event.target)) close(); });
+  document.addEventListener("focusin",event => { if (!root.contains(event.target)) close(); });
+  return {close};
+}
+const resultCompetitionPicker = competitionPicker({
+  inputId:"competition-search",rootId:"competition-picker",listId:"competition-suggestions",panelId:"competition-suggestion-panel",countId:"competition-suggestion-count",allowAll:true,
+  changed:() => { if ($("#competition").value) { $("#competition").value=""; refreshFilters(); } },
+  choose:item => {
+    $("#competition").value = item ? identity(item) : "";
+    $("#competition-search").value = item ? item.title+" · "+item.details : "";
+    refreshFilters();
+  }
+});
+competitionPicker({
+  inputId:"competition-query",rootId:"directory-picker",listId:"directory-suggestions",panelId:"directory-suggestion-panel",countId:"directory-suggestion-count",allowAll:false,
+  choose:item => { if (item) openCompetition(item); }
+});
+
 document.querySelectorAll(".results-prev").forEach(button => button.addEventListener("click", () => {
   if (resultsPage === 0) return;
   resultsPage--; render(true); $("#results-heading").focus();
@@ -448,6 +523,8 @@ $("#reset-filters").addEventListener("click", () => {
     document.getElementById(id).value = "";
   });
   $("#result-sort").value = "newest";
+  $("#competition-search").value = "";
+  resultCompetitionPicker.close();
   refreshFilters();
 });
 $("#competition").addEventListener("change", refreshFilters);

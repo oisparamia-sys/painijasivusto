@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painijatulokset</title>
-<link rel="stylesheet" href="style.css?v=20261028-partial1">
+<link rel="stylesheet" href="style.css?v=20261030-suggestions1">
 </head>
 <body>
 <header><div>Painijatulokset</div></header>
@@ -19,7 +19,15 @@
 <section id="search-view" class="card" aria-label="Tuloshaku">
 <p id="data-summary" class="hint"></p>
 <div class="filters">
-<div class="field"><label for="competition">Kilpailu</label><select id="competition"></select></div>
+<div class="field competition-picker" id="competition-picker">
+<label for="competition-search">Kilpailu</label>
+<input id="competition-search" type="search" placeholder="Hae kilpailun nimellä, paikalla tai vuodella…" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="competition-suggestions" aria-describedby="competition-search-hint" autocomplete="off">
+<select id="competition" hidden aria-hidden="true" tabindex="-1"></select>
+<p id="competition-search-hint" class="hint">Pienet kirjoitusvirheet sallitaan. Valitse kilpailu alla olevasta valikosta. Tyhjä haku näyttää kaikki kilpailut.</p>
+<div id="competition-suggestion-panel" class="competition-suggestion-panel" hidden>
+<p id="competition-suggestion-count" class="suggestion-count" role="status" aria-live="polite"></p>
+<ul id="competition-suggestions" class="competition-suggestions" role="listbox" aria-label="Sopivat kilpailut"></ul>
+</div></div>
 <div class="field"><label for="result-style">Painimuoto</label><select id="result-style"><option value="">Kaikki painimuodot</option><option value="greco">Kreikkalais-roomalainen</option><option value="freestyle">Vapaapaini</option><option value="women">Naispaini</option><option value="unknown">Ei vahvistettu</option></select></div>
 <div class="field"><label for="result-year">Vuosi</label><select id="result-year"></select></div>
 <div class="field"><label for="result-sort">Tulosten järjestys</label><select id="result-sort"><option value="newest">Uusimmat ensin</option><option value="oldest">Vanhimmat ensin</option><option value="place">Paras sijoitus ensin</option></select></div>
@@ -56,10 +64,14 @@
   <h2 id="competition-heading" tabindex="-1">Kilpailut</h2>
   <p class="hint">Etsi kilpailun nimellä, paikkakunnalla tai päivämäärällä. Tässä näkyvät sivuston kilpailuaineistoon kuuluvat kilpailut.</p>
   <div class="filters">
-    <div class="field">
+    <div class="field competition-picker" id="directory-picker">
       <label for="competition-query">Etsi kilpailua</label>
-      <input aria-describedby="competition-search-help" id="competition-query" type="search" placeholder="Esimerkiksi Tampere tai 2026…">
+      <input aria-describedby="competition-search-help" id="competition-query" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="directory-suggestions" autocomplete="off" placeholder="Esimerkiksi Tampere tai 2026…">
       <p id="competition-search-help" class="hint">Voit hakea nimellä, paikkakunnalla tai vuodella. Haku sietää pieniä kirjoitusvirheitä.</p>
+      <div id="directory-suggestion-panel" class="competition-suggestion-panel" hidden>
+        <p id="directory-suggestion-count" class="suggestion-count" role="status" aria-live="polite"></p>
+        <ul id="directory-suggestions" class="competition-suggestions" role="listbox" aria-label="Sopivat kilpailut"></ul>
+      </div>
     </div>
     <div class="field">
       <label for="competition-sort">Järjestys</label>
@@ -125,7 +137,7 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="fresh-data.js?v=20261028-partial1" defer></script>
+<script src="fresh-data.js?v=20261030-suggestions1" defer></script>
 <script src="haun-tila.js?v=20261027-status1" defer></script>
 </body>
 </html>
