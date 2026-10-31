@@ -1,60 +1,36 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-31T15:02:28.830Z",
-  "updatedAt": "2026-10-31T15:02:28.830Z",
-  "competitions": 289,
-  "results": 34077,
-  "added": 4,
-  "changed": 2,
-  "unchanged": 280,
+  "checkedAt": "2026-10-31T15:22:35.864Z",
+  "updatedAt": "2026-10-31T15:22:35.864Z",
+  "competitions": 292,
+  "results": 34157,
+  "added": 3,
+  "changed": 0,
+  "unchanged": 287,
   "changes": [
     {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240914_Jaervenpaeae/indexFIN.htm",
+      "partial": false,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae1/indexFIN.htm",
       "kind": "added",
-      "title": "Järvenpää Cup/Penan painit",
-      "details": "Järvenpää, 14.9.2024",
-      "rows": 148
+      "title": "Avoimet piirinmestaruuskilpailut",
+      "details": "Järvenpää, 17.12.2022",
+      "rows": 21
     },
     {
       "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251004_Hyvinkaeae/indexFIN.htm",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/indexFIN.htm",
       "kind": "added",
-      "title": "FFC ja Champions Cup",
-      "details": "Hyvinkää, 4.10.2025",
-      "rows": 121
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/indexFIN.htm",
-      "kind": "added",
-      "title": "Laihian Lujan 30v painit",
-      "details": "Laihia, 31/01/2026",
-      "rows": 157
+      "title": "Avoimet Piirinmestaruuskilpailut",
+      "details": "Järvenpää, 1.4.2023",
+      "rows": 30
     },
     {
       "partial": false,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Alavus/indexFIN.htm",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja1/indexFIN.htm",
       "kind": "added",
-      "title": "Alavus Hehku-painit",
-      "details": "Alavus, 31.10.2026",
-      "rows": 101
-    },
-    {
-      "partial": false,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Helsinki/indexFIN.htm",
-      "kind": "updated",
-      "title": "Symppispainit (Haka)",
-      "details": "Helsinki, 31.10.2026",
-      "rows": 59
-    },
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
-      "kind": "updated",
-      "title": "Kurun Ryhdin Marraspainit 2026",
-      "details": "Kuru, 31.10.2026",
-      "rows": 36
+      "title": "Avoin Piirinmestaruuskilpailu",
+      "details": "Lohja, 9.12.2023",
+      "rows": 29
     }
   ],
   "partial": [
@@ -710,6 +686,29 @@
       "status": "unchanged"
     },
     {
+      "title": "Avoimet Piirinmestaruuskilpailut",
+      "details": "Järvenpää, 1.4.2023",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/indexFIN.htm",
+      "rows": 30,
+      "notes": [
+        {
+          "category": "Ystävyysottelu",
+          "weight": "30",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/FIN354017664_tab.txt"
+        },
+        {
+          "category": "Ystävyysottelu",
+          "weight": "54",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/FIN354017664_tab.txt"
+        }
+      ],
+      "status": "added"
+    },
+    {
       "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2023",
       "details": "Nokia, 15.4.2023",
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm",
@@ -1168,7 +1167,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240914_Jaervenpaeae/FIN1132749183_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Nääshalli painit .10.10.2024",
@@ -1671,7 +1670,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251004_Hyvinkaeae/FIN1332371840_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Aikuisharrastajien painikilpailut VI",
@@ -1786,7 +1785,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/FIN142625216039tlges.htm"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Raimo ja Esko Taskisen muistopainit",
@@ -2318,7 +2317,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576020tlges.htm"
         }
       ],
-      "status": "updated"
+      "status": "unchanged"
     }
   ],
   "errors": [
@@ -2343,24 +2342,8 @@
       "error": "Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa"
     },
     {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Lahti/indexFIN.htm",
-      "error": "<urlopen error timed out>"
-    },
-    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Kotka/indexFIN.htm",
       "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae1/indexFIN.htm",
-      "error": "Mahdollinen kaksoiskilpailu; tarkista käsin"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/indexFIN.htm",
-      "error": "Mahdollinen kaksoiskilpailu; tarkista käsin"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja1/indexFIN.htm",
-      "error": "Mahdollinen kaksoiskilpailu; tarkista käsin"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/indexFIN.htm",
