@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 import http.server, urllib.request, urllib.parse, json, re, html, pathlib, webbrowser, threading
+from html.parser import HTMLParser
 ROOT=pathlib.Path(__file__).resolve().parent
 HOST='turniereklassisch.ringerdb.de'
 # Verified English result pages for invalid Finnish links in the catalogue.
 SOURCE_ALIASES={'https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexENG.htm', 'https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm'}
-def get(url):
+def get(url, fields=None):
  u=urllib.parse.urlparse(url)
  if u.scheme!='https' or u.hostname not in [HOST,'www.ringerdb.de']:raise ValueError('Lähdeosoite ei kelpaa')
- with urllib.request.urlopen(url,timeout=30) as r:
+ if fields is not None and (u.hostname!='www.ringerdb.de' or u.path.lower()!='/de/turniere/turnieruebersicht.aspx'):raise ValueError('Luettelon sivutusosoite ei kelpaa')
+ request=url if fields is None else urllib.request.Request(url,data=urllib.parse.urlencode(fields).encode())
+ with urllib.request.urlopen(request,timeout=30) as r:
   if urllib.parse.urlparse(r.url).hostname not in [HOST,'www.ringerdb.de']:raise ValueError('Tuntematon uudelleenohjaus')
   b=r.read(6*1024*1024+1)
  if len(b)>6*1024*1024:raise ValueError('Lähdetiedosto on liian suuri')
@@ -16,14 +19,61 @@ def get(url):
   except UnicodeDecodeError:pass
  raise ValueError('Merkistöä ei tunnistettu')
 def links(s):return list(dict.fromkeys(html.unescape(x) for x in re.findall(r'href\s*=\s*[\"\']([^\"\']+)',s,re.I)))
+class CatalogForm(HTMLParser):
+ def __init__(self):
+  super().__init__(convert_charrefs=True);self.fields={};self.current=None;self.targets={};self.anchor=None
+ def handle_starttag(self,tag,attrs):
+  a=dict(attrs)
+  if tag=='input' and a.get('name') and a.get('type','text').lower() in ['hidden','text'] and 'disabled' not in a:
+   self.fields[a['name']]=a.get('value','')
+  if tag=='a':self.anchor=[a,[]]
+ def handle_data(self,text):
+  if self.anchor is not None:self.anchor[1].append(text)
+ def handle_endtag(self,tag):
+  if tag!='a' or self.anchor is None:return
+  a,text=self.anchor;self.anchor=None;text=''.join(text).strip()
+  if not text.isdecimal():return
+  page=int(text)
+  if 'rgCurrentPage' in a.get('class','').split():self.current=page
+  target=re.fullmatch(r"javascript:__doPostBack\('([^']+)',''\)",a.get('href',''))
+  if target and 'dgrTurnieruebersicht' in target[1]:self.targets[page]=target[1]
+
+def catalog_page(s):
+ form=CatalogForm();form.feed(s)
+ # The source lists the total number of catalogue records, not result links.
+ info=re.search(r'\brgInfoPart[^>]*>(.*?)</div>',s,re.S|re.I)
+ counts=re.findall(r'<strong>\s*(\d+)\s*</strong>',info[1],re.I) if info else []
+ records=len(re.findall(r'<tr\b[^>]*\bclass=["\'](?:rgRow|rgAltRow)["\']',s,re.I))
+ # RingerDB omits the pager entirely when all records fit on one page.
+ if not info and 'rgPager' not in s and 'dgrTurnieruebersicht' in s and 0<records<=50:
+  form.current=1;return form,records,1,records
+ if len(counts)!=2 or form.current is None:raise ValueError('Luettelon sivumäärää ei tunnistettu; hakua ei merkitä täydelliseksi')
+ total,number=int(counts[0]),int(counts[1])
+ if not 1<=form.current<=number<=40:raise ValueError('Luettelon sivumäärä ei kelpaa')
+ records=len(re.findall(r'<tr\b[^>]*\bclass=["\'](?:rgRow|rgAltRow)["\']',s,re.I))
+ return form,total,number,records
+
 def catalog(year):
  if year not in range(2022,2027):raise ValueError('Valitse vuosi 2022–2026')
  u=f'https://www.ringerdb.de/de/turniere/Turnieruebersicht.aspx?Saison={year}&land=FI&ZB=E'
- s=get(u);urls=[]
- for link in links(s):
-  link=link.replace('http://','https://').replace('www.liga-db.de/Turniere/','turniereklassisch.ringerdb.de/')
-  if re.match(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/'+str(year)+r'/FI/[^/]+/index(?:FIN|ENG)\.htm$',link,re.I):
-   urls.append(SOURCE_ALIASES.get(link,link))
+ s=get(u);urls=[];expected=None;record_count=0;previous=0
+ while True:
+  form,total,pages,records=catalog_page(s)
+  if form.current!=previous+1:raise ValueError('Luettelon sivutus ei edennyt; hakua ei merkitä täydelliseksi')
+  if expected is None:expected=(total,pages)
+  if expected!=(total,pages):raise ValueError('Luettelo muuttui kesken haun; kokeile myöhemmin uudelleen')
+  record_count+=records
+  for link in links(s):
+   link=link.replace('http://','https://').replace('www.liga-db.de/Turniere/','turniereklassisch.ringerdb.de/')
+   if re.match(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/'+str(year)+r'/FI/[^/]+/index(?:FIN|ENG)\.htm$',link,re.I):
+    urls.append(SOURCE_ALIASES.get(link,link))
+  previous=form.current
+  if previous==pages:break
+  target=form.targets.get(previous+1)
+  if not target or not form.fields.get('__VIEWSTATE'):raise ValueError('Luettelon seuraavaa sivua ei voitu avata')
+  fields={**form.fields,'__EVENTTARGET':target,'__EVENTARGUMENT':''}
+  s=get(u,fields)
+ if record_count!=expected[0]:raise ValueError('Luettelon rivimäärä ei täsmää; kaikkia sivuja ei voitu varmistaa')
  if not urls:raise ValueError('Luettelosta ei löytynyt tuloslinkkejä. Lähteen rakenne voi olla muuttunut.')
  return sorted(set(urls))
 def clean(value):
