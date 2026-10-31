@@ -146,7 +146,7 @@ def competition(url):
  url=SOURCE_ALIASES.get(url,url)
  if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/index(?:FIN|ENG)\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
  s=get(url);alllinks=links(s);raw=[u for u in alllinks if '_tab.txt' in u]
- pages=[];generated=[];warnings=[];recovered=False
+ pages=[];generated=[];warnings=[];recovered=False;incomplete_categories=False
  for link in alllinks:
   if 'tlges.htm' not in link:continue
   pageurl=urllib.parse.urljoin(url,link);page=get(pageurl);plain=clean(page)
@@ -168,8 +168,18 @@ def competition(url):
   else:raise ValueError('Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa')
   code=style_code(style)
   if not code:raise ValueError('Painimuotoa ei ole ilmoitettu lähteessä: '+category)
-  if sum(len(g['rows'])+g['unranked'] for g in groups)!=count:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
   if any(g['category'].casefold()!=category.casefold() for g in groups):raise ValueError('Sarjan otsikko ja painoluokat eroavat')
+  observed=sum(len(g['rows'])+g['unranked'] for g in groups)
+  if observed!=count:
+   # A conflicting category does not invalidate the other category pages.
+   # Omit this entire category, never adjust its totals or invent placements.
+   # Each weight must itself have a checked participant count before it can
+   # be listed as omitted; structurally invalid pages still fail the import.
+   if not groups or any(g['count'] is None for g in groups):raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
+   incomplete_categories=True
+   reason='Sarjan osallistujamäärä '+str(count)+', tulosluettelossa '+str(observed)
+   warnings += [dict(category=category,weight=g['weight'],excluded=g['count'],unranked=g['unranked'],source=pageurl,reason=reason) for g in groups]
+   continue
   for g in groups:
    if g['count'] is None:g['count']=len(g['rows'])+g['unranked']
   original_unranked=sum(g['unranked'] for g in groups)
@@ -183,6 +193,7 @@ def competition(url):
   if complete:
    pages.append(dict(category=category,style=code,count=sum(len(g['rows']) for g in complete),url=pageurl));generated+=complete
  if not pages:
+  if incomplete_categories:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat; muita vahvistettuja sarjoja ei löytynyt')
   if warnings:raise ValueError('Tulosluetteloissa ei ole vielä vahvistettuja sijoituksia')
   if any(re.search(r'mld\d+\.htm$', u, re.I) for u in alllinks):raise ValueError('Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia')
   raise ValueError('Sarjakohtaisia tulosluetteloita ei löytynyt')
