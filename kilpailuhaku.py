@@ -150,9 +150,14 @@ def competition(url):
  for link in alllinks:
   if 'tlges.htm' not in link:continue
   pageurl=urllib.parse.urljoin(url,link);page=get(pageurl);plain=clean(page)
-  m=re.search(r'(?:Täyd\. tulosluettelo|List of winners complete|Result list complete) (.*?) - ([^()]+?) \((\d+) (?:Osallistujaa?|Participants?)\)',plain,re.I)
+  m=re.search(r'(?:Täyd\. tulosluettelo|List of winners complete|Result list complete) (.*?) \((\d+) (?:Osallistujaa?|Participants?)\)',plain,re.I)
   groups=html_results(page)
-  if m:category,style,count=m[1],m[2],int(m[3])
+  if m:
+   # Age ranges can contain the same separator as the style suffix.
+   # Split the header at its final separator, never inside '11 - 13v'.
+   heading=m[1].rsplit(' - ',1)
+   if len(heading)!=2:raise ValueError('Sarjaotsikon painimuotoa ei tunnistettu')
+   category,style=heading;count=int(m[2])
   elif groups:
    if any(g['count'] is None for g in groups):raise ValueError('Osallistujamäärää ei ole ilmoitettu sarjalle eikä kaikille painoluokille')
    categories=set(g['category'] for g in groups)
