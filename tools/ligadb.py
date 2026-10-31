@@ -142,11 +142,25 @@ def style_code(value):
  return {'kr.room.':'greco','greco roman':'greco','greco roman style':'greco',
          'vapaa':'freestyle','free style':'freestyle','freestyle':'freestyle'}.get(label)
 
+def empty_result_category(page, category_link):
+ # LigaDB also publishes empty category templates without a participant count.
+ # Recognise the complete empty template, never an arbitrary blank/error page.
+ heading=re.search(r'<td\b[^>]*\bclass=["\']StdTitel["\'][^>]*>\s*Täyd\. tulosluettelo\s*<br\s*/?>\s*([^<]+)</td>',page,re.I)
+ nav=re.search(r'<div\b[^>]*\bid=["\']GewichtLinkBlock_\d+["\'][^>]*>(.*?)</div>',page,re.I|re.S)
+ if not heading or not nav or not re.search(r'\bid=["\']tvwErgebnisfuss["\']',page,re.I):return None
+ if len(re.findall(r'<table\b',page,re.I))!=2 or len(re.findall(r'<tr\b',page,re.I))!=5:return None
+ if clean(nav[1])!='Tuloslista Seurapisteet Ottelutulos Turnauspöytäkirja (PDF)':return None
+ name=category_link.rsplit('/',1)[-1]
+ if set(links(nav[1]))!={name,name.removesuffix('tlges.htm')+'mw.htm'}:return None
+ if re.search(r'\bNR\d+\.htm|\d+(?:[.,]\d+)?\s*kg\b',page,re.I):return None
+ category=clean(heading[1])
+ return category if category and not re.search(r'\(\d+ (?:Osallistujaa?|Participants?)\)',category,re.I) else None
+
 def competition(url):
  url=SOURCE_ALIASES.get(url,url)
  if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/index(?:FIN|ENG)\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
  s=get(url);alllinks=links(s);raw=[u for u in alllinks if '_tab.txt' in u]
- pages=[];generated=[];warnings=[];recovered=False;incomplete_categories=False
+ pages=[];generated=[];warnings=[];recovered=False;incomplete_categories=False;empty_categories=set()
  for link in alllinks:
   if 'tlges.htm' not in link:continue
   pageurl=urllib.parse.urljoin(url,link);page=get(pageurl);plain=clean(page)
@@ -165,7 +179,11 @@ def competition(url):
    category=next(iter(categories));count=sum(g['count'] for g in groups)
    # Only an explicit style word in the official category is accepted.
    style='Vapaa' if re.search(r'\bvapaa(?:paini)?\b',category,re.I) else 'Kr.room.' if re.search(r'\bkr[. ]|kreikkalais',category,re.I) else ''
-  else:raise ValueError('Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa')
+  else:
+   empty=empty_result_category(page,link)
+   if empty:
+    empty_categories.add(empty.casefold());continue
+   raise ValueError('Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa')
   code=style_code(style)
   if not code:raise ValueError('Painimuotoa ei ole ilmoitettu lähteessä: '+category)
   if any(g['category'].casefold()!=category.casefold() for g in groups):raise ValueError('Sarjan otsikko ja painoluokat eroavat')
@@ -213,6 +231,7 @@ def competition(url):
    # HTML cleaning collapses whitespace; compare TXT labels the same way.
    # This is a comparison key only: the original TXT contents stay unchanged.
    category=' '.join(h[2].split());weight=h[1].replace(',','.')
+   if category.casefold() in empty_categories:raise ValueError('Tyhjän sarjasivun ja tekstitiedoston tiedot eroavat: '+category)
    if (category.casefold(),weight) not in known and not any(w['category'].casefold()==category.casefold() and w['weight']==weight for w in warnings):
     if not re.search(r'ystävyys',category,re.I):raise ValueError('Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: '+category)
     warnings.append(dict(category=category,weight=weight,excluded=int(h[3]),unranked=0,source=rawurl))
