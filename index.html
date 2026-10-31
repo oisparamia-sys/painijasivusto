@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painijatulokset</title>
-<link rel="stylesheet" href="style.css?v=20261030-suggestions1">
+<link rel="stylesheet" href="style.css?v=20261031-refresh1">
 </head>
 <body>
 <header><div>Painijatulokset</div></header>
@@ -15,6 +15,10 @@
   <button id="nav-competitions" type="button" aria-pressed="false">Kilpailut</button>
 </nav>
 <p>Hae painijan tuloksia nimellä ja rajaa niitä vuoden, painimuodon, kilpailun tai seuran mukaan.</p>
+<section id="data-refresh-box" class="data-refresh-box" aria-label="Aineiston päivittäminen" data-update-available="false">
+  <p id="data-refresh-status" role="status" aria-live="polite">Tarkistetaan, onko uusia tietoja saatavilla…</p>
+  <a id="refresh-data" class="refresh-data-button" href="?paivitys=20261031" aria-describedby="data-refresh-status">Päivitä tiedot</a>
+</section>
 <div id="status" class="status" role="status" aria-live="polite" hidden></div>
 <section id="search-view" class="card" aria-label="Tuloshaku">
 <p id="data-summary" class="hint"></p>
@@ -137,8 +141,7 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="fresh-data.js?v=20261030-suggestions1" defer></script>
-<script src="haun-tila.js?v=20261027-status1" defer></script>
+<script src="fresh-data.js?v=20261031-refresh1" defer></script>
 </body>
 </html>
 

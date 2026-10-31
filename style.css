@@ -141,3 +141,23 @@ a { color: #174ba9; }
 .partial-results-note{background:#fff8e7;color:#4f3d19;border:1px solid #e7d4a0;padding:16px;border-radius:10px;margin:16px 0;overflow-wrap:anywhere}
 .partial-results-note p{margin:8px 0}
 .partial-results-note[hidden]{display:none}
+
+/* Competition suggestions stay in page flow on narrow screens. */
+.competition-picker{min-width:0}
+.competition-picker input{width:100%;min-width:0}
+.competition-suggestion-panel{margin-top:8px;border:1px solid #c9d5e6;border-radius:10px;background:#fff;box-shadow:0 4px 14px #142e5010;overflow:hidden}
+.suggestion-count{font-size:13px;color:#526176;margin:0;padding:10px 12px;border-bottom:1px solid #e5eaf1}
+.competition-suggestions{list-style:none;margin:0;padding:0;max-height:320px;overflow-y:auto;overscroll-behavior:contain}
+.competition-suggestions li{display:flex;flex-direction:column;gap:4px;padding:12px;min-height:48px;cursor:pointer;overflow-wrap:anywhere;border-bottom:1px solid #edf0f5}
+.competition-suggestions li:last-child{border-bottom:0}
+.competition-suggestions li:hover,.competition-suggestions li[aria-selected="true"]{background:#e9f1ff;color:#173e82}
+.competition-suggestions li span{font-size:14px;color:#526176}
+.competition-picker select[hidden],.competition-suggestion-panel[hidden]{display:none}
+
+.data-refresh-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;margin:18px 0;border:1px solid #dbe4ef;border-radius:12px;background:#fff}
+.data-refresh-box p{flex:1 1 260px;margin:0;color:#526176;font-size:14px}
+.data-refresh-box[data-update-available="true"]{background:#fff7df;border-color:#d5a735}
+.data-refresh-box[data-update-available="true"] p{color:#624600;font-weight:600}
+.refresh-data-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border-radius:9px;background:#2357bf;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+.refresh-data-button:hover{background:#174397}
+.refresh-data-button:focus-visible{outline:3px solid #95b9ff;outline-offset:3px}
