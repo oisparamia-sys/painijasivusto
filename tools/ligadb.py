@@ -136,6 +136,12 @@ def usable_tab(text):
   found=True
  return active and found
 
+def style_code(value):
+ # Accept explicit source labels only; never infer style from event name or age.
+ label=re.sub(r'[\s\-\u2010-\u2015]+',' ',value.casefold()).strip()
+ return {'kr.room.':'greco','greco roman':'greco','greco roman style':'greco',
+         'vapaa':'freestyle','free style':'freestyle','freestyle':'freestyle'}.get(label)
+
 def competition(url):
  url=SOURCE_ALIASES.get(url,url)
  if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/index(?:FIN|ENG)\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
@@ -144,7 +150,7 @@ def competition(url):
  for link in alllinks:
   if 'tlges.htm' not in link:continue
   pageurl=urllib.parse.urljoin(url,link);page=get(pageurl);plain=clean(page)
-  m=re.search(r'(?:Täyd\. tulosluettelo|List of winners complete) (.*) - (.*?) \((\d+) (?:Osallistujaa|Participants?)\)',plain)
+  m=re.search(r'(?:Täyd\. tulosluettelo|List of winners complete|Result list complete) (.*?) - ([^()]+?) \((\d+) (?:Osallistujaa?|Participants?)\)',plain,re.I)
   groups=html_results(page)
   if m:category,style,count=m[1],m[2],int(m[3])
   elif groups:
@@ -155,7 +161,7 @@ def competition(url):
    # Only an explicit style word in the official category is accepted.
    style='Vapaa' if re.search(r'\bvapaa(?:paini)?\b',category,re.I) else 'Kr.room.' if re.search(r'\bkr[. ]|kreikkalais',category,re.I) else ''
   else:raise ValueError('Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa')
-  code={'Kr.room.':'greco','Vapaa':'freestyle','Greco-Roman':'greco','Greco Roman':'greco','Free style':'freestyle','Freestyle':'freestyle'}.get(style)
+  code=style_code(style)
   if not code:raise ValueError('Painimuotoa ei ole ilmoitettu lähteessä: '+category)
   if sum(len(g['rows'])+g['unranked'] for g in groups)!=count:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
   if any(g['category'].casefold()!=category.casefold() for g in groups):raise ValueError('Sarjan otsikko ja painoluokat eroavat')
