@@ -1,5 +1,20 @@
 'use strict';
 const fs=require('fs'),vm=require('vm');const {parseLigaDB}=require('./ligadb-parser.cjs');
+// Officially separate Symppis and district championships, checked against both
+// source result lists. These exceptions do not permit arbitrary same-day imports.
+const separateEvents=[
+ ['VT/2022/FI/221217_Jaervenpaeae','Symppispainit','VT/2022/FI/221217_Jaervenpaeae1','Avoimet piirinmestaruuskilpailut','Järvenpää, 17.12.2022'],
+ ['VT/2023/FI/230401_Jaervenpaeae1','Symppispainit (JäVo)','VT/2023/FI/230401_Jaervenpaeae','Avoimet Piirinmestaruuskilpailut','Järvenpää, 1.4.2023'],
+ ['VT/2023/FI/231209_Lohja','Symppis painit','VT/2023/FI/231209_Lohja1','Avoin Piirinmestaruuskilpailu','Lohja, 9.12.2023']
+];
+const sourceUrl=path=>'https://turniereklassisch.ringerdb.de/'+path+'/indexFIN.htm';
+function verifiedSeparate(a,b,R,sig){
+ if(sig(a)===sig(b))return false;
+ return separateEvents.some(([ap,at,bp,bt,details])=>{
+  const matches=(c,path,title)=>c.source===sourceUrl(path)&&R.norm(c.title)===R.norm(title)&&R.norm(c.details)===R.norm(details);
+  return matches(a,ap,at)&&matches(b,bp,bt)||matches(b,ap,at)&&matches(a,bp,bt);
+ });
+}
 function update(base,R,payload){
  R.validate(base);const existing=new Map(base.competitions.map(c=>[R.compKey(c),c])),incoming=[],seen=new Set(),errors=[...payload.errors],log=[],changes=[],partial=[];let unchanged=0;
  const sig=c=>JSON.stringify(c.rows.map(r=>JSON.stringify([r.name,r.club,r.category,r.weight,r.place])).sort());
@@ -16,7 +31,7 @@ function update(base,R,payload){
   if(old&&sig(old)===sig(item)&&JSON.stringify(old.importNotes||[])===JSON.stringify(item.importNotes||[])){if(item.importNotes?.length)partial.push({title:item.title,details:item.details,source:response.source,rows:item.rows.length,notes:item.importNotes,status:"unchanged"});unchanged++;continue;}
   // Avoid silently deleting existing results if an official page becomes partial.
   if(old&&item.rows.length<old.rows.length)throw Error('Tulosmäärä pieneni; tarkista käsin');
-  if(!old&&base.competitions.some(c=>c.source===response.source||R.norm(c.details)===R.norm(item.details)))throw Error('Mahdollinen kaksoiskilpailu; tarkista käsin');
+  if(!old&&[...base.competitions,...incoming].some(c=>c.source===response.source||R.norm(c.details)===R.norm(item.details)&&!verifiedSeparate(c,{...item,source:response.source},R,sig)))throw Error('Mahdollinen kaksoiskilpailu; tarkista käsin');
   Object.assign(item,{source:response.source,textSource:response.textSource,fileInfo:'LigaDB · ajastettu haku · '+new Date().toISOString().slice(0,10)});
   if(item.importNotes?.length)partial.push({title:item.title,details:item.details,source:response.source,rows:item.rows.length,notes:item.importNotes,status:old?"updated":"added"});
   changes.push({partial:!!item.importNotes?.length,source:response.source,kind:old?"updated":"added",title:item.title,details:item.details,rows:item.rows.length});incoming.push(item);log.push(item.title+' · '+item.details+' · '+item.rows.length+' tulosta');
