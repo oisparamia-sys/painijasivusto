@@ -199,7 +199,9 @@ def competition(url):
   for line in rawtext.splitlines():
    h=re.fullmatch(r'\s*(\d+(?:[.,]\d+)?)\s*kg\t([^\t]+)\t\((\d+) Osallistujaa\)\s*',line,re.I)
    if not h:continue
-   category=h[2].strip();weight=h[1].replace(',','.')
+   # HTML cleaning collapses whitespace; compare TXT labels the same way.
+   # This is a comparison key only: the original TXT contents stay unchanged.
+   category=' '.join(h[2].split());weight=h[1].replace(',','.')
    if (category.casefold(),weight) not in known and not any(w['category'].casefold()==category.casefold() and w['weight']==weight for w in warnings):
     if not re.search(r'ystävyys',category,re.I):raise ValueError('Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: '+category)
     warnings.append(dict(category=category,weight=weight,excluded=int(h[3]),unranked=0,source=rawurl))
