@@ -1,36 +1,20 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-31T15:22:35.864Z",
-  "updatedAt": "2026-10-31T15:22:35.864Z",
-  "competitions": 292,
-  "results": 34157,
-  "added": 3,
+  "checkedAt": "2026-10-31T15:39:09.978Z",
+  "updatedAt": "2026-10-31T15:39:09.978Z",
+  "competitions": 293,
+  "results": 34252,
+  "added": 1,
   "changed": 0,
-  "unchanged": 287,
+  "unchanged": 290,
   "changes": [
     {
-      "partial": false,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae1/indexFIN.htm",
-      "kind": "added",
-      "title": "Avoimet piirinmestaruuskilpailut",
-      "details": "Järvenpää, 17.12.2022",
-      "rows": 21
-    },
-    {
       "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/indexFIN.htm",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm",
       "kind": "added",
-      "title": "Avoimet Piirinmestaruuskilpailut",
-      "details": "Järvenpää, 1.4.2023",
-      "rows": 30
-    },
-    {
-      "partial": false,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja1/indexFIN.htm",
-      "kind": "added",
-      "title": "Avoin Piirinmestaruuskilpailu",
-      "details": "Lohja, 9.12.2023",
-      "rows": 29
+      "title": "Uolevi Setälän muistopainit",
+      "details": "Tampere, 6.5.2023",
+      "rows": 95
     }
   ],
   "partial": [
@@ -706,7 +690,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/FIN354017664_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Nokian Pyryn Sarjapainit 3.osakilpailu 2023",
@@ -744,6 +728,101 @@
         }
       ],
       "status": "unchanged"
+    },
+    {
+      "title": "Uolevi Setälän muistopainit",
+      "details": "Tampere, 6.5.2023",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm",
+      "rows": 95,
+      "notes": [
+        {
+          "category": "Aloittelijat",
+          "weight": "20",
+          "excluded": 5,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764822tlges.htm",
+          "reason": "Sarjan osallistujamäärä 36, tulosluettelossa 35"
+        },
+        {
+          "category": "Aloittelijat",
+          "weight": "23",
+          "excluded": 4,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764822tlges.htm",
+          "reason": "Sarjan osallistujamäärä 36, tulosluettelossa 35"
+        },
+        {
+          "category": "Aloittelijat",
+          "weight": "25",
+          "excluded": 5,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764822tlges.htm",
+          "reason": "Sarjan osallistujamäärä 36, tulosluettelossa 35"
+        },
+        {
+          "category": "Aloittelijat",
+          "weight": "28",
+          "excluded": 5,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764822tlges.htm",
+          "reason": "Sarjan osallistujamäärä 36, tulosluettelossa 35"
+        },
+        {
+          "category": "Aloittelijat",
+          "weight": "30",
+          "excluded": 5,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764822tlges.htm",
+          "reason": "Sarjan osallistujamäärä 36, tulosluettelossa 35"
+        },
+        {
+          "category": "Aloittelijat",
+          "weight": "36",
+          "excluded": 5,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764822tlges.htm",
+          "reason": "Sarjan osallistujamäärä 36, tulosluettelossa 35"
+        },
+        {
+          "category": "Aloittelijat",
+          "weight": "40",
+          "excluded": 3,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764822tlges.htm",
+          "reason": "Sarjan osallistujamäärä 36, tulosluettelossa 35"
+        },
+        {
+          "category": "Aloittelijat",
+          "weight": "50",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764822tlges.htm",
+          "reason": "Sarjan osallistujamäärä 36, tulosluettelossa 35"
+        },
+        {
+          "category": "Aloittelijat",
+          "weight": "63",
+          "excluded": 1,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764822tlges.htm",
+          "reason": "Sarjan osallistujamäärä 36, tulosluettelossa 35"
+        },
+        {
+          "category": "Ystävyys",
+          "weight": "37",
+          "excluded": 4,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764812tlges.htm"
+        },
+        {
+          "category": "Ystävyys",
+          "weight": "40",
+          "excluded": 3,
+          "unranked": 1,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764812tlges.htm"
+        }
+      ],
+      "status": "added"
     },
     {
       "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2023",
@@ -2324,10 +2403,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260822_Oulu/indexFIN.htm",
       "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm",
-      "error": "Sarjan ja painoluokkien osallistujamäärät eroavat"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231014_Hyvinkaeae/indexFIN.htm",
