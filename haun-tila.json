@@ -1,20 +1,20 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-31T15:39:09.978Z",
-  "updatedAt": "2026-10-31T15:39:09.978Z",
-  "competitions": 293,
-  "results": 34252,
+  "checkedAt": "2026-10-31T15:53:00.334Z",
+  "updatedAt": "2026-10-31T15:53:00.334Z",
+  "competitions": 294,
+  "results": 34355,
   "added": 1,
   "changed": 0,
-  "unchanged": 290,
+  "unchanged": 291,
   "changes": [
     {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm",
+      "partial": false,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251209_Kouvola/indexFIN.htm",
       "kind": "added",
-      "title": "Uolevi Setälän muistopainit",
-      "details": "Tampere, 6.5.2023",
-      "rows": 95
+      "title": "Sotilasurheiluliiton C.P.E. Kamppailupäivät",
+      "details": "Kouvola, 09.-11.12.2025",
+      "rows": 103
     }
   ],
   "partial": [
@@ -822,7 +822,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764812tlges.htm"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "Nokian Pyryn Sarjapainit 4.osakilpailu 2023",
@@ -2411,10 +2411,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250416_Tampere/indexFIN.htm",
       "error": "HTTP Error 404: Not Found"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251209_Kouvola/indexFIN.htm",
-      "error": "Sarjaluettelo on tyhjä tai sen rakenne ei kelpaa"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Kotka/indexFIN.htm",
