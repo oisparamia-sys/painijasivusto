@@ -1,22 +1,13 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-31T15:53:00.334Z",
+  "checkedAt": "2026-11-01T03:13:24.531Z",
   "updatedAt": "2026-10-31T15:53:00.334Z",
   "competitions": 294,
   "results": 34355,
-  "added": 1,
+  "added": 0,
   "changed": 0,
-  "unchanged": 291,
-  "changes": [
-    {
-      "partial": false,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251209_Kouvola/indexFIN.htm",
-      "kind": "added",
-      "title": "Sotilasurheiluliiton C.P.E. Kamppailupäivät",
-      "details": "Kouvola, 09.-11.12.2025",
-      "rows": 103
-    }
-  ],
+  "unchanged": 292,
+  "changes": [],
   "partial": [
     {
       "title": "Kr.room. painin Suomenmestaruuskilpailut",
