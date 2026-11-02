@@ -297690,21 +297690,21 @@ window.PAINI_SHARED_DATA = {
         },
         {
           "place": 1,
-          "name": "Aida Lindfors",
-          "club": "Viialan Pyry",
-          "weight": "50",
-          "category": "Tytöt 13v",
-          "resultId": "tulos-033461",
-          "athleteId": "painija-001436"
-        },
-        {
-          "place": 2,
           "name": "Saara Toivanen",
           "club": "Pyhäjärven Pohti",
           "weight": "50",
           "category": "Tytöt 13v",
           "resultId": "tulos-033462",
           "athleteId": "painija-015216"
+        },
+        {
+          "place": 2,
+          "name": "Aida Lindfors",
+          "club": "Viialan Pyry",
+          "weight": "50",
+          "category": "Tytöt 13v",
+          "resultId": "tulos-033461",
+          "athleteId": "painija-001436"
         },
         {
           "place": 1,
@@ -297749,7 +297749,7 @@ window.PAINI_SHARED_DATA = {
           "category": "Tytöt 8v",
           "weight": "29",
           "excluded": 6,
-          "unranked": 6,
+          "unranked": 1,
           "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576019tlges.htm"
         },
         {
@@ -297787,7 +297787,7 @@ window.PAINI_SHARED_DATA = {
       },
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
       "textSource": "",
-      "fileInfo": "LigaDB · ajastettu haku · 2026-10-31"
+      "fileInfo": "LigaDB · ajastettu haku · 2026-11-02"
     },
     {
       "title": "International Herman Kare Tournament (UWW)",
@@ -1187442,9 +1187442,771 @@ window.PAINI_SHARED_DATA = {
             }
           }
         ]
+      },
+      {
+        "label": "Hyväksy kilpailutuonti (1)",
+        "kind": "import",
+        "at": "2026-11-02T03:12:05.311Z",
+        "people": [],
+        "assignments": [],
+        "competitions": [
+          {
+            "key": "[\"kurun ryhdin marraspainit 2026\",\"kuru, 31.10.2026\"]",
+            "before": {
+              "title": "Kurun Ryhdin Marraspainit 2026",
+              "details": "Kuru, 31.10.2026",
+              "rows": [
+                {
+                  "place": 1,
+                  "name": "Paavo Leppänen",
+                  "club": "Nokian Pyry",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034049",
+                  "athleteId": "painija-003819"
+                },
+                {
+                  "place": 2,
+                  "name": "Eino Järvelä",
+                  "club": "Kurun Ryhti",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034050",
+                  "athleteId": "painija-001273"
+                },
+                {
+                  "place": 3,
+                  "name": "Lenni Nygård",
+                  "club": "Nokian Pyry",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034051",
+                  "athleteId": "painija-002386"
+                },
+                {
+                  "place": 4,
+                  "name": "Iiro Hörkkö",
+                  "club": "Viialan Pyry",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034052",
+                  "athleteId": "painija-019863"
+                },
+                {
+                  "place": 5,
+                  "name": "Leo Haapala",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034053",
+                  "athleteId": "painija-019866"
+                },
+                {
+                  "place": 1,
+                  "name": "Ilmari Lyly",
+                  "club": "Kurun Ryhti",
+                  "weight": "40",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034054",
+                  "athleteId": "painija-000946"
+                },
+                {
+                  "place": 2,
+                  "name": "Samuli Mouchette",
+                  "club": "Kurun Ryhti",
+                  "weight": "40",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034055",
+                  "athleteId": "painija-011785"
+                },
+                {
+                  "place": 3,
+                  "name": "Benjamin Mäkelä",
+                  "club": "Mäntän Valo",
+                  "weight": "40",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034056",
+                  "athleteId": "painija-023816"
+                },
+                {
+                  "place": 1,
+                  "name": "Veikko Pietiläinen",
+                  "club": "Mäntän Valo",
+                  "weight": "50",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-032086",
+                  "athleteId": "painija-031695"
+                },
+                {
+                  "place": 2,
+                  "name": "Niko Lautala",
+                  "club": "Nokian Pyry",
+                  "weight": "50",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-032087",
+                  "athleteId": "painija-031696"
+                },
+                {
+                  "place": 1,
+                  "name": "Julius Juoperi",
+                  "club": "Nokian Pyry",
+                  "weight": "20",
+                  "category": "Pojat 6v",
+                  "resultId": "tulos-034057",
+                  "athleteId": "painija-020429"
+                },
+                {
+                  "place": 2,
+                  "name": "Terho Laine",
+                  "club": "Tampereen Painiseura",
+                  "weight": "20",
+                  "category": "Pojat 6v",
+                  "resultId": "tulos-034058",
+                  "athleteId": "painija-016105"
+                },
+                {
+                  "place": 3,
+                  "name": "Elias Mannila",
+                  "club": "Nokian Pyry",
+                  "weight": "20",
+                  "category": "Pojat 6v",
+                  "resultId": "tulos-034059",
+                  "athleteId": "painija-033668"
+                },
+                {
+                  "place": 1,
+                  "name": "Aapeli Vartiainen",
+                  "club": "Viialan Pyry",
+                  "weight": "24",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034060",
+                  "athleteId": "painija-033669"
+                },
+                {
+                  "place": 2,
+                  "name": "Kasper Alakastari",
+                  "club": "Nokian Pyry",
+                  "weight": "24",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034061",
+                  "athleteId": "painija-019854"
+                },
+                {
+                  "place": 3,
+                  "name": "Kasperi Viitanen",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "24",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034062",
+                  "athleteId": "painija-033671"
+                },
+                {
+                  "place": 4,
+                  "name": "Elias Ruokola",
+                  "club": "Mäntän Valo",
+                  "weight": "24",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034063",
+                  "athleteId": "painija-033672"
+                },
+                {
+                  "place": 1,
+                  "name": "Topias Wihinen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "26",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034064",
+                  "athleteId": "painija-016115"
+                },
+                {
+                  "place": 2,
+                  "name": "Aleksi Mannila",
+                  "club": "Nokian Pyry",
+                  "weight": "26",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034065",
+                  "athleteId": "painija-020430"
+                },
+                {
+                  "place": 3,
+                  "name": "Albert Niemelä",
+                  "club": "Mäntän Valo",
+                  "weight": "26",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034066",
+                  "athleteId": "painija-033675"
+                },
+                {
+                  "place": 4,
+                  "name": "Emil Ruokola",
+                  "club": "Mäntän Valo",
+                  "weight": "26",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034067",
+                  "athleteId": "painija-033676"
+                },
+                {
+                  "place": 1,
+                  "name": "Lauri Niemi",
+                  "club": "Nokian Pyry",
+                  "weight": "23",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-034068",
+                  "athleteId": "painija-001392"
+                },
+                {
+                  "place": 2,
+                  "name": "Leo Vuorinen",
+                  "club": "Nokian Pyry",
+                  "weight": "23",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-034069",
+                  "athleteId": "painija-011773"
+                },
+                {
+                  "place": 3,
+                  "name": "Eevertti Varho",
+                  "club": "Viialan Pyry",
+                  "weight": "23",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-034070",
+                  "athleteId": "painija-033679"
+                },
+                {
+                  "place": 1,
+                  "name": "Roope kannisto",
+                  "club": "Kurun Ryhti",
+                  "weight": "35",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-032088",
+                  "athleteId": "painija-001415"
+                },
+                {
+                  "place": 2,
+                  "name": "Miika Järvelä",
+                  "club": "Kurun Ryhti",
+                  "weight": "35",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-032089",
+                  "athleteId": "painija-001414"
+                },
+                {
+                  "place": 1,
+                  "name": "Oliver Turppa",
+                  "club": "KOOVEE",
+                  "weight": "27",
+                  "category": "Pojat 9v",
+                  "resultId": "tulos-034071",
+                  "athleteId": "painija-001252"
+                },
+                {
+                  "place": 2,
+                  "name": "Aukusti Kuusinen",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "27",
+                  "category": "Pojat 9v",
+                  "resultId": "tulos-034072",
+                  "athleteId": "painija-019646"
+                },
+                {
+                  "place": 3,
+                  "name": "Veikko Rantala",
+                  "club": "Nokian Pyry",
+                  "weight": "27",
+                  "category": "Pojat 9v",
+                  "resultId": "tulos-034073",
+                  "athleteId": "painija-011774"
+                },
+                {
+                  "place": 4,
+                  "name": "Konsta Love",
+                  "club": "Mäntän Valo",
+                  "weight": "27",
+                  "category": "Pojat 9v",
+                  "resultId": "tulos-034074",
+                  "athleteId": "painija-023808"
+                },
+                {
+                  "place": 1,
+                  "name": "Aida Lindfors",
+                  "club": "Viialan Pyry",
+                  "weight": "50",
+                  "category": "Tytöt 13v",
+                  "resultId": "tulos-033461",
+                  "athleteId": "painija-001436"
+                },
+                {
+                  "place": 2,
+                  "name": "Saara Toivanen",
+                  "club": "Pyhäjärven Pohti",
+                  "weight": "50",
+                  "category": "Tytöt 13v",
+                  "resultId": "tulos-033462",
+                  "athleteId": "painija-015216"
+                },
+                {
+                  "place": 1,
+                  "name": "Tilda Salin",
+                  "club": "Nokian Pyry",
+                  "weight": "22",
+                  "category": "Tytöt 6v",
+                  "resultId": "tulos-034075",
+                  "athleteId": "painija-033684"
+                },
+                {
+                  "place": 2,
+                  "name": "Erika ojala",
+                  "club": "Mäntän Valo",
+                  "weight": "22",
+                  "category": "Tytöt 6v",
+                  "resultId": "tulos-034076",
+                  "athleteId": "painija-033685"
+                },
+                {
+                  "place": 3,
+                  "name": "Ella Korpinen",
+                  "club": "Kurun Ryhti",
+                  "weight": "22",
+                  "category": "Tytöt 6v",
+                  "resultId": "tulos-034077",
+                  "athleteId": "painija-011819"
+                },
+                {
+                  "place": 4,
+                  "name": "Liisi Rintala",
+                  "club": "Kurun Ryhti",
+                  "weight": "22",
+                  "category": "Tytöt 6v",
+                  "resultId": "tulos-034078",
+                  "athleteId": "painija-033687"
+                }
+              ],
+              "skipped": 0,
+              "importNotes": [
+                {
+                  "category": "Tytöt 8v",
+                  "weight": "29",
+                  "excluded": 6,
+                  "unranked": 6,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576019tlges.htm"
+                },
+                {
+                  "category": "YST Seka",
+                  "weight": "1",
+                  "excluded": 2,
+                  "unranked": 2,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576018tlges.htm"
+                },
+                {
+                  "category": "YST Seka 2",
+                  "weight": "2",
+                  "excluded": 2,
+                  "unranked": 2,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576020tlges.htm"
+                }
+              ],
+              "categoryStyles": {
+                "Pojat 10v": "freestyle",
+                "Pojat 6v": "freestyle",
+                "Pojat 7v": "freestyle",
+                "Pojat 8v": "freestyle",
+                "Pojat 9v": "freestyle",
+                "Tytöt 13v": "freestyle",
+                "Tytöt 6v": "freestyle"
+              },
+              "styleSources": {
+                "Pojat 10v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576011tlges.htm",
+                "Pojat 6v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457606tlges.htm",
+                "Pojat 7v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457608tlges.htm",
+                "Pojat 8v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457604tlges.htm",
+                "Pojat 9v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457601tlges.htm",
+                "Tytöt 13v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457602tlges.htm",
+                "Tytöt 6v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576016tlges.htm"
+              },
+              "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
+              "textSource": "",
+              "fileInfo": "LigaDB · ajastettu haku · 2026-10-31"
+            },
+            "after": {
+              "title": "Kurun Ryhdin Marraspainit 2026",
+              "details": "Kuru, 31.10.2026",
+              "rows": [
+                {
+                  "place": 1,
+                  "name": "Paavo Leppänen",
+                  "club": "Nokian Pyry",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034049",
+                  "athleteId": "painija-003819"
+                },
+                {
+                  "place": 2,
+                  "name": "Eino Järvelä",
+                  "club": "Kurun Ryhti",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034050",
+                  "athleteId": "painija-001273"
+                },
+                {
+                  "place": 3,
+                  "name": "Lenni Nygård",
+                  "club": "Nokian Pyry",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034051",
+                  "athleteId": "painija-002386"
+                },
+                {
+                  "place": 4,
+                  "name": "Iiro Hörkkö",
+                  "club": "Viialan Pyry",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034052",
+                  "athleteId": "painija-019863"
+                },
+                {
+                  "place": 5,
+                  "name": "Leo Haapala",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "30",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034053",
+                  "athleteId": "painija-019866"
+                },
+                {
+                  "place": 1,
+                  "name": "Ilmari Lyly",
+                  "club": "Kurun Ryhti",
+                  "weight": "40",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034054",
+                  "athleteId": "painija-000946"
+                },
+                {
+                  "place": 2,
+                  "name": "Samuli Mouchette",
+                  "club": "Kurun Ryhti",
+                  "weight": "40",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034055",
+                  "athleteId": "painija-011785"
+                },
+                {
+                  "place": 3,
+                  "name": "Benjamin Mäkelä",
+                  "club": "Mäntän Valo",
+                  "weight": "40",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-034056",
+                  "athleteId": "painija-023816"
+                },
+                {
+                  "place": 1,
+                  "name": "Veikko Pietiläinen",
+                  "club": "Mäntän Valo",
+                  "weight": "50",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-032086",
+                  "athleteId": "painija-031695"
+                },
+                {
+                  "place": 2,
+                  "name": "Niko Lautala",
+                  "club": "Nokian Pyry",
+                  "weight": "50",
+                  "category": "Pojat 10v",
+                  "resultId": "tulos-032087",
+                  "athleteId": "painija-031696"
+                },
+                {
+                  "place": 1,
+                  "name": "Julius Juoperi",
+                  "club": "Nokian Pyry",
+                  "weight": "20",
+                  "category": "Pojat 6v",
+                  "resultId": "tulos-034057",
+                  "athleteId": "painija-020429"
+                },
+                {
+                  "place": 2,
+                  "name": "Terho Laine",
+                  "club": "Tampereen Painiseura",
+                  "weight": "20",
+                  "category": "Pojat 6v",
+                  "resultId": "tulos-034058",
+                  "athleteId": "painija-016105"
+                },
+                {
+                  "place": 3,
+                  "name": "Elias Mannila",
+                  "club": "Nokian Pyry",
+                  "weight": "20",
+                  "category": "Pojat 6v",
+                  "resultId": "tulos-034059",
+                  "athleteId": "painija-033668"
+                },
+                {
+                  "place": 1,
+                  "name": "Aapeli Vartiainen",
+                  "club": "Viialan Pyry",
+                  "weight": "24",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034060",
+                  "athleteId": "painija-033669"
+                },
+                {
+                  "place": 2,
+                  "name": "Kasper Alakastari",
+                  "club": "Nokian Pyry",
+                  "weight": "24",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034061",
+                  "athleteId": "painija-019854"
+                },
+                {
+                  "place": 3,
+                  "name": "Kasperi Viitanen",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "24",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034062",
+                  "athleteId": "painija-033671"
+                },
+                {
+                  "place": 4,
+                  "name": "Elias Ruokola",
+                  "club": "Mäntän Valo",
+                  "weight": "24",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034063",
+                  "athleteId": "painija-033672"
+                },
+                {
+                  "place": 1,
+                  "name": "Topias Wihinen",
+                  "club": "Tampereen Painiseura",
+                  "weight": "26",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034064",
+                  "athleteId": "painija-016115"
+                },
+                {
+                  "place": 2,
+                  "name": "Aleksi Mannila",
+                  "club": "Nokian Pyry",
+                  "weight": "26",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034065",
+                  "athleteId": "painija-020430"
+                },
+                {
+                  "place": 3,
+                  "name": "Albert Niemelä",
+                  "club": "Mäntän Valo",
+                  "weight": "26",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034066",
+                  "athleteId": "painija-033675"
+                },
+                {
+                  "place": 4,
+                  "name": "Emil Ruokola",
+                  "club": "Mäntän Valo",
+                  "weight": "26",
+                  "category": "Pojat 7v",
+                  "resultId": "tulos-034067",
+                  "athleteId": "painija-033676"
+                },
+                {
+                  "place": 1,
+                  "name": "Lauri Niemi",
+                  "club": "Nokian Pyry",
+                  "weight": "23",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-034068",
+                  "athleteId": "painija-001392"
+                },
+                {
+                  "place": 2,
+                  "name": "Leo Vuorinen",
+                  "club": "Nokian Pyry",
+                  "weight": "23",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-034069",
+                  "athleteId": "painija-011773"
+                },
+                {
+                  "place": 3,
+                  "name": "Eevertti Varho",
+                  "club": "Viialan Pyry",
+                  "weight": "23",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-034070",
+                  "athleteId": "painija-033679"
+                },
+                {
+                  "place": 1,
+                  "name": "Roope kannisto",
+                  "club": "Kurun Ryhti",
+                  "weight": "35",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-032088",
+                  "athleteId": "painija-001415"
+                },
+                {
+                  "place": 2,
+                  "name": "Miika Järvelä",
+                  "club": "Kurun Ryhti",
+                  "weight": "35",
+                  "category": "Pojat 8v",
+                  "resultId": "tulos-032089",
+                  "athleteId": "painija-001414"
+                },
+                {
+                  "place": 1,
+                  "name": "Oliver Turppa",
+                  "club": "KOOVEE",
+                  "weight": "27",
+                  "category": "Pojat 9v",
+                  "resultId": "tulos-034071",
+                  "athleteId": "painija-001252"
+                },
+                {
+                  "place": 2,
+                  "name": "Aukusti Kuusinen",
+                  "club": "Kankaanpään Urheilijat",
+                  "weight": "27",
+                  "category": "Pojat 9v",
+                  "resultId": "tulos-034072",
+                  "athleteId": "painija-019646"
+                },
+                {
+                  "place": 3,
+                  "name": "Veikko Rantala",
+                  "club": "Nokian Pyry",
+                  "weight": "27",
+                  "category": "Pojat 9v",
+                  "resultId": "tulos-034073",
+                  "athleteId": "painija-011774"
+                },
+                {
+                  "place": 4,
+                  "name": "Konsta Love",
+                  "club": "Mäntän Valo",
+                  "weight": "27",
+                  "category": "Pojat 9v",
+                  "resultId": "tulos-034074",
+                  "athleteId": "painija-023808"
+                },
+                {
+                  "place": 1,
+                  "name": "Saara Toivanen",
+                  "club": "Pyhäjärven Pohti",
+                  "weight": "50",
+                  "category": "Tytöt 13v",
+                  "resultId": "tulos-033462",
+                  "athleteId": "painija-015216"
+                },
+                {
+                  "place": 2,
+                  "name": "Aida Lindfors",
+                  "club": "Viialan Pyry",
+                  "weight": "50",
+                  "category": "Tytöt 13v",
+                  "resultId": "tulos-033461",
+                  "athleteId": "painija-001436"
+                },
+                {
+                  "place": 1,
+                  "name": "Tilda Salin",
+                  "club": "Nokian Pyry",
+                  "weight": "22",
+                  "category": "Tytöt 6v",
+                  "resultId": "tulos-034075",
+                  "athleteId": "painija-033684"
+                },
+                {
+                  "place": 2,
+                  "name": "Erika ojala",
+                  "club": "Mäntän Valo",
+                  "weight": "22",
+                  "category": "Tytöt 6v",
+                  "resultId": "tulos-034076",
+                  "athleteId": "painija-033685"
+                },
+                {
+                  "place": 3,
+                  "name": "Ella Korpinen",
+                  "club": "Kurun Ryhti",
+                  "weight": "22",
+                  "category": "Tytöt 6v",
+                  "resultId": "tulos-034077",
+                  "athleteId": "painija-011819"
+                },
+                {
+                  "place": 4,
+                  "name": "Liisi Rintala",
+                  "club": "Kurun Ryhti",
+                  "weight": "22",
+                  "category": "Tytöt 6v",
+                  "resultId": "tulos-034078",
+                  "athleteId": "painija-033687"
+                }
+              ],
+              "skipped": 0,
+              "importNotes": [
+                {
+                  "category": "Tytöt 8v",
+                  "weight": "29",
+                  "excluded": 6,
+                  "unranked": 1,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576019tlges.htm"
+                },
+                {
+                  "category": "YST Seka",
+                  "weight": "1",
+                  "excluded": 2,
+                  "unranked": 2,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576018tlges.htm"
+                },
+                {
+                  "category": "YST Seka 2",
+                  "weight": "2",
+                  "excluded": 2,
+                  "unranked": 2,
+                  "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576020tlges.htm"
+                }
+              ],
+              "categoryStyles": {
+                "Pojat 10v": "freestyle",
+                "Pojat 6v": "freestyle",
+                "Pojat 7v": "freestyle",
+                "Pojat 8v": "freestyle",
+                "Pojat 9v": "freestyle",
+                "Tytöt 13v": "freestyle",
+                "Tytöt 6v": "freestyle"
+              },
+              "styleSources": {
+                "Pojat 10v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576011tlges.htm",
+                "Pojat 6v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457606tlges.htm",
+                "Pojat 7v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457608tlges.htm",
+                "Pojat 8v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457604tlges.htm",
+                "Pojat 9v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457601tlges.htm",
+                "Tytöt 13v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN9822457602tlges.htm",
+                "Tytöt 6v": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576016tlges.htm"
+              },
+              "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
+              "textSource": "",
+              "fileInfo": "LigaDB · ajastettu haku · 2026-11-02"
+            }
+          }
+        ]
       }
     ]
   },
-  "exportedAt": "2026-10-31T15:53:00.474Z",
-  "updatedAt": "2026-10-31T15:53:00.334Z"
+  "exportedAt": "2026-11-02T03:12:05.524Z",
+  "updatedAt": "2026-11-02T03:12:05.331Z"
 };
