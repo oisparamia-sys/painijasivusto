@@ -1,22 +1,13 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-02T03:12:05.331Z",
+  "checkedAt": "2026-11-03T03:12:24.421Z",
   "updatedAt": "2026-11-02T03:12:05.331Z",
   "competitions": 294,
   "results": 34355,
   "added": 0,
-  "changed": 1,
-  "unchanged": 56,
-  "changes": [
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
-      "kind": "updated",
-      "title": "Kurun Ryhdin Marraspainit 2026",
-      "details": "Kuru, 31.10.2026",
-      "rows": 36
-    }
-  ],
+  "changed": 0,
+  "unchanged": 57,
+  "changes": [],
   "partial": [
     {
       "title": "Loppiaispainit",
@@ -617,7 +608,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576020tlges.htm"
         }
       ],
-      "status": "updated"
+      "status": "unchanged"
     }
   ],
   "errors": [
