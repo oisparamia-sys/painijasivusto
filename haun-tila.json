@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-04T03:11:51.952Z",
+  "checkedAt": "2026-11-05T03:12:09.861Z",
   "updatedAt": "2026-11-02T03:12:05.331Z",
   "competitions": 294,
   "results": 34355,
@@ -619,6 +619,10 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Kotka/indexFIN.htm",
       "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
+      "error": "Painoluokan erillisen tuloslistan osallistujat eivät täsmää"
     }
   ]
 }
