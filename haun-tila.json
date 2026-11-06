@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-05T03:12:09.861Z",
+  "checkedAt": "2026-11-06T03:12:12.155Z",
   "updatedAt": "2026-11-02T03:12:05.331Z",
   "competitions": 294,
   "results": 34355,
@@ -622,7 +622,7 @@
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
-      "error": "Painoluokan erillisen tuloslistan osallistujat eivät täsmää"
+      "error": "Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: Super Finaali"
     }
   ]
 }
