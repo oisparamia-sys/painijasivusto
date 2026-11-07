@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-06T03:12:12.155Z",
+  "checkedAt": "2026-11-07T03:10:00.680Z",
   "updatedAt": "2026-11-02T03:12:05.331Z",
   "competitions": 294,
   "results": 34355,
@@ -617,12 +617,28 @@
       "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
     },
     {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/261107_Lahti/indexFIN.htm",
+      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/261107_Vaasa,Teeriniemenpainisali/indexFIN.htm",
+      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
+    },
+    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Kotka/indexFIN.htm",
       "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
       "error": "Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: Super Finaali"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Aura/indexFIN.htm",
+      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
     }
   ]
 }
