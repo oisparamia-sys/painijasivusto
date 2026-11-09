@@ -221,8 +221,9 @@ def competition(url):
   rawurl=urllib.parse.urljoin(url,raw[0])
   try:rawtext=get(rawurl)
   except Exception:rawtext=None
- # The downloadable file may include friendship classes absent from the
- # official category pages. Use only validated HTML results in that case.
+ # The downloadable file may include friendship or super final classes
+ # absent from the official category pages. Keep those classes out of the
+ # import and use only validated HTML results for the remaining classes.
  if rawtext is not None:
   known={(g['category'].casefold(),g['weight']) for g in generated}
   for line in rawtext.splitlines():
@@ -233,7 +234,7 @@ def competition(url):
    category=' '.join(h[2].split());weight=h[1].replace(',','.')
    if category.casefold() in empty_categories:raise ValueError('Tyhjän sarjasivun ja tekstitiedoston tiedot eroavat: '+category)
    if (category.casefold(),weight) not in known and not any(w['category'].casefold()==category.casefold() and w['weight']==weight for w in warnings):
-    if not re.search(r'ystävyys',category,re.I):raise ValueError('Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: '+category)
+    if not (re.search(r'ystävyys',category,re.I) or re.fullmatch(r'super ?finaali',category,re.I)):raise ValueError('Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: '+category)
     warnings.append(dict(category=category,weight=weight,excluded=int(h[3]),unranked=0,source=rawurl))
  if rawtext is not None and not warnings and not recovered and usable_tab(rawtext):text=rawtext
  else:
