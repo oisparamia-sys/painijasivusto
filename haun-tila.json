@@ -1,13 +1,22 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-09T03:10:31.626Z",
-  "updatedAt": "2026-11-08T03:18:16.219Z",
-  "competitions": 297,
-  "results": 34636,
-  "added": 0,
+  "checkedAt": "2026-11-09T17:27:03.158Z",
+  "updatedAt": "2026-11-09T17:27:03.158Z",
+  "competitions": 298,
+  "results": 34744,
+  "added": 1,
   "changed": 0,
   "unchanged": 60,
-  "changes": [],
+  "changes": [
+    {
+      "partial": true,
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
+      "kind": "added",
+      "title": "Kamppailupäivät - SotUL 2026",
+      "details": "Kankaanpää, 04.-5.11.2026",
+      "rows": 108
+    }
+  ],
   "partial": [
     {
       "title": "Loppiaispainit",
@@ -611,6 +620,22 @@
       "status": "unchanged"
     },
     {
+      "title": "Kamppailupäivät - SotUL 2026",
+      "details": "Kankaanpää, 04.-5.11.2026",
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
+      "rows": 108,
+      "notes": [
+        {
+          "category": "Super Finaali",
+          "weight": "130",
+          "excluded": 2,
+          "unranked": 0,
+          "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/FIN1247633792_tab.txt"
+        }
+      ],
+      "status": "added"
+    },
+    {
       "title": "AM-kilpailut (Lounais-Suomi, Uusimaa ja Häme) AuPs",
       "details": "Aura, 7.11.2026",
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Aura/indexFIN.htm",
@@ -704,10 +729,6 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Kotka/indexFIN.htm",
       "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
-      "error": "Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: Super Finaali"
     }
   ]
 }
