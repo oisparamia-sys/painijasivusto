@@ -53,10 +53,12 @@
       const value=await response.json();
       if(value.version!==1||!Array.isArray(value.changes)||!Array.isArray(value.errors)||!['competitions','results','added','changed','unchanged'].every(k=>Number.isInteger(value[k])&&value[k]>=0))throw Error('Raportti ei kelpaa');
       report=value;missing=false;checkFailed=false;render();
-    } catch {missing=true;checkFailed=true;render();}
+      return value;
+    } catch {missing=true;checkFailed=true;render();return null;}
     finally {window.clearTimeout(timeout);checking=false;}
   }
-  check(true);
+  const firstCheck=check(true);
+  if ($('#refresh-data')) window.PAINI_STARTUP_REPORT=firstCheck;
   // Poll only the public page. Admin tabs may contain unsaved work and never reload here.
   if ($('#refresh-data')) {
     window.addEventListener('focus',()=>check());
