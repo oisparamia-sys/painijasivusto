@@ -1,22 +1,13 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-09T17:27:03.158Z",
+  "checkedAt": "2026-11-10T03:10:14.755Z",
   "updatedAt": "2026-11-09T17:27:03.158Z",
   "competitions": 298,
   "results": 34744,
-  "added": 1,
+  "added": 0,
   "changed": 0,
-  "unchanged": 60,
-  "changes": [
-    {
-      "partial": true,
-      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
-      "kind": "added",
-      "title": "Kamppailupäivät - SotUL 2026",
-      "details": "Kankaanpää, 04.-5.11.2026",
-      "rows": 108
-    }
-  ],
+  "unchanged": 61,
+  "changes": [],
   "partial": [
     {
       "title": "Loppiaispainit",
@@ -633,7 +624,7 @@
           "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/FIN1247633792_tab.txt"
         }
       ],
-      "status": "added"
+      "status": "unchanged"
     },
     {
       "title": "AM-kilpailut (Lounais-Suomi, Uusimaa ja Häme) AuPs",
