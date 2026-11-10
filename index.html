@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painijatulokset</title>
 <link rel="stylesheet" href="style.css?v=20261031-refresh1">
+<link rel="stylesheet" href="palaute.css?v=1">
 </head>
 <body>
 <header><div>Painijatulokset</div></header>
@@ -13,7 +14,28 @@
 <nav class="view-nav" aria-label="Sivuston näkymät">
   <button id="nav-results" type="button" aria-pressed="true">Tuloshaku</button>
   <button id="nav-competitions" type="button" aria-pressed="false">Kilpailut</button>
+  <button id="feedback-open" type="button" aria-haspopup="dialog" hidden>Anna palautetta</button>
 </nav>
+<dialog id="feedback-dialog" aria-labelledby="feedback-title">
+  <h2 id="feedback-title">Anna palautetta</h2>
+  <p class="hint" id="feedback-hint">Palaute näkyy sivuston ylläpitäjälle. Jätä henkilötiedot ja yhteystiedot pois.</p>
+  <form id="feedback-form" method="post" aria-describedby="feedback-hint">
+    <label for="feedback-category">Aihe</label>
+    <select id="feedback-category">
+      <option value="idea">Kehitysidea</option>
+      <option value="error">Virhe sivustolla</option>
+      <option value="other">Muu palaute</option>
+    </select>
+    <label for="feedback-message">Palaute</label>
+    <textarea id="feedback-message" rows="5" minlength="3" maxlength="2000" required></textarea>
+    <p class="hint">Enintään 2 000 merkkiä.</p>
+    <div class="actions">
+      <button type="submit" id="feedback-send" class="feedback-primary">Lähetä palaute</button>
+      <button type="button" id="feedback-close">Sulje</button>
+    </div>
+  </form>
+  <p id="feedback-status" class="feedback-status" role="status" aria-live="polite"></p>
+</dialog>
 <p>Hae painijan tuloksia nimellä ja rajaa niitä vuoden, painimuodon, kilpailun tai seuran mukaan.</p>
 <section id="data-refresh-box" class="data-refresh-box" aria-label="Aineiston päivittäminen" data-update-available="false">
   <p id="data-refresh-status" role="status" aria-live="polite">Tarkistetaan, onko uusia tietoja saatavilla…</p>
@@ -141,7 +163,8 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="fresh-data.js?v=20261109-autorefresh1" defer></script>
+<script src="palaute.js?v=1" defer></script>
+<script src="fresh-data.js?v=20261110-feedback1" defer></script>
 </body>
 </html>
 

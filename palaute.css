@@ -1,0 +1,16 @@
+#feedback-open{min-height:44px}
+#feedback-dialog{width:min(34rem,calc(100% - 28px));max-height:calc(100dvh - 28px);overflow:auto;border:1px solid #cbd5e1;border-radius:16px;padding:clamp(16px,4vw,26px);background:white;color:#17253c;box-shadow:0 16px 48px #17253c40}
+#feedback-dialog::backdrop{background:#17253c80}
+#feedback-dialog h2{margin-top:0}
+#feedback-dialog label{display:block;font-weight:650;margin:12px 0 6px}
+#feedback-message{width:100%;box-sizing:border-box;min-height:7em;resize:vertical;font:inherit;color:inherit;border:1px solid #cbd5e1;border-radius:8px;padding:12px}
+#feedback-message:focus-visible{outline:3px solid #95b9ff;outline-offset:3px}
+#feedback-dialog .actions,#feedback-login .actions{margin-top:12px}
+#feedback-dialog .feedback-primary{background:#2357bf;color:white;border-color:#2357bf}
+.feedback-status:empty{display:none}
+.feedback-status[data-kind="error"]{color:#8f2921}
+.feedback-status[data-kind="success"]{color:#215c37}
+#feedback-login input{width:min(100%,27rem)}
+#feedback-list{list-style:none;padding:0}
+#feedback-list li{padding:12px 0;border-bottom:1px solid #e5eaf2}
+#feedback-list li p{white-space:pre-wrap;overflow-wrap:anywhere;margin:6px 0}

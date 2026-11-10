@@ -52,6 +52,7 @@
     const publishedAt = Date.parse(report?.updatedAt);
     // A scan without new results changes checkedAt, not the data version.
     if (!Number.isFinite(loadedAt) || !Number.isFinite(publishedAt) || publishedAt <= loadedAt) return false;
+    if (document.querySelector('#feedback-dialog[open]')) return false;
     if (notice) notice.textContent = 'Uusi aineisto löytyi. Päivitetään tuloksia…';
     address.searchParams.set(retryParameter, stamp());
     window.location.replace(address.href);
