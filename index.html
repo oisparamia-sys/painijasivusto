@@ -20,6 +20,7 @@
   <h2 id="feedback-title">Anna palautetta</h2>
   <p class="hint" id="feedback-hint">Palaute näkyy sivuston ylläpitäjälle. Jätä henkilötiedot ja yhteystiedot pois.</p>
   <form id="feedback-form" method="post" aria-describedby="feedback-hint">
+    <p id="feedback-context" class="hint" style="white-space:pre-wrap;overflow-wrap:anywhere" hidden></p>
     <label for="feedback-category">Aihe</label>
     <select id="feedback-category">
       <option value="idea">Kehitysidea</option>
@@ -67,6 +68,7 @@
 <p class="hint">Painimuoto perustuu lähdesivun sarjatietoon. Puuttuva tieto näkyy muodossa ”Ei vahvistettu”.</p>
 <p id="selection" class="hint"></p>
 <p id="source-line" class="hint" hidden></p>
+<p><button id="competition-report-error" type="button" hidden>Ilmoita kilpailun tiedoissa olevasta virheestä</button></p>
 <aside id="partial-results-note" class="partial-results-note" aria-label="Tulosaineiston kattavuus" hidden></aside>
 <div class="heading"><h2 id="results-heading" tabindex="-1">Kilpailutulokset</h2><span id="count" role="status" aria-live="polite"></span></div>
 <p id="result-range" class="hint" role="status" aria-live="polite"></p>
@@ -115,6 +117,7 @@
 <section id="wrestler-view" class="card" aria-labelledby="wrestler-title" hidden>
   <button id="back-to-results" type="button">← Takaisin hakutuloksiin</button>
   <h2 id="wrestler-title" tabindex="-1"></h2>
+  <p><button id="wrestler-report-error" type="button" hidden>Ilmoita painijan tiedoissa olevasta virheestä</button></p>
   <p id="wrestler-id" class="hint"></p>
   <p id="wrestler-aliases" class="hint"></p>
   <p id="wrestler-club" class="profile-club"></p>
@@ -163,7 +166,7 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="palaute.js?v=1" defer></script>
+<script src="palaute.js?v=3" defer></script>
 <script src="fresh-data.js?v=20261110-feedback1" defer></script>
 </body>
 </html>

@@ -63,6 +63,7 @@ function selectedCompetitions() {
 }
 function refreshFilters() {
   const chosen = competitions.find(item => identity(item) === $("#competition").value);
+  $("#competition-report-error").hidden = !chosen || typeof window.PAINI_OPEN_FEEDBACK !== "function";
   if (chosen) $("#competition-search").value = chosen.title + (chosen.details ? " · " + chosen.details : "");
   const allItems = selectedCompetitions();
   const years = allItems.map(resultYear);
@@ -215,6 +216,7 @@ function openProfile(athleteId, opener = null, updateUrl = true) {
   if (opener) profileOpener = opener;
   clearProfileLinkError();
   profileState = { athleteId, year: "" };
+  $("#wrestler-report-error").hidden = typeof window.PAINI_OPEN_FEEDBACK !== "function";
   if (updateUrl) writeProfileRoute(athleteId);
   $("#search-view").hidden = true;
   $("#competition-view").hidden = true;
@@ -620,6 +622,19 @@ function clearProfileLinkError() {
 }
 function routeProfileFromUrl() {
   const params = new URLSearchParams(location.hash.slice(1));
+  if (!params.has("painija") && params.has("kilpailu")) {
+    const item = competitions.find(c => identity(c) === params.get("kilpailu"));
+    // Open a link from an error report, then remove the route so later filter
+    // changes do not leave a misleading competition link in the address bar.
+    history.replaceState(history.state, "", location.pathname + location.search);
+    if (item) { clearProfileLinkError(); openCompetition(item); }
+    else {
+      showView("results",false,false);
+      status("Linkin kilpailua ei löytynyt. Voit etsiä sitä kilpailun nimellä.","error");
+      $("#status").dataset.reason = "profile-link";
+    }
+    return;
+  }
   if (!params.has("painija")) { clearProfileLinkError(); if (profileState) closeProfile(false); return; }
   if (!registryReady) return;
   const requested = params.get("painija");
@@ -652,6 +667,23 @@ $("#copy-wrestler-link").addEventListener("click",async () => {
 window.addEventListener("popstate",routeProfileFromUrl);
 window.addEventListener("hashchange",routeProfileFromUrl);
 routeProfileFromUrl();
+
+$("#wrestler-report-error").addEventListener("click", event => {
+  if (!profileState || typeof window.PAINI_OPEN_FEEDBACK !== "function") return;
+  const person = athleteRecords.get(profileState.athleteId);
+  window.PAINI_OPEN_FEEDBACK({label:"Painija: " + person.name + " (" + person.id + ")", url:profileAddress(person.id)}, event.currentTarget);
+});
+$("#competition-report-error").addEventListener("click", event => {
+  const item = competitions.find(c => identity(c) === $("#competition").value);
+  if (!item || typeof window.PAINI_OPEN_FEEDBACK !== "function") return;
+  const address = new URL(profileAddress(""));
+  address.hash = new URLSearchParams({kilpailu:identity(item)}).toString();
+  window.PAINI_OPEN_FEEDBACK({label:"Kilpailu: " + item.title + " · " + item.details, url:address.href}, event.currentTarget);
+});
+window.addEventListener("paini-feedback-ready", () => {
+  $("#competition-report-error").hidden = !$("#competition").value;
+  $("#wrestler-report-error").hidden = !profileState;
+});
 
 function renderPlacementChart(entries) {
   const labels = ["Voitot (1. sija)", "2. sija", "3. sija", "Muut sijoitukset"];

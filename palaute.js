@@ -44,20 +44,38 @@
     const form = $("feedback-form"), dialog = $("feedback-dialog");
     const category = $("feedback-category"), input = $("feedback-message");
     const send = $("feedback-send"), status = $("feedback-status");
-    let pending = null;
-    opener.hidden = false;
-    opener.addEventListener("click", () => {
+    let pending = null, context = "", returnFocus = opener;
+    const contextInfo = $("feedback-context");
+    function openFeedback(details, trigger) {
+      if (send.disabled) return;
+      context = details ? "Ilmoitus koskee: " + details.label + "\nLinkki: " + details.url + "\n\n" : "";
+      // Context and the visitor's text share the server's 2,000 character limit.
+      if (context.length > 1500) context = "Ilmoitus koskee: " + details.label.slice(0,300) + "\n\n";
+      if (contextInfo) {
+        contextInfo.textContent = context.trim();
+        contextInfo.hidden = !context;
+      }
+      input.maxLength = 2000 - context.length;
+      if (details) category.value = "error";
+      returnFocus = trigger || opener;
+      setStatus(status, "");
       dialog.showModal();
       input.focus();
+    }
+    window.PAINI_OPEN_FEEDBACK = openFeedback;
+    window.dispatchEvent(new Event("paini-feedback-ready"));
+    opener.hidden = false;
+    opener.addEventListener("click", () => {
+      openFeedback(null, opener);
     });
     $("feedback-close").addEventListener("click", () => dialog.close());
-    dialog.addEventListener("close", () => opener.focus());
+    dialog.addEventListener("close", () => (returnFocus?.isConnected ? returnFocus : opener).focus());
     form.addEventListener("submit", async event => {
       event.preventDefault();
       if (send.disabled) return;
-      const message = input.value.trim();
-      if (message.length < 3 || message.length > 2000) {
-        setStatus(status, "Kirjoita 3–2 000 merkin palaute.", "error");
+      const text = input.value.trim(), message = context + text;
+      if (text.length < 3 || message.length > 2000) {
+        setStatus(status, "Kirjoita 3–" + (2000-context.length) + " merkin palaute. Kohdetiedot vievät osan tilasta.", "error");
         input.focus();
         return;
       }
@@ -69,6 +87,7 @@
         }
         await request("/rest/v1/rpc/paini_send_feedback", pending);
         form.reset();
+        if (context) category.value = "error";
         pending = null;
         setStatus(status, "Kiitos! Palautteesi on lähetetty.", "success");
       } catch (error) {
@@ -151,6 +170,25 @@
     });
   }
 
+  function feedbackText(element, message) {
+    // Only the site's own public result links become clickable. All other
+    // feedback remains text, including any HTML supplied by a visitor.
+    const text = String(message);
+    const links = /https:\/\/oisparamia-sys\.github\.io\/painijasivusto\/(?:index\.html)?#[^\s]+/g;
+    let position = 0;
+    for (const match of text.matchAll(links)) {
+      element.append(document.createTextNode(text.slice(position,match.index)));
+      const link = document.createElement("a");
+      link.href = match[0];
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Avaa ilmoituksen kohde ↗";
+      element.append(link);
+      position = match.index + match[0].length;
+    }
+    element.append(document.createTextNode(text.slice(position)));
+  }
+
   async function readPage(target) {
     if (!session || busy) return;
     const token = session;
@@ -170,7 +208,7 @@
           dateStyle:"short", timeStyle:"short", timeZone:"Europe/Helsinki"
         });
         heading.textContent = (Object.hasOwn(labels,row.category) ? labels[row.category] : "Palaute") + " · " + time;
-        content.textContent = row.message;
+        feedbackText(content, row.message);
         item.append(heading,content);
         addReadControl(item,row);
         fragment.append(item);
