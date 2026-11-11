@@ -18,6 +18,11 @@
     const queryWords=words(query),nameWords=words(person.searchName);
     return queryWords.every(q=>nameWords.some(n=>n.startsWith(q)||q.length>=4&&distance(q,n)<=(q.length>=8?2:1)));
   }
+  function matchesStrictly(person,query) {
+    const queryWords=words(query),nameWords=words(person.searchName);
+    // Other wrestlers remain selectable, but need an exact word or a clear prefix.
+    return queryWords.length>0 && queryWords.every(q=>nameWords.some(n=>q===n || q.length>=3&&n.startsWith(q)));
+  }
   function prepare(data,registry) {
     const competition=data?.competitions?.find(c=>c.source===trial.competition.source);
     if(!competition || !registry || !data.athleteRegistry)throw Error('Kokeen aineisto puuttuu');
@@ -51,6 +56,30 @@
     const $=s=>document.querySelector(s);
     const people=new Map(prepared.people.map(p=>[p.id,p]));
     let mode='single',a=null,b=null;
+    function opponentCounts() {
+      const counts=new Map();
+      for(const match of prepared.matches) {
+        const other=match.red.id===a?match.blue.id:match.blue.id===a?match.red.id:null;
+        if(other)counts.set(other,(counts.get(other)||0)+1);
+      }
+      return counts;
+    }
+    function suggestions(letter,query) {
+      const prioritize=letter==='b'&&mode==='pair'&&people.has(a);
+      const counts=prioritize?opponentCounts():new Map();
+      const exact=person=>words(person.name).join(' ')===words(query).join(' ');
+      const candidates=prepared.people.filter(person=>{
+        if(!prioritize)return matchesName(person,query);
+        if(person.id===a)return false;
+        return counts.has(person.id)?matchesName(person,query):matchesStrictly(person,query);
+      });
+      if(prioritize)candidates.sort((left,right)=>{
+        // A complete exact name remains easy to select even without recorded bouts.
+        const tier=person=>exact(person)?0:counts.has(person.id)?1:2;
+        return tier(left)-tier(right)||left.name.localeCompare(right.name,'fi');
+      });
+      return {candidates,counts,prioritize};
+    }
     function picker(letter,changed) {
       const input=$('#bout-search-'+letter),list=$('#bout-options-'+letter),box=$('#bout-picker-'+letter);
       let options=[],active=-1;
@@ -62,17 +91,27 @@
       }
       function select(person) {input.value=person.name;close();changed(person.id);}
       function show() {
-        options=prepared.people.filter(p=>matchesName(p,input.value));active=-1;list.replaceChildren();
+        const found=suggestions(letter,input.value);
+        options=found.candidates;active=-1;list.replaceChildren();
         for(const person of options) {
           const li=document.createElement('li');li.id='bout-option-'+letter+'-'+person.id;li.setAttribute('role','option');li.setAttribute('aria-selected','false');
           const name=document.createElement('span');name.textContent=person.name;
           const club=document.createElement('small');club.textContent=[...person.clubs].join(', ');li.append(name,club);
+          if(found.prioritize) {
+            const history=document.createElement('small'),count=found.counts.get(person.id)||0;
+            history.className=count?'bout-opponent-note':'bout-no-history';
+            history.textContent=count?'Aiempi vastustaja · '+count+' ottelua tässä kokeessa':'Ei keskinäisiä otteluita tässä kokeessa';
+            li.append(history);
+          }
           li.addEventListener('mousedown',event=>event.preventDefault());
           li.addEventListener('click',()=>select(person));list.append(li);
         }
         list.hidden=options.length===0;input.setAttribute('aria-expanded',String(options.length>0));
         input.removeAttribute('aria-activedescendant');
-        $('#bouts-suggestions-status').textContent=options.length?options.length+' sopivaa painijaa.':'Nimellä ei löytynyt painijaa tästä koekilpailusta.';
+        const knownCount=options.filter(p=>found.counts.has(p.id)).length;
+        $('#bouts-suggestions-status').textContent=options.length
+          ?found.prioritize?options.length+' ehdotusta, joista '+knownCount+' aiempia vastustajia tässä kokeessa.':options.length+' sopivaa painijaa.'
+          :found.prioritize?'Nimellä ei löytynyt ehdotuksia. Muista painijoista kirjoita nimi tai vähintään kolme kirjainta nimen alusta.':'Nimellä ei löytynyt painijaa tästä koekilpailusta.';
       }
       input.addEventListener('focus',show);
       input.addEventListener('input',()=>{changed(null);show();});
@@ -86,11 +125,12 @@
       document.addEventListener('click',event=>{if(!box.contains(event.target))close();});
       return {set(person){input.value=person?.name || '';close();},close};
     }
-    const pa=picker('a',id=>{a=id;render();}),pb=picker('b',id=>{b=id;render();});
+    const pa=picker('a',id=>{a=id;pb.close();render();}),pb=picker('b',id=>{b=id;render();});
     function setMode(next) {
       mode=next;pa.close();pb.close();
       document.querySelectorAll('input[name=bouts-mode]').forEach(input=>input.checked=input.value===mode);
-      $('#bout-picker-b').hidden=mode!=='pair';$('#bouts-swap').hidden=mode!=='pair';render();
+      $('#bout-picker-b').hidden=mode!=='pair';$('#bouts-swap').hidden=mode!=='pair';
+      const help=$('#bouts-opponent-help');if(help)help.hidden=mode!=='pair';render();
     }
     function statistic(label,value) {
       const box=document.createElement('div');box.className='bout-stat';

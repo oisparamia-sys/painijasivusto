@@ -21,6 +21,7 @@
 #bouts-view .bout-options [role=option]{padding:10px;border-radius:6px;cursor:pointer;line-height:1.5}
 #bouts-view .bout-options [aria-selected=true]{background:#eaf1ff;color:#174397}
 #bouts-view .bout-options small{display:block;color:#58677c}
+#bouts-view .bout-options .bout-opponent-note{color:#174397;font-weight:650}
 #bouts-view .bout-statistics{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
 #bouts-view .bout-stat{flex:1 1 150px;background:#f4f7fb;border:1px solid #e0e7ef;border-radius:10px;padding:14px}
 #bouts-view .bout-stat strong{display:block;font-size:26px;color:#174397;margin-top:5px}
@@ -158,6 +159,7 @@
       </div>
     </fieldset>
     <p id="bouts-search-help" class="hint">Kirjoita nimi ja valitse painija alle avautuvasta valikosta. Haku sietää pieniä kirjoitusvirheitä. Valikossa ovat tämän koekilpailun painijat.</p>
+    <p id="bouts-opponent-help" class="hint" hidden>Kun ensimmäinen painija on valittu, ehdotamme ensin hänen aiempia vastustajiaan tämän kokeen aineistosta. Muut painijat löytyvät tarkemmalla nimellä. Tyhjennä hakukenttä nähdäksesi aiemmat vastustajat.</p>
     <div class="filters">
       <div class="field bout-picker" id="bout-picker-a">
         <label for="bout-search-a">Painija</label>
@@ -166,7 +168,7 @@
       </div>
       <div class="field bout-picker" id="bout-picker-b" hidden>
         <label for="bout-search-b">Vastustaja</label>
-        <input id="bout-search-b" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="bout-options-b" aria-describedby="bouts-search-help" autocomplete="off" placeholder="Hae vastustajan nimellä…">
+        <input id="bout-search-b" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="bout-options-b" aria-describedby="bouts-search-help bouts-opponent-help" autocomplete="off" placeholder="Hae vastustajan nimellä…">
         <ul id="bout-options-b" class="bout-options" role="listbox" aria-label="Vastustajan hakuehdotukset" hidden></ul>
       </div>
     </div>
