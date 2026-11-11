@@ -51,6 +51,30 @@
     else if (checkFailed) notice.textContent='Päivityksiä ei voitu tarkistaa. Voit yrittää ladata uusimman sivun Päivitä tiedot -painikkeesta.';
     else if (report && data?.competitions) notice.textContent='Käytössä on uusin tarkistettu aineisto. Tarkistettu '+time(report.checkedAt)+'.';
   }
+  function sourceLink(source, label) {
+    try {
+      const url=new URL(source);
+      if (url.protocol!=='https:' || url.username || url.password || url.port || !['turniereklassisch.ringerdb.de','www.ringerdb.de','ringerdb.de'].includes(url.hostname)) return null;
+      const link=document.createElement('a');
+      link.href=url.href;link.textContent=label;link.target='_blank';link.rel='noopener noreferrer';
+      link.title='Avaa kilpailun alkuperäinen lähde uudessa välilehdessä';
+      return link;
+    } catch {return null;}
+  }
+  function listItem(value) {
+    const li=document.createElement('li');
+    if (typeof value==='string') {li.textContent=value;return li;}
+    if (value.sourceFirst) {
+      li.append(sourceLink(value.source,value.source) || document.createTextNode(String(value.source || 'Lähde puuttuu')));
+      li.append(document.createTextNode(' — '+value.text));
+    } else {
+      li.textContent=value.text;
+      const link=sourceLink(value.source,'Avaa lähde ↗');
+      if (link) li.append(document.createTextNode(' · '),link);
+    }
+    return li;
+  }
+  const errorItem=entry=>({source:entry.source,sourceFirst:true,text:entry.error || 'Virheen syy puuttuu raportista; tarkista lähde käsin.'});
   function render() {
     const data=window.PAINI_SHARED_DATA;
     renderRefresh(data);
@@ -68,16 +92,20 @@
     const partial=Array.isArray(report.partial)?report.partial:[];
     summary.textContent='Haku tarkistettu '+time(report.checkedAt)+'. Lisätty yhteensä '+report.added+' kilpailua, päivitetty '+report.changed+', ennallaan '+report.unchanged+'. Osittaisia kilpailuja '+(partial.length+legacy.length)+'. '+groups.map(g=>g.title+': '+grouped[g.key].length+'.').join(' ')+' Raportin aineistossa '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' tulosta.';
     for (const g of groups) { const count=$('#scan-'+g.key+'-count'); if(count)count.textContent=String(grouped[g.key].length); }
-    const partialLines=partial.map(c=>c.title+' · '+c.details+' — mukana '+c.rows+' tulosta ('+({added:'lisätty tällä haulla',updated:'päivitetty tällä haulla',unchanged:'jo aineistossa, ennallaan'}[c.status]||'aineistossa')+'). Puuttuvat painoluokat: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', '));
-    partialLines.push(...legacy.map(e=>e.source+' — '+e.error+' (Vanhan raportin huomio; tuonnin tila vahvistuu seuraavalla haulla.)'));
-    for(const [selector,values] of [['#scan-changes',report.changes.filter(c=>!c.partial).map(c=>(c.kind==='added'?'Lisätty: ':'Päivitetty: ')+c.title+' · '+c.details+' · '+c.rows+' tulosta')],['#scan-partial',partialLines],...groups.map(g=>['#scan-'+g.key,grouped[g.key].map(errorLine)]),['#scan-errors',blocked.map(errorLine)]]){
-      const list=$(selector);if(!list)continue;list.replaceChildren();for(const value of values.length?values:['Ei merkintöjä.']){const li=document.createElement('li');li.textContent=value;list.append(li);}
+    const partialLines=partial.map(c=>({source:c.source,text:c.title+' · '+c.details+' — mukana '+c.rows+' tulosta ('+({added:'lisätty tällä haulla',updated:'päivitetty tällä haulla',unchanged:'jo aineistossa, ennallaan'}[c.status]||'aineistossa')+'). Puuttuvat painoluokat: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', ')}));
+    partialLines.push(...legacy.map(e=>({...errorItem(e),text:e.error+' (Vanhan raportin huomio; tuonnin tila vahvistuu seuraavalla haulla.)'})));
+    for(const [selector,values] of [['#scan-changes',report.changes.filter(c=>!c.partial).map(c=>({source:c.source,text:(c.kind==='added'?'Lisätty: ':'Päivitetty: ')+c.title+' · '+c.details+' · '+c.rows+' tulosta'}))],['#scan-partial',partialLines],...groups.map(g=>['#scan-'+g.key,grouped[g.key].map(errorItem)]),['#scan-errors',blocked.map(errorItem)]]){
+      const list=$(selector);if(!list)continue;
+      list.replaceChildren(...(values.length?values:['Ei merkintöjä.']).map(listItem));
     }
   }
   window.addEventListener('paini-data-ready',render);window.addEventListener('load',render);render();
   async function check(force=false) {
     if (checking || (!force && Date.now()-lastCheck<15000)) return;
     checking=true;lastCheck=Date.now();
+    const button=$('#scan-report-reload'), status=$('#scan-report-status');
+    if(button){button.disabled=true;button.textContent='Haetaan raporttia…';}
+    if(status)status.textContent='Haetaan viimeisintä tallennettua hakuraporttia…';
     const controller=new AbortController();
     const timeout=window.setTimeout(()=>controller.abort(),15000);
     try {
@@ -86,10 +114,19 @@
       const value=await response.json();
       if(value.version!==1||!Array.isArray(value.changes)||!Array.isArray(value.errors)||!['competitions','results','added','changed','unchanged'].every(k=>Number.isInteger(value[k])&&value[k]>=0))throw Error('Raportti ei kelpaa');
       report=value;missing=false;checkFailed=false;render();
+      if(status)status.textContent='Viimeisin tallennettu raportti haettu. Tämä painike ei käynnistä kilpailuhakua.';
       return value;
-    } catch {missing=true;checkFailed=true;render();return null;}
-    finally {window.clearTimeout(timeout);checking=false;}
+    } catch {
+      missing=true;checkFailed=true;render();
+      if(status)status.textContent=report?'Uusinta raporttia ei voitu hakea. Alla näkyy aiemmin haettu raportti. Yritä uudelleen.':'Raporttia ei voitu hakea. Tarkista verkkoyhteys ja yritä uudelleen. Jos raporttia ei ole vielä luotu, käynnistä kilpailuhaku GitHub Actionsissa.';
+      return null;
+    }
+    finally {
+      window.clearTimeout(timeout);checking=false;
+      if(button){button.disabled=false;button.textContent='Hae uusin raportti';}
+    }
   }
+  $('#scan-report-reload')?.addEventListener('click',()=>check(true));
   const firstCheck=check(true);
   if ($('#refresh-data')) window.PAINI_STARTUP_REPORT=firstCheck;
   // Poll only the public page. Admin tabs may contain unsaved work and never reload here.
