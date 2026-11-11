@@ -1,5 +1,36 @@
 "use strict";
 (() => {
+  // Keep browser and Actions reports in agreement. Unknown failures need review.
+  const groups = [
+    {key:'waiting', title:'Lähteestä puuttuvat vahvistetut tulokset', description:'Lähteessä on osallistujalista tai tulosluettelo ilman vahvistettuja sijoituksia. Tuloksia ei päätellä osallistujalistasta.'},
+    {key:'source', title:'Lähde ei lataudu', description:'Lähdesivua ei saatu ladattua. Syynä voi olla esimerkiksi puuttuva sivu tai yhteysongelma.'},
+    {key:'review', title:'Tiedot vaativat tarkistamista', description:'Lähteen rakenne, määrät tai muut tiedot vaativat tarkistamista ennen tuontia.'}
+  ];
+  function classifyError(entry) {
+    const message=String(entry.error || '').trim();
+    if (['Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia','Tulosluetteloissa ei ole vielä vahvistettuja sijoituksia','Osallistujalla ei ole vahvistettua sijoitusta'].includes(message)) return 'waiting';
+    if (/HTTP Error \d{3}\b|<urlopen error|\b(?:timed out|timeout|ENOTFOUND|ECONNRESET|ECONNREFUSED|EAI_AGAIN)\b|Temporary failure in name resolution|Remote end closed connection/i.test(message)) return 'source';
+    return 'review';
+  }
+  function groupErrors(errors) {
+    const result={waiting:[],source:[],review:[]};
+    for (const entry of errors) if (!String(entry.error || '').startsWith('Osittainen tuonti:')) result[classifyError(entry)].push(entry);
+    return result;
+  }
+  const errorLine=entry=>entry.source+' — '+(entry.error || 'Virheen syy puuttuu raportista; tarkista lähde käsin.');
+  function renderMarkdown(state) {
+    const grouped=groupErrors(state.errors), partial=state.partial || [];
+    const list=items=>items.length?items.map(item=>'- '+item).join('\n'):'Ei merkintöjä.';
+    return '# Kilpailuhaku\n\nLisätty '+state.added+', päivitetty '+state.changed+', ennallaan '+state.unchanged+'. Osittaisia kilpailuja '+partial.length+'.\n\n'+
+      groups.map(g=>g.title+': '+grouped[g.key].length+'.').join(' ')+'\n\n'+
+      '## Lisätyt ja päivitetyt (täydellinen tuonti)\n\n'+list(state.changes.filter(c=>!c.partial).map(c=>c.title+' · '+c.details))+'\n\n'+
+      '## Osittain tuodut kilpailut\n\n'+list(partial.map(c=>c.title+' · '+c.details+' · mukana '+c.rows+' tulosta; pois jäivät: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', ')))+'\n\n'+
+      groups.map(g=>'## '+g.title+' ('+grouped[g.key].length+')\n\n'+g.description+'\n\n'+list(grouped[g.key].map(errorLine))).join('\n\n')+'\n';
+  }
+  if (typeof module==='object' && module.exports) {
+    module.exports={classifyError,groupErrors,renderMarkdown};
+    return;
+  }
   let report = null, missing = false, checkFailed = false, checking = false, lastCheck = -Infinity;
   const $=s=>document.querySelector(s);
   const time=value=>{const date=new Date(value);return value&&Number.isFinite(date.getTime())?new Intl.DateTimeFormat('fi-FI',{dateStyle:'short',timeStyle:'short',timeZone:'Europe/Helsinki'}).format(date):'ei tiedossa';};
@@ -31,13 +62,15 @@
     }
     const summary=$('#scan-report-summary');if(!summary)return;
     if(!report){summary.textContent=missing?'Hakuraporttia ei vielä ole saatavilla. Käynnistä päivitetty automaattihaku kerran GitHub Actionsissa.':'Luetaan hakuraporttia…';return;}
-    const blocked=report.errors.filter(e=>!e.error.startsWith('Osittainen tuonti:'));
+    const grouped=groupErrors(report.errors);
+    const blocked=groups.flatMap(g=>grouped[g.key]);
     const legacy=report.errors.filter(e=>e.error.startsWith('Osittainen tuonti:')&&!blocked.some(b=>b.source===e.source));
     const partial=Array.isArray(report.partial)?report.partial:[];
-    summary.textContent='Haku tarkistettu '+time(report.checkedAt)+'. Lisätty yhteensä '+report.added+' kilpailua, päivitetty '+report.changed+', ennallaan '+report.unchanged+'. Osittaisia kilpailuja '+(partial.length+legacy.length)+'. Tuomatta jääneitä lähteitä '+blocked.length+'. Raportin aineistossa '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' tulosta.';
+    summary.textContent='Haku tarkistettu '+time(report.checkedAt)+'. Lisätty yhteensä '+report.added+' kilpailua, päivitetty '+report.changed+', ennallaan '+report.unchanged+'. Osittaisia kilpailuja '+(partial.length+legacy.length)+'. '+groups.map(g=>g.title+': '+grouped[g.key].length+'.').join(' ')+' Raportin aineistossa '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' tulosta.';
+    for (const g of groups) { const count=$('#scan-'+g.key+'-count'); if(count)count.textContent=String(grouped[g.key].length); }
     const partialLines=partial.map(c=>c.title+' · '+c.details+' — mukana '+c.rows+' tulosta ('+({added:'lisätty tällä haulla',updated:'päivitetty tällä haulla',unchanged:'jo aineistossa, ennallaan'}[c.status]||'aineistossa')+'). Puuttuvat painoluokat: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', '));
     partialLines.push(...legacy.map(e=>e.source+' — '+e.error+' (Vanhan raportin huomio; tuonnin tila vahvistuu seuraavalla haulla.)'));
-    for(const [selector,values] of [['#scan-changes',report.changes.filter(c=>!c.partial).map(c=>(c.kind==='added'?'Lisätty: ':'Päivitetty: ')+c.title+' · '+c.details+' · '+c.rows+' tulosta')],['#scan-partial',partialLines],['#scan-errors',blocked.map(e=>e.source+' — '+e.error)]]){
+    for(const [selector,values] of [['#scan-changes',report.changes.filter(c=>!c.partial).map(c=>(c.kind==='added'?'Lisätty: ':'Päivitetty: ')+c.title+' · '+c.details+' · '+c.rows+' tulosta')],['#scan-partial',partialLines],...groups.map(g=>['#scan-'+g.key,grouped[g.key].map(errorLine)]),['#scan-errors',blocked.map(errorLine)]]){
       const list=$(selector);if(!list)continue;list.replaceChildren();for(const value of values.length?values:['Ei merkintöjä.']){const li=document.createElement('li');li.textContent=value;list.append(li);}
     }
   }

@@ -1,4 +1,5 @@
 'use strict';
+const {renderMarkdown}=require('../haun-tila.js');
 const fs=require('fs'),vm=require('vm');const {parseLigaDB}=require('./ligadb-parser.cjs');
 // Officially separate Symppis and district championships, checked against both
 // source result lists. These exceptions do not permit arbitrary same-day imports.
@@ -44,5 +45,5 @@ if(require.main===module){const ctx={window:{}};vm.runInNewContext(fs.readFileSy
  if(result.changed) { result.data.updatedAt=now;fs.writeFileSync('data.js',R.exportSource(result.data)); }
  const state={version:1,checkedAt:now,updatedAt:result.data.updatedAt||result.data.exportedAt||null,competitions:result.data.competitions.length,results:R.rows(result.data).length,added:result.changes.filter(c=>c.kind==='added').length,changed:result.changes.filter(c=>c.kind==='updated').length,unchanged:result.unchanged,changes:result.changes,partial:result.partial,errors:result.errors};
  fs.writeFileSync('haun-tila.json',JSON.stringify(state,null,2)+'\n');
- const report='# Kilpailuhaku\n\nLisätty '+state.added+', päivitetty '+state.changed+', ennallaan '+state.unchanged+'. Osittaisia kilpailuja '+result.partial.length+', tuomatta jääneitä lähteitä '+result.errors.length+'.\n\n## Lisätyt ja päivitetyt (täydellinen tuonti)\n\n'+result.changes.filter(c=>!c.partial).map(c=>'- '+c.title+' · '+c.details).join('\n')+'\n\n## Osittain tuodut kilpailut\n\n'+result.partial.map(c=>'- '+c.title+' · '+c.details+' · mukana '+c.rows+' tulosta; pois jäivät: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', ')).join('\n')+'\n\n## Tuomatta jääneet lähteet\n\n'+result.errors.map(e=>'- '+e.source+' — '+e.error).join('\n');fs.writeFileSync('hakuraportti.md',report);if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,report);
+ const report=renderMarkdown(state);fs.writeFileSync('hakuraportti.md',report);if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,report);
  console.log('Päivitettyjä:',result.log.length,'tarkistettavia:',result.errors.length);}
