@@ -101,8 +101,16 @@
 </section>
 <noscript>Tämä työkalu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="palaute.js?v=2" defer></script>
-<script src="data.js?v=20261026-name-club1" defer></script>
-<script src="athlete-registry.js?v=20261026-name-club1" defer></script>
-<script src="yllapito.js?v=20261026-name-club1" defer></script>
-<script src="haun-tila.js?v=20261111-reportrefresh1" defer></script></body></html>
+<script>
+(() => {
+  const loader=document.createElement('script');
+  loader.src='yllapito-loader.js?fresh='+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
+  loader.onerror=()=>{
+    const message='Ylläpidon ohjelma ei latautunut. Tarkista verkkoyhteys ja avaa sivu uudelleen.';
+    for(const id of ['status','scan-report-status','feedback-admin-status']){
+      const element=document.getElementById(id);if(element)element.textContent=message;
+    }
+  };
+  document.head.append(loader);
+})();
+</script></body></html>
