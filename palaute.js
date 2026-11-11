@@ -104,6 +104,53 @@
     setStatus(status, message, kind);
   }
 
+  function inboxError(error, fallback) {
+    if (error.status === 401) signOut("Kirjautuminen vanheni. Kirjaudu uudelleen.", "error");
+    else if (error.status === 403 || error.code === "42501") signOut("Tällä tilillä ei ole oikeutta käsitellä palautteita.", "error");
+    else if (error.code === "PGRST202") setStatus(status, "Palautelaatikon tietokantapäivitys puuttuu. Aja palaute-luettu.sql Supabasessa.", "error");
+    else setStatus(status, fallback, "error");
+  }
+
+  function addReadControl(item, row) {
+    const badge = document.createElement("span");
+    badge.className = "feedback-read-badge";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "feedback-mark-read";
+    let isRead = Boolean(row.read_at);
+    function showState() {
+      badge.textContent = isRead ? "Luettu" : "Lukematon";
+      badge.dataset.read = String(isRead);
+      button.textContent = isRead ? "Merkitse lukemattomaksi" : "Merkitse luetuksi";
+    }
+    showState();
+    item.firstElementChild.after(badge);
+    item.append(button);
+    button.addEventListener("click", async () => {
+      if (!session || busy || button.disabled) return;
+      const token = session, desired = !isRead;
+      const buttons = [reload, newer, older, ...list.querySelectorAll(".feedback-mark-read")];
+      const previousDisabled = buttons.map(control => control.disabled);
+      busy = true;
+      buttons.forEach(control => { control.disabled = true; });
+      try {
+        const saved = await request("/rest/v1/rpc/paini_set_feedback_read", {p_id:row.id, p_read:desired}, token);
+        if (session !== token) return;
+        if (saved !== desired) throw new Error("Merkintää ei vahvistettu");
+        isRead = saved;
+        showState();
+        if (item.isConnected) setStatus(status, isRead ? "Palaute merkitty luetuksi." : "Palaute merkitty lukemattomaksi.", "success");
+      } catch (error) {
+        if (session === token) inboxError(error, "Merkintää ei voitu vahvistaa. Hae uusimmat ja tarkista tila.");
+      } finally {
+        if (session === token) {
+          busy = false;
+          buttons.forEach((control,index) => { control.disabled = previousDisabled[index]; });
+        }
+      }
+    });
+  }
+
   async function readPage(target) {
     if (!session || busy) return;
     const token = session;
@@ -111,7 +158,7 @@
     reload.disabled = newer.disabled = older.disabled = true;
     setStatus(status, "Haetaan palautteita…");
     try {
-      const rows = await request("/rest/v1/rpc/paini_read_feedback", {p_offset:target}, token);
+      const rows = await request("/rest/v1/rpc/paini_list_feedback", {p_offset:target}, token);
       if (session !== token) return;
       if (!Array.isArray(rows)) throw new Error("Palautelista ei kelpaa");
       offset = target;
@@ -125,6 +172,7 @@
         heading.textContent = (Object.hasOwn(labels,row.category) ? labels[row.category] : "Palaute") + " · " + time;
         content.textContent = row.message;
         item.append(heading,content);
+        addReadControl(item,row);
         fragment.append(item);
       }
       list.replaceChildren(fragment);
@@ -134,9 +182,7 @@
       setStatus(status, rows.length ? "Palautteet " + (offset + 1) + "–" + (offset + Math.min(rows.length,25)) + "." : "Ei palautteita tällä sivulla.");
     } catch (error) {
       if (session !== token) return;
-      if (error.status === 401) signOut("Kirjautuminen vanheni. Kirjaudu uudelleen.", "error");
-      else if (error.status === 403 || error.code === "42501") signOut("Tällä tilillä ei ole oikeutta lukea palautteita.", "error");
-      else setStatus(status, "Palautteita ei saatu ladattua. Kokeile Hae uusimmat -painiketta.", "error");
+      inboxError(error, "Palautteita ei saatu ladattua. Kokeile Hae uusimmat -painiketta.");
     } finally {
       if (session === token) {
         busy = false;
