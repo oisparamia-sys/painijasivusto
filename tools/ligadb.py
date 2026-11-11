@@ -87,19 +87,25 @@ def html_results(page):
   if weight:
    count=re.fullmatch(r'(\d+) (?:Osallistujaa?|Participants?)',cells[2],re.I)
    if not count and cells[2]:raise ValueError('Painoluokan osallistujamäärää ei tunnistettu')
-   current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]) if count else None,rows=[],unranked=0,people=[]);groups.append(current)
+   current=dict(weight=weight[1].replace(',','.'),category=cells[1],count=int(count[1]) if count else None,rows=[],unranked=0,people=[],placeholders=0);groups.append(current)
   elif current:
    rank=re.fullmatch(r'(\d+)\.',cells[0])
    # Dq is an official non-numeric outcome, never a finishing place.
    nonnumeric=cells[0] in ['', '0.', '0'] or cells[0].casefold()=='dq'
    if rank and int(rank[1])>0 and cells[1] and cells[2]:current['rows'].append([cells[0],cells[1],cells[2]])
+   elif nonnumeric and cells[1].casefold() in ['tyhjä','tyhja']:
+    # An explicitly empty slot is not a wrestler with a missing placement.
+    # Keep it in source-count checks, but never in results or identity matching.
+    current['placeholders']+=1
+    continue
    elif cells[0].lower()=='tyhjä':continue
    elif re.search(r'NR\d+\.htm',tr,re.I) or (len(cells)==3 and nonnumeric and cells[1] and cells[2]):
     if not nonnumeric or not cells[1] or not cells[2]:raise ValueError('Osallistujarivin rakennetta ei tunnistettu')
     current['unranked']+=1
    if (rank and int(rank[1])>0) or (nonnumeric and cells[1] and cells[2]):current['people'].append((cells[1].casefold(),cells[2].casefold()))
  for group in groups:
-  if group['count'] is not None and len(group['rows'])+group['unranked']!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
+  if group['count'] is not None and len(group['rows'])+group['unranked']+group['placeholders']!=group['count']:raise ValueError('HTML-tulosmäärä ei täsmää painoluokassa '+group['weight'])
+  if group['count'] is not None:group['count']-=group['placeholders']
  return groups
 
 def confirmed_weight(group, pageurl, category_link, available_links):
@@ -160,12 +166,13 @@ def competition(url):
  url=SOURCE_ALIASES.get(url,url)
  if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/index(?:FIN|ENG)\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
  s=get(url);alllinks=links(s);raw=[u for u in alllinks if '_tab.txt' in u]
- pages=[];generated=[];warnings=[];recovered=False;incomplete_categories=False;empty_categories=set()
+ pages=[];generated=[];warnings=[];recovered=False;incomplete_categories=False;empty_categories=set();placeholder_rows=False
  for link in alllinks:
   if 'tlges.htm' not in link:continue
   pageurl=urllib.parse.urljoin(url,link);page=get(pageurl);plain=clean(page)
   m=re.search(r'(?:Täyd\. tulosluettelo|List of winners complete|Result list complete) (.*?) \((\d+) (?:Osallistujaa?|Participants?)\)',plain,re.I)
   groups=html_results(page)
+  placeholder_rows=placeholder_rows or any(g['placeholders'] for g in groups)
   if m:
    # Age ranges can contain the same separator as the style suffix.
    # Split the header at its final separator, never inside '11 - 13v'.
@@ -176,7 +183,7 @@ def competition(url):
    if any(g['count'] is None for g in groups):raise ValueError('Osallistujamäärää ei ole ilmoitettu sarjalle eikä kaikille painoluokille')
    categories=set(g['category'] for g in groups)
    if len(categories)!=1:raise ValueError('HTML-sivun ikäluokat ovat ristiriidassa')
-   category=next(iter(categories));count=sum(g['count'] for g in groups)
+   category=next(iter(categories));count=sum(g['count']+g['placeholders'] for g in groups)
    # Only an explicit style word in the official category is accepted.
    style='Vapaa' if re.search(r'\bvapaa(?:paini)?\b',category,re.I) else 'Kr.room.' if re.search(r'\bkr[. ]|kreikkalais',category,re.I) else ''
   else:
@@ -187,7 +194,7 @@ def competition(url):
   code=style_code(style)
   if not code:raise ValueError('Painimuotoa ei ole ilmoitettu lähteessä: '+category)
   if any(g['category'].casefold()!=category.casefold() for g in groups):raise ValueError('Sarjan otsikko ja painoluokat eroavat')
-  observed=sum(len(g['rows'])+g['unranked'] for g in groups)
+  observed=sum(len(g['rows'])+g['unranked']+g['placeholders'] for g in groups)
   if observed!=count:
    # A conflicting category does not invalidate the other category pages.
    # Omit this entire category, never adjust its totals or invent placements.
@@ -236,7 +243,7 @@ def competition(url):
    if (category.casefold(),weight) not in known and not any(w['category'].casefold()==category.casefold() and w['weight']==weight for w in warnings):
     if not (re.search(r'ystävyys',category,re.I) or re.fullmatch(r'super ?finaali',category,re.I)):raise ValueError('Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: '+category)
     warnings.append(dict(category=category,weight=weight,excluded=int(h[3]),unranked=0,source=rawurl))
- if rawtext is not None and not warnings and not recovered and usable_tab(rawtext):text=rawtext
+ if rawtext is not None and not warnings and not recovered and not placeholder_rows and usable_tab(rawtext):text=rawtext
  else:
   header=re.search(r'<a\b[^>]*href\s*=\s*["\']index(?:FIN|ENG)\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
   if not header:raise ValueError('Kilpailun nimeä ja päivämäärää ei tunnistettu')
