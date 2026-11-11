@@ -1,5 +1,31 @@
 "use strict";
 const $ = selector => document.querySelector(selector);
+const boutsBase = new URL('.', document.currentScript?.src || location.href);
+let boutsLoading = null;
+function loadBouts() {
+  if (boutsLoading) return boutsLoading;
+  const notice = $('#bouts-load-status'), retry = $('#bouts-retry');
+  if (notice) { notice.hidden = false; notice.textContent = 'Ladataan ottelukokeilua…'; }
+  if (retry) retry.hidden = true;
+  boutsLoading = new Promise((resolve,reject) => {
+    const script = document.createElement('script');
+    script.src = new URL('ottelut.js?fresh='+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2),boutsBase).href;
+    script.onload = () => {
+      try {
+        if (!window.PAINI_BOUTS) throw Error('Ottelukokeilu puuttuu');
+        window.PAINI_BOUTS.init(sharedData,window.PainiRegistry);
+        resolve();
+      } catch (error) { script.remove(); reject(error); }
+    };
+    script.onerror = () => {script.remove();reject(Error('Ottelukokeilu ei latautunut'));};
+    document.head.append(script);
+  }).catch(() => {
+    boutsLoading = null;
+    if (notice) { notice.hidden=false; notice.textContent='Ottelukokeilua ei voitu avata. Tarkista verkkoyhteys ja että käytössä on uusin sivuversio. Tuloshaku toimii edelleen.'; }
+    if (retry) retry.hidden=false;
+  });
+  return boutsLoading;
+}
 const sharedData = window.PAINI_SHARED_DATA;
 const sharedReady = sharedData && sharedData.version === 1 &&
   Array.isArray(sharedData.competitions) && sharedData.competitions.every(valid) &&
@@ -220,6 +246,8 @@ function openProfile(athleteId, opener = null, updateUrl = true) {
   if (updateUrl) writeProfileRoute(athleteId);
   $("#search-view").hidden = true;
   $("#competition-view").hidden = true;
+  if ($("#bouts-view")) $("#bouts-view").hidden = true;
+  $("#nav-bouts")?.setAttribute("aria-pressed", "false");
   $("#nav-results").setAttribute("aria-pressed", "true");
   $("#nav-competitions").setAttribute("aria-pressed", "false");
   $("#wrestler-view").hidden = false;
@@ -352,10 +380,13 @@ function showView(view, focus = true, updateUrl = true) {
   $("#wrestler-view").hidden = true;
   $("#search-view").hidden = view !== "results";
   $("#competition-view").hidden = view !== "competitions";
+  if ($("#bouts-view")) $("#bouts-view").hidden = view !== "bouts";
+  $("#nav-bouts")?.setAttribute("aria-pressed", String(view === "bouts"));
   $("#nav-results").setAttribute("aria-pressed", String(view === "results"));
   $("#nav-competitions").setAttribute("aria-pressed", String(view === "competitions"));
   if (view === "competitions") renderCompetitionList();
-  if (focus) $(view === "results" ? "#results-heading" : "#competition-heading").focus();
+  if (view === "bouts") loadBouts();
+  if (focus) $(view === "bouts" ? "#bouts-heading" : view === "results" ? "#results-heading" : "#competition-heading").focus();
 }
 function openCompetition(item) {
   $("#result-style").value = "";
@@ -558,6 +589,9 @@ $("#club").addEventListener("change", render);
 $("#category").addEventListener("change", render);
 $("#nav-results").addEventListener("click", () => showView("results"));
 $("#nav-competitions").addEventListener("click", () => showView("competitions"));
+$('#nav-bouts')?.addEventListener('click',()=>showView('bouts'));
+$('#bouts-retry')?.addEventListener('click',()=>loadBouts());
+if ($('#nav-bouts')) $('#nav-bouts').disabled = !sharedReady || !registryReady;
 $("#competition-query").addEventListener("input", renderCompetitionList);
 $("#competition-sort").addEventListener("change", renderCompetitionList);
 $("#back-to-results").addEventListener("click", closeProfile);

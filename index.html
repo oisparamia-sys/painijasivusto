@@ -6,6 +6,30 @@
 <title>Painijatulokset</title>
 <link rel="stylesheet" href="style.css?v=20261031-refresh1">
 <link rel="stylesheet" href="palaute.css?v=1">
+
+<style>
+#bouts-view .bout-badge{display:inline-block;vertical-align:middle;font-size:13px;font-weight:650;padding:5px 10px;border-radius:7px;background:#eaf1ff;color:#174397}
+#bouts-view .bout-coverage{border-left:4px solid #2357bf;background:#edf2fa;border-radius:8px;padding:14px 18px;margin:18px 0}
+#bouts-view .bout-coverage p{margin:4px 0}
+#bouts-view fieldset{padding:0;border:0;margin:22px 0}
+#bouts-view legend{font-weight:650;margin-bottom:10px}
+#bouts-view .bout-mode-options{display:flex;flex-wrap:wrap;gap:18px}
+#bouts-view .bout-mode-options label{display:flex;align-items:center;gap:8px;font-weight:500;margin:0}
+#bouts-view input[type=radio]{width:auto;margin:0;accent-color:#2357bf}
+#bouts-view .bout-picker{position:relative;min-width:0}
+#bouts-view .bout-options{position:absolute;z-index:10;left:0;right:0;max-height:300px;overflow:auto;margin:4px 0 0;padding:6px;list-style:none;background:white;border:1px solid #cbd5e1;border-radius:9px;box-shadow:0 8px 24px #17253c1a}
+#bouts-view .bout-options [role=option]{padding:10px;border-radius:6px;cursor:pointer;line-height:1.5}
+#bouts-view .bout-options [aria-selected=true]{background:#eaf1ff;color:#174397}
+#bouts-view .bout-options small{display:block;color:#58677c}
+#bouts-view .bout-statistics{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+#bouts-view .bout-stat{flex:1 1 150px;background:#f4f7fb;border:1px solid #e0e7ef;border-radius:10px;padding:14px}
+#bouts-view .bout-stat strong{display:block;font-size:26px;color:#174397;margin-top:5px}
+#bouts-view .bout-win,#bouts-view .bout-loss{font-weight:650;border-radius:6px;padding:4px 8px;display:inline-block}
+#bouts-view .bout-win{background:#e7f5ec;color:#215c37}#bouts-view .bout-loss{background:#edf2fa;color:#435267}
+#bouts-view table{white-space:normal;min-width:680px}#bouts-view td{vertical-align:top;line-height:1.5}
+#bouts-view details{border-top:1px solid #e0e7ef;margin-top:24px;padding-top:16px}#bouts-view summary{cursor:pointer;font-weight:650}
+@media(max-width:700px){#bouts-view table{min-width:0}#bouts-view .bout-options{max-height:240px}#bouts-view .bout-stat{flex-basis:100px}}
+</style>
 </head>
 <body>
 <header><div>Painijatulokset</div></header>
@@ -14,6 +38,7 @@
 <nav class="view-nav" aria-label="Sivuston näkymät">
   <button id="nav-results" type="button" aria-pressed="true">Tuloshaku</button>
   <button id="nav-competitions" type="button" aria-pressed="false">Kilpailut</button>
+  <button id="nav-bouts" type="button" aria-pressed="false" aria-controls="bouts-view" disabled>Ottelut</button>
   <button id="feedback-open" type="button" aria-haspopup="dialog" hidden>Anna palautetta</button>
 </nav>
 <dialog id="feedback-dialog" aria-labelledby="feedback-title">
@@ -113,6 +138,61 @@
   <p id="competition-count" class="hint" role="status" aria-live="polite"></p>
   <ul id="competition-list" class="competition-list"></ul>
   <p id="competition-empty" class="hint" hidden>Hakuehdoilla ei löytynyt kilpailuja. Kokeile toista hakusanaa.</p>
+</section>
+
+<section id="bouts-view" class="card" aria-labelledby="bouts-heading" hidden>
+  <h2 id="bouts-heading" tabindex="-1">Ottelut <span class="bout-badge">Kokeilu</span></h2>
+  <p>Hae painijan vastustajia ja ottelutuloksia tai vertaile kahden painijan keskinäisiä otteluita.</p>
+  <aside class="bout-coverage" aria-label="Ottelukokeilun kattavuus">
+    <p><strong>Kokeessa vain TaPs painit · Tampere, 4.12.2025.</strong></p>
+    <p>44 ottelun tiedot täsmäsivät vertailuluetteloissa. Muiden kilpailujen ottelut eivät vielä ole mukana. Tämä ei ole painijan koko otteluhistoria.</p>
+  </aside>
+  <p id="bouts-load-status" class="hint" role="status">Ladataan ottelukokeilua…</p>
+  <button id="bouts-retry" type="button" hidden>Yritä otteluiden lataamista uudelleen</button>
+  <div id="bouts-app" hidden>
+    <fieldset>
+      <legend>Mitä haluat tarkastella?</legend>
+      <div class="bout-mode-options">
+        <label><input type="radio" name="bouts-mode" value="single" checked>Yhden painijan ottelut</label>
+        <label><input type="radio" name="bouts-mode" value="pair">Kahden painijan vertailu</label>
+      </div>
+    </fieldset>
+    <p id="bouts-search-help" class="hint">Kirjoita nimi ja valitse painija alle avautuvasta valikosta. Haku sietää pieniä kirjoitusvirheitä. Valikossa ovat tämän koekilpailun painijat.</p>
+    <div class="filters">
+      <div class="field bout-picker" id="bout-picker-a">
+        <label for="bout-search-a">Painija</label>
+        <input id="bout-search-a" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="bout-options-a" aria-describedby="bouts-search-help" autocomplete="off" placeholder="Hae painijan nimellä…">
+        <ul id="bout-options-a" class="bout-options" role="listbox" aria-label="Painijan hakuehdotukset" hidden></ul>
+      </div>
+      <div class="field bout-picker" id="bout-picker-b" hidden>
+        <label for="bout-search-b">Vastustaja</label>
+        <input id="bout-search-b" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="bout-options-b" aria-describedby="bouts-search-help" autocomplete="off" placeholder="Hae vastustajan nimellä…">
+        <ul id="bout-options-b" class="bout-options" role="listbox" aria-label="Vastustajan hakuehdotukset" hidden></ul>
+      </div>
+    </div>
+    <p id="bouts-suggestions-status" class="hint" role="status" aria-live="polite"></p>
+    <div class="actions">
+      <button id="bouts-swap" type="button" hidden disabled>Vaihda painijat keskenään</button>
+      <button id="bouts-example" type="button">Kokeile esimerkkiparia</button>
+      <button id="bouts-clear" type="button">Tyhjennä valinnat</button>
+    </div>
+    <h3 id="bouts-result-title">Valitse painija</h3>
+    <p id="bouts-result-status" role="status" aria-live="polite">Valitse painija nähdäksesi tämän kilpailun ottelut.</p>
+    <div id="bouts-statistics" class="bout-statistics" hidden></div>
+    <p id="bouts-omitted" class="hint" hidden></p>
+    <div id="bouts-table-wrap" class="table-wrap" hidden>
+      <table aria-label="Valittujen painijoiden ottelut">
+        <thead><tr><th scope="col">Kierros</th><th scope="col">Valittu painija</th><th scope="col">Vastustaja</th><th scope="col">Valitun tulos</th><th scope="col">Voittotapa</th><th scope="col">Pisteet, valittu–vastustaja</th><th scope="col">Lähde</th></tr></thead>
+        <tbody id="bouts-results"></tbody>
+      </table>
+    </div>
+    <details>
+      <summary>Mitä kokeilusta puuttuu?</summary>
+      <p>Seitsemän painoluokkien ottelua jäi pois, koska lähdeluetteloissa oli eroja nimissä tai tuloksissa. Lisäksi yksi vain toisessa luettelossa esiintyvä ottelu jäi ulkopuolelle. Näitä otteluita ei lasketa tässä näkyviin voittoihin tai tappioihin.</p>
+      <p>Voittotapa ja tekniset pisteet ovat eri asioita: selätysvoiton voi saada myös pienemmillä pisteillä. Puuttuvia pisteitä ei päätellä eikä korvata luvulla 0–0. Tiedot tarkistettu 11.11.2026.</p>
+      <a href="https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm" target="_blank" rel="noopener noreferrer">Avaa kilpailun alkuperäinen lähde ↗</a>
+    </details>
+  </div>
 </section>
 <section id="wrestler-view" class="card" aria-labelledby="wrestler-title" hidden>
   <button id="back-to-results" type="button">← Takaisin hakutuloksiin</button>
