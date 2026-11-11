@@ -6,6 +6,8 @@ const sharedReady = sharedData && sharedData.version === 1 &&
   new Set(sharedData.competitions.map(identity)).size === sharedData.competitions.length;
 const sharedCompetitions = sharedReady ? sharedData.competitions : [];
 const competitions = [...sharedCompetitions];
+// Competition data is immutable for the lifetime of this page.
+const competitionDates = new WeakMap();
 let registryReady = false;
 try { window.PainiRegistry.validate(sharedData); registryReady = true; } catch { /* Results remain readable if the registry has not loaded. */ }
 const athleteRecords = new Map((registryReady ? sharedData.athleteRegistry.athletes : []).map(a => [a.id, a]));
@@ -73,7 +75,8 @@ function refreshFilters() {
     return Number(b.value) - Number(a.value);
   }).forEach(option => yearSelect.append(option));
   const items = yearFilteredCompetitions();
-  const rows = items.flatMap(item => item.rows.filter(row => matchesStyle(item, row)));
+  const style = $("#result-style").value;
+  const rows = items.flatMap(item => style ? item.rows.filter(row => resultStyle(item, row) === style) : item.rows);
   options($("#club"), rows.map(row => row.club), "Kaikki seurat");
   options($("#category"), rows.map(row => row.category), "Kaikki ikäluokat");
   $("#selection").textContent = items.length === 1
@@ -120,15 +123,25 @@ function refreshFilters() {
 }
 function render(keepPage = false) {
   if (keepPage !== true) resultsPage = 0;
-  const query = $("#search").value.trim().toLocaleLowerCase("fi");
+  const tokens = searchWords($("#search").value.trim().toLocaleLowerCase("fi"));
+  const style = $("#result-style").value, club = $("#club").value;
+  const category = $("#category").value, order = $("#result-sort").value;
+  const matchedNames = new Map();
+  function matchesName(name) {
+    if (!matchedNames.has(name)) matchedNames.set(name, matchesSearchWords(searchWords(name), tokens));
+    return matchedNames.get(name);
+  }
   const fragment = document.createDocumentFragment();
-  const entries = yearFilteredCompetitions().flatMap(item => item.rows.map(result => ({item, result}))).filter(({item,result}) =>
-    matchesStyle(item,result) &&
-    (matchesCompetitionQuery(result.name, query) || matchesCompetitionQuery(athleteRecords.get(result.athleteId)?.name || "", query)) &&
-    (!$("#club").value || result.club === $("#club").value) &&
-    (!$("#category").value || result.category === $("#category").value)
-  );
-  entries.sort(compareResults);
+  const entries = [];
+  for (const item of yearFilteredCompetitions()) {
+    for (const result of item.rows) {
+      if (club && result.club !== club || category && result.category !== category) continue;
+      if (style && resultStyle(item, result) !== style) continue;
+      if (tokens.length && !matchesName(result.name) && !matchesName(athleteRecords.get(result.athleteId)?.name || "")) continue;
+      entries.push({item, result});
+    }
+  }
+  entries.sort((a,b) => compareResults(a,b,order));
   const count = entries.length;
   lastResultsPage = Math.max(0,Math.ceil(count/resultsPerPage)-1);
   resultsPage = Math.max(0,Math.min(resultsPage,lastResultsPage));
@@ -172,7 +185,7 @@ function render(keepPage = false) {
   $("#count").textContent = count === 1 ? "1 tulos" : count + " tulosta";
   $("#empty").hidden = count > 0;
   if (profileState) renderProfile();
-  renderCompetitionList();
+  // The directory has its own filters and is rendered when its tab is opened.
 }
 function normalizePerson(value) {
   return value.normalize("NFC").trim().replace(/\s+/g, " ").toLocaleLowerCase("fi");
@@ -181,13 +194,17 @@ function profileCompetitions() {
   return competitions;
 }
 function competitionDate(item) {
+  const cached = competitionDates.get(item);
+  if (cached !== undefined) return cached;
   const match = (item.details || item.title).match(/\b(\d{1,2})[./](\d{1,2})[./](\d{4})\b/);
-  if (!match) return -Infinity;
+  if (!match) { competitionDates.set(item, -Infinity); return -Infinity; }
   const day = Number(match[1]), month = Number(match[2]), year = Number(match[3]);
   const timestamp = Date.UTC(year, month - 1, day);
   const date = new Date(timestamp);
-  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
+  const result = date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
     ? timestamp : -Infinity;
+  competitionDates.set(item, result);
+  return result;
 }
 function openProfile(athleteId, opener = null, updateUrl = true) {
   if (!registryReady) return;
@@ -363,8 +380,11 @@ function wordDistance(a, b) {
   return rows[a.length][b.length];
 }
 function matchesCompetitionQuery(text, query) {
-  const words = searchWords(text);
-  return searchWords(query).every(token => words.some(word => {
+  const tokens = searchWords(query);
+  return !tokens.length || matchesSearchWords(searchWords(text), tokens);
+}
+function matchesSearchWords(words, tokens) {
+  return tokens.every(token => words.some(word => {
     if (/\d/u.test(token)) return word.startsWith(token);
     if (word.includes(token)) return true;
     if (token.length < 3 || /\d/u.test(token) || /\d/u.test(word)) return false;
@@ -558,8 +578,7 @@ function yearFilteredCompetitions() {
   const year = $("#result-year").value;
   return selectedCompetitions().filter(item => !year || resultYear(item) === year);
 }
-function compareResults(a, b) {
-  const order = $("#result-sort").value;
+function compareResults(a, b, order) {
   if (order === "place" && a.result.place !== b.result.place) return a.result.place - b.result.place;
   const left = competitionDate(a.item), right = competitionDate(b.item);
   if (left !== right) {
@@ -578,10 +597,6 @@ function resultStyle(item, row) {
 function styleLabel(item, row) {
   return {greco:"Kreikkalais-roomalainen", freestyle:"Vapaapaini", women:"Naispaini", unknown:"Ei vahvistettu"}[resultStyle(item, row)];
 }
-function matchesStyle(item, row) {
-  return !$("#result-style").value || resultStyle(item, row) === $("#result-style").value;
-}
-
 // Stable share links use the site's own ID; source names and clubs stay out of the URL.
 function profileAddress(athleteId) {
   // A file opened on the maintainer's Mac should still produce a public share link.
