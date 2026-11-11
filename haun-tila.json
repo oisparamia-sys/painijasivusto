@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-11T16:01:58.258Z",
+  "checkedAt": "2026-11-11T16:15:40.651Z",
   "updatedAt": "2026-11-09T17:27:03.158Z",
   "competitions": 298,
   "results": 34744,
   "added": 0,
   "changed": 0,
-  "unchanged": 67,
+  "unchanged": 68,
   "changes": [],
   "partial": [
     {
@@ -559,10 +559,6 @@
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/indexFIN.htm",
-      "error": "Tulosmäärä pieneni; tarkista käsin"
-    },
-    {
-      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
       "error": "Tulosmäärä pieneni; tarkista käsin"
     }
   ]
