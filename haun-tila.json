@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-13T03:10:24.215Z",
+  "checkedAt": "2026-11-14T03:11:09.342Z",
   "updatedAt": "2026-11-09T17:27:03.158Z",
   "competitions": 298,
   "results": 34744,
@@ -709,6 +709,10 @@
     }
   ],
   "errors": [
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2026/FI/261114_Jaervenpaeae/indexFIN.htm",
+      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
+    },
     {
       "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260822_Oulu/indexFIN.htm",
       "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
