@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Compare official bout lists and build a separate, read-only bout dataset.
 
-Default scope is the six explicit sample events. Existing data.js is never changed.
-Run: python tools/collect-bouts.py --cache .bout-cache
+Default scope follows the competition search: current year, all years on Sundays.
+Existing data.js is never changed. Run: python tools/collect-bouts.py --year all
 """
 import argparse,collections,concurrent.futures,datetime,hashlib,html,json,pathlib,re,unicodedata,urllib.parse
 from ligadb import get,links,clean,html_results
@@ -195,12 +195,129 @@ def collect(data,source):
  if not result['matches']:raise ValueError('Yhtään ottelua ei voitu vahvistaa; vanhaa otteluaineistoa ei korvattu')
  return result
 
+def load_previous(path):
+ path=pathlib.Path(path)
+ if not path.exists():return None
+ marker='window.PAINI_BOUTS_DATA = '
+ text=path.read_text(encoding='utf-8')
+ if marker not in text:raise ValueError('Vanhan otteluaineiston muoto ei kelpaa')
+ value,_=json.JSONDecoder().raw_decode(text.split(marker,1)[1])
+ if value.get('version')!=2:raise ValueError('Vanhan otteluaineiston versio ei kelpaa')
+ validate(value)
+ return value
+
+def validate(data):
+ competitions={c['key'] for c in data['competitions']}
+ if len(competitions)!=len(data['competitions']):raise ValueError('Toistuva kilpailutunnus')
+ people={p['resultId']:p for p in data['participants']}
+ if len(people)!=len(data['participants']):raise ValueError('Toistuva tulostunnus')
+ ids=set()
+ for m in data['matches']:
+  if m['id'] in ids or m['competition'] not in competitions:raise ValueError('Ottelun tunnus tai kilpailu ei kelpaa')
+  ids.add(m['id'])
+  for side in ['red','blue']:
+   p=people.get(m[side])
+   if not p or p['competition']!=m['competition'] or p['category']!=m['category'] or str(p['weight'])!=str(m['weight']):raise ValueError('Ottelun tulosviittaus ei kelpaa')
+  if m['winner'] not in [m['red'],m['blue']] or people[m['red']]['athleteId']==people[m['blue']]['athleteId']:raise ValueError('Ottelun painijat eivät kelpaa')
+  if m['code'] not in METHODS or (m['points'] is not None and (len(m['points'])!=2 or any(type(x)!=int or x<0 for x in m['points']))):raise ValueError('Ottelutulos ei kelpaa')
+
+def years_for(arg,now=None):
+ now=now or datetime.datetime.now(datetime.timezone.utc)
+ if arg=='samples':return None
+ if arg=='all' or (arg=='auto' and now.weekday()==6):return set(range(2022,2027))
+ years={min(2026,max(2022,now.year))} if arg=='auto' else {int(arg)}
+ if not years<=set(range(2022,2027)):raise ValueError('Valitse vuosi 2022–2026')
+ return years
+
+def collect_auto(data,source,previous,year='auto'):
+ years=years_for(year);now=datetime.datetime.now(datetime.timezone.utc).isoformat()
+ result={'version':2,'checkedAt':now,'competitions':[],'participants':[],'matches':[],'excluded':[],'issues':[],'errors':[],'methodLabels':METHODS}
+ report={'version':1,'checkedAt':now,'scope':year,'events':[],'summary':{}}
+ current=collections.defaultdict(list)
+ for c in data['competitions']:
+  if c.get('source'):current[c['source']].append(c)
+ previous=previous or {'competitions':[],'participants':[],'matches':[],'excluded':[],'issues':[]}
+ oldmeta={c['key']:c for c in previous['competitions']}
+ # Resolve registry merges only through explicit registry links.
+ registry={a['id']:a for a in data.get('athleteRegistry',{}).get('athletes',[])}
+ def canonical(id):
+  seen=set()
+  while registry.get(id,{}).get('mergedInto'):
+   if id in seen:raise ValueError('Painijarekisterin yhdistämiskehä')
+   seen.add(id);id=registry[id]['mergedInto']
+  return id
+ def old_event(url):
+  if url not in oldmeta:return None
+  if len(current[url])!=1:raise ValueError('Vanhan otteluaineiston kilpailu puuttuu tai on moninkertainen: '+url)
+  rows={r['resultId']:r for r in current[url][0]['rows']};people=[]
+  for p in previous['participants']:
+   if p['competition']!=url:continue
+   row=rows.get(p['resultId'])
+   if not row or canonical(row['athleteId'])!=canonical(p['athleteId']) or row['category']!=p['category'] or str(row['weight'])!=str(p['weight']):raise ValueError('Vanhan otteluaineiston painijaviittaus muuttui; aineistoa ei julkaista: '+url)
+   people.append({**p,'athleteId':row['athleteId']})
+  return (oldmeta[url],people,[m for m in previous['matches'] if m['competition']==url],[e for e in previous['excluded'] if e['competition']==url],[i for i in previous['issues'] if i.get('source','').startswith(url.rsplit('/',1)[0]+'/')])
+ urls=set(oldmeta)
+ for url in current:
+  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(202[2-6])/FI/[A-Za-z0-9_-]+/index(?:FIN|ENG)\.htm',url)
+  if match and ((years is None and url.removeprefix(HOST) in SAMPLES) or (years is not None and int(match[1]) in years)):urls.add(url)
+ for url in sorted(urls):
+  old=old_event(url)
+  match=re.search(r'/(202[2-6])/FI/',url)
+  selected=bool(match) and ((years is None and url.removeprefix(HOST) in SAMPLES) or (years is not None and int(match[1]) in years))
+  status='unchanged';reason=None;event=old
+  if selected:
+   try:
+    if len(current[url])!=1:raise ValueError('Kilpailua ei löytynyt yksikäsitteisesti')
+    candidate=collect_event(current[url][0],source)
+    if not candidate[2]:raise ValueError('Yhtään ottelua ei voitu vahvistaa')
+    # A changed result for an old bout needs manual review, not an automatic overwrite.
+    if old:
+     incoming={m['id']:m for m in candidate[2]}
+     for m in old[2]:
+      new=incoming.get(m['id'])
+      if not new or any(new[k]!=m[k] for k in ['red','blue','winner','code','points','category','weight']):raise ValueError('Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin')
+    meta,people,matches,excluded,issues=candidate
+    event=({**meta,'checkedAt':now},people,matches,excluded,issues);status='updated'
+   except Exception as error:
+    reason=str(error);status='preserved' if old else 'failed'
+    result['errors'].append({'source':url,'reason':reason})
+   report['events'].append({'source':url,'status':status,'matches':len(event[2]) if event else 0,'reason':reason})
+   print(status,url,len(event[2]) if event else 0,reason or '',flush=True)
+  if event:
+   meta,people,matches,excluded,issues=event
+   result['competitions'].append(meta);result['participants'].extend(people);result['matches'].extend(matches);result['excluded'].extend(excluded);result['issues'].extend(issues)
+ validate(result)
+ counts=collections.Counter(e['status'] for e in report['events'])
+ report['summary']={**{k:counts[k] for k in ['updated','preserved','failed']},'attempted':len(report['events']),'competitions':len(result['competitions']),'matches':len(result['matches']),'excluded':len(result['excluded']),'sourceIssues':len(result['issues'])}
+ report['excluded']=result['excluded']
+ report['sourceIssues']=result['issues']
+ result['searchSummary']=report['summary']
+ report['years']={str(y):{'competitions':sum(c['year']==y for c in result['competitions']),'matches':sum(m['competition'] in {c['key'] for c in result['competitions'] if c['year']==y} for m in result['matches'])} for y in range(2022,2027)}
+ return result,report
+
+def atomic_write(path,text):
+ path=pathlib.Path(path);path.parent.mkdir(parents=True,exist_ok=True)
+ temporary=path.with_name(path.name+'.tmp')
+ temporary.write_text(text,encoding='utf-8');temporary.replace(path)
+
 def main():
- parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--data',default='data.js');parser.add_argument('--output',default='ottelut-data.js');parser.add_argument('--report',default='ottelut-raportti.json');parser.add_argument('--cache');parser.add_argument('--offline',action='store_true');args=parser.parse_args()
- result=collect(load_data(args.data),Source(args.cache,args.offline))
- if result['errors']:raise ValueError('Osa koekilpailuista epäonnistui; vanhaa otteluaineistoa ei korvattu: '+json.dumps(result['errors'],ensure_ascii=False))
- content=json.dumps(result,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029')
- pathlib.Path(args.output).write_text('"use strict";\nwindow.PAINI_BOUTS_DATA = '+content+';\n')
- pathlib.Path(args.report).write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
- print('Koekilpailuja:',len(result['competitions']),'hyväksyttyjä otteluita:',len(result['matches']),'tarkistettavia otteluita:',len(result['excluded']),flush=True)
+ parser=argparse.ArgumentParser(description=__doc__)
+ parser.add_argument('--data',default='data.js');parser.add_argument('--output',default='ottelut-data.js');parser.add_argument('--report',default='ottelut-raportti.json');parser.add_argument('--cache');parser.add_argument('--offline',action='store_true');parser.add_argument('--year',default='auto',choices=['auto','all','samples','2022','2023','2024','2025','2026'])
+ args=parser.parse_args()
+ result,report=collect_auto(load_data(args.data),Source(args.cache,args.offline),load_previous(args.output),args.year)
+ atomic_write(args.report,json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+ lines=['# Otteluhaun raportti', '', 'Tarkistettu: '+report['checkedAt'], '', '```json',json.dumps(report['summary'],ensure_ascii=False,indent=2),'```','', 'Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).','','## Vuosikattavuus','']
+ for y,v in report['years'].items():lines.append(f"- {y}: {v['competitions']} kilpailua, {v['matches']} ottelua")
+ lines+=['','## Tarkistettavat kilpailut','']
+ for e in report['events']:
+  if e['status'] in ['preserved','failed']:lines.append('- '+e['source']+' — '+e['status']+': '+str(e['reason']))
+ if not any(e['status'] in ['preserved','failed'] for e in report['events']):lines.append('Ei epäonnistuneita kilpailuja.')
+ lines+=['','## Ottelukohtaiset huomiot','']
+ for item in (report['excluded']+report['sourceIssues'])[:200]:lines.append('- '+item.get('source','')+' — '+item['reason'])
+ if len(report['excluded'])+len(report['sourceIssues'])>200:lines.append('Näytetään ensimmäiset 200 huomiota. Kaikki huomiot löytyvät JSON-raportista.')
+ atomic_write(pathlib.Path(args.report).with_suffix('.md'),'\n'.join(lines)+'\n')
+ if result['matches']:
+  content=json.dumps(result,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029')
+  atomic_write(args.output,'"use strict";\nwindow.PAINI_BOUTS_DATA = '+content+';\n')
+ print(json.dumps(report['summary'],ensure_ascii=False),flush=True)
 if __name__=='__main__':main()

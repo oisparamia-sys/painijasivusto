@@ -144,13 +144,15 @@
 </section>
 
 <section id="bouts-view" class="card" aria-labelledby="bouts-heading" hidden>
-  <h2 id="bouts-heading" tabindex="-1">Ottelut <span class="bout-badge">Kokeilu</span></h2>
+  <h2 id="bouts-heading" tabindex="-1">Ottelut <span class="bout-badge">Laajeneva aineisto</span></h2>
   <p>Hae painijan vastustajia ja ottelutuloksia tai vertaile kahden painijan keskinäisiä otteluita.</p>
-  <aside class="bout-coverage" aria-label="Ottelukokeilun kattavuus">
-    <p><strong>Ottelutietojen laajennuskokeilu</strong></p>
+  <aside class="bout-coverage" aria-label="Ottelutietojen kattavuus">
+    <p><strong>Ottelutietojen kattavuus</strong></p>
+    <p id="bouts-report-link" hidden><a href="ottelut-raportti.md" target="_blank" rel="noopener">Avaa viimeisin otteluhaun raportti</a></p>
+    <p id="bouts-search-summary" role="status"></p>
     <p id="bouts-coverage-summary">Ladataan mukana olevien kilpailujen tietoja…</p>
   </aside>
-  <p id="bouts-load-status" class="hint" role="status">Ladataan ottelukokeilua…</p>
+  <p id="bouts-load-status" class="hint" role="status">Ladataan ottelutietoja…</p>
   <button id="bouts-retry" type="button" hidden>Yritä otteluiden lataamista uudelleen</button>
   <div id="bouts-app" hidden>
     <fieldset>
@@ -160,9 +162,9 @@
         <label><input type="radio" name="bouts-mode" value="pair">Kahden painijan vertailu</label>
       </div>
     </fieldset>
-    <p id="bouts-search-help" class="hint">Kirjoita nimi ja valitse painija alle avautuvasta valikosta. Haku sietää pieniä kirjoitusvirheitä. Valikossa ovat mukana olevien koekilpailujen painijat.</p>
-    <p id="bouts-opponent-help" class="hint" hidden>Kun ensimmäinen painija on valittu, ehdotamme ensin hänen aiempia vastustajiaan tämän kokeen aineistosta. Muut painijat löytyvät tarkemmalla nimellä. Tyhjennä hakukenttä nähdäksesi aiemmat vastustajat.</p>
-    <div class="field" style="margin:16px 0;max-width:100%"><label for="bouts-competition">Kilpailu</label><select id="bouts-competition"><option value="">Kaikki kokeen kilpailut</option></select></div>
+    <p id="bouts-search-help" class="hint">Kirjoita nimi ja valitse painija alle avautuvasta valikosta. Haku sietää pieniä kirjoitusvirheitä. Valikossa ovat mukana olevien kilpailujen painijat.</p>
+    <p id="bouts-opponent-help" class="hint" hidden>Kun ensimmäinen painija on valittu, ehdotamme ensin hänen aiempia vastustajiaan mukana olevasta aineistosta. Muut painijat löytyvät tarkemmalla nimellä. Tyhjennä hakukenttä nähdäksesi aiemmat vastustajat.</p>
+    <div class="field" style="margin:16px 0;max-width:100%"><label for="bouts-competition">Kilpailu</label><select id="bouts-competition"><option value="">Kaikki mukana olevat kilpailut</option></select></div>
     <div class="filters">
       <div class="field bout-picker" id="bout-picker-a">
         <label for="bout-search-a">Painija</label>
@@ -193,7 +195,7 @@
     </div>
     <details>
       <summary>Mukana olevat kilpailut ja kattavuus</summary>
-      <p>Kokeessa on vasta osa vuosien 2022–2026 kilpailuista. Pois jätetyt ottelut eivät sisälly näkyviin voittoihin tai tappioihin. Lähderistiriidat, tunnistamattomat painijat ja tarkistettavat voittotavat jätetään ulkopuolelle.</p>
+      <p>Aineistossa on osa vuosien 2022–2026 kilpailuista. Pois jätetyt ottelut eivät sisälly näkyviin voittoihin tai tappioihin. Lähderistiriidat, tunnistamattomat painijat ja tarkistettavat voittotavat jätetään ulkopuolelle.</p>
       <ul id="bouts-coverage-list"></ul>
       <p>Voittotapa ja tekniset pisteet ovat eri asioita: selätysvoiton voi saada myös pienemmillä pisteillä. Puuttuvia pisteitä ei päätellä eikä korvata luvulla 0–0.</p>
       <p id="bouts-checked-at" class="hint"></p>

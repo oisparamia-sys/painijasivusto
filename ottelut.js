@@ -127,7 +127,7 @@
           if(found.prioritize) {
             const history=document.createElement('small'),count=found.counts.get(person.id)||0;
             history.className=count?'bout-opponent-note':'bout-no-history';
-            history.textContent=count?'Aiempi vastustaja · '+count+' ottelua tässä kokeessa':'Ei keskinäisiä otteluita tässä kokeessa';
+            history.textContent=count?'Aiempi vastustaja · '+count+' ottelua tässä aineistossa':'Ei keskinäisiä otteluita tässä aineistossa';
             li.append(history);
           }
           li.addEventListener('mousedown',event=>event.preventDefault());
@@ -137,8 +137,8 @@
         input.removeAttribute('aria-activedescendant');
         const knownCount=options.filter(p=>found.counts.has(p.id)).length;
         $('#bouts-suggestions-status').textContent=options.length
-          ?found.prioritize?options.length+' ehdotusta, joista '+knownCount+' aiempia vastustajia tässä kokeessa.':options.length+' sopivaa painijaa.'
-          :found.prioritize?'Nimellä ei löytynyt ehdotuksia. Muista painijoista kirjoita nimi tai vähintään kolme kirjainta nimen alusta.':'Nimellä ei löytynyt painijaa valituista koekilpailuista.';
+          ?found.prioritize?options.length+' ehdotusta, joista '+knownCount+' aiempia vastustajia tässä aineistossa.':options.length+' sopivaa painijaa.'
+          :found.prioritize?'Nimellä ei löytynyt ehdotuksia. Muista painijoista kirjoita nimi tai vähintään kolme kirjainta nimen alusta.':'Nimellä ei löytynyt painijaa valituista kilpailuista.';
       }
       input.addEventListener('focus',show);
       input.addEventListener('input',()=>{changed(null);show();});
@@ -181,7 +181,7 @@
       const matches=prepared.matches.filter(m=>inScope(m)&&relevant(m)).sort((x,y)=>date(y.competition)-date(x.competition)||x.round.localeCompare(y.round,'fi',{numeric:true}));
       const missing=prepared.excluded.filter(m=>(!scope||m.competition===scope)&&m.people.has(a)&&(!pair||m.people.has(b))).length;
       if(missing) {omitted.hidden=false;omitted.textContent='Tästä valinnasta jäi pois '+missing+' ottelua lähderistiriidan, puuttuvan tunnistuksen tai tarkistettavan voittotavan vuoksi. Ne eivät sisälly alla oleviin lukuihin.';}
-      notice.textContent=matches.length?matches.length+' ottelua valituissa koekilpailuissa. Voitot ja tappiot koskevat vain alla näkyviä otteluita.':pair?'Valinnalla ei löytynyt kokeeseen mukaan otettuja otteluita. Tämä ei tarkoita, etteivät painijat olisi koskaan kohdanneet.':'Tälle painijalle ei löytynyt mukaan otettuja otteluita valituista koekilpailuista. Muiden kilpailujen ottelut eivät vielä ole mukana.';
+      notice.textContent=matches.length?matches.length+' ottelua valituissa kilpailuissa. Voitot ja tappiot koskevat vain alla näkyviä otteluita.':pair?'Valinnalla ei löytynyt aineistoon mukaan otettuja otteluita. Tämä ei tarkoita, etteivät painijat olisi koskaan kohdanneet.':'Tälle painijalle ei löytynyt mukaan otettuja otteluita valituista kilpailuista. Muiden kilpailujen ottelut eivät vielä ole mukana.';
       const wins=matches.filter(m=>m.winner.id===a).length;
       stats.append(statistic('Otteluita',matches.length),statistic(pair?person.name+' · voitot':'Voittoja',wins),statistic(pair?opponent.name+' · voitot':'Tappioita',matches.length-wins));stats.hidden=false;
       for(const match of matches) {
@@ -203,17 +203,20 @@
     }
     const selectCompetition=$('#bouts-competition');
     selectCompetition.replaceChildren();
-    const all=document.createElement('option');all.value='';all.textContent='Kaikki kokeen kilpailut';selectCompetition.append(all);
+    const all=document.createElement('option');all.value='';all.textContent='Kaikki mukana olevat kilpailut';selectCompetition.append(all);
     for(const competition of prepared.competitions) {
       const option=document.createElement('option');option.value=competition.key;option.textContent=competition.title+' · '+competition.details;selectCompetition.append(option);
     }
     selectCompetition.addEventListener('change',()=>{scope=selectCompetition.value;pa.close();pb.close();$('#bouts-suggestions-status').textContent='Kilpailurajaus päivitetty.';render();});
-    $('#bouts-coverage-summary').textContent=prepared.competitions.length+' koekilpailua vuosilta '+Math.min(...prepared.competitions.map(c=>c.year))+'–'+Math.max(...prepared.competitions.map(c=>c.year))+'. Mukana '+prepared.matches.length+' ottelua ja '+prepared.people.length+' painijaa. Tämä ei vielä ole painijoiden koko otteluhistoria.';
+    $('#bouts-coverage-summary').textContent=prepared.competitions.length+' kilpailua vuosilta '+Math.min(...prepared.competitions.map(c=>c.year))+'–'+Math.max(...prepared.competitions.map(c=>c.year))+'. Mukana '+prepared.matches.length+' ottelua ja '+prepared.people.length+' painijaa. Tämä ei vielä ole painijoiden koko otteluhistoria.';
     const coverage=$('#bouts-coverage-list');coverage.replaceChildren();
     for(const competition of prepared.competitions) {
-      const li=document.createElement('li');li.textContent=competition.title+' · '+competition.details+' — mukana '+competition.stats.accepted+' ottelua, pois jäi '+competition.stats.excluded+' ottelua. Vain toisessa luettelossa '+competition.stats.unmatchedNumbered+', muita lähdehuomioita '+competition.stats.unreadable+'.';coverage.append(li);
+      const li=document.createElement('li');li.textContent=(competition.checkedAt?'Tarkistettu '+new Intl.DateTimeFormat('fi-FI',{dateStyle:'short',timeZone:'Europe/Helsinki'}).format(new Date(competition.checkedAt))+' · ':'')+competition.title+' · '+competition.details+' — mukana '+competition.stats.accepted+' ottelua, pois jäi '+competition.stats.excluded+' ottelua. Vain toisessa luettelossa '+competition.stats.unmatchedNumbered+', muita lähdehuomioita '+competition.stats.unreadable+'.';coverage.append(li);
     }
-    $('#bouts-checked-at').textContent='Ottelutiedot tarkistettu '+new Intl.DateTimeFormat('fi-FI',{dateStyle:'short',timeZone:'Europe/Helsinki'}).format(new Date(trial.checkedAt))+'.';
+    const search=trial.searchSummary;
+    if($('#bouts-report-link'))$('#bouts-report-link').hidden=!search;
+    if(search && $('#bouts-search-summary'))$('#bouts-search-summary').textContent='Viimeisin haku: '+search.attempted+' kilpailua tarkistettavana, '+search.updated+' päivitetty, '+search.preserved+' säilytetty aiemmasta aineistosta, '+search.failed+' ilman vahvistettuja otteluita. Kaikkien kilpailujen tietoja ei ole välttämättä saatavilla.';
+    $('#bouts-checked-at').textContent='Viimeisin otteluhaku '+new Intl.DateTimeFormat('fi-FI',{dateStyle:'short',timeZone:'Europe/Helsinki'}).format(new Date(trial.checkedAt))+'.';
     document.querySelectorAll('input[name=bouts-mode]').forEach(input=>input.addEventListener('change',()=>{if(input.checked)setMode(input.value);}));
     $('#bouts-swap').addEventListener('click',()=>{[a,b]=[b,a];pa.set(people.get(a));pb.set(people.get(b));$('#bouts-suggestions-status').textContent='Painijat vaihdettu keskenään.';render();});
     $('#bouts-clear').addEventListener('click',()=>{a=null;b=null;pa.set(null);pb.set(null);$('#bouts-suggestions-status').textContent='Valinnat tyhjennetty.';render();$('#bout-search-a').focus();});
