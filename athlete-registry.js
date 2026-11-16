@@ -91,6 +91,8 @@
       const before = new Map(input.competitions.map(c => [compKey(c), c]));
       entry.competitions = data.competitions.filter(c => !same(before.get(compKey(c)), c))
         .map(c => ({ key: compKey(c), before: before.has(compKey(c)) ? copy(before.get(compKey(c))) : null, after: copy(c) }));
+      const remaining=new Set(data.competitions.map(compKey));
+      for(const [key,c] of before)if(!remaining.has(key))entry.competitions.push({key,before:copy(c),after:null});
     } else {
       const before = new Map(rows(input).map(r => [r.resultId, r.athleteId]));
       entry.assignments = rows(data).filter(r => r.athleteId !== before.get(r.resultId))
@@ -216,7 +218,9 @@
       const work = new Map(data.competitions.map(c => [compKey(c), c])), seen = new Set();
       incoming.forEach(original => {
         const c = copy(original), key = compKey(c); check(!seen.has(key), "Sama kilpailu on tuonnissa kahdesti."); seen.add(key);
-        const previous = work.get(key), oldGroups = new Map(), newCounts = new Map();
+        const sourceMatches=options.matchBySource && c.source?[...work.values()].filter(old=>old.source===c.source):[];
+        check(sourceMatches.length<=1,'Sama lähdeosoite on useassa kilpailussa.');
+        const previous = work.get(key) || sourceMatches[0], oldGroups = new Map(), newCounts = new Map();
         (previous?.rows || []).forEach(r => { const k = rowKey(r); if (!oldGroups.has(k)) oldGroups.set(k, []); oldGroups.get(k).push(r); });
         c.rows.forEach(r => { const k = rowKey(r); newCounts.set(k, (newCounts.get(k) || 0) + 1); });
         c.rows.forEach(r => {
@@ -229,6 +233,7 @@
             r.resultId = allocate(data.athleteRegistry, "tulos"); r.athleteId = addPerson(data, r.name).id;
           }
         });
+        if(previous && compKey(previous)!==key)work.delete(compKey(previous));
         work.set(key, c);
       });
       data.competitions = [...work.values()];
@@ -243,7 +248,7 @@
     const resultMap = new Map(rows(data).map(r => [r.resultId, r]));
     entry.assignments.forEach(c => check(resultMap.get(c.resultId)?.athleteId === c.after, "Tulos on muuttunut peruttavan muutoksen jälkeen."));
     const comps = new Map(data.competitions.map(c => [compKey(c), c]));
-    entry.competitions.forEach(c => check(same(comps.get(c.key), c.after), "Kilpailu on muuttunut peruttavan muutoksen jälkeen."));
+    entry.competitions.forEach(c => check(same(comps.get(c.key)||null, c.after), "Kilpailu on muuttunut peruttavan muutoksen jälkeen."));
     entry.people.forEach(c => { if (c.before) people.set(c.id, c.before); else people.delete(c.id); });
     entry.assignments.forEach(c => { resultMap.get(c.resultId).athleteId = c.before; });
     entry.competitions.forEach(c => { if (c.before) comps.set(c.key, c.before); else comps.delete(c.key); });

@@ -17,6 +17,22 @@
 <p><a href="painijat.html">Avaa painijamerkintöjen ylläpito</a></p>
 <p>Tarkista uudet tulostiedostot ja muodosta sivuston yhteinen data.js.</p>
 <p class="hint">Työkalu aloittaa samassa kansiossa olevasta data.js. Sivuston selaimeen tekemät omat tuonnit eivät tule automaattisesti mukaan. Tiedostoja ei lähetetä verkkoon.</p>
+<section id="review-queue" aria-labelledby="review-heading">
+<h2 id="review-heading">Automaattihaun muutosehdotukset</h2>
+<p>Uudet tarkistetut kilpailut lisätään automaattisesti. Vanhojen kilpailujen muuttuneet sijoitukset ja ottelut odottavat päätöstäsi. Lähteestä kadonnut tieto ei poista hyväksyttyjä tietoja.</p>
+<p class="hint">Hyväksyntä- ja hylkäysvalinnat ovat ensin vain tällä sivulla. Lataa päätöstiedosto, siirrä se projektin pääkansioon ja lähetä GitHubiin. Käynnistä sitten automaattihaku valinnalla <strong>Käsittele vain ylläpidon päätökset</strong>. Sivuston tiedot muuttuvat vasta ajon ja julkaisun jälkeen.</p>
+<p role="status" aria-live="polite">Ladataan muutosehdotuksia…</p>
+<div class="actions"><button id="review-reload" type="button">Hae ajantasainen muutosjono</button><button id="review-export" type="button" class="primary" disabled>Lataa valitut päätökset</button></div>
+<p id="review-selected" class="hint"></p>
+<p><a href="muutosjono.json" target="_blank" rel="noopener">Avaa täydellinen muutosjono</a> · <a href="tietovarasto/index.json" target="_blank" rel="noopener">Tallennettujen versioiden ja ajojen historia</a></p>
+<p class="hint">Henkilön nimen, seuran tai sarjan korjaus voi vaatia erillisen tunnusten tarkistuksen. Julkaisu pysähtyy, jos hyväksyntä rikkoisi aiempien otteluiden painijaviittauksia. Hylätty sama ehdotus ei palaa jonoon jokaisella haulla.</p>
+<div id="review-list"></div>
+<details><summary>Tallennetut aineistoversiot ja ajojen historia</summary>
+<p id="review-versions-status" role="status">Ladataan versiontallennuksen tietoja…</p>
+<p class="hint">Linkeistä voi ladata aiemman aineiston pakattuna. Lataaminen ei muuta julkaistua sivustoa. Palautuksessa sijoitus- ja otteluaineiston pitää olla samasta tallennuspisteestä.</p>
+<ul id="review-versions"></ul>
+</details>
+</section>
 <section id="palautteet" aria-labelledby="feedback-admin-title">
 <h2 id="feedback-admin-title">Sivuston palautteet</h2>
 <p id="feedback-admin-status" class="feedback-status" role="status" aria-live="polite">Palautelaatikko odottaa käyttöönottoa.</p>

@@ -232,7 +232,7 @@ def years_for(arg,now=None):
 def collect_auto(data,source,previous,year='auto'):
  years=years_for(year);now=datetime.datetime.now(datetime.timezone.utc).isoformat()
  result={'version':2,'checkedAt':now,'competitions':[],'participants':[],'matches':[],'excluded':[],'issues':[],'errors':[],'methodLabels':METHODS}
- report={'version':1,'checkedAt':now,'scope':year,'events':[],'summary':{}}
+ report={'version':1,'checkedAt':now,'scope':year,'events':[],'summary':{},'proposals':[],'unchangedTargets':[]}
  current=collections.defaultdict(list)
  for c in data['competitions']:
   if c.get('source'):current[c['source']].append(c)
@@ -275,9 +275,12 @@ def collect_auto(data,source,previous,year='auto'):
      incoming={m['id']:m for m in candidate[2]}
      for m in old[2]:
       new=incoming.get(m['id'])
-      if not new or any(new[k]!=m[k] for k in ['red','blue','winner','code','points','category','weight']):raise ValueError('Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin')
+      if not new or any(new[k]!=m[k] for k in ['red','blue','winner','code','points','category','weight','round','source']):
+       report['proposals'].append({'target':url,'before':dict(zip(['meta','participants','matches','excluded','issues'],old)),'after':dict(zip(['meta','participants','matches','excluded','issues'],candidate))})
+       raise ValueError('Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon')
     meta,people,matches,excluded,issues=candidate
     event=({**meta,'checkedAt':now},people,matches,excluded,issues);status='updated'
+    report['unchangedTargets'].append(url)
    except Exception as error:
     reason=str(error);status='preserved' if old else 'failed'
     result['errors'].append({'source':url,'reason':reason})

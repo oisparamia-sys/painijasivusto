@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import http.server, urllib.request, urllib.parse, json, re, html, pathlib, webbrowser, threading
 from html.parser import HTMLParser
+from source_archive import archive_response
 ROOT=pathlib.Path(__file__).resolve().parent
 HOST='turniereklassisch.ringerdb.de'
 # Verified English result pages for invalid Finnish links in the catalogue.
@@ -14,6 +15,7 @@ def get(url, fields=None):
   if urllib.parse.urlparse(r.url).hostname not in [HOST,'www.ringerdb.de']:raise ValueError('Tuntematon uudelleenohjaus')
   b=r.read(6*1024*1024+1)
  if len(b)>6*1024*1024:raise ValueError('Lähdetiedosto on liian suuri')
+ archive_response(url,b)
  for encoding in ['utf-8-sig','cp1252']:
   try:return b.decode(encoding).replace('\x00','')
   except UnicodeDecodeError:pass

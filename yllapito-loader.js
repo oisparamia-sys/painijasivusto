@@ -53,6 +53,7 @@
       }
     }
   }
+  load('muutosjono.js').catch(()=>{const p=document.querySelector('#review-queue [role=status]');if(p)p.textContent='Muutosjonon toiminto ei latautunut. Avaa sivu uudelleen.';});
   startReport();
   load('palaute.js').catch(() => {
     const feedbackStatus = document.querySelector('#feedback-admin-status');

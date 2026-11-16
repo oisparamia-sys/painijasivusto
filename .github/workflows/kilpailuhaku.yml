@@ -9,6 +9,10 @@ on:
         type: choice
         default: auto
         options: [auto, all, '2022', '2023', '2024', '2025', '2026']
+      review_only:
+        description: 'Käsittele vain ylläpidon päätökset (ei uutta lähdehakua)'
+        type: boolean
+        default: false
 permissions:
   contents: write
   pages: write
@@ -19,6 +23,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    env:
+      PAINI_SOURCE_ARCHIVE: tietovarasto
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,30 +37,44 @@ jobs:
           node-version: '22'
       - name: Tarkista ottelutuonnin suojaukset
         run: python tools/test-collect-bouts.py
+      - name: Testaa hyväksyntäjonon suojaukset
+        run: node --test tools/test-review.cjs
+      - name: Tallenna aiempi hyväksytty versio
+        run: node tools/review-data.cjs snapshot . before
+      - name: Käsittele ylläpidon päätökset
+        run: node tools/review-data.cjs apply
       - name: Hae ja tarkista lähteet
+        if: ${{ inputs.review_only != true }}
         env:
           SEARCH_YEAR: ${{ inputs.year || 'auto' }}
         run: python tools/collect.py "$SEARCH_YEAR"
       - name: Päivitä aineisto
+        if: ${{ inputs.review_only != true }}
         run: node tools/update-data.cjs
       - name: Hae ja tarkista ottelut
+        if: ${{ inputs.review_only != true }}
         env:
           SEARCH_YEAR: ${{ inputs.year || 'auto' }}
         run: python tools/collect-bouts.py --year "$SEARCH_YEAR"
+      - name: Päivitä otteluiden hyväksyntäjono
+        if: ${{ inputs.review_only != true }}
+        run: node tools/review-data.cjs ingest
       - name: Tee kevyt otteluaineisto sivustolle
         run: node tools/export-bouts.cjs
+      - name: Tallenna hyväksytty aineistoversio
+        run: node tools/review-data.cjs snapshot . after
       - name: Näytä otteluhaun yhteenveto
-        if: always()
+        if: ${{ always() && inputs.review_only != true }}
         run: |
           if [ -f ottelut-raportti.md ]; then
             cat ottelut-raportti.md >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Tallenna muutokset GitHubiin
         run: |
-          if ! git diff --quiet -- data.js haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json || [ -n "$(git ls-files --others --exclude-standard haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json)" ]; then
+          if ! git diff --quiet -- data.js haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto || [ -n "$(git ls-files --others --exclude-standard haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data.js haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json
+            git add data.js haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto
             git commit -m "Päivitä kilpailut ja ottelut automaattihaulla"
             git push origin HEAD:main
           fi
@@ -71,4 +91,7 @@ jobs:
             hakuraportti.md
             ottelut-raportti.json
             ottelut-raportti.md
+            muutosjono.json
+            tietovarasto/
+          retention-days: 90
           if-no-files-found: ignore
