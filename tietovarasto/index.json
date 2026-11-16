@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "versions": [
+    {
+      "file": "data.js",
+      "semanticHash": "fad3d50a0be19ac4b80c1c8df92c92d122787a62ea532ce3f581182a90560c81",
+      "sha256": "9fcec61df700b2432cb0585a292b75e906c056e8bc4534f1df6f177adae9b891",
+      "blob": "tietovarasto/versiot/9fcec61df700b2432cb0585a292b75e906c056e8bc4534f1df6f177adae9b891.gz",
+      "createdAt": "2026-11-16T18:08:46.286Z",
+      "bytes": 36613466
+    },
+    {
+      "file": "ottelut-data.js",
+      "semanticHash": "20227e2145a8f170e7ae72d07c4a80488afebc4f83262f361356b0b1948a1a52",
+      "sha256": "5f49a90521a259a1f82c00b3cc04380f6385496dc0bf3bf52b6eb9c435898177",
+      "blob": "tietovarasto/versiot/5f49a90521a259a1f82c00b3cc04380f6385496dc0bf3bf52b6eb9c435898177.gz",
+      "createdAt": "2026-11-16T18:08:47.344Z",
+      "bytes": 31366032
+    }
+  ],
+  "runs": [
+    {
+      "at": "2026-11-16T18:08:47.344Z",
+      "label": "before",
+      "run": "43925704341",
+      "refs": {
+        "data.js": "9fcec61df700b2432cb0585a292b75e906c056e8bc4534f1df6f177adae9b891",
+        "ottelut-data.js": "5f49a90521a259a1f82c00b3cc04380f6385496dc0bf3bf52b6eb9c435898177"
+      }
+    },
+    {
+      "at": "2026-11-16T18:08:49.732Z",
+      "label": "after",
+      "run": "43925704341",
+      "refs": {
+        "data.js": "9fcec61df700b2432cb0585a292b75e906c056e8bc4534f1df6f177adae9b891",
+        "ottelut-data.js": "5f49a90521a259a1f82c00b3cc04380f6385496dc0bf3bf52b6eb9c435898177"
+      }
+    }
+  ]
+}
