@@ -13,8 +13,7 @@ function loadBouts() {
     script.onload = () => {
       try {
         if (!window.PAINI_BOUTS) throw Error('Ottelukokeilu puuttuu');
-        window.PAINI_BOUTS.init(sharedData,window.PainiRegistry);
-        resolve();
+        Promise.resolve(window.PAINI_BOUTS.init(sharedData,window.PainiRegistry)).then(resolve,reject);
       } catch (error) { script.remove(); reject(error); }
     };
     script.onerror = () => {script.remove();reject(Error('Ottelukokeilu ei latautunut'));};

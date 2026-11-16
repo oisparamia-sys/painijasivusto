@@ -1,8 +1,23 @@
 "use strict";
 (() => {
-  const trial = {"version":1,"checkedAt":"2026-11-11","competition":{"title":"TaPs painit 4.12.2025","details":"Tampere, 4.12.2025","source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm"},"participants":[{"resultId":"tulos-000480","athleteId":"painija-000469","category":"Pojat U12","weight":"23"},{"resultId":"tulos-000481","athleteId":"painija-000470","category":"Pojat U12","weight":"23"},{"resultId":"tulos-000482","athleteId":"painija-000460","category":"Pojat U12","weight":"30"},{"resultId":"tulos-000483","athleteId":"painija-000458","category":"Pojat U12","weight":"30"},{"resultId":"tulos-000484","athleteId":"painija-000452","category":"Pojat U12","weight":"30"},{"resultId":"tulos-000485","athleteId":"painija-000453","category":"Pojat U12","weight":"30"},{"resultId":"tulos-000486","athleteId":"painija-000471","category":"Pojat U12","weight":"30"},{"resultId":"tulos-000487","athleteId":"painija-000472","category":"Pojat U12","weight":"37"},{"resultId":"tulos-000488","athleteId":"painija-000473","category":"Pojat U12","weight":"37"},{"resultId":"tulos-000489","athleteId":"painija-000445","category":"Pojat U12","weight":"37"},{"resultId":"tulos-000490","athleteId":"painija-000474","category":"Pojat U12","weight":"37"},{"resultId":"tulos-000491","athleteId":"painija-000475","category":"Pojat U12","weight":"37"},{"resultId":"tulos-000492","athleteId":"painija-000444","category":"Pojat U12","weight":"41"},{"resultId":"tulos-000493","athleteId":"painija-000476","category":"Pojat U12","weight":"41"},{"resultId":"tulos-000494","athleteId":"painija-000477","category":"Pojat U12","weight":"41"},{"resultId":"tulos-000495","athleteId":"painija-000478","category":"Pojat U12","weight":"52"},{"resultId":"tulos-000496","athleteId":"painija-000479","category":"Pojat U12","weight":"52"},{"resultId":"tulos-000497","athleteId":"painija-000480","category":"Pojat U12","weight":"52"},{"resultId":"tulos-000498","athleteId":"painija-000054","category":"Tytöt ja pojat U17","weight":"40"},{"resultId":"tulos-000499","athleteId":"painija-000481","category":"Tytöt ja pojat U17","weight":"40"},{"resultId":"tulos-000500","athleteId":"painija-000466","category":"Tytöt ja pojat U17","weight":"40"},{"resultId":"tulos-000501","athleteId":"painija-000448","category":"Tytöt ja pojat U17","weight":"40"},{"resultId":"tulos-000502","athleteId":"painija-000482","category":"Tytöt ja pojat U17","weight":"48"},{"resultId":"tulos-000503","athleteId":"painija-000451","category":"Tytöt ja pojat U17","weight":"48"},{"resultId":"tulos-000504","athleteId":"painija-000084","category":"Tytöt ja pojat U17","weight":"57"},{"resultId":"tulos-000505","athleteId":"painija-000461","category":"Tytöt ja pojat U17","weight":"57"},{"resultId":"tulos-000506","athleteId":"painija-000483","category":"Tytöt ja pojat U17","weight":"57"},{"resultId":"tulos-000507","athleteId":"painija-000484","category":"Tytöt ja Pojat U12","weight":"25"},{"resultId":"tulos-000508","athleteId":"painija-000485","category":"Tytöt ja Pojat U12","weight":"25"},{"resultId":"tulos-000509","athleteId":"painija-000486","category":"Tytöt ja Pojat U12","weight":"25"},{"resultId":"tulos-000510","athleteId":"painija-000454","category":"Tytöt ja Pojat U12","weight":"25"},{"resultId":"tulos-000511","athleteId":"painija-000456","category":"Tytöt ja Pojat U12","weight":"26"},{"resultId":"tulos-000512","athleteId":"painija-000487","category":"Tytöt ja Pojat U12","weight":"26"},{"resultId":"tulos-000513","athleteId":"painija-000488","category":"Tytöt ja Pojat U12","weight":"26"},{"resultId":"tulos-000514","athleteId":"painija-000489","category":"Tytöt ja Pojat U12","weight":"26"}],"matches":[{"id":"kokeilu-002","category":"Pojat U12","weight":"23","round":"N 4. Kierros","red":"tulos-000481","blue":"tulos-000480","winner":"tulos-000480","code":"PV","points":[10,16],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983123beg.htm"},{"id":"kokeilu-003","category":"Pojat U12","weight":"30","round":"N 1. Kierros","red":"tulos-000486","blue":"tulos-000483","winner":"tulos-000483","code":"SV","points":[0,2],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-004","category":"Pojat U12","weight":"30","round":"N 1. Kierros","red":"tulos-000482","blue":"tulos-000484","winner":"tulos-000482","code":"SV","points":[16,6],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-005","category":"Pojat U12","weight":"30","round":"N 2. Kierros","red":"tulos-000485","blue":"tulos-000486","winner":"tulos-000485","code":"YPV","points":[10,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-006","category":"Pojat U12","weight":"30","round":"N 2. Kierros","red":"tulos-000483","blue":"tulos-000482","winner":"tulos-000482","code":"SV","points":[8,8],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-007","category":"Pojat U12","weight":"30","round":"N 3. Kierros","red":"tulos-000484","blue":"tulos-000486","winner":"tulos-000484","code":"SV","points":[10,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-008","category":"Pojat U12","weight":"30","round":"N 3. Kierros","red":"tulos-000485","blue":"tulos-000483","winner":"tulos-000483","code":"SV","points":[0,4],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-009","category":"Pojat U12","weight":"30","round":"N 4. Kierros","red":"tulos-000482","blue":"tulos-000486","winner":"tulos-000482","code":"SV","points":[8,1],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-010","category":"Pojat U12","weight":"30","round":"N 4. Kierros","red":"tulos-000484","blue":"tulos-000485","winner":"tulos-000484","code":"PV","points":[8,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-011","category":"Pojat U12","weight":"30","round":"N 5. Kierros","red":"tulos-000483","blue":"tulos-000484","winner":"tulos-000483","code":"PV","points":[4,4],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-012","category":"Pojat U12","weight":"30","round":"N 5. Kierros","red":"tulos-000482","blue":"tulos-000485","winner":"tulos-000482","code":"SV","points":[4,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983130beg.htm"},{"id":"kokeilu-014","category":"Pojat U12","weight":"37","round":"N 1. Kierros","red":"tulos-000489","blue":"tulos-000488","winner":"tulos-000488","code":"PV","points":[12,19],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983137beg.htm"},{"id":"kokeilu-015","category":"Pojat U12","weight":"37","round":"N 2. Kierros","red":"tulos-000487","blue":"tulos-000490","winner":"tulos-000487","code":"SV","points":[10,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983137beg.htm"},{"id":"kokeilu-017","category":"Pojat U12","weight":"37","round":"N 3. Kierros","red":"tulos-000488","blue":"tulos-000490","winner":"tulos-000488","code":"SV","points":[2,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983137beg.htm"},{"id":"kokeilu-019","category":"Pojat U12","weight":"37","round":"N 4. Kierros","red":"tulos-000489","blue":"tulos-000490","winner":"tulos-000489","code":"SV","points":[4,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983137beg.htm"},{"id":"kokeilu-020","category":"Pojat U12","weight":"37","round":"N 4. Kierros","red":"tulos-000488","blue":"tulos-000487","winner":"tulos-000487","code":"SV","points":[4,12],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983137beg.htm"},{"id":"kokeilu-022","category":"Pojat U12","weight":"37","round":"N 5. Kierros","red":"tulos-000489","blue":"tulos-000487","winner":"tulos-000487","code":"YPV","points":[0,10],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983137beg.htm"},{"id":"kokeilu-023","category":"Pojat U12","weight":"41","round":"N 1. Kierros","red":"tulos-000494","blue":"tulos-000492","winner":"tulos-000492","code":"SV","points":[2,9],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983141beg.htm"},{"id":"kokeilu-024","category":"Pojat U12","weight":"41","round":"N 2. Kierros","red":"tulos-000493","blue":"tulos-000494","winner":"tulos-000493","code":"YPV","points":[13,2],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983141beg.htm"},{"id":"kokeilu-025","category":"Pojat U12","weight":"41","round":"N 3. Kierros","red":"tulos-000492","blue":"tulos-000493","winner":"tulos-000492","code":"SV","points":[10,2],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983141beg.htm"},{"id":"kokeilu-026","category":"Pojat U12","weight":"52","round":"N 1. Kierros","red":"tulos-000496","blue":"tulos-000495","winner":"tulos-000495","code":"YPV","points":[4,16],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983152beg.htm"},{"id":"kokeilu-027","category":"Pojat U12","weight":"52","round":"N 2. Kierros","red":"tulos-000497","blue":"tulos-000496","winner":"tulos-000496","code":"SV","points":[4,3],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983152beg.htm"},{"id":"kokeilu-028","category":"Pojat U12","weight":"52","round":"N 3. Kierros","red":"tulos-000495","blue":"tulos-000497","winner":"tulos-000495","code":"SV","points":[2,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983152beg.htm"},{"id":"kokeilu-029","category":"Tytöt ja pojat U17","weight":"40","round":"N 1. Kierros","red":"tulos-000498","blue":"tulos-000499","winner":"tulos-000498","code":"SV","points":[4,2],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983240beg.htm"},{"id":"kokeilu-030","category":"Tytöt ja pojat U17","weight":"40","round":"N 1. Kierros","red":"tulos-000500","blue":"tulos-000501","winner":"tulos-000500","code":"SV","points":[2,4],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983240beg.htm"},{"id":"kokeilu-031","category":"Tytöt ja pojat U17","weight":"40","round":"N 2. Kierros","red":"tulos-000498","blue":"tulos-000500","winner":"tulos-000498","code":"SV","points":[15,4],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983240beg.htm"},{"id":"kokeilu-032","category":"Tytöt ja pojat U17","weight":"40","round":"N 2. Kierros","red":"tulos-000499","blue":"tulos-000501","winner":"tulos-000499","code":"SV","points":[4,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983240beg.htm"},{"id":"kokeilu-033","category":"Tytöt ja pojat U17","weight":"40","round":"N 3. Kierros","red":"tulos-000498","blue":"tulos-000501","winner":"tulos-000498","code":"YPV","points":[10,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983240beg.htm"},{"id":"kokeilu-034","category":"Tytöt ja pojat U17","weight":"40","round":"N 3. Kierros","red":"tulos-000499","blue":"tulos-000500","winner":"tulos-000499","code":"YPV","points":[14,4],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983240beg.htm"},{"id":"kokeilu-035","category":"Tytöt ja pojat U17","weight":"48","round":"N 1. Kierros","red":"tulos-000502","blue":"tulos-000503","winner":"tulos-000502","code":"YPV","points":[12,2],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983248beg.htm"},{"id":"kokeilu-036","category":"Tytöt ja pojat U17","weight":"48","round":"N 2. Kierros","red":"tulos-000502","blue":"tulos-000503","winner":"tulos-000502","code":"SV","points":[2,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983248beg.htm"},{"id":"kokeilu-037","category":"Tytöt ja pojat U17","weight":"57","round":"N 1. Kierros","red":"tulos-000505","blue":"tulos-000506","winner":"tulos-000505","code":"SV","points":[10,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983257beg.htm"},{"id":"kokeilu-038","category":"Tytöt ja pojat U17","weight":"57","round":"N 2. Kierros","red":"tulos-000504","blue":"tulos-000505","winner":"tulos-000504","code":"PV","points":[10,1],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983257beg.htm"},{"id":"kokeilu-039","category":"Tytöt ja pojat U17","weight":"57","round":"N 3. Kierros","red":"tulos-000506","blue":"tulos-000504","winner":"tulos-000504","code":"SV","points":[2,9],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983257beg.htm"},{"id":"kokeilu-040","category":"Tytöt ja Pojat U12","weight":"25","round":"N 1. Kierros","red":"tulos-000509","blue":"tulos-000510","winner":"tulos-000509","code":"YPV","points":[12,2],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983525beg.htm"},{"id":"kokeilu-041","category":"Tytöt ja Pojat U12","weight":"25","round":"N 1. Kierros","red":"tulos-000508","blue":"tulos-000507","winner":"tulos-000507","code":"SV","points":[14,10],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983525beg.htm"},{"id":"kokeilu-043","category":"Tytöt ja Pojat U12","weight":"25","round":"N 2. Kierros","red":"tulos-000510","blue":"tulos-000507","winner":"tulos-000507","code":"YPV","points":[0,10],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983525beg.htm"},{"id":"kokeilu-044","category":"Tytöt ja Pojat U12","weight":"25","round":"N 3. Kierros","red":"tulos-000509","blue":"tulos-000507","winner":"tulos-000507","code":"SV","points":[0,4],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983525beg.htm"},{"id":"kokeilu-045","category":"Tytöt ja Pojat U12","weight":"25","round":"N 3. Kierros","red":"tulos-000510","blue":"tulos-000508","winner":"tulos-000508","code":"YPV","points":[0,10],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983525beg.htm"},{"id":"kokeilu-046","category":"Tytöt ja Pojat U12","weight":"26","round":"N 1. Kierros","red":"tulos-000511","blue":"tulos-000514","winner":"tulos-000511","code":"SV","points":[4,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983526beg.htm"},{"id":"kokeilu-047","category":"Tytöt ja Pojat U12","weight":"26","round":"N 1. Kierros","red":"tulos-000513","blue":"tulos-000512","winner":"tulos-000512","code":"YPV","points":[0,10],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983526beg.htm"},{"id":"kokeilu-048","category":"Tytöt ja Pojat U12","weight":"26","round":"N 2. Kierros","red":"tulos-000511","blue":"tulos-000513","winner":"tulos-000511","code":"SV","points":[8,0],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983526beg.htm"},{"id":"kokeilu-050","category":"Tytöt ja Pojat U12","weight":"26","round":"N 3. Kierros","red":"tulos-000511","blue":"tulos-000512","winner":"tulos-000511","code":"SV","points":[6,1],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983526beg.htm"},{"id":"kokeilu-051","category":"Tytöt ja Pojat U12","weight":"26","round":"N 3. Kierros","red":"tulos-000514","blue":"tulos-000513","winner":"tulos-000513","code":"SV","points":[0,2],"source":"https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983526beg.htm"}],"excluded":[{"people":["tulos-000480","tulos-000481"]},{"people":["tulos-000490","tulos-000491"]},{"people":["tulos-000491","tulos-000489"]},{"people":["tulos-000487","tulos-000491"]},{"people":["tulos-000491","tulos-000488"]},{"people":["tulos-000509","tulos-000508"]},{"people":["tulos-000514","tulos-000512"]}],"unmatched":1};
-  let initialized = false;
-  const labels = {YPV:'Ylivoimainen pistevoitto',PV:'Pistevoitto',SV:'Selätys'};
+  let initialized = false,trial=null,dataPromise=null;
+  const dataBase=new URL('.',document.currentScript?.src || location.href);
+  function loadTrial() {
+    if(dataPromise)return dataPromise;
+    dataPromise=new Promise((resolve,reject)=>{
+      const script=document.createElement('script');
+      script.src=new URL('ottelut-data.js?fresh='+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2),dataBase).href;
+      script.onload=()=>{
+        const value=window.PAINI_BOUTS_DATA;
+        if(value?.version!==2 || !Array.isArray(value.competitions) || !Array.isArray(value.participants) || !Array.isArray(value.matches) || !Array.isArray(value.excluded)) {script.remove();reject(Error('Otteluaineiston muoto ei kelpaa'));return;}
+        resolve(value);
+      };
+      script.onerror=()=>{script.remove();reject(Error('Otteluaineisto ei latautunut'));};
+      document.head.append(script);
+    }).catch(error=>{dataPromise=null;throw error;});
+    return dataPromise;
+  }
+  const labels = {YPV:'Ylivoimainen pistevoitto',PV:'Pistevoitto',SV:'Selätys',VFA:'Selätys',VPO:'Pistevoitto',VPO1:'Pistevoitto',VSU:'Ylivoimainen pistevoitto',VSU1:'Ylivoimainen pistevoitto',VP:'Pistevoitto',VT:'Selätys',GS:'Ylivoimainen pistevoitto',FI:'Voitto vastustajan loukkaantumisen vuoksi',LOUK:'Voitto vastustajan loukkaantumisen vuoksi'};
   const words = value => String(value).normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('fi').match(/[\p{L}\p{N}]+/gu) || [];
   function distance(a,b) {
     const table=Array.from({length:a.length+1},()=>Array(b.length+1).fill(0));
@@ -24,41 +39,53 @@
     return queryWords.length>0 && queryWords.every(q=>nameWords.some(n=>q===n || q.length>=3&&n.startsWith(q)));
   }
   function prepare(data,registry) {
-    const competition=data?.competitions?.find(c=>c.source===trial.competition.source);
-    if(!competition || !registry || !data.athleteRegistry)throw Error('Kokeen aineisto puuttuu');
-    const currentRows=new Map(competition.rows.map(r=>[r.resultId,r]));
+    if(!registry || !data?.athleteRegistry)throw Error('Painijarekisteri puuttuu');
+    const competitions=new Map(trial.competitions.map(c=>[c.key,c]));
+    if(competitions.size!==trial.competitions.length)throw Error('Toistuva koekilpailu');
+    const currentRows=new Map();
+    for(const saved of trial.competitions) {
+      const current=data.competitions.find(c=>c.source===saved.key);
+      if(!current)throw Error('Koekilpailu puuttuu aineistosta');
+      for(const row of current.rows)currentRows.set(row.resultId,{...row,competition:saved.key});
+    }
     const records=new Map(data.athleteRegistry.athletes.map(a=>[a.id,a]));
     const people=new Map(),byResult=new Map();
     for(const saved of trial.participants) {
       const current=currentRows.get(saved.resultId);
-      if(!current || current.category!==saved.category || current.weight!==saved.weight)throw Error('Kokeen tulosrivi muuttui');
+      if(!current || current.competition!==saved.competition || current.category!==saved.category || current.weight!==saved.weight)throw Error('Kokeen tulosrivi muuttui');
       const id=registry.resolve(data,current.athleteId);
       if(!id || registry.resolve(data,saved.athleteId)!==id)throw Error('Kokeen painijatunnus muuttui');
       const record=records.get(id);if(!record || record.mergedInto)throw Error('Painijatunnus puuttuu');
-      if(!people.has(id))people.set(id,{id,name:record.name,clubs:new Set(),searchName:record.name});
-      const person=people.get(id);person.clubs.add(current.club);person.searchName+=' '+current.name;
+      if(!people.has(id))people.set(id,{id,name:record.name,clubs:new Set(),competitions:new Set(),searchName:record.name});
+      const person=people.get(id);person.clubs.add(current.club);person.competitions.add(saved.competition);person.searchName+=' '+current.name;
       byResult.set(saved.resultId,person);
     }
+    const ids=new Set();
     const matches=trial.matches.map(m=>{
-      const red=byResult.get(m.red),blue=byResult.get(m.blue),winner=byResult.get(m.winner);
-      if(!red||!blue||red.id===blue.id||![red,blue].includes(winner))throw Error('Ottelun painijat eivät täsmää');
+      const red=byResult.get(m.red),blue=byResult.get(m.blue),winner=byResult.get(m.winner),competition=competitions.get(m.competition);
+      if(!competition||!red||!blue||red.id===blue.id||![red,blue].includes(winner)||ids.has(m.id))throw Error('Ottelun painijat tai tunnukset eivät täsmää');
+      if(currentRows.get(m.red).competition!==m.competition || currentRows.get(m.blue).competition!==m.competition)throw Error('Ottelun kilpailu ei täsmää');
       if(!labels[m.code] || m.points!==null && (!Array.isArray(m.points)||m.points.length!==2||!m.points.every(n=>Number.isInteger(n)&&n>=0)))throw Error('Ottelutulos ei kelpaa');
       const url=new URL(m.source);
       if(url.protocol!=='https:' || url.hostname!=='turniereklassisch.ringerdb.de' || url.username || url.password)throw Error('Lähdeosoite ei kelpaa');
-      return {...m,red,blue,winner};
+      ids.add(m.id);return {...m,competition,red,blue,winner};
     });
-    const excluded=trial.excluded.map(m=>new Set(m.people.map(id=>byResult.get(id).id)));
-    return {people:[...people.values()].sort((a,b)=>a.name.localeCompare(b.name,'fi')),matches,excluded};
+    const excluded=trial.excluded.map(m=>({competition:m.competition,people:new Set(m.people.map(id=>byResult.get(id)?.id).filter(Boolean))}));
+    return {competitions:[...competitions.values()].sort((a,b)=>b.year-a.year||a.details.localeCompare(b.details,'fi')),people:[...people.values()].sort((a,b)=>a.name.localeCompare(b.name,'fi')),matches,excluded};
   }
-  function init(data,registry) {
+  async function init(data,registry) {
     if(initialized)return;
+    trial=await loadTrial();
+    if(!['bouts-competition','bouts-coverage-summary','bouts-coverage-list','bouts-checked-at'].every(id=>document.getElementById(id)))throw Error('Sivun versio ei vastaa ottelukokeilua');
     const prepared=prepare(data,registry);
     const $=s=>document.querySelector(s);
     const people=new Map(prepared.people.map(p=>[p.id,p]));
-    let mode='single',a=null,b=null;
+    let mode='single',a=null,b=null,scope='';
+    const inScope=match=>!scope||match.competition.key===scope;
+    const scopedPeople=()=>prepared.people.filter(p=>!scope||p.competitions.has(scope));
     function opponentCounts() {
       const counts=new Map();
-      for(const match of prepared.matches) {
+      for(const match of prepared.matches.filter(inScope)) {
         const other=match.red.id===a?match.blue.id:match.blue.id===a?match.red.id:null;
         if(other)counts.set(other,(counts.get(other)||0)+1);
       }
@@ -68,7 +95,7 @@
       const prioritize=letter==='b'&&mode==='pair'&&people.has(a);
       const counts=prioritize?opponentCounts():new Map();
       const exact=person=>words(person.name).join(' ')===words(query).join(' ');
-      const candidates=prepared.people.filter(person=>{
+      const candidates=scopedPeople().filter(person=>{
         if(!prioritize)return matchesName(person,query);
         if(person.id===a)return false;
         return counts.has(person.id)?matchesName(person,query):matchesStrictly(person,query);
@@ -111,7 +138,7 @@
         const knownCount=options.filter(p=>found.counts.has(p.id)).length;
         $('#bouts-suggestions-status').textContent=options.length
           ?found.prioritize?options.length+' ehdotusta, joista '+knownCount+' aiempia vastustajia tässä kokeessa.':options.length+' sopivaa painijaa.'
-          :found.prioritize?'Nimellä ei löytynyt ehdotuksia. Muista painijoista kirjoita nimi tai vähintään kolme kirjainta nimen alusta.':'Nimellä ei löytynyt painijaa tästä koekilpailusta.';
+          :found.prioritize?'Nimellä ei löytynyt ehdotuksia. Muista painijoista kirjoita nimi tai vähintään kolme kirjainta nimen alusta.':'Nimellä ei löytynyt painijaa valituista koekilpailuista.';
       }
       input.addEventListener('focus',show);
       input.addEventListener('input',()=>{changed(null);show();});
@@ -142,25 +169,29 @@
       const title=$('#bouts-result-title'),notice=$('#bouts-result-status'),stats=$('#bouts-statistics'),tbody=$('#bouts-results'),table=$('#bouts-table-wrap'),omitted=$('#bouts-omitted');
       tbody.replaceChildren();stats.replaceChildren();stats.hidden=true;table.hidden=true;omitted.hidden=true;
       $('#bouts-swap').disabled=!person||!opponent||a===b;
-      if(!person) {title.textContent='Valitse painija';notice.textContent='Valitse painija nähdäksesi tämän kilpailun ottelut.';return;}
+      if(!person) {title.textContent='Valitse painija';notice.textContent='Valitse painija nähdäksesi mukana olevat ottelut.';return;}
       if(pair&&!opponent) {title.textContent=person.name;notice.textContent='Valitse myös vastustaja keskinäistä vertailua varten.';return;}
       if(pair&&a===b) {title.textContent='Valitse kaksi eri painijaa';notice.textContent='Painijaa ei voi verrata itseensä. Valitse toinen vastustaja.';return;}
       title.textContent=pair?person.name+' – '+opponent.name:person.name;
       const relevant=row=>[row.red.id,row.blue.id].includes(a)&&(!pair||[row.red.id,row.blue.id].includes(b));
-      const matches=prepared.matches.filter(relevant);
-      const missing=prepared.excluded.filter(ids=>ids.has(a)&&(!pair||ids.has(b))).length;
-      if(missing) {omitted.hidden=false;omitted.textContent='Tästä valinnasta jäi pois '+missing+' ottelua lähdeluetteloiden ristiriitojen vuoksi. Ne eivät sisälly alla oleviin lukuihin.';}
-      notice.textContent=matches.length?matches.length+' ottelua tässä koekilpailussa. Voitot ja tappiot koskevat vain alla näkyviä otteluita.':pair?'Valinnalla ei löytynyt kokeeseen mukaan otettuja otteluita. Tämä ei tarkoita, etteivät painijat olisi koskaan kohdanneet.':'Tälle painijalle ei löytynyt mukaan otettuja otteluita tästä koekilpailusta. Muiden kilpailujen ottelut eivät vielä ole mukana.';
+      const date=competition=>{
+        const m=competition.details.match(/(\d{1,2})[./](\d{1,2})[./](20\d{2})/);
+        return m?Date.UTC(Number(m[3]),Number(m[2])-1,Number(m[1])):0;
+      };
+      const matches=prepared.matches.filter(m=>inScope(m)&&relevant(m)).sort((x,y)=>date(y.competition)-date(x.competition)||x.round.localeCompare(y.round,'fi',{numeric:true}));
+      const missing=prepared.excluded.filter(m=>(!scope||m.competition===scope)&&m.people.has(a)&&(!pair||m.people.has(b))).length;
+      if(missing) {omitted.hidden=false;omitted.textContent='Tästä valinnasta jäi pois '+missing+' ottelua lähderistiriidan, puuttuvan tunnistuksen tai tarkistettavan voittotavan vuoksi. Ne eivät sisälly alla oleviin lukuihin.';}
+      notice.textContent=matches.length?matches.length+' ottelua valituissa koekilpailuissa. Voitot ja tappiot koskevat vain alla näkyviä otteluita.':pair?'Valinnalla ei löytynyt kokeeseen mukaan otettuja otteluita. Tämä ei tarkoita, etteivät painijat olisi koskaan kohdanneet.':'Tälle painijalle ei löytynyt mukaan otettuja otteluita valituista koekilpailuista. Muiden kilpailujen ottelut eivät vielä ole mukana.';
       const wins=matches.filter(m=>m.winner.id===a).length;
       stats.append(statistic('Otteluita',matches.length),statistic(pair?person.name+' · voitot':'Voittoja',wins),statistic(pair?opponent.name+' · voitot':'Tappioita',matches.length-wins));stats.hidden=false;
       for(const match of matches) {
         const ownRed=match.red.id===a,other=ownRed?match.blue:match.red;
         const points=match.points?(ownRed?match.points:[match.points[1],match.points[0]]):null;
         const row=document.createElement('tr');row.dataset.boutId=match.id;
-        const values=[match.round+' · '+match.category+' '+match.weight+' kg',person.name,other.name,match.winner.id===a?'Voitto':'Tappio',labels[match.code],points?points.join('–'):'Pisteitä ei ilmoitettu'];
+        const values=[match.competition.title+' · '+match.competition.details,match.round+' · '+match.category+' '+match.weight+' kg',person.name,other.name,match.winner.id===a?'Voitto':'Tappio',labels[match.code],points?points.join('–'):'Pisteitä ei ilmoitettu'];
         values.forEach((value,index)=>{
           const cell=document.createElement('td');cell.textContent=value;
-          if(index===3) {const badge=document.createElement('span');badge.className=match.winner.id===a?'bout-win':'bout-loss';badge.textContent=value;cell.replaceChildren(badge);}
+          if(index===4) {const badge=document.createElement('span');badge.className=match.winner.id===a?'bout-win':'bout-loss';badge.textContent=value;cell.replaceChildren(badge);}
           row.append(cell);
         });
         const source=document.createElement('td'),link=document.createElement('a');link.href=match.source;link.textContent='Ottelulista ↗';link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label','Avaa lähde: '+person.name+' ja '+other.name+', '+match.round);source.append(link);row.append(source);
@@ -170,6 +201,19 @@
       }
       table.hidden=matches.length===0;
     }
+    const selectCompetition=$('#bouts-competition');
+    selectCompetition.replaceChildren();
+    const all=document.createElement('option');all.value='';all.textContent='Kaikki kokeen kilpailut';selectCompetition.append(all);
+    for(const competition of prepared.competitions) {
+      const option=document.createElement('option');option.value=competition.key;option.textContent=competition.title+' · '+competition.details;selectCompetition.append(option);
+    }
+    selectCompetition.addEventListener('change',()=>{scope=selectCompetition.value;pa.close();pb.close();$('#bouts-suggestions-status').textContent='Kilpailurajaus päivitetty.';render();});
+    $('#bouts-coverage-summary').textContent=prepared.competitions.length+' koekilpailua vuosilta '+Math.min(...prepared.competitions.map(c=>c.year))+'–'+Math.max(...prepared.competitions.map(c=>c.year))+'. Mukana '+prepared.matches.length+' ottelua ja '+prepared.people.length+' painijaa. Tämä ei vielä ole painijoiden koko otteluhistoria.';
+    const coverage=$('#bouts-coverage-list');coverage.replaceChildren();
+    for(const competition of prepared.competitions) {
+      const li=document.createElement('li');li.textContent=competition.title+' · '+competition.details+' — mukana '+competition.stats.accepted+' ottelua, pois jäi '+competition.stats.excluded+' ottelua. Vain toisessa luettelossa '+competition.stats.unmatchedNumbered+', muita lähdehuomioita '+competition.stats.unreadable+'.';coverage.append(li);
+    }
+    $('#bouts-checked-at').textContent='Ottelutiedot tarkistettu '+new Intl.DateTimeFormat('fi-FI',{dateStyle:'short',timeZone:'Europe/Helsinki'}).format(new Date(trial.checkedAt))+'.';
     document.querySelectorAll('input[name=bouts-mode]').forEach(input=>input.addEventListener('change',()=>{if(input.checked)setMode(input.value);}));
     $('#bouts-swap').addEventListener('click',()=>{[a,b]=[b,a];pa.set(people.get(a));pb.set(people.get(b));$('#bouts-suggestions-status').textContent='Painijat vaihdettu keskenään.';render();});
     $('#bouts-clear').addEventListener('click',()=>{a=null;b=null;pa.set(null);pb.set(null);$('#bouts-suggestions-status').textContent='Valinnat tyhjennetty.';render();$('#bout-search-a').focus();});
@@ -178,6 +222,7 @@
       const example=trial.matches.find(m=>m.red==='tulos-000502'&&m.blue==='tulos-000503');
       const match=example&&prepared.matches.find(m=>m.id===example.id);
       if(!match)return;
+      scope=match.competition.key;$('#bouts-competition').value=scope;
       a=match.red.id;b=match.blue.id;pa.set(people.get(a));pb.set(people.get(b));setMode('pair');$('#bouts-suggestions-status').textContent='Esimerkkipari valittu.';
     });
     initialized=true;$('#bouts-load-status').hidden=true;$('#bouts-retry').hidden=true;$('#bouts-app').hidden=false;render();
