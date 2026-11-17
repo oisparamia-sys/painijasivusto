@@ -1,17 +1,18 @@
 # Otteluhaun raportti
 
-Tarkistettu: 2026-11-17T03:11:14.026253+00:00
+Tarkistettu: 2026-11-17T15:03:47.027605+00:00
 
 ```json
 {
-  "updated": 61,
+  "updated": 5,
   "preserved": 0,
   "failed": 0,
-  "attempted": 61,
-  "competitions": 292,
-  "matches": 48709,
-  "excluded": 2414,
-  "sourceIssues": 657
+  "attempted": 5,
+  "competitions": 297,
+  "matches": 49214,
+  "excluded": 2525,
+  "sourceIssues": 661,
+  "coverageMissing": 0
 }
 ```
 
@@ -19,8 +20,8 @@ Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).
 
 ## Vuosikattavuus
 
-- 2022: 43 kilpailua, 7257 ottelua
-- 2023: 59 kilpailua, 9990 ottelua
+- 2022: 46 kilpailua, 7529 ottelua
+- 2023: 61 kilpailua, 10223 ottelua
 - 2024: 60 kilpailua, 10215 ottelua
 - 2025: 69 kilpailua, 11645 ottelua
 - 2026: 61 kilpailua, 9602 ottelua
@@ -28,6 +29,10 @@ Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).
 ## Tarkistettavat kilpailut
 
 Ei epäonnistuneita kilpailuja.
+
+## Koko aineiston kilpailut ilman vahvistettuja otteluita
+
+Kaikista nykyisen kilpailuaineiston soveltuvista lähteistä on vahvistettuja otteluita. Yksittäisiä otteluita voi silti puuttua.
 
 ## Ottelukohtaiset huomiot
 
