@@ -54,7 +54,10 @@ function ingest(root='.'){
  for(const target of report.unchangedTargets||[])Q.withdraw(q,'bout-event',target);
  for(const p of report.proposals||[])Q.propose(q,'bout-event',p.target,p.before,p.after,'Ottelun tulos muuttui tai aiempi ottelu puuttuu lähteestä.');
  }
- Q.saveQueue(q,file);console.log('Odottaa hyväksyntää:',q.proposals.filter(p=>p.status==='pending').length);
+ Q.saveQueue(q,file);
+ const statePath=path.join(root,'haun-tila.json');
+ if(fs.existsSync(statePath)){const state=JSON.parse(fs.readFileSync(statePath));state.pending=q.proposals.filter(p=>p.status==='pending').length;Q.atomic(statePath,JSON.stringify(state,null,2)+'\n');const {renderMarkdown}=require('../haun-tila.js');Q.atomic(path.join(root,'hakuraportti.md'),renderMarkdown(state));}
+ console.log('Odottaa hyväksyntää:',q.proposals.filter(p=>p.status==='pending').length);
 }
 function applyFiles(root='.'){
  const file=path.join(root,'hyvaksyntapaatokset.json');if(!fs.existsSync(file))return;

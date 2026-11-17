@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
     inputs:
       year:
-        description: 'Haettavat vuodet (auto = uusin vuosi, sunnuntaisin kaikki)'
+        description: 'Vuodet: auto, all tai missing = vain puuttuvat ottelukilpailut'
         type: choice
         default: auto
-        options: [auto, all, '2022', '2023', '2024', '2025', '2026']
+        options: [auto, all, missing, '2022', '2023', '2024', '2025', '2026']
       review_only:
         description: 'Käsittele vain ylläpidon päätökset (ei uutta lähdehakua)'
         type: boolean
@@ -36,7 +36,9 @@ jobs:
         with:
           node-version: '22'
       - name: Tarkista ottelutuonnin suojaukset
-        run: python tools/test-collect-bouts.py
+        run: |
+          python tools/test-collect-bouts.py
+          python tools/test-bout-sources.py
       - name: Testaa hyväksyntäjonon suojaukset
         run: node --test tools/test-review.cjs
       - name: Tallenna aiempi hyväksytty versio
@@ -44,12 +46,12 @@ jobs:
       - name: Käsittele ylläpidon päätökset
         run: node tools/review-data.cjs apply
       - name: Hae ja tarkista lähteet
-        if: ${{ inputs.review_only != true }}
+        if: ${{ inputs.review_only != true && inputs.year != 'missing' }}
         env:
           SEARCH_YEAR: ${{ inputs.year || 'auto' }}
         run: python tools/collect.py "$SEARCH_YEAR"
       - name: Päivitä aineisto
-        if: ${{ inputs.review_only != true }}
+        if: ${{ inputs.review_only != true && inputs.year != 'missing' }}
         run: node tools/update-data.cjs
       - name: Hae ja tarkista ottelut
         if: ${{ inputs.review_only != true }}

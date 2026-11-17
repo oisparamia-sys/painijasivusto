@@ -101,29 +101,54 @@ def ranked_profiles(page,base):
   match=re.fullmatch(r'(\d+(?:[.,]\d+)?)\s*kg',clean(cells[0]),re.I)
   if match:weight=match[1].replace(',','.');category=clean(cells[1]);continue
   rank=re.fullmatch(r'([1-9]\d*)\.',clean(cells[0]))
-  if not rank or category is None:continue
+  if category is None or (not rank and clean(cells[0])):continue
   anchor=re.search(r'<a\b[^>]*href\s*=\s*["\']([^"\']+NR\d+\.htm)["\'][^>]*>(.*?)</a>',cells[1],re.I|re.S)
-  if not anchor:continue
+  if not anchor:
+   if rank:out.append({'category':category,'weight':weight,'name':clean(cells[1]),'club':clean(cells[2]),'profile':None,'ranked':True})
+   continue
   profile=urllib.parse.urljoin(base,anchor[1])
   if profile not in local_links('<a href="'+html.escape(anchor[1],quote=True)+'">x</a>',base):continue
-  out.append({'category':category,'weight':weight,'name':clean(anchor[2]),'club':clean(cells[2]),'profile':profile})
+  out.append({'category':category,'weight':weight,'name':clean(anchor[2]),'club':clean(cells[2]),'profile':profile,'ranked':bool(rank)})
  return out
+
+def profile_info(page):
+ fields={}
+ for label,value in re.findall(r'<td\b[^>]*>([^<>]+)</td>\s*<td\b[^>]*>(.*?)</td>',page,re.I|re.S):
+  key=norm(clean(label))
+  if key in ['painija','seura','ikäluokka','paino']:
+   if key in fields:raise ValueError('Painijaprofiilin tunnistetieto toistuu')
+   fields[key]=clean(value)
+ if not all(fields.get(k) for k in ['painija','seura','ikäluokka','paino']):raise ValueError('Painijaprofiilin tunnistetiedot puuttuvat')
+ weight=re.fullmatch(r'(\d+(?:[.,]\d+)?)\s*kg',fields['paino'],re.I)
+ if not weight:raise ValueError('Painijaprofiilin painoluokkaa ei tunnistettu')
+ return {'name':fields['painija'],'club':fields['seura'],'category':fields['ikäluokka'],'weight':weight[1].replace(',','.')}
+
+def profile_agrees(info,person,row):
+ return info and norm(info['name'])==norm(person['name']) and club_key(info['club'])==club_key(person['club']) and norm(info['category'])==norm(row['category']) and info['weight']==row['weight']
 
 def collect_event(competition,source):
  url=competition['source'];index=source.read(url);check_header(index,competition)
  available=local_links(index,url);category_urls=[u for u in available if u.endswith('tlges.htm')]
  numbered_urls=[u for u in available if re.search(r'KF\d+\.htm$',u,re.I)]
- if not category_urls or not numbered_urls:raise ValueError('Kaksi vertailtavaa otteluluetteloa eivät ole saatavilla')
- weight_info={};issues=[];roster={}
+ if not category_urls:raise ValueError('Sarjojen osallistujaluettelot eivät ole saatavilla')
+ weight_info={};issues=[];roster={};plain_roster={};unranked_profiles=set()
  participant_index=collections.defaultdict(list)
  for row in competition['rows']:participant_index[(norm(row['category']),str(row['weight']),norm(row['name']),club_key(row['club']))].append(row)
  for pageurl,page,error in source.many(category_urls):
   if error:issues.append({'source':pageurl,'reason':error});continue
   try:
    check_header(page,competition);groups=html_results(page)
-   for person in ranked_profiles(page,pageurl):
+   persons=ranked_profiles(page,pageurl)
+   identity_counts=collections.Counter((norm(p['category']),p['weight'],norm(p['name']),club_key(p['club'])) for p in persons)
+   for person in persons:
+    if identity_counts[(norm(person['category']),person['weight'],norm(person['name']),club_key(person['club']))]!=1:
+     issues.append({'source':pageurl,'reason':'Sama nimi, seura ja sarja esiintyy lähteen osallistujaluettelossa useasti'});continue
     found=participant_index[(norm(person['category']),person['weight'],norm(person['name']),club_key(person['club']))]
     if len(found)==1:
+     if person['profile'] is None:
+      plain_roster[(norm(person['category']),person['weight'],norm(person['name']),club_key(person['club']))]={'result':found[0],'name':person['name'],'club':person['club']}
+      continue
+     if not person['ranked']:unranked_profiles.add(person['profile'])
      key=(person['profile'],norm(person['category']),person['weight'])
      if key in roster:raise ValueError('Toistuva painijaviittaus sarjan tulosluettelossa')
      roster[key]={'result':found[0],'name':person['name'],'club':person['club']}
@@ -146,6 +171,25 @@ def collect_event(competition,source):
     weights.extend(rows)
    else:numbered.extend(rows)
   except ValueError as error:issues.append({'source':pageurl,'reason':str(error)})
+ # If the numbered list is absent, compare each weight-list bout with BOTH
+ # participants' own pages. Also verify profile identities when ranking pages
+ # have no profile links or show participants without ranks. No ranks are inferred.
+ profile_urls=set()
+ for row in weights:
+  for colour in ['red','blue']:
+   person=row[colour];key=(person['profile'],norm(row['category']),row['weight'])
+   if not numbered_urls or person['profile'] in unranked_profiles or key not in roster and (norm(row['category']),row['weight'],norm(person['name']),club_key(person['club'])) in plain_roster:profile_urls.add(person['profile'])
+ profiles={}
+ for pageurl,page,error in source.many(sorted(profile_urls)):
+  if error:issues.append({'source':pageurl,'reason':error});continue
+  try:
+   check_header(page,competition);info=profile_info(page);rows,failed=parse_bouts(page,pageurl);issues.extend(failed)
+   by_key=collections.defaultdict(list)
+   for parsed in rows:
+    if pageurl not in [parsed['red']['profile'],parsed['blue']['profile']]:raise ValueError('Profiilissa on muun painijan ottelu')
+    by_key[bout_key(parsed)].append(parsed)
+   profiles[pageurl]={'info':info,'rows':by_key}
+  except ValueError as error:issues.append({'source':pageurl,'reason':str(error)})
  numbered_map=collections.defaultdict(list)
  for row in numbered:numbered_map[bout_key(row)].append(row)
  weight_counts=collections.Counter(bout_key(row) for row in weights)
@@ -154,10 +198,23 @@ def collect_event(competition,source):
   reason=None;people=[]
   for colour in ['red','blue']:
    person=row[colour];verified=roster.get((person['profile'],norm(row['category']),row['weight']))
+   if verified is None:
+    verified=plain_roster.get((norm(row['category']),row['weight'],norm(person['name']),club_key(person['club'])))
+    if verified and not profile_agrees(profiles.get(person['profile'],{}).get('info'),person,row):verified=None
+   if person['profile'] in unranked_profiles and not profile_agrees(profiles.get(person['profile'],{}).get('info'),person,row):verified=None
    if verified is None or norm(person['name'])!=norm(verified['name']) or club_key(person['club'])!=club_key(verified['club']):reason='Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa'
    else:people.append(verified['result'])
   peers=numbered_map[bout_key(row)]
-  if weight_counts[bout_key(row)]!=1 or len(peers)!=1:reason='Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa'
+  if not numbered_urls:
+   profile_peers=[]
+   for colour in ['red','blue']:
+    person=row[colour];profile=profiles.get(person['profile'],{})
+    candidates=profile.get('rows',{}).get(bout_key(row),[])
+    if not profile_agrees(profile.get('info'),person,row) or len(candidates)!=1 or not same_bout(row,candidates[0]):
+     reason='Painoluokan ottelu ja molempien painijoiden profiilit eivät täsmää';break
+    profile_peers.append(candidates[0])
+   if len(profile_peers)==2:peers=[profile_peers[0]]
+  if weight_counts[bout_key(row)]!=1 or len(peers)!=1:reason='Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä'
   elif not same_bout(row,peers[0]):reason='Lähdeluetteloiden nimet tai ottelutulokset eroavat'
   if row['code'] not in METHODS:reason='Voittotavan lyhenne vaatii tarkistamista: '+row['code']
   if reason:
@@ -166,12 +223,12 @@ def collect_event(competition,source):
   if red['athleteId']==blue['athleteId']:excluded.append({'competition':url,'people':[red['resultId'],blue['resultId']],'source':row['source'],'reason':'Ottelun molemmat puolet yhdistyvät samaan painijatunnukseen'});continue
   for p in people:used[p['resultId']]={'competition':url,**{k:p[k] for k in ['resultId','athleteId','category','weight']}}
   token=json.dumps([url,*bout_key(row)],ensure_ascii=False,separators=(',',':'))
-  approved.append({'id':'ottelu-'+hashlib.sha256(token.encode()).hexdigest()[:20],'competition':url,'category':row['category'],'weight':row['weight'],'round':row['round'].split(' ',1)[-1],'red':red['resultId'],'blue':blue['resultId'],'winner':red['resultId'] if row['winner']=='red' else blue['resultId'],'code':row['code'],'points':row['points'],'source':row['source'],'comparisonSource':peers[0]['source']})
+  approved.append({'id':'ottelu-'+hashlib.sha256(token.encode()).hexdigest()[:20],'competition':url,'category':row['category'],'weight':row['weight'],'round':row['round'].split(' ',1)[-1],'red':red['resultId'],'blue':blue['resultId'],'winner':red['resultId'] if row['winner']=='red' else blue['resultId'],'code':row['code'],'points':row['points'],'source':row['source'],'comparisonSource':peers[0]['source'],**({'verificationSources':[row['red']['profile'],row['blue']['profile']]} if not numbered_urls else {})})
  # Include identified participants of rejected bouts too, for accurate exclusion notices.
  all_people={row['resultId']:{'competition':url,**{k:row[k] for k in ['resultId','athleteId','category','weight']}} for row in competition['rows']}
  unmatched=sum(1 for row in numbered if bout_key(row) not in weight_counts)
  stats={'candidateMatches':len(weights),'accepted':len(approved),'excluded':len(excluded),'unmatchedNumbered':unmatched,'unreadable':len(issues)}
- meta={'key':url,'title':competition['title'],'details':competition['details'],'year':int(re.search(r'/20\d{2}/',url)[0].strip('/')),'stats':stats}
+ meta={'key':url,'title':competition['title'],'details':competition['details'],'year':int(re.search(r'/20\d{2}/',url)[0].strip('/')),'stats':stats,'comparisonMethod':'numbered-list' if numbered_urls else 'both-participant-profiles'}
  return meta,list(all_people.values()),approved,excluded,issues
 
 def load_data(path):
@@ -224,7 +281,7 @@ def validate(data):
 def years_for(arg,now=None):
  now=now or datetime.datetime.now(datetime.timezone.utc)
  if arg=='samples':return None
- if arg=='all' or (arg=='auto' and now.weekday()==6):return set(range(2022,2027))
+ if arg in ['all','missing'] or (arg=='auto' and now.weekday()==6):return set(range(2022,2027))
  years={min(2026,max(2022,now.year))} if arg=='auto' else {int(arg)}
  if not years<=set(range(2022,2027)):raise ValueError('Valitse vuosi 2022–2026')
  return years
@@ -263,7 +320,7 @@ def collect_auto(data,source,previous,year='auto'):
  for url in sorted(urls):
   old=old_event(url)
   match=re.search(r'/(202[2-6])/FI/',url)
-  selected=bool(match) and ((years is None and url.removeprefix(HOST) in SAMPLES) or (years is not None and int(match[1]) in years))
+  selected=(year!='missing' or url not in oldmeta) and bool(match) and ((years is None and url.removeprefix(HOST) in SAMPLES) or (years is not None and int(match[1]) in years))
   status='unchanged';reason=None;event=old
   if selected:
    try:
@@ -294,6 +351,17 @@ def collect_auto(data,source,previous,year='auto'):
  report['summary']={**{k:counts[k] for k in ['updated','preserved','failed']},'attempted':len(report['events']),'competitions':len(result['competitions']),'matches':len(result['matches']),'excluded':len(result['excluded']),'sourceIssues':len(result['issues'])}
  report['excluded']=result['excluded']
  report['sourceIssues']=result['issues']
+ available={c['key'] for c in result['competitions']}
+ previous_missing={c['source']:c for c in previous.get('coverageMissing',[])}
+ attempts={e['source']:e for e in report['events']}
+ missing=[]
+ for url,items in sorted(current.items()):
+  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(202[2-6])/FI/[A-Za-z0-9_-]+/index(?:FIN|ENG)\.htm',url)
+  if not match or url in available or len(items)!=1:continue
+  c=items[0];attempt=attempts.get(url);saved=previous_missing.get(url,{})
+  missing.append({'source':url,'title':c['title'],'details':c['details'],'year':int(match[1]),'checkedAt':now if attempt else saved.get('checkedAt'),'reason':attempt['reason'] if attempt else saved.get('reason','Kilpailun ottelut eivät ole vielä mukana. Tätä kilpailua ei tarkistettu tässä ajossa.')})
+ result['coverageMissing']=missing;report['coverageMissing']=missing
+ report['summary']['coverageMissing']=len(missing)
  result['searchSummary']=report['summary']
  report['years']={str(y):{'competitions':sum(c['year']==y for c in result['competitions']),'matches':sum(m['competition'] in {c['key'] for c in result['competitions'] if c['year']==y} for m in result['matches'])} for y in range(2022,2027)}
  return result,report
@@ -305,7 +373,7 @@ def atomic_write(path,text):
 
 def main():
  parser=argparse.ArgumentParser(description=__doc__)
- parser.add_argument('--data',default='data.js');parser.add_argument('--output',default='ottelut-data.js');parser.add_argument('--report',default='ottelut-raportti.json');parser.add_argument('--cache');parser.add_argument('--offline',action='store_true');parser.add_argument('--year',default='auto',choices=['auto','all','samples','2022','2023','2024','2025','2026'])
+ parser.add_argument('--data',default='data.js');parser.add_argument('--output',default='ottelut-data.js');parser.add_argument('--report',default='ottelut-raportti.json');parser.add_argument('--cache');parser.add_argument('--offline',action='store_true');parser.add_argument('--year',default='auto',choices=['auto','all','missing','samples','2022','2023','2024','2025','2026'])
  args=parser.parse_args()
  result,report=collect_auto(load_data(args.data),Source(args.cache,args.offline),load_previous(args.output),args.year)
  atomic_write(args.report,json.dumps(report,ensure_ascii=False,indent=2)+'\n')
@@ -315,6 +383,9 @@ def main():
  for e in report['events']:
   if e['status'] in ['preserved','failed']:lines.append('- '+e['source']+' — '+e['status']+': '+str(e['reason']))
  if not any(e['status'] in ['preserved','failed'] for e in report['events']):lines.append('Ei epäonnistuneita kilpailuja.')
+ lines+=['','## Koko aineiston kilpailut ilman vahvistettuja otteluita','']
+ for item in report['coverageMissing']:lines.append('- '+item['title']+' · '+item['details']+' — '+item['source']+' — '+item['reason'])
+ if not report['coverageMissing']:lines.append('Kaikista nykyisen kilpailuaineiston soveltuvista lähteistä on vahvistettuja otteluita. Yksittäisiä otteluita voi silti puuttua.')
  lines+=['','## Ottelukohtaiset huomiot','']
  for item in (report['excluded']+report['sourceIssues'])[:200]:lines.append('- '+item.get('source','')+' — '+item['reason'])
  if len(report['excluded'])+len(report['sourceIssues'])>200:lines.append('Näytetään ensimmäiset 200 huomiota. Kaikki huomiot löytyvät JSON-raportista.')

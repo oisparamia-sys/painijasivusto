@@ -20,7 +20,7 @@ function pack(data){
     return [m.id,c,m.category,m.weight,m.round,red,blue,winner,m.code,m.points,source.pathname.split('/').pop()];
   });
   const excluded=data.excluded.map(e=>[ci(e.competition),e.people.filter(id=>peopleIndex.has(id)).map(pi)]);
-  return {version:3,checkedAt:data.checkedAt,competitions,participants,matches,excluded,searchSummary:data.searchSummary};
+  return {version:3,checkedAt:data.checkedAt,competitions,participants,matches,excluded,searchSummary:data.searchSummary,coverageMissing:data.coverageMissing};
 }
 function build(directory='.'){
   const context=vm.createContext({window:{}});

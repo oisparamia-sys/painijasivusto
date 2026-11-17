@@ -10,7 +10,7 @@
     const person=i=>{if(!Number.isInteger(i)||!participants[i])throw Error('Painijaviittaus puuttuu');return participants[i].resultId;};
     const matches=value.matches.map(m=>({id:m[0],competition:key(m[1]),category:m[2],weight:m[3],round:m[4],red:person(m[5]),blue:person(m[6]),winner:person(m[7]),code:m[8],points:m[9],source:new URL(m[10],competitions[m[1]].key).href}));
     const excluded=value.excluded.map(e=>({competition:key(e[0]),people:e[1].map(person)}));
-    return {version:2,checkedAt:value.checkedAt,competitions,participants,matches,excluded,searchSummary:value.searchSummary};
+    return {version:2,checkedAt:value.checkedAt,competitions,participants,matches,excluded,searchSummary:value.searchSummary,coverageMissing:value.coverageMissing};
   }
   function loadTrial() {
     if(dataPromise)return dataPromise;
@@ -242,6 +242,15 @@
     const coverage=$('#bouts-coverage-list');coverage.replaceChildren();
     for(const competition of prepared.competitions) {
       const li=document.createElement('li');li.textContent=(competition.checkedAt?'Tarkistettu '+dateFormatter.format(new Date(competition.checkedAt))+' · ':'')+competition.title+' · '+competition.details+' — mukana '+competition.stats.accepted+' ottelua, pois jäi '+competition.stats.excluded+' ottelua. Vain toisessa luettelossa '+competition.stats.unmatchedNumbered+', muita lähdehuomioita '+competition.stats.unreadable+'.';coverage.append(li);
+    }
+    if(Array.isArray(trial.coverageMissing)){
+      const box=document.createElement('details'),heading=document.createElement('summary');
+      heading.textContent='Koko aineiston kilpailut ilman vahvistettuja otteluita ('+trial.coverageMissing.length+')';box.append(heading);
+      const note=document.createElement('p');note.textContent='Tämä luettelo koskee kaikkia vuosia 2022–2026. Viimeisimmän haun yhteenveto voi koskea vain yhtä vuotta. Mukana olevista kilpailuistakin voi puuttua yksittäisiä otteluita.';box.append(note);
+      const list=document.createElement('ul');
+      for(const missing of trial.coverageMissing){const li=document.createElement('li');li.textContent=missing.title+' · '+missing.details+' — '+missing.reason;
+        const url=new URL(missing.source);if(url.protocol==='https:'&&url.hostname==='turniereklassisch.ringerdb.de'&&!url.username&&!url.password){const link=document.createElement('a');link.href=url.href;link.textContent=' Avaa lähde ↗';link.target='_blank';link.rel='noopener noreferrer';li.append(link);}list.append(li);}
+      box.append(list);$('#bouts-coverage-summary').after(box);
     }
     const search=trial.searchSummary;
     if($('#bouts-report-link'))$('#bouts-report-link').hidden=!search;

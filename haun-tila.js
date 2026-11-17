@@ -21,7 +21,7 @@
   function renderMarkdown(state) {
     const grouped=groupErrors(state.errors), partial=state.partial || [];
     const list=items=>items.length?items.map(item=>'- '+item).join('\n'):'Ei merkintöjä.';
-    return '# Kilpailuhaku\n\nLisätty '+state.added+', päivitetty '+state.changed+', ennallaan '+state.unchanged+'. Osittaisia kilpailuja '+partial.length+'.\n\n'+
+    return '# Kilpailuhaku\n\nLisätty '+state.added+', päivitetty '+state.changed+', ennallaan '+state.unchanged+'. Osittaisia kilpailuja '+partial.length+'. Hyväksyntäjonossa '+(state.pending||0)+' ehdotusta.\n\n'+
       groups.map(g=>g.title+': '+grouped[g.key].length+'.').join(' ')+'\n\n'+
       '## Lisätyt ja päivitetyt (täydellinen tuonti)\n\n'+list(state.changes.filter(c=>!c.partial).map(c=>c.title+' · '+c.details))+'\n\n'+
       '## Osittain tuodut kilpailut\n\n'+list(partial.map(c=>c.title+' · '+c.details+' · mukana '+c.rows+' tulosta; pois jäivät: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', ')))+'\n\n'+
@@ -90,7 +90,7 @@
     const blocked=groups.flatMap(g=>grouped[g.key]);
     const legacy=report.errors.filter(e=>e.error.startsWith('Osittainen tuonti:')&&!blocked.some(b=>b.source===e.source));
     const partial=Array.isArray(report.partial)?report.partial:[];
-    summary.textContent='Haku tarkistettu '+time(report.checkedAt)+'. Lisätty yhteensä '+report.added+' kilpailua, päivitetty '+report.changed+', ennallaan '+report.unchanged+'. Osittaisia kilpailuja '+(partial.length+legacy.length)+'. '+groups.map(g=>g.title+': '+grouped[g.key].length+'.').join(' ')+' Raportin aineistossa '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' tulosta.';
+    summary.textContent='Haku tarkistettu '+time(report.checkedAt)+'. Lisätty yhteensä '+report.added+' kilpailua, päivitetty '+report.changed+', ennallaan '+report.unchanged+'. Hyväksyntäjonossa '+(report.pending||0)+' ehdotusta. Osittaisia kilpailuja '+(partial.length+legacy.length)+'. '+groups.map(g=>g.title+': '+grouped[g.key].length+'.').join(' ')+' Raportin aineistossa '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' tulosta.';
     for (const g of groups) { const count=$('#scan-'+g.key+'-count'); if(count)count.textContent=String(grouped[g.key].length); }
     const partialLines=partial.map(c=>({source:c.source,text:c.title+' · '+c.details+' — mukana '+c.rows+' tulosta ('+({added:'lisätty tällä haulla',updated:'päivitetty tällä haulla',unchanged:'jo aineistossa, ennallaan'}[c.status]||'aineistossa')+'). Puuttuvat painoluokat: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', ')}));
     partialLines.push(...legacy.map(e=>({...errorItem(e),text:e.error+' (Vanhan raportin huomio; tuonnin tila vahvistuu seuraavalla haulla.)'})));
