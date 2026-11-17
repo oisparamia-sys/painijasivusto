@@ -1,13 +1,13 @@
 # Otteluhaun raportti
 
-Tarkistettu: 2026-11-16T15:18:54.297163+00:00
+Tarkistettu: 2026-11-17T03:11:14.026253+00:00
 
 ```json
 {
-  "updated": 292,
+  "updated": 61,
   "preserved": 0,
-  "failed": 5,
-  "attempted": 297,
+  "failed": 0,
+  "attempted": 61,
   "competitions": 292,
   "matches": 48709,
   "excluded": 2414,
@@ -27,11 +27,7 @@ Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).
 
 ## Tarkistettavat kilpailut
 
-- https://turniereklassisch.ringerdb.de/VT/2022/FI/220312_Nokia/indexFIN.htm — failed: Kaksi vertailtavaa otteluluetteloa eivät ole saatavilla
-- https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Muhos/indexFIN.htm — failed: Yhtään ottelua ei voitu vahvistaa
-- https://turniereklassisch.ringerdb.de/VT/2022/FI/221105_Kuru/indexFIN.htm — failed: Kaksi vertailtavaa otteluluetteloa eivät ole saatavilla
-- https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm — failed: Yhtään ottelua ei voitu vahvistaa
-- https://turniereklassisch.ringerdb.de/VT/2023/FI/231104_Kuru/indexFIN.htm — failed: Kaksi vertailtavaa otteluluetteloa eivät ole saatavilla
+Ei epäonnistuneita kilpailuja.
 
 ## Ottelukohtaiset huomiot
 
