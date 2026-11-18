@@ -2,7 +2,7 @@
 (() => {
   const base = new URL('.', document.currentScript.src);
   const status = document.querySelector('#registry-status');
-  const version = '20261030-admin1';
+  const version = '20261118-names1';
   function load(file) {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');

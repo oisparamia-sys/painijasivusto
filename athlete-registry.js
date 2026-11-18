@@ -162,6 +162,11 @@
       check(selection.size > 0 && selection.size < own.length, "Valitse vähintään yksi tulos ja jätä vähintään yksi nykyiselle tunnukselle.");
       check([...selection].every(id => own.some(r => r.resultId === id)), "Valittu tulos ei kuulu tähän merkintään.");
       const created = addPerson(data, name); source.status = "unreviewed";
+      // A split is also a permanent identity decision, including inherited
+      // exclusions. A later name merge must not bridge the separated people.
+      const others = differentPairs(data).filter(pair => pair.includes(sourceId)).flat().filter(id => id !== sourceId);
+      created.distinctFrom = [...new Set([sourceId, ...others])];
+      source.distinctFrom = [...new Set([...(source.distinctFrom || []), created.id])];
       own.filter(r => selection.has(r.resultId)).forEach(r => { r.athleteId = created.id; });
     });
   }
@@ -213,6 +218,36 @@
   function autoMergeNameClub(input) {
     return transaction(input,"Yhdistä sama nimi ja seura", "identity", data=>applyNameClub(data,nameClubPlan(data)));
   }
+  function namePlan(data) {
+    validate(data);
+    const counts = new Map();
+    rows(data).forEach(r => counts.set(r.athleteId, (counts.get(r.athleteId) || 0) + 1));
+    const groups = new Map();
+    data.athleteRegistry.athletes.forEach(person => {
+      const key = norm(person.name);
+      if (person.mergedInto || !counts.has(person.id) || key.split(" ").length < 2) return;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(person);
+    });
+    const blocked = new Set(differentPairs(data).map(pair => JSON.stringify(pair.sort())));
+    const plan = [], skipped = [];
+    groups.forEach(people => {
+      if (people.length < 2) return;
+      // Block the whole name group: a newly imported third profile must not
+      // accidentally join both sides of an earlier separation.
+      if (people.some((a,i) => people.slice(i+1).some(b => blocked.has(JSON.stringify([a.id,b.id].sort()))))) {
+        skipped.push({name:people[0].name, reason:"Samannimisiä on erotettu eri henkilöiksi; uudet tulokset tarkistetaan."});
+        return;
+      }
+      people.sort((a,b) => (b.status === "reviewed") - (a.status === "reviewed") || counts.get(b.id) - counts.get(a.id) || a.id.localeCompare(b.id));
+      const [target,...sources] = people;
+      plan.push({name:target.name, target:target.id, sources:sources.map(p=>p.id), results:sources.reduce((n,p)=>n+counts.get(p.id),0)});
+    });
+    return {groups:plan, skipped, mergedProfiles:plan.reduce((n,g)=>n+g.sources.length,0), movedResults:plan.reduce((n,g)=>n+g.results,0)};
+  }
+  function autoMergeNames(input) {
+    return transaction(input,"Yhdistä automaattisesti sama etu- ja sukunimi", "identity", data => applyNameClub(data,namePlan(data)));
+  }
   function importCompetitions(input, incoming, options = {}) {
     return transaction(input, "Hyväksy kilpailutuonti (" + incoming.length + ")", "import", data => {
       const work = new Map(data.competitions.map(c => [compKey(c), c])), seen = new Set();
@@ -237,7 +272,8 @@
         work.set(key, c);
       });
       data.competitions = [...work.values()];
-      if (options.autoMergeNameClub === true) applyNameClub(data,nameClubPlan(data));
+      if (options.autoMergeNames !== false) applyNameClub(data,namePlan(data));
+      else if (options.autoMergeNameClub === true) applyNameClub(data,nameClubPlan(data));
     });
   }
   function undo(input) {
@@ -254,6 +290,8 @@
     entry.competitions.forEach(c => { if (c.before) comps.set(c.key, c.before); else comps.delete(c.key); });
     data.athleteRegistry.athletes = [...people.values()]; data.competitions = [...comps.values()];
     data.athleteRegistry.history.pop(); // Counters deliberately never go backwards: IDs are not reused.
+    // Keep the complete reverted event for audit, separately from the undo stack.
+    (data.athleteRegistry.revertedHistory ||= []).push({entry:copy(entry), undoneAt:new Date().toISOString()});
     validate(data); return data;
   }
   function exportSource(data) {
@@ -261,5 +299,5 @@
     const json = JSON.stringify(payload, null, 2).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
     return '"use strict";\nwindow.PAINI_SHARED_DATA = ' + json + ';\n';
   }
-  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve, differentPairs, areDifferent, setDifferent, mergeMany, nameClubPlan, autoMergeNameClub });
+  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve, differentPairs, areDifferent, setDifferent, mergeMany, nameClubPlan, autoMergeNameClub, namePlan, autoMergeNames });
 })(typeof window === "undefined" ? globalThis : window);

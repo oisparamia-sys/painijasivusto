@@ -90,8 +90,8 @@
 <label for="files">LigaDB:n tab-erotellut .txt- tai .tsv-tiedostot</label>
 <input id="files" type="file" multiple accept=".txt,.tsv,text/plain,text/tab-separated-values" disabled>
 <p class="hint">Voit valita monta tiedostoa kerralla. Kilpailu tunnistetaan nimen ja paikka-/päivämäärärivin perusteella. Tarkista nämä ennen hyväksymistä, jotta eri kilpailut eivät korvaa toisiaan.</p>
-<label style="display:flex;gap:10px;align-items:flex-start"><input id="auto-merge-name-club" type="checkbox" checked> Yhdistä tuonnin hyväksymisen yhteydessä saman koko nimen ja seuran merkinnät automaattisesti koko työaineistossa.</label>
-<p class="hint">KLL:n kaupunkimerkinnät ja eri henkilöiksi merkityt parit jätetään ulkopuolelle. Sama nimi ja seura voivat kuulua myös eri henkilöille. Yhdistämiset sisältyvät tuonnin perumiseen.</p>
+<label style="display:flex;gap:10px;align-items:flex-start"><input id="auto-merge-name-club" type="checkbox" checked> Yhdistä tuonnin hyväksymisen yhteydessä saman etu- ja sukunimen merkinnät automaattisesti koko työaineistossa.</label>
+<p class="hint">Yhdistäminen koskee myös eri seuroja ja KLL-kaupunkeja. Eri henkilöiksi erotetut nimiryhmät jätetään tarkistettaviksi. Alkuperäiset tulokset ja muutoshistoria säilyvät.</p>
 <p id="auto-import-summary" class="hint"></p>
 <p id="status" class="status" role="status" aria-live="polite">Luetaan yhteistä aineistoa…</p>
 <div id="preview" hidden>
@@ -113,7 +113,7 @@
 <button id="undo-import" type="button" disabled>Peru viimeisin hyväksytty muutos</button>
 <button id="export" class="primary" type="button" disabled>Lataa data.js</button>
 <p class="hint">Ladattu tiedosto ei korvaa projektin tiedostoa automaattisesti. Säilytä vanha versio, siirrä lataamasi tiedosto alkuperäiseen painijasivusto-kansioon nimellä data.js ja tarkista sivu Safarissa. Lähetä muutos GitHubiin vasta tarkistuksen jälkeen.</p>
-<p class="hint">Hyväksytyt muutokset ovat tämän ylläpitosivun muistissa, kunnes lataat uuden data.js. Sivun päivittäminen aloittaa uudelleen projektin nykyisestä tiedostosta. Säilytä päivitetty data.js ennen kuin avaat toisen ylläpitotyökalun. Uudet tulokset saavat omat tarkistamattomat tunnukset; sama nimi ei yhdistä niitä aiempiin henkilöihin.</p>
+<p class="hint">Hyväksytyt muutokset ovat tämän ylläpitosivun muistissa, kunnes lataat uuden data.js. Sivun päivittäminen aloittaa uudelleen projektin nykyisestä tiedostosta. Säilytä päivitetty data.js ennen kuin avaat toisen ylläpitotyökalun. Samat etu- ja sukunimet yhdistetään automaattisesti, jos valinta on käytössä. Erottamispäätökset estävät uudelleenyhdistämisen.</p>
 </section>
 <noscript>Tämä työkalu tarvitsee JavaScriptin.</noscript>
 </main>

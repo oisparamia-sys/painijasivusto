@@ -10,7 +10,19 @@ function validateBouts(data,bouts,R){
  const resolve=id=>{const seen=new Set();let p=records.get(id);while(p?.mergedInto){if(seen.has(p.id))throw Error('Painijarekisterin kehä');seen.add(p.id);p=records.get(p.mergedInto);}return p?.id;};
  for(const p of bouts.participants){const r=rows.get(p.resultId);if(people.has(p.resultId)||!r||r.competition!==p.competition||r.category!==p.category||r.weight!==p.weight||resolve(r.athleteId)!==resolve(p.athleteId))throw Error('Muutos rikkoisi aiemman ottelun painijaviittauksen. Tarkista tunnusten yhdistäminen erikseen.');people.set(p.resultId,p);}
  const methods=new Set(['SV','PV','YPV','VFA','VPO','VPO1','VSU','VSU1','VP','VT','GS','FI','LOUK']);
- for(const m of bouts.matches){const red=people.get(m.red),blue=people.get(m.blue);if(ids.has(m.id)||!events.has(m.competition)||!red||!blue||red.competition!==m.competition||blue.competition!==m.competition||red.category!==m.category||blue.category!==m.category||red.weight!==m.weight||blue.weight!==m.weight||resolve(red.athleteId)===resolve(blue.athleteId)||![m.red,m.blue].includes(m.winner)||!methods.has(m.code)||m.points!==null&&(!Array.isArray(m.points)||m.points.length!==2||m.points.some(n=>!Number.isInteger(n)||n<0)))throw Error('Ottelun tunnukset tai tulos eivät kelpaa');ids.add(m.id);const url=new URL(m.source);if(url.protocol!=='https:'||url.hostname!=='turniereklassisch.ringerdb.de'||url.username||url.password||new URL('.',url).href!==new URL('.',m.competition).href)throw Error('Ottelun lähde ei kelpaa');}
+ for(const m of bouts.matches){const red=people.get(m.red),blue=people.get(m.blue);if(ids.has(m.id)||!events.has(m.competition)||!red||!blue||red.competition!==m.competition||blue.competition!==m.competition||red.category!==m.category||blue.category!==m.category||red.weight!==m.weight||blue.weight!==m.weight||m.red===m.blue||![m.red,m.blue].includes(m.winner)||!methods.has(m.code)||m.points!==null&&(!Array.isArray(m.points)||m.points.length!==2||m.points.some(n=>!Number.isInteger(n)||n<0)))throw Error('Ottelun tunnukset tai tulos eivät kelpaa');ids.add(m.id);const url=new URL(m.source);if(url.protocol!=='https:'||url.hostname!=='turniereklassisch.ringerdb.de'||url.username||url.password||new URL('.',url).href!==new URL('.',m.competition).href)throw Error('Ottelun lähde ei kelpaa');}
+}
+// Stable result IDs identify bout participants; profile assignments may change.
+function rebindBouts(data,bouts){
+ if(!bouts)return bouts;
+ const rows=new Map(data.competitions.flatMap(c=>c.rows.map(r=>[r.resultId,{...r,competition:c.source}])));
+ const next=Q.copy(bouts);
+ next.participants=next.participants.map(p=>{
+  const r=rows.get(p.resultId);
+  if(!r||r.competition!==p.competition||r.category!==p.category||r.weight!==p.weight)throw Error('Muutos rikkoisi aiemman ottelun painijaviittauksen.');
+  return {...p,athleteId:r.athleteId};
+ });
+ return next;
 }
 function apply(state,queue,document){
  const {R}=state;let data=state.data,bouts=state.bouts;
@@ -31,7 +43,7 @@ function apply(state,queue,document){
     if(current.length!==1||Q.hash(current[0])!==p.beforeHash)throw Error('Kilpailu on muuttunut esikatselun jälkeen. Lataa uusi jono.');
     const candidate={...p.after,source:p.target};
     const collision=data.competitions.find(c=>R.compKey(c)===R.compKey(candidate)&&c.source!==p.target);if(collision)throw Error('Kilpailun nimi ja aika törmäävät toiseen kilpailuun');
-    data=R.importCompetitions(data,[candidate],{autoMergeNameClub:false,matchBySource:true});
+    data=R.importCompetitions(data,[candidate],{autoMergeNames:true,matchBySource:true});
    }else if(p.kind==='bout-event'){
     if(Q.hash(event(bouts,p.target))!==p.beforeHash)throw Error('Ottelut ovat muuttuneet esikatselun jälkeen. Lataa uusi jono.');
     const next=Q.copy(bouts),after=p.after;
@@ -41,7 +53,7 @@ function apply(state,queue,document){
     next.issues=next.issues.filter(i=>!(i.source||'').startsWith(p.target.slice(0,p.target.lastIndexOf('/')+1))).concat(after.issues||[]);
     bouts=next;
    }else throw Error('Tuntematon ehdotustyyppi');
-   R.validate(data);validateBouts(data,bouts,R);
+   R.validate(data);bouts=rebindBouts(data,bouts);validateBouts(data,bouts,R);
   }
   p.status=d.action==='approve'?'approved':'rejected';p.decidedAt=new Date().toISOString();
   q.history.push({id:p.id,action:d.action,at:p.decidedAt,run:process.env.GITHUB_RUN_ID||null});
@@ -73,4 +85,4 @@ function applyFiles(root='.'){
  console.log('Käsitelty päätöksiä:',document.decisions.length);
 }
 if(require.main===module){const mode=process.argv[2],root=process.argv[3]||'.';if(mode==='snapshot')Q.snapshot(root,process.argv[4]||'snapshot');else if(mode==='ingest')ingest(root);else if(mode==='apply')applyFiles(root);else throw Error('Tuntematon toiminto');}
-module.exports={load,event,validateBouts,apply,ingest,applyFiles};
+module.exports={load,event,validateBouts,rebindBouts,apply,ingest,applyFiles};

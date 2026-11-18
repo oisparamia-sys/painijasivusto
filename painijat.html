@@ -19,7 +19,7 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 @media(max-width:750px){.kll-table{display:table}.kll-table thead{position:static;width:auto;height:auto;clip-path:none}.kll-table tbody{display:table-row-group}.kll-table tr{display:table-row;border:0;padding:0}.kll-table th,.kll-table td{display:table-cell}.kll-table td::before{display:none}}
 </style></head><body><main>
 <h1>Painijamerkintöjen ylläpito</h1>
-<p>Yhdistä merkintöjä vain, kun olet varmistanut niiden kuuluvan samalle henkilölle. Tunnus ei itsessään todista henkilöllisyyttä.</p>
+<p>Sama etu- ja sukunimi yhdistää tulokset automaattisesti. Jos profiilissa on kahden eri henkilön tuloksia, voit erottaa ne alla. Kaikki yhdistämiset ja erottamiset tallentuvat muutoshistoriaan.</p>
 <p class="hint">Muutokset ovat tämän välilehden muistissa. Lataa lopuksi data.js ja vie se projektikansioon. Julkinen sivu muuttuu vasta GitHubiin lähettämisen jälkeen. Älä muokkaa aineistoa samanaikaisesti toisessa ylläpitovälilehdessä.</p>
 <p id="registry-status" class="status" role="status" aria-live="polite">Luetaan rekisteriä…</p>
 <section id="confirm-panel" class="card" aria-labelledby="confirm-heading" hidden>
@@ -33,9 +33,9 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 <button id="undo-registry" type="button" disabled>Peru viimeisin muutos</button>
 </div><p id="unsaved" class="hint">Ei tallentamattomia muutoksia.</p></div>
 <section class="card" aria-labelledby="auto-title">
-<h2 id="auto-title">Yhdistä sama nimi ja seura automaattisesti</h2>
-<p>Yhdistää saman koko nimen ja saman seuran tulosmerkinnät. Kirjainkoko ja ylimääräiset välilyönnit sivuutetaan. Kirjoitusvirheitä ei arvata. KLL-tulokset eivät toimi seuravahvistuksena. Eri henkilöiksi merkityt ja moniselitteiset ryhmät jätetään tarkistettaviksi.</p>
-<p class="hint">Samannimiset saman seuran painijat voivat sekoittua. Säilytettäväksi valitaan ensisijaisesti tarkistettu tunnus, muuten eniten tuloksia sisältävä tunnus. Alkuperäiset tulosrivit säilyvät.</p>
+<h2 id="auto-title">Automaattinen yhdistäminen nimen perusteella</h2>
+<p>Yhdistää saman etu- ja sukunimen tulokset eri seuroista ja KLL-kaupungeista. Kirjainkoko ja ylimääräiset välilyönnit sivuutetaan. Kirjoitusvirheitä ei arvata. Jos samannimisiä on erotettu eri henkilöiksi, nimiryhmän uudet tulokset jäävät tarkistettaviksi.</p>
+<p class="hint">Samannimiset eri ihmiset voivat aluksi sekoittua. Erota heidät tarvittaessa tulosvalinnoilla. Säilytettäväksi valitaan ensisijaisesti tarkistettu tunnus, muuten eniten tuloksia sisältävä tunnus. Alkuperäiset tulosrivit säilyvät.</p>
 <p id="auto-summary" role="status"></p>
 <button id="auto-name-club" type="button" disabled>Esikatsele automaattista yhdistämistä</button>
 </section>
@@ -59,7 +59,7 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 </section>
 <section class="card" aria-labelledby="duplicates-title">
 <h2 id="duplicates-title">Mahdolliset kaksoismerkinnät</h2>
-<p>Sama nimi esiintyy usealla aktiivisella tunnuksella. Vertaile alla olevia lähdetietoja. Sama nimi ei yksin tarkoita samaa henkilöä. Mitään ei yhdistetä automaattisesti.</p>
+<p>Sama nimi esiintyy usealla aktiivisella tunnuksella. Vertaile alla olevia lähdetietoja. Sama nimi ei yksin tarkoita samaa henkilöä. Erottamispäätöksen suojaamat nimiryhmät jäävät tarkistettaviksi.</p>
 <label for="duplicate-search">Etsi nimeä, seuraa, kilpailua tai tunnusta</label>
 <input id="duplicate-search" type="search" placeholder="Esimerkiksi Olavi Suomalainen" disabled>
 <p id="duplicate-count" class="hint" role="status" aria-live="polite"></p>
@@ -101,12 +101,12 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 <label for="target-search">Etsi siirrettävä merkintä nimellä, seuralla tai tunnuksella</label><input id="target-search" type="search">
 <label for="target-person">Siirrettävä merkintä</label><select id="target-person"><option value="">Kirjoita ensin hakusana</option></select>
 <button id="preview-merge" type="button">Esikatsele yhdistäminen</button>
-<h3>Tunnukseen liitetyt tulokset</h3><p class="hint">Alkuperäisiä nimiä, seuroja tai kilpailutuloksia ei muuteta. Rasti valitsee tuloksen erotettavaksi uudelle tunnukselle.</p>
-<div class="table-wrap"><table id="identity-table" aria-label="Valitse erotettavat tulokset"><thead><tr><th scope="col">Valitse</th><th scope="col">Kilpailu</th><th scope="col">Lähteen nimi ja seura</th><th scope="col">Sarja ja sija</th><th scope="col">Tulostunnus</th></tr></thead><tbody id="identity-rows"></tbody></table></div>
+<h3>Tunnukseen liitetyt tulokset</h3><p class="hint">Alkuperäisiä nimiä, seuroja tai kilpailutuloksia ei muuteta. Valitse toisen henkilön tulokset rasteilla tai ensin seuran painikkeella. Tarkista valinnat, anna nimi ja paina Esikatsele valittujen tulosten erottaminen. Hyväksy esikatselu. Erottaminen estää henkilöiden automaattisen uudelleenyhdistämisen.</p>
+<div id="split-groups" class="actions" aria-label="Valitse erotettavat tulokset seuran mukaan"></div><p id="split-count" role="status" aria-live="polite"></p><div class="table-wrap"><table id="identity-table" aria-label="Valitse erotettavat tulokset"><thead><tr><th scope="col">Valitse</th><th scope="col">Kilpailu</th><th scope="col">Lähteen nimi ja seura</th><th scope="col">Sarja ja sija</th><th scope="col">Tulostunnus</th></tr></thead><tbody id="identity-rows"></tbody></table></div>
 <label for="split-name">Erotettavan merkinnän nimi</label><input id="split-name" type="text">
 <button id="preview-split" type="button">Esikatsele valittujen tulosten erottaminen</button>
 
 </section></div>
-<section class="card"><h2>Muutoshistoria</h2><p class="hint">Viimeisimmät 20 muutosta näytetään alla. Peruminen toimii myös ladatun data.js-tiedoston uudelleen avaamisen jälkeen. Tunnusnumeroita ei käytetä uudelleen. Historia kulkee data.js-tiedoston mukana.</p><ol id="changes-list"></ol></section>
+<section class="card"><h2>Muutoshistoria</h2><p class="hint">Viimeisimmät 20 muutosta näytetään alla. Peruminen toimii myös ladatun data.js-tiedoston uudelleen avaamisen jälkeen. Tunnusnumeroita ei käytetä uudelleen. Historia kulkee data.js-tiedoston mukana. Myös peruttujen muutosten tiedot säilytetään. Avaa historian rivi nähdäksesi siirretyt tulostunnukset.</p><ol id="changes-list"></ol></section>
 <noscript>Työkalu tarvitsee JavaScriptin.</noscript>
-</main><script src="painijat-loader.js?v=20261030-admin1" defer></script></body></html>
+</main><script src="painijat-loader.js?v=20261118-names1" defer></script></body></html>

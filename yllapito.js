@@ -231,7 +231,7 @@ $("#apply").addEventListener("click", () => {
     }
   }
   try {
-    const nextDataset = R.importCompetitions(dataset, pending.map(entry => entry.item), {autoMergeNameClub: $("#auto-merge-name-club").checked});
+    const nextDataset = R.importCompetitions(dataset, pending.map(entry => entry.item), {autoMergeNames: $("#auto-merge-name-club").checked});
     dataset = nextDataset; dirty = true;
     work = new Map(dataset.competitions.map(item => [identity(item), item])); pending = null;
   } catch (error) { say("Tuontia ei hyväksytty: " + error.message + " Aiempi aineisto säilyi ennallaan.", "error"); return; }
@@ -333,11 +333,11 @@ function duplicateCompetitions(item, candidates) {
 
 function updateAutoPreview() {
   const enabled = $("#auto-merge-name-club").checked;
-  if (!enabled || !pending?.length) { $("#auto-import-summary").textContent = enabled ? "Automaattinen nimi–seura-yhdistäminen on käytössä." : "Automaattinen yhdistäminen ei ole käytössä."; return; }
+  if (!enabled || !pending?.length) { $("#auto-import-summary").textContent = enabled ? "Automaattinen nimi-yhdistäminen on käytössä." : "Automaattinen yhdistäminen ei ole käytössä."; return; }
   try {
-    const imported=R.importCompetitions(dataset,pending.map(entry=>entry.item));
-    const plan=R.nameClubPlan(imported);
-    $("#auto-import-summary").textContent="Hyväksyminen yhdistää myös "+plan.groups.length+" nimi–seura-ryhmää: "+plan.mergedProfiles+" erillistä profiilia ja "+plan.movedResults+" siirtyvää tulosta. "+plan.skipped.length+" ryhmää jää käsin tarkistettavaksi.";
+    const imported=R.importCompetitions(dataset,pending.map(entry=>entry.item),{autoMergeNames:false});
+    const plan=R.namePlan(imported);
+    $("#auto-import-summary").textContent="Hyväksyminen yhdistää myös "+plan.groups.length+" nimi-ryhmää: "+plan.mergedProfiles+" erillistä profiilia ja "+plan.movedResults+" siirtyvää tulosta. "+plan.skipped.length+" ryhmää jää käsin tarkistettavaksi.";
   } catch(error) { $("#auto-import-summary").textContent="Yhdistämisarviota ei voitu muodostaa: "+error.message; }
 }
 $("#auto-merge-name-club").addEventListener("change",()=>{if(!busy)updateAutoPreview();});

@@ -65,6 +65,11 @@ class AutomaticImport(unittest.TestCase):
    elif kind=='wrong-competition':data['participants'][0]['competition']=V
    else:data['matches'][0]['points']=[-1,0]
    with self.assertRaises(ValueError):b.validate(data)
+ def test_namesakes_in_same_profile_keep_their_distinct_bout_participants(self):
+  data=old();data['participants'][1]['athleteId']=data['participants'][0]['athleteId']
+  b.validate(data)
+  data['matches'][0]['blue']=data['matches'][0]['red']
+  with self.assertRaises(ValueError):b.validate(data)
  def test_atomic_write_and_previous_load(self):
   import json
   with tempfile.TemporaryDirectory() as d:

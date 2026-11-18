@@ -40,11 +40,13 @@ jobs:
           python tools/test-collect-bouts.py
           python tools/test-bout-sources.py
       - name: Testaa hyväksyntäjonon suojaukset
-        run: node --test tools/test-review.cjs
+        run: node --test tools/test-review.cjs tools/test-identities.cjs
       - name: Tallenna aiempi hyväksytty versio
         run: node tools/review-data.cjs snapshot . before
       - name: Käsittele ylläpidon päätökset
         run: node tools/review-data.cjs apply
+      - name: Yhdistä samannimiset ja päivitä otteluviittaukset
+        run: node tools/sync-identities.cjs
       - name: Hae ja tarkista lähteet
         if: ${{ inputs.review_only != true && inputs.year != 'missing' }}
         env:
@@ -53,6 +55,8 @@ jobs:
       - name: Päivitä aineisto
         if: ${{ inputs.review_only != true && inputs.year != 'missing' }}
         run: node tools/update-data.cjs
+      - name: Kohdista uusien tulosten otteluviittaukset
+        run: node tools/sync-identities.cjs
       - name: Hae ja tarkista ottelut
         if: ${{ inputs.review_only != true }}
         env:

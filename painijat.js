@@ -14,7 +14,7 @@
   let indexedData = null, indexedRecords = null, groupedData = null, groupedRecords = null;
   let autoData = null, autoPlan = null;
   function nameClubPlan() {
-    if (autoData !== data) { autoPlan = R.nameClubPlan(data); autoData = data; }
+    if (autoData !== data) { autoPlan = R.namePlan(data); autoData = data; }
     return autoPlan;
   }
   function index() {
@@ -369,20 +369,35 @@
     $("#person-name").value = person.name; $("#person-reviewed").checked = person.status === "reviewed";
     $("#split-name").value = person.name; $("#target-search").value = ""; renderTargets();
     const parent = $("#identity-rows"); parent.replaceChildren();
+    const groups=$("#split-groups");groups.replaceChildren();
+    [...new Map(own.map(x=>[R.norm(x.row.club),x.row.club])).values()].sort((a,b)=>a.localeCompare(b,"fi")).forEach(club=>{
+      const button=node("button","Valitse: "+club);button.type="button";
+      button.addEventListener("click",()=>{cancel();const ids=new Set(own.filter(x=>R.norm(x.row.club)===R.norm(club)).map(x=>x.row.resultId));document.querySelectorAll("#identity-rows input").forEach(box=>{box.checked=ids.has(box.value);});updateSplitCount();});groups.append(button);
+    });
     own.forEach(({item, row}) => {
       const tr = document.createElement("tr"), cell = document.createElement("td"), box = document.createElement("input");
       box.type = "checkbox"; box.value = row.resultId; box.setAttribute("aria-label", "Erota: " + row.name + ", " + item.title + ", " + item.details + ", " + row.category + " " + row.weight + " kg, sija " + row.place);
-      box.addEventListener("change", cancel); cell.append(box); tr.append(cell);
+      box.addEventListener("change", ()=>{cancel();updateSplitCount();}); cell.append(box); tr.append(cell);
       [item.title + " · " + item.details, row.name + " · " + row.club, row.category + " · " + row.weight + " kg · " + row.place + ".", row.resultId].forEach(text => { const td = document.createElement("td"); td.textContent = text; tr.append(td); });
       parent.append(tr);
     });
+    updateSplitCount();
   }
+  function updateSplitCount(){const count=document.querySelectorAll("#identity-rows input:checked").length;$("#split-count").textContent=count+" tulosta valittu erotettavaksi. Tarkista valinnat alla ennen hyväksymistä.";}
   function render() {
     cancel(); const all = people();
     $("#registry-summary").textContent = data.competitions.length + " kilpailua · " + R.rows(data).length + " tulosta · " + all.length + " aktiivista tunnusta · " + all.filter(a => a.status === "unreviewed").length + " tarkistamatonta merkintää";
     $("#unsaved").textContent = dirty ? "Työaineistossa on muutoksia. Lataa päivitetty data.js ennen sivun sulkemista." : "Ei tallentamattomia muutoksia.";
     const list = $("#changes-list"); list.replaceChildren();
-    data.athleteRegistry.history.slice(-20).reverse().forEach(h => { const li = document.createElement("li"); li.textContent = h.label + " · " + h.at; list.append(li); });
+    const history = data.athleteRegistry.history.map(entry=>({entry,at:entry.at})).concat((data.athleteRegistry.revertedHistory||[]).map(h=>({...h,at:h.undoneAt})));
+    history.sort((a,b)=>b.at.localeCompare(a.at)).slice(0,20).forEach(({entry:h,undoneAt}) => {
+      const li=node("li"),details=node("details"),summary=node("summary",(undoneAt?"Peruttu: ":"")+h.label+" · "+(undoneAt||h.at));
+      details.append(summary,node("p","Siirrettyjä tuloksia: "+h.assignments.length+" · muutettuja profiileja: "+h.people.length));
+      const changes=node("ul");h.assignments.slice(0,200).forEach(a=>{
+        const found=entries(a.after).find(x=>x.row.resultId===a.resultId);
+        changes.append(node("li",(found?found.item.title+" · "+found.item.details+" · "+found.row.name+" · "+found.row.club+" · ":"")+a.resultId+": "+a.before+" → "+a.after));
+      });if(h.assignments.length>200)details.append(node("p","Näytetään ensimmäiset 200 siirtoa. Täydellinen historia säilyy ladattavassa data.js-tiedostossa."));details.append(changes);li.append(details);list.append(li);
+    });
     renderAutoSummary(); selectedPairs.clear(); renderList(); renderEditor(); renderDuplicates(); renderStrong(); renderKll();
   }
   function preview(text, compute, nextId = selectedId) {
@@ -402,8 +417,8 @@
   $("#auto-name-club").addEventListener("click",()=>{
     if(!data)return;
     const plan=nameClubPlan();if(!plan.groups.length)return;
-    const lines=plan.groups.map(g=>g.name+" · "+g.club+": "+g.sources.join(", ")+" → "+g.target+" ("+g.results+" tulosta)");
-    preview("Yhdistetään automaattisesti "+plan.groups.length+" ryhmää samalla koko nimellä ja seuralla. "+plan.mergedProfiles+" erillistä profiilia yhdistyy ja "+plan.movedResults+" tulosta siirtyy.\n\n"+lines.join("\n")+"\n\nKoko ajon voi perua yhdellä painalluksella. Hyväksymisen jälkeen lataa päivitetty data.js.",()=>R.autoMergeNameClub(data),plan.groups[0].target);
+    const lines=plan.groups.map(g=>g.name+": "+g.sources.join(", ")+" → "+g.target+" ("+g.results+" tulosta)");
+    preview("Yhdistetään automaattisesti "+plan.groups.length+" ryhmää samalla etu- ja sukunimellä. "+plan.mergedProfiles+" erillistä profiilia yhdistyy ja "+plan.movedResults+" tulosta siirtyy.\n\n"+lines.join("\n")+"\n\nKoko ajon voi perua yhdellä painalluksella. Hyväksymisen jälkeen lataa päivitetty data.js.",()=>R.autoMergeNames(data),plan.groups[0].target);
   });
   $("#strong-search").addEventListener("input",()=>{cancel();strongPage=0;renderStrong();});
   $("#strong-prev").addEventListener("click",()=>{cancel();strongPage--;renderStrong();});
@@ -431,7 +446,8 @@
   });
   $("#preview-split").addEventListener("click", () => {
     const ids = [...document.querySelectorAll("#identity-rows input:checked")].map(box => box.value), name = $("#split-name").value.trim(), source = selectedId;
-    preview("Erotetaan " + ids.length + " valittua tulosta tunnukselta " + source + " uudelle tarkistamattomalle tunnukselle nimellä ”" + name + "”. Muut tulokset pysyvät nykyisellä tunnuksella.", () => R.split(data, source, ids, name));
+    const selected=entries(source).filter(x=>ids.includes(x.row.resultId)).map(x=>x.item.title+" · "+x.item.details+" · "+x.row.club+" · "+x.row.category+" "+x.row.weight+" kg · "+x.row.resultId);
+    preview("Erotetaan " + ids.length + " valittua tulosta tunnukselta " + source + " uudelle tarkistamattomalle tunnukselle nimellä ”" + name + "”. Muut tulokset pysyvät nykyisellä tunnuksella. Henkilöt merkitään pysyvästi erillisiksi. Uudet samannimiset tulokset jäävät tarkistettaviksi. Ottelut kohdistetaan uudelleen seuraavassa GitHub-ajossa.\n\n"+selected.join("\n"), () => R.split(data, source, ids, name));
   });
   $("#apply-identity").addEventListener("click", () => {
     if (!pending) return;
@@ -455,7 +471,9 @@
   window.addEventListener("beforeunload", event => { if (dirty) { event.preventDefault(); event.returnValue = ""; } });
   try {
     R.validate(window.PAINI_SHARED_DATA); data = window.PAINI_SHARED_DATA;
+    const initialPlan=R.namePlan(data);
+    if(initialPlan.groups.length){data=R.autoMergeNames(data);dirty=true;}
     ["#person-search", "#person-list", "#only-unreviewed", "#duplicate-search", "#strong-search", "#kll-search"].forEach(selector => { $(selector).disabled = false; }); render();
-    say("Rekisteri luettu. Mahdollisten kaksoismerkintöjen lista auttaa vertailussa. Nykyiset yhdistämiset ja tarkistustilat säilyvät; ehdotukset eivät muuta aineistoa.", "success");
+    say("Rekisteri luettu. Samat etu- ja sukunimet yhdistetään automaattisesti. Erottamispäätökset säilyvät. " + (dirty ? "Yhdistämisiä tehtiin työaineistoon: lataa päivitetty data.js tallentaaksesi ne. " : "") + "Erota tarvittaessa henkilöt valitsemalla profiili ja sille väärin liitetyt tulokset.", "success");
   } catch (error) { say("Rekisteriä ei voitu avata: " + error.message + " Pidä data.js, athlete-registry.js, painijat.html, painijat.js ja style.css samassa kansiossa.", "error"); }
 })();

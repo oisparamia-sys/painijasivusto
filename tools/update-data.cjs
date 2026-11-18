@@ -38,7 +38,7 @@ function update(base,R,payload,queue=Q.readQueue()){
   if(item.importNotes?.length)partial.push({title:item.title,details:item.details,source:response.source,rows:item.rows.length,notes:item.importNotes,status:old?"updated":"added"});
   changes.push({partial:!!item.importNotes?.length,source:response.source,kind:old?"updated":"added",title:item.title,details:item.details,rows:item.rows.length});incoming.push(item);log.push(item.title+' · '+item.details+' · '+item.rows.length+' tulosta');
  }catch(e){errors.push({source:response.source,error:e.message});}}
- return {data:incoming.length?R.importCompetitions(base,incoming,{autoMergeNameClub:false}):base,changed:incoming.length>0,log,errors,changes,unchanged,partial,queue};
+ return {data:incoming.length?R.importCompetitions(base,incoming,{autoMergeNames:true}):base,changed:incoming.length>0,log,errors,changes,unchanged,partial,queue};
 }
 module.exports={update};
 if(require.main===module){const ctx={window:{}};vm.runInNewContext(fs.readFileSync('athlete-registry.js','utf8'),ctx);vm.runInNewContext(fs.readFileSync('data.js','utf8'),ctx);const R=ctx.window.PainiRegistry;const result=update(ctx.window.PAINI_SHARED_DATA,R,JSON.parse(fs.readFileSync('collected.json','utf8')));

@@ -220,7 +220,7 @@ def collect_event(competition,source):
   if reason:
    excluded.append({'competition':url,'people':[p['resultId'] for p in people],'source':row['source'],'reason':reason});continue
   red,blue=people
-  if red['athleteId']==blue['athleteId']:excluded.append({'competition':url,'people':[red['resultId'],blue['resultId']],'source':row['source'],'reason':'Ottelun molemmat puolet yhdistyvät samaan painijatunnukseen'});continue
+  if red['resultId']==blue['resultId']:excluded.append({'competition':url,'people':[red['resultId'],blue['resultId']],'source':row['source'],'reason':'Ottelun molemmat puolet yhdistyvät samaan painijatunnukseen'});continue
   for p in people:used[p['resultId']]={'competition':url,**{k:p[k] for k in ['resultId','athleteId','category','weight']}}
   token=json.dumps([url,*bout_key(row)],ensure_ascii=False,separators=(',',':'))
   approved.append({'id':'ottelu-'+hashlib.sha256(token.encode()).hexdigest()[:20],'competition':url,'category':row['category'],'weight':row['weight'],'round':row['round'].split(' ',1)[-1],'red':red['resultId'],'blue':blue['resultId'],'winner':red['resultId'] if row['winner']=='red' else blue['resultId'],'code':row['code'],'points':row['points'],'source':row['source'],'comparisonSource':peers[0]['source'],**({'verificationSources':[row['red']['profile'],row['blue']['profile']]} if not numbered_urls else {})})
@@ -275,7 +275,7 @@ def validate(data):
   for side in ['red','blue']:
    p=people.get(m[side])
    if not p or p['competition']!=m['competition'] or p['category']!=m['category'] or str(p['weight'])!=str(m['weight']):raise ValueError('Ottelun tulosviittaus ei kelpaa')
-  if m['winner'] not in [m['red'],m['blue']] or people[m['red']]['athleteId']==people[m['blue']]['athleteId']:raise ValueError('Ottelun painijat eivät kelpaa')
+  if m['winner'] not in [m['red'],m['blue']] or m['red']==m['blue']:raise ValueError('Ottelun painijat eivät kelpaa')
   if m['code'] not in METHODS or (m['points'] is not None and (len(m['points'])!=2 or any(type(x)!=int or x<0 for x in m['points']))):raise ValueError('Ottelutulos ei kelpaa')
 
 def years_for(arg,now=None):

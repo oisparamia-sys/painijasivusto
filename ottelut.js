@@ -77,7 +77,7 @@
       const current=currentRows.get(saved.resultId);
       if(!current || current.competition!==saved.competition || current.category!==saved.category || current.weight!==saved.weight)throw Error('Kokeen tulosrivi muuttui');
       const id=resolve(current.athleteId);
-      if(!id || resolve(saved.athleteId)!==id)throw Error('Kokeen painijatunnus muuttui');
+      if(!id || !records.has(saved.athleteId))throw Error('Kokeen painijatunnus muuttui');
       const record=records.get(id);if(!record || record.mergedInto)throw Error('Painijatunnus puuttuu');
       if(!people.has(id))people.set(id,{id,name:record.name,clubs:new Set(),competitions:new Set(),searchNames:new Set([record.name])});
       const person=people.get(id);person.clubs.add(current.club);person.competitions.add(saved.competition);person.searchNames.add(current.name);
@@ -87,12 +87,12 @@
     const ids=new Set();
     const matches=trial.matches.map(m=>{
       const red=byResult.get(m.red),blue=byResult.get(m.blue),winner=byResult.get(m.winner),competition=competitions.get(m.competition);
-      if(!competition||!red||!blue||red.id===blue.id||![red,blue].includes(winner)||ids.has(m.id))throw Error('Ottelun painijat tai tunnukset eivät täsmää');
+      if(!competition||!red||!blue||m.red===m.blue||![red,blue].includes(winner)||ids.has(m.id))throw Error('Ottelun painijat tai tunnukset eivät täsmää');
       if(currentRows.get(m.red).competition!==m.competition || currentRows.get(m.blue).competition!==m.competition)throw Error('Ottelun kilpailu ei täsmää');
       if(!labels[m.code] || m.points!==null && (!Array.isArray(m.points)||m.points.length!==2||!m.points.every(n=>Number.isInteger(n)&&n>=0)))throw Error('Ottelutulos ei kelpaa');
       const url=new URL(m.source);
       if(url.protocol!=='https:' || url.hostname!=='turniereklassisch.ringerdb.de' || url.username || url.password)throw Error('Lähdeosoite ei kelpaa');
-      ids.add(m.id);return {...m,competition,red,blue,winner};
+      ids.add(m.id);return {...m,competition,red,blue,winner,identityConflict:red.id===blue.id};
     });
     const excluded=trial.excluded.map(m=>({competition:m.competition,people:new Set(m.people.map(id=>byResult.get(id)?.id).filter(Boolean))}));
     return {competitions:[...competitions.values()].sort((a,b)=>b.year-a.year||a.details.localeCompare(b.details,'fi')),people:[...people.values()].sort((a,b)=>a.name.localeCompare(b.name,'fi')),matches,excluded};
@@ -106,7 +106,7 @@
     const people=new Map(prepared.people.map(p=>[p.id,p]));
     const byPerson=new Map(),excludedByPerson=new Map();
     const add=(index,id,row)=>{if(!index.has(id))index.set(id,[]);index.get(id).push(row);};
-    for(const match of prepared.matches){add(byPerson,match.red.id,match);add(byPerson,match.blue.id,match);}
+    for(const match of prepared.matches){add(byPerson,match.red.id,match);if(match.blue.id!==match.red.id)add(byPerson,match.blue.id,match);}
     for(const row of prepared.excluded)for(const id of row.people)add(excludedByPerson,id,row);
     const collator=new Intl.Collator('fi',{numeric:true});
     const date=competition=>{const m=competition.details.match(/(\d{1,2})[./](\d{1,2})[./](20\d{2})/);return m?Date.UTC(Number(m[3]),Number(m[2])-1,Number(m[1])):0;};
@@ -118,7 +118,7 @@
       const counts=new Map();
       for(const match of (byPerson.get(a)||[]).filter(inScope)) {
         const other=match.red.id===a?match.blue.id:match.blue.id===a?match.red.id:null;
-        if(other)counts.set(other,(counts.get(other)||0)+1);
+        if(other&&other!==a)counts.set(other,(counts.get(other)||0)+1);
       }
       return counts;
     }
@@ -213,16 +213,18 @@
       const missing=(excludedByPerson.get(a)||[]).filter(m=>(!scope||m.competition===scope)&&m.people.has(a)&&(!pair||m.people.has(b))).length;
       if(missing) {omitted.hidden=false;omitted.textContent='Tästä valinnasta jäi pois '+missing+' ottelua lähderistiriidan, puuttuvan tunnistuksen tai tarkistettavan voittotavan vuoksi. Ne eivät sisälly alla oleviin lukuihin.';}
       notice.textContent=matches.length?matches.length+' ottelua valituissa kilpailuissa. Voitot ja tappiot koskevat vain alla näkyviä otteluita.':pair?'Valinnalla ei löytynyt aineistoon mukaan otettuja otteluita. Tämä ei tarkoita, etteivät painijat olisi koskaan kohdanneet.':'Tälle painijalle ei löytynyt mukaan otettuja otteluita valituista kilpailuista. Muiden kilpailujen ottelut eivät vielä ole mukana.';
-      const wins=matches.filter(m=>m.winner.id===a).length;
-      stats.append(statistic('Otteluita',matches.length),statistic(pair?person.name+' · voitot':'Voittoja',wins),statistic(pair?opponent.name+' · voitot':'Tappioita',matches.length-wins));stats.hidden=false;
+      const conflicts=matches.filter(m=>m.identityConflict).length;
+      if(conflicts)notice.textContent+=' '+conflicts+' ottelussa molemmat samannimiset osallistujat ovat samassa profiilissa. Nämä ottelut odottavat henkilöiden erottamista eikä niitä lasketa voittoihin tai tappioihin.';
+      const wins=matches.filter(m=>!m.identityConflict&&m.winner.id===a).length;
+      stats.append(statistic('Otteluita',matches.length),statistic(pair?person.name+' · voitot':'Voittoja',wins),statistic(pair?opponent.name+' · voitot':'Tappioita',matches.length-wins-conflicts));if(conflicts)stats.append(statistic("Erota henkilöt",conflicts));stats.hidden=false;
       for(const match of matches) {
         const ownRed=match.red.id===a,other=ownRed?match.blue:match.red;
         const points=match.points?(ownRed?match.points:[match.points[1],match.points[0]]):null;
         const row=document.createElement('tr');row.dataset.boutId=match.id;
-        const values=[match.competition.title+' · '+match.competition.details,match.round+' · '+match.category+' '+match.weight+' kg',person.name,other.name,match.winner.id===a?'Voitto':'Tappio',labels[match.code],points?points.join('–'):'Pisteitä ei ilmoitettu'];
+        const values=[match.competition.title+' · '+match.competition.details,match.round+' · '+match.category+' '+match.weight+' kg',person.name,other.name,match.identityConflict?'Erota samannimiset':match.winner.id===a?'Voitto':'Tappio',labels[match.code],points?points.join('–'):'Pisteitä ei ilmoitettu'];
         values.forEach((value,index)=>{
           const cell=document.createElement('td');cell.textContent=value;
-          if(index===4) {const badge=document.createElement('span');badge.className=match.winner.id===a?'bout-win':'bout-loss';badge.textContent=value;cell.replaceChildren(badge);}
+          if(index===4) {const badge=document.createElement('span');badge.className=match.identityConflict?'':match.winner.id===a?'bout-win':'bout-loss';badge.textContent=value;cell.replaceChildren(badge);}
           row.append(cell);
         });
         const source=document.createElement('td'),link=document.createElement('a');link.href=match.source;link.textContent='Ottelulista ↗';link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label','Avaa lähde: '+person.name+' ja '+other.name+', '+match.round);source.append(link);row.append(source);
