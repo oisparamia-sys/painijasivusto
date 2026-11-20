@@ -1,11 +1,11 @@
 # Otteluhaun raportti
 
-Tarkistettu: 2026-11-19T03:15:46.519975+00:00
+Tarkistettu: 2026-11-20T03:08:54.322907+00:00
 
 ```json
 {
-  "updated": 61,
-  "preserved": 0,
+  "updated": 60,
+  "preserved": 1,
   "failed": 0,
   "attempted": 61,
   "competitions": 297,
@@ -28,7 +28,7 @@ Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).
 
 ## Tarkistettavat kilpailut
 
-Ei epäonnistuneita kilpailuja.
+- https://turniereklassisch.ringerdb.de/VT/2026/FI/261017_Helsinki/indexFIN.htm — preserved: Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon
 
 ## Koko aineiston kilpailut ilman vahvistettuja otteluita
 
