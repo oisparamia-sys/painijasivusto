@@ -412,7 +412,25 @@ function wordDistance(a, b) {
   return rows[a.length][b.length];
 }
 function matchesCompetitionQuery(text, query) {
-  const tokens = searchWords(query);
+  // Match complete dates before the unordered word search, so 3.8 cannot
+  // accidentally select 8.3. A day inside a multi-day event is also a match.
+  const datePattern = /\b(\d{1,2})(?:\.?\s*[-–]\s*(\d{1,2}))?[./](\d{1,2})[./](\d{4})\b/g;
+  const span = match => {
+    const day = Number(match[1]), endDay = Number(match[2] || match[1]);
+    const month = Number(match[3]), year = Number(match[4]);
+    const timestamp = day => {
+      const value = Date.UTC(year, month - 1, day), date = new Date(value);
+      return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day ? value : null;
+    };
+    const start = timestamp(day), end = timestamp(endDay);
+    return start !== null && end !== null && start <= end ? {start,end} : null;
+  };
+  const requestedDates = [...query.matchAll(datePattern)].map(span);
+  if (requestedDates.length) {
+    const actualDates = [...text.matchAll(datePattern)].map(span).filter(Boolean);
+    if (!requestedDates.every(wanted => wanted && actualDates.some(actual => actual.start <= wanted.start && actual.end >= wanted.end))) return false;
+  }
+  const tokens = searchWords(query.replace(datePattern, " "));
   return !tokens.length || matchesSearchWords(searchWords(text), tokens);
 }
 function matchesSearchWords(words, tokens) {
