@@ -14,6 +14,12 @@ function propose(q,kind,target,before,after,reason){
  if(existing){existing.lastSeen=new Date().toISOString();if(['withdrawn','superseded'].includes(existing.status))existing.status='pending';return existing;}
  const p={id,kind,target,beforeHash,afterHash,status:'pending',createdAt:new Date().toISOString(),lastSeen:new Date().toISOString(),reason,before:copy(before),after:copy(after)};q.proposals.push(p);return p;
 }
+function verifyBackup(root,version){
+ try{
+  const bytes=zlib.gunzipSync(fs.readFileSync(path.join(root,version.blob)));
+  if(crypto.createHash('sha256').update(bytes).digest('hex')!==version.sha256)throw Error('Tarkistussumma ei täsmää');
+ }catch(error){throw Error('Varmuuskopion tarkistus epäonnistui ('+version.file+'): '+error.message);}
+}
 function snapshot(root='.',label='manual'){
  const indexPath=path.join(root,'tietovarasto/index.json');
  const index=fs.existsSync(indexPath)?JSON.parse(fs.readFileSync(indexPath)):{version:1,versions:[],runs:[]};
@@ -21,11 +27,12 @@ function snapshot(root='.',label='manual'){
  const refs={};
  for(const file of ['data.js','ottelut-data.js']){
   const full=path.join(root,file);if(!fs.existsSync(full))continue;
-  const bytes=fs.readFileSync(full),text=bytes.toString('utf8'),marker=file==='data.js'?'window.PAINI_SHARED_DATA = ':'window.PAINI_BOUTS_DATA = ';
+  const bytes=fs.readFileSync(full),text=bytes.toString('utf8');
   const vm=require('node:vm'),ctx={window:{}};vm.runInNewContext(text,ctx,{timeout:15000});const value=ctx.window[file==='data.js'?'PAINI_SHARED_DATA':'PAINI_BOUTS_DATA'];
-  const semanticValue=file==='ottelut-data.js'?{version:value.version,competitions:value.competitions.map(c=>({key:c.key,title:c.title,details:c.details,year:c.year})),participants:value.participants,matches:value.matches}:value;
-  const semanticHash=hash(semanticValue),existing=index.versions.find(v=>v.file===file&&v.semanticHash===semanticHash);
-  if(existing){refs[file]=existing.sha256;continue;}
+  // Keep source evidence, exclusions and coverage diagnostics as well as results.
+  // hash() ignores scan/export timestamps so unchanged scans still share a backup.
+  const semanticHash=hash(value),existing=index.versions.find(v=>v.file===file&&v.semanticHash===semanticHash);
+  if(existing){verifyBackup(root,existing);refs[file]=existing.sha256;continue;}
   const sha256=crypto.createHash('sha256').update(bytes).digest('hex'),blob='tietovarasto/versiot/'+sha256+'.gz';
   atomic(path.join(root,blob),zlib.gzipSync(bytes,{level:9}));
   index.versions.push({file,semanticHash,sha256,blob,createdAt:new Date().toISOString(),bytes:bytes.length});refs[file]=sha256;

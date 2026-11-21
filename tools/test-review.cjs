@@ -21,3 +21,44 @@ test('tampered, stale, duplicated and conflicting decisions are rejected',()=>{c
 test('name correction cannot break accepted bout result references',()=>{const s=state(),old=s.data.competitions[0],after=clone(old);after.rows[0].name='Eri henkilö';const q=queue(),p=Q.propose(q,'competition',source,old,after,'testi');assert.throws(()=>D.apply(s,q,decision(p)),/painijaviittauksen/);assert.equal(s.data.competitions[0].rows[0].name,'A Testi');});
 test('a bad later decision rolls back the whole batch',()=>{const s=state(),old=s.data.competitions[0],after=clone(old);after.rows[0].place=2;const q=queue(),p=Q.propose(q,'competition',source,old,after,'testi'),doc=decision(p);doc.decisions.push({id:'missing',action:'approve'});assert.throws(()=>D.apply(s,q,doc));assert.equal(s.data.competitions[0].rows[0].place,1);assert.equal(q.proposals[0].status,'pending');});
 test('archive snapshots are lossless, deduplicated and restore the prior data',()=>{const temp=fs.mkdtempSync(path.join(os.tmpdir(),'paini-store-'));try{const s=state();fs.writeFileSync(path.join(temp,'data.js'),R.exportSource(s.data));fs.writeFileSync(path.join(temp,'ottelut-data.js'),'window.PAINI_BOUTS_DATA = '+JSON.stringify(s.bouts)+';');Q.snapshot(temp,'before');s.bouts.checkedAt='2026-11-17T00:00:00Z';fs.writeFileSync(path.join(temp,'ottelut-data.js'),'window.PAINI_BOUTS_DATA = '+JSON.stringify(s.bouts)+';');Q.snapshot(temp,'after');const index=JSON.parse(fs.readFileSync(path.join(temp,'tietovarasto/index.json')));assert.equal(index.versions.length,2);assert.equal(index.runs.length,2);const v=index.versions.find(v=>v.file==='data.js');assert.equal(zlib.gunzipSync(fs.readFileSync(path.join(temp,v.blob))).toString(),fs.readFileSync(path.join(temp,'data.js'),'utf8'));}finally{fs.rmSync(temp,{recursive:true,force:true});}});
+
+function withArchive(run){
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'paini-archive-'));
+ try{
+  const s=state();
+  fs.writeFileSync(path.join(temp,'data.js'),R.exportSource(s.data));
+  const writeBouts=()=>fs.writeFileSync(path.join(temp,'ottelut-data.js'),'window.PAINI_BOUTS_DATA = '+JSON.stringify(s.bouts)+';');
+  writeBouts();run(temp,s,writeBouts);
+ }finally{fs.rmSync(temp,{recursive:true,force:true});}
+}
+test('archive preserves changes in source evidence and excluded bouts without changing accepted matches',()=>withArchive((temp,s,writeBouts)=>{
+ Q.snapshot(temp,'before');
+ const matches=JSON.stringify(s.bouts.matches);
+ const edits=[
+  ()=>s.bouts.excluded.push({competition:source,reason:'Lähteiden tulokset eroavat',source}),
+  ()=>s.bouts.issues.push({source,error:'Vertailulähde puuttuu'}),
+  ()=>s.bouts.competitions[0].comparisonMethod='both-participant-profiles',
+  ()=>s.bouts.errors.push({source,error:'Lähde ei vastannut'})
+ ];
+ for(const edit of edits){
+  edit();writeBouts();const refs=Q.snapshot(temp,'source-change');
+  const index=JSON.parse(fs.readFileSync(path.join(temp,'tietovarasto/index.json')));
+  const v=index.versions.find(v=>v.file==='ottelut-data.js'&&v.sha256===refs['ottelut-data.js']);
+  assert.equal(zlib.gunzipSync(fs.readFileSync(path.join(temp,v.blob))).toString(),fs.readFileSync(path.join(temp,'ottelut-data.js'),'utf8'));
+ }
+ assert.equal(JSON.stringify(s.bouts.matches),matches);
+ const index=JSON.parse(fs.readFileSync(path.join(temp,'tietovarasto/index.json')));
+ assert.equal(index.versions.filter(v=>v.file==='ottelut-data.js').length,5);
+}));
+test('archive rejects a missing or damaged reused backup without recording a successful run',()=>{
+ for(const damage of ['missing','gzip','checksum'])withArchive((temp)=>{
+  Q.snapshot(temp,'before');
+  const indexPath=path.join(temp,'tietovarasto/index.json'),before=fs.readFileSync(indexPath,'utf8');
+  const index=JSON.parse(before),blob=path.join(temp,index.versions[0].blob);
+  if(damage==='missing')fs.unlinkSync(blob);
+  if(damage==='gzip')fs.writeFileSync(blob,'rikki');
+  if(damage==='checksum')fs.writeFileSync(blob,zlib.gzipSync(Buffer.from('eri aineisto')));
+  assert.throws(()=>Q.snapshot(temp,'after'),/Varmuuskopion tarkistus epäonnistui/);
+  assert.equal(fs.readFileSync(indexPath,'utf8'),before);
+ });
+});
