@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-20T03:08:50.186Z",
+  "checkedAt": "2026-11-21T03:09:05.550Z",
   "updatedAt": "2026-11-18T15:14:44.146Z",
   "competitions": 299,
   "results": 34908,
   "added": 0,
   "changed": 0,
   "unchanged": 62,
-  "pending": 1,
+  "pending": 0,
   "changes": [],
   "partial": [
     {
@@ -720,6 +720,14 @@
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Kotka/indexFIN.htm",
+      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm",
       "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
     }
   ]

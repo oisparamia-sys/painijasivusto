@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-20T03:14:55.826Z",
+  "updatedAt": "2026-11-21T03:16:01.664Z",
   "proposals": [
     {
       "id": "2b6579e5dc506e8a45a72f470c91d726366bcc6d878933176be60907485f7518",
@@ -8,7 +8,7 @@
       "target": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261017_Helsinki/indexFIN.htm",
       "beforeHash": "356403e8ca0b2f53687e8f78a0371b4bb59107dd1e442932f85bfbd2efce78ad",
       "afterHash": "960b3f388090526727fbe6ff7d2c1463b6eb4f8292d691eb1270f6aa42bd27ea",
-      "status": "pending",
+      "status": "withdrawn",
       "createdAt": "2026-11-20T03:14:55.824Z",
       "lastSeen": "2026-11-20T03:14:55.824Z",
       "reason": "Ottelun tulos muuttui tai aiempi ottelu puuttuu lähteestä.",
