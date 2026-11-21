@@ -412,23 +412,26 @@ function wordDistance(a, b) {
   return rows[a.length][b.length];
 }
 function matchesCompetitionQuery(text, query) {
-  // Match complete dates before the unordered word search, so 3.8 cannot
-  // accidentally select 8.3. A day inside a multi-day event is also a match.
-  const datePattern = /\b(\d{1,2})(?:\.?\s*[-–]\s*(\d{1,2}))?[./](\d{1,2})[./](\d{4})\b/g;
+  // Keep day and month ordered, with or without a year (3.8 or 3.8.2025).
+  // A day inside a multi-day event is also a match.
+  const datePattern = /(?<![\p{L}\p{N}./])(\d{1,2})(?:\.?\s*[-–]\s*(\d{1,2}))?[./](\d{1,2})(?:[./](\d{4}))?(?:[./](?=\s|$))?(?![\p{L}\p{N}./])/gu;
   const span = match => {
     const day = Number(match[1]), endDay = Number(match[2] || match[1]);
-    const month = Number(match[3]), year = Number(match[4]);
+    const month = Number(match[3]), year = match[4] ? Number(match[4]) : null;
+    // An unspecified year permits February 29; the actual event year must
+    // still validate independently before it can match.
+    const validationYear = year ?? 2000;
     const timestamp = day => {
-      const value = Date.UTC(year, month - 1, day), date = new Date(value);
-      return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day ? value : null;
+      const value = Date.UTC(validationYear, month - 1, day), date = new Date(value);
+      return date.getUTCFullYear() === validationYear && date.getUTCMonth() === month - 1 && date.getUTCDate() === day ? value : null;
     };
     const start = timestamp(day), end = timestamp(endDay);
-    return start !== null && end !== null && start <= end ? {start,end} : null;
+    return start !== null && end !== null && start <= end ? {start:day,end:endDay,month,year} : null;
   };
   const requestedDates = [...query.matchAll(datePattern)].map(span);
   if (requestedDates.length) {
     const actualDates = [...text.matchAll(datePattern)].map(span).filter(Boolean);
-    if (!requestedDates.every(wanted => wanted && actualDates.some(actual => actual.start <= wanted.start && actual.end >= wanted.end))) return false;
+    if (!requestedDates.every(wanted => wanted && actualDates.some(actual => actual.month === wanted.month && (wanted.year === null || actual.year === wanted.year) && actual.start <= wanted.start && actual.end >= wanted.end))) return false;
   }
   const tokens = searchWords(query.replace(datePattern, " "));
   return !tokens.length || matchesSearchWords(searchWords(text), tokens);
