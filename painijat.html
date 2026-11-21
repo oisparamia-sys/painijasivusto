@@ -17,22 +17,49 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 .strong-pair{padding:16px 0;border-bottom:1px solid #dfe7ef;overflow-wrap:anywhere}.strong-pair label{display:flex;gap:12px;align-items:flex-start}.strong-pair input{min-width:22px;min-height:22px}.strong-pair button{margin:6px 8px 6px 0}#strong-search{width:100%}
 .kll-pair{padding:18px 0;border-bottom:1px solid #dfe7ef;overflow-wrap:anywhere}.kll-table{min-width:520px;width:100%;table-layout:fixed}.kll-table th,.kll-table td{white-space:normal;overflow-wrap:anywhere;vertical-align:top;padding:12px}.kll-table ul{padding-left:18px}.kll-table th:first-child{width:24%}#kll-search{width:100%}
 @media(max-width:750px){.kll-table{display:table}.kll-table thead{position:static;width:auto;height:auto;clip-path:none}.kll-table tbody{display:table-row-group}.kll-table tr{display:table-row;border:0;padding:0}.kll-table th,.kll-table td{display:table-cell}.kll-table td::before{display:none}}
+</style><style>
+.registry-layout{display:block}.registry-layout>.card{margin:20px 0}#editor-title{font-size:26px}#person-cards,#target-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}.person-choice{display:block;text-align:left;width:100%;margin:0;min-height:90px;background:#fff;border:1px solid #cbd5e1;color:#17253c;padding:16px;border-radius:12px;white-space:normal}.person-choice strong,.person-choice span{display:block}.person-choice strong{font-size:18px}.person-choice span{font-size:14px;line-height:1.6;margin-top:4px}.person-choice[aria-pressed=true]{border:2px solid #2357bf;background:#edf3ff}.primary{background:#2357bf;color:#fff;border-color:#2357bf}.operation-actions{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}.operation-actions button{margin:0;min-height:48px}.operation-actions button[aria-pressed=true]{background:#2357bf;color:white}.operation-panel{margin-top:22px;border-top:1px solid #dfe7ef;padding-top:20px}.merge-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.merge-comparison article{padding:16px;border:1px solid #cfddfa;background:#f4f7fc;border-radius:12px;overflow-wrap:anywhere}.merge-comparison h4{margin:0 0 10px;font-size:18px}.split-review{padding:12px 0}.split-review ul{max-height:260px;overflow:auto;padding-left:22px}.split-review li{margin:10px 0;line-height:1.5}.save-actions{background:#fff;border:1px solid #cfddfa;border-radius:12px;padding:18px;margin:18px 0}.save-actions p{margin:8px 0}.save-actions .actions{display:flex;flex-wrap:wrap;gap:12px}.save-actions button{margin:0}#registry-summary{font-size:14px;color:#58677c}#identity-table{min-width:0}#identity-rows td{font-size:16px}#identity-rows input{min-width:24px;min-height:24px}#identity-rows label{font-weight:400;margin:0;display:flex;gap:10px;align-items:center}#advanced-tools>summary,#history-panel>summary{font-size:18px;padding:12px 0}#person-edit{margin-top:16px}button:focus-visible{outline:3px solid #95b9ff;outline-offset:3px}
+@media(max-width:750px){.merge-comparison{grid-template-columns:1fr}.operation-actions button{width:100%}#identity-table{display:block;min-width:0}#identity-table thead{display:none}#identity-table tbody{display:grid;gap:12px}#identity-table tr{display:block;border:1px solid #dfe7ef;border-radius:10px;padding:12px}#identity-table td{display:block;padding:6px 0;border:0}#identity-table td:before{display:none}.save-actions .actions button{width:100%}}
 </style></head><body><main>
-<h1>Painijamerkintöjen ylläpito</h1>
-<p>Sama etu- ja sukunimi yhdistää tulokset automaattisesti. Jos profiilissa on kahden eri henkilön tuloksia, voit erottaa ne alla. Kaikki yhdistämiset ja erottamiset tallentuvat muutoshistoriaan.</p>
-<p class="hint">Muutokset ovat tämän välilehden muistissa. Lataa lopuksi data.js ja vie se projektikansioon. Julkinen sivu muuttuu vasta GitHubiin lähettämisen jälkeen. Älä muokkaa aineistoa samanaikaisesti toisessa ylläpitovälilehdessä.</p>
-<p id="registry-status" class="status" role="status" aria-live="polite">Luetaan rekisteriä…</p>
+<h1>Painijoiden ylläpito</h1><p>Etsi painija ja valitse <strong>Yhdistä toiseen painijaan</strong> tai <strong>Tässä on kaksi eri henkilöä</strong>. Samannimiset yhdistyvät automaattisesti; erottamispäätökset ja muutoshistoria säilyvät.</p>
+<p><a href="yllapito.html">Kilpailuaineiston ylläpito</a></p>
+<p id="registry-status" class="status" role="status" aria-live="polite">Luetaan painijoita…</p>
+<div class="save-actions"><p id="unsaved" role="status">Ei tallentamattomia muutoksia.</p><div class="actions"><button id="undo-registry" type="button" disabled>Peru viimeisin muutos</button><button id="export-registry" type="button" class="primary" disabled>Lataa muutokset (data.js)</button></div><details><summary>Miten julkaisen muutokset?</summary><ol><li>Lataa muutokset yllä olevasta painikkeesta.</li><li>Korvaa projektikansion data.js ladatulla tiedostolla. Lähetä se GitHubiin Commit- ja Sync Changes -painikkeilla.</li><li>Käynnistä Kilpailujen automaattihaku valinnalla Käsittele vain ylläpidon päätökset. Odota ajon ja julkaisun valmistumista.</li></ol><p>Julkaisu ei tapahdu suoraan tältä sivulta. Sulje muut ylläpitovälilehdet ennen muokkaamista, jotta et tallenna vanhaa aineistoa muutostesi päälle.</p></details><p id="registry-summary"></p></div>
 <section id="confirm-panel" class="card" aria-labelledby="confirm-heading" hidden>
 <h2 id="confirm-heading" tabindex="-1">Vahvista muutos</h2>
 <p id="confirm-overview"></p>
 <details id="confirm-details"><summary>Näytä esikatsellut muutokset kokonaan</summary><p id="confirm-text" style="white-space:pre-line;overflow-wrap:anywhere"></p></details>
 <div class="actions"><button id="apply-identity" type="button">Hyväksy esikatseltu muutos</button><button id="cancel-identity" type="button">Hylkää esikatselu</button></div>
 </section>
-<div class="card"><p id="registry-summary"></p><div class="actions">
-<button id="export-registry" type="button" disabled>Lataa päivitetty data.js</button>
-<button id="undo-registry" type="button" disabled>Peru viimeisin muutos</button>
-</div><p id="unsaved" class="hint">Ei tallentamattomia muutoksia.</p></div>
-<section class="card" aria-labelledby="auto-title">
+<div class="registry-layout">
+<section class="card" aria-labelledby="list-title"><h2 id="list-title">Etsi painija</h2>
+<label for="person-search">Nimi, seura tai tunnus</label><input id="person-search" type="search" placeholder="Kirjoita painijan nimi" disabled>
+<details><summary>Rajaa hakua</summary><label class="check-label"><input id="only-unreviewed" type="checkbox" disabled>Vain tarkistamattomat</label></details>
+<p id="person-count" class="hint"></p><div id="person-cards" class="person-cards" aria-label="Hakutulokset"></div><select id="person-list" size="10" disabled hidden aria-label="Tunnusvalinta"></select>
+</section>
+<section id="editor" class="card" aria-labelledby="editor-title" hidden>
+<h2 id="editor-title" tabindex="-1">Valittu painija</h2><p id="person-details"></p>
+<div class="actions operation-actions" aria-label="Painijan toiminnot">
+<button id="open-merge" type="button">Yhdistä toiseen painijaan</button>
+<button id="open-split" type="button">Tässä on kaksi eri henkilöä</button>
+</div><p id="operation-help" class="hint">Valitse yllä, mitä haluat tehdä. Muutoksen voi perua.</p>
+<details id="person-edit"><summary>Muokkaa nimeä tai tarkistustilaa</summary><p id="original-names" class="hint"></p>
+<label for="person-name">Näkymässä käytettävä nimi</label><input id="person-name" type="text">
+<label class="check-label"><input id="person-reviewed" type="checkbox">Olen tarkistanut, että kaikki tämän tunnuksen tulokset kuuluvat samalle henkilölle.</label>
+<button id="save-person" type="button">Esikatsele nimen ja tarkistuksen tallennus</button>
+</details><section id="merge-panel" class="operation-panel" hidden><h3>Yhdistä profiilit</h3>
+<p class="hint">Etsi toinen profiili ja valitse se. Näet molempien tiedot ennen yhdistämistä. Tulokset siirtyvät nyt avoinna olevaan profiiliin. Eri henkilöiksi merkittyä paria ei voi yhdistää.</p>
+<label for="target-search">Etsi yhdistettävä painija</label><input id="target-search" type="search">
+<select id="target-person" hidden aria-label="Siirrettävä tunnus"><option value="">Kirjoita ensin hakusana</option></select><p id="target-count" class="hint" role="status"></p><div id="target-cards" class="person-cards"></div><div id="merge-comparison" class="merge-comparison" aria-live="polite"></div>
+<button id="merge-now" type="button" class="primary" disabled>Yhdistä profiilit</button><button id="preview-merge" type="button" hidden>Esikatsele yhdistäminen</button></section>
+<section id="split-panel" class="operation-panel" hidden><h3>Erota henkilöt</h3><p>Valitse toiselle henkilölle kuuluvat tulokset. Voit valita ensin seuran kaikki tulokset ja tarkentaa rasteilla. KLL:n paikkakunnat valitaan erikseen. Tarkista valinnat ja paina <strong>Erota henkilöiksi</strong>.</p>
+<div class="actions"><button id="clear-split" type="button">Tyhjennä valinnat</button></div>
+<div id="split-groups" class="actions" aria-label="Valitse erotettavat tulokset seuran mukaan"></div><p id="split-count" role="status" aria-live="polite"></p><div class="table-wrap"><table id="identity-table" aria-label="Valitse erotettavat tulokset"><thead><tr><th scope="col">Valitse</th><th scope="col">Kilpailu</th><th scope="col">Lähteen nimi ja seura</th><th scope="col">Sarja ja sija</th></tr></thead><tbody id="identity-rows"></tbody></table></div>
+<label for="split-name">Toisen henkilön nimi (saa olla sama)</label><input id="split-name" type="text">
+<div id="split-review" class="split-review" aria-live="polite"></div><button id="split-now" type="button" class="primary" disabled>Erota henkilöiksi</button><button id="preview-split" type="button" hidden>Esikatsele valittujen tulosten erottaminen</button></section>
+
+</section></div>
+<details id="advanced-tools" class="card"><summary>Lisätoiminnot ja vanhat vertailutyökalut</summary><p class="hint">Tavallinen yhdistäminen ja erottaminen hoituvat yllä olevasta painijahausta. Näitä työkaluja tarvitset vain tarkempaan vertailuun.</p><section class="card" aria-labelledby="auto-title">
 <h2 id="auto-title">Automaattinen yhdistäminen nimen perusteella</h2>
 <p>Yhdistää saman etu- ja sukunimen tulokset eri seuroista ja KLL-kaupungeista. Kirjainkoko ja ylimääräiset välilyönnit sivuutetaan. Kirjoitusvirheitä ei arvata. Jos samannimisiä on erotettu eri henkilöiksi, nimiryhmän uudet tulokset jäävät tarkistettaviksi.</p>
 <p class="hint">Samannimiset eri ihmiset voivat aluksi sekoittua. Erota heidät tarvittaessa tulosvalinnoilla. Säilytettäväksi valitaan ensisijaisesti tarkistettu tunnus, muuten eniten tuloksia sisältävä tunnus. Alkuperäiset tulosrivit säilyvät.</p>
@@ -84,29 +111,5 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 <p class="hint">Päätös koskee vain valittuja kahta tunnusta. Muut samannimiset tunnukset tarkistetaan erikseen. Yllä oleva kaksoismerkintöjen hakukenttä rajaa myös tätä listaa (enintään 100 paria). Tallenna päätökset lataamalla data.js ja siirtämällä se projektikansioon.</p>
 <p id="different-people-count"></p><ul id="different-people-list"></ul>
 </section>
-<div class="registry-layout">
-<section class="card" aria-labelledby="list-title"><h2 id="list-title">1. Etsi merkintä</h2>
-<label for="person-search">Nimi, seura tai tunnus</label><input id="person-search" type="search" placeholder="Kirjoita nimi tai painija-…" disabled>
-<label class="check-label"><input id="only-unreviewed" type="checkbox" disabled>Vain tarkistamattomat</label>
-<p id="person-count" class="hint"></p><label for="person-list">Hakutulokset</label><select id="person-list" size="10" disabled></select>
-</section>
-<section id="editor" class="card" aria-labelledby="editor-title" hidden>
-<h2 id="editor-title" tabindex="-1">2. Tarkista merkintä</h2><p id="person-details"></p>
-<p id="original-names" class="hint"></p>
-<label for="person-name">Näkymässä käytettävä nimi</label><input id="person-name" type="text">
-<label class="check-label"><input id="person-reviewed" type="checkbox">Olen tarkistanut, että kaikki tämän tunnuksen tulokset kuuluvat samalle henkilölle.</label>
-<button id="save-person" type="button">Esikatsele nimen ja tarkistuksen tallennus</button>
-<h3>Yhdistä tähän merkintään</h3>
-<p class="hint">Alla valitun merkinnän kaikki tulokset siirtyvät nykyiselle tunnukselle. Nykyinen tunnus säilyy. Vanha tunnus säilytetään yhdistämisviittauksena. Yhdistetty merkintä palautuu tarkistamattomaksi.</p>
-<label for="target-search">Etsi siirrettävä merkintä nimellä, seuralla tai tunnuksella</label><input id="target-search" type="search">
-<label for="target-person">Siirrettävä merkintä</label><select id="target-person"><option value="">Kirjoita ensin hakusana</option></select>
-<button id="preview-merge" type="button">Esikatsele yhdistäminen</button>
-<h3>Tunnukseen liitetyt tulokset</h3><p class="hint">Alkuperäisiä nimiä, seuroja tai kilpailutuloksia ei muuteta. Valitse toisen henkilön tulokset rasteilla tai ensin seuran painikkeella. Tarkista valinnat, anna nimi ja paina Esikatsele valittujen tulosten erottaminen. Hyväksy esikatselu. Erottaminen estää henkilöiden automaattisen uudelleenyhdistämisen.</p>
-<div id="split-groups" class="actions" aria-label="Valitse erotettavat tulokset seuran mukaan"></div><p id="split-count" role="status" aria-live="polite"></p><div class="table-wrap"><table id="identity-table" aria-label="Valitse erotettavat tulokset"><thead><tr><th scope="col">Valitse</th><th scope="col">Kilpailu</th><th scope="col">Lähteen nimi ja seura</th><th scope="col">Sarja ja sija</th><th scope="col">Tulostunnus</th></tr></thead><tbody id="identity-rows"></tbody></table></div>
-<label for="split-name">Erotettavan merkinnän nimi</label><input id="split-name" type="text">
-<button id="preview-split" type="button">Esikatsele valittujen tulosten erottaminen</button>
-
-</section></div>
-<section class="card"><h2>Muutoshistoria</h2><p class="hint">Viimeisimmät 20 muutosta näytetään alla. Peruminen toimii myös ladatun data.js-tiedoston uudelleen avaamisen jälkeen. Tunnusnumeroita ei käytetä uudelleen. Historia kulkee data.js-tiedoston mukana. Myös peruttujen muutosten tiedot säilytetään. Avaa historian rivi nähdäksesi siirretyt tulostunnukset.</p><ol id="changes-list"></ol></section>
-<noscript>Työkalu tarvitsee JavaScriptin.</noscript>
-</main><script src="painijat-loader.js?v=20261118-names1" defer></script></body></html>
+</details><details id="history-panel" class="card"><summary>Muutoshistoria</summary><p class="hint">Viimeisimmät 20 muutosta näytetään alla. Peruminen toimii myös ladatun data.js-tiedoston uudelleen avaamisen jälkeen. Tunnusnumeroita ei käytetä uudelleen. Historia kulkee data.js-tiedoston mukana. Myös peruttujen muutosten tiedot säilytetään. Avaa historian rivi nähdäksesi siirretyt tulostunnukset.</p><ol id="changes-list"></ol></details>
+<noscript>Työkalu tarvitsee JavaScriptin.</noscript></main><script src="painijat-loader.js?v=20261121-simple1" defer></script></body></html>

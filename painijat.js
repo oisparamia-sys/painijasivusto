@@ -2,6 +2,7 @@
 (() => {
   const $ = selector => document.querySelector(selector), R = window.PainiRegistry;
   let data, selectedId = "", pending = null, dirty = false;
+  let operationMode = "overview", mergeSource = "";
   let duplicatePage = 0;
   let strongPage = 0;
   let kllPage = 0;
@@ -76,8 +77,8 @@
     if (className) el.className = className; return el;
   }
   function choosePerson(id) {
-    cancel(); selectedId = id;
-    $("#person-search").value = id; $("#only-unreviewed").checked = false;
+    cancel(); selectedId = id; operationMode="overview"; mergeSource="";
+    $("#person-search").value = index().get(id)?.athlete.name || id; $("#only-unreviewed").checked = false;
     renderList(); renderEditor(); $("#editor-title").focus();
   }
   function startMerge(sourceId,targetId) {
@@ -347,24 +348,61 @@
       .sort((a,b) => a.athlete.name.localeCompare(b.athlete.name,"fi") || a.athlete.id.localeCompare(b.athlete.id));
   }
   function cancel() { pending = null; $("#confirm-panel").hidden = true; $("#export-registry").disabled = !data; $("#undo-registry").disabled = !data || !data.athleteRegistry.history.length; }
+  function personChoice(entry, select, selected=false) {
+    const button=node("button",undefined,"person-choice");button.type="button";button.setAttribute("aria-pressed",String(selected));
+    button.append(node("strong",entry.athlete.name),node("span",[...entry.clubs].join(" · ") || "Ei nykyisiä tuloksia"),node("span",entry.count+" kilpailutulosta · "+entry.athlete.id));
+    button.addEventListener("click",select);return button;
+  }
   function renderList() {
-    const found = filtered($("#person-search").value, $("#only-unreviewed").checked), select = $("#person-list");
-    select.replaceChildren();
-    found.slice(0,100).forEach(x => select.add(new Option(label(x), x.athlete.id)));
-    select.value = selectedId;
-    $("#person-count").textContent = found.length + " merkintää. " + (found.length > 100 ? "Näytetään ensimmäiset 100; tarkenna hakua." : "Valitse merkintä listasta.");
+    const query=$("#person-search").value.trim(), parent=$("#person-cards"), select=$("#person-list");
+    const found=query?filtered(query,$("#only-unreviewed").checked):[];
+    parent.replaceChildren();select.replaceChildren();
+    found.slice(0,20).forEach(entry=>{
+      select.add(new Option(label(entry),entry.athlete.id));
+      parent.append(personChoice(entry,()=>choosePerson(entry.athlete.id),entry.athlete.id===selectedId));
+    });select.value=selectedId;
+    $("#person-count").textContent=!query?"Kirjoita nimi hakeaksesi painijaa.":found.length?found.length+" profiilia. "+(found.length>20?"Näytetään ensimmäiset 20; tarkenna hakua.":"Avaa painija painamalla hänen nimeään."):"Painijaa ei löytynyt. Kokeile lyhyempää nimeä tai seuraa.";
+  }
+  function renderMergeComparison() {
+    const parent=$("#merge-comparison");parent.replaceChildren();
+    const target=index().get(selectedId),source=index().get(mergeSource);
+    $("#merge-now").disabled=!target||!source||knownDifferent(selectedId,mergeSource);
+    if(!source||!target)return;
+    [[target,"Säilyvä profiili"],[source,"Tähän siirrettävät tulokset"]].forEach(([entry,title])=>{
+      const card=node("article");card.append(node("h4",title+": "+entry.athlete.name),node("p",[...entry.clubs].join(" · ")),node("p",entry.count+" tulosta · "+entry.athlete.id));
+      const list=node("ul");entry.results.slice(0,3).forEach(({item,row})=>list.append(node("li",item.title+" · "+item.details+" · "+row.category+" "+row.weight+" kg")));
+      card.append(list);parent.append(card);
+    });
+    if(knownDifferent(selectedId,mergeSource))parent.append(node("p","Nämä on merkitty eri henkilöiksi. Yhdistäminen on estetty."));
+    else parent.append(node("p","Yhdistämisen jälkeen profiilissa on "+(target.count+source.count)+" tulosta. Alkuperäiset tulokset säilyvät. Voit perua muutoksen."));
   }
   function renderTargets() {
-    const previous = $("#target-person").value, query = $("#target-search").value.trim();
-    $("#target-person").replaceChildren(new Option(query ? "Valitse siirrettävä merkintä" : "Kirjoita ensin hakusana", ""));
-    if (query) filtered(query).filter(x => x.athlete.id !== selectedId).slice(0,100).forEach(x => $("#target-person").add(new Option(label(x), x.athlete.id)));
-    $("#target-person").value = previous;
+    const query=$("#target-search").value.trim(),select=$("#target-person"),parent=$("#target-cards");
+    const found=query?filtered(query).filter(entry=>entry.athlete.id!==selectedId):[];
+    select.replaceChildren(new Option("Valitse profiili",""));parent.replaceChildren();mergeSource="";
+    found.slice(0,20).forEach(entry=>{
+      select.add(new Option(label(entry),entry.athlete.id));
+      parent.append(personChoice(entry,()=>{
+        cancel();mergeSource=entry.athlete.id;select.value=mergeSource;
+        [...parent.children].forEach(button=>button.setAttribute("aria-pressed","false"));
+        parent.children[found.indexOf(entry)].setAttribute("aria-pressed","true");renderMergeComparison();
+      }));
+    });
+    $("#target-count").textContent=!query?"Kirjoita toisen painijaprofiilin nimi.":found.length?found.length+" mahdollista profiilia. Näytetään enintään 20.":"Toista profiilia ei löytynyt. Sama nimi voi jo olla yhdistetty tähän profiiliin.";
+    renderMergeComparison();
+  }
+  function setOperation(mode) {
+    operationMode=mode;
+    $("#merge-panel").hidden=mode!=="merge";$("#split-panel").hidden=mode!=="split";
+    $("#open-merge").setAttribute("aria-pressed",String(mode==="merge"));$("#open-split").setAttribute("aria-pressed",String(mode==="split"));
+    $("#operation-help").textContent=mode==="merge"?"Etsi toinen profiili, vertaa tietoja ja paina Yhdistä profiilit.":mode==="split"?"Valitse toiselle henkilölle kuuluvat tulokset ja paina Erota henkilöiksi.":"Valitse yllä, mitä haluat tehdä. Muutoksen voi perua.";
   }
   function renderEditor() {
     const person = people().find(a => a.id === selectedId); $("#editor").hidden = !person;
     if (!person) return;
+    $("#editor-title").textContent=person.name;setOperation(operationMode);
     const own = entries(person.id), originalNames = [...new Set(own.map(x => x.row.name))];
-    $("#person-details").textContent = person.id + " · " + own.length + " tulosta · " + (person.status === "reviewed" ? "Tarkistettu" : "Tarkistamaton tulosryhmä");
+    $("#person-details").textContent = [...index().get(person.id).clubs].join(" · ")+" · "+own.length+" kilpailutulosta";
     $("#original-names").textContent = "Nimet lähteissä: " + (originalNames.join(", ") || "Ei nykyisiä tuloksia");
     $("#person-name").value = person.name; $("#person-reviewed").checked = person.status === "reviewed";
     $("#split-name").value = person.name; $("#target-search").value = ""; renderTargets();
@@ -377,13 +415,28 @@
     own.forEach(({item, row}) => {
       const tr = document.createElement("tr"), cell = document.createElement("td"), box = document.createElement("input");
       box.type = "checkbox"; box.value = row.resultId; box.setAttribute("aria-label", "Erota: " + row.name + ", " + item.title + ", " + item.details + ", " + row.category + " " + row.weight + " kg, sija " + row.place);
-      box.addEventListener("change", ()=>{cancel();updateSplitCount();}); cell.append(box); tr.append(cell);
-      [item.title + " · " + item.details, row.name + " · " + row.club, row.category + " · " + row.weight + " kg · " + row.place + ".", row.resultId].forEach(text => { const td = document.createElement("td"); td.textContent = text; tr.append(td); });
+      box.addEventListener("change", ()=>{cancel();updateSplitCount();}); const choice=node("label");choice.append(box,node("span","Valitse tulos"));cell.append(choice);tr.append(cell);
+      [item.title + " · " + item.details, row.name + " · " + row.club, row.category + " · " + row.weight + " kg · " + row.place + "."].forEach(text => { const td = document.createElement("td"); td.textContent = text; tr.append(td); });
       parent.append(tr);
     });
     updateSplitCount();
   }
-  function updateSplitCount(){const count=document.querySelectorAll("#identity-rows input:checked").length;$("#split-count").textContent=count+" tulosta valittu erotettavaksi. Tarkista valinnat alla ennen hyväksymistä.";}
+  function updateSplitCount(){
+    const ids=new Set([...document.querySelectorAll("#identity-rows input:checked")].map(box=>box.value)),own=entries(selectedId),count=ids.size;
+    $("#split-count").textContent=count+" tulosta toiselle henkilölle · "+(own.length-count)+" tulosta jää nykyiselle henkilölle.";
+    const parent=$("#split-review");parent.replaceChildren();
+    $("#split-now").disabled=count===0||count===own.length||!$("#split-name").value.trim();
+    if(!count)return;
+    parent.append(node("h4","Nämä tulokset siirretään toiselle henkilölle"));
+    const list=node("ul");own.filter(x=>ids.has(x.row.resultId)).forEach(({item,row})=>list.append(node("li",item.title+" · "+item.details+" · "+row.club+" · "+row.category+" "+row.weight+" kg")));parent.append(list);
+    parent.append(node("p",count===own.length?"Jätä vähintään yksi tulos nykyiselle henkilölle.":"Henkilöt pysyvät erillään myös seuraavissa automaattihauissa. Muutoksen voi perua."));
+  }
+  function renderAdvanced() {renderAutoSummary();renderDuplicates();renderStrong();renderKll();}
+  function commitChange(next,nextId,message){
+    data=next;selectedId=nextId;dirty=true;operationMode="overview";mergeSource="";
+    $("#person-search").value=index().get(selectedId)?.athlete.name||"";render();say(message+" Lataa lopuksi muutokset ja julkaise ne ohjeen mukaan.","success");
+    $("#registry-status").scrollIntoView({block:"start"});
+  }
   function render() {
     cancel(); const all = people();
     $("#registry-summary").textContent = data.competitions.length + " kilpailua · " + R.rows(data).length + " tulosta · " + all.length + " aktiivista tunnusta · " + all.filter(a => a.status === "unreviewed").length + " tarkistamatonta merkintää";
@@ -398,7 +451,7 @@
         changes.append(node("li",(found?found.item.title+" · "+found.item.details+" · "+found.row.name+" · "+found.row.club+" · ":"")+a.resultId+": "+a.before+" → "+a.after));
       });if(h.assignments.length>200)details.append(node("p","Näytetään ensimmäiset 200 siirtoa. Täydellinen historia säilyy ladattavassa data.js-tiedostossa."));details.append(changes);li.append(details);list.append(li);
     });
-    renderAutoSummary(); selectedPairs.clear(); renderList(); renderEditor(); renderDuplicates(); renderStrong(); renderKll();
+    selectedPairs.clear();renderList();renderEditor();if($("#advanced-tools").open)renderAdvanced();
   }
   function preview(text, compute, nextId = selectedId) {
     try {
@@ -411,6 +464,21 @@
       $("#confirm-panel").scrollIntoView({block:"start"});
     } catch (error) { say(error.message, "error"); }
   }
+  $("#open-merge").addEventListener("click",()=>{cancel();setOperation("merge");$("#target-search").focus();});
+  $("#open-split").addEventListener("click",()=>{cancel();setOperation("split");});
+  $("#clear-split").addEventListener("click",()=>{cancel();document.querySelectorAll("#identity-rows input").forEach(box=>box.checked=false);updateSplitCount();});
+  $("#split-name").addEventListener("input",updateSplitCount);
+  $("#advanced-tools").addEventListener("toggle",()=>{if(data&&$("#advanced-tools").open)renderAdvanced();});
+  $("#merge-now").addEventListener("click",()=>{
+    try{if(!selectedId||!mergeSource)return;const next=R.merge(data,mergeSource,selectedId);commitChange(next,selectedId,"Profiilit yhdistettiin. Alkuperäiset tulokset ja muutoshistoria säilyvät.");}catch(error){say(error.message,"error");}
+  });
+  $("#split-now").addEventListener("click",()=>{
+    try{
+      const ids=[...document.querySelectorAll("#identity-rows input:checked")].map(box=>box.value),name=$("#split-name").value.trim();
+      const next=R.split(data,selectedId,ids,name),created=next.athleteRegistry.athletes.at(-1).id;
+      commitChange(next,created,"Henkilöt erotettiin. Toiselle henkilölle siirtyi "+ids.length+" tulosta. Automaattihaku ei yhdistä heitä takaisin.");
+    }catch(error){say(error.message,"error");}
+  });
   $("#kll-search").addEventListener("input",()=>{cancel();kllPage=0;renderKll();});
   $("#kll-prev").addEventListener("click",()=>{cancel();kllPage--;renderKll();});
   $("#kll-next").addEventListener("click",()=>{cancel();kllPage++;renderKll();});
@@ -457,7 +525,7 @@
   $("#cancel-identity").addEventListener("click", () => { cancel(); say("Esikatselu hylättiin. Aineisto säilyi ennallaan."); });
   $("#undo-registry").addEventListener("click", () => {
     if (pending || !data) return;
-    try { data = R.undo(data); dirty = true; render(); say("Viimeisin muutos peruttiin. Lataa data.js tallentaaksesi myös perumisen.", "success"); }
+    try { data = R.undo(data); dirty = true; operationMode="overview";render(); say("Viimeisin muutos peruttiin. Lataa data.js tallentaaksesi myös perumisen.", "success"); }
     catch (error) { say(error.message, "error"); }
   });
   $("#export-registry").addEventListener("click", () => {
