@@ -78,4 +78,23 @@ class AutomaticImport(unittest.TestCase):
  def test_schedule_scope(self):
   self.assertEqual(b.years_for('auto',datetime.datetime(2026,11,16)),{2026})
   self.assertEqual(b.years_for('auto',datetime.datetime(2026,11,22)),set(range(2022,2027)))
+ def test_comma_in_competition_directory_is_collected_and_reported(self):
+  url=b.HOST+'LM/2023/FI/231028_Vaasa,Teeriniemenpainisali/indexFIN.htm'
+  result,report=self.run_import(data=shared(url),event=sample(url),year='missing')
+  self.assertEqual(report['summary']['attempted'],1)
+  self.assertEqual(result['competitions'][0]['key'],url)
+  self.assertEqual(report['summary']['coverageMissing'],0)
+  result,report=self.run_import(data=shared(url),error=OSError('offline'),year='missing')
+  self.assertEqual(report['summary']['failed'],1)
+  self.assertEqual(result['coverageMissing'][0]['source'],url)
+  self.assertEqual(result['coverageMissing'][0]['reason'],'offline')
+ def test_comma_source_can_be_read_from_cache_without_weakening_other_url_checks(self):
+  url=b.HOST+'LM/2026/FI/261107_Vaasa,Teeriniemenpainisali/indexFIN.htm'
+  with tempfile.TemporaryDirectory() as directory:
+   source=b.Source(directory,offline=True)
+   cache=pathlib.Path(directory)/'LM/2026/FI/261107_Vaasa,Teeriniemenpainisali/indexFIN.htm'
+   cache.parent.mkdir(parents=True);cache.write_text('Vaasan tulokset',encoding='utf-8')
+   self.assertEqual(source.read(url),'Vaasan tulokset')
+   for invalid in [url.replace('https:','http:'),url.replace('ringerdb.de/','ringerdb.de.evil/'),url+'?x=1',url+'#x',url.replace('indexFIN.htm','../indexFIN.htm')]:
+    with self.assertRaises(ValueError):source.read(invalid)
 if __name__=='__main__':unittest.main()

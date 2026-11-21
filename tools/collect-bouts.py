@@ -34,7 +34,7 @@ class Source:
  def __init__(self,cache=None,offline=False):self.cache=pathlib.Path(cache) if cache else None;self.offline=offline
  def read(self,url):
   p=urllib.parse.urlsplit(url)
-  if p.scheme!='https' or p.hostname!='turniereklassisch.ringerdb.de' or p.query or p.fragment or not re.fullmatch(r'/[A-Z]+/202[2-6]/FI/[A-Za-z0-9_-]+/[A-Za-z0-9_]+\.(?:htm|txt)',p.path):raise ValueError('Lähdeosoite ei kelpaa')
+  if p.scheme!='https' or p.hostname!='turniereklassisch.ringerdb.de' or p.query or p.fragment or not re.fullmatch(r'/[A-Z]+/202[2-6]/FI/[A-Za-z0-9_,-]+/[A-Za-z0-9_]+\.(?:htm|txt)',p.path):raise ValueError('Lähdeosoite ei kelpaa')
   cache=self.cache/p.path.lstrip('/') if self.cache else None
   if cache and cache.exists():return decode(cache.read_bytes())
   if self.offline:raise OSError('Lähde puuttuu testivälimuistista: '+url)
@@ -221,9 +221,12 @@ def collect_event(competition,source):
    excluded.append({'competition':url,'people':[p['resultId'] for p in people],'source':row['source'],'reason':reason});continue
   red,blue=people
   if red['resultId']==blue['resultId']:excluded.append({'competition':url,'people':[red['resultId'],blue['resultId']],'source':row['source'],'reason':'Ottelun molemmat puolet yhdistyvät samaan painijatunnukseen'});continue
+  if red['category']!=blue['category'] or str(red['weight'])!=str(blue['weight']):
+   excluded.append({'competition':url,'people':[red['resultId'],blue['resultId']],'source':row['source'],'reason':'Tulosrivien sarja tai painoluokka eroavat toisistaan'});continue
+  # Match source labels with norm(), but retain the accepted row's exact label.
   for p in people:used[p['resultId']]={'competition':url,**{k:p[k] for k in ['resultId','athleteId','category','weight']}}
   token=json.dumps([url,*bout_key(row)],ensure_ascii=False,separators=(',',':'))
-  approved.append({'id':'ottelu-'+hashlib.sha256(token.encode()).hexdigest()[:20],'competition':url,'category':row['category'],'weight':row['weight'],'round':row['round'].split(' ',1)[-1],'red':red['resultId'],'blue':blue['resultId'],'winner':red['resultId'] if row['winner']=='red' else blue['resultId'],'code':row['code'],'points':row['points'],'source':row['source'],'comparisonSource':peers[0]['source'],**({'verificationSources':[row['red']['profile'],row['blue']['profile']]} if not numbered_urls else {})})
+  approved.append({'id':'ottelu-'+hashlib.sha256(token.encode()).hexdigest()[:20],'competition':url,'category':red['category'],'weight':red['weight'],'round':row['round'].split(' ',1)[-1],'red':red['resultId'],'blue':blue['resultId'],'winner':red['resultId'] if row['winner']=='red' else blue['resultId'],'code':row['code'],'points':row['points'],'source':row['source'],'comparisonSource':peers[0]['source'],**({'verificationSources':[row['red']['profile'],row['blue']['profile']]} if not numbered_urls else {})})
  # Include identified participants of rejected bouts too, for accurate exclusion notices.
  all_people={row['resultId']:{'competition':url,**{k:row[k] for k in ['resultId','athleteId','category','weight']}} for row in competition['rows']}
  unmatched=sum(1 for row in numbered if bout_key(row) not in weight_counts)
@@ -315,7 +318,7 @@ def collect_auto(data,source,previous,year='auto'):
   return (oldmeta[url],people,[m for m in previous['matches'] if m['competition']==url],[e for e in previous['excluded'] if e['competition']==url],[i for i in previous['issues'] if i.get('source','').startswith(url.rsplit('/',1)[0]+'/')])
  urls=set(oldmeta)
  for url in current:
-  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(202[2-6])/FI/[A-Za-z0-9_-]+/index(?:FIN|ENG)\.htm',url)
+  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(202[2-6])/FI/[A-Za-z0-9_,-]+/index(?:FIN|ENG)\.htm',url)
   if match and ((years is None and url.removeprefix(HOST) in SAMPLES) or (years is not None and int(match[1]) in years)):urls.add(url)
  for url in sorted(urls):
   old=old_event(url)
@@ -356,7 +359,7 @@ def collect_auto(data,source,previous,year='auto'):
  attempts={e['source']:e for e in report['events']}
  missing=[]
  for url,items in sorted(current.items()):
-  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(202[2-6])/FI/[A-Za-z0-9_-]+/index(?:FIN|ENG)\.htm',url)
+  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(202[2-6])/FI/[A-Za-z0-9_,-]+/index(?:FIN|ENG)\.htm',url)
   if not match or url in available or len(items)!=1:continue
   c=items[0];attempt=attempts.get(url);saved=previous_missing.get(url,{})
   missing.append({'source':url,'title':c['title'],'details':c['details'],'year':int(match[1]),'checkedAt':now if attempt else saved.get('checkedAt'),'reason':attempt['reason'] if attempt else saved.get('reason','Kilpailun ottelut eivät ole vielä mukana. Tätä kilpailua ei tarkistettu tässä ajossa.')})

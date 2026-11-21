@@ -52,4 +52,11 @@ class VerifiedSources(unittest.TestCase):
   result,report=b.collect_auto(data,s,previous,'2026');self.assertEqual(report['summary']['attempted'],0);self.assertEqual(result['coverageMissing'][0]['reason'],'Tunnettu syy');self.assertEqual(report['summary']['coverageMissing'],1)
  def test_missing_scope_keeps_existing_events_and_fetches_only_unavailable(self):
   c,p,s=fixture(numbered=True);meta,people,matches,excluded,issues=b.collect_event(c,s);previous={'competitions':[meta],'participants':people,'matches':matches,'excluded':excluded,'issues':issues};result,report=b.collect_auto({'competitions':[c]},s,previous,'missing');self.assertEqual(report['summary']['attempted'],0);self.assertEqual(result['matches'],matches)
+ def test_accepted_category_whitespace_is_retained_in_bout_references(self):
+  c,p,s=fixture(numbered=True)
+  for row in c['rows']:row['category']='Pojat  '
+  meta,people,matches,excluded,issues=b.collect_event(c,s)
+  self.assertEqual(len(matches),1)
+  self.assertEqual(matches[0]['category'],'Pojat  ')
+  b.validate({'competitions':[meta],'participants':people,'matches':matches})
 if __name__=='__main__':unittest.main()

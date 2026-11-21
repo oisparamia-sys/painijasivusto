@@ -1,17 +1,17 @@
 # Otteluhaun raportti
 
-Tarkistettu: 2026-11-21T03:09:08.347640+00:00
+Tarkistettu: 2026-11-21T16:09:09.101421+00:00
 
 ```json
 {
-  "updated": 61,
+  "updated": 2,
   "preserved": 0,
   "failed": 0,
-  "attempted": 61,
-  "competitions": 297,
-  "matches": 49219,
-  "excluded": 2520,
-  "sourceIssues": 669,
+  "attempted": 2,
+  "competitions": 299,
+  "matches": 49352,
+  "excluded": 2521,
+  "sourceIssues": 676,
   "coverageMissing": 0
 }
 ```
@@ -21,10 +21,10 @@ Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).
 ## Vuosikattavuus
 
 - 2022: 46 kilpailua, 7529 ottelua
-- 2023: 61 kilpailua, 10223 ottelua
+- 2023: 62 kilpailua, 10282 ottelua
 - 2024: 60 kilpailua, 10215 ottelua
 - 2025: 69 kilpailua, 11645 ottelua
-- 2026: 61 kilpailua, 9607 ottelua
+- 2026: 62 kilpailua, 9681 ottelua
 
 ## Tarkistettavat kilpailut
 
@@ -190,6 +190,7 @@ Kaikista nykyisen kilpailuaineiston soveltuvista lähteistä on vahvistettuja ot
 - https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/FIN14708821753860beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/FIN14708821753860beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/FIN14708821753860beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/LM/2026/FI/261107_Vaasa,Teeriniemenpainisali/FIN2391658243730beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111230beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111139beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111145beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
@@ -232,7 +233,6 @@ Kaikista nykyisen kilpailuaineiston soveltuvista lähteistä on vahvistettuja ot
 - https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404943beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406405070beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/FIN12165041911735beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/FIN1216504191662beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/FIN1216504191662beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/FIN1216504191662beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/FIN1216504191662beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
