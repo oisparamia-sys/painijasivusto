@@ -64,6 +64,22 @@
       "blob": "tietovarasto/versiot/e7206cebb8530fbb599c16d26fb647f3dffbcb8d644933003da163831e9623b0.gz",
       "createdAt": "2026-11-21T16:10:30.232Z",
       "bytes": 31870816
+    },
+    {
+      "file": "data.js",
+      "semanticHash": "feecd59abd3cc98bfd01fb14a7efe1c0424e391f898ae86495ded909d36092d7",
+      "sha256": "ce8b9e16fb5799b187a46a54bdc09ff7ffa3aeb221006edf816108971dbc141a",
+      "blob": "tietovarasto/versiot/ce8b9e16fb5799b187a46a54bdc09ff7ffa3aeb221006edf816108971dbc141a.gz",
+      "createdAt": "2026-11-22T03:49:07.198Z",
+      "bytes": 39815628
+    },
+    {
+      "file": "ottelut-data.js",
+      "semanticHash": "c477bc8b9148d561ae6f843af5f656d5771b5b6fee5dd501f8089e6f510727b9",
+      "sha256": "ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97",
+      "blob": "tietovarasto/versiot/ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97.gz",
+      "createdAt": "2026-11-22T03:49:07.952Z",
+      "bytes": 32142028
     }
   ],
   "runs": [
@@ -227,6 +243,24 @@
       "refs": {
         "data.js": "3112c34a627f47a85624147e90343209c9695410ca75e50ead825b4e660332b2",
         "ottelut-data.js": "e7206cebb8530fbb599c16d26fb647f3dffbcb8d644933003da163831e9623b0"
+      }
+    },
+    {
+      "at": "2026-11-22T03:10:20.357Z",
+      "label": "before",
+      "run": "44979369896",
+      "refs": {
+        "data.js": "3112c34a627f47a85624147e90343209c9695410ca75e50ead825b4e660332b2",
+        "ottelut-data.js": "e7206cebb8530fbb599c16d26fb647f3dffbcb8d644933003da163831e9623b0"
+      }
+    },
+    {
+      "at": "2026-11-22T03:49:07.952Z",
+      "label": "after",
+      "run": "44979369896",
+      "refs": {
+        "data.js": "ce8b9e16fb5799b187a46a54bdc09ff7ffa3aeb221006edf816108971dbc141a",
+        "ottelut-data.js": "ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97"
       }
     }
   ]

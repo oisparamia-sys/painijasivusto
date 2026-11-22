@@ -1,8 +1,170 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-21T16:09:09.101421+00:00",
-  "scope": "missing",
+  "checkedAt": "2026-11-22T03:16:20.870201+00:00",
+  "scope": "auto",
   "events": [
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2022/FI/220409_Kokkola/indexFIN.htm",
+      "status": "updated",
+      "matches": 184,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2022/FI/220424_Vantaa/indexFIN.htm",
+      "status": "updated",
+      "matches": 96,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2022/FI/220506_Porvoo/indexFIN.htm",
+      "status": "updated",
+      "matches": 59,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2022/FI/221029_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 113,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2022/FI/221029_Helsinki1/indexFIN.htm",
+      "status": "updated",
+      "matches": 70,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2022/FI/221126_Jyvaeskylae/indexFIN.htm",
+      "status": "updated",
+      "matches": 259,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2023/FI/230519_KuortaneOTC/indexFIN.htm",
+      "status": "updated",
+      "matches": 415,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2023/FI/230729_Kotka/indexFIN.htm",
+      "status": "updated",
+      "matches": 24,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2023/FI/231117_LiikuntakeskusPajulahti/indexFIN.htm",
+      "status": "updated",
+      "matches": 450,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2024/FI/240309_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 272,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2024/FI/240413_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 252,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2024/FI/240921_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 76,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2024/FI/241005_Ylistaro/indexFIN.htm",
+      "status": "updated",
+      "matches": 362,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2025/FI/250315_KuortaneOTC/indexFIN.htm",
+      "status": "updated",
+      "matches": 429,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2025/FI/250510_Vaajakoski/indexFIN.htm",
+      "status": "updated",
+      "matches": 71,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2026/FI/260123_Vaajakoski/indexFIN.htm",
+      "status": "updated",
+      "matches": 105,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2026/FI/260307_Kajaani/indexFIN.htm",
+      "status": "updated",
+      "matches": 213,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2026/FI/260321_Haukipudas/indexFIN.htm",
+      "status": "updated",
+      "matches": 129,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/DM/2026/FI/261114_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 253,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexENG.htm",
+      "status": "updated",
+      "matches": 48,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/FT/2022/FI/220319_Lappeenranta/indexFIN.htm",
+      "status": "updated",
+      "matches": 101,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/FT/2022/FI/220514_Kouvola/indexFIN.htm",
+      "status": "updated",
+      "matches": 200,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexENG.htm",
+      "status": "updated",
+      "matches": 63,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/FT/2023/FI/231209_Ilmajoki/indexENG.htm",
+      "status": "updated",
+      "matches": 95,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexENG.htm",
+      "status": "updated",
+      "matches": 94,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexENG.htm",
+      "status": "updated",
+      "matches": 84,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2023/FI/230225_Lappeenranta/indexFIN.htm",
+      "status": "updated",
+      "matches": 58,
+      "reason": null
+    },
     {
       "source": "https://turniereklassisch.ringerdb.de/LM/2023/FI/231028_Vaasa,Teeriniemenpainisali/indexFIN.htm",
       "status": "updated",
@@ -10,27 +172,1965 @@
       "reason": null
     },
     {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2024/FI/240120_LaihianMonitoimihalli/indexFIN.htm",
+      "status": "updated",
+      "matches": 219,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2024/FI/240420_Lappeenranta/indexFIN.htm",
+      "status": "updated",
+      "matches": 96,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2024/FI/241102_Simpele/indexFIN.htm",
+      "status": "updated",
+      "matches": 71,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2025/FI/250405_Lahti/indexFIN.htm",
+      "status": "updated",
+      "matches": 110,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2025/FI/251108_Simpele/indexFIN.htm",
+      "status": "updated",
+      "matches": 96,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260103_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 187,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/indexFIN.htm",
+      "status": "updated",
+      "matches": 95,
+      "reason": null
+    },
+    {
       "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/261107_Vaasa,Teeriniemenpainisali/indexFIN.htm",
       "status": "updated",
       "matches": 74,
       "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 351,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 489,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/indexFIN.htm",
+      "status": "updated",
+      "matches": 449,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/indexFIN.htm",
+      "status": "updated",
+      "matches": 163,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220219_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 355,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220226_Kemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 153,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220305_Vaajakoski/indexFIN.htm",
+      "status": "updated",
+      "matches": 215,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220312_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 59,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220323_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 62,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220402_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 43,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220402_Pori/indexFIN.htm",
+      "status": "updated",
+      "matches": 180,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220410_Kokkola/indexFIN.htm",
+      "status": "updated",
+      "matches": 312,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220521_Laihia/indexFIN.htm",
+      "status": "updated",
+      "matches": 375,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220524_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 32,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 216,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220618_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 152,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220702_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 68,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Muhos/indexFIN.htm",
+      "status": "updated",
+      "matches": 112,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 470,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Kemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 70,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 247,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 193,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Tuusula/indexFIN.htm",
+      "status": "updated",
+      "matches": 222,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 174,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Kotka/indexFIN.htm",
+      "status": "updated",
+      "matches": 44,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Ylistaro/indexFIN.htm",
+      "status": "updated",
+      "matches": 96,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/indexFIN.htm",
+      "status": "updated",
+      "matches": 98,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Sodankylae/indexFIN.htm",
+      "status": "updated",
+      "matches": 115,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221105_Kuru/indexFIN.htm",
+      "status": "updated",
+      "matches": 101,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 315,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221119_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 168,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221120_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 55,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Janakkala/indexFIN.htm",
+      "status": "updated",
+      "matches": 25,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 120,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 50,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexENG.htm",
+      "status": "updated",
+      "matches": 859,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 46,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae1/indexFIN.htm",
+      "status": "updated",
+      "matches": 20,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/indexFIN.htm",
+      "status": "updated",
+      "matches": 169,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
+      "status": "updated",
+      "matches": 42,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 76,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230121_Laihia/indexFIN.htm",
+      "status": "updated",
+      "matches": 246,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230121_Nummela/indexFIN.htm",
+      "status": "updated",
+      "matches": 67,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230128_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 320,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230204_Kajaani/indexFIN.htm",
+      "status": "updated",
+      "matches": 155,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230204_Lohja/indexFIN.htm",
+      "status": "updated",
+      "matches": 41,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 106,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230218_Kotka/indexFIN.htm",
+      "status": "updated",
+      "matches": 147,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 53,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230225_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 554,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230304_Aura/indexFIN.htm",
+      "status": "updated",
+      "matches": 151,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230304_Kemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 232,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230305_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 76,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230311_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 254,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Peraeseinaejoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 178,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 120,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230319_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 114,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230325_Haukipudas/indexFIN.htm",
+      "status": "updated",
+      "matches": 212,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 29,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae1/indexFIN.htm",
+      "status": "updated",
+      "matches": 81,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Pori/indexFIN.htm",
+      "status": "updated",
+      "matches": 187,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Seinaejoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 137,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 83,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nurmo/indexFIN.htm",
+      "status": "updated",
+      "matches": 211,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230422_Kokkola/indexFIN.htm",
+      "status": "updated",
+      "matches": 461,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Kouvola/indexFIN.htm",
+      "status": "updated",
+      "matches": 182,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 153,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 91,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230516_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 30,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230523_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 13,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230610_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 172,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230617_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 92,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 31,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 35,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Muhos/indexFIN.htm",
+      "status": "updated",
+      "matches": 127,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 479,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230923_Rauma/indexFIN.htm",
+      "status": "updated",
+      "matches": 221,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 312,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Tuusula/indexFIN.htm",
+      "status": "updated",
+      "matches": 132,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231007_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 54,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231007_Kotka/indexFIN.htm",
+      "status": "updated",
+      "matches": 108,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231014_Hyvinkaeae1/indexFIN.htm",
+      "status": "updated",
+      "matches": 143,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231025_Sodankylae/indexFIN.htm",
+      "status": "updated",
+      "matches": 82,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231028_Sodankylae/indexFIN.htm",
+      "status": "updated",
+      "matches": 94,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231104_Kuru/indexFIN.htm",
+      "status": "updated",
+      "matches": 80,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Kuopio/indexFIN.htm",
+      "status": "updated",
+      "matches": 89,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 247,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231125_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 198,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231126_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 70,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231202_Helsinki/indexENG.htm",
+      "status": "updated",
+      "matches": 850,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231202_Rovaniemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 175,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja/indexFIN.htm",
+      "status": "updated",
+      "matches": 33,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja1/indexFIN.htm",
+      "status": "updated",
+      "matches": 41,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231216_Vaajakoski/indexFIN.htm",
+      "status": "updated",
+      "matches": 431,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240106_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 128,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240112_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 55,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240113_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 99,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240120_Nummela/indexFIN.htm",
+      "status": "updated",
+      "matches": 52,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240203_Kajaani/indexFIN.htm",
+      "status": "updated",
+      "matches": 221,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240210_Lohja/indexFIN.htm",
+      "status": "updated",
+      "matches": 60,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Alavus/indexFIN.htm",
+      "status": "updated",
+      "matches": 164,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Haukipudas/indexFIN.htm",
+      "status": "updated",
+      "matches": 206,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 115,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240224_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 500,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240224_Kotka/indexFIN.htm",
+      "status": "updated",
+      "matches": 100,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240302_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 276,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 62,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240316_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 85,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240316_Peraeseinaejoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 160,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 100,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nurmo/indexFIN.htm",
+      "status": "updated",
+      "matches": 178,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240420_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 123,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240420_Helsinki1/indexFIN.htm",
+      "status": "updated",
+      "matches": 51,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240420_Pori/indexFIN.htm",
+      "status": "updated",
+      "matches": 133,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240424_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 50,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240427_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 494,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240504_Kouvola/indexFIN.htm",
+      "status": "updated",
+      "matches": 189,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240511_Vantaa/indexFIN.htm",
+      "status": "updated",
+      "matches": 211,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 195,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240523_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 27,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240615_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 101,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240727_KuortaneOTC/indexFIN.htm",
+      "status": "updated",
+      "matches": 124,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240825_Kemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 35,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240907_Muhos/indexFIN.htm",
+      "status": "updated",
+      "matches": 140,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240907_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 569,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240914_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 189,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240921_Kemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 156,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240922_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 51,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240928_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 266,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240928_Karkkila/indexFIN.htm",
+      "status": "updated",
+      "matches": 58,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 65,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241012_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 130,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241012_Vaajakoski/indexFIN.htm",
+      "status": "updated",
+      "matches": 56,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241019_Seinaejoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 90,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Kotka/indexFIN.htm",
+      "status": "updated",
+      "matches": 49,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Lohja/indexFIN.htm",
+      "status": "updated",
+      "matches": 77,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Sodankylae/indexFIN.htm",
+      "status": "updated",
+      "matches": 112,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241030_Kankaanpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 185,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Botniahalli/indexFIN.htm",
+      "status": "updated",
+      "matches": 256,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 70,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241114_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 65,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241116_Kuru/indexFIN.htm",
+      "status": "updated",
+      "matches": 69,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241123_Rauma/indexFIN.htm",
+      "status": "updated",
+      "matches": 497,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241128_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 37,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241130_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 175,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexENG.htm",
+      "status": "updated",
+      "matches": 1117,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250104_Tuusula/indexFIN.htm",
+      "status": "updated",
+      "matches": 152,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250111_Peraeseinaejoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 201,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 43,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Laihia/indexFIN.htm",
+      "status": "updated",
+      "matches": 174,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 90,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nummela/indexFIN.htm",
+      "status": "updated",
+      "matches": 55,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250125_Kotka/indexFIN.htm",
+      "status": "updated",
+      "matches": 118,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Kemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 203,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Vantaa/indexFIN.htm",
+      "status": "updated",
+      "matches": 281,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 213,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250212_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 70,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Haukipudas/indexFIN.htm",
+      "status": "updated",
+      "matches": 198,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Karkkila/indexFIN.htm",
+      "status": "updated",
+      "matches": 33,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 112,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250219_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 42,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 90,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 87,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250315_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 82,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250322_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 488,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250322_Pori/indexFIN.htm",
+      "status": "updated",
+      "matches": 118,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250323_Raunistulantie15/indexFIN.htm",
+      "status": "updated",
+      "matches": 50,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Nurmo/indexFIN.htm",
+      "status": "updated",
+      "matches": 211,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 80,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250412_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 121,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250413_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 158,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Kokkola/indexFIN.htm",
+      "status": "updated",
+      "matches": 230,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm",
+      "status": "updated",
+      "matches": 84,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Vantaa/indexFIN.htm",
+      "status": "updated",
+      "matches": 138,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Kouvola/indexFIN.htm",
+      "status": "updated",
+      "matches": 161,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 92,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/indexFIN.htm",
+      "status": "updated",
+      "matches": 126,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250510_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 42,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 552,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 33,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250524_Kajaani/indexFIN.htm",
+      "status": "updated",
+      "matches": 169,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250607_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 168,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250614_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 56,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250719_KuortaneOTC/indexFIN.htm",
+      "status": "updated",
+      "matches": 76,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250802_Pajulahti/indexFIN.htm",
+      "status": "updated",
+      "matches": 21,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250809_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 114,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexENG.htm",
+      "status": "updated",
+      "matches": 684,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 203,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Muhos/indexFIN.htm",
+      "status": "updated",
+      "matches": 189,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250925_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 66,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250927_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 78,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250927_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 344,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251004_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 161,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251004_Ylistaro/indexFIN.htm",
+      "status": "updated",
+      "matches": 100,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251011_Kotka/indexFIN.htm",
+      "status": "updated",
+      "matches": 171,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251018_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 122,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251018_Vantaa/indexFIN.htm",
+      "status": "updated",
+      "matches": 99,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251101_Lohja/indexFIN.htm",
+      "status": "updated",
+      "matches": 63,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251108_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 234,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251115_Janakkala/indexFIN.htm",
+      "status": "updated",
+      "matches": 271,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 27,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 286,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 106,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/indexFIN.htm",
+      "status": "updated",
+      "matches": 91,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Rovaniemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 163,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 44,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251209_Kouvola/indexFIN.htm",
+      "status": "updated",
+      "matches": 136,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm",
+      "status": "updated",
+      "matches": 1127,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251219_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 69,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260110_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 62,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260110_Peraeseinaejoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 408,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260117_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 87,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 17,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Kouvola/indexFIN.htm",
+      "status": "updated",
+      "matches": 164,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/indexFIN.htm",
+      "status": "updated",
+      "matches": 236,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 213,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 107,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Porvoo/indexFIN.htm",
+      "status": "updated",
+      "matches": 63,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 320,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260221_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 509,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260221_Sodankylae/indexFIN.htm",
+      "status": "updated",
+      "matches": 64,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260228_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 129,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260314_Kauhava/indexFIN.htm",
+      "status": "updated",
+      "matches": 200,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260321_Karkkila/indexFIN.htm",
+      "status": "updated",
+      "matches": 90,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260322_Haukipudas/indexFIN.htm",
+      "status": "updated",
+      "matches": 221,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 84,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260411_Nurmo/indexFIN.htm",
+      "status": "updated",
+      "matches": 246,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260415_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 60,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260415_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 24,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260418_Pori/indexFIN.htm",
+      "status": "updated",
+      "matches": 149,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Kokkola/indexFIN.htm",
+      "status": "updated",
+      "matches": 284,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Lahti/indexFIN.htm",
+      "status": "updated",
+      "matches": 224,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Vantaa/indexFIN.htm",
+      "status": "updated",
+      "matches": 118,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 87,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Kouvola/indexFIN.htm",
+      "status": "updated",
+      "matches": 115,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/indexFIN.htm",
+      "status": "updated",
+      "matches": 88,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "status": "updated",
+      "matches": 9,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 35,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260516_Vantaa/indexFIN.htm",
+      "status": "updated",
+      "matches": 580,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260523_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 54,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260606_Turku/indexFIN.htm",
+      "status": "updated",
+      "matches": 130,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 115,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260725_KuortaneOTC/indexFIN.htm",
+      "status": "updated",
+      "matches": 46,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260808_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 117,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 132,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Vantaa/indexFIN.htm",
+      "status": "updated",
+      "matches": 57,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Ylistaro/indexFIN.htm",
+      "status": "updated",
+      "matches": 199,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260919_Muhos/indexFIN.htm",
+      "status": "updated",
+      "matches": 122,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260919_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 358,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+      "status": "updated",
+      "matches": 215,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Hyvinkaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 183,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261017_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 279,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261017_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 161,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261022_Tampere/indexFIN.htm",
+      "status": "updated",
+      "matches": 61,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm",
+      "status": "updated",
+      "matches": 118,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Sodankylae/indexFIN.htm",
+      "status": "updated",
+      "matches": 67,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261028_Vaasa/indexFIN.htm",
+      "status": "updated",
+      "matches": 58,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Alavus/indexFIN.htm",
+      "status": "updated",
+      "matches": 178,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Helsinki/indexFIN.htm",
+      "status": "updated",
+      "matches": 73,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
+      "status": "updated",
+      "matches": 52,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
+      "status": "updated",
+      "matches": 142,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Aura/indexFIN.htm",
+      "status": "updated",
+      "matches": 149,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+      "status": "updated",
+      "matches": 117,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/indexFIN.htm",
+      "status": "updated",
+      "matches": 69,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "status": "updated",
+      "matches": 212,
+      "reason": null
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm",
+      "status": "updated",
+      "matches": 92,
+      "reason": null
     }
   ],
   "summary": {
-    "updated": 2,
+    "updated": 302,
     "preserved": 0,
     "failed": 0,
-    "attempted": 2,
-    "competitions": 299,
-    "matches": 49352,
-    "excluded": 2521,
-    "sourceIssues": 676,
+    "attempted": 302,
+    "competitions": 302,
+    "matches": 49811,
+    "excluded": 2452,
+    "sourceIssues": 687,
     "coverageMissing": 0
   },
   "proposals": [],
   "unchangedTargets": [
+    "https://turniereklassisch.ringerdb.de/DM/2022/FI/220409_Kokkola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2022/FI/220424_Vantaa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2022/FI/220506_Porvoo/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2022/FI/221029_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2022/FI/221029_Helsinki1/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2022/FI/221126_Jyvaeskylae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2023/FI/230519_KuortaneOTC/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2023/FI/230729_Kotka/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2023/FI/231117_LiikuntakeskusPajulahti/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2024/FI/240309_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2024/FI/240413_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2024/FI/240921_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2024/FI/241005_Ylistaro/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2025/FI/250315_KuortaneOTC/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2025/FI/250510_Vaajakoski/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2026/FI/260123_Vaajakoski/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2026/FI/260307_Kajaani/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2026/FI/260321_Haukipudas/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/DM/2026/FI/261114_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/FT/2022/FI/220319_Lappeenranta/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/FT/2022/FI/220514_Kouvola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/FT/2023/FI/231209_Ilmajoki/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/LM/2023/FI/230225_Lappeenranta/indexFIN.htm",
     "https://turniereklassisch.ringerdb.de/LM/2023/FI/231028_Vaasa,Teeriniemenpainisali/indexFIN.htm",
-    "https://turniereklassisch.ringerdb.de/LM/2026/FI/261107_Vaasa,Teeriniemenpainisali/indexFIN.htm"
+    "https://turniereklassisch.ringerdb.de/LM/2024/FI/240120_LaihianMonitoimihalli/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/LM/2024/FI/240420_Lappeenranta/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/LM/2024/FI/241102_Simpele/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/LM/2025/FI/250405_Lahti/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/LM/2025/FI/251108_Simpele/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/LM/2026/FI/260103_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/LM/2026/FI/261107_Vaasa,Teeriniemenpainisali/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220219_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220226_Kemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220305_Vaajakoski/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220312_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220323_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220402_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220402_Pori/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220410_Kokkola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220521_Laihia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220524_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220618_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220702_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Muhos/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Kemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Tuusula/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Kotka/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Ylistaro/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Sodankylae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221105_Kuru/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221119_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221120_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Janakkala/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae1/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230121_Laihia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230121_Nummela/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230128_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230204_Kajaani/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230204_Lohja/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230218_Kotka/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230225_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230304_Aura/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230304_Kemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230305_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230311_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Peraeseinaejoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230319_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230325_Haukipudas/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae1/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Pori/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Seinaejoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nurmo/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230422_Kokkola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Kouvola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230516_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230523_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230610_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230617_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Muhos/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230923_Rauma/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Tuusula/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231007_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231007_Kotka/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231014_Hyvinkaeae1/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231025_Sodankylae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231028_Sodankylae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231104_Kuru/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Kuopio/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231125_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231126_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231202_Helsinki/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231202_Rovaniemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja1/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2023/FI/231216_Vaajakoski/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240106_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240112_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240113_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240120_Nummela/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240203_Kajaani/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240210_Lohja/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Alavus/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Haukipudas/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240224_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240224_Kotka/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240302_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240316_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240316_Peraeseinaejoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nurmo/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240420_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240420_Helsinki1/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240420_Pori/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240424_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240427_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240504_Kouvola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240511_Vantaa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240523_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240615_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240727_KuortaneOTC/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240825_Kemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240907_Muhos/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240907_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240914_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240921_Kemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240922_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240928_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/240928_Karkkila/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241012_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241012_Vaajakoski/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241019_Seinaejoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Kotka/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Lohja/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Sodankylae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241030_Kankaanpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Botniahalli/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241114_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241116_Kuru/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241123_Rauma/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241128_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241130_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250104_Tuusula/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250111_Peraeseinaejoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Laihia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nummela/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250125_Kotka/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Kemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Vantaa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250212_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Haukipudas/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Karkkila/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250219_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250315_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250322_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250322_Pori/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250323_Raunistulantie15/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Nurmo/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250412_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250413_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Kokkola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Vantaa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Kouvola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250510_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250524_Kajaani/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250607_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250614_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250719_KuortaneOTC/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250802_Pajulahti/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250809_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Muhos/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250925_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250927_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/250927_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251004_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251004_Ylistaro/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251011_Kotka/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251018_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251018_Vantaa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251101_Lohja/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251108_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251115_Janakkala/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Rovaniemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251209_Kouvola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2025/FI/251219_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260110_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260110_Peraeseinaejoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260117_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Kouvola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Porvoo/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260221_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260221_Sodankylae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260228_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260314_Kauhava/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260321_Karkkila/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260322_Haukipudas/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260411_Nurmo/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260415_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260415_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260418_Pori/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Kokkola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Lahti/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Vantaa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Kouvola/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260516_Vantaa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260523_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260606_Turku/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260725_KuortaneOTC/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260808_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Vantaa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Ylistaro/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260919_Muhos/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260919_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Hyvinkaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261017_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261017_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261022_Tampere/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Sodankylae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261028_Vaasa/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Alavus/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Helsinki/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Aura/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+    "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm"
   ],
   "excluded": [
     {
@@ -3085,7 +5185,7 @@
         "tulos-017258"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Ylistaro/FIN2950352641748beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Sodankylae/indexFIN.htm",
@@ -3157,7 +5257,7 @@
         "tulos-019071"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/FIN3501838083453beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/indexFIN.htm",
@@ -4288,7 +6388,7 @@
         "tulos-027583"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911860beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4297,7 +6397,7 @@
         "tulos-027586"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911867beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4306,7 +6406,7 @@
         "tulos-027584"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911867beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4315,7 +6415,7 @@
         "tulos-027593"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911872beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4324,7 +6424,7 @@
         "tulos-027592"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911872beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4333,7 +6433,7 @@
         "tulos-027605"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911877beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4342,7 +6442,7 @@
         "tulos-027603"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911877beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4351,7 +6451,7 @@
         "tulos-027608"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911882beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4360,7 +6460,7 @@
         "tulos-027606"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911882beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4387,7 +6487,7 @@
         "tulos-027615"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911887beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4396,7 +6496,7 @@
         "tulos-027613"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911887beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm",
@@ -4405,7 +6505,7 @@
         "tulos-027618"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/FIN14909361911897beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Nokia/indexFIN.htm",
@@ -4603,7 +6703,7 @@
         "tulos-028287"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/FIN1775952255153beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
@@ -4612,7 +6712,7 @@
         "tulos-028288"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/FIN1775952255154beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
@@ -4621,7 +6721,7 @@
         "tulos-028299"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/FIN1775952255145beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
@@ -4738,7 +6838,7 @@
         "tulos-028487"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/FIN1548411263234beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/indexFIN.htm",
@@ -5155,7 +7255,7 @@
         "tulos-024988"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/FIN3825585921388beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/indexFIN.htm",
@@ -5164,7 +7264,7 @@
         "tulos-024990"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/FIN3825585921388beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/indexFIN.htm",
@@ -5173,7 +7273,7 @@
         "tulos-024987"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/FIN3825585921388beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/indexFIN.htm",
@@ -5182,7 +7282,7 @@
         "tulos-024990"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/FIN3825585921388beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/indexFIN.htm",
@@ -5191,7 +7291,7 @@
         "tulos-024990"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/FIN3825585921388beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/indexFIN.htm",
@@ -5200,7 +7300,7 @@
         "tulos-024987"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/FIN3825585921388beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230319_Helsinki/indexFIN.htm",
@@ -6099,551 +8199,46 @@
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN65033868842beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN65033868844beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN65033868845beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
+      "people": [
+        "tulos-026246",
+        "tulos-026247"
+      ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN65033868832beg.htm",
       "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688120beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688120beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688120beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688124beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688124beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688124beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688124beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688124beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688124beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688125beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688125beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688125beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688125beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688125beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688125beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688126beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688126beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688126beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688127beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688127beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688127beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688127beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688127beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688127beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688128beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688128beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688128beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688129beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688129beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688129beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688132beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688132beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688132beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688132beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688132beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688132beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688133beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688134beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
+      "people": [
+        "tulos-026289",
+        "tulos-026285"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
       "people": [
-        "tulos-026290"
+        "tulos-026289",
+        "tulos-026288"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
       "people": [
-        "tulos-026290"
+        "tulos-026298",
+        "tulos-026302"
       ],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688135beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688137beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688137beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688137beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688139beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688139beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688139beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688139beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688139beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688139beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
       "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
-      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
-      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
-    },
-    {
-      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
-      "people": [],
+      "people": [
+        "tulos-026302",
+        "tulos-026301"
+      ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN650338688148beg.htm",
       "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
     },
@@ -11886,7 +13481,7 @@
         "tulos-012116"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Sodankylae/FIN18608213752260beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241030_Kankaanpaeae/indexFIN.htm",
@@ -13353,7 +14948,7 @@
         "tulos-030581"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Kemi/FIN18798923511928beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Kemi/indexFIN.htm",
@@ -13362,7 +14957,7 @@
         "tulos-030583"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Kemi/FIN18798923511928beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Kemi/indexFIN.htm",
@@ -14973,7 +16568,7 @@
         "tulos-013399"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250802_Pajulahti/FIN6794366723335beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250802_Pajulahti/indexFIN.htm",
@@ -14982,7 +16577,7 @@
         "tulos-013399"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250802_Pajulahti/FIN6794366723335beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250809_Helsinki/indexFIN.htm",
@@ -15933,7 +17528,7 @@
       "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/indexFIN.htm",
       "people": [],
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/FIN550297984211beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/indexFIN.htm",
@@ -16092,7 +17687,7 @@
       "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/indexFIN.htm",
       "people": [],
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/FIN2271727361833beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/indexFIN.htm",
@@ -16116,7 +17711,7 @@
         "tulos-000481"
       ],
       "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983123beg.htm",
-      "reason": "Ottelu ei esiinny täsmälleen kerran kummassakin luettelossa"
+      "reason": "Ottelu ei esiinny täsmälleen kerran vertailtavissa lähteissä"
     },
     {
       "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
@@ -20904,6 +22499,153 @@
       "people": [],
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/FIN1659494783447beg.htm",
       "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/indexFIN.htm",
+      "people": [
+        "tulos-034920",
+        "tulos-034919"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/FIN15073201912420beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/indexFIN.htm",
+      "people": [
+        "tulos-034920",
+        "tulos-034918"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/FIN15073201912420beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/indexFIN.htm",
+      "people": [
+        "tulos-034932",
+        "tulos-034933"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/FIN15073201912426beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/indexFIN.htm",
+      "people": [
+        "tulos-034947",
+        "tulos-034948"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/FIN15073201912430beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "people": [],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/FIN956850560451beg.htm",
+      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "people": [],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/FIN956850560452beg.htm",
+      "reason": "Painijan lähdetunnus, nimi tai seura ei vastaa sarjan tulosluetteloa"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "people": [
+        "tulos-035057",
+        "tulos-035056"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/FIN9568505604067beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "people": [
+        "tulos-035057",
+        "tulos-035056"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/FIN9568505604067beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "people": [
+        "tulos-035074",
+        "tulos-035073"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/FIN9568505603430beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "people": [
+        "tulos-035093",
+        "tulos-035096"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/FIN9568505604449beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "people": [
+        "tulos-035096",
+        "tulos-035095"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/FIN9568505604449beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm",
+      "people": [
+        "tulos-035181",
+        "tulos-035180"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN5256564484346beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm",
+      "people": [
+        "tulos-035150",
+        "tulos-035152"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN5256564483462beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm",
+      "people": [
+        "tulos-035152",
+        "tulos-035149"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN5256564483462beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm",
+      "people": [
+        "tulos-035147",
+        "tulos-035146"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN5256564483282beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm",
+      "people": [
+        "tulos-035145",
+        "tulos-035147"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN5256564483282beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm",
+      "people": [
+        "tulos-035187",
+        "tulos-035186"
+      ],
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN525656448451beg.htm",
+      "reason": "Voittotavan lyhenne vaatii tarkistamista: KL"
     }
   ],
   "sourceIssues": [
@@ -21631,6 +23373,14 @@
       "reason": "Painoluokan ottelulinkki puuttuu: U17 Pojat Aluem. 80"
     },
     {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm",
+      "reason": "Sama nimi, seura ja sarja esiintyy lähteen osallistujaluettelossa useasti"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm",
+      "reason": "Sama nimi, seura ja sarja esiintyy lähteen osallistujaluettelossa useasti"
+    },
+    {
       "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN11696459512655beg.htm",
       "reason": "Ottelutulos puuttuu tai on epäselvä",
       "position": 6
@@ -21794,6 +23544,14 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/FIN154841126320tlges.htm",
       "reason": "Painoluokan ottelulinkki puuttuu: Karhunpennut 60"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/FIN154841126317tlges.htm",
+      "reason": "Sama nimi, seura ja sarja esiintyy lähteen osallistujaluettelossa useasti"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/FIN154841126317tlges.htm",
+      "reason": "Sama nimi, seura ja sarja esiintyy lähteen osallistujaluettelossa useasti"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/FIN15484112631729beg.htm",
@@ -22022,6 +23780,14 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500734tlges.htm",
       "reason": "Painoluokan ottelulinkki puuttuu: WW 17 NSC 75"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm",
+      "reason": "Sama nimi, seura ja sarja esiintyy lähteen osallistujaluettelossa useasti"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm",
+      "reason": "Sama nimi, seura ja sarja esiintyy lähteen osallistujaluettelossa useasti"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231125_Tampere/FIN103443507221tlges.htm",
@@ -23917,6 +25683,26 @@
     {
       "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Aura/FIN58791564850tlges.htm",
       "reason": "Painoluokan ottelulinkki puuttuu: Tytöt U17 (AM) 43"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN52565644841tlges.htm",
+      "reason": "Painoluokan ottelulinkki puuttuu: U13 WW 43"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN52565644837tlges.htm",
+      "reason": "Painoluokan ottelulinkki puuttuu: U15 FS 41"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN52565644837tlges.htm",
+      "reason": "Painoluokan ottelulinkki puuttuu: U15 FS 62"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN52565644834tlges.htm",
+      "reason": "Painoluokan ottelulinkki puuttuu: U17 WW 53"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/FIN52565644832tlges.htm",
+      "reason": "Painoluokan ottelulinkki puuttuu: U20 GR 62"
     }
   ],
   "coverageMissing": [],
@@ -23927,7 +25713,7 @@
     },
     "2023": {
       "competitions": 62,
-      "matches": 10282
+      "matches": 10368
     },
     "2024": {
       "competitions": 60,
@@ -23938,8 +25724,8 @@
       "matches": 11645
     },
     "2026": {
-      "competitions": 62,
-      "matches": 9681
+      "competitions": 65,
+      "matches": 10054
     }
   }
 }

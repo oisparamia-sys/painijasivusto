@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-21T03:16:01.664Z",
+  "updatedAt": "2026-11-22T03:49:05.218Z",
   "proposals": [
     {
       "id": "2b6579e5dc506e8a45a72f470c91d726366bcc6d878933176be60907485f7518",
@@ -11501,6 +11501,4287 @@
             "reason": "Painoluokan ottelulinkki puuttuu: Tytöt U13 39"
           }
         ]
+      }
+    },
+    {
+      "id": "918b20fce1ae672b5859d5a43f7ff38a720fec5e471d900e138b19e7b0843df1",
+      "kind": "competition",
+      "target": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/indexFIN.htm",
+      "beforeHash": "ff10f65884dbead93251e1d7f42342fff761d191d31a5202b46ea28e837abba5",
+      "afterHash": "dfe2e8b153975da08bc01e8698ce9f63f43d4c11bfe0984f8f05b753e00d2e44",
+      "status": "pending",
+      "createdAt": "2026-11-22T03:16:17.178Z",
+      "lastSeen": "2026-11-22T03:16:17.178Z",
+      "reason": "Kilpailun sijoitukset tai tiedot muuttuivat. Vanhat tulokset säilytettiin.",
+      "before": {
+        "title": "Turun Voimamiesten ikäkausipainit",
+        "details": "Turku, 28.5.2022",
+        "rows": [
+          {
+            "place": 1,
+            "name": "Urho Västi",
+            "club": "ilmajoen kisailijat",
+            "weight": "41",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003727",
+            "athleteId": "painija-002844"
+          },
+          {
+            "place": 2,
+            "name": "Jasu Sydänheimo",
+            "club": "KooVee",
+            "weight": "41",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003728",
+            "athleteId": "painija-003337"
+          },
+          {
+            "place": 1,
+            "name": "Kaius Juusela",
+            "club": "Vantaan Sampo",
+            "weight": "44",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003729",
+            "athleteId": "painija-002241"
+          },
+          {
+            "place": 2,
+            "name": "Oliver Anttila",
+            "club": "ilmajoen kisailijat",
+            "weight": "44",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003730",
+            "athleteId": "painija-002287"
+          },
+          {
+            "place": 3,
+            "name": "Veeti Katajamäki",
+            "club": "ilmajoen kisailijat",
+            "weight": "44",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003731",
+            "athleteId": "painija-002268"
+          },
+          {
+            "place": 4,
+            "name": "Juho Takala",
+            "club": "ilmajoen kisailijat",
+            "weight": "44",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003732",
+            "athleteId": "painija-002484"
+          },
+          {
+            "place": 5,
+            "name": "Theo Mykkänen",
+            "club": "helsingin haka",
+            "weight": "44",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003733",
+            "athleteId": "painija-001077"
+          },
+          {
+            "place": 1,
+            "name": "Hendri Vesper",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "48",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003734",
+            "athleteId": "painija-003343"
+          },
+          {
+            "place": 2,
+            "name": "Onni Suomi",
+            "club": "Auranmaan Painiseura",
+            "weight": "48",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003735",
+            "athleteId": "painija-002274"
+          },
+          {
+            "place": 3,
+            "name": "Tahir Albayrak",
+            "club": "Helsingin Painimiehet",
+            "weight": "48",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003736",
+            "athleteId": "painija-000094"
+          },
+          {
+            "place": 4,
+            "name": "Aatos Pelto-Lampola",
+            "club": "Turun Voimamiehet",
+            "weight": "48",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003737",
+            "athleteId": "painija-003018"
+          },
+          {
+            "place": 5,
+            "name": "Viljami Laakso",
+            "club": "Kotkan Painimiehet",
+            "weight": "48",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003738",
+            "athleteId": "painija-002622"
+          },
+          {
+            "place": 6,
+            "name": "Eelis Hilkamo",
+            "club": "Porvoon Weikot",
+            "weight": "48",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003739",
+            "athleteId": "painija-003348"
+          },
+          {
+            "place": 1,
+            "name": "Eemil Haukilahti",
+            "club": "Tampere Predators",
+            "weight": "52",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003740",
+            "athleteId": "painija-007101"
+          },
+          {
+            "place": 2,
+            "name": "Antton Jyrkkänen",
+            "club": "Hyvinkään PainiKlubi",
+            "weight": "52",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003741",
+            "athleteId": "painija-001775"
+          },
+          {
+            "place": 3,
+            "name": "Mauno Kaura",
+            "club": "KooVee",
+            "weight": "52",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003742",
+            "athleteId": "painija-002278"
+          },
+          {
+            "place": 4,
+            "name": "Oskari Lusenius",
+            "club": "Turun Voimamiehet",
+            "weight": "52",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003743",
+            "athleteId": "painija-000990"
+          },
+          {
+            "place": 5,
+            "name": "Eemeli Vesasto",
+            "club": "Turun Painijat",
+            "weight": "52",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003744",
+            "athleteId": "painija-003353"
+          },
+          {
+            "place": 6,
+            "name": "Emil Sarpo",
+            "club": "helsingin haka",
+            "weight": "52",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003745",
+            "athleteId": "painija-003354"
+          },
+          {
+            "place": 7,
+            "name": "Aaro Metsälä",
+            "club": "Nokian PYRY",
+            "weight": "52",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003746",
+            "athleteId": "painija-003355"
+          },
+          {
+            "place": 1,
+            "name": "Jalo Ketonen",
+            "club": "KooVee",
+            "weight": "57",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003747",
+            "athleteId": "painija-002291"
+          },
+          {
+            "place": 2,
+            "name": "Leevi Nurmi",
+            "club": "Turun Painijat",
+            "weight": "57",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003748",
+            "athleteId": "painija-003357"
+          },
+          {
+            "place": 3,
+            "name": "Ilmari Simola",
+            "club": "helsingin haka",
+            "weight": "57",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003749",
+            "athleteId": "painija-003358"
+          },
+          {
+            "place": 4,
+            "name": "Jerry Kallio",
+            "club": "Turun Voimamiehet",
+            "weight": "57",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003750",
+            "athleteId": "painija-002869"
+          },
+          {
+            "place": 5,
+            "name": "Erkki Heino",
+            "club": "Rauman Voimailijat",
+            "weight": "57",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003751",
+            "athleteId": "painija-002593"
+          },
+          {
+            "place": 6,
+            "name": "Charli Takk",
+            "club": "Lääneranna Spordikool",
+            "weight": "57",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003752",
+            "athleteId": "painija-003361"
+          },
+          {
+            "place": 1,
+            "name": "Daniel Nadtochii",
+            "club": "Hyvinkään PainiKlubi",
+            "weight": "62",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003753",
+            "athleteId": "painija-003362"
+          },
+          {
+            "place": 2,
+            "name": "Juuso Takala",
+            "club": "ilmajoen kisailijat",
+            "weight": "62",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003754",
+            "athleteId": "painija-002508"
+          },
+          {
+            "place": 3,
+            "name": "Leevi Lehti",
+            "club": "Auranmaan Painiseura",
+            "weight": "62",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003755",
+            "athleteId": "painija-003364"
+          },
+          {
+            "place": 1,
+            "name": "Andreas Välja",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "75",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003756",
+            "athleteId": "painija-003776"
+          },
+          {
+            "place": 2,
+            "name": "Elmo Kuorilehto",
+            "club": "Raision Voimamiehet",
+            "weight": "75",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003757",
+            "athleteId": "painija-003366"
+          },
+          {
+            "place": 3,
+            "name": "Onni Vairinen",
+            "club": "Turun Voimamiehet",
+            "weight": "75",
+            "category": "Pojat 15v.",
+            "resultId": "tulos-003758",
+            "athleteId": "painija-002892"
+          },
+          {
+            "place": 1,
+            "name": "Wilperi Heikkilä",
+            "club": "Rauman Voimailijat",
+            "weight": "21",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003759",
+            "athleteId": "painija-003368"
+          },
+          {
+            "place": 2,
+            "name": "Valtteri Poutanen",
+            "club": "Porin Paini-Miehet",
+            "weight": "21",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003760",
+            "athleteId": "painija-003369"
+          },
+          {
+            "place": 3,
+            "name": "Eliel Kyffin",
+            "club": "Porin Paini-Miehet",
+            "weight": "21",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003761",
+            "athleteId": "painija-003370"
+          },
+          {
+            "place": 4,
+            "name": "Ilmari Tuominen",
+            "club": "Porin Paini-Miehet",
+            "weight": "21",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003762",
+            "athleteId": "painija-003371"
+          },
+          {
+            "place": 1,
+            "name": "Hilppa Hulttinen",
+            "club": "helsingin haka",
+            "weight": "22",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003763",
+            "athleteId": "painija-000570"
+          },
+          {
+            "place": 2,
+            "name": "Dmytro Asaulenko",
+            "club": "Rauman Voimailijat",
+            "weight": "22",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003764",
+            "athleteId": "painija-001007"
+          },
+          {
+            "place": 3,
+            "name": "Väinö Svensberg",
+            "club": "Porin Paini-Miehet",
+            "weight": "22",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003765",
+            "athleteId": "painija-003374"
+          },
+          {
+            "place": 4,
+            "name": "Otto Hartikka",
+            "club": "LrTU",
+            "weight": "22",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003766",
+            "athleteId": "painija-005238"
+          },
+          {
+            "place": 1,
+            "name": "Jasper Jürimae",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "26",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003767",
+            "athleteId": "painija-003376"
+          },
+          {
+            "place": 2,
+            "name": "Andero Välja",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "26",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003768",
+            "athleteId": "painija-003809"
+          },
+          {
+            "place": 3,
+            "name": "Otso Ranki",
+            "club": "Auranmaan Painiseura",
+            "weight": "26",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003769",
+            "athleteId": "painija-001805"
+          },
+          {
+            "place": 4,
+            "name": "Rasmus Peltonen",
+            "club": "Rauman Voimailijat",
+            "weight": "26",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003770",
+            "athleteId": "painija-003379"
+          },
+          {
+            "place": 1,
+            "name": "Herman Olava",
+            "club": "Vantaan Sampo",
+            "weight": "28",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003771",
+            "athleteId": "painija-001053"
+          },
+          {
+            "place": 2,
+            "name": "William Piippo",
+            "club": "helsingin haka",
+            "weight": "28",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003772",
+            "athleteId": "painija-001011"
+          },
+          {
+            "place": 3,
+            "name": "Pietari Jokiharju",
+            "club": "Turun Voimamiehet",
+            "weight": "28",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003773",
+            "athleteId": "painija-001804"
+          },
+          {
+            "place": 4,
+            "name": "Urho Hirvelä",
+            "club": "Rauman Voimailijat",
+            "weight": "28",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003774",
+            "athleteId": "painija-000061"
+          },
+          {
+            "place": 1,
+            "name": "Hugo Hakola",
+            "club": "helsingin haka",
+            "weight": "30",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003775",
+            "athleteId": "painija-001015"
+          },
+          {
+            "place": 2,
+            "name": "Aatos Raiskinmäki",
+            "club": "Rauman Voimailijat",
+            "weight": "30",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003776",
+            "athleteId": "painija-003385"
+          },
+          {
+            "place": 3,
+            "name": "Ahti Vuorinen",
+            "club": "LrTU",
+            "weight": "30",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003777",
+            "athleteId": "painija-000057"
+          },
+          {
+            "place": 4,
+            "name": "Noel Vienonen",
+            "club": "Rauman Voimailijat",
+            "weight": "30",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003778",
+            "athleteId": "painija-003387"
+          },
+          {
+            "place": 1,
+            "name": "Oskar Olava",
+            "club": "Vantaan Sampo",
+            "weight": "33",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003779",
+            "athleteId": "painija-002323"
+          },
+          {
+            "place": 2,
+            "name": "Eino Hjelman",
+            "club": "Turun Voimamiehet",
+            "weight": "33",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003780",
+            "athleteId": "painija-002930"
+          },
+          {
+            "place": 3,
+            "name": "Retu Rantanen",
+            "club": "Turun Voimamiehet",
+            "weight": "33",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003781",
+            "athleteId": "painija-002937"
+          },
+          {
+            "place": 4,
+            "name": "Rasmus Hänninen",
+            "club": "Porin Paini-Miehet",
+            "weight": "33",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003782",
+            "athleteId": "painija-003391"
+          },
+          {
+            "place": 1,
+            "name": "Elmeri Rosenqvist",
+            "club": "Porin Paini-Miehet",
+            "weight": "40",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003783",
+            "athleteId": "painija-003392"
+          },
+          {
+            "place": 2,
+            "name": "Oliver Niemi",
+            "club": "Rauman Voimailijat",
+            "weight": "40",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003784",
+            "athleteId": "painija-000592"
+          },
+          {
+            "place": 1,
+            "name": "Valtteri Räisänen",
+            "club": "Turun Voimamiehet",
+            "weight": "45",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003785",
+            "athleteId": "painija-003394"
+          },
+          {
+            "place": 2,
+            "name": "Masi Palmulaakso",
+            "club": "Rauman Voimailijat",
+            "weight": "45",
+            "category": "Aloittelijat 10v.",
+            "resultId": "tulos-003786",
+            "athleteId": "painija-003395"
+          },
+          {
+            "place": 1,
+            "name": "Onni Sivula",
+            "club": "Kurun Ryhti",
+            "weight": "65",
+            "category": "Pojat 17v.",
+            "resultId": "tulos-003787",
+            "athleteId": "painija-003396"
+          },
+          {
+            "place": 2,
+            "name": "Charly Takk",
+            "club": "Lääneranna Spordikool",
+            "weight": "65",
+            "category": "Pojat 17v.",
+            "resultId": "tulos-003788",
+            "athleteId": "painija-003397"
+          },
+          {
+            "place": 1,
+            "name": "Denys Dyachuk",
+            "club": "Rauman Voimailijat",
+            "weight": "71",
+            "category": "Pojat 17v.",
+            "resultId": "tulos-003789",
+            "athleteId": "painija-003398"
+          },
+          {
+            "place": 2,
+            "name": "Veeti Elonen",
+            "club": "Rauman Voimailijat",
+            "weight": "71",
+            "category": "Pojat 17v.",
+            "resultId": "tulos-003790",
+            "athleteId": "painija-003399"
+          },
+          {
+            "place": 1,
+            "name": "Roope Rusi",
+            "club": "Turun Voimamiehet",
+            "weight": "100",
+            "category": "Pojat 17v.",
+            "resultId": "tulos-003791",
+            "athleteId": "painija-002257"
+          },
+          {
+            "place": 2,
+            "name": "Elmer Lappalainen",
+            "club": "Kotkan Painimiehet",
+            "weight": "100",
+            "category": "Pojat 17v.",
+            "resultId": "tulos-003792",
+            "athleteId": "painija-003401"
+          },
+          {
+            "place": 3,
+            "name": "Stefan-Lauri Mölder",
+            "club": "Lääneranna Spordikool",
+            "weight": "100",
+            "category": "Pojat 17v.",
+            "resultId": "tulos-003793",
+            "athleteId": "painija-003402"
+          },
+          {
+            "place": 1,
+            "name": "Elias Lehtonen",
+            "club": "Viialan pyry",
+            "weight": "29",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003794",
+            "athleteId": "painija-002902"
+          },
+          {
+            "place": 2,
+            "name": "Reima Kuntola",
+            "club": "ilmajoen kisailijat",
+            "weight": "29",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003795",
+            "athleteId": "painija-001526"
+          },
+          {
+            "place": 3,
+            "name": "Onni Lindberg",
+            "club": "Porin Paini-Miehet",
+            "weight": "29",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003796",
+            "athleteId": "painija-003405"
+          },
+          {
+            "place": 1,
+            "name": "Vili Hulttinen",
+            "club": "helsingin haka",
+            "weight": "33",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003797",
+            "athleteId": "painija-000975"
+          },
+          {
+            "place": 2,
+            "name": "Otso Ilomäki",
+            "club": "Viialan pyry",
+            "weight": "33",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003798",
+            "athleteId": "painija-003407"
+          },
+          {
+            "place": 3,
+            "name": "Otto Rakamäki",
+            "club": "helsingin haka",
+            "weight": "33",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003799",
+            "athleteId": "painija-003408"
+          },
+          {
+            "place": 4,
+            "name": "Neo Kopakkala",
+            "club": "Tampere Predators",
+            "weight": "33",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003800",
+            "athleteId": "painija-003409"
+          },
+          {
+            "place": 1,
+            "name": "Maximus Purmonen",
+            "club": "Helsingin Painimiehet",
+            "weight": "35",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003801",
+            "athleteId": "painija-000656"
+          },
+          {
+            "place": 2,
+            "name": "Aaron Raiskinmäki",
+            "club": "Rauman Voimailijat",
+            "weight": "35",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003802",
+            "athleteId": "painija-003411"
+          },
+          {
+            "place": 3,
+            "name": "Oliver Isokorpi",
+            "club": "Porin Paini-Miehet",
+            "weight": "35",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003803",
+            "athleteId": "painija-000067"
+          },
+          {
+            "place": 4,
+            "name": "Markus Peltonen",
+            "club": "Rauman Voimailijat",
+            "weight": "35",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003804",
+            "athleteId": "painija-003413"
+          },
+          {
+            "place": 1,
+            "name": "Daniel Helenius",
+            "club": "helsingin haka",
+            "weight": "37",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003805",
+            "athleteId": "painija-000562"
+          },
+          {
+            "place": 2,
+            "name": "Oskar Rajamäki",
+            "club": "helsingin haka",
+            "weight": "37",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003806",
+            "athleteId": "painija-002909"
+          },
+          {
+            "place": 3,
+            "name": "Hermanni Nurmi",
+            "club": "Auranmaan Painiseura",
+            "weight": "37",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003807",
+            "athleteId": "painija-003416"
+          },
+          {
+            "place": 4,
+            "name": "Ukko Ranki",
+            "club": "Auranmaan Painiseura",
+            "weight": "37",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003808",
+            "athleteId": "painija-001812"
+          },
+          {
+            "place": 1,
+            "name": "Lenni Piiroinen",
+            "club": "Joensuun Voimailu-Kerho",
+            "weight": "45",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003809",
+            "athleteId": "painija-003418"
+          },
+          {
+            "place": 2,
+            "name": "Jüri Mihk",
+            "club": "Lääneranna Spordikool",
+            "weight": "45",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003810",
+            "athleteId": "painija-003419"
+          },
+          {
+            "place": 3,
+            "name": "Stefan Dyachuk",
+            "club": "Rauman Voimailijat",
+            "weight": "45",
+            "category": "Pojat 10v.",
+            "resultId": "tulos-003811",
+            "athleteId": "painija-000092"
+          },
+          {
+            "place": 1,
+            "name": "Matias Tervonen",
+            "club": "helsingin haka",
+            "weight": "33",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003812",
+            "athleteId": "painija-000971"
+          },
+          {
+            "place": 2,
+            "name": "Arsi Vaaranmaa",
+            "club": "ilmajoen kisailijat",
+            "weight": "33",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003813",
+            "athleteId": "painija-002970"
+          },
+          {
+            "place": 3,
+            "name": "Atte Jokiharju",
+            "club": "Turun Voimamiehet",
+            "weight": "33",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003814",
+            "athleteId": "painija-001809"
+          },
+          {
+            "place": 1,
+            "name": "Veikko Ylismäki",
+            "club": "Vantaan Sampo",
+            "weight": "35",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003815",
+            "athleteId": "painija-003424"
+          },
+          {
+            "place": 2,
+            "name": "Joona Kause",
+            "club": "Turun Voimamiehet",
+            "weight": "35",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003816",
+            "athleteId": "painija-002303"
+          },
+          {
+            "place": 3,
+            "name": "Veikko Vaaranmaa",
+            "club": "ilmajoen kisailijat",
+            "weight": "35",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003817",
+            "athleteId": "painija-002733"
+          },
+          {
+            "place": 4,
+            "name": "Aapo Mattila",
+            "club": "Lahden Ahkera",
+            "weight": "35",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003818",
+            "athleteId": "painija-003427"
+          },
+          {
+            "place": 5,
+            "name": "Sakarias Ventsas",
+            "club": "Rauman Voimailijat",
+            "weight": "35",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003819",
+            "athleteId": "painija-003428"
+          },
+          {
+            "place": 1,
+            "name": "Emirhan Albayrak",
+            "club": "Helsingin Painimiehet",
+            "weight": "37",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003820",
+            "athleteId": "painija-000655"
+          },
+          {
+            "place": 2,
+            "name": "Jami Kinnari",
+            "club": "Turun Voimamiehet",
+            "weight": "37",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003821",
+            "athleteId": "painija-003562"
+          },
+          {
+            "place": 3,
+            "name": "Topi Koskela",
+            "club": "Porin Paini-Miehet",
+            "weight": "37",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003822",
+            "athleteId": "painija-003431"
+          },
+          {
+            "place": 4,
+            "name": "Jare Granat",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003823",
+            "athleteId": "painija-000083"
+          },
+          {
+            "place": 5,
+            "name": "Joona Jokila",
+            "club": "KooVee",
+            "weight": "37",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003824",
+            "athleteId": "painija-003433"
+          },
+          {
+            "place": 6,
+            "name": "Topias Pienimäki",
+            "club": "ilmajoen kisailijat",
+            "weight": "37",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003825",
+            "athleteId": "painija-001565"
+          },
+          {
+            "place": 1,
+            "name": "Toivo Vairinen",
+            "club": "Turun Voimamiehet",
+            "weight": "40",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003826",
+            "athleteId": "painija-003435"
+          },
+          {
+            "place": 2,
+            "name": "Urho Malkamäki",
+            "club": "Lahden Ahkera",
+            "weight": "40",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003827",
+            "athleteId": "painija-003436"
+          },
+          {
+            "place": 3,
+            "name": "Pekka Sisso",
+            "club": "Auranmaan Painiseura",
+            "weight": "40",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003828",
+            "athleteId": "painija-003437"
+          },
+          {
+            "place": 4,
+            "name": "Oliver Lehtisalo",
+            "club": "Porin Paini-Miehet",
+            "weight": "40",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003829",
+            "athleteId": "painija-003438"
+          },
+          {
+            "place": 1,
+            "name": "Leo Säynäjoki",
+            "club": "KooVee",
+            "weight": "42",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003830",
+            "athleteId": "painija-003439"
+          },
+          {
+            "place": 2,
+            "name": "Peetu Oksanen",
+            "club": "Turun Voimamiehet",
+            "weight": "42",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003831",
+            "athleteId": "painija-001068"
+          },
+          {
+            "place": 3,
+            "name": "Jaro Karttinen",
+            "club": "KooVee",
+            "weight": "42",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003832",
+            "athleteId": "painija-002307"
+          },
+          {
+            "place": 4,
+            "name": "Remu Rantanen",
+            "club": "Turun Voimamiehet",
+            "weight": "42",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003833",
+            "athleteId": "painija-002913"
+          },
+          {
+            "place": 1,
+            "name": "Urho Laine",
+            "club": "Turun Voimamiehet",
+            "weight": "45",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003834",
+            "athleteId": "painija-003004"
+          },
+          {
+            "place": 2,
+            "name": "Rene Koskela",
+            "club": "Porin Paini-Miehet",
+            "weight": "45",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003835",
+            "athleteId": "painija-003444"
+          },
+          {
+            "place": 3,
+            "name": "Joel Järvinen",
+            "club": "Auranmaan Painiseura",
+            "weight": "45",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003836",
+            "athleteId": "painija-003445"
+          },
+          {
+            "place": 4,
+            "name": "Tuukka Koskela",
+            "club": "ilmajoen kisailijat",
+            "weight": "45",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003837",
+            "athleteId": "painija-003011"
+          },
+          {
+            "place": 1,
+            "name": "Antonio Helminen",
+            "club": "KooVee",
+            "weight": "48",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003838",
+            "athleteId": "painija-003447"
+          },
+          {
+            "place": 2,
+            "name": "Anton Zaychenko",
+            "club": "Helsingin Painimiehet",
+            "weight": "48",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003839",
+            "athleteId": "painija-001096"
+          },
+          {
+            "place": 3,
+            "name": "Valtteri Faarinen",
+            "club": "Turun Voimamiehet",
+            "weight": "48",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003840",
+            "athleteId": "painija-003013"
+          },
+          {
+            "place": 4,
+            "name": "Antti-Jussi Pelkonen",
+            "club": "ilmajoen kisailijat",
+            "weight": "48",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003841",
+            "athleteId": "painija-003016"
+          },
+          {
+            "place": 1,
+            "name": "Tommi Juupaluoma",
+            "club": "ilmajoen kisailijat",
+            "weight": "55",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003842",
+            "athleteId": "painija-002277"
+          },
+          {
+            "place": 2,
+            "name": "Aaro Vahantapohja",
+            "club": "Kurun Ryhti",
+            "weight": "55",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003843",
+            "athleteId": "painija-002309"
+          },
+          {
+            "place": 3,
+            "name": "Eetu Lehtonen",
+            "club": "Viialan pyry",
+            "weight": "55",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003844",
+            "athleteId": "painija-003028"
+          },
+          {
+            "place": 4,
+            "name": "Waltteri Heiskanen",
+            "club": "KooVee",
+            "weight": "55",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003845",
+            "athleteId": "painija-003454"
+          },
+          {
+            "place": 5,
+            "name": "Lauri Laev",
+            "club": "Lääneranna Spordikool",
+            "weight": "55",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003846",
+            "athleteId": "painija-003455"
+          },
+          {
+            "place": 1,
+            "name": "Otso Yli-Hannuksela",
+            "club": "ilmajoen kisailijat",
+            "weight": "61",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003847",
+            "athleteId": "painija-002285"
+          },
+          {
+            "place": 2,
+            "name": "Lukas Perner",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "61",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003848",
+            "athleteId": "painija-020866"
+          },
+          {
+            "place": 3,
+            "name": "Leo Hyytiäinen",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "61",
+            "category": "Pojat 13v.",
+            "resultId": "tulos-003849",
+            "athleteId": "painija-003029"
+          },
+          {
+            "place": 1,
+            "name": "Viena Vitikainen",
+            "club": "Simpeleen Vesa",
+            "weight": "27",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003850",
+            "athleteId": "painija-002413"
+          },
+          {
+            "place": 2,
+            "name": "Sofi Rummukainen",
+            "club": "Porin Paini-Miehet",
+            "weight": "27",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003851",
+            "athleteId": "painija-003460"
+          },
+          {
+            "place": 1,
+            "name": "Marleen Takk",
+            "club": "Lääneranna Spordikool",
+            "weight": "30",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003852",
+            "athleteId": "painija-003461"
+          },
+          {
+            "place": 2,
+            "name": "Hilla Liukko",
+            "club": "Rauman Voimailijat",
+            "weight": "30",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003853",
+            "athleteId": "painija-000667"
+          },
+          {
+            "place": 1,
+            "name": "Ebba Vettenranta",
+            "club": "Porin Paini-Miehet",
+            "weight": "37",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003854",
+            "athleteId": "painija-003463"
+          },
+          {
+            "place": 2,
+            "name": "Johanna Tsekenjuk",
+            "club": "Lääneranna Spordikool",
+            "weight": "37",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003855",
+            "athleteId": "painija-003464"
+          },
+          {
+            "place": 3,
+            "name": "Lotta Ojanperä",
+            "club": "Nurmon Jymy",
+            "weight": "37",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003856",
+            "athleteId": "painija-003040"
+          },
+          {
+            "place": 4,
+            "name": "Iina Vuorinen",
+            "club": "LrTU",
+            "weight": "37",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003857",
+            "athleteId": "painija-000572"
+          },
+          {
+            "place": 1,
+            "name": "Anna Hietaniemi",
+            "club": "Nurmon Jymy",
+            "weight": "39",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003858",
+            "athleteId": "painija-003042"
+          },
+          {
+            "place": 2,
+            "name": "Laura Talvensaari",
+            "club": "Helsingin Painimiehet",
+            "weight": "39",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003859",
+            "athleteId": "painija-003895"
+          },
+          {
+            "place": 3,
+            "name": "Mia-Jessica Mölder",
+            "club": "Lääneranna Spordikool",
+            "weight": "39",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003860",
+            "athleteId": "painija-003469"
+          },
+          {
+            "place": 4,
+            "name": "Siiri Talja",
+            "club": "ilmajoen kisailijat",
+            "weight": "39",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003861",
+            "athleteId": "painija-003470"
+          },
+          {
+            "place": 1,
+            "name": "Sura Abbassoy",
+            "club": "Helsingin Painimiehet",
+            "weight": "47",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003862",
+            "athleteId": "painija-005168"
+          },
+          {
+            "place": 2,
+            "name": "Kerttu Uschanoff",
+            "club": "Tampereen Painiseura",
+            "weight": "47",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003863",
+            "athleteId": "painija-000034"
+          },
+          {
+            "place": 3,
+            "name": "Nimma Mäkitalo",
+            "club": "Porin Paini-Miehet",
+            "weight": "47",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003864",
+            "athleteId": "painija-003473"
+          },
+          {
+            "place": 4,
+            "name": "Paloma Grönfors",
+            "club": "Helsingin Painimiehet",
+            "weight": "47",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003865",
+            "athleteId": "painija-002433"
+          },
+          {
+            "place": 1,
+            "name": "Eevi Salonen",
+            "club": "Turun Voimamiehet",
+            "weight": "50",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003866",
+            "athleteId": "painija-000965"
+          },
+          {
+            "place": 2,
+            "name": "Erika Purmonen",
+            "club": "Helsingin Painimiehet",
+            "weight": "50",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003867",
+            "athleteId": "painija-003900"
+          },
+          {
+            "place": 3,
+            "name": "Maija Lehto",
+            "club": "Nokian PYRY",
+            "weight": "50",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003868",
+            "athleteId": "painija-002431"
+          },
+          {
+            "place": 4,
+            "name": "Inka Mälkönen",
+            "club": "Lahden Ahkera",
+            "weight": "50",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003869",
+            "athleteId": "painija-002686"
+          },
+          {
+            "place": 1,
+            "name": "Mija Mäkitalo",
+            "club": "Porin Paini-Miehet",
+            "weight": "64",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003870",
+            "athleteId": "painija-003479"
+          },
+          {
+            "place": 2,
+            "name": "Riina Österbacka",
+            "club": "Turun Painijat",
+            "weight": "64",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003871",
+            "athleteId": "painija-003480"
+          },
+          {
+            "place": 3,
+            "name": "Eerika Liukko",
+            "club": "Rauman Voimailijat",
+            "weight": "64",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003872",
+            "athleteId": "painija-003481"
+          },
+          {
+            "place": 1,
+            "name": "Aino Kuitunen",
+            "club": "Helsingin Painimiehet",
+            "weight": "79",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003873",
+            "athleteId": "painija-001090"
+          },
+          {
+            "place": 2,
+            "name": "Tuisku Siukonen",
+            "club": "Helsingin Painimiehet",
+            "weight": "79",
+            "category": "Tytöt 17v.",
+            "resultId": "tulos-003874",
+            "athleteId": "painija-003913"
+          }
+        ],
+        "skipped": 0,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/indexFIN.htm",
+        "textSource": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN912810368_tab.txt",
+        "fileInfo": "Yhteinen kilpailuaineisto · LigaDB · tarkistettu 25.10.2026",
+        "categoryStyles": {
+          "Pojat 15v.": "greco",
+          "Aloittelijat 10v.": "greco",
+          "Pojat 17v.": "greco",
+          "Pojat 10v.": "greco",
+          "Pojat 13v.": "greco",
+          "Tytöt 17v.": "freestyle"
+        },
+        "styleSources": {
+          "Pojat 15v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036817tlges.htm",
+          "Aloittelijat 10v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036818tlges.htm",
+          "Pojat 17v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036819tlges.htm",
+          "Pojat 10v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036820tlges.htm",
+          "Pojat 13v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036821tlges.htm",
+          "Tytöt 17v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036822tlges.htm"
+        }
+      },
+      "after": {
+        "title": "Turun Voimamiesten ikäkausipainit",
+        "details": "Turku, 28.5.2022",
+        "rows": [
+          {
+            "place": 1,
+            "name": "Viena Vitikainen",
+            "club": "Simpeleen Vesa",
+            "weight": "27",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 2,
+            "name": "Sofi Rummukainen",
+            "club": "Porin Paini-Miehet",
+            "weight": "27",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 1,
+            "name": "Marleen Takk",
+            "club": "Lääneranna Spordikool",
+            "weight": "30",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 2,
+            "name": "Hilla Liukko",
+            "club": "Rauman Voimailijat",
+            "weight": "30",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 1,
+            "name": "Ebba Vettenranta",
+            "club": "Porin Paini-Miehet",
+            "weight": "37",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 2,
+            "name": "Johanna Tsekenjuk",
+            "club": "Lääneranna Spordikool",
+            "weight": "37",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 3,
+            "name": "Lotta Ojanperä",
+            "club": "Nurmon Jymy",
+            "weight": "37",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 4,
+            "name": "Iina Vuorinen",
+            "club": "LrTU",
+            "weight": "37",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 1,
+            "name": "Anna Hietaniemi",
+            "club": "Nurmon Jymy",
+            "weight": "39",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 2,
+            "name": "Laura Talvensaari",
+            "club": "Helsingin Painimiehet",
+            "weight": "39",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 3,
+            "name": "Mia-Jessica Mölder",
+            "club": "Lääneranna Spordikool",
+            "weight": "39",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 4,
+            "name": "Siiri Talja",
+            "club": "ilmajoen kisailijat",
+            "weight": "39",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 1,
+            "name": "Sura Abbassoy",
+            "club": "Helsingin Painimiehet",
+            "weight": "47",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 2,
+            "name": "Kerttu Uschanoff",
+            "club": "Tampereen Painiseura",
+            "weight": "47",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 3,
+            "name": "Nimma Mäkitalo",
+            "club": "Porin Paini-Miehet",
+            "weight": "47",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 4,
+            "name": "Paloma Grönfors",
+            "club": "Helsingin Painimiehet",
+            "weight": "47",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 1,
+            "name": "Eevi Salonen",
+            "club": "Turun Voimamiehet",
+            "weight": "50",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 2,
+            "name": "Erika Purmonen",
+            "club": "Helsingin Painimiehet",
+            "weight": "50",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 3,
+            "name": "Maija Lehto",
+            "club": "Nokian PYRY",
+            "weight": "50",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 4,
+            "name": "Inka Mälkönen",
+            "club": "Lahden Ahkera",
+            "weight": "50",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 1,
+            "name": "Mija Mäkitalo",
+            "club": "Porin Paini-Miehet",
+            "weight": "64",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 2,
+            "name": "Riina Österbacka",
+            "club": "Turun Painijat",
+            "weight": "64",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 3,
+            "name": "Eerika Liukko",
+            "club": "Rauman Voimailijat",
+            "weight": "64",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 1,
+            "name": "Aino Kuitunen",
+            "club": "Helsingin Painimiehet",
+            "weight": "79",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 2,
+            "name": "Tuisku Siukonen",
+            "club": "Helsingin Painimiehet",
+            "weight": "79",
+            "category": "Tytöt 17v."
+          },
+          {
+            "place": 1,
+            "name": "Matias Tervonen",
+            "club": "helsingin haka",
+            "weight": "33",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 2,
+            "name": "Arsi Vaaranmaa",
+            "club": "ilmajoen kisailijat",
+            "weight": "33",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 3,
+            "name": "Atte Jokiharju",
+            "club": "Turun Voimamiehet",
+            "weight": "33",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 1,
+            "name": "Veikko Ylismäki",
+            "club": "Vantaan Sampo",
+            "weight": "35",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 2,
+            "name": "Joona Kause",
+            "club": "Turun Voimamiehet",
+            "weight": "35",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 3,
+            "name": "Veikko Vaaranmaa",
+            "club": "ilmajoen kisailijat",
+            "weight": "35",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 4,
+            "name": "Aapo Mattila",
+            "club": "Lahden Ahkera",
+            "weight": "35",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 5,
+            "name": "Sakarias Ventsas",
+            "club": "Rauman Voimailijat",
+            "weight": "35",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 1,
+            "name": "Emirhan Albayrak",
+            "club": "Helsingin Painimiehet",
+            "weight": "37",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 2,
+            "name": "Jami Kinnari",
+            "club": "Turun Voimamiehet",
+            "weight": "37",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 3,
+            "name": "Topi Koskela",
+            "club": "Porin Paini-Miehet",
+            "weight": "37",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 4,
+            "name": "Jare Granat",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 5,
+            "name": "Joona Jokila",
+            "club": "KooVee",
+            "weight": "37",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 6,
+            "name": "Topias Pienimäki",
+            "club": "ilmajoen kisailijat",
+            "weight": "37",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 1,
+            "name": "Toivo Vairinen",
+            "club": "Turun Voimamiehet",
+            "weight": "40",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 2,
+            "name": "Urho Malkamäki",
+            "club": "Lahden Ahkera",
+            "weight": "40",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 3,
+            "name": "Pekka Sisso",
+            "club": "Auranmaan Painiseura",
+            "weight": "40",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 4,
+            "name": "Oliver Lehtisalo",
+            "club": "Porin Paini-Miehet",
+            "weight": "40",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 1,
+            "name": "Leo Säynäjoki",
+            "club": "KooVee",
+            "weight": "42",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 2,
+            "name": "Peetu Oksanen",
+            "club": "Turun Voimamiehet",
+            "weight": "42",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 3,
+            "name": "Jaro Karttinen",
+            "club": "KooVee",
+            "weight": "42",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 4,
+            "name": "Remu Rantanen",
+            "club": "Turun Voimamiehet",
+            "weight": "42",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 1,
+            "name": "Urho Laine",
+            "club": "Turun Voimamiehet",
+            "weight": "45",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 2,
+            "name": "Rene Koskela",
+            "club": "Porin Paini-Miehet",
+            "weight": "45",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 3,
+            "name": "Joel Järvinen",
+            "club": "Auranmaan Painiseura",
+            "weight": "45",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 4,
+            "name": "Tuukka Koskela",
+            "club": "ilmajoen kisailijat",
+            "weight": "45",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 1,
+            "name": "Antonio Helminen",
+            "club": "KooVee",
+            "weight": "48",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 2,
+            "name": "Anton Zaychenko",
+            "club": "Helsingin Painimiehet",
+            "weight": "48",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 3,
+            "name": "Valtteri Faarinen",
+            "club": "Turun Voimamiehet",
+            "weight": "48",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 4,
+            "name": "Antti-Jussi Pelkonen",
+            "club": "ilmajoen kisailijat",
+            "weight": "48",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 1,
+            "name": "Tommi Juupaluoma",
+            "club": "ilmajoen kisailijat",
+            "weight": "55",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 2,
+            "name": "Aaro Vahantapohja",
+            "club": "Kurun Ryhti",
+            "weight": "55",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 3,
+            "name": "Eetu Lehtonen",
+            "club": "Viialan pyry",
+            "weight": "55",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 4,
+            "name": "Waltteri Heiskanen",
+            "club": "KooVee",
+            "weight": "55",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 5,
+            "name": "Lauri Laev",
+            "club": "Lääneranna Spordikool",
+            "weight": "55",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 1,
+            "name": "Otso Yli-Hannuksela",
+            "club": "ilmajoen kisailijat",
+            "weight": "61",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 2,
+            "name": "Lukas Perner",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "61",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 3,
+            "name": "Leo Hyytiäinen",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "61",
+            "category": "Pojat 13v."
+          },
+          {
+            "place": 1,
+            "name": "Elias Lehtonen",
+            "club": "Viialan pyry",
+            "weight": "29",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Reima Kuntola",
+            "club": "ilmajoen kisailijat",
+            "weight": "29",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Onni Lindberg",
+            "club": "Porin Paini-Miehet",
+            "weight": "29",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Vili Hulttinen",
+            "club": "helsingin haka",
+            "weight": "33",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Otso Ilomäki",
+            "club": "Viialan pyry",
+            "weight": "33",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Otto Rakamäki",
+            "club": "helsingin haka",
+            "weight": "33",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 4,
+            "name": "Neo Kopakkala",
+            "club": "Tampere Predators",
+            "weight": "33",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Maximus Purmonen",
+            "club": "Helsingin Painimiehet",
+            "weight": "35",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Aaron Raiskinmäki",
+            "club": "Rauman Voimailijat",
+            "weight": "35",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Oliver Isokorpi",
+            "club": "Porin Paini-Miehet",
+            "weight": "35",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 4,
+            "name": "Markus Peltonen",
+            "club": "Rauman Voimailijat",
+            "weight": "35",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Daniel Helenius",
+            "club": "helsingin haka",
+            "weight": "37",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Oskar Rajamäki",
+            "club": "helsingin haka",
+            "weight": "37",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Hermanni Nurmi",
+            "club": "Auranmaan Painiseura",
+            "weight": "37",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 4,
+            "name": "Ukko Ranki",
+            "club": "Auranmaan Painiseura",
+            "weight": "37",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Lenni Piiroinen",
+            "club": "Joensuun Voimailu-Kerho",
+            "weight": "45",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Jüri Mihk",
+            "club": "Lääneranna Spordikool",
+            "weight": "45",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Stefan Dyachuk",
+            "club": "Rauman Voimailijat",
+            "weight": "45",
+            "category": "Pojat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Onni Sivula",
+            "club": "Kurun Ryhti",
+            "weight": "65",
+            "category": "Pojat 17v."
+          },
+          {
+            "place": 2,
+            "name": "Charly Takk",
+            "club": "Lääneranna Spordikool",
+            "weight": "65",
+            "category": "Pojat 17v."
+          },
+          {
+            "place": 1,
+            "name": "Denys Dyachuk",
+            "club": "Rauman Voimailijat",
+            "weight": "71",
+            "category": "Pojat 17v."
+          },
+          {
+            "place": 2,
+            "name": "Veeti Elonen",
+            "club": "Rauman Voimailijat",
+            "weight": "71",
+            "category": "Pojat 17v."
+          },
+          {
+            "place": 1,
+            "name": "Roope Rusi",
+            "club": "Turun Voimamiehet",
+            "weight": "100",
+            "category": "Pojat 17v."
+          },
+          {
+            "place": 2,
+            "name": "Elmer Lappalainen",
+            "club": "Kotkan Painimiehet",
+            "weight": "100",
+            "category": "Pojat 17v."
+          },
+          {
+            "place": 3,
+            "name": "Stefan-Lauri Mölder",
+            "club": "Lääneranna Spordikool",
+            "weight": "100",
+            "category": "Pojat 17v."
+          },
+          {
+            "place": 1,
+            "name": "Wilperi Heikkilä",
+            "club": "Rauman Voimailijat",
+            "weight": "21",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Valtteri Poutanen",
+            "club": "Porin Paini-Miehet",
+            "weight": "21",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Eliel Kyffin",
+            "club": "Porin Paini-Miehet",
+            "weight": "21",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 4,
+            "name": "Ilmari Tuominen",
+            "club": "Porin Paini-Miehet",
+            "weight": "21",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Hilppa Hulttinen",
+            "club": "helsingin haka",
+            "weight": "22",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Dmytro Asaulenko",
+            "club": "Rauman Voimailijat",
+            "weight": "22",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Väinö Svensberg",
+            "club": "Porin Paini-Miehet",
+            "weight": "22",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 4,
+            "name": "Otto Hartikka",
+            "club": "LrTU",
+            "weight": "22",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Jasper Jürimae",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "26",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Andero Välja",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "26",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Otso Ranki",
+            "club": "Auranmaan Painiseura",
+            "weight": "26",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 4,
+            "name": "Rasmus Peltonen",
+            "club": "Rauman Voimailijat",
+            "weight": "26",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Herman Olava",
+            "club": "Vantaan Sampo",
+            "weight": "28",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 2,
+            "name": "William Piippo",
+            "club": "helsingin haka",
+            "weight": "28",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Pietari Jokiharju",
+            "club": "Turun Voimamiehet",
+            "weight": "28",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 4,
+            "name": "Urho Hirvelä",
+            "club": "Rauman Voimailijat",
+            "weight": "28",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Hugo Hakola",
+            "club": "helsingin haka",
+            "weight": "30",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Aatos Raiskinmäki",
+            "club": "Rauman Voimailijat",
+            "weight": "30",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Ahti Vuorinen",
+            "club": "LrTU",
+            "weight": "30",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 4,
+            "name": "Noel Vienonen",
+            "club": "Rauman Voimailijat",
+            "weight": "30",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Oskar Olava",
+            "club": "Vantaan Sampo",
+            "weight": "33",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Eino Hjelman",
+            "club": "Turun Voimamiehet",
+            "weight": "33",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 3,
+            "name": "Retu Rantanen",
+            "club": "Turun Voimamiehet",
+            "weight": "33",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 4,
+            "name": "Rasmus Hänninen",
+            "club": "Porin Paini-Miehet",
+            "weight": "33",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Elmeri Rosenqvist",
+            "club": "Porin Paini-Miehet",
+            "weight": "40",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Oliver Niemi",
+            "club": "Rauman Voimailijat",
+            "weight": "40",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Valtteri Räisänen",
+            "club": "Turun Voimamiehet",
+            "weight": "45",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 2,
+            "name": "Masi Palmulaakso",
+            "club": "Rauman Voimailijat",
+            "weight": "45",
+            "category": "Aloittelijat 10v."
+          },
+          {
+            "place": 1,
+            "name": "Urho Västi",
+            "club": "ilmajoen kisailijat",
+            "weight": "41",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 2,
+            "name": "Jasu Sydänheimo",
+            "club": "KooVee",
+            "weight": "41",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 1,
+            "name": "Kaius Juusela",
+            "club": "Vantaan Sampo",
+            "weight": "44",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 2,
+            "name": "Oliver Anttila",
+            "club": "ilmajoen kisailijat",
+            "weight": "44",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 3,
+            "name": "Veeti Katajamäki",
+            "club": "ilmajoen kisailijat",
+            "weight": "44",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 4,
+            "name": "Juho Takala",
+            "club": "ilmajoen kisailijat",
+            "weight": "44",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 5,
+            "name": "Theo Mykkänen",
+            "club": "helsingin haka",
+            "weight": "44",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 1,
+            "name": "Hendri Vesper",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "48",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 2,
+            "name": "Onni Suomi",
+            "club": "Auranmaan Painiseura",
+            "weight": "48",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 3,
+            "name": "Tahir Albayrak",
+            "club": "Helsingin Painimiehet",
+            "weight": "48",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 4,
+            "name": "Aatos Pelto-Lampola",
+            "club": "Turun Voimamiehet",
+            "weight": "48",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 5,
+            "name": "Viljami Laakso",
+            "club": "Kotkan Painimiehet",
+            "weight": "48",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 6,
+            "name": "Eelis Hilkamo",
+            "club": "Porvoon Weikot",
+            "weight": "48",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 1,
+            "name": "Eemil Haukilahti",
+            "club": "Tampere Predators",
+            "weight": "52",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 2,
+            "name": "Antton Jyrkkänen",
+            "club": "Hyvinkään PainiKlubi",
+            "weight": "52",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 3,
+            "name": "Mauno Kaura",
+            "club": "KooVee",
+            "weight": "52",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 4,
+            "name": "Oskari Lusenius",
+            "club": "Turun Voimamiehet",
+            "weight": "52",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 5,
+            "name": "Eemeli Vesasto",
+            "club": "Turun Painijat",
+            "weight": "52",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 6,
+            "name": "Emil Sarpo",
+            "club": "helsingin haka",
+            "weight": "52",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 7,
+            "name": "Aaro Metsälä",
+            "club": "Nokian PYRY",
+            "weight": "52",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 1,
+            "name": "Jalo Ketonen",
+            "club": "KooVee",
+            "weight": "57",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 2,
+            "name": "Leevi Nurmi",
+            "club": "Turun Painijat",
+            "weight": "57",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 3,
+            "name": "Ilmari Simola",
+            "club": "helsingin haka",
+            "weight": "57",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 4,
+            "name": "Jerry Kallio",
+            "club": "Turun Voimamiehet",
+            "weight": "57",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 5,
+            "name": "Erkki Heino",
+            "club": "Rauman Voimailijat",
+            "weight": "57",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 6,
+            "name": "Charli Takk",
+            "club": "Lääneranna Spordikool",
+            "weight": "57",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 1,
+            "name": "Daniel Nadtochii",
+            "club": "Hyvinkään PainiKlubi",
+            "weight": "62",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 2,
+            "name": "Juuso Takala",
+            "club": "ilmajoen kisailijat",
+            "weight": "62",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 3,
+            "name": "Leevi Lehti",
+            "club": "Auranmaan Painiseura",
+            "weight": "62",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 1,
+            "name": "Andreas Välja",
+            "club": "Vändra Suure Karu pojad",
+            "weight": "75",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 2,
+            "name": "Elmo Kuorilehto",
+            "club": "Raision Voimamiehet",
+            "weight": "75",
+            "category": "Pojat 15v."
+          },
+          {
+            "place": 3,
+            "name": "Onni Vairinen",
+            "club": "Turun Voimamiehet",
+            "weight": "75",
+            "category": "Pojat 15v."
+          }
+        ],
+        "skipped": 0,
+        "categoryStyles": {
+          "Tytöt 17v.": "freestyle",
+          "Pojat 13v.": "greco",
+          "Pojat 10v.": "greco",
+          "Pojat 17v.": "greco",
+          "Aloittelijat 10v.": "greco",
+          "Pojat 15v.": "greco"
+        },
+        "styleSources": {
+          "Tytöt 17v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036822tlges.htm",
+          "Pojat 13v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036821tlges.htm",
+          "Pojat 10v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036820tlges.htm",
+          "Pojat 17v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036819tlges.htm",
+          "Aloittelijat 10v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036818tlges.htm",
+          "Pojat 15v.": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/FIN91281036817tlges.htm"
+        },
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/indexFIN.htm",
+        "textSource": "",
+        "fileInfo": "LigaDB · ajastettu haku · 2026-11-22"
+      }
+    },
+    {
+      "id": "009eec1b6c65badae8803f33b5c7247b89d473965126141cd5de906f57cf7aad",
+      "kind": "competition",
+      "target": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/indexFIN.htm",
+      "beforeHash": "074051cba979db9882fa3e41f3a49e7a43a0e8f3b7d558be0046fb44155d18bc",
+      "afterHash": "960b5fc16d0473f89a3e2e08f0bda3b03dae020d33fdd5a4e8ce00778d278547",
+      "status": "pending",
+      "createdAt": "2026-11-22T03:16:17.217Z",
+      "lastSeen": "2026-11-22T03:16:17.217Z",
+      "reason": "Kilpailun sijoitukset tai tiedot muuttuivat. Vanhat tulokset säilytettiin.",
+      "before": {
+        "title": "Tampereen Voimailijat Ikäkausikilpailut",
+        "details": "Tampere, 8.3.2025",
+        "rows": [
+          {
+            "place": 1,
+            "name": "Kerttu Uschanoff",
+            "club": "Tampereen Painiseura",
+            "weight": "53",
+            "category": "Ystävyysottelu",
+            "athleteId": "painija-000034",
+            "resultId": "tulos-000034"
+          },
+          {
+            "place": 2,
+            "name": "Venla Vienola",
+            "club": "Jyvässeudun Paini-Ässät",
+            "weight": "53",
+            "category": "Ystävyysottelu",
+            "athleteId": "painija-000035",
+            "resultId": "tulos-000035"
+          },
+          {
+            "place": 1,
+            "name": "Nicke Stenberg",
+            "club": "Pilkanmaan Pilke",
+            "weight": "56",
+            "category": "Ystävyysottelu pojat",
+            "athleteId": "painija-000036",
+            "resultId": "tulos-000036"
+          },
+          {
+            "place": 2,
+            "name": "Mikael Pyysalo",
+            "club": "Tampereen Painiseura",
+            "weight": "56",
+            "category": "Ystävyysottelu pojat",
+            "athleteId": "painija-000037",
+            "resultId": "tulos-000037"
+          },
+          {
+            "place": 1,
+            "name": "Milla Tilli",
+            "club": "Helsingin Haka",
+            "weight": "21",
+            "category": "U9 Tytöt",
+            "athleteId": "painija-000001",
+            "resultId": "tulos-000038"
+          },
+          {
+            "place": 1,
+            "name": "Meryem Albayrak",
+            "club": "Vantaan Sampo",
+            "weight": "32",
+            "category": "U9 Tytöt",
+            "athleteId": "painija-000038",
+            "resultId": "tulos-000039"
+          },
+          {
+            "place": 2,
+            "name": "Aino Ilkka",
+            "club": "Helsingin Haka",
+            "weight": "32",
+            "category": "U9 Tytöt",
+            "athleteId": "painija-000039",
+            "resultId": "tulos-000040"
+          },
+          {
+            "place": 1,
+            "name": "Benjamin Stykki",
+            "club": "Kirkkonummen Urheilijat",
+            "weight": "28",
+            "category": "U9 Pojat",
+            "athleteId": "painija-000040",
+            "resultId": "tulos-000041"
+          },
+          {
+            "place": 2,
+            "name": "Robin Puolakka",
+            "club": "Heinolan Isku",
+            "weight": "28",
+            "category": "U9 Pojat",
+            "athleteId": "painija-000041",
+            "resultId": "tulos-000042"
+          },
+          {
+            "place": 3,
+            "name": "Eemil Hietala",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "28",
+            "category": "U9 Pojat",
+            "athleteId": "painija-000042",
+            "resultId": "tulos-000043"
+          },
+          {
+            "place": 1,
+            "name": "Joonas Rautiainen",
+            "club": "Helsingin Haka",
+            "weight": "30",
+            "category": "U9 Pojat",
+            "athleteId": "painija-000043",
+            "resultId": "tulos-000044"
+          },
+          {
+            "place": 2,
+            "name": "Iivo Rajala",
+            "club": "Tampereen Voimailijat",
+            "weight": "30",
+            "category": "U9 Pojat",
+            "athleteId": "painija-000044",
+            "resultId": "tulos-000045"
+          },
+          {
+            "place": 3,
+            "name": "Lukas Tilli",
+            "club": "Helsingin Haka",
+            "weight": "30",
+            "category": "U9 Pojat",
+            "athleteId": "painija-000019",
+            "resultId": "tulos-000046"
+          },
+          {
+            "place": 1,
+            "name": "Solomiia Mischenko",
+            "club": "Rauman Voimailijat",
+            "weight": "35",
+            "category": "U12 Tytöt",
+            "athleteId": "painija-000045",
+            "resultId": "tulos-000047"
+          },
+          {
+            "place": 2,
+            "name": "Matilda Latvaniemi",
+            "club": "Voikkaan Viesti",
+            "weight": "35",
+            "category": "U12 Tytöt",
+            "athleteId": "painija-000046",
+            "resultId": "tulos-000048"
+          },
+          {
+            "place": 3,
+            "name": "Emma Pahkala",
+            "club": "Voikkaan Viesti",
+            "weight": "35",
+            "category": "U12 Tytöt",
+            "athleteId": "painija-000047",
+            "resultId": "tulos-000049"
+          },
+          {
+            "place": 1,
+            "name": "Helmi Suomalainen",
+            "club": "Pilkanmaan Pilke",
+            "weight": "40",
+            "category": "U12 Tytöt",
+            "athleteId": "painija-000048",
+            "resultId": "tulos-000050"
+          },
+          {
+            "place": 2,
+            "name": "Veera Lönnqvist",
+            "club": "Voikkaan Viesti",
+            "weight": "40",
+            "category": "U12 Tytöt",
+            "athleteId": "painija-000049",
+            "resultId": "tulos-000051"
+          },
+          {
+            "place": 3,
+            "name": "Elina Kangasniemi",
+            "club": "Järvenpään Voimailijat",
+            "weight": "40",
+            "category": "U12 Tytöt",
+            "athleteId": "painija-000050",
+            "resultId": "tulos-000052"
+          },
+          {
+            "place": 1,
+            "name": "Iiro Lönnqvist",
+            "club": "Voikkaan Viesti",
+            "weight": "32",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000051",
+            "resultId": "tulos-000053"
+          },
+          {
+            "place": 2,
+            "name": "Oiva Alanen",
+            "club": "Järvenpään Voimailijat",
+            "weight": "32",
+            "category": "U12 Pojat",
+            "athleteId": "painija-001648",
+            "resultId": "tulos-000054"
+          },
+          {
+            "place": 3,
+            "name": "Noah Virtanen",
+            "club": "Rauman Voimailijat",
+            "weight": "32",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000053",
+            "resultId": "tulos-000055"
+          },
+          {
+            "place": 1,
+            "name": "Kasperi Kulmala",
+            "club": "Tampereen Painiseura",
+            "weight": "36",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000054",
+            "resultId": "tulos-000056"
+          },
+          {
+            "place": 2,
+            "name": "Mehmet Albayrak",
+            "club": "Vantaan Sampo",
+            "weight": "36",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000055",
+            "resultId": "tulos-000057"
+          },
+          {
+            "place": 3,
+            "name": "Vertti Savilampi",
+            "club": "Nummelan Voimailijat",
+            "weight": "36",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000056",
+            "resultId": "tulos-000058"
+          },
+          {
+            "place": 4,
+            "name": "Ahti Vuorinen",
+            "club": "Lappeenrannan Työväen Urheilijat",
+            "weight": "36",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000057",
+            "resultId": "tulos-000059"
+          },
+          {
+            "place": 1,
+            "name": "Elmeri Parkko",
+            "club": "Porvoon Weikot",
+            "weight": "38",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000058",
+            "resultId": "tulos-000060"
+          },
+          {
+            "place": 2,
+            "name": "Eeti Alanen",
+            "club": "Järvenpään Voimailijat",
+            "weight": "38",
+            "category": "U12 Pojat",
+            "athleteId": "painija-001666",
+            "resultId": "tulos-000061"
+          },
+          {
+            "place": 3,
+            "name": "Kosti Maula",
+            "club": "Tampereen Voimailijat",
+            "weight": "38",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000060",
+            "resultId": "tulos-000062"
+          },
+          {
+            "place": 4,
+            "name": "Urho Hirvelä",
+            "club": "Rauman Voimailijat",
+            "weight": "38",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000061",
+            "resultId": "tulos-000063"
+          },
+          {
+            "place": 5,
+            "name": "Panu Heino",
+            "club": "Lappeenrannan Työväen Urheilijat",
+            "weight": "38",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000062",
+            "resultId": "tulos-000064"
+          },
+          {
+            "place": 1,
+            "name": "Elmeri Kulmala",
+            "club": "Vantaan Sampo",
+            "weight": "42",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000063",
+            "resultId": "tulos-000065"
+          },
+          {
+            "place": 2,
+            "name": "Valeri Kusrati",
+            "club": "KooVee Tampere",
+            "weight": "42",
+            "category": "U12 Pojat",
+            "athleteId": "painija-002362",
+            "resultId": "tulos-000066"
+          },
+          {
+            "place": 3,
+            "name": "Leo Heikkinen",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "42",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000065",
+            "resultId": "tulos-000067"
+          },
+          {
+            "place": 1,
+            "name": "Michael Tukach",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "48",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000066",
+            "resultId": "tulos-000068"
+          },
+          {
+            "place": 2,
+            "name": "Oliver Isokorpi",
+            "club": "Porin Paini-Miehet",
+            "weight": "48",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000067",
+            "resultId": "tulos-000069"
+          },
+          {
+            "place": 3,
+            "name": "Oskari Lehmusvirta",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "48",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000068",
+            "resultId": "tulos-000070"
+          },
+          {
+            "place": 1,
+            "name": "Paavo Pihlajamäki",
+            "club": "Valkeakosken Koskenpojat",
+            "weight": "55",
+            "category": "U12 Pojat",
+            "athleteId": "painija-011791",
+            "resultId": "tulos-000071"
+          },
+          {
+            "place": 2,
+            "name": "Vladyslav Lobachov",
+            "club": "Rauman Voimailijat",
+            "weight": "55",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000070",
+            "resultId": "tulos-000072"
+          },
+          {
+            "place": 3,
+            "name": "Jaakko Mäkinen",
+            "club": "Valkeakosken Koskenpojat",
+            "weight": "55",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000071",
+            "resultId": "tulos-000073"
+          },
+          {
+            "place": 4,
+            "name": "Pyry Saarinen",
+            "club": "Tampereen Voimailijat",
+            "weight": "55",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000072",
+            "resultId": "tulos-000074"
+          },
+          {
+            "place": 1,
+            "name": "Emil Tenev",
+            "club": "Kauhavan Painimiehet",
+            "weight": "56",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000073",
+            "resultId": "tulos-000075"
+          },
+          {
+            "place": 2,
+            "name": "Mikael Pyysalo",
+            "club": "Tampereen Painiseura",
+            "weight": "56",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000037",
+            "resultId": "tulos-000076"
+          },
+          {
+            "place": 1,
+            "name": "Eetu Heikkilä",
+            "club": "Rauman Voimailijat",
+            "weight": "67",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000074",
+            "resultId": "tulos-000077"
+          },
+          {
+            "place": 2,
+            "name": "Nicke Stenberg",
+            "club": "Pilkanmaan Pilke",
+            "weight": "67",
+            "category": "U12 Pojat",
+            "athleteId": "painija-000036",
+            "resultId": "tulos-000078"
+          },
+          {
+            "place": 1,
+            "name": "Elias Lehtonen",
+            "club": "KooVee Tampere",
+            "weight": "41",
+            "category": "U15 Pojat",
+            "athleteId": "painija-002902",
+            "resultId": "tulos-000079"
+          },
+          {
+            "place": 2,
+            "name": "Valtteri Parkko",
+            "club": "Porvoon Weikot",
+            "weight": "41",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000076",
+            "resultId": "tulos-000080"
+          },
+          {
+            "place": 3,
+            "name": "Arttu Raninen",
+            "club": "Nurmon Jymy",
+            "weight": "41",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000077",
+            "resultId": "tulos-000081"
+          },
+          {
+            "place": 4,
+            "name": "Martin Kukkonen",
+            "club": "Heinolan Isku",
+            "weight": "41",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000078",
+            "resultId": "tulos-000082"
+          },
+          {
+            "place": 5,
+            "name": "Paavo Vesaluoma",
+            "club": "Muuramen Yritys",
+            "weight": "41",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000079",
+            "resultId": "tulos-000083"
+          },
+          {
+            "place": 1,
+            "name": "Vilho Huhtamäki",
+            "club": "Nurmon Jymy",
+            "weight": "44",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000080",
+            "resultId": "tulos-000084"
+          },
+          {
+            "place": 2,
+            "name": "Platon Balkin",
+            "club": "Rauman Voimailijat",
+            "weight": "44",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000081",
+            "resultId": "tulos-000085"
+          },
+          {
+            "place": 3,
+            "name": "Kalle-Albert Vesaluoma",
+            "club": "Muuramen Yritys",
+            "weight": "44",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000082",
+            "resultId": "tulos-000086"
+          },
+          {
+            "place": 1,
+            "name": "Jare Granat",
+            "club": "Tampereen Painiseura",
+            "weight": "48",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000083",
+            "resultId": "tulos-000087"
+          },
+          {
+            "place": 2,
+            "name": "Ilari Kulmala",
+            "club": "Tampereen Painiseura",
+            "weight": "48",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000084",
+            "resultId": "tulos-000088"
+          },
+          {
+            "place": 3,
+            "name": "Niilo Lappalainen",
+            "club": "Nokian Pyry",
+            "weight": "48",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000085",
+            "resultId": "tulos-000089"
+          },
+          {
+            "place": 4,
+            "name": "Rasmus Orell",
+            "club": "Nurmon Jymy",
+            "weight": "48",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000086",
+            "resultId": "tulos-000090"
+          },
+          {
+            "place": 1,
+            "name": "Lenni Kärpänen",
+            "club": "Vantaan Sampo",
+            "weight": "52",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000087",
+            "resultId": "tulos-000091"
+          },
+          {
+            "place": 2,
+            "name": "Viljami Räisänen",
+            "club": "Kurun Ryhti",
+            "weight": "52",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000088",
+            "resultId": "tulos-000092"
+          },
+          {
+            "place": 3,
+            "name": "Dimitrios Menegis",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "52",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000089",
+            "resultId": "tulos-000093"
+          },
+          {
+            "place": 4,
+            "name": "Joel Lehtinen",
+            "club": "Rauman Voimailijat",
+            "weight": "52",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000090",
+            "resultId": "tulos-000094"
+          },
+          {
+            "place": 1,
+            "name": "Oliver Siitarinen",
+            "club": "Vantaan Sampo",
+            "weight": "57",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000091",
+            "resultId": "tulos-000095"
+          },
+          {
+            "place": 2,
+            "name": "Stefan Dyachuk",
+            "club": "Rauman Voimailijat",
+            "weight": "57",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000092",
+            "resultId": "tulos-000096"
+          },
+          {
+            "place": 3,
+            "name": "Joonas Nurmi",
+            "club": "Rauman Voimailijat",
+            "weight": "57",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000093",
+            "resultId": "tulos-000097"
+          },
+          {
+            "place": 1,
+            "name": "Tahir Albayrak",
+            "club": "Vantaan Sampo",
+            "weight": "68",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000094",
+            "resultId": "tulos-000098"
+          },
+          {
+            "place": 2,
+            "name": "Tuukka Tarenius",
+            "club": "Voikkaan Viesti",
+            "weight": "68",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000095",
+            "resultId": "tulos-000099"
+          },
+          {
+            "place": 3,
+            "name": "Eetu Lehtonen",
+            "club": "KooVee Tampere",
+            "weight": "68",
+            "category": "U15 Pojat",
+            "athleteId": "painija-003028",
+            "resultId": "tulos-000100"
+          },
+          {
+            "place": 4,
+            "name": "Aaro Mäkelä",
+            "club": "Valkeakosken Koskenpojat",
+            "weight": "68",
+            "category": "U15 Pojat",
+            "athleteId": "painija-000097",
+            "resultId": "tulos-000101"
+          },
+          {
+            "place": 1,
+            "name": "Venla Vienola",
+            "club": "Jyvässeudun Paini-Ässät",
+            "weight": "53",
+            "category": "U17 Tytöt",
+            "athleteId": "painija-000035",
+            "resultId": "tulos-000102"
+          },
+          {
+            "place": 2,
+            "name": "Kerttu Uschanoff",
+            "club": "Tampereen Painiseura",
+            "weight": "53",
+            "category": "U17 Tytöt",
+            "athleteId": "painija-000034",
+            "resultId": "tulos-000103"
+          },
+          {
+            "place": 3,
+            "name": "Gabriela Syväterä",
+            "club": "Tampereen Painiseura",
+            "weight": "53",
+            "category": "U17 Tytöt",
+            "athleteId": "painija-000098",
+            "resultId": "tulos-000104"
+          },
+          {
+            "place": 1,
+            "name": "Viktor Tenev",
+            "club": "Nurmon Jymy",
+            "weight": "65",
+            "category": "U17 Pojat",
+            "athleteId": "painija-000099",
+            "resultId": "tulos-000105"
+          },
+          {
+            "place": 2,
+            "name": "Leevi Pahkala",
+            "club": "Voikkaan Viesti",
+            "weight": "65",
+            "category": "U17 Pojat",
+            "athleteId": "painija-000100",
+            "resultId": "tulos-000106"
+          },
+          {
+            "place": 3,
+            "name": "Perttu Haapala",
+            "club": "KooVee Tampere",
+            "weight": "65",
+            "category": "U17 Pojat",
+            "athleteId": "painija-000101",
+            "resultId": "tulos-000107"
+          }
+        ],
+        "skipped": 0,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/indexFIN.htm",
+        "textSource": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN78274944_tab.txt",
+        "fileInfo": "Yhteinen kilpailuaineisto · 2025-03-08_Tampere.txt",
+        "categoryStyles": {
+          "U9 Tytöt": "freestyle",
+          "U9 Pojat": "greco",
+          "U12 Tytöt": "freestyle",
+          "U12 Pojat": "greco",
+          "U15 Pojat": "greco",
+          "U17 Tytöt": "freestyle",
+          "U17 Pojat": "greco"
+        },
+        "styleSources": {
+          "U9 Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494441tlges.htm",
+          "U9 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494442tlges.htm",
+          "U12 Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494443tlges.htm",
+          "U12 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494444tlges.htm",
+          "U15 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494446tlges.htm",
+          "U17 Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494447tlges.htm",
+          "U17 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494448tlges.htm"
+        }
+      },
+      "after": {
+        "title": "Tampereen Voimailijat Ikäkausikilpailut",
+        "details": "Tampere, 8.3.2025",
+        "rows": [
+          {
+            "place": 1,
+            "name": "Milla Tilli",
+            "club": "Helsingin Haka",
+            "weight": "21",
+            "category": "U9 Tytöt"
+          },
+          {
+            "place": 1,
+            "name": "Meryem Albayrak",
+            "club": "Vantaan Sampo",
+            "weight": "32",
+            "category": "U9 Tytöt"
+          },
+          {
+            "place": 2,
+            "name": "Aino Ilkka",
+            "club": "Helsingin Haka",
+            "weight": "32",
+            "category": "U9 Tytöt"
+          },
+          {
+            "place": 1,
+            "name": "Benjamin Stykki",
+            "club": "Kirkkonummen Urheilijat",
+            "weight": "28",
+            "category": "U9 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Robin Puolakka",
+            "club": "Heinolan Isku",
+            "weight": "28",
+            "category": "U9 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Eemil Hietala",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "28",
+            "category": "U9 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Joonas Rautiainen",
+            "club": "Helsingin Haka",
+            "weight": "30",
+            "category": "U9 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Iivo Rajala",
+            "club": "Tampereen Voimailijat",
+            "weight": "30",
+            "category": "U9 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Lukas Tilli",
+            "club": "Helsingin Haka",
+            "weight": "30",
+            "category": "U9 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Solomiia Mischenko",
+            "club": "Rauman Voimailijat",
+            "weight": "35",
+            "category": "U12 Tytöt"
+          },
+          {
+            "place": 2,
+            "name": "Matilda Latvaniemi",
+            "club": "Voikkaan Viesti",
+            "weight": "35",
+            "category": "U12 Tytöt"
+          },
+          {
+            "place": 3,
+            "name": "Emma Pahkala",
+            "club": "Voikkaan Viesti",
+            "weight": "35",
+            "category": "U12 Tytöt"
+          },
+          {
+            "place": 1,
+            "name": "Helmi Suomalainen",
+            "club": "Pilkanmaan Pilke",
+            "weight": "40",
+            "category": "U12 Tytöt"
+          },
+          {
+            "place": 2,
+            "name": "Veera Lönnqvist",
+            "club": "Voikkaan Viesti",
+            "weight": "40",
+            "category": "U12 Tytöt"
+          },
+          {
+            "place": 3,
+            "name": "Elina Kangasniemi",
+            "club": "Järvenpään Voimailijat",
+            "weight": "40",
+            "category": "U12 Tytöt"
+          },
+          {
+            "place": 1,
+            "name": "Iiro Lönnqvist",
+            "club": "Voikkaan Viesti",
+            "weight": "32",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Oiva Alanen",
+            "club": "Järvenpään Voimailijat",
+            "weight": "32",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Noah Virtanen",
+            "club": "Rauman Voimailijat",
+            "weight": "32",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Kasperi Kulmala",
+            "club": "Tampereen Painiseura",
+            "weight": "36",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Mehmet Albayrak",
+            "club": "Vantaan Sampo",
+            "weight": "36",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Vertti Savilampi",
+            "club": "Nummelan Voimailijat",
+            "weight": "36",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 4,
+            "name": "Ahti Vuorinen",
+            "club": "Lappeenrannan Työväen Urheilijat",
+            "weight": "36",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Elmeri Parkko",
+            "club": "Porvoon Weikot",
+            "weight": "38",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Eeti Alanen",
+            "club": "Järvenpään Voimailijat",
+            "weight": "38",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Kosti Maula",
+            "club": "Tampereen Voimailijat",
+            "weight": "38",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 4,
+            "name": "Urho Hirvelä",
+            "club": "Rauman Voimailijat",
+            "weight": "38",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 5,
+            "name": "Panu Heino",
+            "club": "Lappeenrannan Työväen Urheilijat",
+            "weight": "38",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Elmeri Kulmala",
+            "club": "Vantaan Sampo",
+            "weight": "42",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Valeri Kusrati",
+            "club": "KooVee Tampere",
+            "weight": "42",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Leo Heikkinen",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "42",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Michael Tukach",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "48",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Oliver Isokorpi",
+            "club": "Porin Paini-Miehet",
+            "weight": "48",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Oskari Lehmusvirta",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "48",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Paavo Pihlajamäki",
+            "club": "Valkeakosken Koskenpojat",
+            "weight": "55",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Vladyslav Lobachov",
+            "club": "Rauman Voimailijat",
+            "weight": "55",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Jaakko Mäkinen",
+            "club": "Valkeakosken Koskenpojat",
+            "weight": "55",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 4,
+            "name": "Pyry Saarinen",
+            "club": "Tampereen Voimailijat",
+            "weight": "55",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Emil Tenev",
+            "club": "Kauhavan Painimiehet",
+            "weight": "56",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Mikael Pyysalo",
+            "club": "Tampereen Painiseura",
+            "weight": "56",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Eetu Heikkilä",
+            "club": "Rauman Voimailijat",
+            "weight": "67",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Nicke Stenberg",
+            "club": "Pilkanmaan Pilke",
+            "weight": "67",
+            "category": "U12 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Elias Lehtonen",
+            "club": "KooVee Tampere",
+            "weight": "41",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Valtteri Parkko",
+            "club": "Porvoon Weikot",
+            "weight": "41",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Arttu Raninen",
+            "club": "Nurmon Jymy",
+            "weight": "41",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 4,
+            "name": "Martin Kukkonen",
+            "club": "Heinolan Isku",
+            "weight": "41",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 5,
+            "name": "Paavo Vesaluoma",
+            "club": "Muuramen Yritys",
+            "weight": "41",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Vilho Huhtamäki",
+            "club": "Nurmon Jymy",
+            "weight": "44",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Platon Balkin",
+            "club": "Rauman Voimailijat",
+            "weight": "44",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Kalle-Albert Vesaluoma",
+            "club": "Muuramen Yritys",
+            "weight": "44",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Jare Granat",
+            "club": "Tampereen Painiseura",
+            "weight": "48",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Ilari Kulmala",
+            "club": "Tampereen Painiseura",
+            "weight": "48",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Niilo Lappalainen",
+            "club": "Nokian Pyry",
+            "weight": "48",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 4,
+            "name": "Rasmus Orell",
+            "club": "Nurmon Jymy",
+            "weight": "48",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Lenni Kärpänen",
+            "club": "Vantaan Sampo",
+            "weight": "52",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Viljami Räisänen",
+            "club": "Kurun Ryhti",
+            "weight": "52",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Dimitrios Menegis",
+            "club": "Ylä-Tikkurilan Kipinä",
+            "weight": "52",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 4,
+            "name": "Joel Lehtinen",
+            "club": "Rauman Voimailijat",
+            "weight": "52",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Oliver Siitarinen",
+            "club": "Vantaan Sampo",
+            "weight": "57",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Stefan Dyachuk",
+            "club": "Rauman Voimailijat",
+            "weight": "57",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Joonas Nurmi",
+            "club": "Rauman Voimailijat",
+            "weight": "57",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Tahir Albayrak",
+            "club": "Vantaan Sampo",
+            "weight": "68",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Tuukka Tarenius",
+            "club": "Voikkaan Viesti",
+            "weight": "68",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Eetu Lehtonen",
+            "club": "KooVee Tampere",
+            "weight": "68",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 4,
+            "name": "Aaro Mäkelä",
+            "club": "Valkeakosken Koskenpojat",
+            "weight": "68",
+            "category": "U15 Pojat"
+          },
+          {
+            "place": 1,
+            "name": "Venla Vienola",
+            "club": "Jyvässeudun Paini-Ässät",
+            "weight": "53",
+            "category": "U17 Tytöt"
+          },
+          {
+            "place": 2,
+            "name": "Kerttu Uschanoff",
+            "club": "Tampereen Painiseura",
+            "weight": "53",
+            "category": "U17 Tytöt"
+          },
+          {
+            "place": 3,
+            "name": "Gabriela Syväterä",
+            "club": "Tampereen Painiseura",
+            "weight": "53",
+            "category": "U17 Tytöt"
+          },
+          {
+            "place": 1,
+            "name": "Viktor Tenev",
+            "club": "Nurmon Jymy",
+            "weight": "65",
+            "category": "U17 Pojat"
+          },
+          {
+            "place": 2,
+            "name": "Leevi Pahkala",
+            "club": "Voikkaan Viesti",
+            "weight": "65",
+            "category": "U17 Pojat"
+          },
+          {
+            "place": 3,
+            "name": "Perttu Haapala",
+            "club": "KooVee Tampere",
+            "weight": "65",
+            "category": "U17 Pojat"
+          }
+        ],
+        "skipped": 0,
+        "importNotes": [
+          {
+            "category": "Ystävyysottelu",
+            "weight": "53",
+            "excluded": 2,
+            "unranked": 0,
+            "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN78274944_tab.txt"
+          },
+          {
+            "category": "Ystävyysottelu pojat",
+            "weight": "56",
+            "excluded": 2,
+            "unranked": 0,
+            "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN78274944_tab.txt"
+          }
+        ],
+        "categoryStyles": {
+          "U9 Tytöt": "freestyle",
+          "U9 Pojat": "greco",
+          "U12 Tytöt": "freestyle",
+          "U12 Pojat": "greco",
+          "U15 Pojat": "greco",
+          "U17 Tytöt": "freestyle",
+          "U17 Pojat": "greco"
+        },
+        "styleSources": {
+          "U9 Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494441tlges.htm",
+          "U9 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494442tlges.htm",
+          "U12 Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494443tlges.htm",
+          "U12 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494444tlges.htm",
+          "U15 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494446tlges.htm",
+          "U17 Tytöt": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494447tlges.htm",
+          "U17 Pojat": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/FIN7827494448tlges.htm"
+        },
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/indexFIN.htm",
+        "textSource": "",
+        "fileInfo": "LigaDB · ajastettu haku · 2026-11-22"
+      }
+    },
+    {
+      "id": "c2ed6c03830da8bc4eacc5dce8f44410bf4cc513baf4c7c77427e1013365379e",
+      "kind": "competition",
+      "target": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
+      "beforeHash": "f9c00ab4cfad2dfa4a2bbbd9d98c7e716c514c267a199e10d2d369760fe42012",
+      "afterHash": "45ec2fdbfcd4124558b1f309cbd1611434305b88491c7d378e842b73ce77a970",
+      "status": "pending",
+      "createdAt": "2026-11-22T03:16:17.229Z",
+      "lastSeen": "2026-11-22T03:16:17.229Z",
+      "reason": "Kilpailun sijoitukset tai tiedot muuttuivat. Vanhat tulokset säilytettiin.",
+      "before": {
+        "title": "TaPs painit 4.12.2025",
+        "details": "Tampere, 4.12.2025",
+        "rows": [
+          {
+            "place": 1,
+            "name": "Keyan Nazari",
+            "club": "Tampereen Painiseura",
+            "weight": "23",
+            "category": "Pojat U12",
+            "athleteId": "painija-000469",
+            "resultId": "tulos-000480"
+          },
+          {
+            "place": 2,
+            "name": "Topias Miikki",
+            "club": "Tampereen Painiseura",
+            "weight": "23",
+            "category": "Pojat U12",
+            "athleteId": "painija-000470",
+            "resultId": "tulos-000481"
+          },
+          {
+            "place": 1,
+            "name": "Noel Kontuniemi",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12",
+            "athleteId": "painija-000460",
+            "resultId": "tulos-000482"
+          },
+          {
+            "place": 2,
+            "name": "Alex Ahonen",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12",
+            "athleteId": "painija-000458",
+            "resultId": "tulos-000483"
+          },
+          {
+            "place": 3,
+            "name": "Daniel Karimi",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12",
+            "athleteId": "painija-000452",
+            "resultId": "tulos-000484"
+          },
+          {
+            "place": 4,
+            "name": "Elias Kannisto",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12",
+            "athleteId": "painija-000453",
+            "resultId": "tulos-000485"
+          },
+          {
+            "place": 5,
+            "name": "Alvar Lehtonen",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12",
+            "athleteId": "painija-000471",
+            "resultId": "tulos-000486"
+          },
+          {
+            "place": 1,
+            "name": "Matias Nieminen",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat U12",
+            "athleteId": "painija-000472",
+            "resultId": "tulos-000487"
+          },
+          {
+            "place": 2,
+            "name": "Elias Seifi",
+            "club": "KOOVEE",
+            "weight": "37",
+            "category": "Pojat U12",
+            "athleteId": "painija-001308",
+            "resultId": "tulos-000488"
+          },
+          {
+            "place": 3,
+            "name": "Darin Zarai",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat U12",
+            "athleteId": "painija-000445",
+            "resultId": "tulos-000489"
+          },
+          {
+            "place": 4,
+            "name": "Kaarlo Hyödynmaa",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat U12",
+            "athleteId": "painija-000474",
+            "resultId": "tulos-000490"
+          },
+          {
+            "place": 5,
+            "name": "Darek Kampus",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat U12",
+            "athleteId": "painija-000475",
+            "resultId": "tulos-000491"
+          },
+          {
+            "place": 1,
+            "name": "Leo Kannisto",
+            "club": "Tampereen Painiseura",
+            "weight": "41",
+            "category": "Pojat U12",
+            "athleteId": "painija-000444",
+            "resultId": "tulos-000492"
+          },
+          {
+            "place": 2,
+            "name": "Feliks Tuomonen",
+            "club": "Tampereen Painiseura",
+            "weight": "41",
+            "category": "Pojat U12",
+            "athleteId": "painija-000476",
+            "resultId": "tulos-000493"
+          },
+          {
+            "place": 3,
+            "name": "Frans Tuomonen",
+            "club": "Tampereen Painiseura",
+            "weight": "41",
+            "category": "Pojat U12",
+            "athleteId": "painija-000477",
+            "resultId": "tulos-000494"
+          },
+          {
+            "place": 1,
+            "name": "Olavi Vartia",
+            "club": "Tampereen Painiseura",
+            "weight": "52",
+            "category": "Pojat U12",
+            "athleteId": "painija-000478",
+            "resultId": "tulos-000495"
+          },
+          {
+            "place": 2,
+            "name": "Kaspar Kampus",
+            "club": "Tampereen Painiseura",
+            "weight": "52",
+            "category": "Pojat U12",
+            "athleteId": "painija-000479",
+            "resultId": "tulos-000496"
+          },
+          {
+            "place": 3,
+            "name": "Niyaz Nazari",
+            "club": "Tampereen Painiseura",
+            "weight": "52",
+            "category": "Pojat U12",
+            "athleteId": "painija-000480",
+            "resultId": "tulos-000497"
+          },
+          {
+            "place": 1,
+            "name": "Kasperi Kulmala",
+            "club": "Tampereen Painiseura",
+            "weight": "40",
+            "category": "Tytöt ja pojat U17",
+            "athleteId": "painija-000054",
+            "resultId": "tulos-000498"
+          },
+          {
+            "place": 2,
+            "name": "Nathan Czerniawski",
+            "club": "Janakkalan Paini-Ilves",
+            "weight": "40",
+            "category": "Tytöt ja pojat U17",
+            "athleteId": "painija-000481",
+            "resultId": "tulos-000499"
+          },
+          {
+            "place": 3,
+            "name": "Eelis Wihinen",
+            "club": "Tampereen Painiseura",
+            "weight": "40",
+            "category": "Tytöt ja pojat U17",
+            "athleteId": "painija-000466",
+            "resultId": "tulos-000500"
+          },
+          {
+            "place": 4,
+            "name": "Joel Olan",
+            "club": "Tampereen Painiseura",
+            "weight": "40",
+            "category": "Tytöt ja pojat U17",
+            "athleteId": "painija-000448",
+            "resultId": "tulos-000501"
+          },
+          {
+            "place": 1,
+            "name": "Alba Czerniawska",
+            "club": "Janakkalan Paini-Ilves",
+            "weight": "48",
+            "category": "Tytöt ja pojat U17",
+            "athleteId": "painija-000482",
+            "resultId": "tulos-000502"
+          },
+          {
+            "place": 2,
+            "name": "Leo Niukkonen",
+            "club": "Tampereen Painiseura",
+            "weight": "48",
+            "category": "Tytöt ja pojat U17",
+            "athleteId": "painija-000451",
+            "resultId": "tulos-000503"
+          },
+          {
+            "place": 1,
+            "name": "Ilari Kulmala",
+            "club": "Tampereen Painiseura",
+            "weight": "57",
+            "category": "Tytöt ja pojat U17",
+            "athleteId": "painija-000084",
+            "resultId": "tulos-000504"
+          },
+          {
+            "place": 2,
+            "name": "Jasmin Eronen",
+            "club": "Tampereen Painiseura",
+            "weight": "57",
+            "category": "Tytöt ja pojat U17",
+            "athleteId": "painija-000461",
+            "resultId": "tulos-000505"
+          },
+          {
+            "place": 3,
+            "name": "Blanca Czerniawska",
+            "club": "Janakkalan Paini-Ilves",
+            "weight": "57",
+            "category": "Tytöt ja pojat U17",
+            "athleteId": "painija-000483",
+            "resultId": "tulos-000506"
+          },
+          {
+            "place": 1,
+            "name": "Hilda Vartia",
+            "club": "Tampereen Painiseura",
+            "weight": "25",
+            "category": "Tytöt ja Pojat U12",
+            "athleteId": "painija-000484",
+            "resultId": "tulos-000507"
+          },
+          {
+            "place": 2,
+            "name": "Kaihan Nabizada",
+            "club": "Tampereen Painiseura",
+            "weight": "25",
+            "category": "Tytöt ja Pojat U12",
+            "athleteId": "painija-000485",
+            "resultId": "tulos-000508"
+          },
+          {
+            "place": 3,
+            "name": "Rohan Nabizada",
+            "club": "Tampereen Painiseura",
+            "weight": "25",
+            "category": "Tytöt ja Pojat U12",
+            "athleteId": "painija-000486",
+            "resultId": "tulos-000509"
+          },
+          {
+            "place": 4,
+            "name": "Joona Pekkanen",
+            "club": "Tampereen Painiseura",
+            "weight": "25",
+            "category": "Tytöt ja Pojat U12",
+            "athleteId": "painija-000454",
+            "resultId": "tulos-000510"
+          },
+          {
+            "place": 1,
+            "name": "Hugo Leponen",
+            "club": "Tampereen Painiseura",
+            "weight": "26",
+            "category": "Tytöt ja Pojat U12",
+            "athleteId": "painija-000456",
+            "resultId": "tulos-000511"
+          },
+          {
+            "place": 2,
+            "name": "Veeti Försti",
+            "club": "Tampereen Painiseura",
+            "weight": "26",
+            "category": "Tytöt ja Pojat U12",
+            "athleteId": "painija-000487",
+            "resultId": "tulos-000512"
+          },
+          {
+            "place": 3,
+            "name": "Meri Eronen",
+            "club": "Tampereen Painiseura",
+            "weight": "26",
+            "category": "Tytöt ja Pojat U12",
+            "athleteId": "painija-000488",
+            "resultId": "tulos-000513"
+          },
+          {
+            "place": 4,
+            "name": "Otso Koskela",
+            "club": "Tampereen Painiseura",
+            "weight": "26",
+            "category": "Tytöt ja Pojat U12",
+            "athleteId": "painija-000489",
+            "resultId": "tulos-000514"
+          }
+        ],
+        "skipped": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
+        "textSource": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN1697177983_tab.txt",
+        "fileInfo": "Yhteinen kilpailuaineisto · 2025-12-04_Tampere.txt",
+        "categoryStyles": {
+          "Pojat U12": "freestyle",
+          "Tytöt ja pojat U17": "freestyle",
+          "Tytöt ja Pojat U12": "freestyle"
+        },
+        "styleSources": {
+          "Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN16971779831tlges.htm",
+          "Tytöt ja pojat U17": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN16971779832tlges.htm",
+          "Tytöt ja Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN16971779835tlges.htm"
+        }
+      },
+      "after": {
+        "title": "TaPs painit 4.12.2025",
+        "details": "Tampere, 4.12.2025",
+        "rows": [
+          {
+            "place": 1,
+            "name": "Kasperi Kulmala",
+            "club": "Tampereen Painiseura",
+            "weight": "40",
+            "category": "Tytöt ja pojat U17"
+          },
+          {
+            "place": 2,
+            "name": "Nathan Czerniawski",
+            "club": "Janakkalan Paini-Ilves",
+            "weight": "40",
+            "category": "Tytöt ja pojat U17"
+          },
+          {
+            "place": 3,
+            "name": "Eelis Wihinen",
+            "club": "Tampereen Painiseura",
+            "weight": "40",
+            "category": "Tytöt ja pojat U17"
+          },
+          {
+            "place": 4,
+            "name": "Joel Olan",
+            "club": "Tampereen Painiseura",
+            "weight": "40",
+            "category": "Tytöt ja pojat U17"
+          },
+          {
+            "place": 1,
+            "name": "Alba Czerniawska",
+            "club": "Janakkalan Paini-Ilves",
+            "weight": "48",
+            "category": "Tytöt ja pojat U17"
+          },
+          {
+            "place": 2,
+            "name": "Leo Niukkonen",
+            "club": "Tampereen Painiseura",
+            "weight": "48",
+            "category": "Tytöt ja pojat U17"
+          },
+          {
+            "place": 1,
+            "name": "Ilari Kulmala",
+            "club": "Tampereen Painiseura",
+            "weight": "57",
+            "category": "Tytöt ja pojat U17"
+          },
+          {
+            "place": 2,
+            "name": "Jasmin Eronen",
+            "club": "Tampereen Painiseura",
+            "weight": "57",
+            "category": "Tytöt ja pojat U17"
+          },
+          {
+            "place": 3,
+            "name": "Blanca Czerniawska",
+            "club": "Janakkalan Paini-Ilves",
+            "weight": "57",
+            "category": "Tytöt ja pojat U17"
+          },
+          {
+            "place": 1,
+            "name": "Keyan Nazari",
+            "club": "Tampereen Painiseura",
+            "weight": "23",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 2,
+            "name": "Topias Miikki",
+            "club": "Tampereen Painiseura",
+            "weight": "23",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 1,
+            "name": "Noel Kontuniemi",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 2,
+            "name": "Alex Ahonen",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 3,
+            "name": "Daniel Karimi",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 4,
+            "name": "Elias Kannisto",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 5,
+            "name": "Alvar Lehtonen",
+            "club": "Tampereen Painiseura",
+            "weight": "30",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 1,
+            "name": "Matias Nieminen",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 2,
+            "name": "Elias Seifi",
+            "club": "KOOVEE",
+            "weight": "37",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 3,
+            "name": "Darin Zarai",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 4,
+            "name": "Kaarlo Hyödynmaa",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 5,
+            "name": "Darek Kampus",
+            "club": "Tampereen Painiseura",
+            "weight": "37",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 1,
+            "name": "Leo Kannisto",
+            "club": "Tampereen Painiseura",
+            "weight": "41",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 2,
+            "name": "Feliks Tuomonen",
+            "club": "Tampereen Painiseura",
+            "weight": "41",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 3,
+            "name": "Frans Tuomonen",
+            "club": "Tampereen Painiseura",
+            "weight": "41",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 1,
+            "name": "Olavi Vartia",
+            "club": "Tampereen Painiseura",
+            "weight": "52",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 2,
+            "name": "Kaspar Kampus",
+            "club": "Tampereen Painiseura",
+            "weight": "52",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 3,
+            "name": "Niyaz Nazari",
+            "club": "Tampereen Painiseura",
+            "weight": "52",
+            "category": "Pojat U12"
+          },
+          {
+            "place": 1,
+            "name": "Hilda Vartia",
+            "club": "Tampereen Painiseura",
+            "weight": "25",
+            "category": "Tytöt ja Pojat U12"
+          },
+          {
+            "place": 2,
+            "name": "Kaihan Nabizada",
+            "club": "Tampereen Painiseura",
+            "weight": "25",
+            "category": "Tytöt ja Pojat U12"
+          },
+          {
+            "place": 3,
+            "name": "Rohan Nabizada",
+            "club": "Tampereen Painiseura",
+            "weight": "25",
+            "category": "Tytöt ja Pojat U12"
+          },
+          {
+            "place": 4,
+            "name": "Joona Pekkanen",
+            "club": "Tampereen Painiseura",
+            "weight": "25",
+            "category": "Tytöt ja Pojat U12"
+          },
+          {
+            "place": 1,
+            "name": "Hugo Leponen",
+            "club": "Tampereen Painiseura",
+            "weight": "26",
+            "category": "Tytöt ja Pojat U12"
+          },
+          {
+            "place": 2,
+            "name": "Veeti Försti",
+            "club": "Tampereen Painiseura",
+            "weight": "26",
+            "category": "Tytöt ja Pojat U12"
+          },
+          {
+            "place": 3,
+            "name": "Meri Eronen",
+            "club": "Tampereen Painiseura",
+            "weight": "26",
+            "category": "Tytöt ja Pojat U12"
+          },
+          {
+            "place": 4,
+            "name": "Otso Koskela",
+            "club": "Tampereen Painiseura",
+            "weight": "26",
+            "category": "Tytöt ja Pojat U12"
+          }
+        ],
+        "skipped": 0,
+        "categoryStyles": {
+          "Tytöt ja pojat U17": "freestyle",
+          "Pojat U12": "freestyle",
+          "Tytöt ja Pojat U12": "freestyle"
+        },
+        "styleSources": {
+          "Tytöt ja pojat U17": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN16971779832tlges.htm",
+          "Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN16971779831tlges.htm",
+          "Tytöt ja Pojat U12": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/FIN16971779835tlges.htm"
+        },
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm",
+        "textSource": "",
+        "fileInfo": "LigaDB · ajastettu haku · 2026-11-22"
       }
     }
   ],
