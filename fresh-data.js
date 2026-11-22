@@ -7,6 +7,16 @@
   const stamp = () => Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
   const version = stamp();
   const refreshLink = document.querySelector('#refresh-data');
+  const refreshKey = token => 'paini-refresh:' + location.pathname + ':' + token;
+  function savedRefresh() {
+    try {
+      const token = new URL(location.href).searchParams.get('paivitys');
+      if (!token) return null;
+      const value = JSON.parse(sessionStorage.getItem(refreshKey(token)) || 'null');
+      if (value?.version !== 1 || value.path !== location.pathname || !Number.isFinite(value.at) || Date.now() - value.at > 30 * 60 * 1000 || value.at > Date.now()) return null;
+      return {token, ...value};
+    } catch { return null; }
+  }
   function setRefreshAddress() {
     const address = new URL(window.location.href);
     address.searchParams.delete(retryParameter);
@@ -16,7 +26,18 @@
   if (refreshLink) {
     setRefreshAddress();
     refreshLink.addEventListener('focus',setRefreshAddress);
-    refreshLink.addEventListener('click',setRefreshAddress);
+    refreshLink.addEventListener('click', event => {
+      setRefreshAddress();
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      try {
+        const state = window.PAINI_PAGE_STATE?.capture();
+        if (!state) return;
+        const token = new URL(refreshLink.href).searchParams.get('paivitys');
+        const previous = savedRefresh();
+        sessionStorage.setItem(refreshKey(token), JSON.stringify({version:1, path:location.pathname, at:Date.now(), state, scroll:{x:window.scrollX,y:window.scrollY}}));
+        if (previous) sessionStorage.removeItem(refreshKey(previous.token));
+      } catch { /* Refresh still works if browser storage is unavailable. */ }
+    });
   }
   // Refresh the stylesheet too, even if a previous HTML version used an old URL.
   document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
@@ -68,6 +89,14 @@
       if (status) { status.hidden = true; status.textContent = ''; }
       await load('script.js?fresh='+version);
       window.dispatchEvent(new Event('paini-data-ready'));
+      const saved = savedRefresh();
+      if (saved && await window.PAINI_PAGE_STATE?.restore(saved.state)) {
+        try { sessionStorage.removeItem(refreshKey(saved.token)); } catch {}
+        const {x,y} = saved.scroll || {};
+        if (Number.isFinite(x) && Number.isFinite(y) && x >= 0 && y >= 0) {
+          requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo({left:x,top:y,behavior:'instant'})));
+        }
+      }
     } catch (error) {
       if (status) {
         status.hidden = false; status.dataset.kind = 'error';

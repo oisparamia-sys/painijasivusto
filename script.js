@@ -2,6 +2,7 @@
 const $ = selector => document.querySelector(selector);
 const boutsBase = new URL('.', document.currentScript?.src || location.href);
 let boutsLoading = null;
+let pendingBoutsState = null;
 function loadBouts() {
   if (boutsLoading) return boutsLoading;
   const notice = $('#bouts-load-status'), retry = $('#bouts-retry');
@@ -13,7 +14,10 @@ function loadBouts() {
     script.onload = () => {
       try {
         if (!window.PAINI_BOUTS) throw Error('Ottelukokeilu puuttuu');
-        Promise.resolve(window.PAINI_BOUTS.init(sharedData,window.PainiRegistry)).then(resolve,reject);
+        Promise.resolve(window.PAINI_BOUTS.init(sharedData,window.PainiRegistry)).then(() => {
+          if (pendingBoutsState) { window.PAINI_BOUTS.restore(pendingBoutsState); pendingBoutsState = null; }
+          resolve(true);
+        },reject).catch(reject);
       } catch (error) { script.remove(); reject(error); }
     };
     script.onerror = () => {script.remove();reject(Error('Ottelukokeilu ei latautunut'));};
@@ -22,6 +26,7 @@ function loadBouts() {
     boutsLoading = null;
     if (notice) { notice.hidden=false; notice.textContent='Ottelukokeilua ei voitu avata. Tarkista verkkoyhteys ja että käytössä on uusin sivuversio. Tuloshaku toimii edelleen.'; }
     if (retry) retry.hidden=false;
+    return false;
   });
   return boutsLoading;
 }
@@ -109,8 +114,8 @@ function refreshFilters() {
       ? "Valittuna: " + items[0].title + (items[0].details ? " · " + items[0].details : "")
       : "Haussa mukana " + items.length + " kilpailua.";
   $("#data-summary").textContent = sharedCompetitions.length + " yhteistä kilpailua, " +
-    sharedCompetitions.reduce((sum, item) => sum + item.rows.length, 0) +
-    " tulosta.";
+    sharedCompetitions.reduce((sum, item) => sum + item.rows.length, 0).toLocaleString("fi-FI") +
+    " kilpailusijoitusta.";
   const sourceLine = $("#source-line");
   sourceLine.replaceChildren();
   if (items.length === 1 && items[0].source) {
@@ -208,7 +213,7 @@ function render(keepPage = false) {
       fragment.append(row);
   });
   $("#results").replaceChildren(fragment);
-  $("#count").textContent = count === 1 ? "1 tulos" : count + " tulosta";
+  $("#count").textContent = count === 1 ? "1 kilpailusijoitus" : count.toLocaleString("fi-FI") + " kilpailusijoitusta";
   $("#empty").hidden = count > 0;
   if (profileState) renderProfile();
   // The directory has its own filters and is rendered when its tab is opened.
@@ -796,3 +801,31 @@ function originalResultsLink(item) {
     const a=document.createElement("a");a.href=url.href;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Katso alkuperäinen tulossivu ↗";return a;
   }catch{return null;}
 }
+
+// One refresh in this tab may restore UI selections; shared profile links stay independent.
+const refreshResultFields = ["competition", "competition-search", "result-style", "result-year", "result-sort", "search", "club", "category"];
+window.PAINI_PAGE_STATE = Object.freeze({
+  capture() {
+    if (profileState) return null;
+    const view = !$("#bouts-view").hidden ? "bouts" : !$("#competition-view").hidden ? "competitions" : "results";
+    return {view, bouts:pendingBoutsState || window.PAINI_BOUTS?.getState(), results:Object.fromEntries(refreshResultFields.map(id=>[id,document.getElementById(id).value])), page:resultsPage,
+      directory:{query:$("#competition-query").value,sort:$("#competition-sort").value}};
+  },
+  async restore(state) {
+    if (!state || !["results", "competitions", "bouts"].includes(state.view)) return false;
+    if (new URLSearchParams(location.hash.slice(1)).has("painija")) return false;
+    const saved = state.results || {};
+    const set = id => {
+      const value=saved[id],element=document.getElementById(id);
+      if (typeof value === "string") element.value=value;
+    };
+    ["competition", "result-style", "result-year"].forEach(set);refreshFilters();
+    ["result-sort", "search", "club", "category", "competition-search"].forEach(set);
+    resultsPage=Number.isSafeInteger(state.page)&&state.page>=0?state.page:0;render(true);
+    if (typeof state.directory?.query === "string") $("#competition-query").value=state.directory.query;
+    if (typeof state.directory?.sort === "string") $("#competition-sort").value=state.directory.sort;
+    if (state.view === "bouts") pendingBoutsState=state.bouts || null;
+    showView(state.view,false,false);
+    return state.view === "bouts" ? await loadBouts() : true;
+  }
+});

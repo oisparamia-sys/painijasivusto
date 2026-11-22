@@ -1,6 +1,7 @@
 "use strict";
 (() => {
   let initialized = false,trial=null,dataPromise=null;
+  let readState=()=>null,restoreState=()=>{};
   const dataBase=new URL('.',document.currentScript?.src || location.href);
   function unpack(value) {
     if(value?.version!==3 || !['competitions','participants','matches','excluded'].every(k=>Array.isArray(value[k])))throw Error('Otteluaineiston muoto ei kelpaa');
@@ -240,7 +241,7 @@
       const option=document.createElement('option');option.value=competition.key;option.textContent=competition.title+' · '+competition.details;selectCompetition.append(option);
     }
     selectCompetition.addEventListener('change',()=>{scope=selectCompetition.value;pa.close();pb.close();$('#bouts-suggestions-status').textContent='Kilpailurajaus päivitetty.';render();});
-    $('#bouts-coverage-summary').textContent=prepared.competitions.length+' kilpailua vuosilta '+Math.min(...prepared.competitions.map(c=>c.year))+'–'+Math.max(...prepared.competitions.map(c=>c.year))+'. Mukana '+prepared.matches.length+' ottelua ja '+prepared.people.length+' painijaa. Tämä ei vielä ole painijoiden koko otteluhistoria.';
+    $('#bouts-coverage-summary').textContent=prepared.competitions.length+' kilpailua vuosilta '+Math.min(...prepared.competitions.map(c=>c.year))+'–'+Math.max(...prepared.competitions.map(c=>c.year))+'. Mukana '+prepared.matches.length.toLocaleString('fi-FI')+' ottelua ja '+prepared.people.length+' painijaa. Tämä ei vielä ole painijoiden koko otteluhistoria.';
     const coverage=$('#bouts-coverage-list');coverage.replaceChildren();
     for(const competition of prepared.competitions) {
       const li=document.createElement('li');li.textContent=(competition.checkedAt?'Tarkistettu '+dateFormatter.format(new Date(competition.checkedAt))+' · ':'')+competition.title+' · '+competition.details+' — mukana '+competition.stats.accepted+' ottelua, pois jäi '+competition.stats.excluded+' ottelua. Vain toisessa luettelossa '+competition.stats.unmatchedNumbered+', muita lähdehuomioita '+competition.stats.unreadable+'.';coverage.append(li);
@@ -269,7 +270,22 @@
       scope=match.competition.key;$('#bouts-competition').value=scope;
       a=match.red.id;b=match.blue.id;pa.set(people.get(a));pb.set(people.get(b));setMode('pair');$('#bouts-suggestions-status').textContent='Esimerkkipari valittu.';
     });
+    readState=()=>({mode,a,b,scope,queryA:$('#bout-search-a').value,queryB:$('#bout-search-b').value});
+    restoreState=state=>{
+      if (!state || typeof state !== 'object') return;
+      const resolve=id=>typeof id==='string'?registry.resolve(data,id):null;
+      a=resolve(state.a);b=resolve(state.b);
+      if(!people.has(a))a=null;if(!people.has(b))b=null;
+      scope=prepared.competitions.some(c=>c.key===state.scope)?state.scope:'';
+      selectCompetition.value=scope;pa.set(people.get(a));pb.set(people.get(b));
+      if(!state.a&&typeof state.queryA==='string')$('#bout-search-a').value=state.queryA;
+      if(!state.b&&typeof state.queryB==='string')$('#bout-search-b').value=state.queryB;
+      setMode(state.mode==='pair'?'pair':'single');
+      const missing=(state.a&&!a)||(state.b&&!b);
+      if(missing)$('#bouts-suggestions-status').textContent='Aiemmin valittua painijaa ei löydy päivitetystä otteluaineistosta. Valitse painija uudelleen.';
+      else if(state.scope&&!scope)$('#bouts-suggestions-status').textContent='Aiempi kilpailurajaus ei ole saatavilla. Näytetään kaikki mukana olevat kilpailut.';
+    };
     initialized=true;$('#bouts-load-status').hidden=true;$('#bouts-retry').hidden=true;$('#bouts-app').hidden=false;render();
   }
-  window.PAINI_BOUTS=Object.freeze({init});
+  window.PAINI_BOUTS=Object.freeze({init,getState:()=>readState(),restore:state=>restoreState(state)});
 })();

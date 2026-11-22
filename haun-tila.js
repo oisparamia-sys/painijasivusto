@@ -47,7 +47,7 @@
     const box=$('#data-refresh-box'), notice=$('#data-refresh-status');
     if (!box || !notice) return;
     const available=hasNewData(data); box.dataset.updateAvailable=String(available);
-    if (available) notice.textContent='Uusi aineisto on saatavilla: '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' tulosta. Paina Päivitä tiedot.';
+    if (available) notice.textContent='Uusi aineisto on saatavilla: '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' kilpailusijoitusta. Paina Päivitä tiedot.';
     else if (checkFailed) notice.textContent='Päivityksiä ei voitu tarkistaa. Voit yrittää ladata uusimman sivun Päivitä tiedot -painikkeesta.';
     else if (report && data?.competitions) notice.textContent='Käytössä on uusin tarkistettu aineisto. Tarkistettu '+time(report.checkedAt)+'.';
   }
@@ -82,7 +82,7 @@
     if(publicInfo&&data?.competitions){
       const count=data.competitions.reduce((n,c)=>n+c.rows.length,0);
       const matches=report&&!hasNewData(data)&&report.competitions===data.competitions.length&&report.results===count;
-      publicInfo.textContent=data.competitions.length+' kilpailua · '+count.toLocaleString('fi-FI')+' tulosta. Aineistotiedosto tallennettu: '+time(data.exportedAt||data.updatedAt)+'. '+(matches?'Automaattihaku tarkistettu: '+time(report.checkedAt)+'.':report?(hasNewData(data)?'Uusi aineisto on saatavilla. Paina sivun yläosan Päivitä tiedot -painiketta.':'Hakutiedot päivittyvät julkaisun valmistuttua.'):'');
+      publicInfo.textContent=data.competitions.length+' kilpailua · '+count.toLocaleString('fi-FI')+' kilpailusijoitusta. Aineistotiedosto tallennettu: '+time(data.exportedAt||data.updatedAt)+'. '+(matches?'Automaattihaku tarkistettu: '+time(report.checkedAt)+'.':report?(hasNewData(data)?'Uusi aineisto on saatavilla. Paina sivun yläosan Päivitä tiedot -painiketta.':'Hakutiedot päivittyvät julkaisun valmistuttua.'):'');
     }
     const summary=$('#scan-report-summary');if(!summary)return;
     if(!report){summary.textContent=missing?'Hakuraporttia ei vielä ole saatavilla. Käynnistä päivitetty automaattihaku kerran GitHub Actionsissa.':'Luetaan hakuraporttia…';return;}
