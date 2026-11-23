@@ -224,7 +224,7 @@
         const row=document.createElement('tr');row.dataset.boutId=match.id;
         const values=[match.competition.title+' · '+match.competition.details,match.round+' · '+match.category+' '+match.weight+' kg',person.name,other.name,match.identityConflict?'Erota samannimiset':match.winner.id===a?'Voitto':'Tappio',labels[match.code],points?points.join('–'):'Pisteitä ei ilmoitettu'];
         values.forEach((value,index)=>{
-          const cell=document.createElement('td');cell.textContent=value;
+          const cell=document.createElement('td');cell.textContent=value;if(index<4)cell.translate='no';
           if(index===4) {const badge=document.createElement('span');badge.className=match.identityConflict?'':match.winner.id===a?'bout-win':'bout-loss';badge.textContent=value;cell.replaceChildren(badge);}
           row.append(cell);
         });

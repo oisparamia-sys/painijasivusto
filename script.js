@@ -207,7 +207,7 @@ function render(keepPage = false) {
       [result.club, result.category, result.weight + " kg", item.title, item.details || "–", styleLabel(item, result)]
         .forEach((value,index) => {
           const td = document.createElement("td");
-          td.textContent = value; if(index === 3 && partialNotes(item).length)td.append(partialBadge(item)); row.append(td);
+          td.textContent = value; if(index < 5){const original=document.createElement("span");original.translate="no";original.textContent=value;td.replaceChildren(original);} if(index === 3 && partialNotes(item).length)td.append(partialBadge(item)); row.append(td);
         });
       labelResultRow(row, "results");
       fragment.append(row);
@@ -245,7 +245,7 @@ function openProfile(athleteId, opener = null, updateUrl = true) {
   if (!profileState) resultsScroll = {x: window.scrollX, y: window.scrollY};
   if (opener) profileOpener = opener;
   clearProfileLinkError();
-  profileState = { athleteId, year: "" };
+  profileState = { athleteId, year: "", sort: "newest" };
   $("#wrestler-report-error").hidden = typeof window.PAINI_OPEN_FEEDBACK !== "function";
   if (updateUrl) writeProfileRoute(athleteId);
   $("#search-view").hidden = true;
@@ -306,11 +306,8 @@ function renderProfile() {
       }
     }
   }));
-  entries.sort((a, b) => {
-    const left = competitionDate(a.item), right = competitionDate(b.item);
-    if (left !== right) return left > right ? -1 : 1;
-    return a.item.title.localeCompare(b.item.title, "fi") || a.result.place - b.result.place;
-  });
+  $("#wrestler-sort").value = profileState.sort || "newest";
+  entries.sort((a,b) => compareResults(a,b,profileState.sort || "newest") || a.item.title.localeCompare(b.item.title,"fi") || a.result.place-b.result.place);
   $("#wrestler-title").textContent = athlete.name;
   document.title = athlete.name + " – Painijatulokset";
   $("#wrestler-share-url").value = profileAddress(athlete.id);
@@ -318,7 +315,7 @@ function renderProfile() {
   $("#wrestler-id").textContent = athlete.id + " · " + (athlete.status === "reviewed" ? "Ylläpito tarkistanut yhdistämisen" : "Tarkistamaton tulosryhmä");
   $("#wrestler-aliases").textContent = "Nimet lähdetuloksissa: " + [...originalNames].join(", ");
   $("#wrestler-club").textContent = "Seurat tuloksissa: " + [...new Set(entries.map(e => e.result.club))].sort((a,b) => a.localeCompare(b,"fi")).join(", ");
-  $("#wrestler-scope").textContent = (profileState.year ? (profileState.year === "Ei päivämäärää" ? "Tulokset ilman tunnistettua päivämäärää." : "Vuoden " + profileState.year + " tulokset.") : "Kaikkien vuosien tulokset.") + " Yhteenveto, kuvaaja ja tuloslista koskevat valittua vuotta. Päähaun rajaukset eivät vaikuta tähän näkymään.";
+  $("#wrestler-scope").textContent = (profileState.year ? (profileState.year === "Ei päivämäärää" ? "Tulokset ilman tunnistettua päivämäärää." : "Vuoden " + profileState.year + " tulokset.") : "Kaikkien vuosien tulokset.") + " Yhteenveto, sijoitusten jakauma ja tuloslista koskevat valittua vuotta. Päähaun rajaukset eivät vaikuta tähän näkymään.";
   const summary = $("#wrestler-summary");
   summary.replaceChildren();
   const stats = [
@@ -335,6 +332,7 @@ function renderProfile() {
     card.append(term, value); summary.append(card);
   });
   renderPlacementChart(entries);
+  renderYearlyPlacements(allEntries);
   const tbody = $("#wrestler-results");
   const fragment = document.createDocumentFragment();
   entries.forEach(({item, result}) => {
@@ -344,7 +342,7 @@ function renderProfile() {
     badge.textContent = result.place + ".";
     cell.append(badge); row.append(cell);
     [item.title, item.details || "–", result.category, result.weight + " kg"].forEach((value,index) => {
-      const td = document.createElement("td"); td.textContent = value; if(index === 0 && partialNotes(item).length)td.append(partialBadge(item)); row.append(td);
+      const td = document.createElement("td"); td.textContent = value; {const original=document.createElement("span");original.translate="no";original.textContent=value;td.replaceChildren(original);} if(index === 0 && partialNotes(item).length)td.append(partialBadge(item)); row.append(td);
     });
     const sourceCell = document.createElement("td");
     sourceCell.textContent = "–";
@@ -401,55 +399,7 @@ function openCompetition(item) {
   refreshFilters();
   showView("results");
 }
-// Approximate matching filters visible results only; it never changes athlete identities.
-function searchWords(value) {
-  return value.normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase("fi").match(/[\p{L}\p{N}]+/gu) || [];
-}
-function wordDistance(a, b) {
-  const rows = Array.from({length: a.length + 1}, () => Array(b.length + 1).fill(0));
-  for (let i = 0; i <= a.length; i++) rows[i][0] = i;
-  for (let j = 0; j <= b.length; j++) rows[0][j] = j;
-  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
-    rows[i][j] = Math.min(rows[i-1][j]+1, rows[i][j-1]+1, rows[i-1][j-1]+(a[i-1] === b[j-1] ? 0 : 1));
-    if (i > 1 && j > 1 && a[i-1] === b[j-2] && a[i-2] === b[j-1])
-      rows[i][j] = Math.min(rows[i][j], rows[i-2][j-2]+1);
-  }
-  return rows[a.length][b.length];
-}
-function matchesCompetitionQuery(text, query) {
-  // Keep day and month ordered, with or without a year (3.8 or 3.8.2025).
-  // A day inside a multi-day event is also a match.
-  const datePattern = /(?<![\p{L}\p{N}./])(\d{1,2})(?:\.?\s*[-–]\s*(\d{1,2}))?[./](\d{1,2})(?:[./](\d{4}))?(?:[./](?=\s|$))?(?![\p{L}\p{N}./])/gu;
-  const span = match => {
-    const day = Number(match[1]), endDay = Number(match[2] || match[1]);
-    const month = Number(match[3]), year = match[4] ? Number(match[4]) : null;
-    // An unspecified year permits February 29; the actual event year must
-    // still validate independently before it can match.
-    const validationYear = year ?? 2000;
-    const timestamp = day => {
-      const value = Date.UTC(validationYear, month - 1, day), date = new Date(value);
-      return date.getUTCFullYear() === validationYear && date.getUTCMonth() === month - 1 && date.getUTCDate() === day ? value : null;
-    };
-    const start = timestamp(day), end = timestamp(endDay);
-    return start !== null && end !== null && start <= end ? {start:day,end:endDay,month,year} : null;
-  };
-  const requestedDates = [...query.matchAll(datePattern)].map(span);
-  if (requestedDates.length) {
-    const actualDates = [...text.matchAll(datePattern)].map(span).filter(Boolean);
-    if (!requestedDates.every(wanted => wanted && actualDates.some(actual => actual.month === wanted.month && (wanted.year === null || actual.year === wanted.year) && actual.start <= wanted.start && actual.end >= wanted.end))) return false;
-  }
-  const tokens = searchWords(query.replace(datePattern, " "));
-  return !tokens.length || matchesSearchWords(searchWords(text), tokens);
-}
-function matchesSearchWords(words, tokens) {
-  return tokens.every(token => words.some(word => {
-    if (/\d/u.test(token)) return word.startsWith(token);
-    if (word.includes(token)) return true;
-    if (token.length < 3 || /\d/u.test(token) || /\d/u.test(word)) return false;
-    const tolerance = token.length >= 7 ? 2 : 1;
-    return Math.abs(word.length-token.length) <= tolerance && wordDistance(token,word) <= tolerance;
-  }));
-}
+const {searchWords, matchesSearchWords, matchesCompetitionQuery, competitionTier, yearlyPlacements} = window.PAINI_UTILS;
 function renderCompetitionList() {
   const query = normalizePerson($("#competition-query").value);
   const sort = $("#competition-sort").value;
@@ -457,6 +407,7 @@ function renderCompetitionList() {
     matchesCompetitionQuery(item.title + " " + item.details, query)
   );
   filtered.sort((a, b) => {
+    if (sort === "importance") { const difference=competitionTier(a.title)-competitionTier(b.title); if(difference) return difference; }
     if (sort !== "name") {
       const left = competitionDate(a), right = competitionDate(b);
       if (left !== right) {
@@ -551,8 +502,8 @@ function competitionPicker({inputId, rootId, listId, panelId, countId, allowAll,
     choices.forEach((item,index) => {
       const option = document.createElement("li"); option.id = listId+"-"+index;
       option.setAttribute("role","option"); option.setAttribute("aria-selected","false");
-      const title = document.createElement("strong"); title.textContent = item?.title || "Kaikki kilpailut"; option.append(title);
-      const details = document.createElement("span"); details.textContent = item ? item.details : "Poista kilpailurajaus"; option.append(details);
+      const title = document.createElement("strong"); title.textContent = item?.title || "Kaikki kilpailut"; if(item)title.translate="no"; option.append(title);
+      const details = document.createElement("span"); details.textContent = item ? item.details : "Poista kilpailurajaus"; if(item)details.translate="no"; option.append(details);
       option.addEventListener("mousedown",event => event.preventDefault());
       option.addEventListener("click",() => select(index)); list.append(option);
     });
@@ -640,6 +591,7 @@ function yearFilteredCompetitions() {
   return selectedCompetitions().filter(item => !year || resultYear(item) === year);
 }
 function compareResults(a, b, order) {
+  if (order === "importance") { const difference = competitionTier(a.item.title)-competitionTier(b.item.title); if(difference) return difference; }
   if (order === "place" && a.result.place !== b.result.place) return a.result.place - b.result.place;
   const left = competitionDate(a.item), right = competitionDate(b.item);
   if (left !== right) {
@@ -743,6 +695,24 @@ window.addEventListener("paini-feedback-ready", () => {
   $("#competition-report-error").hidden = !$("#competition").value;
   $("#wrestler-report-error").hidden = !profileState;
 });
+
+function renderYearlyPlacements(entries) {
+  const years = yearlyPlacements(entries, resultYear);
+  const max = Math.max(1, ...years.map(row => row.total));
+  const bars = $("#yearly-bars"), body = $("#yearly-rows");
+  bars.replaceChildren(); body.replaceChildren();
+  for (const row of years) {
+    const line=document.createElement("div"); line.className="yearly-line";
+    const year=document.createElement("span"); year.textContent=row.year;
+    const track=document.createElement("div"); track.className="yearly-track";
+    row.counts.forEach((count,index)=>{const segment=document.createElement("span");segment.className="yearly-segment yearly-place-"+index;segment.style.width=(count/max*100)+"%";track.append(segment);});
+    const total=document.createElement("strong");total.textContent=row.total;
+    line.append(year,track,total);bars.append(line);
+    const tr=document.createElement("tr");
+    [row.year,...row.counts,row.total].forEach((value,index)=>{const cell=document.createElement(index?"td":"th");if(!index)cell.scope="row";cell.textContent=value;tr.append(cell);});body.append(tr);
+  }
+}
+$("#wrestler-sort").addEventListener("change",()=>{if(profileState){profileState.sort=$("#wrestler-sort").value;renderProfile();}});
 
 function renderPlacementChart(entries) {
   const labels = ["Voitot (1. sija)", "2. sija", "3. sija", "Muut sijoitukset"];

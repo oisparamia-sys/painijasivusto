@@ -41,7 +41,7 @@ jobs:
           python tools/test-bout-sources.py
           python tools/test-partial-results.py
       - name: Testaa hyväksyntäjonon suojaukset
-        run: node --test tools/test-review.cjs tools/test-identities.cjs tools/test-restore.cjs tools/test-refresh.cjs
+        run: node --test tools/test-review.cjs tools/test-identities.cjs tools/test-restore.cjs tools/test-refresh.cjs tools/test-site-utils.cjs tools/test-i18n.cjs
       - name: Tallenna aiempi hyväksytty versio
         run: node tools/review-data.cjs snapshot . before
       - name: Käsittele ylläpidon päätökset

@@ -86,3 +86,15 @@ test('additional verified standings in an old weight class are queued and preser
  for(let i=0;i<2;i++)assert.equal(approved.data.competitions[0].rows[i].resultId,s.data.competitions[0].rows[i].resultId);
  assert.equal(JSON.stringify(approved.bouts.matches),JSON.stringify(s.bouts.matches));
 });
+
+test('category and source object order does not create a standings proposal',()=>{
+ const s=state(),old=s.data.competitions[0];
+ old.rows.push({...old.rows[0],name:'C Testi',category:'Tytöt',resultId:'tulos-999998'});
+ s.data.athleteRegistry.nextResult=999999;
+ old.categoryStyles={Tytöt:'freestyle',Pojat:'freestyle'};old.styleSources={Tytöt:source,Pojat:source};
+ const incoming=payload(old);incoming.items[0].text='Testipainit\nTampere, 4.12.2025\n30 kg\tPojat\n1.\tA Testi\tSeura\n2.\tB Testi\tSeura\n30 kg\tTytöt\n1.\tC Testi\tSeura';
+ incoming.items[0].pages=[{category:'Pojat',style:'freestyle',count:2,url:source},{category:'Tytöt',style:'freestyle',count:1,url:source}];
+ const r=update(s.data,R,incoming,queue());assert.equal(r.unchanged,1);assert.equal(r.queue.proposals.length,0);
+ incoming.items[0].pages[1].url=source2;
+ assert.equal(update(s.data,R,incoming,queue()).queue.proposals.length,1);
+});

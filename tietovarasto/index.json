@@ -88,6 +88,14 @@
       "blob": "tietovarasto/versiot/6577bcfeac82c15987ecf1306cf32464c4a32f9d34f221a3483d8a2e982b843f.gz",
       "createdAt": "2026-11-23T05:35:31.314Z",
       "bytes": 46247946
+    },
+    {
+      "file": "data.js",
+      "semanticHash": "7b0d41dfea966dc51a66ea1671d56bfe1141a25e9efb98414e67ad625f04e2e7",
+      "sha256": "ff5046e3984ecbdb7a56318f9190924bb82e0ae1d2dfcbd9f7b90d28b6a62e8f",
+      "blob": "tietovarasto/versiot/ff5046e3984ecbdb7a56318f9190924bb82e0ae1d2dfcbd9f7b90d28b6a62e8f.gz",
+      "createdAt": "2026-11-23T05:51:04.403Z",
+      "bytes": 46301323
     }
   ],
   "runs": [
@@ -286,6 +294,24 @@
       "run": null,
       "refs": {
         "data.js": "6577bcfeac82c15987ecf1306cf32464c4a32f9d34f221a3483d8a2e982b843f",
+        "ottelut-data.js": "ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97"
+      }
+    },
+    {
+      "at": "2026-11-23T05:51:03.395Z",
+      "label": "before-reviewed-three-proposals",
+      "run": null,
+      "refs": {
+        "data.js": "6577bcfeac82c15987ecf1306cf32464c4a32f9d34f221a3483d8a2e982b843f",
+        "ottelut-data.js": "ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97"
+      }
+    },
+    {
+      "at": "2026-11-23T05:51:04.568Z",
+      "label": "after-reviewed-three-proposals",
+      "run": null,
+      "refs": {
+        "data.js": "ff5046e3984ecbdb7a56318f9190924bb82e0ae1d2dfcbd9f7b90d28b6a62e8f",
         "ottelut-data.js": "ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97"
       }
     }

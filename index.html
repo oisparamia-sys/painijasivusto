@@ -35,7 +35,7 @@
 </style>
 </head>
 <body>
-<header><div>Painijatulokset</div></header>
+<header><div class="header-content"><div>Painijatulokset</div><label class="language-picker" for="language"><span translate="no">Kieli / Language / Språk</span><select id="language"><option value="fi">Suomi</option><option value="en">English</option><option value="sv">Svenska</option></select></label></div></header>
 <main>
 <h1>Suomalaisten painijoiden tulokset</h1>
 <nav class="view-nav" aria-label="Sivuston näkymät">
@@ -85,7 +85,7 @@
 </div></div>
 <div class="field"><label for="result-style">Painimuoto</label><select id="result-style"><option value="">Kaikki painimuodot</option><option value="greco">Kreikkalais-roomalainen</option><option value="freestyle">Vapaapaini</option><option value="women">Naispaini</option><option value="unknown">Ei vahvistettu</option></select></div>
 <div class="field"><label for="result-year">Vuosi</label><select id="result-year"></select></div>
-<div class="field"><label for="result-sort">Tulosten järjestys</label><select id="result-sort"><option value="newest">Uusimmat ensin</option><option value="oldest">Vanhimmat ensin</option><option value="place">Paras sijoitus ensin</option></select></div>
+<div class="field"><label for="result-sort">Tulosten järjestys</label><select id="result-sort"><option value="newest">Uusimmat ensin</option><option value="oldest">Vanhimmat ensin</option><option value="place">Paras sijoitus ensin</option><option value="importance">Arvokkuus: SM, KLL, alue, muut</option></select></div>
 <div class="field"><label for="search">Painijan nimi</label><input id="search" type="search" placeholder="Kirjoita nimi…"></div>
 <div class="field"><label for="club">Seura</label><select id="club"></select></div>
 <div class="field"><label for="category">Ikäluokka</label><select id="category"></select></div>
@@ -135,6 +135,7 @@
         <option value="newest">Uusimmat ensin</option>
         <option value="oldest">Vanhimmat ensin</option>
         <option value="name">Nimen mukaan</option>
+        <option value="importance">Arvokkuus: SM, KLL, alue, muut</option>
       </select>
     </div>
   </div>
@@ -231,13 +232,22 @@
     </div>
     <p id="placement-empty" class="hint" hidden>Ei tuloksia kuvaajaa varten.</p>
   </section>
+  <section class="yearly-chart" aria-labelledby="yearly-heading">
+    <h3 id="yearly-heading">Sijoitukset vuosittain</h3>
+    <p class="hint">Kaikkien vuosien tulosrivit. Värit: kulta = 1., hopea = 2., pronssi = 3., sininen = muut sijoitukset. Tarkat luvut ovat taulukossa.</p>
+    <div id="yearly-bars" aria-hidden="true"></div>
+    <details><summary>Näytä vuosittaiset luvut</summary><div class="table-wrap"><table class="yearly-table">
+      <caption>Sijoitukset vuosittain</caption><thead><tr><th scope="col">Vuosi</th><th scope="col">1. sija</th><th scope="col">2. sija</th><th scope="col">3. sija</th><th scope="col">Muut sijoitukset</th><th scope="col">Yhteensä</th></tr></thead><tbody id="yearly-rows"></tbody>
+    </table></div></details>
+  </section>
   <div id="same-name-clubs" class="same-name-clubs" hidden>
     <h3>Samannimisiä erillisiä merkintöjä</h3>
     <p class="hint">Näitä merkintöjä ei ole yhdistetty tähän tunnukseen. Kyseessä voi olla eri henkilö tai vahvistamaton seuranvaihdos.</p>
     <div id="same-name-options" class="actions"></div>
   </div>
   <h3>Kaikki tämän nimen ja seuran tulokset</h3>
-  <p class="hint">Kilpailut näytetään uusimmasta vanhimpaan. Päivämäärättömät kilpailut ovat lopussa.</p>
+  <p class="hint">Päivämäärättömät kilpailut ovat aikajärjestyksessä lopussa. Arvokkuus perustuu kilpailun nimeen: SM, KLL, alue- ja piirinmestaruudet, muut.</p>
+  <div class="profile-year-filter"><label for="wrestler-sort">Tulosten järjestys</label><select id="wrestler-sort"><option value="newest">Uusimmat ensin</option><option value="oldest">Vanhimmat ensin</option><option value="place">Paras sijoitus ensin</option><option value="importance">Arvokkuus: SM, KLL, alue, muut</option></select></div>
   <div class="table-wrap">
     <table aria-label="Valitun nimen ja seuran kilpailutulokset">
       <thead><tr>
@@ -254,8 +264,10 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
+<script src="translations.js?v=20261123" defer></script>
+<script src="i18n.js?v=20261123" defer></script>
 <script src="palaute.js?v=3" defer></script>
-<script src="fresh-data.js?v=20261121-refresh-state1" defer></script>
+<script src="fresh-data.js?v=20261123-features1" defer></script>
 </body>
 </html>
 
