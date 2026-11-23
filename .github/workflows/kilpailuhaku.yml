@@ -39,6 +39,7 @@ jobs:
         run: |
           python tools/test-collect-bouts.py
           python tools/test-bout-sources.py
+          python tools/test-partial-results.py
       - name: Testaa hyväksyntäjonon suojaukset
         run: node --test tools/test-review.cjs tools/test-identities.cjs tools/test-restore.cjs tools/test-refresh.cjs
       - name: Tallenna aiempi hyväksytty versio

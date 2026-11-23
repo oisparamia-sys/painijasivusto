@@ -62,3 +62,27 @@ test('archive rejects a missing or damaged reused backup without recording a suc
   assert.equal(fs.readFileSync(indexPath,'utf8'),before);
  });
 });
+
+test('official TXT-only friendship results accept an explicit unknown style without guessing',()=>{
+ const s=state();
+ const response={source:source2,textSource:source2.replace('indexFIN.htm','FIN1_tab.txt'),text:'Uusi kilpailu\nHelsinki, 31.1.2026\n90 kg\tYstävyysottelu\t(1 Osallistujaa)\n\t1.\tC Testi\tSeura',pages:[{category:'Ystävyysottelu',style:'unknown',verification:'official-txt',count:1,url:source2.replace('indexFIN.htm','FIN1_tab.txt')}]};
+ const result=update(s.data,R,{items:[response],errors:[]},queue());
+ assert.equal(result.errors.length,0);assert.equal(result.data.competitions.length,2);
+ assert.equal(result.data.competitions[1].categoryStyles['Ystävyysottelu'],'unknown');
+ assert.equal(result.data.competitions[1].textSource,response.textSource);
+ delete response.pages[0].verification;
+ const rejected=update(s.data,R,{items:[response],errors:[]},queue());
+ assert.equal(rejected.errors.length,1);assert.equal(rejected.data.competitions.length,1);
+});
+test('additional verified standings in an old weight class are queued and preserve old IDs on approval',()=>{
+ const s=state(),candidate=clone(s.data.competitions[0]);
+ candidate.rows.push({name:'C Testi',club:'Seura',category:'Pojat',weight:'30',place:3});
+ const incoming=payload(candidate);incoming.items[0].warnings=[{category:'Pojat',weight:'30',included:3,excluded:1,unranked:1,source}];
+ const result=update(s.data,R,incoming,queue());
+ assert.equal(Q.hash(result.data),Q.hash(s.data));assert.equal(result.queue.proposals.length,1);
+ const p=result.queue.proposals[0];assert.equal(p.after.importNotes[0].included,3);
+ const approved=D.apply(s,result.queue,decision(p));
+ assert.equal(approved.data.competitions[0].rows.length,3);
+ for(let i=0;i<2;i++)assert.equal(approved.data.competitions[0].rows[i].resultId,s.data.competitions[0].rows[i].resultId);
+ assert.equal(JSON.stringify(approved.bouts.matches),JSON.stringify(s.bouts.matches));
+});

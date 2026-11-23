@@ -80,6 +80,14 @@
       "blob": "tietovarasto/versiot/ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97.gz",
       "createdAt": "2026-11-22T03:49:07.952Z",
       "bytes": 32142028
+    },
+    {
+      "file": "data.js",
+      "semanticHash": "41f6064186bc7a321c39876d723a3b50ae47544640f3e80f63c1c713635913fc",
+      "sha256": "6577bcfeac82c15987ecf1306cf32464c4a32f9d34f221a3483d8a2e982b843f",
+      "blob": "tietovarasto/versiot/6577bcfeac82c15987ecf1306cf32464c4a32f9d34f221a3483d8a2e982b843f.gz",
+      "createdAt": "2026-11-23T05:35:31.314Z",
+      "bytes": 46247946
     }
   ],
   "runs": [
@@ -260,6 +268,24 @@
       "run": "44979369896",
       "refs": {
         "data.js": "ce8b9e16fb5799b187a46a54bdc09ff7ffa3aeb221006edf816108971dbc141a",
+        "ottelut-data.js": "ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97"
+      }
+    },
+    {
+      "at": "2026-11-23T05:34:56.260Z",
+      "label": "before-partial-approval",
+      "run": null,
+      "refs": {
+        "data.js": "ce8b9e16fb5799b187a46a54bdc09ff7ffa3aeb221006edf816108971dbc141a",
+        "ottelut-data.js": "ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97"
+      }
+    },
+    {
+      "at": "2026-11-23T05:35:31.481Z",
+      "label": "after-partial-approval",
+      "run": null,
+      "refs": {
+        "data.js": "6577bcfeac82c15987ecf1306cf32464c4a32f9d34f221a3483d8a2e982b843f",
         "ottelut-data.js": "ecfcf9aa1218a386a604608118e8d76e5dfad17ce1decae1a23479a5e868ba97"
       }
     }

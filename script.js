@@ -138,11 +138,11 @@ function refreshFilters() {
     const item = items[0];
     partialNote.append(partialBadge(item));
     const text = document.createElement("p");
-    text.textContent = "Mukana ovat kokonaan sijoitetut painoluokat. Seuraavat painoluokat puuttuvat, koska lähteestä puuttuu osallistujien sijoituksia:";
+    text.textContent = "Kilpailussa on puutteellisia tai tarkistettavia tietoja. Alla näkyy, mitä on tuotu ja mitä on jätetty pois. Puuttuvia sijoituksia ei ole päätelty:";
     const list = document.createElement("ul");
     partialNotes(item).forEach(note=>{
       const li = document.createElement("li");
-      li.textContent = note.category + " · " + note.weight + " kg";
+      li.textContent = note.category + " · " + note.weight + " kg — " + (Number.isInteger(note.included) ? "Tuotuja sijoituksia: " + note.included + "; tuomatta jääneitä osallistujia: " + note.excluded + ". " : "Painoluokka on jätetty pois tuonnista. ") + (note.reason || "Kaikille osallistujille ei löytynyt vahvistettua sijoitusta.");
       list.append(li);
     });
     partialNote.append(text,list);

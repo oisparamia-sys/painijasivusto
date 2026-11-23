@@ -131,6 +131,37 @@ def confirmed_weight(group, pageurl, category_link, available_links):
  if people(final['rows'])!=sorted(group['people']):raise ValueError('Painoluokan erillisen tuloslistan osallistujat eivät täsmää')
  return final
 
+def tab_results(text, selected=None):
+ # Read official result rows without turning a participant list into standings.
+ groups=[];current=None;header=[];started=False
+ for line in text.replace('\ufeff','',1).replace('\x00','').splitlines():
+  if not line.strip():continue
+  h=re.fullmatch(r'\s*(\d+(?:[.,]\d+)?)\s*kg\t([^\t]+)\t\((\d+) (?:Osallistujaa?|Participants?)\)\s*',line,re.I)
+  if h:
+   started=True
+   key=(' '.join(h[2].split()).casefold(),h[1].replace(',','.'))
+   if selected is not None and key not in selected:current=None;continue
+   current=dict(weight=h[1].replace(',','.'),category=' '.join(h[2].split()),count=int(h[3]),rows=[],unranked=0,placeholders=0)
+   if any(g['weight']==current['weight'] and g['category'].casefold()==current['category'].casefold() for g in groups):raise ValueError('Tekstitiedoston painoluokka toistuu')
+   groups.append(current);continue
+  if current is None:
+   if not started:header.append(line.strip())
+   continue
+  cells=[c.strip() for c in line.split('\t')]
+  while cells and not cells[0]:cells.pop(0)
+  while cells and not cells[-1]:cells.pop()
+  if cells and cells[0].casefold() in ['tyhjä','tyhja']:current['placeholders']+=1;continue
+  if len(cells)==3 and re.fullmatch(r'[1-9]\d*\.',cells[0]) and cells[1] and cells[2]:
+   if int(cells[0][:-1])>current['count']:raise ValueError('Tekstitiedoston sijoitus ylittää osallistujamäärän')
+   if cells in current['rows']:raise ValueError('Tekstitiedoston tulosrivi toistuu')
+   current['rows'].append(cells)
+  elif len(cells)==2 and all(cells) or len(cells)==3 and cells[0].casefold() in ['dq','0','0.'] and cells[1] and cells[2]:current['unranked']+=1
+  else:raise ValueError('Tekstitiedoston tulosrivin rakennetta ei tunnistettu')
+ if not header or not groups:raise ValueError('Tekstitiedoston kilpailuotsikko tai painoluokat puuttuvat')
+ for g in groups:
+  if len(g['rows'])+g['unranked']+g['placeholders']!=g['count']:raise ValueError('Tekstitiedoston osallistujamäärä ei täsmää: '+g['category']+' '+g['weight'])
+ return dict(title=header[0],details=next((line for line in header[1:] if re.search(r'\d{1,2}[./]\d{1,2}[./]20\d{2}',line)),''),groups=groups)
+
 def usable_tab(text):
  active=False;found=False
  for line in text.splitlines():
@@ -212,40 +243,56 @@ def competition(url):
   original_unranked=sum(g['unranked'] for g in groups)
   groups=[confirmed_weight(g,pageurl,link,links(page)) for g in groups]
   recovered=recovered or sum(g['unranked'] for g in groups)<original_unranked
-  complete=[]
+  accepted=[]
   for g in groups:
    if g['unranked']:
-    warnings.append(dict(category=category,weight=g['weight'],excluded=len(g['rows'])+g['unranked'],unranked=g['unranked'],source=pageurl))
-   else:complete.append(g)
-  if complete:
-   pages.append(dict(category=category,style=code,count=sum(len(g['rows']) for g in complete),url=pageurl));generated+=complete
- if not pages:
-  if incomplete_categories:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat; muita vahvistettuja sarjoja ei löytynyt')
-  if warnings:raise ValueError('Tulosluetteloissa ei ole vielä vahvistettuja sijoituksia')
-  if any(re.search(r'mld\d+\.htm$', u, re.I) for u in alllinks):raise ValueError('Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia')
-  raise ValueError('Sarjakohtaisia tulosluetteloita ei löytynyt')
+    warnings.append(dict(category=category,weight=g['weight'],included=len(g['rows']),excluded=g['unranked'],unranked=g['unranked'],source=pageurl,reason='Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu'))
+   if g['rows']:accepted.append({**g,'count':len(g['rows'])})
+  if accepted:
+   pages.append(dict(category=category,style=code,count=sum(len(g['rows']) for g in accepted),url=pageurl));generated+=accepted
  # HTML is the fallback for sources that do not publish a tab-separated file.
  rawtext=None;rawurl=''
  if len(raw)==1:
   rawurl=urllib.parse.urljoin(url,raw[0])
   try:rawtext=get(rawurl)
   except Exception:rawtext=None
- # The downloadable file may include friendship or super final classes
- # absent from the official category pages. Keep those classes out of the
- # import and use only validated HTML results for the remaining classes.
+ # Additional friendship/superfinal standings may be published only in TXT.
+ text_evidence=False
  if rawtext is not None:
   known={(g['category'].casefold(),g['weight']) for g in generated}
+  noted={(w['category'].casefold(),w['weight']) for w in warnings}
+  extra=set()
   for line in rawtext.splitlines():
-   h=re.fullmatch(r'\s*(\d+(?:[.,]\d+)?)\s*kg\t([^\t]+)\t\((\d+) Osallistujaa\)\s*',line,re.I)
+   h=re.fullmatch(r'\s*(\d+(?:[.,]\d+)?)\s*kg\t([^\t]+)\t\((\d+) (?:Osallistujaa?|Participants?)\)\s*',line,re.I)
    if not h:continue
-   # HTML cleaning collapses whitespace; compare TXT labels the same way.
-   # This is a comparison key only: the original TXT contents stay unchanged.
    category=' '.join(h[2].split());weight=h[1].replace(',','.')
    if category.casefold() in empty_categories:raise ValueError('Tyhjän sarjasivun ja tekstitiedoston tiedot eroavat: '+category)
-   if (category.casefold(),weight) not in known and not any(w['category'].casefold()==category.casefold() and w['weight']==weight for w in warnings):
+   key=(category.casefold(),weight)
+   if key not in known and key not in noted:
     if not (re.search(r'ystävyys',category,re.I) or re.fullmatch(r'super ?finaali',category,re.I)):raise ValueError('Tekstitiedoston sarjalle ei löytynyt vahvistettua HTML-tulosluetteloa: '+category)
-    warnings.append(dict(category=category,weight=weight,excluded=int(h[3]),unranked=0,source=rawurl))
- if rawtext is not None and not warnings and not recovered and not placeholder_rows and usable_tab(rawtext):text=rawtext
+    extra.add(key)
+  if extra:
+   address=urllib.parse.urlsplit(rawurl);origin=urllib.parse.urlsplit(url)
+   if address.scheme!='https' or address.netloc!=origin.netloc or address.path.rsplit('/',1)[0]!=origin.path.rsplit('/',1)[0] or address.query or address.fragment:raise ValueError('Tekstitiedoston lähde ei kuulu kilpailuun')
+   parsed=tab_results(rawtext,extra)
+   official=re.search(r'<a\b[^>]*href\s*=\s*["\']index(?:FIN|ENG)\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
+   parts=re.split(r'<br\s*/?>',official[1],flags=re.I) if official else []
+   if len(parts)!=2 or [clean(parsed['title']),clean(parsed['details'])]!=list(map(clean,parts)):raise ValueError('Tekstitiedoston kilpailun nimi tai päivämäärä ei vastaa lähdesivua')
+   for g in parsed['groups']:
+    if (g['category'].casefold(),g['weight']) not in extra:continue
+    if g['unranked']:warnings.append(dict(category=g['category'],weight=g['weight'],included=len(g['rows']),excluded=g['unranked'],unranked=g['unranked'],source=rawurl,reason='Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu'))
+    if not g['rows']:continue
+    generated.append({**g,'count':len(g['rows'])});text_evidence=True
+    matches=[p for p in pages if p['category'].casefold()==g['category'].casefold()]
+    if len(matches)>1:raise ValueError('Tekstisarjan lähdevastaavuus ei ole yksikäsitteinen')
+    if matches:matches[0]['count']+=len(g['rows'])
+    else:pages.append(dict(category=g['category'],style='unknown',count=len(g['rows']),url=rawurl,verification='official-txt'))
+ if not pages:
+  if incomplete_categories:raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat; muita vahvistettuja sarjoja ei löytynyt')
+  if warnings:raise ValueError('Tulosluetteloissa ei ole vielä vahvistettuja sijoituksia')
+  if any(re.search(r'mld\d+\.htm$', u, re.I) for u in alllinks):raise ValueError('Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia')
+  raise ValueError('Sarjakohtaisia tulosluetteloita ei löytynyt')
+ if rawtext is not None and not warnings and not recovered and not placeholder_rows and not text_evidence and usable_tab(rawtext):text=rawtext
  else:
   header=re.search(r'<a\b[^>]*href\s*=\s*["\']index(?:FIN|ENG)\.htm["\'][^>]*>(.*?)</a>',s,re.I|re.S)
   if not header:raise ValueError('Kilpailun nimeä ja päivämäärää ei tunnistettu')
@@ -257,7 +304,7 @@ def competition(url):
   for group in generated:
    lines.append(group['weight']+' kg\t'+group['category']+'\t('+str(group['count'])+' Osallistujaa)')
    lines += ['\t'+'\t'.join(row) for row in group['rows']]
-  text='\n'.join(lines);rawurl=''
+  text='\n'.join(lines);rawurl=rawurl if text_evidence else ''
  return dict(text=text,source=url,textSource=rawurl,pages=pages,warnings=warnings)
 class Handler(http.server.SimpleHTTPRequestHandler):
  def __init__(self,*a,**kw):super().__init__(*a,directory=str(ROOT),**kw)
