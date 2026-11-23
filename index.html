@@ -184,16 +184,23 @@
       <button id="bouts-example" type="button">Kokeile esimerkkiparia</button>
       <button id="bouts-clear" type="button">Tyhjennä valinnat</button>
     </div>
-    <h3 id="bouts-result-title">Valitse painija</h3>
+    <h3 id="bouts-result-title" tabindex="-1">Valitse painija</h3>
     <p id="bouts-result-status" role="status" aria-live="polite">Valitse painija nähdäksesi mukana olevat ottelut.</p>
     <div id="bouts-statistics" class="bout-statistics" hidden></div>
     <p id="bouts-omitted" class="hint" hidden></p>
+    <nav class="result-pagination bouts-pagination" aria-label="Tuloslistan sivut ylhäällä" hidden>
+      <button class="bouts-prev" type="button" aria-controls="bouts-results">← Edellinen</button><span class="bouts-page" role="status" aria-live="polite"></span><button class="bouts-next" type="button" aria-controls="bouts-results">Seuraava →</button>
+    </nav>
+    <p class="hint">Lista näyttää enintään 50 ottelua kerrallaan. Yhteenveto sisältää kaikki hakuehtoja vastaavat ottelut.</p>
     <div id="bouts-table-wrap" class="table-wrap" hidden>
       <table aria-label="Valittujen painijoiden ottelut">
         <thead><tr><th scope="col">Kilpailu</th><th scope="col">Kierros</th><th scope="col">Valittu painija</th><th scope="col">Vastustaja</th><th scope="col">Valitun tulos</th><th scope="col">Voittotapa</th><th scope="col">Pisteet, valittu–vastustaja</th><th scope="col">Lähde</th></tr></thead>
         <tbody id="bouts-results"></tbody>
       </table>
     </div>
+    <nav class="result-pagination bouts-pagination" aria-label="Tuloslistan sivut alhaalla" hidden>
+      <button class="bouts-prev" type="button" aria-controls="bouts-results">← Edellinen</button><span class="bouts-page" role="status" aria-live="polite"></span><button class="bouts-next" type="button" aria-controls="bouts-results">Seuraava →</button>
+    </nav>
     <details>
       <summary>Mukana olevat kilpailut ja kattavuus</summary>
       <p>Aineistossa on osa vuosien 2022–2026 kilpailuista. Pois jätetyt ottelut eivät sisälly näkyviin voittoihin tai tappioihin. Lähderistiriidat, tunnistamattomat painijat ja tarkistettavat voittotavat jätetään ulkopuolelle.</p>
@@ -264,10 +271,10 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="translations.js?v=20261123" defer></script>
-<script src="i18n.js?v=20261123" defer></script>
+<script src="translations.js?v=20261123-bouts1" defer></script>
+<script src="i18n.js?v=20261123-bouts1" defer></script>
 <script src="palaute.js?v=3" defer></script>
-<script src="fresh-data.js?v=20261123-features1" defer></script>
+<script src="fresh-data.js?v=20261123-bouts1" defer></script>
 </body>
 </html>
 

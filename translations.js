@@ -1,5 +1,6 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Lista näyttää enintään 50 ottelua kerrallaan. Yhteenveto sisältää kaikki hakuehtoja vastaavat ottelut.","The list shows up to 50 bouts at a time. The summary includes all bouts matching your filters.","Listan visar högst 50 matcher åt gången. Sammanfattningen omfattar alla matcher som matchar sökvillkoren."],
   [
     "Painijatulokset",
     "Wrestling results",
