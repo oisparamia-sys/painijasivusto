@@ -1,16 +1,16 @@
 # Otteluhaun raportti
 
-Tarkistettu: 2026-11-22T03:16:20.870201+00:00
+Tarkistettu: 2026-11-23T10:57:08.030150+00:00
 
 ```json
 {
-  "updated": 302,
+  "updated": 65,
   "preserved": 0,
   "failed": 0,
-  "attempted": 302,
+  "attempted": 65,
   "competitions": 302,
-  "matches": 49811,
-  "excluded": 2452,
+  "matches": 49827,
+  "excluded": 2436,
   "sourceIssues": 687,
   "coverageMissing": 0
 }
@@ -24,7 +24,7 @@ Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).
 - 2023: 62 kilpailua, 10368 ottelua
 - 2024: 60 kilpailua, 10215 ottelua
 - 2025: 69 kilpailua, 11645 ottelua
-- 2026: 65 kilpailua, 10054 ottelua
+- 2026: 65 kilpailua, 10070 ottelua
 
 ## Tarkistettavat kilpailut
 
