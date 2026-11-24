@@ -340,6 +340,24 @@
         "data.js": "ff5046e3984ecbdb7a56318f9190924bb82e0ae1d2dfcbd9f7b90d28b6a62e8f",
         "ottelut-data.js": "5ffcb87b8cd9b51f2392ed0c55b8ecb1794d85a300717b5fb2f1f6fa88cd24f9"
       }
+    },
+    {
+      "at": "2026-11-24T12:39:19.761Z",
+      "label": "before",
+      "run": "45395566117",
+      "refs": {
+        "data.js": "ff5046e3984ecbdb7a56318f9190924bb82e0ae1d2dfcbd9f7b90d28b6a62e8f",
+        "ottelut-data.js": "5ffcb87b8cd9b51f2392ed0c55b8ecb1794d85a300717b5fb2f1f6fa88cd24f9"
+      }
+    },
+    {
+      "at": "2026-11-24T12:48:29.321Z",
+      "label": "after",
+      "run": "45395566117",
+      "refs": {
+        "data.js": "ff5046e3984ecbdb7a56318f9190924bb82e0ae1d2dfcbd9f7b90d28b6a62e8f",
+        "ottelut-data.js": "5ffcb87b8cd9b51f2392ed0c55b8ecb1794d85a300717b5fb2f1f6fa88cd24f9"
+      }
     }
   ]
 }
