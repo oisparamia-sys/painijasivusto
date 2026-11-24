@@ -26,7 +26,7 @@
 #bouts-view .bout-stat{flex:1 1 150px;background:#f4f7fb;border:1px solid #e0e7ef;border-radius:10px;padding:14px}
 #bouts-view .bout-stat strong{display:block;font-size:26px;color:#174397;margin-top:5px}
 #bouts-view .bout-win,#bouts-view .bout-loss{font-weight:650;border-radius:6px;padding:4px 8px;display:inline-block}
-#bouts-view .bout-win{background:#e7f5ec;color:#215c37}#bouts-view .bout-loss{background:#edf2fa;color:#435267}
+#bouts-view .bout-win{background:#e7f5ec;color:#215c37}#bouts-view .bout-loss{background:#fbe0e6;color:#7b283d}
 #bouts-view table{white-space:normal;min-width:680px}#bouts-view td{vertical-align:top;line-height:1.5}
 #bouts-view td:last-child a{white-space:nowrap}
 #bouts-coverage-list li{margin:10px 0;line-height:1.6}
@@ -187,6 +187,15 @@
     <h3 id="bouts-result-title" tabindex="-1">Valitse painija</h3>
     <p id="bouts-result-status" role="status" aria-live="polite">Valitse painija nähdäksesi mukana olevat ottelut.</p>
     <div id="bouts-statistics" class="bout-statistics" hidden></div>
+    <section id="bouts-yearly" class="yearly-chart" aria-labelledby="bouts-yearly-title" hidden>
+      <h3 id="bouts-yearly-title">Otteluvoitot ja tappiot vuosittain</h3>
+      <p class="hint">Vihreä = voitot, vaaleanpunainen = tappiot, harmaa = epäselvät. Kuvaaja ja taulukko sisältävät kaikki hakuehtoihin sopivat ottelut. Pois jätettyjä otteluita ei lasketa mukaan.</p>
+      <div id="bouts-yearly-bars" aria-hidden="true"></div>
+      <details><summary>Näytä vuosittaiset luvut</summary><div class="table-wrap"><table class="yearly-table">
+        <caption>Otteluvoitot ja tappiot vuosittain</caption><thead><tr><th scope="col">Vuosi</th><th scope="col">Voitot</th><th scope="col">Tappiot</th><th scope="col">Epäselvät</th><th scope="col">Yhteensä</th></tr></thead><tbody id="bouts-yearly-rows"></tbody>
+      </table></div></details>
+    </section>
+    <p class="hint">Ottelukortin vihreä tausta tarkoittaa valitun painijan voittoa ja vaaleanpunainen tappiota. Epäselvä tulos näkyy neutraalina. Tulos kerrotaan myös tekstinä.</p>
     <p id="bouts-omitted" class="hint" hidden></p>
     <nav class="result-pagination bouts-pagination" aria-label="Tuloslistan sivut ylhäällä" hidden>
       <button class="bouts-prev" type="button" aria-controls="bouts-results">← Edellinen</button><span class="bouts-page" role="status" aria-live="polite"></span><button class="bouts-next" type="button" aria-controls="bouts-results">Seuraava →</button>
@@ -271,10 +280,10 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="translations.js?v=20261123-bouts1" defer></script>
-<script src="i18n.js?v=20261123-bouts1" defer></script>
+<script src="translations.js?v=20261123-updates2" defer></script>
+<script src="i18n.js?v=20261123-updates2" defer></script>
 <script src="palaute.js?v=3" defer></script>
-<script src="fresh-data.js?v=20261123-bouts1" defer></script>
+<script src="fresh-data.js?v=20261123-updates2" defer></script>
 </body>
 </html>
 

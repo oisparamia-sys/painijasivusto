@@ -276,6 +276,44 @@
       else if (options.autoMergeNameClub === true) applyNameClub(data,nameClubPlan(data));
     });
   }
+  function mergeScope(entry,targetId) {
+    if(!entry||!targetId)return entry;
+    const sources=new Set((entry.people||[]).filter(c=>c.before&&!c.before.mergedInto&&c.after?.mergedInto===targetId).map(c=>c.id));
+    return {...entry,people:(entry.people||[]).filter(c=>sources.has(c.id)||sources.size&&c.id===targetId),assignments:(entry.assignments||[]).filter(c=>sources.has(c.before))};
+  }
+  function mergeUndoInfo(data,historyIndex,targetId) {
+    const entry=mergeScope(data.athleteRegistry.history[historyIndex],targetId);
+    const moves=entry?.kind==='identity'?(entry.people||[]).filter(c=>c.before&&!c.before.mergedInto&&c.after?.mergedInto):[];
+    const result={isMerge:moves.length>0,allowed:false,results:entry?.assignments?.length||0,profiles:moves.length,groups:new Set(moves.map(c=>c.after.mergedInto)).size,reason:''};
+    if(!result.isMerge)return result;
+    const fail=reason=>({...result,reason});
+    if(!targetId&&result.groups>1)return fail('Erä sisältää useita painijoita. Avaa painija haulla ja peru vain hänen yhdistämisensä.');
+    if((entry.competitions||[]).length||entry.people.some(c=>!c.before)||!Array.isArray(entry.assignments))return fail('Tätä yhdistämistä ei voi palauttaa erillisenä. Käytä tulosten erottelua.');
+    const people=new Map(data.athleteRegistry.athletes.map(p=>[p.id,p]));
+    if(entry.people.some(c=>!same(people.get(c.id),c.after))||moves.some(c=>!people.has(c.after.mergedInto)||people.get(c.after.mergedInto).mergedInto))return fail('Profiileihin on tehty tämän yhdistämisen jälkeen muita muutoksia. Käytä tulosten erottelua.');
+    const bySource=new Map(moves.map(c=>[c.id,c.after.mergedInto])),current=new Map(rows(data).map(row=>[row.resultId,row]));
+    if(entry.assignments.some(c=>bySource.get(c.before)!==c.after||current.get(c.resultId)?.athleteId!==c.after))return fail('Yhdistämisen siirtämiä tuloksia on muutettu myöhemmin. Käytä tulosten erottelua.');
+    return {...result,allowed:true};
+  }
+  function undoMerge(input,historyIndex,targetId) {
+    validate(input);check(targetId===undefined||typeof targetId==='string'&&targetId,'Valitse painijan tunnus.');check(Number.isSafeInteger(historyIndex)&&historyIndex>=0,'Valitse yhdistäminen historiasta.');
+    const info=mergeUndoInfo(input,historyIndex,targetId);check(info.allowed,info.reason||'Valitse peruttava yhdistäminen.');
+    const original=mergeScope(input.athleteRegistry.history[historyIndex],targetId);
+    const next=transaction(input,'Peru yhdistäminen ja pidä henkilöt erillään: '+(targetId||original.label),'identity',data=>{
+      const people=new Map(data.athleteRegistry.athletes.map(person=>[person.id,person]));
+      original.people.forEach(change=>people.set(change.id,copy(change.before)));
+      const assignments=new Map(original.assignments.map(change=>[change.resultId,change.before]));
+      rows(data).forEach(row=>{if(assignments.has(row.resultId))row.athleteId=assignments.get(row.resultId);});
+      for(const change of original.people.filter(c=>c.before&&!c.before.mergedInto&&c.after.mergedInto)){
+        const source=people.get(change.id),target=people.get(change.after.mergedInto);
+        source.distinctFrom=[...new Set([...(source.distinctFrom||[]),target.id])];
+        target.distinctFrom=[...new Set([...(target.distinctFrom||[]),source.id])];
+      }
+      data.athleteRegistry.athletes=[...people.values()];
+    });
+    next.athleteRegistry.history.at(-1).revertsMerge={historyIndex,targetId:targetId||null,at:original.at,label:original.label};
+    return next;
+  }
   function undo(input) {
     validate(input); const data = copy(input), entry = data.athleteRegistry.history.at(-1);
     check(entry, "Peruttavia muutoksia ei ole.");
@@ -299,5 +337,5 @@
     const json = JSON.stringify(payload, null, 2).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
     return '"use strict";\nwindow.PAINI_SHARED_DATA = ' + json + ';\n';
   }
-  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve, differentPairs, areDifferent, setDifferent, mergeMany, nameClubPlan, autoMergeNameClub, namePlan, autoMergeNames });
+  root.PainiRegistry = Object.freeze({ validate, initialize, merge, split, updatePerson, importCompetitions, undo, exportSource, rows, compKey, norm, resolve, mergeUndoInfo, undoMerge, differentPairs, areDifferent, setDifferent, mergeMany, nameClubPlan, autoMergeNameClub, namePlan, autoMergeNames });
 })(typeof window === "undefined" ? globalThis : window);

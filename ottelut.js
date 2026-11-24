@@ -91,6 +91,35 @@
       return new Set([...sets[0]].filter(id=>sets.every(set=>set.has(id))));
     }};
   }
+  function boutOutcome(match,athleteId) {
+    if(match.identityConflict||match.red.id===match.blue.id||![match.red.id,match.blue.id].includes(athleteId)||![match.red.id,match.blue.id].includes(match.winner?.id))return 'neutral';
+    return match.winner.id===athleteId?'win':'loss';
+  }
+  function yearlyBouts(matches,athleteId) {
+    const years=new Map();
+    for(const match of matches){
+      const year=Number.isInteger(match.competition.year)?String(match.competition.year):'Ei päivämäärää';
+      if(!years.has(year))years.set(year,{year,win:0,loss:0,neutral:0,total:0});
+      const row=years.get(year);row[boutOutcome(match,athleteId)]++;row.total++;
+    }
+    return [...years.values()].sort((a,b)=>/^\d{4}$/.test(a.year)?(/^\d{4}$/.test(b.year)?Number(a.year)-Number(b.year):-1):1);
+  }
+  function renderYearlyBouts(matches,athleteId) {
+    const section=document.querySelector('#bouts-yearly');if(!section)return;
+    section.hidden=!matches.length;
+    const bars=section.querySelector('#bouts-yearly-bars'),body=section.querySelector('#bouts-yearly-rows');bars.replaceChildren();body.replaceChildren();
+    const rows=yearlyBouts(matches,athleteId),max=Math.max(1,...rows.map(row=>row.total));
+    for(const row of rows){
+      const line=document.createElement('div');line.className='yearly-line';
+      const label=document.createElement('span');label.textContent=row.year;
+      const track=document.createElement('div');track.className='yearly-track';
+      for(const outcome of ['win','loss','neutral']){
+        const segment=document.createElement('span');segment.className='yearly-segment bout-year-'+outcome;segment.style.width=(row[outcome]/max*100)+'%';track.append(segment);
+      }
+      const total=document.createElement('strong');total.textContent=row.total;line.append(label,track,total);bars.append(line);
+      const tr=document.createElement('tr');[row.year,row.win,row.loss,row.neutral,row.total].forEach((value,i)=>{const cell=document.createElement(i?'td':'th');if(!i)cell.scope='row';cell.textContent=value;tr.append(cell);});body.append(tr);
+    }
+  }
   function prepare(data,registry,bouts=trial) {
     if(!registry || !data?.athleteRegistry)throw Error('Painijarekisteri puuttuu');
     const competitions=new Map(bouts.competitions.map(c=>[c.key,c]));
@@ -255,6 +284,7 @@
       const person=people.get(a),opponent=people.get(b),pair=mode==='pair';
       const title=$('#bouts-result-title'),notice=$('#bouts-result-status'),stats=$('#bouts-statistics'),tbody=$('#bouts-results'),table=$('#bouts-table-wrap'),omitted=$('#bouts-omitted');
       tbody.replaceChildren();stats.replaceChildren();stats.hidden=true;table.hidden=true;omitted.hidden=true;
+      renderYearlyBouts([],a);
       resultPage=0;currentMatches=[];document.querySelectorAll('.bouts-pagination').forEach(nav=>nav.hidden=true);
       $('#bouts-swap').disabled=!person||!opponent||a===b;
       if(!person) {title.textContent='Valitse painija';notice.textContent='Valitse painija nähdäksesi mukana olevat ottelut.';return;}
@@ -270,6 +300,7 @@
       if(conflicts)notice.textContent+=' '+conflicts+' ottelussa molemmat samannimiset osallistujat ovat samassa profiilissa. Nämä ottelut odottavat henkilöiden erottamista eikä niitä lasketa voittoihin tai tappioihin.';
       const wins=matches.filter(m=>!m.identityConflict&&m.winner.id===a).length;
       stats.append(statistic('Otteluita',matches.length),statistic(pair?person.name+' · voitot':'Voittoja',wins),statistic(pair?opponent.name+' · voitot':'Tappioita',matches.length-wins-conflicts));if(conflicts)stats.append(statistic("Erota henkilöt",conflicts));stats.hidden=false;
+      renderYearlyBouts(matches,a);
       currentMatches=matches;
       renderCurrentPage=()=>{
         tbody.replaceChildren();
@@ -278,7 +309,7 @@
         for(const match of currentMatches.slice(first,first+pageSize)) {
           const ownRed=match.red.id===a,other=ownRed?match.blue:match.red;
           const points=match.points?(ownRed?match.points:[match.points[1],match.points[0]]):null;
-          const row=document.createElement('tr');row.dataset.boutId=match.id;
+          const row=document.createElement('tr');row.dataset.boutId=match.id;row.dataset.outcome=boutOutcome(match,a);
           const values=[match.competition.title+' · '+match.competition.details,match.round+' · '+match.category+' '+match.weight+' kg',person.name,other.name,match.identityConflict?'Erota samannimiset':match.winner.id===a?'Voitto':'Tappio',labels[match.code],points?points.join('–'):'Pisteitä ei ilmoitettu'];
           values.forEach((value,index)=>{
             const cell=document.createElement('td');cell.textContent=value;if(index<4)cell.translate='no';
@@ -359,6 +390,6 @@
     };
     initialized=true;$('#bouts-load-status').hidden=true;$('#bouts-retry').hidden=true;$('#bouts-app').hidden=false;render();
   }
-  if(typeof module==='object'&&module.exports){module.exports={unpack,prepare,words,distance,matchesName,matchesStrictly,createSearch};return;}
+  if(typeof module==='object'&&module.exports){module.exports={unpack,prepare,words,distance,matchesName,matchesStrictly,createSearch,boutOutcome,yearlyBouts};return;}
   window.PAINI_BOUTS=Object.freeze({init,getState:()=>readState(),restore:state=>restoreState(state)});
 })();

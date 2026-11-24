@@ -397,6 +397,23 @@
     $("#open-merge").setAttribute("aria-pressed",String(mode==="merge"));$("#open-split").setAttribute("aria-pressed",String(mode==="split"));
     $("#operation-help").textContent=mode==="merge"?"Etsi toinen profiili, vertaa tietoja ja paina Yhdistä profiilit.":mode==="split"?"Valitse toiselle henkilölle kuuluvat tulokset ja paina Erota henkilöiksi.":"Valitse yllä, mitä haluat tehdä. Muutoksen voi perua.";
   }
+  function mergeUndoButton(historyIndex,targetId) {
+    const info=R.mergeUndoInfo(data,historyIndex,targetId),button=node('button',info.groups>1?'Avaa painija haulla peruuttaaksesi hänen yhdistämisensä':'Peru yhdistäminen ja pidä henkilöt erillään');
+    button.type='button';button.disabled=!info.allowed||info.groups>1;
+    button.addEventListener('click',()=>{
+      try{const next=R.undoMerge(data,historyIndex,targetId);commitChange(next,selectedId,'Yhdistäminen peruttiin. '+info.results+' tulosta palautettiin alkuperäisille tunnuksille, ja henkilöt pidetään erillään.');}catch(error){say(error.message,'error');}
+    });return button;
+  }
+  function renderMergeUndo() {
+    const panel=$('#merge-undo-panel');if(!panel)return;panel.hidden=true;
+    for(let i=data.athleteRegistry.history.length-1;i>=0;i--){
+      const entry=data.athleteRegistry.history[i];
+      if(!entry.people.some(change=>change.id===selectedId||change.after?.mergedInto===selectedId))continue;
+      const info=R.mergeUndoInfo(data,i,selectedId);if(!info.isMerge)continue;
+      panel.hidden=false;$('#merge-undo-summary').textContent=entry.label+' · '+info.profiles+' aiempaa profiilia · '+info.results+' siirrettyä tulosta. '+(info.reason||'Tämän yhdistämisen voi palauttaa erikseen.');
+      const old=$('#undo-selected-merge'),button=mergeUndoButton(i,selectedId);button.id='undo-selected-merge';old.replaceWith(button);break;
+    }
+  }
   function renderEditor() {
     const person = people().find(a => a.id === selectedId); $("#editor").hidden = !person;
     if (!person) return;
@@ -419,7 +436,7 @@
       [item.title + " · " + item.details, row.name + " · " + row.club, row.category + " · " + row.weight + " kg · " + row.place + "."].forEach(text => { const td = document.createElement("td"); td.textContent = text; tr.append(td); });
       parent.append(tr);
     });
-    updateSplitCount();
+    updateSplitCount();renderMergeUndo();
   }
   function updateSplitCount(){
     const ids=new Set([...document.querySelectorAll("#identity-rows input:checked")].map(box=>box.value)),own=entries(selectedId),count=ids.size;
@@ -440,6 +457,7 @@
   function render() {
     cancel(); const all = people();
     $("#registry-summary").textContent = data.competitions.length + " kilpailua · " + R.rows(data).length + " tulosta · " + all.length + " aktiivista tunnusta · " + all.filter(a => a.status === "unreviewed").length + " tarkistamatonta merkintää";
+    $("#undo-registry").textContent=data.athleteRegistry.history.length?"Peru viimeisin: "+data.athleteRegistry.history.at(-1).label:"Peru viimeisin muutos";
     $("#unsaved").textContent = dirty ? "Työaineistossa on muutoksia. Lataa päivitetty data.js ennen sivun sulkemista." : "Ei tallentamattomia muutoksia.";
     const list = $("#changes-list"); list.replaceChildren();
     const history = data.athleteRegistry.history.map(entry=>({entry,at:entry.at})).concat((data.athleteRegistry.revertedHistory||[]).map(h=>({...h,at:h.undoneAt})));
@@ -449,7 +467,9 @@
       const changes=node("ul");h.assignments.slice(0,200).forEach(a=>{
         const found=entries(a.after).find(x=>x.row.resultId===a.resultId);
         changes.append(node("li",(found?found.item.title+" · "+found.item.details+" · "+found.row.name+" · "+found.row.club+" · ":"")+a.resultId+": "+a.before+" → "+a.after));
-      });if(h.assignments.length>200)details.append(node("p","Näytetään ensimmäiset 200 siirtoa. Täydellinen historia säilyy ladattavassa data.js-tiedostossa."));details.append(changes);li.append(details);list.append(li);
+      });if(h.assignments.length>200)details.append(node("p","Näytetään ensimmäiset 200 siirtoa. Täydellinen historia säilyy ladattavassa data.js-tiedostossa."));details.append(changes);
+      if(!undoneAt){const historyIndex=data.athleteRegistry.history.indexOf(h),info=R.mergeUndoInfo(data,historyIndex);if(info.isMerge){details.append(node('p','Palauttaa vain tämän yhdistämisen siirtämät tulokset alkuperäisille tunnuksille. Henkilöt pidetään jatkossa erillään. '+info.reason),mergeUndoButton(historyIndex));}}
+      li.append(details);list.append(li);
     });
     selectedPairs.clear();renderList();renderEditor();if($("#advanced-tools").open)renderAdvanced();
   }

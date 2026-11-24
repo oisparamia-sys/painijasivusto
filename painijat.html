@@ -43,6 +43,7 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 <button id="open-merge" type="button">Yhdistä toiseen painijaan</button>
 <button id="open-split" type="button">Tässä on kaksi eri henkilöä</button>
 </div><p id="operation-help" class="hint">Valitse yllä, mitä haluat tehdä. Muutoksen voi perua.</p>
+<section id="merge-undo-panel" class="operation-panel" hidden aria-labelledby="merge-undo-heading"><h3 id="merge-undo-heading">Peru virheellinen yhdistäminen</h3><p id="merge-undo-summary"></p><p class="hint">Vain tämän yhdistämisen siirtämät tulokset palaavat alkuperäisille tunnuksille. Myöhemmin tuodut tulokset jäävät nykyiseen profiiliin. Henkilöt merkitään pysyvästi erillisiksi, jotta automaattihaku ei yhdistä heitä uudelleen. Myös tämän perumisen voi perua.</p><button id="undo-selected-merge" type="button">Peru yhdistäminen ja pidä henkilöt erillään</button></section>
 <details id="person-edit"><summary>Muokkaa nimeä tai tarkistustilaa</summary><p id="original-names" class="hint"></p>
 <label for="person-name">Näkymässä käytettävä nimi</label><input id="person-name" type="text">
 <label class="check-label"><input id="person-reviewed" type="checkbox">Olen tarkistanut, että kaikki tämän tunnuksen tulokset kuuluvat samalle henkilölle.</label>
@@ -112,4 +113,4 @@ main{max-width:1100px}select,input{max-width:100%}.registry-layout{display:grid;
 <p id="different-people-count"></p><ul id="different-people-list"></ul>
 </section>
 </details><details id="history-panel" class="card"><summary>Muutoshistoria</summary><p class="hint">Viimeisimmät 20 muutosta näytetään alla. Peruminen toimii myös ladatun data.js-tiedoston uudelleen avaamisen jälkeen. Tunnusnumeroita ei käytetä uudelleen. Historia kulkee data.js-tiedoston mukana. Myös peruttujen muutosten tiedot säilytetään. Avaa historian rivi nähdäksesi siirretyt tulostunnukset.</p><ol id="changes-list"></ol></details>
-<noscript>Työkalu tarvitsee JavaScriptin.</noscript></main><script src="painijat-loader.js?v=20261121-simple1" defer></script></body></html>
+<noscript>Työkalu tarvitsee JavaScriptin.</noscript></main><script src="painijat-loader.js?v=20261123-merge-undo2" defer></script></body></html>

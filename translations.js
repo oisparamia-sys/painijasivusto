@@ -1,5 +1,10 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Otteluvoitot ja tappiot vuosittain", "Bout wins and losses by year", "Matchvinster och förluster per år"],
+  ["Vihreä = voitot, vaaleanpunainen = tappiot, harmaa = epäselvät. Kuvaaja ja taulukko sisältävät kaikki hakuehtoihin sopivat ottelut. Pois jätettyjä otteluita ei lasketa mukaan.", "Green = wins, pink = losses, grey = unresolved. The chart and table include all bouts matching the filters. Omitted bouts are not counted.", "Grönt = vinster, rosa = förluster, grått = oklara. Diagrammet och tabellen omfattar alla matcher som matchar filtren. Utelämnade matcher räknas inte med."],
+  ["Epäselvät", "Unresolved", "Oklara"],
+  ["Ottelukortin vihreä tausta tarkoittaa valitun painijan voittoa ja vaaleanpunainen tappiota. Epäselvä tulos näkyy neutraalina. Tulos kerrotaan myös tekstinä.", "A green bout card means a win for the selected wrestler and pink means a loss. Unresolved results have a neutral background. The result is also shown as text.", "En grön matchruta betyder vinst för den valda brottaren och rosa betyder förlust. Oklara resultat har neutral bakgrund. Resultatet visas också som text."],
+
   ["Lista näyttää enintään 50 ottelua kerrallaan. Yhteenveto sisältää kaikki hakuehtoja vastaavat ottelut.","The list shows up to 50 bouts at a time. The summary includes all bouts matching your filters.","Listan visar högst 50 matcher åt gången. Sammanfattningen omfattar alla matcher som matchar sökvillkoren."],
   [
     "Painijatulokset",

@@ -33,3 +33,12 @@ test('preparation follows current result IDs after a split while retaining old a
  assert.equal(result.matches[0].red.id,'new-p1');assert.equal(result.matches[1].winner.id,'p2');assert.equal(result.matches.length,2);
  const invalid=B.unpack(packed());invalid.matches[1].source='https://example.test/wrong.htm';assert.throws(()=>B.prepare(data,{},invalid),/Lähdeosoite/);
 });
+
+test('bout outcomes and yearly totals follow the selected wrestler and keep ambiguous identities neutral',()=>{
+ const a={id:'a'},b={id:'b'},make=(year,winner,extra={})=>({competition:{year},red:a,blue:b,winner,...extra});
+ const matches=[make(2024,a),make(2024,b),make(2025,a),make(2025,a,{identityConflict:true}),make(undefined,b)];
+ assert.equal(B.boutOutcome(matches[0],'a'),'win');assert.equal(B.boutOutcome(matches[0],'b'),'loss');
+ assert.equal(B.boutOutcome(matches[3],'a'),'neutral');assert.equal(B.boutOutcome(matches[0],'other'),'neutral');
+ assert.deepEqual(B.yearlyBouts(matches,'a'),[{year:'2024',win:1,loss:1,neutral:0,total:2},{year:'2025',win:1,loss:0,neutral:1,total:2},{year:'Ei päivämäärää',win:0,loss:1,neutral:0,total:1}]);
+ assert.equal(B.yearlyBouts(matches,'b').reduce((n,row)=>n+row.total,0),matches.length);
+});

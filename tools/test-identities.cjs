@@ -46,8 +46,51 @@ test('bout participants follow result IDs through merging, splitting and undo; n
   const bouts={version:2,competitions:[{key:a.source}],participants:a.rows.map(r=>({resultId:r.resultId,athleteId:r.athleteId,competition:a.source,category:r.category,weight:r.weight})),matches:[{id:'m1',competition:a.source,red:a.rows[0].resultId,blue:a.rows[1].resultId,winner:a.rows[0].resultId,category:'Pojat',weight:'36',code:'PV',points:[2,0],source:a.source.replace('indexFIN.htm','FIN36beg.htm')}],excluded:[],issues:[]};
   const merged=R.autoMergeNames(base),rebound=D.rebindBouts(merged,bouts);D.validateBouts(merged,rebound,R);
   assert.equal(rebound.participants[0].athleteId,rebound.participants[1].athleteId);assert.equal(rebound.matches.length,1);
+  const correction=R.undoMerge(merged,0),correctedBouts=D.rebindBouts(correction,rebound);D.validateBouts(correction,correctedBouts,R);assert.notEqual(correctedBouts.participants[0].athleteId,correctedBouts.participants[1].athleteId);assert.equal(JSON.stringify(correctedBouts.matches),JSON.stringify(rebound.matches));
   const split=R.split(merged,merged.competitions[0].rows[0].athleteId,[a.rows[1].resultId],'Eino Laine'),separated=D.rebindBouts(split,rebound);
   assert.notEqual(separated.participants[0].athleteId,separated.participants[1].athleteId);D.validateBouts(split,separated,R);
   D.validateBouts(R.undo(split),D.rebindBouts(R.undo(split),separated),R);
   const broken=JSON.parse(JSON.stringify(split));broken.competitions[0].rows[0].category='Väärä';assert.throws(()=>D.rebindBouts(broken,separated),/painijaviittauksen/);
+});
+
+test('targeted merge reversal preserves unrelated later imports and permanently separates restored profiles',()=>{
+ const base=fixture(),a=base.competitions[0].rows[0],b=base.competitions[1].rows[0];
+ const merged=R.merge(base,b.athleteId,a.athleteId),index=merged.athleteRegistry.history.length-1;
+ const later=R.importCompetitions(merged,[competition('Later','Seura D','Uusi Painija')],{autoMergeNames:false});
+ assert.equal(R.mergeUndoInfo(later,index).allowed,true);
+ const restored=R.undoMerge(later,index);
+ assert.equal(restored.competitions[1].rows[0].athleteId,b.athleteId);
+ assert.equal(JSON.stringify(restored.competitions[3]),JSON.stringify(later.competitions[3]));
+ assert.equal(restored.competitions[1].rows[0].resultId,b.resultId);
+ assert.ok(R.areDifferent(restored,a.athleteId,b.athleteId));
+ assert.equal(JSON.stringify(R.autoMergeNames(restored).competitions),JSON.stringify(restored.competitions));
+ const imported=R.importCompetitions(restored,[competition('NewSameName','Seura E')]);
+ assert.notEqual(imported.competitions.at(-1).rows[0].athleteId,a.athleteId);
+ assert.notEqual(imported.competitions.at(-1).rows[0].athleteId,b.athleteId);
+ assert.equal(restored.athleteRegistry.history[index].label,merged.athleteRegistry.history[index].label);
+ assert.equal(restored.athleteRegistry.history.at(-1).revertsMerge.historyIndex,index);
+ const undone=R.undo(restored);assert.equal(undone.competitions[1].rows[0].athleteId,a.athleteId);assert.equal(R.areDifferent(undone,a.athleteId,b.athleteId),false);
+ assert.equal(R.mergeUndoInfo(restored,index).allowed,false);assert.throws(()=>R.undoMerge(restored,index));
+});
+test('targeted merge reversal refuses later changes to touched profiles or result assignments',()=>{
+ const base=fixture(),a=base.competitions[0].rows[0],b=base.competitions[1].rows[0];base.athleteRegistry.athletes.find(person=>person.id===a.athleteId).status='reviewed';
+ const merged=R.merge(base,b.athleteId,a.athleteId),index=0;
+ const split=R.split(merged,a.athleteId,[b.resultId],'Eri henkilö');
+ assert.equal(R.mergeUndoInfo(split,index).allowed,false);assert.throws(()=>R.undoMerge(split,index));
+ const changed=R.updatePerson(merged,a.athleteId,'Muuttunut nimi',false);
+ assert.equal(R.mergeUndoInfo(changed,index).allowed,false);const before=JSON.stringify(changed);assert.throws(()=>R.undoMerge(changed,index));assert.equal(JSON.stringify(changed),before);
+});
+
+test('reversing one wrestler from a batch merge leaves all other merged groups unchanged',()=>{
+ const base=R.initialize({version:1,competitions:[competition('A','Seura A','Eino Laine'),competition('B','Seura B','Eino Laine'),competition('C','Seura C','Leo Testi'),competition('D','Seura D','Leo Testi')]});
+ const merged=R.autoMergeNames(base),eino=merged.competitions[0].rows[0].athleteId,leo=merged.competitions[2].rows[0].athleteId;
+ assert.equal(R.mergeUndoInfo(merged,0).groups,2);assert.equal(R.mergeUndoInfo(merged,0).allowed,false);assert.throws(()=>R.undoMerge(merged,0));assert.equal(R.mergeUndoInfo(merged,0,eino).results,1);
+ const next=R.undoMerge(merged,0,eino);
+ assert.equal(next.competitions[2].rows[0].athleteId,leo);assert.equal(next.competitions[3].rows[0].athleteId,leo);
+ assert.notEqual(next.competitions[0].rows[0].athleteId,next.competitions[1].rows[0].athleteId);
+ assert.equal(R.mergeUndoInfo(next,0,leo).allowed,true);assert.equal(R.mergeUndoInfo(next,0,eino).allowed,false);
+ const context={window:{}};vm.runInNewContext(R.exportSource(next),context);const reloaded=R.autoMergeNames(context.window.PAINI_SHARED_DATA);
+ assert.equal(JSON.stringify(reloaded.competitions),JSON.stringify(next.competitions));
+ assert.equal(R.undoMerge(next,0,leo).competitions[3].rows[0].athleteId,base.competitions[3].rows[0].athleteId);
+ assert.equal(next.athleteRegistry.nextAthlete,merged.athleteRegistry.nextAthlete);
 });
