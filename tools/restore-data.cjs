@@ -38,8 +38,9 @@ function prepare(root,number){
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'paini-restore-'));
  try{
   fs.writeFileSync(path.join(temp,'ottelut-data.js'),files.get('ottelut-data.js'));
+  fs.writeFileSync(path.join(temp,'data.js'),files.get('data.js'));
   E.build(temp);
-  for(const file of ['ottelut-public.json','ottelut-manifest.json'])files.set(file,fs.readFileSync(path.join(temp,file)));
+  for(const file of ['ottelut-public.json','ottelut-manifest.json','kattavuus.json'])files.set(file,fs.readFileSync(path.join(temp,file)));
  }finally{fs.rmSync(temp,{recursive:true,force:true});}
  return {files,summary:{number,at:run.at,label:run.label,competitions:data.competitions.length,results:R.rows(data).length,matches:bouts.matches.length,
   changedFiles:[...files].filter(([file,bytes])=>!fs.existsSync(path.join(root,file))||!fs.readFileSync(path.join(root,file)).equals(bytes)).map(([file])=>file)}};

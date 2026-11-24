@@ -28,7 +28,15 @@ function build(directory='.'){
   const packed=pack(context.window.PAINI_BOUTS_DATA),content=JSON.stringify(packed);
   const revision=crypto.createHash('sha256').update(content).digest('hex');
   const manifest=JSON.stringify({version:1,file:'ottelut-public.json',revision,checkedAt:packed.checkedAt});
-  for(const [name,text] of [['ottelut-public.json',content],['ottelut-manifest.json',manifest]]){
+  const files=[['ottelut-public.json',content],['ottelut-manifest.json',manifest]];
+  if(fs.existsSync(path.join(directory,'data.js'))){
+    vm.runInContext(fs.readFileSync(path.join(__dirname,'../athlete-registry.js'),'utf8'),context,{timeout:15000});
+    vm.runInContext(fs.readFileSync(path.join(directory,'data.js'),'utf8'),context,{timeout:15000});
+    context.window.PainiRegistry.validate(context.window.PAINI_SHARED_DATA);
+    const coverage=require('../site-metrics.js').coverage(context.window.PAINI_SHARED_DATA,context.window.PAINI_BOUTS_DATA);
+    files.push(['kattavuus.json',JSON.stringify(coverage)]);
+  }
+  for(const [name,text] of files){
     const file=path.join(directory,name);fs.writeFileSync(file+'.tmp',text+'\n');fs.renameSync(file+'.tmp',file);
   }
   console.log('Julkinen otteluaineisto:',packed.matches.length,'ottelua,',Buffer.byteLength(content),'tavua');

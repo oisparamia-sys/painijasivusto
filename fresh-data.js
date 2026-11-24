@@ -88,6 +88,8 @@
       if (refreshLink && await checkStartupData(window.PAINI_SHARED_DATA)) return;
       if (status) { status.hidden = true; status.textContent = ''; }
       await load('site-utils.js?fresh='+version);
+      await load('site-metrics.js?fresh='+version);
+      await load('site-features.js?fresh='+version);
       await load('script.js?fresh='+version);
       window.dispatchEvent(new Event('paini-data-ready'));
       const saved = savedRefresh();

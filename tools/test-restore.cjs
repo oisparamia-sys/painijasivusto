@@ -3,7 +3,7 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const Q=require('./review-core.cjs'),D=require('./review-data.cjs'),E=require('./export-bouts.cjs'),S=require('./restore-data.cjs');
 const ctx={window:{}};vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../athlete-registry.js'),'utf8'),ctx);const R=ctx.window.PainiRegistry;
 const source='https://turniereklassisch.ringerdb.de/VT/2026/FI/Testi/indexFIN.htm';
-const activeFiles=['data.js','ottelut-data.js','ottelut-public.json','ottelut-manifest.json','muutosjono.json','hyvaksyntapaatokset.json'];
+const activeFiles=['data.js','ottelut-data.js','ottelut-public.json','ottelut-manifest.json','kattavuus.json','muutosjono.json','hyvaksyntapaatokset.json'];
 const contents=root=>Object.fromEntries(activeFiles.map(file=>[file,fs.readFileSync(path.join(root,file),'utf8')]));
 function fixture(run){
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'paini-restore-test-'));
@@ -31,7 +31,7 @@ test('preview lists impact without changing live files or snapshot history',()=>
  assert.equal(S.list(root).length,2);
  const plan=S.preview(root,1);
  assert.equal(plan.competitions,1);assert.equal(plan.results,3);assert.equal(plan.matches,1);
- assert.deepEqual(plan.changedFiles,activeFiles.slice(0,4));
+ assert.deepEqual(plan.changedFiles,activeFiles.slice(0,5));
  assert.deepEqual(contents(root),newer);
  assert.equal(fs.readFileSync(path.join(root,'tietovarasto/index.json'),'utf8'),indexBefore);
 }));
@@ -87,4 +87,12 @@ test('an unchanged restore is a no-op and a broken current backup stops replacem
  fs.writeFileSync(path.join(root,version.blob),'rikki');
  assert.throws(()=>S.restore(root,1),/Varmuuskopion tarkistus epäonnistui/);
  assert.deepEqual(contents(root),newer);
+}));
+
+test('export refuses invalid result identifiers before changing public bouts or coverage',()=>fixture(({root})=>{
+ const before=contents(root),context={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'data.js'),'utf8'),context);
+ context.window.PAINI_SHARED_DATA.competitions[0].rows[0].athleteId='missing-person';
+ fs.writeFileSync(path.join(root,'data.js'),'window.PAINI_SHARED_DATA='+JSON.stringify(context.window.PAINI_SHARED_DATA));
+ assert.throws(()=>E.build(root));
+ for(const file of ['ottelut-public.json','ottelut-manifest.json','kattavuus.json'])assert.equal(fs.readFileSync(path.join(root,file),'utf8'),before[file]);
 }));

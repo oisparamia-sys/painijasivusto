@@ -35,6 +35,9 @@
     [/^Tulosten lataaminen epäonnistui \((.+)\)\. Tarkista verkkoyhteys ja kokeile Päivitä tiedot -painiketta\.$/,['Loading results failed ({1}). Check your connection and use Refresh data.','Resultaten kunde inte laddas ({1}). Kontrollera anslutningen och använd Uppdatera data.']],
     [/ · (\d+) tulosriviä$/,[' · {1} result rows',' · {1} resultatrader']],
     [/^Kirjoita 3–(\d+) merkin palaute\. Kohdetiedot vievät osan tilasta\.$/,['Enter feedback of 3–{1} characters. Context information uses part of the space.','Skriv respons med 3–{1} tecken. Kontextuppgifterna tar en del av utrymmet.']]
+,[/^(\d+) painijatunnusta · (\d+) kilpailua$/,['{1} wrestler identifiers · {2} competitions','{1} brottar-ID:n · {2} tävlingar']],
+    [/^(\d+) kilpailusijoitusta$/,['{1} competition placements','{1} tävlingsplaceringar']],
+    [/ · (\d+) tulosriviä$/,[' · {1} result rows',' · {1} resultatrader']]
   ];
   let language='fi';try{const saved=localStorage.getItem('paini-language');if(languages.includes(saved))language=saved;}catch{}
   function translate(value,lang=language) {

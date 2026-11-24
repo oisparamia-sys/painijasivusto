@@ -45,6 +45,8 @@ const athleteRecords = new Map((registryReady ? sharedData.athleteRegistry.athle
 let profileState = null;
 let profileOpener = null;
 let resultsScroll = null;
+let profileReturnView = "results";
+const featureViewNames=["home","clubs","club","compare"];
 let restoreGeneration = 0;
 const defaultPageTitle = document.title;
 const resultsPerPage = 50;
@@ -106,6 +108,7 @@ function refreshFilters() {
     return Number(b.value) - Number(a.value);
   }).forEach(option => yearSelect.append(option));
   const items = yearFilteredCompetitions();
+  window.PAINI_FEATURES?.competitionCoverage(items);
   const style = $("#result-style").value;
   const rows = items.flatMap(item => style ? item.rows.filter(row => resultStyle(item, row) === style) : item.rows);
   options($("#club"), rows.map(row => row.club), "Kaikki seurat");
@@ -242,29 +245,31 @@ function openProfile(athleteId, opener = null, updateUrl = true) {
   athleteId = window.PainiRegistry.resolve(sharedData, athleteId);
   if (!athleteId || !athleteRecords.has(athleteId)) return;
   restoreGeneration++;
-  if (!profileState) resultsScroll = {x: window.scrollX, y: window.scrollY};
+  if (!profileState) {resultsScroll = {x: window.scrollX, y: window.scrollY};profileReturnView=featureViewNames.find(view=>document.getElementById(view+"-view")&&!document.getElementById(view+"-view").hidden)||(!$("#competition-view").hidden?"competitions":!$("#bouts-view").hidden?"bouts":"results");}
   if (opener) profileOpener = opener;
+  $("#back-to-results").textContent={club:"Takaisin seuran profiiliin",clubs:"Takaisin seuroihin",home:"Takaisin etusivulle",competitions:"Takaisin kilpailuihin",bouts:"Takaisin otteluihin"}[profileReturnView]||"← Takaisin hakutuloksiin";
   clearProfileLinkError();
   profileState = { athleteId, year: "", sort: "newest" };
   $("#wrestler-report-error").hidden = typeof window.PAINI_OPEN_FEEDBACK !== "function";
   if (updateUrl) writeProfileRoute(athleteId);
+  featureViewNames.forEach(view=>{const el=document.getElementById(view+"-view");if(el)el.hidden=true;});
+  ["home","clubs","compare"].forEach(view=>document.getElementById("nav-"+view)?.setAttribute("aria-pressed","false"));
   $("#search-view").hidden = true;
   $("#competition-view").hidden = true;
   if ($("#bouts-view")) $("#bouts-view").hidden = true;
   $("#nav-bouts")?.setAttribute("aria-pressed", "false");
   $("#nav-results").setAttribute("aria-pressed", "true");
   $("#nav-competitions").setAttribute("aria-pressed", "false");
+  if(document.getElementById("site-title"))$("#site-title").hidden=false;
+  if(document.getElementById("search-intro"))$("#search-intro").hidden=true;
   $("#wrestler-view").hidden = false;
   renderProfile();
   $("#wrestler-title").focus();
 }
 function closeProfile(updateUrl = true) {
-  if (updateUrl) writeProfileRoute(null);
-  document.title = defaultPageTitle;
-  profileState = null;
-  $("#wrestler-view").hidden = true;
-  $("#search-view").hidden = false;
+  if (updateUrl) writeSectionRoute(profileReturnView);
   const target = profileOpener?.isConnected ? profileOpener : $("#search");
+  showView(profileReturnView,false,false);
   target.focus({preventScroll: true});
   const saved = resultsScroll;
   const generation = ++restoreGeneration;
@@ -333,6 +338,7 @@ function renderProfile() {
   });
   renderPlacementChart(entries);
   renderYearlyPlacements(allEntries);
+  window.PAINI_FEATURES?.profile(allEntries,athlete.id);
   const tbody = $("#wrestler-results");
   const fragment = document.createDocumentFragment();
   entries.forEach(({item, result}) => {
@@ -375,7 +381,8 @@ function renderProfile() {
 }
 
 function showView(view, focus = true, updateUrl = true) {
-  if (updateUrl) writeProfileRoute(null);
+  if(featureViewNames.includes(view)&&!document.getElementById(view+"-view"))view="results";
+  if (updateUrl) writeSectionRoute(view);
   document.title = defaultPageTitle;
   profileState = null;
   profileOpener = null;
@@ -386,9 +393,14 @@ function showView(view, focus = true, updateUrl = true) {
   $("#nav-bouts")?.setAttribute("aria-pressed", String(view === "bouts"));
   $("#nav-results").setAttribute("aria-pressed", String(view === "results"));
   $("#nav-competitions").setAttribute("aria-pressed", String(view === "competitions"));
+  if(document.getElementById("site-title"))$("#site-title").hidden=view==="home";
+  if(document.getElementById("search-intro"))$("#search-intro").hidden=view!=="results";
+  featureViewNames.forEach(name=>{const el=document.getElementById(name+"-view");if(el)el.hidden=view!==name;});
+  ["home","clubs","compare"].forEach(name=>document.getElementById("nav-"+name)?.setAttribute("aria-pressed",String(view===name||name==="clubs"&&view==="club")));
+  window.PAINI_FEATURES?.onView(view);
   if (view === "competitions") renderCompetitionList();
   if (view === "bouts") loadBouts();
-  if (focus) $(view === "bouts" ? "#bouts-heading" : view === "results" ? "#results-heading" : "#competition-heading").focus();
+  if (focus) $(featureViewNames.includes(view)?(view==="club"?"#club-title":"#"+view+"-heading"):view === "bouts" ? "#bouts-heading" : view === "results" ? "#results-heading" : "#competition-heading").focus();
 }
 function openCompetition(item) {
   $("#result-style").value = "";
@@ -563,6 +575,7 @@ $("#result-sort").addEventListener("change", render);
 $("#search").addEventListener("input", render);
 $("#club").addEventListener("change", render);
 $("#category").addEventListener("change", render);
+["home","clubs","compare"].forEach(view=>document.getElementById("nav-"+view)?.addEventListener("click",()=>showView(view)));
 $("#nav-results").addEventListener("click", () => showView("results"));
 $("#nav-competitions").addEventListener("click", () => showView("competitions"));
 $('#nav-bouts')?.addEventListener('click',()=>showView('bouts'));
@@ -618,6 +631,11 @@ function profileAddress(athleteId) {
   address.hash = new URLSearchParams({painija:athleteId}).toString();
   return address.href;
 }
+function writeSectionRoute(view,replace=false){
+  const address=new URL(location.href),custom=window.PAINI_FEATURES?.hashFor(view);
+  address.hash=custom||(view==='home'?'':new URLSearchParams({nakyma:view}).toString());
+  if(address.href!==location.href)try{history[replace?'replaceState':'pushState'](null,'',address.href);}catch{}
+}
 function writeProfileRoute(athleteId, replace = false) {
   const address = new URL(location.href);
   if (!athleteId && !new URLSearchParams(address.hash.slice(1)).has("painija")) return;
@@ -646,7 +664,11 @@ function routeProfileFromUrl() {
     }
     return;
   }
-  if (!params.has("painija")) { clearProfileLinkError(); if (profileState) closeProfile(false); return; }
+  if (!params.has("painija")) {
+    clearProfileLinkError();
+    if(params.has('seura')){if(!window.PAINI_FEATURES.openClub(params.get('seura'),false))showView('clubs',false,false);return;}
+    const view=params.get('nakyma');showView(['results','competitions','bouts',...featureViewNames].includes(view)?view:document.getElementById('home-view')?'home':'results',false,false);return;
+  }
   if (!registryReady) return;
   const requested = params.get("painija");
   const resolved = /^painija-\d{6,}$/.test(requested) ? window.PainiRegistry.resolve(sharedData,requested) : null;
@@ -677,6 +699,7 @@ $("#copy-wrestler-link").addEventListener("click",async () => {
 });
 window.addEventListener("popstate",routeProfileFromUrl);
 window.addEventListener("hashchange",routeProfileFromUrl);
+window.PAINI_FEATURES.init({data:sharedData,showView,openProfile,openCompetition,date:competitionDate,year:resultYear,search:refreshFilters});
 routeProfileFromUrl();
 
 $("#wrestler-report-error").addEventListener("click", event => {
@@ -777,12 +800,12 @@ const refreshResultFields = ["competition", "competition-search", "result-style"
 window.PAINI_PAGE_STATE = Object.freeze({
   capture() {
     if (profileState) return null;
-    const view = !$("#bouts-view").hidden ? "bouts" : !$("#competition-view").hidden ? "competitions" : "results";
-    return {view, bouts:pendingBoutsState || window.PAINI_BOUTS?.getState(), results:Object.fromEntries(refreshResultFields.map(id=>[id,document.getElementById(id).value])), page:resultsPage,
+    const view = featureViewNames.find(name=>document.getElementById(name+"-view")&&!document.getElementById(name+"-view").hidden)||(!$("#bouts-view").hidden ? "bouts" : !$("#competition-view").hidden ? "competitions" : "results");
+    return {view, features:window.PAINI_FEATURES?.capture(),bouts:pendingBoutsState || window.PAINI_BOUTS?.getState(), results:Object.fromEntries(refreshResultFields.map(id=>[id,document.getElementById(id).value])), page:resultsPage,
       directory:{query:$("#competition-query").value,sort:$("#competition-sort").value}};
   },
   async restore(state) {
-    if (!state || !["results", "competitions", "bouts"].includes(state.view)) return false;
+    if (!state || !["results", "competitions", "bouts",...featureViewNames].includes(state.view)) return false;
     if (new URLSearchParams(location.hash.slice(1)).has("painija")) return false;
     const saved = state.results || {};
     const set = id => {
@@ -795,6 +818,7 @@ window.PAINI_PAGE_STATE = Object.freeze({
     if (typeof state.directory?.query === "string") $("#competition-query").value=state.directory.query;
     if (typeof state.directory?.sort === "string") $("#competition-sort").value=state.directory.sort;
     if (state.view === "bouts") pendingBoutsState=state.bouts || null;
+    window.PAINI_FEATURES?.restore(state.features);
     showView(state.view,false,false);
     return state.view === "bouts" ? await loadBouts() : true;
   }
