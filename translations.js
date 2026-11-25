@@ -1,5 +1,8 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Yleishaku", "General search", "Allmän sökning"],
+  ["Nimi, seura, kilpailu tai paikkakunta…", "Name, club, competition or location…", "Namn, förening, tävling eller ort…"],
+  ["Hae tuloksia nimellä, seuralla, kilpailulla tai paikkakunnalla ja tarkenna hakua suodattimilla.", "Search results by name, club, competition or location and refine your search using the filters.", "Sök resultat med namn, förening, tävling eller ort och avgränsa sökningen med filtren."],
   ["Kattavuus kuvaa valittuja kilpailuja kokonaisuudessaan. Nimi-, seura-, ikäluokka- ja painimuotorajaus eivät muuta kattavuuslukuja.", "Coverage describes the selected competitions as a whole. Name, club, age and style filters do not change these figures.", "Täckningen beskriver de valda tävlingarna som helhet. Filter för namn, förening, ålder och stil ändrar inte dessa tal."],
   ["Painijan kattavuus koskee kaikkia aineiston vuosia.", "Wrestler coverage includes every year in the collection.", "Brottarens täckning gäller alla år i materialet."],
 

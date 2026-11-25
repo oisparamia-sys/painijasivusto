@@ -108,7 +108,6 @@ function refreshFilters() {
     return Number(b.value) - Number(a.value);
   }).forEach(option => yearSelect.append(option));
   const items = yearFilteredCompetitions();
-  window.PAINI_FEATURES?.competitionCoverage(items);
   const style = $("#result-style").value;
   const rows = items.flatMap(item => style ? item.rows.filter(row => resultStyle(item, row) === style) : item.rows);
   options($("#club"), rows.map(row => row.club), "Kaikki seurat");
@@ -157,7 +156,8 @@ function refreshFilters() {
 }
 function render(keepPage = false) {
   if (keepPage !== true) resultsPage = 0;
-  const tokens = searchWords($("#search").value.trim().toLocaleLowerCase("fi"));
+  const query = $("#search").value.trim();
+  const tokens = searchWords(query.toLocaleLowerCase("fi"));
   const style = $("#result-style").value, club = $("#club").value;
   const category = $("#category").value, order = $("#result-sort").value;
   const matchedNames = new Map();
@@ -168,10 +168,13 @@ function render(keepPage = false) {
   const fragment = document.createDocumentFragment();
   const entries = [];
   for (const item of yearFilteredCompetitions()) {
+    const competitionMatches = tokens.length && matchesCompetitionQuery(item.title + " " + item.details, query);
     for (const result of item.rows) {
       if (club && result.club !== club || category && result.category !== category) continue;
       if (style && resultStyle(item, result) !== style) continue;
-      if (tokens.length && !matchesName(result.name) && !matchesName(athleteRecords.get(result.athleteId)?.name || "")) continue;
+      const canonicalName = athleteRecords.get(result.athleteId)?.name || "";
+      if (tokens.length && !competitionMatches && !matchesName(result.name) && !matchesName(canonicalName) &&
+          !matchesCompetitionQuery([result.name, canonicalName, result.club, result.category, item.title, item.details].join(" "), query)) continue;
       entries.push({item, result});
     }
   }

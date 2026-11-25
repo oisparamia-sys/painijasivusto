@@ -1,7 +1,7 @@
 "use strict";
 (() => {
  const M=window.PAINI_METRICS,$=s=>document.querySelector(s);
- let H,data,clubList,coverage=null,currentClub='',profileId=null,lastItems=[];
+ let H,data,clubList,coverage=null,currentClub='',profileId=null;
  const node=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
  const source=(tag,text)=>{const e=node(tag,text);e.translate='no';return e;};
  function action(text,fn,cls=''){const button=node('button',text,cls);button.type='button';button.addEventListener('click',fn);return button;}
@@ -20,10 +20,6 @@
  function renderCoverages(){
   if(!H)return;
   coverageBox($('#home-coverage'),coverage?.total,coverage?coverage.total.competitions-coverage.total.withoutNotes:undefined);
-  const sum={matches:0,points:0,methods:0,excluded:0,identityConflicts:0};let notes=0;
-  for(const c of lastItems){const item=coverage?.competitions[M.key(c)];if(item)for(const k of Object.keys(sum))sum[k]+=item[k];if(c.importNotes?.length)notes++;}
-  coverageBox($('#result-coverage'),coverage?sum:null,notes);
-  $('#result-coverage').append(node('p','Kattavuus kuvaa valittuja kilpailuja kokonaisuudessaan. Nimi-, seura-, ikäluokka- ja painimuotorajaus eivät muuta kattavuuslukuja.','hint'));
   if(profileId){coverageBox($('#profile-coverage'),coverage?.athletes[profileId]);$('#profile-coverage').append(node('p','Painijan kattavuus koskee kaikkia aineiston vuosia.','hint'));}
   if(currentClub)renderClubCoverage();
   $('#home-bout-count').textContent=coverage?String(coverage.total.matches):'…';
@@ -89,5 +85,5 @@
  }
  const capture=()=>!H?null:({club:currentClub,fields:Object.fromEntries(['club-search','club-year','compare-a','compare-b','compare-search-a','compare-search-b'].map(id=>[id,$('#'+id).value]))});
  const restore=state=>{if(!state||!H)return;for(const [id,value]of Object.entries(state.fields||{})){const el=document.getElementById(id);if(el&&typeof value==='string')el.value=value;}if(state.club){currentClub=state.club;openClub(currentClub,false);}};
- window.PAINI_FEATURES={init,profile,openClub,capture,restore,hashFor:view=>view==='club'?new URLSearchParams({seura:currentClub}).toString():null,onView:view=>{if(view==='clubs')renderClubs();if(view==='compare')renderComparison();},competitionCoverage:items=>{lastItems=items;if(H)renderCoverages();}};
+ window.PAINI_FEATURES={init,profile,openClub,capture,restore,hashFor:view=>view==='club'?new URLSearchParams({seura:currentClub}).toString():null,onView:view=>{if(view==='clubs')renderClubs();if(view==='compare')renderComparison();},competitionCoverage:()=>{} /* Compatibility with an older cached script.js. */};
 })();

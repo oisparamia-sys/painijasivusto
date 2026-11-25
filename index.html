@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css?v=20261031-refresh1">
 <link rel="stylesheet" href="palaute.css?v=1">
 <script src="theme.js?v=20261124" ></script>
-<link rel="stylesheet" href="features.css?v=20261124">
+<link rel="stylesheet" href="features.css?v=20261125-search1">
 
 <style>
 #bouts-view .bout-badge{display:inline-block;vertical-align:middle;font-size:13px;font-weight:650;padding:5px 10px;border-radius:7px;background:#eaf1ff;color:#174397}
@@ -70,7 +70,7 @@
   </form>
   <p id="feedback-status" class="feedback-status" role="status" aria-live="polite"></p>
 </dialog>
-<p id="search-intro" hidden>Hae painijan tuloksia nimellä ja rajaa niitä vuoden, painimuodon, kilpailun tai seuran mukaan.</p>
+<p id="search-intro" hidden>Hae tuloksia nimellä, seuralla, kilpailulla tai paikkakunnalla ja tarkenna hakua suodattimilla.</p>
 <section id="data-refresh-box" class="data-refresh-box" aria-label="Aineiston päivittäminen" data-update-available="false">
   <p id="data-refresh-status" role="status" aria-live="polite">Tarkistetaan, onko uusia tietoja saatavilla…</p>
   <a id="refresh-data" class="refresh-data-button" href="?paivitys=20261031" aria-describedby="data-refresh-status">Päivitä tiedot</a>
@@ -78,7 +78,7 @@
 <div id="status" class="status" role="status" aria-live="polite" hidden></div>
 <section id="home-view" class="app-feature-view" aria-labelledby="home-heading">
   <div class="home-hero"><p class="home-eyebrow">SUOMALAINEN PAINI · 2022–2026</p><h1 id="home-heading" tabindex="-1">Painin tulokset yhdessä paikassa</h1><p>Kilpailusijoitukset, ottelut ja seurojen saavutukset. Tutustu tallennettuun aineistoon tai etsi oma painijasi.</p>
-  <form id="home-search-form"><label for="home-search">Etsi painijan tuloksia</label><div class="home-search-row"><input id="home-search" type="search" placeholder="Kirjoita painijan nimi…"><button type="submit">Hae tuloksia</button></div></form>
+  <form id="home-search-form"><label for="home-search">Hae tuloksia</label><div class="home-search-row"><input id="home-search" type="search" placeholder="Nimi, seura, kilpailu tai paikkakunta…"><button type="submit">Hae tuloksia</button></div></form>
   <div class="actions"><button type="button" data-open-view="bouts">Avaa otteluhaku</button><button type="button" data-open-view="clubs">Tutustu seuroihin</button><button type="button" data-open-view="compare">Vertaile kilpailuja</button></div></div>
   <div id="home-stats" class="feature-stats" aria-label="Tallennetun aineiston määrät"></div>
   <section id="home-coverage" class="card coverage-box" aria-label="Tallennetun aineiston kattavuus"></section>
@@ -110,7 +110,7 @@
 <div class="field"><label for="result-style">Painimuoto</label><select id="result-style"><option value="">Kaikki painimuodot</option><option value="greco">Kreikkalais-roomalainen</option><option value="freestyle">Vapaapaini</option><option value="women">Naispaini</option><option value="unknown">Ei vahvistettu</option></select></div>
 <div class="field"><label for="result-year">Vuosi</label><select id="result-year"></select></div>
 <div class="field"><label for="result-sort">Tulosten järjestys</label><select id="result-sort"><option value="newest">Uusimmat ensin</option><option value="oldest">Vanhimmat ensin</option><option value="place">Paras sijoitus ensin</option><option value="importance">Arvokkuus: SM, KLL, alue, muut</option></select></div>
-<div class="field"><label for="search">Painijan nimi</label><input id="search" type="search" placeholder="Kirjoita nimi…"></div>
+<div class="field"><label for="search">Yleishaku</label><input id="search" type="search" placeholder="Nimi, seura, kilpailu tai paikkakunta…"></div>
 <div class="field"><label for="club">Seura</label><select id="club"></select></div>
 <div class="field"><label for="category">Ikäluokka</label><select id="category"></select></div>
 </div>
@@ -122,7 +122,6 @@
 <p id="source-line" class="hint" hidden></p>
 <p><button id="competition-report-error" type="button" hidden>Ilmoita kilpailun tiedoissa olevasta virheestä</button></p>
 <aside id="partial-results-note" class="partial-results-note" aria-label="Tulosaineiston kattavuus" hidden></aside>
-<section id="result-coverage" class="coverage-box" aria-label="Valitun kilpailuaineiston kattavuus"></section>
 <div class="heading"><h2 id="results-heading" tabindex="-1">Kilpailutulokset</h2><span id="count" role="status" aria-live="polite"></span></div>
 <p id="result-range" class="hint" role="status" aria-live="polite"></p>
 <nav class="result-pagination" aria-label="Tuloslistan sivut ylhäällä" hidden>
@@ -306,10 +305,10 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="translations.js?v=20261124-features4" defer></script>
-<script src="i18n.js?v=20261124-features4" defer></script>
+<script src="translations.js?v=20261125-search1" defer></script>
+<script src="i18n.js?v=20261125-search1" defer></script>
 <script src="palaute.js?v=3" defer></script>
-<script src="fresh-data.js?v=20261124-features4" defer></script>
+<script src="fresh-data.js?v=20261125-search1" defer></script>
 </body>
 </html>
 
