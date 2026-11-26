@@ -176,7 +176,7 @@
     if(initialized)return;
     if(!template)template=document.getElementById("bouts-view").cloneNode(true);
     trial=await loadTrial();
-    if(!['bouts-competition','bouts-coverage-summary','bouts-coverage-list','bouts-checked-at'].every(id=>document.getElementById(id)))throw Error('Sivun versio ei vastaa ottelukokeilua');
+    if(!['bouts-competition','bouts-results'].every(id=>document.getElementById(id)))throw Error('Sivun versio ei vastaa ottelukokeilua');
     const prepared=prepare(data,registry);
     const $=s=>document.querySelector(s);
     const people=new Map(prepared.people.map(p=>[p.id,p]));
@@ -281,7 +281,6 @@
       const number=document.createElement('strong');number.textContent=String(value);box.append(name,number);return box;
     }
     const headers=[...$('#bouts-results').closest('table').querySelectorAll('thead th')].map(th=>th.textContent);
-    const dateFormatter=new Intl.DateTimeFormat('fi-FI',{dateStyle:'short',timeZone:'Europe/Helsinki'});
     function render() {
       const person=people.get(a),opponent=people.get(b),pair=mode==='pair';
       const title=$('#bouts-result-title'),notice=$('#bouts-result-status'),stats=$('#bouts-statistics'),tbody=$('#bouts-results'),table=$('#bouts-table-wrap'),omitted=$('#bouts-omitted');
@@ -345,24 +344,6 @@
       const option=document.createElement('option');option.value=competition.key;option.textContent=competition.title+' · '+competition.details;selectCompetition.append(option);
     }
     selectCompetition.addEventListener('change',()=>{scope=selectCompetition.value;pa.close();pb.close();$('#bouts-suggestions-status').textContent='Kilpailurajaus päivitetty.';render();});
-    $('#bouts-coverage-summary').textContent=prepared.competitions.length+' kilpailua vuosilta '+Math.min(...prepared.competitions.map(c=>c.year))+'–'+Math.max(...prepared.competitions.map(c=>c.year))+'. Mukana '+prepared.matches.length.toLocaleString('fi-FI')+' ottelua ja '+prepared.people.length+' painijaa. Tämä ei vielä ole painijoiden koko otteluhistoria.';
-    const coverage=$('#bouts-coverage-list');coverage.replaceChildren();
-    for(const competition of prepared.competitions) {
-      const li=document.createElement('li');li.textContent=(competition.checkedAt?'Tarkistettu '+dateFormatter.format(new Date(competition.checkedAt))+' · ':'')+competition.title+' · '+competition.details+' — mukana '+competition.stats.accepted+' ottelua, pois jäi '+competition.stats.excluded+' ottelua. Vain toisessa luettelossa '+competition.stats.unmatchedNumbered+', muita lähdehuomioita '+competition.stats.unreadable+'.';coverage.append(li);
-    }
-    if(Array.isArray(trial.coverageMissing)){
-      const box=document.createElement('details'),heading=document.createElement('summary');
-      heading.textContent='Koko aineiston kilpailut ilman vahvistettuja otteluita ('+trial.coverageMissing.length+')';box.append(heading);
-      const note=document.createElement('p');note.textContent='Tämä luettelo koskee kaikkia vuosia 2022–2026. Viimeisimmän haun yhteenveto voi koskea vain yhtä vuotta. Mukana olevista kilpailuistakin voi puuttua yksittäisiä otteluita.';box.append(note);
-      const list=document.createElement('ul');
-      for(const missing of trial.coverageMissing){const li=document.createElement('li');li.textContent=missing.title+' · '+missing.details+' — '+missing.reason;
-        const url=new URL(missing.source);if(url.protocol==='https:'&&url.hostname==='turniereklassisch.ringerdb.de'&&!url.username&&!url.password){const link=document.createElement('a');link.href=url.href;link.textContent=' Avaa lähde ↗';link.target='_blank';link.rel='noopener noreferrer';li.append(link);}list.append(li);}
-      box.append(list);$('#bouts-coverage-summary').after(box);
-    }
-    const search=trial.searchSummary;
-    if($('#bouts-report-link'))$('#bouts-report-link').hidden=!search;
-    if(search && $('#bouts-search-summary'))$('#bouts-search-summary').textContent='Viimeisin haku: '+search.attempted+' kilpailua käsitelty, '+search.updated+' päivitetty, '+search.preserved+' säilytetty aiemmasta aineistosta, '+search.failed+' ilman vahvistettuja otteluita. Kaikkien kilpailujen tietoja ei ole välttämättä saatavilla.';
-    $('#bouts-checked-at').textContent='Viimeisin otteluhaku '+dateFormatter.format(new Date(trial.checkedAt))+'.';
     document.querySelectorAll('input[name=bouts-mode]').forEach(input=>input.addEventListener('change',()=>{if(input.checked)setMode(input.value);}));
     $('#bouts-swap').addEventListener('click',()=>{[a,b]=[b,a];pa.set(people.get(a));pb.set(people.get(b));$('#bouts-suggestions-status').textContent='Painijat vaihdettu keskenään.';render();});
     $('#bouts-clear').addEventListener('click',()=>{a=null;b=null;pa.set(null);pb.set(null);$('#bouts-suggestions-status').textContent='Valinnat tyhjennetty.';render();$('#bout-search-a').focus();});

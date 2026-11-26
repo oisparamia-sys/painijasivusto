@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="style.css?v=20261031-refresh1">
 <link rel="stylesheet" href="palaute.css?v=1">
 <script src="theme.js?v=20261124" ></script>
-<script src="early-navigation.js?v=20261126-home1" defer></script>
-<link rel="stylesheet" href="features.css?v=20261126-home1">
+<script src="early-navigation.js?v=20261126-report1" defer></script>
+<link rel="stylesheet" href="features.css?v=20261126-report1">
 
 <style>
 #bouts-view .bout-badge{display:inline-block;vertical-align:middle;font-size:13px;font-weight:650;padding:5px 10px;border-radius:7px;background:#eaf1ff;color:#174397}
@@ -176,12 +176,6 @@
 <section id="bouts-view" class="card" aria-labelledby="bouts-heading" hidden>
   <h2 id="bouts-heading" tabindex="-1">Ottelut <span class="bout-badge">Laajeneva aineisto</span></h2>
   <p>Hae painijan vastustajia ja ottelutuloksia tai vertaile kahden painijan keskinäisiä otteluita.</p>
-  <aside class="bout-coverage" aria-label="Ottelutietojen kattavuus">
-    <p><strong>Ottelutietojen kattavuus</strong></p>
-    <p id="bouts-report-link" hidden><a href="ottelut-raportti.md" target="_blank" rel="noopener">Avaa viimeisin otteluhaun raportti</a></p>
-    <p id="bouts-search-summary" role="status"></p>
-    <p id="bouts-coverage-summary">Ladataan mukana olevien kilpailujen tietoja…</p>
-  </aside>
   <p id="bouts-load-status" class="hint" role="status">Ladataan ottelutietoja…</p>
   <button id="bouts-retry" type="button" hidden>Yritä otteluiden lataamista uudelleen</button>
   <div id="bouts-app" hidden>
@@ -239,13 +233,7 @@
     <nav class="result-pagination bouts-pagination" aria-label="Tuloslistan sivut alhaalla" hidden>
       <button class="bouts-prev" type="button" aria-controls="bouts-results">← Edellinen</button><span class="bouts-page" role="status" aria-live="polite"></span><button class="bouts-next" type="button" aria-controls="bouts-results">Seuraava →</button>
     </nav>
-    <details>
-      <summary>Mukana olevat kilpailut ja kattavuus</summary>
-      <p>Aineistossa on osa vuosien 2022–2026 kilpailuista. Pois jätetyt ottelut eivät sisälly näkyviin voittoihin tai tappioihin. Lähderistiriidat, tunnistamattomat painijat ja tarkistettavat voittotavat jätetään ulkopuolelle.</p>
-      <ul id="bouts-coverage-list"></ul>
-      <p>Voittotapa ja tekniset pisteet ovat eri asioita: selätysvoiton voi saada myös pienemmillä pisteillä. Puuttuvia pisteitä ei päätellä eikä korvata luvulla 0–0.</p>
-      <p id="bouts-checked-at" class="hint"></p>
-    </details>
+    <p class="hint">Voittotapa ja tekniset pisteet ovat eri asioita: selätysvoiton voi saada myös pienemmillä pisteillä. Puuttuvia pisteitä ei päätellä eikä korvata luvulla 0–0.</p>
   </div>
 </section>
 <section id="wrestler-view" class="card" aria-labelledby="wrestler-title" hidden>
@@ -309,10 +297,10 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="translations.js?v=20261126-home1" defer></script>
-<script src="i18n.js?v=20261126-home1" defer></script>
+<script src="translations.js?v=20261126-report1" defer></script>
+<script src="i18n.js?v=20261126-report1" defer></script>
 <script src="palaute.js?v=3" defer></script>
-<script src="fresh-data.js?v=20261126-home1" defer></script>
+<script src="fresh-data.js?v=20261126-report1" defer></script>
 </body>
 </html>
 
