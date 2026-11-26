@@ -9,3 +9,10 @@ html[data-theme="dark"] .profile-summary dt{color:#c0cde0}html[data-theme="dark"
 .home-search-row input::placeholder{color:#58677c;opacity:1}
 html[data-theme="dark"] .home-search-row input{color:#e5edf7;background:#172337;caret-color:#e5edf7}
 html[data-theme="dark"] .home-search-row input::placeholder{color:#c0cde0}
+
+.home-customize summary{font-size:18px;font-weight:700;cursor:pointer;min-height:44px;padding:8px 0}
+.home-section-settings{padding-left:24px}.home-section-settings li{padding:10px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.home-section-settings label{display:flex;gap:10px;align-items:center;flex:1 1 230px;margin:0}.home-section-settings input{width:20px;height:20px;accent-color:#2357bf}.home-customize button{min-height:44px}
+.home-favorite-searches{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:24px 0}.home-favorite-searches input{width:100%;min-width:0}.home-options,.home-selected-favorites{list-style:none;padding:0}.home-options li,.home-selected-favorites li{display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid #cbd5e1;padding:12px 0;overflow-wrap:anywhere}.home-options strong,.home-options small{display:block;width:100%}.home-selected-favorites span{flex:1 1 180px}.home-favorite-searches>div,.home-options li>*{min-width:0}.home-options small{color:#58677c}.home-options button{margin-top:4px}#home-favorite-cards h3 button{text-align:left;overflow-wrap:anywhere}#home-favorite-cards .feature-results button{text-align:left}
+html[data-theme="dark"] .home-options small{color:#c0cde0}html[data-theme="dark"] .home-options li,html[data-theme="dark"] .home-selected-favorites li{border-color:#344861}
+@media(max-width:700px){.home-favorite-searches{grid-template-columns:1fr}.home-section-settings li{padding:14px 0}.home-section-settings label{flex-basis:100%}.home-section-settings button{flex:1}}
+.home-favorite-searches input::placeholder{color:#58677c;opacity:1}html[data-theme="dark"] .home-favorite-searches input::placeholder{color:#c0cde0}

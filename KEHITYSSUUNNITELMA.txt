@@ -1,11 +1,11 @@
 Painijasivuston jatkosuunnitelma – 26.11.2026
 
-Tämä tiedosto kokoaa tähän keskusteluun valitut suunnittelutyöt. Nämä kokonaisuudet eivät vielä ole toteutettuja ominaisuuksia. Maksulliset palvelut, laajemmat käyttöoikeudet ja aineiston peruuttamattomat muutokset edellyttävät erillistä päätöstä.
+Tämä tiedosto kokoaa tähän keskusteluun valitut suunnittelutyöt. Ensimmäisen kohdan selainkohtainen versio on toteutettu; muut kokonaisuudet ovat suunnitteluvaiheessa. Maksulliset palvelut, laajemmat käyttöoikeudet ja aineiston peruuttamattomat muutokset edellyttävät erillistä päätöstä.
 
 1. Muokattava etusivu
-Ensimmäinen ehdotettu versio: käyttäjä voi valita näkyvät sisältöosiot ja niiden järjestyksen sekä suosikkipainijat ja seurat. Asetukset tallennetaan aluksi samaan selaimeen ilman kirjautumista. Yhteinen etusivu säilyy oletuksena ja omat asetukset voi palauttaa oletuksiin. Laitteiden välinen synkronointi suunnitellaan erikseen.
-Ennen toteutusta päätetään: muokattavat osiot ja suosikkien toimintatapa.
-Hyväksyntä: asetukset säilyvät päivityksessä, nimet perustuvat pysyviin tunnisteisiin ja toiminta onnistuu puhelimella.
+Toteutettu ensimmäinen versio: käyttäjä voi valita suosikkipainijat ja seurat, nähdä heidän uusimmat tuloksensa sekä näyttää, piilottaa ja järjestää neljä osiota: aineiston määrät, suosikkien uusimmat tulokset, kattavuus ja uusimmat kilpailut. Haku ja muokkausvalikko pysyvät aina saatavilla.
+Valinnat tallennetaan samaan selaimeen ilman kirjautumista. Suosikkeja voi lisätä muokkausvalikosta sekä painijan ja seuran profiilista. Oletusnäkymän palautus tyhjentää suosikit ja palauttaa osioiden järjestyksen ja näkyvyyden.
+Painijat valitaan pysyvillä tunnisteilla. Alkuperäinen suosikkitunnus säilyy myös yhdistämisen yli; samannimisiä henkilöitä ei yhdistetä suosikkien perusteella. Seurat perustuvat tarkkaan lähdemerkintään. Laitteiden välinen synkronointi jää myöhemmäksi.
 
 2. Jakaminen
 Ensimmäinen ehdotettu versio: suora linkki valittuun kilpailuun sekä yhden painijan otteluihin tai kahden painijan keskinäisiin otteluihin. Linkki säilyttää kilpailurajauksen ja tarvittavat pysyvät tunnisteet. Painijaprofiilin nykyinen jakolinkki säilyy. Vertailu-näkymä on poistettu julkiselta sivustolta eikä sitä palauteta tämän suunnitelman perusteella.

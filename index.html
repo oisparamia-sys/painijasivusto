@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="style.css?v=20261031-refresh1">
 <link rel="stylesheet" href="palaute.css?v=1">
 <script src="theme.js?v=20261124" ></script>
-<script src="early-navigation.js?v=20261126-auto1" defer></script>
-<link rel="stylesheet" href="features.css?v=20261126-auto1">
+<script src="early-navigation.js?v=20261126-home1" defer></script>
+<link rel="stylesheet" href="features.css?v=20261126-home1">
 
 <style>
 #bouts-view .bout-badge{display:inline-block;vertical-align:middle;font-size:13px;font-weight:650;padding:5px 10px;border-radius:7px;background:#eaf1ff;color:#174397}
@@ -79,13 +79,24 @@
   <div class="home-hero"><p class="home-eyebrow">SUOMALAINEN PAINI · 2022–2026</p><h1 id="home-heading" tabindex="-1">Painin tulokset yhdessä paikassa</h1><p>Kilpailusijoitukset, ottelut ja seurojen saavutukset. Tutustu tallennettuun aineistoon tai etsi oma painijasi.</p>
   <form id="home-search-form"><label for="home-search">Hae tuloksia</label><div class="home-search-row"><input id="home-search" type="search" placeholder="Nimi, seura, kilpailu tai paikkakunta…"><button type="submit">Hae tuloksia</button></div></form>
   <div class="actions"><button type="button" data-open-view="bouts">Avaa otteluhaku</button><button type="button" data-open-view="clubs">Tutustu seuroihin</button></div></div>
-  <div id="home-stats" class="feature-stats" aria-label="Tallennetun aineiston määrät"></div>
-  <section id="home-coverage" class="card coverage-box" aria-label="Tallennetun aineiston kattavuus"></section>
-  <div class="heading"><h2>Uusimmat tallennetut kilpailut</h2><button type="button" data-open-view="competitions">Kaikki kilpailut</button></div><div id="home-latest" class="feature-grid"></div>
+  <details id="home-customize" class="card home-customize"><summary>Muokkaa etusivua</summary>
+  <p>Valinnat tallentuvat vain tähän selaimeen. Kirjautumista ei tarvita.</p>
+  <h2>Etusivun osiot ja järjestys</h2><ol id="home-section-settings" class="home-section-settings"></ol>
+  <div class="home-favorite-searches"><div><label for="home-find-athlete">Etsi suosikkipainijaa</label><input id="home-find-athlete" type="search" placeholder="Kirjoita vähintään kaksi merkkiä…" autocomplete="off"><ul id="home-options-athlete" class="home-options" aria-live="polite"></ul></div>
+  <div><label for="home-find-club">Etsi suosikkiseuraa</label><input id="home-find-club" type="search" placeholder="Kirjoita vähintään kaksi merkkiä…" autocomplete="off"><ul id="home-options-club" class="home-options" aria-live="polite"></ul></div></div>
+  <h3 id="home-selected-heading" tabindex="-1">Valitut suosikit</h3><ul id="home-selected-favorites" class="home-selected-favorites"></ul>
+  <button id="home-reset" type="button">Palauta oletusnäkymä</button><p id="home-settings-status" class="hint" role="status" aria-live="polite"></p>
+  </details>
+  <div id="home-sections">
+  <section id="home-block-stats" aria-label="Aineiston määrät"><div id="home-stats" class="feature-stats" aria-label="Tallennetun aineiston määrät"></div></section>
+  <section id="home-block-favorites" aria-labelledby="home-favorites-heading"><h2 id="home-favorites-heading">Suosikkien uusimmat tulokset</h2><div id="home-favorite-cards" class="feature-grid"></div></section>
+  <div id="home-block-coverage"><section id="home-coverage" class="card coverage-box" aria-label="Tallennetun aineiston kattavuus"></section></div>
+  <section id="home-block-latest" aria-labelledby="home-latest-heading"><div class="heading"><h2 id="home-latest-heading">Uusimmat tallennetut kilpailut</h2><button type="button" data-open-view="competitions">Kaikki kilpailut</button></div><div id="home-latest" class="feature-grid"></div></section>
+  </div>
 </section>
 <section id="clubs-view" class="card app-feature-view" aria-labelledby="clubs-heading" hidden><h2 id="clubs-heading" tabindex="-1">Seurat</h2>
 <p>Seurat perustuvat tulosten lähdemerkintöihin. KLL-paikkakuntia ei yhdistetä seuroihin eikä kirjoitusasuja arvata samoiksi.</p><label for="club-search">Etsi seuraa tai lähdemerkintää</label><input id="club-search" type="search" placeholder="Kirjoita seuran nimi…"><p id="club-count" role="status"></p><div id="club-list" class="feature-grid"></div></section>
-<section id="club-view" class="card app-feature-view" aria-labelledby="club-title" hidden><button type="button" data-open-view="clubs">Takaisin seuroihin</button><h2 id="club-title" translate="no" tabindex="-1"></h2>
+<section id="club-view" class="card app-feature-view" aria-labelledby="club-title" hidden><button type="button" data-open-view="clubs">Takaisin seuroihin</button><h2 id="club-title" translate="no" tabindex="-1"></h2><button id="favorite-club" type="button" aria-pressed="false" hidden>Lisää seura suosikiksi</button>
 <label for="club-year">Rajaa seuran tuloksia vuodella</label><select id="club-year"><option value="">Kaikki vuodet</option></select><div id="club-stats" class="feature-stats"></div><div id="club-coverage"></div>
 <h3>Vuosittaiset sijoitukset</h3><div class="table-wrap"><table class="yearly-table"><caption>Seuran sijoitukset koko aineistossa</caption><thead><tr><th scope="col">Vuosi</th><th scope="col">1. sija</th><th scope="col">2. sija</th><th scope="col">3. sija</th><th scope="col">Muut sijoitukset</th><th scope="col">Yhteensä</th></tr></thead><tbody id="club-year-rows"></tbody></table></div>
 <h3>Painijat valitussa aineistossa</h3><ul id="club-athletes" class="club-roster"></ul><h3>Kilpailut valitussa aineistossa</h3><ul id="club-competitions" class="feature-results"></ul></section>
@@ -244,7 +255,7 @@
   <p id="wrestler-id" class="hint"></p>
   <p id="wrestler-aliases" class="hint"></p>
   <p id="wrestler-club" class="profile-club"></p>
-  <section id="career-highlights"></section><section id="profile-coverage" class="coverage-box" aria-label="Painijan ottelutietojen kattavuus"></section>
+  <button id="favorite-athlete" type="button" aria-pressed="false" hidden>Lisää painija suosikiksi</button><section id="career-highlights"></section><section id="profile-coverage" class="coverage-box" aria-label="Painijan ottelutietojen kattavuus"></section>
   <div class="profile-share">
     <label for="wrestler-share-url">Linkki tähän painijanäkymään</label>
     <input id="wrestler-share-url" type="text" readonly spellcheck="false">
@@ -298,10 +309,10 @@
 <footer>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="translations.js?v=20261126-auto1" defer></script>
-<script src="i18n.js?v=20261126-auto1" defer></script>
+<script src="translations.js?v=20261126-home1" defer></script>
+<script src="i18n.js?v=20261126-home1" defer></script>
 <script src="palaute.js?v=3" defer></script>
-<script src="fresh-data.js?v=20261126-auto1" defer></script>
+<script src="fresh-data.js?v=20261126-home1" defer></script>
 </body>
 </html>
 
