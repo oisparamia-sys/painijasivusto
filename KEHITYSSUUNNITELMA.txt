@@ -1,0 +1,45 @@
+Painijasivuston jatkosuunnitelma – 26.11.2026
+
+Tämä tiedosto kokoaa tähän keskusteluun valitut suunnittelutyöt. Nämä kokonaisuudet eivät vielä ole toteutettuja ominaisuuksia. Maksulliset palvelut, laajemmat käyttöoikeudet ja aineiston peruuttamattomat muutokset edellyttävät erillistä päätöstä.
+
+1. Muokattava etusivu
+Ensimmäinen ehdotettu versio: käyttäjä voi valita näkyvät sisältöosiot ja niiden järjestyksen sekä suosikkipainijat ja seurat. Asetukset tallennetaan aluksi samaan selaimeen ilman kirjautumista. Yhteinen etusivu säilyy oletuksena ja omat asetukset voi palauttaa oletuksiin. Laitteiden välinen synkronointi suunnitellaan erikseen.
+Ennen toteutusta päätetään: muokattavat osiot ja suosikkien toimintatapa.
+Hyväksyntä: asetukset säilyvät päivityksessä, nimet perustuvat pysyviin tunnisteisiin ja toiminta onnistuu puhelimella.
+
+2. Jakaminen
+Ensimmäinen ehdotettu versio: suora linkki valittuun kilpailuun sekä yhden painijan otteluihin tai kahden painijan keskinäisiin otteluihin. Linkki säilyttää kilpailurajauksen ja tarvittavat pysyvät tunnisteet. Painijaprofiilin nykyinen jakolinkki säilyy. Vertailu-näkymä on poistettu julkiselta sivustolta eikä sitä palauteta tämän suunnitelman perusteella.
+Ennen toteutusta päätetään: ensimmäisinä jaettavat näkymät ja tarvitaanko linkkien lisäksi kuvatiedostoa.
+Hyväksyntä: linkit avautuvat puhtaassa selaimessa ja pysyvät toimivina painijoiden yhdistämisen tai erottamisen jälkeen.
+
+3. Ilmoitukset
+Ensimmäinen ehdotettu versio: selaimen sisäinen luettelo suosikkipainijoiden uusista julkaistuista tuloksista. Hälytyksiä ei tehdä hyväksyntää odottavista ehdotuksista. Käyttöjärjestelmän push-ilmoitukset, sähköposti ja laitteiden välinen seuranta ovat erillisiä myöhempiä vaihtoehtoja.
+Ennen toteutusta päätetään: seurattavat tapahtumat ja ilmoitusten toimitustapa. Mitään ilmoituslupaa tai lähetystä ei ole otettu käyttöön.
+Hyväksyntä: sama tulos ei tuota toistuvia ilmoituksia ja ilmoitukset voi poistaa käytöstä.
+
+4. Kisat ja live-seuranta
+Ehdotettu eteneminen: ensin kilpailun oma sivu, sitten käynnissä olevan kilpailun tilanne ja vasta vahvistettujen lähdemahdollisuuksien jälkeen live-ottelut. Live-tilanne erotetaan selvästi hyväksytystä tulosarkistosta.
+Ennen toteutusta selvitetään: järjestäjän virallinen lähde, tiedon saatavuus, sallitut käyttötavat ja kohtuullinen päivitysväli. Ajastettu arkistohaku ei tarkoita reaaliaikaista seurantaa.
+Hyväksyntä: käyttöliittymä kertoo tietojen tuoreuden ja vahvistustilan; epäonnistunut haku ei riko tulosarkistoa.
+
+5. Pohjoismaihin laajentuminen
+Ehdotettu eteneminen: kartoitetaan Ruotsin, Norjan, Tanskan ja Islannin viralliset kilpailu- ja tuloslähteet; valitaan yksi maa ja pieni kokeiluaineisto. Aineistoa ei ole vielä tuotu.
+Ennen toteutusta päätetään: ensimmäinen maa, vuodet, ikäluokat ja suomalaisiin osallistumisiin vai kaikkiin tuloksiin perustuva rajaus. Nimitunnisteiden maiden välinen yhdistäminen ja samannimiset henkilöt vaativat erilliset säännöt. Suomen aineiston nykyistä yhdistämisperiaatetta ei muuteta tämän suunnitelman nojalla.
+Hyväksyntä: alkuperäiset lähteet ja tunnisteet säilyvät, maa käy ilmi ja nykyinen suomalainen aineisto säilyy ennallaan.
+
+6. Mobiilisovellus
+Ehdotettu ensimmäinen arvioitava toteutus on asennettava verkkosovellus (PWA), joka käyttää samaa tulospalvelua ja vähentää kahden erillisen toteutuksen ylläpitoa. Toinen vaihtoehto on erillinen iPhone- ja/tai Android-sovellus. Valintaa ei ole vielä tehty eikä sovellusta tai kauppajulkaisua toteutettu.
+Ennen toteutusta päätetään: iPhone, Android vai molemmat; riittääkö kotinäyttöön asennettava sovellus; tarvitaanko kauppajulkaisu, kirjautuminen, ilmoitukset ja tietojen käyttö ilman yhteyttä.
+Hyväksyntä: haut, pysyvät profiilitunnisteet, luettavuus ja päivitysten säilyttämä käyttötila toimivat puhelimessa. Mahdolliset kehittäjätilit ja kulut hyväksytään erikseen.
+
+Tässä päivityksessä toteutettavat perustyöt
+- Ottelut-näkymä reagoi heti ennen raskaan tulosaineiston latautumista.
+- Julkaistun aineiston pieni versiotiedosto ohjaa selaimen automaattipäivitystä. Tarkistus avattaessa, palattaessa ja 15 minuutin välein. Jo ladattu aineisto säilyy käytössä yhteysvirheessä.
+- Julkinen Päivitä tiedot -painike ja kilpailujen Vertailu-näkymä poistetaan.
+- Kilpailuhaku: maanantaista torstaihin klo 04.23; perjantaista sunnuntaihin klo 00.23, 03.23, 06.23, 09.23, 12.23, 15.23, 18.23 ja 21.23 Suomen ajan mukaan. GitHub voi viivästyttää ajastettuja ajoja.
+- Käsin käynnistettävien kilpailuhakujen aloitusten välissä vähintään 30 minuuttia. Ajastetut haut ja pelkkä ylläpidon päätösten käsittely eivät kuulu tähän odotusaikaan. Päällekkäisten ajojen esto säilyy.
+
+Tekniset lähteet
+GitHub Actions -ajastus ja aikavyöhyke: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule
+Ajastusten mahdolliset viiveet: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule
+Selaimen aineistovälimuisti: https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage

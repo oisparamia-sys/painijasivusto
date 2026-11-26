@@ -1,5 +1,10 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Tiedot päivittyvät automaattisesti.", "Data updates automatically.", "Uppgifterna uppdateras automatiskt."],
+  ["Uusia tietoja ei voitu ladata. Aiemmat tiedot ovat käytössä.", "New data could not be loaded. Previous data remains available.", "Nya uppgifter kunde inte laddas. Tidigare uppgifter är tillgängliga."],
+  ["Tietoja ei voitu ladata. Tarkista verkkoyhteys. Latausta yritetään uudelleen yhteyden palattua.", "Data could not be loaded. Check your connection. Loading will resume when the connection returns.", "Uppgifterna kunde inte laddas. Kontrollera anslutningen. Laddningen återupptas när anslutningen återställs."],
+  ["Aiemmin ladatut tiedot ovat käytössä.", "Previously loaded data is available.", "Tidigare laddade uppgifter är tillgängliga."],
+
   ["Yleishaku", "General search", "Allmän sökning"],
   ["Nimi, seura, kilpailu tai paikkakunta…", "Name, club, competition or location…", "Namn, förening, tävling eller ort…"],
   ["Hae tuloksia nimellä, seuralla, kilpailulla tai paikkakunnalla ja tarkenna hakua suodattimilla.", "Search results by name, club, competition or location and refine your search using the filters.", "Sök resultat med namn, förening, tävling eller ort och avgränsa sökningen med filtren."],

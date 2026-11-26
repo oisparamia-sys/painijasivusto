@@ -1,61 +1,40 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs'),path=require('node:path');
 const source=fs.readFileSync(path.join(__dirname,'../fresh-data.js'),'utf8');
-const settle=async()=>{for(let i=0;i<8;i++)await new Promise(resolve=>setImmediate(resolve));};
-function page({url='https://example.test/paini/',storage=new Map(),api,blocked=false,reportAt='2026-11-21T00:00:00Z'}={}){
- const events={},scrolls=[],restored=[],link={href:'',addEventListener:(name,fn)=>events[name]=fn};
- const location={href:url,get pathname(){return new URL(this.href).pathname;},replace(address){this.href=address;}};
- const window={location,scrollX:0,scrollY:720,setTimeout,clearTimeout,addEventListener(){},dispatchEvent(){},scrollTo:p=>scrolls.push(p),PAINI_PAGE_STATE:api};
- const document={currentScript:{src:'https://example.test/paini/fresh-data.js'},querySelector:s=>s==='#refresh-data'?link:null,querySelectorAll:()=>[],createElement:()=>({remove(){}}),head:{append(script){
-  const file=new URL(script.src).pathname.split('/').pop();
-  if(file==='data.js')window.PAINI_SHARED_DATA={competitions:[],updatedAt:'2026-11-21T00:00:00Z'};
-  if(file==='haun-tila.js')window.PAINI_STARTUP_REPORT={updatedAt:reportAt};
-  queueMicrotask(()=>script.onload());
- }}};
- const sessionStorage={getItem:key=>{if(blocked)throw Error('blocked');return storage.get(key)||null;},setItem:(key,value)=>{if(blocked)throw Error('blocked');storage.set(key,value);},removeItem:key=>storage.delete(key)};
- window.history={state:null,replaceState(_s,_t,href){location.href=href;}};
- if(!api)window.PAINI_PAGE_STATE={capture:()=>({view:'bouts',bouts:{mode:'pair',a:'painija-000001',b:'painija-000002',scope:'competition'}}),restore:async state=>{restored.push(state);return true;}};
- vm.runInNewContext(source,{window,document,location,sessionStorage,URL,Date,Math,Number,JSON,Promise,Event:class{},requestAnimationFrame:fn=>queueMicrotask(fn)});
- return {window,location,link,events,storage,scrolls,restored,click:()=>events.click({button:0})};
+const settle=async()=>{for(let i=0;i<12;i++)await new Promise(resolve=>setImmediate(resolve));};
+function page(){
+ const events={},docEvents={},intervals=[],updates=[],restores=[],scrolls=[];let rev='old',offline=false,invalid=false,focused=false,resolveBundle;
+ const notice={},status={},state={view:'bouts',bouts:{a:'painija-000001',b:'painija-000002',mode:'pair',scope:'source',page:2},results:{search:'Urho'},page:3};
+ const io={manifest:async()=>{if(offline)throw Error();return {revision:rev};},bundle:async()=>{if(resolveBundle)await resolveBundle;if(invalid)throw Error();return {data:{version:1,competitions:[]},coverage:{}};},previous:async()=>({revision:"old"}),remember:async()=>{},clearMemory(){},file:async()=>'{"version":3}'};
+ const api={snapshot:()=>({data:{},coverage:{}}),capture:()=>structuredClone(state),busy:()=>false,validate(){},update:async bundle=>updates.push(bundle),restore:async saved=>{restores.push(saved);return true;}};
+ const window={scrollX:0,scrollY:720,PAINI_DATA_IO:{create:()=>io},PAINI_BOUTS:{isReady:()=>true},PainiRegistry:{validate(){}},addEventListener:(name,fn)=>events[name]=fn,dispatchEvent(){},scrollTo:value=>scrolls.push(value)};
+ const document={currentScript:{src:'https://example.test/paini/fresh-data.js'},hidden:false,get activeElement(){return {matches:()=>focused};},querySelector:s=>s==='#data-refresh-status'?notice:s==='#status'?status:null,addEventListener:(name,fn)=>docEvents[name]=fn,createElement:()=>({remove(){}}),head:{append(script){if(script.src.includes('/script.js'))window.PAINI_PAGE_STATE=api;queueMicrotask(()=>script.onload());}}};
+ vm.runInNewContext(source,{window,document,URL,Event:class{},setTimeout,clearTimeout,setInterval:(fn,ms)=>intervals.push({fn,ms}),requestAnimationFrame:fn=>queueMicrotask(fn),Date,Promise,crypto:{},TextEncoder,Response});
+ return {api,events,document,docEvents,state,updates,restores,scrolls,intervals,notice,setRev:value=>rev=value,setOffline:()=>offline=true,setInvalid:()=>invalid=true,setFocus:value=>focused=value,delay:promise=>resolveBundle=promise};
 }
-test('refresh restores the selected view and wrestler IDs once, after loading the new page',async()=>{
- const storage=new Map(),first=page({storage});await settle();first.click();
- assert.equal(storage.size,1);const url=first.link.href;
- const second=page({url,storage});await settle();
- assert.equal(second.restored.length,1);assert.equal(second.restored[0].view,'bouts');
- assert.equal(second.restored[0].bouts.a,'painija-000001');assert.equal(second.restored[0].bouts.b,'painija-000002');
- assert.equal(second.restored[0].bouts.scope,'competition');assert.equal(second.restored[0].bouts.mode,'pair');
- assert.equal(second.scrolls[0].top,720);assert.equal(storage.size,0);
- const third=page({url,storage});await settle();assert.equal(third.restored.length,0);
+test('checks every 15 minutes, on return and online without reloading unchanged data',async()=>{
+ const p=page();await settle();assert.equal(p.intervals[0].ms,900000);await p.events.online();await p.events.online();assert.equal(p.updates.length,0);assert.equal(typeof p.docEvents.visibilitychange,'function');
 });
-test('scroll restoration waits for asynchronous bout initialization',async()=>{
- const first=page();await settle();first.click();let finish;
- const pending=new Promise(resolve=>finish=resolve);
- const second=page({url:first.link.href,storage:first.storage,api:{restore:()=>pending}});
- await settle();assert.equal(second.scrolls.length,0);assert.equal(first.storage.size,1);
- finish(true);await settle();assert.equal(second.scrolls[0].top,720);assert.equal(first.storage.size,0);
+test('new revision retains view, wrestler IDs, scopes, filters, page and scroll',async()=>{
+ const p=page();await settle();p.setRev('new');await p.events.online();await settle();assert.equal(p.updates.length,1);assert.deepEqual(p.restores[0],p.state);assert.equal(p.scrolls[0].top,720);
 });
-test('a failed lazy load retains the pending refresh for retry',async()=>{
- const first=page();await settle();first.click();
- const failed=page({url:first.link.href,storage:first.storage,api:{restore:async()=>false}});
- await settle();assert.equal(failed.scrolls.length,0);assert.equal(first.storage.size,1);
- const retry=page({url:first.link.href,storage:first.storage});await settle();assert.equal(retry.restored.length,1);
+test('state is captured after download and concurrent checks share the same update',async()=>{
+ const p=page();await settle();let done;p.delay(new Promise(resolve=>done=resolve));p.setRev('new');const first=p.events.online(),second=p.events.online();p.state.results.search='Changed while loading';done();await Promise.all([first,second]);assert.equal(p.updates.length,1);assert.equal(p.restores[0].results.search,'Changed while loading');
 });
-test('normal visits, malformed data and expired refreshes cannot reopen old selections',async()=>{
- const first=page();await settle();first.click();
- const ordinary=page({storage:first.storage});await settle();assert.equal(ordinary.restored.length,0);
- const [key,value]=[...first.storage][0];const stored=JSON.parse(value);stored.at=Date.now()-31*60*1000;
- first.storage.set(key,JSON.stringify(stored));const expired=page({url:first.link.href,storage:first.storage});await settle();assert.equal(expired.restored.length,0);
- first.storage.set(key,'{broken');const invalid=page({url:first.link.href,storage:first.storage});await settle();assert.equal(invalid.restored.length,0);
+test('typing defers application until blur and uses the latest input state',async()=>{
+ const p=page();await settle();p.setRev('new');p.setFocus(true);await p.events.online();assert.equal(p.updates.length,0);p.state.results.search='Typed';p.setFocus(false);p.docEvents.focusout();await new Promise(resolve=>setTimeout(resolve,5));await settle();assert.equal(p.restores[0].results.search,'Typed');
 });
-test('unavailable storage and modified clicks keep the normal refresh link usable',async()=>{
- const blocked=page({blocked:true});await settle();assert.doesNotThrow(()=>blocked.click());assert.ok(new URL(blocked.link.href).searchParams.has('paivitys'));
- const first=page();await settle();first.events.click({button:0,metaKey:true});assert.equal(first.storage.size,0);
+test('offline or invalid publication keeps previously loaded data untouched',async()=>{
+ for(const failure of ['setOffline','setInvalid']){const p=page();await settle();p.setRev('new');p[failure]();await p.events.online();assert.equal(p.updates.length,0);assert.equal(p.restores.length,0);assert.match(p.notice.textContent,/Aiemmat tiedot/);}
 });
-test('an automatic startup redirect carries the manual refresh token to its destination',async()=>{
- const first=page();await settle();first.click();
- const redirect=page({url:first.link.href,storage:first.storage,reportAt:'2026-11-22T00:00:00Z'});await settle();
- assert.ok(new URL(redirect.location.href).searchParams.has('autopaivitys'));assert.equal(first.storage.size,1);
- const final=page({url:redirect.location.href,storage:first.storage,reportAt:'2026-11-22T00:00:00Z'});await settle();
- assert.equal(final.restored.length,1);assert.equal(first.storage.size,0);
+test('hidden tabs do not fetch or update',async()=>{
+ const p=page();await settle();p.setRev('new');p.document.hidden=true;await p.events.online();assert.equal(p.updates.length,0);
+});
+
+test('a failed UI restore rolls the dataset back and keeps the prior accepted revision',async()=>{
+ const p=page();await settle();p.setRev('new');let attempts=0;p.api.restore=async()=>++attempts>1;
+ await p.events.online();assert.equal(p.updates.length,2);assert.deepEqual(p.updates[1].data,{});assert.match(p.notice.textContent,/Aiemmat tiedot/);
+});
+test('startup can fall back to a previously verified cached manifest',async()=>{
+ const p=page();p.setOffline();await settle();assert.equal(typeof p.api.capture,'function');assert.match(p.notice.textContent,/Aiemmin ladatut/);
 });

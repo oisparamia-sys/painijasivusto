@@ -1,7 +1,7 @@
 "use strict";
 (() => {
   let initialized = false,trial=null,dataPromise=null;
-  let readState=()=>null,restoreState=()=>{};
+  let readState=()=>null,restoreState=()=>{},template=null;
   const dataBase=typeof document==='undefined'?null:new URL('.',document.currentScript?.src || location.href);
   function unpack(value) {
     if(value?.version!==3 || !['competitions','participants','matches','excluded'].every(k=>Array.isArray(value[k])))throw Error('Otteluaineiston muoto ei kelpaa');
@@ -23,6 +23,7 @@
   function loadTrial() {
     if(dataPromise)return dataPromise;
     dataPromise=(async()=>{
+      if(window.PAINI_DATA_ACCESS)return unpack(await window.PAINI_DATA_ACCESS.bouts());
       const manifestResponse=await fetch(new URL('ottelut-manifest.json',dataBase),{cache:'no-cache'});
       if(!manifestResponse.ok)throw Error('Otteluaineiston versiotieto ei latautunut');
       const manifest=await manifestResponse.json();
@@ -173,6 +174,7 @@
   }
   async function init(data,registry) {
     if(initialized)return;
+    if(!template)template=document.getElementById("bouts-view").cloneNode(true);
     trial=await loadTrial();
     if(!['bouts-competition','bouts-coverage-summary','bouts-coverage-list','bouts-checked-at'].every(id=>document.getElementById(id)))throw Error('Sivun versio ei vastaa ottelukokeilua');
     const prepared=prepare(data,registry);
@@ -391,5 +393,8 @@
     initialized=true;$('#bouts-load-status').hidden=true;$('#bouts-retry').hidden=true;$('#bouts-app').hidden=false;render();
   }
   if(typeof module==='object'&&module.exports){module.exports={unpack,prepare,words,distance,matchesName,matchesStrictly,createSearch,boutOutcome,yearlyBouts};return;}
-  window.PAINI_BOUTS=Object.freeze({init,getState:()=>readState(),restore:state=>restoreState(state)});
+  window.PAINI_BOUTS=Object.freeze({isReady:()=>initialized,snapshot:()=>trial,validate:(data,registry,packed)=>prepare(data,registry,packed.version===2?packed:unpack(packed)),reset:packed=>{
+    if(template)document.getElementById('bouts-view').replaceChildren(...template.cloneNode(true).childNodes);
+    initialized=false;trial=null;dataPromise=packed?Promise.resolve(packed.version===2?packed:unpack(packed)):null;readState=()=>null;restoreState=()=>{};
+  },init,getState:()=>readState(),restore:state=>restoreState(state)});
 })();

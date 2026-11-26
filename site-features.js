@@ -23,7 +23,6 @@
   if(profileId){coverageBox($('#profile-coverage'),coverage?.athletes[profileId]);$('#profile-coverage').append(node('p','Painijan kattavuus koskee kaikkia aineiston vuosia.','hint'));}
   if(currentClub)renderClubCoverage();
   $('#home-bout-count').textContent=coverage?String(coverage.total.matches):'…';
-  renderComparison();
  }
  function renderHome(){
   const counters=$('#home-stats');counters.replaceChildren(stat('Kilpailuja',data.competitions.length),stat('Kilpailusijoituksia',data.competitions.reduce((n,c)=>n+c.rows.length,0)));
@@ -55,17 +54,6 @@
   const competitions=$('#club-competitions');competitions.replaceChildren();const seen=new Set();for(const e of [...entries].sort((a,b)=>H.date(b.item)-H.date(a.item))){if(seen.has(M.key(e.item)))continue;seen.add(M.key(e.item));const li=node('li');li.append(source('strong',e.item.title),source('p',e.item.details),node('p',String(entries.filter(entry=>M.key(entry.item)===M.key(e.item)).length)+' kilpailusijoitusta'),action('Näytä tulokset',()=>H.openCompetition(e.item)));competitions.append(li);}
   renderClubCoverage();$('#club-title').focus();return true;
  }
- function renderSelect(letter){
-  const select=$('#compare-'+letter),value=select.value,query=M.norm($('#compare-search-'+letter).value);select.replaceChildren(new Option('Valitse kilpailu',''));
-  for(const c of [...data.competitions].sort((a,b)=>H.date(b)-H.date(a)||a.title.localeCompare(b.title,'fi')))if(M.key(c)===value||M.norm(c.title+' '+c.details).includes(query)){const option=new Option(c.title+' · '+c.details,M.key(c));option.translate='no';select.add(option);}select.value=value;
- }
- function renderComparison(){
-  if(!H)return;const a=data.competitions.find(c=>M.key(c)===$('#compare-a').value),b=data.competitions.find(c=>M.key(c)===$('#compare-b').value),body=$('#comparison-rows');body.replaceChildren();
-  $('#comparison-table').hidden=!a||!b||a===b;$('#comparison-status').textContent=a&&b&&a===b?'Valitse kaksi eri kilpailua.':!a||!b?'Valitse kaksi kilpailua vertailuun.':'';if(!a||!b||a===b)return;
-  $('#compare-title-a').textContent=a.title;$('#compare-title-b').textContent=b.title;
-  const metrics=c=>{const values=M.standings(c),cov=coverage?.competitions[M.key(c)];return [['Paikka ja aika',c.details],['Kilpailusijoituksia',values.results],['Painijatunnuksia',values.athletes],['Seura- ja paikkakuntamerkintöjä',values.clubs],['Ikäluokkia',values.categories],['Mitalisijoituksia',values.medals],['Tuonnin kattavuusvaroituksia',c.importNotes?.length||0],['Vahvistettuja otteluita',cov?.matches??'…'],['Pisteet ilmoitettu',cov?cov.points+' / '+cov.matches:'…']];};
-  const left=metrics(a),right=metrics(b);left.forEach(([label,value],i)=>{const tr=document.createElement('tr');tr.append(node('th',label),source('td',String(value)),source('td',String(right[i][1])));body.append(tr);});
- }
  function profile(entries,id){
   if(!H)return;profileId=id;const values=M.highlights(entries,H.date),parent=$('#career-highlights');parent.replaceChildren(node('h3','Uran kohokohdat tässä aineistossa'));
   const stats=node('div',undefined,'feature-stats');stats.append(stat('Kilpailuvoittoja',values.wins),stat('Mitalisijoituksia',values.medals));if(values.bestSm)stats.append(stat('Paras SM-sijoitus',values.bestSm.result.place+'.'));parent.append(stats);
@@ -78,12 +66,11 @@
   document.querySelectorAll('[data-open-view]').forEach(button=>button.addEventListener('click',()=>H.showView(button.dataset.openView)));
   $('#club-search').addEventListener('input',renderClubs);$('#club-year').addEventListener('change',()=>{if(currentClub)openClub(currentClub,false);});
   const years=[...new Set(data.competitions.map(H.year))].sort((a,b)=>a==='Ei päivämäärää'?1:b==='Ei päivämäärää'?-1:Number(b)-Number(a));for(const year of years)$('#club-year').add(new Option(year,year));
-  for(const letter of ['a','b']){$('#compare-search-'+letter).addEventListener('input',()=>renderSelect(letter));$('#compare-'+letter).addEventListener('change',renderComparison);renderSelect(letter);}
   renderHome();renderClubs();window.addEventListener('paini-language-change',renderCoverages);
-  fetch(new URL('kattavuus.json?fresh='+Date.now(),location.href),{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(value=>{if(value.version!==1||value.resultsVersion!==(data.exportedAt||data.updatedAt||null)||value.total.competitions!==data.competitions.length)throw Error();coverage=value;renderCoverages();}).catch(()=>{document.querySelectorAll('.coverage-box').forEach(box=>box.replaceChildren(node('p','Kattavuustiedot eivät ole saatavilla tälle aineistoversiolle. Yritä Päivitä tiedot -painiketta.','hint')));});
+  coverage=window.PAINI_COVERAGE||null;
   renderCoverages();
  }
- const capture=()=>!H?null:({club:currentClub,fields:Object.fromEntries(['club-search','club-year','compare-a','compare-b','compare-search-a','compare-search-b'].map(id=>[id,$('#'+id).value]))});
+ const capture=()=>!H?null:({club:currentClub,fields:Object.fromEntries(['home-search','club-search','club-year'].map(id=>[id,$('#'+id).value]))});
  const restore=state=>{if(!state||!H)return;for(const [id,value]of Object.entries(state.fields||{})){const el=document.getElementById(id);if(el&&typeof value==='string')el.value=value;}if(state.club){currentClub=state.club;openClub(currentClub,false);}};
- window.PAINI_FEATURES={init,profile,openClub,capture,restore,hashFor:view=>view==='club'?new URLSearchParams({seura:currentClub}).toString():null,onView:view=>{if(view==='clubs')renderClubs();if(view==='compare')renderComparison();},competitionCoverage:()=>{} /* Compatibility with an older cached script.js. */};
+ window.PAINI_FEATURES={update:bundle=>{data=bundle.data;clubList=M.clubs(data);coverage=bundle.coverage;renderHome();renderClubs();renderCoverages();},init,profile,openClub,capture,restore,hashFor:view=>view==='club'?new URLSearchParams({seura:currentClub}).toString():null,onView:view=>{if(view==='clubs')renderClubs();},competitionCoverage:()=>{} /* Compatibility with an older cached script.js. */};
 })();

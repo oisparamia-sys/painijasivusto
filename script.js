@@ -2,13 +2,16 @@
 const $ = selector => document.querySelector(selector);
 const boutsBase = new URL('.', document.currentScript?.src || location.href);
 let boutsLoading = null;
+let boutsBusy = false;
 let pendingBoutsState = null;
 function loadBouts() {
   if (boutsLoading) return boutsLoading;
   const notice = $('#bouts-load-status'), retry = $('#bouts-retry');
   if (notice) { notice.hidden = false; notice.textContent = 'Ladataan ottelukokeilua…'; }
   if (retry) retry.hidden = true;
+  boutsBusy = true;
   boutsLoading = new Promise((resolve,reject) => {
+    if(window.PAINI_BOUTS){Promise.resolve(window.PAINI_BOUTS.init(sharedData,window.PainiRegistry)).then(()=>{if(pendingBoutsState){window.PAINI_BOUTS.restore(pendingBoutsState);pendingBoutsState=null;}resolve(true);},reject);return;}
     const script = document.createElement('script');
     script.src = new URL('ottelut.js?fresh='+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2),boutsBase).href;
     script.onload = () => {
@@ -27,16 +30,16 @@ function loadBouts() {
     if (notice) { notice.hidden=false; notice.textContent='Ottelukokeilua ei voitu avata. Tarkista verkkoyhteys ja että käytössä on uusin sivuversio. Tuloshaku toimii edelleen.'; }
     if (retry) retry.hidden=false;
     return false;
-  });
+  }).finally(()=>{boutsBusy=false;});
   return boutsLoading;
 }
-const sharedData = window.PAINI_SHARED_DATA;
+let sharedData = window.PAINI_SHARED_DATA;
 const sharedReady = sharedData && sharedData.version === 1 &&
   Array.isArray(sharedData.competitions) && sharedData.competitions.every(valid) &&
   new Set(sharedData.competitions.map(identity)).size === sharedData.competitions.length;
-const sharedCompetitions = sharedReady ? sharedData.competitions : [];
-const competitions = [...sharedCompetitions];
-// Competition data is immutable for the lifetime of this page.
+let sharedCompetitions = sharedReady ? sharedData.competitions : [];
+let competitions = [...sharedCompetitions];
+// Each accepted dataset stays immutable; a verified update swaps the references.
 const competitionDates = new WeakMap();
 let registryReady = false;
 try { window.PainiRegistry.validate(sharedData); registryReady = true; } catch { /* Results remain readable if the registry has not loaded. */ }
@@ -46,7 +49,7 @@ let profileState = null;
 let profileOpener = null;
 let resultsScroll = null;
 let profileReturnView = "results";
-const featureViewNames=["home","clubs","club","compare"];
+const featureViewNames=["home","clubs","club"];
 let restoreGeneration = 0;
 const defaultPageTitle = document.title;
 const resultsPerPage = 50;
@@ -243,14 +246,17 @@ function competitionDate(item) {
   competitionDates.set(item, result);
   return result;
 }
-function openProfile(athleteId, opener = null, updateUrl = true) {
+function setProfileBackLabel(){
+  $("#back-to-results").textContent={club:"Takaisin seuran profiiliin",clubs:"Takaisin seuroihin",home:"Takaisin etusivulle",competitions:"Takaisin kilpailuihin",bouts:"Takaisin otteluihin"}[profileReturnView]||"← Takaisin hakutuloksiin";
+}
+function openProfile(athleteId, opener = null, updateUrl = true, focus = true) {
   if (!registryReady) return;
   athleteId = window.PainiRegistry.resolve(sharedData, athleteId);
   if (!athleteId || !athleteRecords.has(athleteId)) return;
   restoreGeneration++;
   if (!profileState) {resultsScroll = {x: window.scrollX, y: window.scrollY};profileReturnView=featureViewNames.find(view=>document.getElementById(view+"-view")&&!document.getElementById(view+"-view").hidden)||(!$("#competition-view").hidden?"competitions":!$("#bouts-view").hidden?"bouts":"results");}
   if (opener) profileOpener = opener;
-  $("#back-to-results").textContent={club:"Takaisin seuran profiiliin",clubs:"Takaisin seuroihin",home:"Takaisin etusivulle",competitions:"Takaisin kilpailuihin",bouts:"Takaisin otteluihin"}[profileReturnView]||"← Takaisin hakutuloksiin";
+  setProfileBackLabel();
   clearProfileLinkError();
   profileState = { athleteId, year: "", sort: "newest" };
   $("#wrestler-report-error").hidden = typeof window.PAINI_OPEN_FEEDBACK !== "function";
@@ -267,7 +273,7 @@ function openProfile(athleteId, opener = null, updateUrl = true) {
   if(document.getElementById("search-intro"))$("#search-intro").hidden=true;
   $("#wrestler-view").hidden = false;
   renderProfile();
-  $("#wrestler-title").focus();
+  if(focus) $("#wrestler-title").focus();
 }
 function closeProfile(updateUrl = true) {
   if (updateUrl) writeSectionRoute(profileReturnView);
@@ -384,6 +390,7 @@ function renderProfile() {
 }
 
 function showView(view, focus = true, updateUrl = true) {
+  if(view === "compare") view = "home";
   if(featureViewNames.includes(view)&&!document.getElementById(view+"-view"))view="results";
   if (updateUrl) writeSectionRoute(view);
   document.title = defaultPageTitle;
@@ -582,7 +589,7 @@ $("#category").addEventListener("change", render);
 $("#nav-results").addEventListener("click", () => showView("results"));
 $("#nav-competitions").addEventListener("click", () => showView("competitions"));
 $('#nav-bouts')?.addEventListener('click',()=>showView('bouts'));
-$('#bouts-retry')?.addEventListener('click',()=>loadBouts());
+$('#bouts-view')?.addEventListener('click',event=>{if(event.target.closest('#bouts-retry'))loadBouts();});
 if ($('#nav-bouts')) $('#nav-bouts').disabled = !sharedReady || !registryReady;
 $("#competition-query").addEventListener("input", renderCompetitionList);
 $("#competition-sort").addEventListener("change", renderCompetitionList);
@@ -703,6 +710,7 @@ $("#copy-wrestler-link").addEventListener("click",async () => {
 window.addEventListener("popstate",routeProfileFromUrl);
 window.addEventListener("hashchange",routeProfileFromUrl);
 window.PAINI_FEATURES.init({data:sharedData,showView,openProfile,openCompetition,date:competitionDate,year:resultYear,search:refreshFilters});
+if(typeof window.PAINI_PENDING_SEARCH === "string"){$("#search").value=window.PAINI_PENDING_SEARCH;refreshFilters();delete window.PAINI_PENDING_SEARCH;}
 routeProfileFromUrl();
 
 $("#wrestler-report-error").addEventListener("click", event => {
@@ -801,28 +809,49 @@ function originalResultsLink(item) {
 // One refresh in this tab may restore UI selections; shared profile links stay independent.
 const refreshResultFields = ["competition", "competition-search", "result-style", "result-year", "result-sort", "search", "club", "category"];
 window.PAINI_PAGE_STATE = Object.freeze({
+  busy:()=>boutsBusy,
+  snapshot:()=>({data:sharedData,coverage:window.PAINI_COVERAGE,bouts:window.PAINI_BOUTS?.snapshot()||null}),
+  validate(bundle){
+    window.PainiRegistry.validate(bundle.data);
+    if(!bundle.data.competitions.every(valid)||new Set(bundle.data.competitions.map(identity)).size!==bundle.data.competitions.length)throw Error("Tulosaineisto ei kelpaa");
+    if(bundle.bouts)window.PAINI_BOUTS.validate(bundle.data,window.PainiRegistry,bundle.bouts);
+  },
+  update(bundle){
+    this.validate(bundle);
+    sharedData=bundle.data;window.PAINI_SHARED_DATA=sharedData;window.PAINI_COVERAGE=bundle.coverage;
+    sharedCompetitions=sharedData.competitions;competitions=[...sharedCompetitions];
+    athleteRecords.clear();for(const person of sharedData.athleteRegistry.athletes)athleteRecords.set(person.id,person);
+    if(window.PAINI_BOUTS){window.PAINI_BOUTS.reset(bundle.bouts);boutsLoading=null;}
+    refresh();window.PAINI_FEATURES.update(bundle);
+  },
   capture() {
-    if (profileState) return null;
     const view = featureViewNames.find(name=>document.getElementById(name+"-view")&&!document.getElementById(name+"-view").hidden)||(!$("#bouts-view").hidden ? "bouts" : !$("#competition-view").hidden ? "competitions" : "results");
-    return {view, features:window.PAINI_FEATURES?.capture(),bouts:pendingBoutsState || window.PAINI_BOUTS?.getState(), results:Object.fromEntries(refreshResultFields.map(id=>[id,document.getElementById(id).value])), page:resultsPage,
-      directory:{query:$("#competition-query").value,sort:$("#competition-sort").value}};
+    return {view:profileState?"profile":view,profile:profileState?{...profileState}:null,returnView:profileReturnView,returnScroll:resultsScroll,details:[...document.querySelectorAll("details")].map(el=>el.open),features:window.PAINI_FEATURES?.capture(),bouts:pendingBoutsState || window.PAINI_BOUTS?.getState(), results:Object.fromEntries(refreshResultFields.map(id=>[id,document.getElementById(id).value])), page:resultsPage,
+      competitionSource:competitions.find(item=>identity(item)===$("#competition").value)?.source,directory:{query:$("#competition-query").value,sort:$("#competition-sort").value}};
   },
   async restore(state) {
-    if (!state || !["results", "competitions", "bouts",...featureViewNames].includes(state.view)) return false;
-    if (new URLSearchParams(location.hash.slice(1)).has("painija")) return false;
+    if (!state || !["results", "competitions", "bouts","profile",...featureViewNames].includes(state.view)) return false;
     const saved = state.results || {};
     const set = id => {
       const value=saved[id],element=document.getElementById(id);
       if (typeof value === "string") element.value=value;
     };
-    ["competition", "result-style", "result-year"].forEach(set);refreshFilters();
+    ["competition", "result-style", "result-year"].forEach(set);
+    if(state.competitionSource){const selected=competitions.find(item=>item.source===state.competitionSource);if(selected)$("#competition").value=identity(selected);}
+    refreshFilters();
     ["result-sort", "search", "club", "category", "competition-search"].forEach(set);
     resultsPage=Number.isSafeInteger(state.page)&&state.page>=0?state.page:0;render(true);
     if (typeof state.directory?.query === "string") $("#competition-query").value=state.directory.query;
     if (typeof state.directory?.sort === "string") $("#competition-sort").value=state.directory.sort;
-    if (state.view === "bouts") pendingBoutsState=state.bouts || null;
+    pendingBoutsState=state.bouts || null;
     window.PAINI_FEATURES?.restore(state.features);
-    showView(state.view,false,false);
-    return state.view === "bouts" ? await loadBouts() : true;
+    if(state.view === "profile" && state.profile){
+      const id=window.PainiRegistry.resolve(sharedData,state.profile.athleteId);
+      if(!id||!athleteRecords.has(id))return false;
+      openProfile(id,null,false,false);profileState={...state.profile,athleteId:id};profileReturnView=state.returnView||"results";resultsScroll=state.returnScroll;setProfileBackLabel();renderProfile();
+    }else showView(state.view,false,false);
+    const ready=state.view === "bouts" ? await loadBouts() : true;
+    if(Array.isArray(state.details))document.querySelectorAll("details").forEach((el,i)=>{if(typeof state.details[i]==='boolean')el.open=state.details[i];});
+    return ready;
   }
 });

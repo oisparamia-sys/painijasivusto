@@ -1,7 +1,10 @@
 name: Kilpailujen automaattihaku
 on:
   schedule:
-    - cron: '23 2 * * *'
+    - cron: '23 4 * * 1-4'
+      timezone: Europe/Helsinki
+    - cron: '23 */3 * * 0,5,6'
+      timezone: Europe/Helsinki
   workflow_dispatch:
     inputs:
       year:
@@ -14,13 +17,30 @@ on:
         type: boolean
         default: false
 permissions:
+  actions: read
   contents: write
   pages: write
 concurrency:
   group: kilpailuhaku
   cancel-in-progress: false
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.check.outputs.allowed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/github-script@v7
+        id: check
+        with:
+          script: |
+            const gate = require('./tools/scan-gate.cjs');
+            core.setOutput('allowed', String(await gate.allowed({github,context,core})));
   update:
+    needs: gate
+    if: needs.gate.outputs.allowed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 180
     env:
@@ -41,7 +61,7 @@ jobs:
           python tools/test-bout-sources.py
           python tools/test-partial-results.py
       - name: Testaa hyväksyntäjonon suojaukset
-        run: node --test tools/test-review.cjs tools/test-identities.cjs tools/test-restore.cjs tools/test-refresh.cjs tools/test-site-utils.cjs tools/test-i18n.cjs tools/test-bouts-ui.cjs tools/test-review-ui.cjs tools/test-site-metrics.cjs tools/test-theme.cjs
+        run: node --test tools/test-review.cjs tools/test-identities.cjs tools/test-restore.cjs tools/test-refresh.cjs tools/test-site-utils.cjs tools/test-i18n.cjs tools/test-bouts-ui.cjs tools/test-review-ui.cjs tools/test-site-metrics.cjs tools/test-theme.cjs tools/test-data-access.cjs tools/test-scan-gate.cjs
       - name: Tallenna aiempi hyväksytty versio
         run: node tools/review-data.cjs snapshot . before
       - name: Käsittele ylläpidon päätökset
@@ -78,10 +98,10 @@ jobs:
           fi
       - name: Tallenna muutokset GitHubiin
         run: |
-          if ! git diff --quiet -- data.js haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json muutosjono.json hyvaksyntapaatokset.json tietovarasto || [ -n "$(git ls-files --others --exclude-standard haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json muutosjono.json hyvaksyntapaatokset.json tietovarasto)" ]; then
+          if ! git diff --quiet -- data.js haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto || [ -n "$(git ls-files --others --exclude-standard haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data.js haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json muutosjono.json hyvaksyntapaatokset.json tietovarasto
+            git add data.js haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto
             git commit -m "Päivitä kilpailut ja ottelut automaattihaulla"
             git push origin HEAD:main
           fi
