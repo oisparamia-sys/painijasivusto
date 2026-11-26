@@ -1,5 +1,12 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Sijoituksia", "Placements", "Placeringar"],
+  ["Jaa painijan profiili", "Share wrestler profile", "Dela brottarprofil"],
+  ["Ohjeet tuloshakuun", "Result search help", "Hjälp för resultatsökning"],
+  ["Valittuja hakuehtoja", "Selected search options", "Valda sökvillkor"],
+  ["Rajaa ja järjestä tuloksia", "Filter and sort results", "Filtrera och sortera resultat"],
+  ["Tulokset", "Results", "Resultat"],
+  ["Asetukset", "Settings", "Inställningar"],
   ["Ei hakutuloksia.", "No search results.", "Inga sökresultat."],
   ["Suosikkilista on täynnä. Poista ensin jokin suosikki.", "Your favorites list is full. Remove a favorite first.", "Favoritlistan är full. Ta först bort en favorit."],
   ["Oletusnäkymä palautettu.", "Default home restored.", "Standardvyn har återställts."],

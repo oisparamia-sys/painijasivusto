@@ -28,6 +28,7 @@ Ennen toteutusta päätetään: ensimmäinen maa, vuodet, ikäluokat ja suomalai
 Hyväksyntä: alkuperäiset lähteet ja tunnisteet säilyvät, maa käy ilmi ja nykyinen suomalainen aineisto säilyy ennallaan.
 
 6. Mobiilisovellus
+Verkkosivun puhelinnäkymää on parannettu: alareunan päävalikko, tiivis asetusvalikko, avattavat hakurajaukset ja luettavammat tuloskortit. Tämä on nykyisen verkkosivun parannus; erillistä mobiilisovellusta tai kauppajulkaisua ei ole toteutettu.
 Ehdotettu ensimmäinen arvioitava toteutus on asennettava verkkosovellus (PWA), joka käyttää samaa tulospalvelua ja vähentää kahden erillisen toteutuksen ylläpitoa. Toinen vaihtoehto on erillinen iPhone- ja/tai Android-sovellus. Valintaa ei ole vielä tehty eikä sovellusta tai kauppajulkaisua toteutettu.
 Ennen toteutusta päätetään: iPhone, Android vai molemmat; riittääkö kotinäyttöön asennettava sovellus; tarvitaanko kauppajulkaisu, kirjautuminen, ilmoitukset ja tietojen käyttö ilman yhteyttä.
 Hyväksyntä: haut, pysyvät profiilitunnisteet, luettavuus ja päivitysten säilyttämä käyttötila toimivat puhelimessa. Mahdolliset kehittäjätilit ja kulut hyväksytään erikseen.

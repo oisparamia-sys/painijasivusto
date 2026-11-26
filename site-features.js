@@ -25,8 +25,8 @@
   $('#home-bout-count').textContent=coverage?String(coverage.total.matches):'…';
  }
  function renderHome(){
-  const counters=$('#home-stats');counters.replaceChildren(stat('Kilpailuja',data.competitions.length),stat('Kilpailusijoituksia',data.competitions.reduce((n,c)=>n+c.rows.length,0)));
-  const bouts=stat('Vahvistettuja otteluita',coverage?coverage.total.matches:'…');bouts.querySelector('strong').id='home-bout-count';counters.append(bouts);
+  const counters=$('#home-stats');counters.replaceChildren(stat('Kilpailuja',data.competitions.length),stat('Sijoituksia',data.competitions.reduce((n,c)=>n+c.rows.length,0)));
+  const bouts=stat('Otteluita',coverage?coverage.total.matches:'…');bouts.querySelector('strong').id='home-bout-count';counters.append(bouts);
   const list=$('#home-latest');list.replaceChildren();
   [...data.competitions].sort((a,b)=>H.date(b)-H.date(a)||a.title.localeCompare(b.title,'fi')).slice(0,6).forEach(c=>{const card=node('article',undefined,'feature-card');card.append(source('h3',c.title),source('p',c.details),node('p',String(c.rows.length)+' kilpailusijoitusta'),action('Näytä tulokset',()=>H.openCompetition(c)));list.append(card);});
  }

@@ -13,7 +13,7 @@
  const cache={async get(key){const store=await window.caches?.open('paini-data-v1');return (await store?.match(key))?.text();},async put(key,text){const store=await window.caches?.open('paini-data-v1');await store?.put(key,new Response(text));},async prune(keys){const store=await window.caches?.open('paini-data-v1');if(store)for(const request of await store.keys())if(!keys.includes(request.url))await store.delete(request);}};
  const hash=async text=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)))).map(n=>n.toString(16).padStart(2,'0')).join('');
  const scripts=new Map();
- function load(file){if(scripts.has(file))return scripts.get(file);const promise=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=new URL(file+'?v=20261126-home1',base).href;script.onload=resolve;script.onerror=()=>{scripts.delete(file);script.remove();reject(Error(file));};document.head.append(script);});scripts.set(file,promise);return promise;}
+ function load(file){if(scripts.has(file))return scripts.get(file);const promise=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=new URL(file+'?v=20261126-mobile1',base).href;script.onload=resolve;script.onerror=()=>{scripts.delete(file);script.remove();reject(Error(file));};document.head.append(script);});scripts.set(file,promise);return promise;}
  let io;
  function canApply(){return !document.hidden&&!document.querySelector('#feedback-dialog[open]')&&!document.activeElement?.matches('input,textarea,select,[contenteditable=true]')&&!window.PAINI_PAGE_STATE?.busy();}
  async function applyPending(){

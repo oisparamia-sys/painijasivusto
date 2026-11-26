@@ -115,6 +115,7 @@ function refreshFilters() {
   const rows = items.flatMap(item => style ? item.rows.filter(row => resultStyle(item, row) === style) : item.rows);
   options($("#club"), rows.map(row => row.club), "Kaikki seurat");
   options($("#category"), rows.map(row => row.category), "Kaikki ikäluokat");
+  $("#selection").dataset.single = String(items.length === 1);
   $("#selection").textContent = items.length === 1
       ? "Valittuna: " + items[0].title + (items[0].details ? " · " + items[0].details : "")
       : "Haussa mukana " + items.length + " kilpailua.";
@@ -224,6 +225,7 @@ function render(keepPage = false) {
   $("#results").replaceChildren(fragment);
   $("#count").textContent = count === 1 ? "1 kilpailusijoitus" : count.toLocaleString("fi-FI") + " kilpailusijoitusta";
   $("#empty").hidden = count > 0;
+  window.PAINI_MOBILE?.update();
   if (profileState) renderProfile();
   // The directory has its own filters and is rendered when its tab is opened.
 }
