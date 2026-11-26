@@ -44,3 +44,11 @@ Tekniset lähteet
 GitHub Actions -ajastus ja aikavyöhyke: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule
 Ajastusten mahdolliset viiveet: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule
 Selaimen aineistovälimuisti: https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage
+
+Valinnat ja toteutus 26.11.2026, toinen päivitys
+Toteutettu: yhteinen vuosirajaus 2020–kuluva vuosi, tulosaineiston pienet julkiset osat, 57 aiemman osittaisen kilpailun lähdetarkistus, 684 aiemman lähdehuomion luokittelu ja epäselvien lähdesivujen uusintatarkistus, selaimen tallennusten tekninen kuvaus ja tyhjennys, automaattiset mobiiliselaintestit, suosikkitähti ja yläreunan ilmoitus, Seurat-välilehden vierityskorjaus, näkymien ja suosikkihaun avattavat rajaukset, yhteiset fuzzy-hakuehdotukset, poikkeavalla merkillä alkavien seuralähteiden järjestäminen loppuun, paikallinen kehitysesikatselu, yhteisen aineiston tarkistus ja vienti, vuosien 2020–2021 vahvistetun aineiston tuonti sekä yhteinen kilpailu- ja otteluhakujen ajoputki. Ottelut-näkymän avautuminen testataan myös hitaalla alkulatauksella, uudelleenlatauksessa ja latausvirheen jälkeen. Puhelimen Seurat-kuvake on kilpi ja Ottelut-kuvake kuvaa otteluparia.
+Aineistossa 347 kilpailua, 40 402 sijoitusta ja 56 803 ottelua. Historiallisista luetteloista löytyi 47 linkkiä: 45 kilpailua tuotiin; yksi 404-lähde ja yksi pelkän osallistujaluettelon sisältävä lähde jäivät tuomatta. Kahdesta tuodusta vuoden 2020 kilpailusta ei saatu vahvistettuja otteluita. Aiemmat hyväksyntää odottavat muutokset säilyvät jonossa.
+Suunnitteluun, ei käyttöön: suosikkien tulosilmoitukset ja PWA, tarkempi kuvaus suunnitelmat/ilmoitukset-ja-pwa.txt.
+Myöhemmin: kilpailujen omat sivut ja jakolinkit. Rekisterinpitäjän nimi, yhteystiedot ja varsinaisen tietosuojaselosteen viimeistely siirrettiin käyttäjän päätöksellä myöhemmäksi. Julkisen repositorion käyttöoikeuksia ei muutettu.
+Yhteinen aineisto ja paikallisen kehitysversion käyttö: suunnitelmat/yhteinen-aineisto-ja-kehitysversio.txt.
+Lähdetarkistuksen rivikohtaiset havainnot: tarkistukset/lahdeaineisto.json. Tekninen tietosuojatarkistus ja avoimet päätökset: tarkistukset/tietosuoja-ja-julkinen-aineisto.txt.

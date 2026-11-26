@@ -19,3 +19,8 @@ test('career highlights select the best SM placing, retain KLL as a separate tie
  const entries=[{item:{title:'SM-kilpailut',date:1},result:{place:3}},{item:{title:'SM-kilpailut',date:2},result:{place:2}},{item:{title:'KLL SM-kilpailut',date:4},result:{place:1}},{item:{title:'Cup',date:3},result:{place:1}}];
  const before=JSON.stringify(entries),result=M.highlights(entries,c=>c.date);assert.equal(result.bestSm.result.place,2);assert.equal(result.wins,2);assert.equal(result.recent[0].item.title,'KLL SM-kilpailut');assert.equal(JSON.stringify(entries),before);
 });
+
+test('club source labels beginning with punctuation or digits follow ordinary names',()=>{
+ const data={competitions:[{title:'Test',rows:['?','123 Seura','Örnen','Äänekoski','Helsingin Haka'].map((club,i)=>({club,athleteId:String(i)}))}]};
+ const names=require('../site-metrics.js').clubs(data).map(c=>c.name);assert.deepEqual(names.slice(0,3),['Helsingin Haka','Äänekoski','Örnen']);assert.ok(names.slice(3).includes('?'));assert.ok(names.slice(3).includes('123 Seura'));
+});

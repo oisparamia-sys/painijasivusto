@@ -412,7 +412,7 @@ function showView(view, focus = true, updateUrl = true) {
   window.PAINI_FEATURES?.onView(view);
   if (view === "competitions") renderCompetitionList();
   if (view === "bouts") loadBouts();
-  if (focus) $(featureViewNames.includes(view)?(view==="club"?"#club-title":"#"+view+"-heading"):view === "bouts" ? "#bouts-heading" : view === "results" ? "#results-heading" : "#competition-heading").focus();
+  if (focus) {window.scrollTo({top:0,left:0,behavior:"instant"});$(featureViewNames.includes(view)?(view==="club"?"#club-title":"#"+view+"-heading"):view === "bouts" ? "#bouts-heading" : view === "results" ? "#results-heading" : "#competition-heading").focus({preventScroll:true});}
 }
 function openCompetition(item) {
   $("#result-style").value = "";
@@ -428,7 +428,9 @@ function renderCompetitionList() {
   const query = normalizePerson($("#competition-query").value);
   const sort = $("#competition-sort").value;
   const filtered = competitions.filter(item =>
-    matchesCompetitionQuery(item.title + " " + item.details, query)
+    matchesCompetitionQuery(item.title + " " + item.details, query) &&
+    (!$("#directory-year")?.value||resultYear(item)===$("#directory-year").value) &&
+    (!$("#directory-style")?.value||item.rows.some(row=>resultStyle(item,row)===$("#directory-style").value))
   );
   filtered.sort((a, b) => {
     if (sort === "importance") { const difference=competitionTier(a.title)-competitionTier(b.title); if(difference) return difference; }
@@ -594,6 +596,7 @@ $('#nav-bouts')?.addEventListener('click',()=>showView('bouts'));
 $('#bouts-view')?.addEventListener('click',event=>{if(event.target.closest('#bouts-retry'))loadBouts();});
 if ($('#nav-bouts')) $('#nav-bouts').disabled = !sharedReady || !registryReady;
 $("#competition-query").addEventListener("input", renderCompetitionList);
+["directory-year","directory-style"].forEach(id=>document.getElementById(id)?.addEventListener("change",renderCompetitionList));
 $("#competition-sort").addEventListener("change", renderCompetitionList);
 $("#back-to-results").addEventListener("click", closeProfile);
 refresh();
@@ -711,7 +714,7 @@ $("#copy-wrestler-link").addEventListener("click",async () => {
 });
 window.addEventListener("popstate",routeProfileFromUrl);
 window.addEventListener("hashchange",routeProfileFromUrl);
-window.PAINI_FEATURES.init({data:sharedData,showView,openProfile,openCompetition,date:competitionDate,year:resultYear,search:refreshFilters});
+window.PAINI_FEATURES.init({data:sharedData,showView,openProfile,openCompetition,date:competitionDate,year:resultYear,search:refreshFilters,style:resultStyle});
 if(typeof window.PAINI_PENDING_SEARCH === "string"){$("#search").value=window.PAINI_PENDING_SEARCH;refreshFilters();delete window.PAINI_PENDING_SEARCH;}
 routeProfileFromUrl();
 

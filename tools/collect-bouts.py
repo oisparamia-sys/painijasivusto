@@ -6,6 +6,7 @@ Existing data.js is never changed. Run: python tools/collect-bouts.py --year all
 """
 import argparse,collections,concurrent.futures,datetime,hashlib,html,json,pathlib,re,unicodedata,urllib.parse
 from ligadb import get,links,clean,html_results
+from years import years_for,available as available_years
 SAMPLES=[
  'VT/2022/FI/220524_Jaervenpaeae/indexFIN.htm',
  'FT/2022/FI/220115_Kouvola/indexENG.htm',
@@ -34,7 +35,8 @@ class Source:
  def __init__(self,cache=None,offline=False):self.cache=pathlib.Path(cache) if cache else None;self.offline=offline
  def read(self,url):
   p=urllib.parse.urlsplit(url)
-  if p.scheme!='https' or p.hostname!='turniereklassisch.ringerdb.de' or p.query or p.fragment or not re.fullmatch(r'/[A-Z]+/202[2-6]/FI/[A-Za-z0-9_,-]+/[A-Za-z0-9_]+\.(?:htm|txt)',p.path):raise ValueError('Lähdeosoite ei kelpaa')
+  if p.scheme!='https' or p.hostname!='turniereklassisch.ringerdb.de' or p.query or p.fragment or not re.fullmatch(r'/[A-Z]+/\d{4}/FI/[A-Za-z0-9_,-]+/[A-Za-z0-9_]+\.(?:htm|txt)',p.path):raise ValueError('Lähdeosoite ei kelpaa')
+  if int(p.path.split('/')[2]) not in available_years():raise ValueError('Lähteen vuosi ei kelpaa')
   cache=self.cache/p.path.lstrip('/') if self.cache else None
   if cache and cache.exists():return decode(cache.read_bytes())
   if self.offline:raise OSError('Lähde puuttuu testivälimuistista: '+url)
@@ -157,6 +159,7 @@ def collect_event(competition,source):
    for group in groups:
     expected=prefix+group['weight']+'beg.htm'
     if expected not in found:
+     if len(group['rows'])+group['unranked']<=1:continue # No possible opponent; a bout link is not expected.
      issues.append({'source':pageurl,'reason':'Painoluokan ottelulinkki puuttuu: '+group['category']+' '+group['weight']});continue
     if expected in weight_info:raise ValueError('Toistuva painoluokan ottelulinkki')
     weight_info[expected]={'category':group['category'],'weight':group['weight']}
@@ -281,15 +284,7 @@ def validate(data):
   if m['winner'] not in [m['red'],m['blue']] or m['red']==m['blue']:raise ValueError('Ottelun painijat eivät kelpaa')
   if m['code'] not in METHODS or (m['points'] is not None and (len(m['points'])!=2 or any(type(x)!=int or x<0 for x in m['points']))):raise ValueError('Ottelutulos ei kelpaa')
 
-def years_for(arg,now=None):
- now=now or datetime.datetime.now(datetime.timezone.utc)
- if arg=='samples':return None
- if arg in ['all','missing'] or (arg=='auto' and now.weekday()==6):return set(range(2022,2027))
- years={min(2026,max(2022,now.year))} if arg=='auto' else {int(arg)}
- if not years<=set(range(2022,2027)):raise ValueError('Valitse vuosi 2022–2026')
- return years
-
-def collect_auto(data,source,previous,year='auto'):
+def collect_auto(data,source,previous,year='auto',targets=None):
  years=years_for(year);now=datetime.datetime.now(datetime.timezone.utc).isoformat()
  result={'version':2,'checkedAt':now,'competitions':[],'participants':[],'matches':[],'excluded':[],'issues':[],'errors':[],'methodLabels':METHODS}
  report={'version':1,'checkedAt':now,'scope':year,'events':[],'summary':{},'proposals':[],'unchangedTargets':[]}
@@ -318,12 +313,13 @@ def collect_auto(data,source,previous,year='auto'):
   return (oldmeta[url],people,[m for m in previous['matches'] if m['competition']==url],[e for e in previous['excluded'] if e['competition']==url],[i for i in previous['issues'] if i.get('source','').startswith(url.rsplit('/',1)[0]+'/')])
  urls=set(oldmeta)
  for url in current:
-  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(202[2-6])/FI/[A-Za-z0-9_,-]+/index(?:FIN|ENG)\.htm',url)
+  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(\d{4})/FI/[A-Za-z0-9_,-]+/index(?:FIN|ENG)\.htm',url)
   if match and ((years is None and url.removeprefix(HOST) in SAMPLES) or (years is not None and int(match[1]) in years)):urls.add(url)
  for url in sorted(urls):
   old=old_event(url)
-  match=re.search(r'/(202[2-6])/FI/',url)
+  match=re.search(r'/(\d{4})/FI/',url)
   selected=(year!='missing' or url not in oldmeta) and bool(match) and ((years is None and url.removeprefix(HOST) in SAMPLES) or (years is not None and int(match[1]) in years))
+  selected=selected and (targets is None or url in targets)
   status='unchanged';reason=None;event=old
   if selected:
    try:
@@ -359,14 +355,14 @@ def collect_auto(data,source,previous,year='auto'):
  attempts={e['source']:e for e in report['events']}
  missing=[]
  for url,items in sorted(current.items()):
-  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(202[2-6])/FI/[A-Za-z0-9_,-]+/index(?:FIN|ENG)\.htm',url)
+  match=re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/(\d{4})/FI/[A-Za-z0-9_,-]+/index(?:FIN|ENG)\.htm',url)
   if not match or url in available or len(items)!=1:continue
   c=items[0];attempt=attempts.get(url);saved=previous_missing.get(url,{})
   missing.append({'source':url,'title':c['title'],'details':c['details'],'year':int(match[1]),'checkedAt':now if attempt else saved.get('checkedAt'),'reason':attempt['reason'] if attempt else saved.get('reason','Kilpailun ottelut eivät ole vielä mukana. Tätä kilpailua ei tarkistettu tässä ajossa.')})
  result['coverageMissing']=missing;report['coverageMissing']=missing
  report['summary']['coverageMissing']=len(missing)
  result['searchSummary']=report['summary']
- report['years']={str(y):{'competitions':sum(c['year']==y for c in result['competitions']),'matches':sum(m['competition'] in {c['key'] for c in result['competitions'] if c['year']==y} for m in result['matches'])} for y in range(2022,2027)}
+ report['years']={str(y):{'competitions':sum(c['year']==y for c in result['competitions']),'matches':sum(m['competition'] in {c['key'] for c in result['competitions'] if c['year']==y} for m in result['matches'])} for y in available_years()}
  return result,report
 
 def atomic_write(path,text):
@@ -376,9 +372,10 @@ def atomic_write(path,text):
 
 def main():
  parser=argparse.ArgumentParser(description=__doc__)
- parser.add_argument('--data',default='data.js');parser.add_argument('--output',default='ottelut-data.js');parser.add_argument('--report',default='ottelut-raportti.json');parser.add_argument('--cache');parser.add_argument('--offline',action='store_true');parser.add_argument('--year',default='auto',choices=['auto','all','missing','samples','2022','2023','2024','2025','2026'])
+ parser.add_argument('--data',default='data.js');parser.add_argument('--output',default='ottelut-data.js');parser.add_argument('--report',default='ottelut-raportti.json');parser.add_argument('--cache');parser.add_argument('--offline',action='store_true');parser.add_argument('--year',default='auto')
+ parser.add_argument('--source',action='append',help='Recheck only these accepted competition source URLs')
  args=parser.parse_args()
- result,report=collect_auto(load_data(args.data),Source(args.cache,args.offline),load_previous(args.output),args.year)
+ result,report=collect_auto(load_data(args.data),Source(args.cache,args.offline),load_previous(args.output),args.year,set(args.source) if args.source else None)
  atomic_write(args.report,json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  lines=['# Otteluhaun raportti', '', 'Tarkistettu: '+report['checkedAt'], '', '```json',json.dumps(report['summary'],ensure_ascii=False,indent=2),'```','', 'Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).','','## Vuosikattavuus','']
  for y,v in report['years'].items():lines.append(f"- {y}: {v['competitions']} kilpailua, {v['matches']} ottelua")

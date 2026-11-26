@@ -1,9 +1,8 @@
 import json,sys,concurrent.futures,datetime
 from ligadb import catalog,competition
 arg=sys.argv[1] if len(sys.argv)>1 else 'auto'
-now=datetime.datetime.now(datetime.timezone.utc)
-years=list(range(2022,2027)) if arg=='all' or (arg=='auto' and now.weekday()==6) else [min(2026,max(2022,now.year))] if arg=='auto' else [int(arg)]
-if not all(y in range(2022,2027) for y in years):raise ValueError('Vuosi ei kelpaa')
+from years import years_for
+years=sorted(years_for(arg))
 urls=[];errors=[]
 for year in years:
  try:urls+=catalog(year)

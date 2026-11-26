@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
 const rows=require('../translations.js'),{translate:t}=require('../i18n.js');
 test('every static public label, instruction and accessible label has both translations',()=>{
- const html=fs.readFileSync('index.html','utf8').replace(/<(style|script)[\s\S]*?<\/\1>/g,'');
+ const html=fs.readFileSync('index.html','utf8').replace(/<(style|script)[\s\S]*?<\/\1>/g,'').replace(/<span[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/span>/g,'');
  const texts=[...html.matchAll(/>([^<>]+)</g)].map(m=>m[1].trim()).filter(Boolean);
  const attributes=[...html.matchAll(/(?:aria-label|placeholder)="([^"]+)"/g)].map(m=>m[1]);
  const excluded=new Set(['Kieli / Language / Språk','Suomi','English','Svenska']);

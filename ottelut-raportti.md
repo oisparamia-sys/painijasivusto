@@ -1,18 +1,18 @@
 # Otteluhaun raportti
 
-Tarkistettu: 2026-11-26T11:08:46.469885+00:00
+Tarkistettu: 2026-11-26T15:06:03.365894+00:00
 
 ```json
 {
-  "updated": 61,
-  "preserved": 4,
+  "updated": 1,
+  "preserved": 0,
   "failed": 0,
-  "attempted": 65,
-  "competitions": 302,
-  "matches": 49827,
-  "excluded": 2434,
-  "sourceIssues": 684,
-  "coverageMissing": 0
+  "attempted": 1,
+  "competitions": 345,
+  "matches": 56803,
+  "excluded": 2686,
+  "sourceIssues": 340,
+  "coverageMissing": 2
 }
 ```
 
@@ -20,6 +20,8 @@ Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).
 
 ## Vuosikattavuus
 
+- 2020: 25 kilpailua, 4136 ottelua
+- 2021: 18 kilpailua, 2840 ottelua
 - 2022: 46 kilpailua, 7529 ottelua
 - 2023: 62 kilpailua, 10368 ottelua
 - 2024: 60 kilpailua, 10215 ottelua
@@ -28,17 +30,72 @@ Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).
 
 ## Tarkistettavat kilpailut
 
-- https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/indexFIN.htm — preserved: Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon
-- https://turniereklassisch.ringerdb.de/VT/2026/FI/260314_Kauhava/indexFIN.htm — preserved: Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon
-- https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm — preserved: Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon
-- https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm — preserved: Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon
+Ei epäonnistuneita kilpailuja.
 
 ## Koko aineiston kilpailut ilman vahvistettuja otteluita
 
-Kaikista nykyisen kilpailuaineiston soveltuvista lähteistä on vahvistettuja otteluita. Yksittäisiä otteluita voi silti puuttua.
+- Mannin Matsit, Suomi Cup osak. ja L-S:n aluem. · Seinäjoki, 29.2.2020 — https://turniereklassisch.ringerdb.de/VT/2020/FI/200229_Seinaejoki/indexFIN.htm — Yhtään ottelua ei voitu vahvistaa
+- Kuortane OTC, Junior Tournament · Kuortane, 25.7.2020 — https://turniereklassisch.ringerdb.de/VT/2020/FI/200725_Kuortane/indexFIN.htm — Yhtään ottelua ei voitu vahvistaa
 
 ## Ottelukohtaiset huomiot
 
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200118_Porvoo/ENG10307424004257beg.htm — Voittotavan lyhenne vaatii tarkistamista: RE
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200118_Porvoo/ENG10307424004257beg.htm — Voittotavan lyhenne vaatii tarkistamista: RE
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200118_Porvoo/ENG10307424004257beg.htm — Voittotavan lyhenne vaatii tarkistamista: RE
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200118_Porvoo/ENG10307424004262beg.htm — Voittotavan lyhenne vaatii tarkistamista: RE
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200118_Porvoo/ENG10307424004170beg.htm — Voittotavan lyhenne vaatii tarkistamista: RE
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200124_Jyvaeskylae/FIN12460936952087beg.htm — Voittotavan lyhenne vaatii tarkistamista: LUOV
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200124_Jyvaeskylae/FIN12460936952087beg.htm — Voittotavan lyhenne vaatii tarkistamista: LUOV
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200124_Jyvaeskylae/FIN12460936952087beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762145beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762148beg.htm — Lähdeluetteloiden nimet tai ottelutulokset eroavat
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762148beg.htm — Lähdeluetteloiden nimet tai ottelutulokset eroavat
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762148beg.htm — Lähdeluetteloiden nimet tai ottelutulokset eroavat
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762165beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762180beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762192beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762192beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762192beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/FIN3453013762192beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/FIN4059549442250beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/FIN4059549442257beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/FIN4059549442065beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/FIN4059549442065beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/FIN4059549442065beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/FIN4059549442079beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/FIN4059549442079beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/FIN4059549442086beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/FIN4059549442097beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210829_KuortaneOTC/FIN950428162360beg.htm — Lähdeluetteloiden nimet tai ottelutulokset eroavat
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210829_KuortaneOTC/FIN950428162372beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210829_KuortaneOTC/FIN950428162372beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210829_KuortaneOTC/FIN950428162377beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210829_KuortaneOTC/FIN950428162377beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210829_KuortaneOTC/FIN950428162377beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210829_KuortaneOTC/FIN950428162377beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210829_KuortaneOTC/FIN950428162285beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210910_Ilmajoki/FIN4245016322072beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210910_Ilmajoki/FIN4245016322087beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210925_Tuusula/FIN2298924801029beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210925_Tuusula/FIN229892480851beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210925_Tuusula/FIN229892480851beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/210925_Tuusula/FIN229892480851beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211023_Porvoo/FIN7809847041844beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211023_Porvoo/FIN7809847041765beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211023_Porvoo/FIN7809847041770beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211023_Porvoo/FIN7809847041770beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211023_Porvoo/FIN7809847041786beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211023_Porvoo/FIN780984704762beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/FIN14127802871370beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/FIN14127802871370beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/FIN14127802871386beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/FIN14127802871386beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/FIN141278028713125beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/FIN141278028713125beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/FIN141278028713125beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/FIN141278028713125beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/FIN141278028713125beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/DM/2021/FI/211113_Janakkala/FIN7951732481027beg.htm — Lähdeluetteloiden nimet tai ottelutulokset eroavat
 - https://turniereklassisch.ringerdb.de/DM/2022/FI/220409_Kokkola/FIN21169360642360beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/DM/2022/FI/220409_Kokkola/FIN21169360642363beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/DM/2022/FI/220409_Kokkola/FIN21169360642372beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
@@ -149,6 +206,9 @@ Kaikista nykyisen kilpailuaineiston soveltuvista lähteistä on vahvistettuja ot
 - https://turniereklassisch.ringerdb.de/DM/2026/FI/261114_Jaervenpaeae/FIN12524506884375beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/DM/2026/FI/261114_Jaervenpaeae/FIN12524506884375beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/DM/2026/FI/261114_Jaervenpaeae/FIN12524506884466beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
+- https://turniereklassisch.ringerdb.de/FT/2020/FI/200111_Kouvola/ENG15896006391872beg.htm — Voittotavan lyhenne vaatii tarkistamista: RE
+- https://turniereklassisch.ringerdb.de/FT/2020/FI/200111_Kouvola/ENG15896006391877beg.htm — Voittotavan lyhenne vaatii tarkistamista: RE
+- https://turniereklassisch.ringerdb.de/FT/2021/FI/211204_Ilmajoki/ENG16212545282597beg.htm — Voittotavan lyhenne vaatii tarkistamista: RE
 - https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/ENG3078147841882beg.htm — Voittotavan lyhenne vaatii tarkistamista: RE
 - https://turniereklassisch.ringerdb.de/FT/2022/FI/220514_Kouvola/FIN1357500162433beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 - https://turniereklassisch.ringerdb.de/FT/2022/FI/220514_Kouvola/FIN1357500162433beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
@@ -179,64 +239,4 @@ Kaikista nykyisen kilpailuaineiston soveltuvista lähteistä on vahvistettuja ot
 - https://turniereklassisch.ringerdb.de/LM/2024/FI/240120_LaihianMonitoimihalli/FIN15789510393952beg.htm — Voittotavan lyhenne vaatii tarkistamista: LUOV
 - https://turniereklassisch.ringerdb.de/LM/2024/FI/240120_LaihianMonitoimihalli/FIN15789510393740beg.htm — Lähdeluetteloiden nimet tai ottelutulokset eroavat
 - https://turniereklassisch.ringerdb.de/LM/2024/FI/240420_Lappeenranta/FIN7294734082730beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2024/FI/240420_Lappeenranta/FIN7294734082730beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2024/FI/240420_Lappeenranta/FIN7294734082730beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2024/FI/241102_Simpele/FIN11787882233722beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2024/FI/241102_Simpele/FIN11787882233722beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2024/FI/241102_Simpele/FIN11787882231155beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2024/FI/241102_Simpele/FIN11787882231155beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2025/FI/250405_Lahti/FIN9331265282428beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2025/FI/250405_Lahti/FIN9331265283676beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2025/FI/250405_Lahti/FIN9331265283676beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2025/FI/251108_Simpele/FIN3987787521324beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2026/FI/260103_Jaervenpaeae/FIN16208940793362beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/FIN14708821753860beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/FIN14708821753860beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/FIN14708821753860beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/LM/2026/FI/261107_Vaasa,Teeriniemenpainisali/FIN2391658243730beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111230beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111139beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111145beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111752beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111631beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111431beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111458beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/FIN1976394111350beg.htm — Lähdeluetteloiden nimet tai ottelutulokset eroavat
-- https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/FIN1988125055138beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/FIN1988125055138beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/FIN1988125055162beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/FIN1988125055769beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/FIN1988125055631beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/FIN1988125055636beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/FIN1988125055350beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/FIN1988125055381beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/FIN1988125055381beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404428beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404428beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404431beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404431beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404438beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404438beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404438beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404442beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404442beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404442beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404442beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404540beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404540beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404540beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404655beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404655beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404670beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404680beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404767beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404767beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404834beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404943beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406404943beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/FIN8318406405070beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/FIN12165041911735beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/FIN1216504191662beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/FIN1216504191662beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
-- https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/FIN1216504191662beg.htm — Voittotavan lyhenne vaatii tarkistamista: KL
 Näytetään ensimmäiset 200 huomiota. Kaikki huomiot löytyvät JSON-raportista.

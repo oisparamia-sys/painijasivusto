@@ -7,7 +7,7 @@
  function standings(c){const rows=c.rows;return {results:rows.length,athletes:new Set(rows.map(r=>r.athleteId)).size,clubs:new Set(rows.map(r=>norm(r.club))).size,categories:new Set(rows.map(r=>r.category)).size,wins:rows.filter(r=>r.place===1).length,medals:rows.filter(r=>r.place<=3).length};}
  function clubs(data){
   const map=new Map();for(const competition of data.competitions)for(const row of competition.rows){const id=norm(row.club);if(!map.has(id))map.set(id,{id,name:row.club,entries:[],athletes:new Set(),competitions:new Set(),onlyKll:true});const club=map.get(id);club.entries.push({item:competition,result:row});club.athletes.add(row.athleteId);club.competitions.add(key(competition));if(!/\bkll\b|koululiikuntaliit/i.test(competition.title))club.onlyKll=false;}
-  return [...map.values()].sort((a,b)=>a.name.localeCompare(b.name,'fi'));
+  return [...map.values()].sort((a,b)=>Number(!/^\p{L}/u.test(a.name.trim()))-Number(!/^\p{L}/u.test(b.name.trim()))||a.name.localeCompare(b.name,'fi'));
  }
  function highlights(entries,dateOf){
   const sorted=[...entries].sort((a,b)=>dateOf(b.item)-dateOf(a.item)||a.item.title.localeCompare(b.item.title,'fi'));

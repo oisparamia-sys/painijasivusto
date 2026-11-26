@@ -1,0 +1,22 @@
+Yhteinen aineisto ja paikallinen kehitysversio 26.11.2026
+
+Yksi hyväksytty aineisto
+- data.js on ylläpidon täydellinen lähde: tulostunnukset, painijatunnukset, pysyvät erottamiset ja muutoshistoria.
+- ottelut-data.js viittaa henkilöihin pysyvillä tulostunnuksilla. Henkilöviittaukset sidotaan uudelleen hyväksyttyyn rekisteriin.
+- tools/check-database.cjs validoi täydellisen rekisterin, julkisen projektion ja kaikki otteluviittaukset.
+- tools/export-bouts.cjs muodostaa julkiset ottelut, kattavuuden ja aineistomanifestin. Se käyttää tools/export-results.cjs-työkalua tulosten pilkkomiseen.
+- tulokset/index.json luettelee SHA-256-tarkistetut osat. Kilpailut ja painijat jaetaan pieniksi JSON-tiedostoiksi; osien järjestys säilyttää tulosjärjestyksen ja tunnukset. Vanhasta täydellisestä data.js-latauksesta on yhteensopiva lukutuki aiempia välimuisteja varten.
+- Julkinen näkymä ei lataa perumishistorian tuloskopioita. Historiatiedot säilyvät alkuperäisessä lähteessä.
+- tools/run-scan.py on yhteinen kilpailu- ja otteluhakujen ajoputki sekä GitHubille että paikalliselle ajolle. Vaiheiden järjestys, hyväksyntäjono ja tarkistukset ovat samat. GitHubin päällekkäisten ajojen esto, 30 minuutin käsikäynnistysten väli ja aikataulu säilyvät.
+- kilpailuhaku.py avaa paikallisen tuonnin käyttäen samaa tools/ligadb.py-lähdelukijaa. Vanhaa rinnakkaista lähdeparseria ja vanhan workflow-kopion asentamista ei enää käytetä.
+- Erillistä SQL-palvelinta, maksullista tietokantaa tai uutta henkilötunnusjärjestelmää ei luotu. Nykyinen staattisen sivuston yhteinen aineisto viimeisteltiin ja sen eheys tarkistetaan automaattisesti.
+
+Yksityinen paikallinen kehitysversio
+Avaa projektikansiosta Avaa kehitysversio.command kaksoisnapsauttamalla. Se käynnistää paikallisen esikatselun ja avaa selaimen. Osoite on http://127.0.0.1:8875/ . Palvelin kuuntelee vain minin omaa osoitetta, ei lähiverkkoa tai internetiä. Hakemistolistaukset ja pisteellä alkavat polut on estetty.
+Esikatselu käyttää tämän projektikansion tiedostoja ja yhteistä aineistoa. Se ei tee committia, pushia tai julkista julkaisua. Erillistä testitietokantaa ei luoda automaattisesti. Sivuston julkisen version päivitys tapahtuu edelleen erikseen GitHubiin julkaisemalla.
+Sulkeminen: paikallisen palvelimen pääteikkunassa Ctrl+C. Macin mahdollisia avaamisen lupapyyntöjä ei kierretä.
+Käyttäjä valitsi paikallisen version riittäväksi. Puhelimen internetin kautta avattavaa kirjautumisella suojattua kehityspalvelua ei rakennettu.
+
+Automaattiset puhelinselaintestit
+Playwright: Android-kokoinen Chromium, iPhone-kokoinen WebKit ja 320 pikselin Chromium. Testit kattavat navigoinnin, vierityksen, vaakaylivuodon, tumman tilan, fuzzy-haun ehdotukset, seurarajaukset, suosikkitähden, pysyvän suosikkivalinnan, hitaan alkulatauksen, ottelulatauksen virheen ja uuden yrityksen sekä jo ladattujen tietojen käytön yhteyskatkossa. GitHub ajaa ne main- ja development-haarojen muutoksille ja PR:ille. Ne eivät korvaa oikeiden puhelinten asennus- ja virtuaalinäppäimistötestejä.
+Tekninen lähde: https://playwright.dev/docs/emulation

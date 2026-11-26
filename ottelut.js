@@ -193,10 +193,11 @@
     let resultPage=0,currentMatches=[],renderCurrentPage=()=>{};
     // An older cached HTML page has no paging controls: keep all bouts reachable.
     const pageSize=document.querySelector('.bouts-pagination')?50:Number.MAX_SAFE_INTEGER;
-    const inScope=match=>!scope||match.competition.key===scope;
-    const scopedPeople=()=>{if(!scopeCache.has(scope))scopeCache.set(scope,prepared.people.filter(p=>!scope||p.competitions.has(scope)));return scopeCache.get(scope);};
+    const chosenYear=()=>$('#bouts-year')?.value||'';
+    const inScope=match=>(!scope||match.competition.key===scope)&&(!chosenYear()||String(match.competition.year)===chosenYear());
+    const scopedPeople=()=>{const key=scope+'|'+chosenYear();if(!scopeCache.has(key))scopeCache.set(key,prepared.people.filter(p=>(!scope||p.competitions.has(scope))&&(!chosenYear()||(byPerson.get(p.id)||[]).some(inScope))));return scopeCache.get(key);};
     function opponentCounts() {
-      const key=a+'|'+scope;if(key===opponentKey)return opponentCache;
+      const key=a+'|'+scope+'|'+chosenYear();if(key===opponentKey)return opponentCache;
       const counts=new Map();
       for(const match of (byPerson.get(a)||[]).filter(inScope)) {
         const other=match.red.id===a?match.blue.id:match.blue.id===a?match.red.id:null;
@@ -343,6 +344,7 @@
     for(const competition of prepared.competitions) {
       const option=document.createElement('option');option.value=competition.key;option.textContent=competition.title+' · '+competition.details;selectCompetition.append(option);
     }
+    $('#bouts-year')?.addEventListener('change',()=>{pa.close();pb.close();render();});
     selectCompetition.addEventListener('change',()=>{scope=selectCompetition.value;pa.close();pb.close();$('#bouts-suggestions-status').textContent='Kilpailurajaus päivitetty.';render();});
     document.querySelectorAll('input[name=bouts-mode]').forEach(input=>input.addEventListener('change',()=>{if(input.checked)setMode(input.value);}));
     $('#bouts-swap').addEventListener('click',()=>{[a,b]=[b,a];pa.set(people.get(a));pb.set(people.get(b));$('#bouts-suggestions-status').textContent='Painijat vaihdettu keskenään.';render();});
@@ -355,13 +357,14 @@
       scope=match.competition.key;$('#bouts-competition').value=scope;
       a=match.red.id;b=match.blue.id;pa.set(people.get(a));pb.set(people.get(b));setMode('pair');$('#bouts-suggestions-status').textContent='Esimerkkipari valittu.';
     });
-    readState=()=>({mode,a,b,scope,page:resultPage,queryA:$('#bout-search-a').value,queryB:$('#bout-search-b').value});
+    readState=()=>({mode,a,b,scope,year:chosenYear(),page:resultPage,queryA:$('#bout-search-a').value,queryB:$('#bout-search-b').value});
     restoreState=state=>{
       if (!state || typeof state !== 'object') return;
       const resolve=id=>typeof id==='string'?registry.resolve(data,id):null;
       a=resolve(state.a);b=resolve(state.b);
       if(!people.has(a))a=null;if(!people.has(b))b=null;
       scope=prepared.competitions.some(c=>c.key===state.scope)?state.scope:'';
+      if($('#bouts-year'))$('#bouts-year').value=state.year||'';
       selectCompetition.value=scope;pa.set(people.get(a));pb.set(people.get(b));
       if(!state.a&&typeof state.queryA==='string')$('#bout-search-a').value=state.queryA;
       if(!state.b&&typeof state.queryB==='string')$('#bout-search-b').value=state.queryB;

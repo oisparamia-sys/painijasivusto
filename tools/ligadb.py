@@ -2,7 +2,8 @@
 import http.server, urllib.request, urllib.parse, json, re, html, pathlib, webbrowser, threading
 from html.parser import HTMLParser
 from source_archive import archive_response
-ROOT=pathlib.Path(__file__).resolve().parent
+from years import available
+ROOT=pathlib.Path(__file__).resolve().parents[1]
 HOST='turniereklassisch.ringerdb.de'
 # Verified English result pages for invalid Finnish links in the catalogue.
 SOURCE_ALIASES={'https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexENG.htm', 'https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexENG.htm', 'https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexFIN.htm': 'https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm'}
@@ -56,7 +57,7 @@ def catalog_page(s):
  return form,total,number,records
 
 def catalog(year):
- if year not in range(2022,2027):raise ValueError('Valitse vuosi 2022–2026')
+ if year not in available():raise ValueError('Vuosi ei kuulu aineiston aikarajaukseen')
  u=f'https://www.ringerdb.de/de/turniere/Turnieruebersicht.aspx?Saison={year}&land=FI&ZB=E'
  s=get(u);urls=[];expected=None;record_count=0;previous=0
  while True:
@@ -197,7 +198,8 @@ def empty_result_category(page, category_link):
 
 def competition(url):
  url=SOURCE_ALIASES.get(url,url)
- if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/202[2-6]/FI/[^/?#]+/index(?:FIN|ENG)\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
+ if not re.fullmatch(r'https://turniereklassisch\.ringerdb\.de/[A-Z]+/\d{4}/FI/[^/?#]+/index(?:FIN|ENG)\.htm',url):raise ValueError('Kilpailuosoite ei kelpaa')
+ if int(url.split('/')[4]) not in available():raise ValueError('Lähteen vuosi ei kelpaa')
  s=get(url);alllinks=links(s);raw=[u for u in alllinks if '_tab.txt' in u]
  pages=[];generated=[];warnings=[];recovered=False;incomplete_categories=False;empty_categories=set();placeholder_rows=False
  for link in alllinks:

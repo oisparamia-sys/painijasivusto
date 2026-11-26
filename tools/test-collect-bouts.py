@@ -77,7 +77,7 @@ class AutomaticImport(unittest.TestCase):
    self.assertEqual(b.load_previous(path)['matches'],old()['matches']);self.assertFalse(path.with_name('bouts.js.tmp').exists())
  def test_schedule_scope(self):
   self.assertEqual(b.years_for('auto',datetime.datetime(2026,11,16)),{2026})
-  self.assertEqual(b.years_for('auto',datetime.datetime(2026,11,22)),set(range(2022,2027)))
+  self.assertEqual(b.years_for('auto',datetime.datetime(2026,11,22)),set(range(2020,2027)))
  def test_comma_in_competition_directory_is_collected_and_reported(self):
   url=b.HOST+'LM/2023/FI/231028_Vaasa,Teeriniemenpainisali/indexFIN.htm'
   result,report=self.run_import(data=shared(url),event=sample(url),year='missing')

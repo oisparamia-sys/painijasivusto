@@ -34,8 +34,10 @@
   input.addEventListener('change',()=>{section.visible=input.checked;commit('#'+input.id);});label.append(input,node('span',labels[section.id]));li.append(label);
   for(const [delta,text]of [[-1,'Siirrä ylöspäin'],[1,'Siirrä alaspäin']]){const control=button(text,()=>{state=move(state,section.id,delta);commit('#home-move-'+section.id+'-'+(delta<0?'up':'down'));});control.id='home-move-'+section.id+'-'+(delta<0?'up':'down');control.disabled=delta<0?index===0:index===state.sections.length-1;li.append(control);}list.append(li);
  });}
- function toggleAthlete(id){if(!hasAthlete(id)&&state.athletes.length>=100){$('home-settings-status').textContent='Suosikkilista on täynnä. Poista ensin jokin suosikki.';return;}if(hasAthlete(id))state.athletes=state.athletes.filter(saved=>resolveId(saved.id)!==id);else{const person=people.find(person=>person.id===id);if(person)state.athletes.push({id,label:person.name});}commit();}
+ function toggleAthlete(id){if(!hasAthlete(id)&&state.athletes.length>=100){$('home-settings-status').textContent='Suosikkilista on täynnä. Poista ensin jokin suosikki.';return;}if(hasAthlete(id))state.athletes=state.athletes.filter(saved=>resolveId(saved.id)!==id);else{const person=people.find(person=>person.id===id);if(person)state.athletes.push({id,label:person.name});}commit();notify(hasAthlete(id)?'Painija valittu suosikiksi.':'Painija poistettu suosikeista.');}
  function toggleClub(id){if(!hasClub(id)&&state.clubs.length>=100){$('home-settings-status').textContent='Suosikkilista on täynnä. Poista ensin jokin suosikki.';return;}if(hasClub(id))state.clubs=state.clubs.filter(saved=>saved.id!==id);else{const club=hooks.clubs.find(club=>club.id===id);if(club)state.clubs.push({id,label:club.name});}commit();}
+ let noticeTimer;
+ function notify(text){const box=$('favorite-notice');if(!box)return;clearTimeout(noticeTimer);box.textContent=text;box.hidden=false;noticeTimer=setTimeout(()=>{box.hidden=true;},5000);}
  function renderSelected(){
   const list=$('home-selected-favorites');list.replaceChildren();
   for(const key of ['athletes','clubs'])for(const saved of state[key]){const li=node('li'),name=key==='athletes'?(hooks.data.athleteRegistry.athletes.find(person=>person.id===resolveId(saved.id))?.name||saved.label):(hooks.clubs.find(club=>club.id===saved.id)?.name||saved.label);
@@ -47,7 +49,8 @@
   const input=$('home-find-'+kind),list=$('home-options-'+kind),query=input.value.trim(),tokens=hooks.utils.searchWords(query);list.replaceChildren();
   if(query.length<2)return;
   const rows=kind==='athlete'?people:hooks.clubs;
-  const found=rows.filter(item=>hooks.utils.matchesSearchWords(hooks.utils.searchWords(item.name),tokens)).slice(0,10);
+  const year=$('favorite-year')?.value,style=$('favorite-style')?.value;
+  const found=rows.filter(item=>(!year&&!style||(kind==='athlete'?entriesByAthlete.get(item.id)||[]:item.entries).some(e=>(!year||hooks.year(e.item)===year)&&(!style||hooks.style(e.item,e.result)===style)))&&hooks.utils.matchesSearchWords(hooks.utils.searchWords(item.name),tokens)).slice(0,10);
   for(const item of found){const li=node('li'),selected=kind==='athlete'?hasAthlete(item.id):hasClub(item.id),select=button(selected?'Poista suosikeista':'Lisää suosikiksi',()=>{if(kind==='athlete')toggleAthlete(item.id);else toggleClub(item.id);input.focus();});
    li.append(original('strong',item.name));if(kind==='athlete'){const clubs=[...new Set((entriesByAthlete.get(item.id)||[]).map(entry=>entry.result.club))];li.append(original('small',clubs.join(', ')+' · '+item.id));}else if(item.onlyKll)li.append(node('small','Vain KLL-lähteissä esiintyvä merkintä.'));
    li.append(select);list.append(li);
@@ -66,12 +69,13 @@
    if(club)card.append(resultList(club.entries));else card.append(node('p','Suosikkia tai sen tuloksia ei löydy nykyisestä aineistosta.'));parent.append(card);
   }
   if(!parent.children.length)parent.append(node('p','Valitse suosikkipainijat ja -seurat Muokkaa etusivua -kohdasta.'));
-  if($('favorite-athlete')){$('favorite-athlete').hidden=!athleteId;$('favorite-athlete').textContent=hasAthlete(athleteId)?'Poista painija suosikeista':'Lisää painija suosikiksi';$('favorite-athlete').setAttribute('aria-pressed',String(hasAthlete(athleteId)));}
+  if($('favorite-athlete')){$('favorite-athlete').hidden=!athleteId;const selected=hasAthlete(athleteId),label=selected?'Poista painija suosikeista':'Lisää painija suosikiksi';$('favorite-athlete').replaceChildren();const icon=node('span',selected?'★':'☆');icon.setAttribute('aria-hidden','true');$('favorite-athlete').append(icon);$('favorite-athlete').setAttribute('aria-label',label);$('favorite-athlete').title=label;$('favorite-athlete').setAttribute('aria-pressed',String(hasAthlete(athleteId)));}
   if($('favorite-club')){$('favorite-club').hidden=!clubId;$('favorite-club').textContent=hasClub(clubId)?'Poista seura suosikeista':'Lisää seura suosikiksi';$('favorite-club').setAttribute('aria-pressed',String(hasClub(clubId)));}
  }
  function commit(focus){state=normalize(state);const saved=write(storage(),state);applyLayout();renderControls();renderSelected();renderFavorites();renderSuggestions('athlete');renderSuggestions('club');$('home-settings-status').textContent=saved?'Etusivun valinnat tallennettu.':'Valinnat toimivat tällä sivulla, mutta selain ei salli niiden tallentamista.';if(focus){const target=document.querySelector(focus);(target?.disabled?target.closest('li')?.querySelector('input'):target)?.focus({preventScroll:true});}}
  function update(next){hooks={...hooks,...next};resolveId=resolver(hooks.data);entriesByAthlete=new Map();for(const item of hooks.data.competitions)for(const result of item.rows){const id=resolveId(result.athleteId);if(!entriesByAthlete.has(id))entriesByAthlete.set(id,[]);entriesByAthlete.get(id).push({item,result});}people=hooks.data.athleteRegistry.athletes.filter(person=>!person.mergedInto&&entriesByAthlete.has(person.id));applyLayout();renderSelected();renderFavorites();renderSuggestions('athlete');renderSuggestions('club');}
  function mount(next){if(!$('home-customize'))return;hooks=next;state=read(storage());renderControls();update(next);
+  for(const id of ['favorite-year','favorite-style'])$(id)?.addEventListener('change',()=>{renderSuggestions('athlete');renderSuggestions('club');});
   for(const kind of ['athlete','club'])$('home-find-'+kind).addEventListener('input',()=>renderSuggestions(kind));
   $('home-reset').addEventListener('click',()=>{state=defaults();$('home-find-athlete').value='';$('home-find-club').value='';commit('#home-reset');if($('home-settings-status').textContent==='Etusivun valinnat tallennettu.')$('home-settings-status').textContent='Oletusnäkymä palautettu.';});
   $('favorite-athlete')?.addEventListener('click',()=>{if(athleteId)toggleAthlete(athleteId);});$('favorite-club')?.addEventListener('click',()=>{if(clubId)toggleClub(clubId);});

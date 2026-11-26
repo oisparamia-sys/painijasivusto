@@ -81,11 +81,11 @@
 <p id="admin-bout-report-status" role="status">Otteluhaun yhteenvetoa ladataan…</p>
 <p id="admin-bout-search-summary"></p><p id="admin-bout-coverage-summary"></p><p id="admin-bout-checked-at" class="hint"></p>
 <details><summary>Koko aineiston kilpailut ilman vahvistettuja otteluita (<span id="admin-bout-missing-count">…</span>)</summary><p>Tämä luettelo koskee kaikkia aineiston vuosia. Viimeisimmän haun yhteenveto voi koskea vain yhtä vuotta. Mukana olevistakin kilpailuista voi puuttua yksittäisiä otteluita.</p><ul id="admin-bout-missing-list"></ul></details>
-<details><summary>Mukana olevat kilpailut ja kattavuus</summary><p>Aineistossa on osa vuosien 2022–2026 kilpailuista. Pois jätetyt ottelut eivät sisälly näkyviin voittoihin tai tappioihin. Lähderistiriidat, tunnistamattomat painijat ja tarkistettavat voittotavat jätetään ulkopuolelle.</p><ul id="admin-bout-coverage-list"></ul></details>
+<details><summary>Mukana olevat kilpailut ja kattavuus</summary><p>Aineistossa on osa vuodesta 2020 alkaen kerätyistä kilpailuista. Pois jätetyt ottelut eivät sisälly näkyviin voittoihin tai tappioihin. Lähderistiriidat, tunnistamattomat painijat ja tarkistettavat voittotavat jätetään ulkopuolelle.</p><ul id="admin-bout-coverage-list"></ul></details>
 <button id="admin-bout-report-retry" type="button" hidden>Yritä yhteenvedon lataamista uudelleen</button>
 </section>
 <section id="coverage-admin" aria-labelledby="coverage-admin-title"><h2 id="coverage-admin-title">Julkaistun aineiston kattavuus</h2><p>Kattavuus koskee tallennettuja tietoja. Taulukko ei arvioi löytämättä jääneitä kilpailuja eikä keskeneräistä tuontia.</p>
-<label for="coverage-query">Etsi kilpailua kattavuustaulukosta</label><input id="coverage-query" type="search"><label for="coverage-year">Vuosi</label><select id="coverage-year"><option value="">Kaikki vuodet</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option></select><label><input id="coverage-missing-only" type="checkbox" checked> Näytä vain puutteita sisältävät kilpailut</label><p id="coverage-admin-status" role="status">Kattavuustietoja ladataan…</p><div class="scroll"><table><thead><tr><th scope="col">Kilpailu</th><th scope="col">Vahvistetut ottelut</th><th scope="col">Pisteet puuttuvat</th><th scope="col">Voittotapa puuttuu</th><th scope="col">Pois jätetyt ottelut</th><th scope="col">Tuonnin varoitukset</th><th scope="col">Viimeisin tarkistus</th><th scope="col">Lähde ja huomiot</th></tr></thead><tbody id="coverage-admin-rows"></tbody></table></div></section>
+<label for="coverage-query">Etsi kilpailua kattavuustaulukosta</label><input id="coverage-query" type="search"><label for="coverage-year">Vuosi</label><select id="coverage-year"><option value="">Kaikki vuodet</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option></select><label><input id="coverage-missing-only" type="checkbox" checked> Näytä vain puutteita sisältävät kilpailut</label><p id="coverage-admin-status" role="status">Kattavuustietoja ladataan…</p><div class="scroll"><table><thead><tr><th scope="col">Kilpailu</th><th scope="col">Vahvistetut ottelut</th><th scope="col">Pisteet puuttuvat</th><th scope="col">Voittotapa puuttuu</th><th scope="col">Pois jätetyt ottelut</th><th scope="col">Tuonnin varoitukset</th><th scope="col">Viimeisin tarkistus</th><th scope="col">Lähde ja huomiot</th></tr></thead><tbody id="coverage-admin-rows"></tbody></table></div></section>
 <section aria-labelledby="current-title">
 <h2 id="current-title">1. Nykyinen aineisto</h2>
 <p id="dataset-summary"></p>
@@ -132,7 +132,7 @@
 <noscript>Tämä työkalu tarvitsee JavaScriptin.</noscript>
 </main>
 <script src="coverage-admin.js?v=20261124" defer></script>
-<script src="data-access.js?v=20261126-report1" defer></script>
+<script src="data-access.js?v=20261126-update2" defer></script>
 <script src="bout-report-admin.js?v=20261126-report1" defer></script>
 <script>
 (() => {

@@ -1,5 +1,16 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Rajaa suosikkihakua", "Filter favorite search", "Filtrera favoritsökning"],
+  ["Rajaa hakua", "Filter search", "Filtrera sökning"],
+  ["Lähdemerkinnän tyyppi", "Source entry type", "Typ av källpost"],
+  ["Kaikki merkinnät", "All entries", "Alla poster"],
+  ["Seuramerkinnät", "Club entries", "Klubbposter"],
+  ["Vain KLL-merkinnät", "KLL entries only", "Endast KLL-poster"],
+  ["Hakuehdotukset", "Search suggestions", "Sökförslag"],
+  ["Painija valittu suosikiksi.", "Wrestler added to favorites.", "Brottaren har lagts till i favoriter."],
+  ["Painija poistettu suosikeista.", "Wrestler removed from favorites.", "Brottaren har tagits bort från favoriter."],
+  ["Tietosuoja ja selaimen tallennukset", "Privacy and browser storage", "Integritet och webbläsarlagring"],
+
   ["Sijoituksia", "Placements", "Placeringar"],
   ["Jaa painijan profiili", "Share wrestler profile", "Dela brottarprofil"],
   ["Ohjeet tuloshakuun", "Result search help", "Hjälp för resultatsökning"],
@@ -56,7 +67,7 @@ const PAINI_TRANSLATIONS = [
   ["Etusivu", "Home", "Startsida"],
   ["Seurat", "Clubs", "Föreningar"],
   ["Vertailu", "Compare", "Jämför"],
-  ["SUOMALAINEN PAINI · 2022–2026", "FINNISH WRESTLING · 2022–2026", "FINLÄNDSK BROTTNING · 2022–2026"],
+  ["SUOMALAINEN PAINI · 2020–2026", "FINNISH WRESTLING · 2020–2026", "FINLÄNDSK BROTTNING · 2020–2026"],
   ["Painin tulokset yhdessä paikassa", "Wrestling results in one place", "Brottningsresultat på ett ställe"],
   ["Kilpailusijoitukset, ottelut ja seurojen saavutukset. Tutustu tallennettuun aineistoon tai etsi oma painijasi.", "Placements, bouts and club achievements. Explore the collection or find a wrestler.", "Placeringar, matcher och föreningarnas framgångar. Utforska materialet eller hitta en brottare."],
   ["Etsi painijan tuloksia", "Find a wrestler's results", "Hitta en brottares resultat"],

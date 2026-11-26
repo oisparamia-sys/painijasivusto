@@ -22,6 +22,13 @@ def fixture(numbered=False,plain=False,unranked=False):
    return pages[url]
  return comp,pages,Source()
 class VerifiedSources(unittest.TestCase):
+ def test_targeted_retry_preserves_unselected_competition(self):
+  c,p,s=fixture(numbered=True);meta,people,matches,excluded,issues=b.collect_event(c,s);previous={'competitions':[meta],'participants':people,'matches':matches,'excluded':excluded,'issues':issues};result,report=b.collect_auto({'competitions':[c]},s,previous,'all',set());self.assertEqual(report['summary']['attempted'],0);self.assertEqual(result['matches'],matches)
+
+ def test_single_participant_does_not_require_a_bout_link(self):
+  c,p,s=fixture();url=URL.replace('indexFIN.htm','FIN1tlges.htm');p[url]=header()+'<tr><td>30 kg</td><td>Pojat</td><td>1 Osallistuja</td></tr><tr><td>1.</td><td><a href="FIN1NR1.htm">A Testi</a></td><td>Seura A</td></tr>';p[URL]=header()+'<a href="FIN1tlges.htm">luettelo</a>';c['rows']=c['rows'][:1]
+  self.assertFalse(any('ottelulinkki puuttuu' in i['reason'] for i in b.collect_event(c,s)[4]))
+
  def test_without_numbered_requires_both_profiles(self):
   c,p,s=fixture();meta,people,matches,excluded,issues=b.collect_event(c,s)
   self.assertEqual(len(matches),1);self.assertEqual(meta['comparisonMethod'],'both-participant-profiles');self.assertEqual(len(matches[0]['verificationSources']),2)

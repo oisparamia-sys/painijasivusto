@@ -1,0 +1,27 @@
+Tekninen tietosuojatarkistus 26.11.2026
+
+Toteutetut tarkistukset ja muutokset
+- Julkinen tuloshaku lataa nykyiset tulokset ja tarpeelliset henkilöviittaukset pienistä tiedostoista. Muutoshistoriaa ja peruttujen muokkausten kopioita ei lisätä näihin selainlatauksiin. Alkuperäinen data.js ja perumismahdollisuus säilyvät ylläpidolle.
+- Suosikit, etusivun valinnat, kieli ja ulkoasu tallennetaan samaan selaimeen. Näitä tietoja ei lähetetä sivuston ylläpitäjälle. Aineiston välimuisti käyttää CacheStoragea.
+- Lisätty selitys tallennuksista sekä painike tämän sivuston omien valintojen ja aineistovälimuistin poistamiseen. Muiden saman verkkotunnuksen sovellusten tallennuksia ei tyhjennetä.
+- Sivuston oma julkinen käyttöliittymä ei sisällä kävijäanalytiikkaa eikä aseta evästeitä. Tallennustekniikan nimi ei kuitenkaan yksin ratkaise suostumusvelvollisuutta. Käyttötarkoitus ja käyttäjän nimenomaisesti pyytämä toiminto pitää arvioida.
+- Palautelomake käyttää ulkopuolista Supabase-palvelua. Viesti lähetetään vain käyttäjän lähettäessä lomakkeen. Lomakkeen tietosuojakuvaus, säilytysaika ja rekisterinpitäjän tiedot pitää viimeistellä erikseen.
+
+Julkisen aineiston nykyinen rajaus
+Kilpailujen nimet, päivät ja paikat, painijoiden lähdenimet, seuramerkinnät, sarjat, painoluokat, sijoitukset ja vahvistetut ottelut. Myös alaikäisten tuloksia on mukana. Tuonnin kenttiin eivät kuulu syntymäpäivät, osoitteet, henkilötunnukset tai sähköpostit. Otteluiden voittotavoissa on myös loukkaantumiseen viittaavia lähdemerkintöjä (FI/LOUK). Niiden julkaiseminen voi vaatia erillistä tietosuoja-arviota; rajausta ei muutettu ilman ylläpitäjän päätöstä.
+HUOM: nykyinen GitHub-repositorio on julkinen. Täydellinen data.js, vanha Git-historia, lähdearkistot ja jonot ovat siellä saatavissa. Selaimen latausten minimointi ei tee niistä salaisia. GitHub Pagesin nykyinen haarajulkaisu ei ole kirjautumisella suojattu ylläpito. Paikallinen kehityspalvelin ei muuta julkisen repositorion näkyvyyttä.
+
+Avoimet päätökset (käyttäjä siirsi myöhemmäksi)
+1. Rekisterinpitäjän nimi ja tietopyyntöjen yhteystiedot.
+2. Henkilötietojen käsittelyperuste, tarkoitus, säilytysajat, lasten etujen arviointi ja oikeuksien toteuttamisen menettely. Julkinen alkuperäinen lähde ei yksin ratkaise uudelleenjulkaisun käsittelyperustetta.
+3. Tarvitaanko erillinen yksityinen ylläpidon tietovarasto ja julkiselle sivustolle nimenomainen julkaistavien tiedostojen luettelo. Tällaista käyttöoikeusmuutosta tai historian poistamista ei tehty.
+4. Tarkempi luokittelu siitä, julkaistaanko esimerkiksi yksittäisiä alaikäisten sarjoja. Näkyvien tulosten rajaa ei muutettu ilman päätöstä.
+Tarkistus ei tarkoita, että sivuston täydellinen tietosuojaseloste olisi valmis tai lainmukaisuus olisi vahvistettu.
+
+Lähteet
+Traficom: Evästeet ja käyttäjän pyytämän palvelun välttämättömät tallennukset
+https://www.kyberturvallisuuskeskus.fi/fi/viestintaverkkojen-ja-palveluiden-saantely/evasteet
+Tietosuojalaki, ajantasainen Finlex
+https://www.finlex.fi/fi/lainsaadanto/2018/1050
+EU:n yleinen tietosuoja-asetus, erityisesti 5, 6, 12–14 ja 21 artikla
+https://eur-lex.europa.eu/eli/reg/2016/679/oj

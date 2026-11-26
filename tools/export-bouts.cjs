@@ -36,8 +36,8 @@ function build(directory='.'){
     const coverage=require('../site-metrics.js').coverage(context.window.PAINI_SHARED_DATA,context.window.PAINI_BOUTS_DATA);
     files.push(['kattavuus.json',JSON.stringify(coverage)]);
     const digest=text=>crypto.createHash('sha256').update(text).digest('hex');
-    const descriptors={results:{file:'data.js',sha256:digest(fs.readFileSync(path.join(directory,'data.js')))},bouts:{file:'ottelut-public.json',sha256:digest(content+'\n')},coverage:{file:'kattavuus.json',sha256:digest(JSON.stringify(coverage)+'\n')}};
-    files.push(['aineisto-manifest.json',JSON.stringify({version:1,revision:digest(JSON.stringify(descriptors)),files:descriptors})]);
+    const descriptors={results:require('./export-results.cjs').build(context.window.PAINI_SHARED_DATA,directory),bouts:{file:'ottelut-public.json',sha256:digest(content+'\n')},coverage:{file:'kattavuus.json',sha256:digest(JSON.stringify(coverage)+'\n')}};
+    files.push(['aineisto-manifest.json',JSON.stringify({version:2,revision:digest(JSON.stringify(descriptors)),files:descriptors})]);
   }
   for(const [name,text] of files){
     const file=path.join(directory,name);fs.writeFileSync(file+'.tmp',text+'\n');fs.renameSync(file+'.tmp',file);

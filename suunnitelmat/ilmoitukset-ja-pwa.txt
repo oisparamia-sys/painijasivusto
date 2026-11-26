@@ -1,0 +1,15 @@
+Suunnitelma 26.11.2026 – ei vielä otettu käyttöön
+
+Suosikkien tulosilmoitukset
+Ensimmäinen versio: sivuston sisäinen Uudet tulokset -luettelo. Kun käyttäjä lisää suosikin, nykyiset julkaistut tulostunnukset muodostavat lähtötason. Myöhemmässä varmennetussa aineistopäivityksessä havaittu uusi tulostunnus tuottaa yhden ilmoituksen. Hyväksyntää odottavista muutoksista ei ilmoiteta. Painijan nimi tai sama nimi ei yksin riitä kohdistukseen.
+Tallennetaan vain selaimeen: valitut pysyvät suosikkitunnukset, nähtyjen tulostunnusten rajattu joukko ja ilmoitusasetukset. Yhdistämiset ratkaistaan rekisterin linkkien avulla; erottamisen jälkeen tulostunnuksen nykyinen henkilöviittaus ratkaisee. Laitteiden välinen synkronointi ei kuulu ensimmäiseen versioon.
+Käyttäjä voi ottaa ilmoitukset pois, merkitä kaikki luetuiksi ja poistaa paikalliset tiedot. Vanha tulos ei muutu uudeksi jokaisella aineistopäivityksellä tai uudelleenlatauksella. Suosikin ensimmäinen lisäys ei aiheuta historiallisten tulosten ilmoitustulvaa.
+Hyväksyntätestit: uusi hyväksytty tulos näkyy kerran; jonoehdotus ei näy; yhteyskatko ei poista luetteloa; rekisterin yhdistäminen tai erottaminen ei anna toisen henkilön tuloksia; tyhjennys ja kieliversiot toimivat.
+Ennen toteutusta vahvistetaan, riittääkö sivuston sisäinen ilmoitusluettelo. Taustalla myös sivun ollessa suljettuna tulevat push-ilmoitukset vaativat erillisen lähettäjän, käyttöluvan ja tietosuojapäätökset. Sähköposti- ja push-palvelua ei ole liitetty.
+
+Asennettava verkkosovellus (PWA)
+Ensimmäinen vaihe: sovelluksen nimi, erilliset tavallinen ja maskable-kuvakkeet, webmanifest, rajattu start_url ja scope sekä itsenäinen näyttötila. Asennusohjeet iOS:lle ja Androidille näytetään tuen mukaan; asennusmahdollisuutta ei väitetä kaikissa selaimissa samanlaiseksi.
+Service worker tallentaa julkisen käyttöliittymän. Aineiston osat tallennetaan vasta onnistuneen latauksen ja SHA-256-varmistuksen jälkeen nykyisen data-access-käytännön mukaan. Aineiston pientä manifestia haetaan verkosta, ja yhteyskatkossa käytetään viimeistä kokonaan varmennettua versiota. Keskeneräinen uusi julkaisu ei korvaa edellistä.
+Ylläpitosivut, päätösjonot, lähdearkisto ja palauteviestit eivät kuulu offline-sovellukseen. Tallennusta rajataan ja vanhat versiot siivotaan. Käyttäjä voi poistaa tallennetut tiedot. Päivityksestä kerrotaan, eikä käyttöliittymäversiota vaihdeta kesken kirjoittamisen tai muokkaamisen.
+Hyväksyntätestit: asennus iPhonen Safarissa ja Androidin Chromessa oikeilla laitteilla; käynnistys kotinäytöstä; aiemmin ladatun tuloshaun toiminta ilman verkkoa; lataamaton aineisto selitetään; uusi julkaisu, puuttuva tiedosto ja loppuva tallennustila; poistaminen ja palautuminen.
+Nyt tehtiin vain suunnitelma. Manifestia, asennuskehotusta, service workeria tai sovelluskauppajulkaisua ei otettu käyttöön.

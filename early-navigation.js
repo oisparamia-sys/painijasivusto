@@ -8,7 +8,7 @@
   const view=button.dataset.openView||button.id.slice(4);if(!['home','results','competitions','bouts','clubs'].includes(view))return;
   window.PAINI_PENDING_VIEW=view;
   for(const name of ['home','results','competitions','bouts','clubs','club']){const el=document.getElementById(({results:'search',competitions:'competition'}[name]||name)+'-view');if(el)el.hidden=name!==view;document.getElementById('nav-'+name)?.setAttribute('aria-pressed',String(name===view));}
-  const heading=document.getElementById(view==='bouts'?'bouts-heading':view==='results'?'results-heading':view==='competitions'?'competition-heading':view+'-heading');heading?.focus();
+  const heading=document.getElementById(view==='bouts'?'bouts-heading':view==='results'?'results-heading':view==='competitions'?'competition-heading':view+'-heading');window.scrollTo({top:0,left:0,behavior:"instant"});heading?.focus({preventScroll:true});
   const address=new URL(location.href);address.hash=view==='home'?'':new URLSearchParams({nakyma:view}).toString();history.replaceState(null,'',address.href);
  });
 })();

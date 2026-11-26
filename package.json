@@ -1,0 +1,1 @@
+{"name":"painijasivusto","private":true,"scripts":{"test":"node --test tools/test*.cjs","test:mobile":"playwright test"},"devDependencies":{"@playwright/test":"1.61.1"},"packageManager":"pnpm@12.23.0"}

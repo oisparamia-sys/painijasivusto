@@ -1,0 +1,31 @@
+name: Puhelinselainten testit
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: mobile-tests-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install -g pnpm@12.23.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium webkit
+      - run: pnpm test
+      - run: pnpm test:mobile
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: mobiilitestien-virheraportti
+          path: test-results/
+          retention-days: 14
