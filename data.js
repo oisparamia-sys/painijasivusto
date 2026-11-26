@@ -590,7 +590,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "42",
           "category": "U12 Pojat",
           "resultId": "tulos-000067",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 1,
@@ -12643,7 +12643,7 @@ window.PAINI_SHARED_DATA = {
           "club": "Ylä-Tikkurilan Kipinä",
           "weight": "45",
           "category": "Pojat U13",
-          "athleteId": "painija-000065",
+          "athleteId": "painija-035082",
           "resultId": "tulos-001375"
         },
         {
@@ -15826,7 +15826,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "47",
           "category": "TUL Pojat U13",
           "resultId": "tulos-001719",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 2,
@@ -21298,7 +21298,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "32",
           "category": "Pojat",
           "resultId": "tulos-002303",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 3,
@@ -25168,7 +25168,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "39",
           "category": "Pojat U13",
           "resultId": "tulos-002719",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 1,
@@ -28654,7 +28654,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "41",
           "category": "Pojat U13",
           "resultId": "tulos-003097",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 1,
@@ -46056,7 +46056,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "36",
           "category": "GR U12",
           "resultId": "tulos-004995",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 1,
@@ -48435,7 +48435,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "37",
           "category": "GR U11",
           "resultId": "tulos-005254",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 1,
@@ -71757,7 +71757,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "41",
           "category": "U15",
           "resultId": "tulos-007798",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 5,
@@ -76203,7 +76203,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "41",
           "category": "Pojat U13",
           "resultId": "tulos-008280",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 2,
@@ -86996,7 +86996,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "34",
           "category": "Aloittelijat pojat",
           "resultId": "tulos-009459",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 3,
@@ -101018,7 +101018,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "36",
           "category": "Pojat U12",
           "resultId": "tulos-010973",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 5,
@@ -105270,7 +105270,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "39",
           "category": "Pojat U11",
           "resultId": "tulos-011435",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 7,
@@ -119078,7 +119078,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "41",
           "category": "Pojat & Miehet",
           "resultId": "tulos-012929",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 6,
@@ -122331,7 +122331,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "39",
           "category": "Pojat U12",
           "resultId": "tulos-013284",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 4,
@@ -123502,7 +123502,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "40",
           "category": "U15 Pojat",
           "resultId": "tulos-013407",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 1,
@@ -126779,7 +126779,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "41",
           "category": "GR U13",
           "resultId": "tulos-013764",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 3,
@@ -133838,7 +133838,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "40",
           "category": "Pojat 13v",
           "resultId": "tulos-014527",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 6,
@@ -139436,7 +139436,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "41",
           "category": "GR U13",
           "resultId": "tulos-015137",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 4,
@@ -148521,7 +148521,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "44",
           "category": "Pojat U13",
           "resultId": "tulos-016124",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 4,
@@ -164696,7 +164696,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "35",
           "category": "Pojat 12v",
           "resultId": "tulos-017865",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 4,
@@ -173695,7 +173695,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "41",
           "category": "GR U15",
           "resultId": "tulos-018826",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 2,
@@ -184592,7 +184592,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "36",
           "category": "Pojat U12",
           "resultId": "tulos-019905",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 6,
@@ -190156,7 +190156,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "42",
           "category": "U15 Pojat",
           "resultId": "tulos-020487",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 4,
@@ -190525,7 +190525,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "42",
           "category": "U13 Pojat",
           "resultId": "tulos-020528",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 4,
@@ -205838,7 +205838,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "45",
           "category": "GR U13",
           "resultId": "tulos-022128",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 2,
@@ -234312,7 +234312,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "35",
           "category": "U12 Pojat",
           "resultId": "tulos-025096",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 6,
@@ -278418,7 +278418,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "36",
           "category": "Pojat 12v",
           "resultId": "tulos-029870",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 3,
@@ -284349,7 +284349,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "42",
           "category": "Pojat U12",
           "resultId": "tulos-030503",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 4,
@@ -293112,7 +293112,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "42",
           "category": "GR U13",
           "resultId": "tulos-031412",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 9,
@@ -305477,7 +305477,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "40",
           "category": "Boys U13 2012->",
           "resultId": "tulos-032713",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 11,
@@ -321920,7 +321920,7 @@ window.PAINI_SHARED_DATA = {
           "weight": "45",
           "category": "Pojat U17 (AM)",
           "resultId": "tulos-034472",
-          "athleteId": "painija-000065"
+          "athleteId": "painija-035082"
         },
         {
           "place": 4,
@@ -328734,7 +328734,7 @@ window.PAINI_SHARED_DATA = {
   ],
   "athleteRegistry": {
     "version": 1,
-    "nextAthlete": 35082,
+    "nextAthlete": 35083,
     "nextResult": 35473,
     "athletes": [
       {
@@ -329063,7 +329063,10 @@ window.PAINI_SHARED_DATA = {
       {
         "id": "painija-000065",
         "name": "Leo Heikkinen",
-        "status": "unreviewed"
+        "status": "unreviewed",
+        "distinctFrom": [
+          "painija-035082"
+        ]
       },
       {
         "id": "painija-000066",
@@ -532980,6 +532983,14 @@ window.PAINI_SHARED_DATA = {
         "id": "painija-035081",
         "name": "Lenni Alanko",
         "status": "unreviewed"
+      },
+      {
+        "id": "painija-035082",
+        "name": "Leo Heikkinen",
+        "status": "unreviewed",
+        "distinctFrom": [
+          "painija-000065"
+        ]
       }
     ],
     "history": [
@@ -1489823,9 +1489834,207 @@ window.PAINI_SHARED_DATA = {
             }
           }
         ]
+      },
+      {
+        "label": "Erota tuloksia: painija-000065",
+        "kind": "identity",
+        "at": "2026-11-23T18:48:32.476Z",
+        "people": [
+          {
+            "id": "painija-000065",
+            "before": {
+              "id": "painija-000065",
+              "name": "Leo Heikkinen",
+              "status": "unreviewed"
+            },
+            "after": {
+              "id": "painija-000065",
+              "name": "Leo Heikkinen",
+              "status": "unreviewed",
+              "distinctFrom": [
+                "painija-035082"
+              ]
+            }
+          },
+          {
+            "id": "painija-035082",
+            "before": null,
+            "after": {
+              "id": "painija-035082",
+              "name": "Leo Heikkinen",
+              "status": "unreviewed",
+              "distinctFrom": [
+                "painija-000065"
+              ]
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "resultId": "tulos-000067",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-001375",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-001719",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-002303",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-002719",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-003097",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-004995",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-005254",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-007798",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-008280",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-009459",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-010973",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-011435",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-012929",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-013284",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-013407",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-013764",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-014527",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-015137",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-016124",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-017865",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-018826",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-019905",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-020487",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-020528",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-022128",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-025096",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-029870",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-030503",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-031412",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-032713",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          },
+          {
+            "resultId": "tulos-034472",
+            "before": "painija-000065",
+            "after": "painija-035082"
+          }
+        ],
+        "competitions": []
       }
     ]
   },
-  "exportedAt": "2026-11-23T05:46:01.016Z",
+  "exportedAt": "2026-11-23T18:48:46.593Z",
   "updatedAt": "2026-11-23T05:35:29.319Z"
 };
