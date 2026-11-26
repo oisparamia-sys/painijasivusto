@@ -1,5 +1,14 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Kilpailusijoitukset, ottelut ja seurat. Löydä painijasi ja seuraa suosikkejasi.","Competition placements, bouts and clubs. Find your wrestler and follow your favorites.","Tävlingsplaceringar, matcher och föreningar. Hitta din brottare och följ dina favoriter."],
+  ["Painija – tulokset ja tilastot", "Painija – results and statistics", "Painija – resultat och statistik"],
+  ["Painija – etusivu", "Painija – home", "Painija – startsida"],
+  ["Suomalaisten painijoiden tulokset ja tilastot", "Results and statistics of Finnish wrestlers", "Finländska brottares resultat och statistik"],
+  ["TULOKSET & TILASTOT", "RESULTS & STATISTICS", "RESULTAT & STATISTIK"],
+  ["Kuvan tiedot", "Photo credits", "Bildinformation"],
+  ["Kuva: © Marie-Lan Nguyen / Wikimedia Commons.", "Photo: © Marie-Lan Nguyen / Wikimedia Commons.", "Foto: © Marie-Lan Nguyen / Wikimedia Commons."],
+  ["Alkuperäinen kuva", "Original photo", "Originalbild"],
+  ["Kuvaa on pienennetty ja sen päällä on tumma sävytys. Kuvituskuva kansainvälisestä painista.", "The photo has been resized and has a dark overlay. Illustrative photo of international wrestling.", "Bilden har förminskats och har ett mörkt överlägg. Illustrationsbild av internationell brottning."],
   ["Ilmoitukset toimivat tällä sivulla, mutta selain ei salli niiden tallentamista.", "Notifications work on this page, but the browser does not allow saving them.", "Aviseringarna fungerar på denna sida, men webbläsaren tillåter inte att de sparas."],
   ["Painijan kilpailutulokset", "Wrestler competition results", "Brottarens tävlingsresultat"],
   ["Kuvaajat ja vuosittaiset tilastot", "Charts and yearly statistics", "Diagram och årlig statistik"],

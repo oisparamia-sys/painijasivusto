@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Painijatulokset</title>
+<title>Painija – tulokset ja tilastot</title>
+<meta name="description" content="Suomalaisten painijoiden kilpailutulokset, ottelut ja seurat yhdessä paikassa.">
 <link rel="stylesheet" href="style.css?v=20261031-refresh1">
 <link rel="stylesheet" href="palaute.css?v=1">
 <script src="theme.js?v=20261124" ></script>
-<script src="early-navigation.js?v=20261126-public-nav1" defer></script>
-<script src="mobile-ui.js?v=20261126-public-nav1" defer></script>
-<link rel="stylesheet" href="features.css?v=20261126-public-nav1">
+<script src="early-navigation.js?v=20261126-redesign1" defer></script>
+<script src="mobile-ui.js?v=20261126-redesign1" defer></script>
+<link rel="stylesheet" href="features.css?v=20261126-redesign1">
 
 <style>
 #bouts-view .bout-badge{display:inline-block;vertical-align:middle;font-size:13px;font-weight:650;padding:5px 10px;border-radius:7px;background:#eaf1ff;color:#174397}
@@ -37,10 +38,12 @@
 #bouts-view details{border-top:1px solid #e0e7ef;margin-top:24px;padding-top:16px}#bouts-view summary{cursor:pointer;font-weight:650}
 @media(max-width:700px){#bouts-view table{min-width:0}#bouts-view .bout-options{max-height:240px}#bouts-view .bout-stat{flex-basis:100px}}
 </style>
-<link rel="stylesheet" href="mobile.css?v=20261126-public-nav1">
+<link rel="stylesheet" href="mobile.css?v=20261126-redesign1">
+<link rel="stylesheet" href="design.css?v=20261126-redesign1">
+<script src="design.js?v=20261126-redesign1" defer></script>
 </head>
-<body>
-<header><div class="header-content"><div>Painijatulokset</div><details id="site-settings" class="site-settings" open><summary>Asetukset</summary><div class="header-preferences"><label class="language-picker" for="theme"><span>Ulkoasu</span><select id="theme"><option value="system">Järjestelmän mukaan</option><option value="light">Vaalea</option><option value="dark">Tumma</option></select></label><label class="language-picker" for="language"><span translate="no">Kieli / Language / Språk</span><select id="language"><option value="fi">Suomi</option><option value="en">English</option><option value="sv">Svenska</option></select></label><button id="feedback-open" type="button" aria-haspopup="dialog" hidden>Anna palautetta</button></div></details></div></header>
+<body class="public-site">
+<header><div class="header-content"><button type="button" class="brand" id="brand-home" aria-label="Painija – etusivu" translate="no"><svg width="38" height="38" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="8" r="3"/><circle cx="29" cy="10" r="3"/><path d="m11 15 7 5 6-4 7 4-5 7 7 8M11 15l-7 9 8 4-5 8m11-16-3 10 8 6m3-19-7 11"/></svg><span class="brand-word">Painija<span class="brand-dot">.</span><small>TULOKSET &amp; TILASTOT</small></span></button><details id="site-settings" class="site-settings" open><summary><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="settings-label">Asetukset</span></summary><div class="header-preferences"><label class="language-picker" for="theme"><span>Ulkoasu</span><select id="theme"><option value="system">Järjestelmän mukaan</option><option value="light">Vaalea</option><option value="dark">Tumma</option></select></label><label class="language-picker" for="language"><span translate="no">Kieli / Language / Språk</span><select id="language"><option value="fi">Suomi</option><option value="en">English</option><option value="sv">Svenska</option></select></label><button id="feedback-open" type="button" aria-haspopup="dialog" hidden>Anna palautetta</button></div></details></div></header>
 <main>
 <div id="favorite-notice" class="favorite-notice" role="status" aria-live="polite" hidden></div>
 <h1 id="site-title" hidden>Suomalaisten painijoiden tulokset</h1>
@@ -72,14 +75,12 @@
   <p id="feedback-status" class="feedback-status" role="status" aria-live="polite"></p>
 </dialog>
 <p id="search-intro" hidden>Hae tuloksia nimellä, seuralla, kilpailulla tai paikkakunnalla ja tarkenna hakua suodattimilla.</p>
-<section id="data-refresh-box" class="data-refresh-box" aria-label="Aineiston päivittäminen" data-update-available="false">
-  <p id="data-refresh-status" role="status" aria-live="polite">Tiedot päivittyvät automaattisesti.</p>
-</section>
+
 <div id="status" class="status" role="status" aria-live="polite" hidden></div>
 <section id="home-view" class="app-feature-view" aria-labelledby="home-heading">
-  <div class="home-hero"><p class="home-eyebrow">SUOMALAINEN PAINI · 2020–2026</p><h1 id="home-heading" tabindex="-1">Painin tulokset yhdessä paikassa</h1><p>Kilpailusijoitukset, ottelut ja seurojen saavutukset. Tutustu tallennettuun aineistoon tai etsi oma painijasi.</p>
+  <div class="home-hero"><picture class="hero-picture"><source media="(max-width:700px)" srcset="assets/wrestling-800.jpg"><img src="assets/wrestling-1600.jpg" width="1600" height="1041" alt="" fetchpriority="high"></picture><p class="home-eyebrow">SUOMALAINEN PAINI · 2020–2026</p><h1 id="home-heading" tabindex="-1">Suomalaisten painijoiden tulokset ja tilastot</h1><p>Kilpailusijoitukset, ottelut ja seurat. Löydä painijasi ja seuraa suosikkejasi.</p>
   <form id="home-search-form"><label for="home-search">Hae tuloksia</label><div class="home-search-row"><input id="home-search" type="search" placeholder="Nimi, seura, kilpailu tai paikkakunta…"><button type="submit">Hae tuloksia</button></div><details id="home-filters" class="extra-filters"><summary>Rajaa hakua</summary><div class="filters"><div class="field"><label for="home-year">Vuosi</label><select id="home-year"><option value="">Kaikki vuodet</option></select></div><div class="field"><label for="home-style">Painimuoto</label><select id="home-style"><option value="">Kaikki painimuodot</option><option value="greco">Kreikkalais-roomalainen</option><option value="freestyle">Vapaapaini</option><option value="women">Naispaini</option><option value="unknown">Ei vahvistettu</option></select></div></div></details></form>
-  <div class="actions"><button type="button" data-open-view="bouts">Avaa otteluhaku</button><button type="button" data-open-view="clubs">Tutustu seuroihin</button></div></div>
+  <div class="actions hero-shortcuts"><button type="button" data-open-view="results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg>Tuloshaku</button><button type="button" data-open-view="bouts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><path d="m6 9 5 4 3-3 4-1M6 9l-3 6 5 2-3 4m13-12 3 6-5 2 3 4m-11-4 4-4 4 4"/></svg>Avaa otteluhaku</button><button type="button" data-open-view="clubs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3M4 6a3 3 0 0 0 0 6m16-6a3 3 0 0 1 0 6M1 21v-3a4 4 0 0 1 3-4m19 7v-3a4 4 0 0 0-3-4"/></svg>Tutustu seuroihin</button></div></div>
   <details id="home-customize" class="card home-customize"><summary>Muokkaa etusivua</summary>
   <p>Valinnat tallentuvat vain tähän selaimeen. Kirjautumista ei tarvita.</p>
   <h2>Etusivun osiot ja järjestys</h2><ol id="home-section-settings" class="home-section-settings"></ol>
@@ -285,13 +286,15 @@
   </div>
   <p id="wrestler-empty" class="hint" hidden>Tälle nimelle ja seuralle ei enää löydy tuloksia nykyisestä aineistosta.</p>
 </section>
-<footer><a href="tietosuoja.html">Tietosuoja ja selaimen tallennukset</a><br>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
+<footer><section id="data-refresh-box" class="data-refresh-box" aria-label="Aineiston päivittäminen" data-update-available="false">
+  <p id="data-refresh-status" role="status" aria-live="polite">Tiedot päivittyvät automaattisesti.</p>
+</section><a href="tietosuoja.html">Tietosuoja ja selaimen tallennukset</a><br>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.<details class="photo-credit"><summary>Kuvan tiedot</summary><p><span>Kuva: © Marie-Lan Nguyen / Wikimedia Commons.</span> <a href="https://commons.wikimedia.org/wiki/File:Dukic_v_Tsirekidze_Tournoi_GPSO_2014_t143233.jpg" target="_blank" rel="noopener">Alkuperäinen kuva</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener" translate="no">CC BY 3.0</a>. <span>Kuvaa on pienennetty ja sen päällä on tumma sävytys. Kuvituskuva kansainvälisestä painista.</span></p></details></footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="translations.js?v=20261126-public-nav1" defer></script>
-<script src="i18n.js?v=20261126-public-nav1" defer></script>
+<script src="translations.js?v=20261126-redesign1" defer></script>
+<script src="i18n.js?v=20261126-redesign1" defer></script>
 <script src="palaute.js?v=3" defer></script>
-<script src="fresh-data.js?v=20261126-public-nav1" defer></script>
+<script src="fresh-data.js?v=20261126-redesign1" defer></script>
 </body>
 </html>
 

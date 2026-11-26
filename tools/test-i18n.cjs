@@ -3,9 +3,9 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const rows=require('../translations.js'),{translate:t}=require('../i18n.js');
 test('every static public label, instruction and accessible label has both translations',()=>{
  const html=fs.readFileSync('index.html','utf8').replace(/<(style|script)[\s\S]*?<\/\1>/g,'').replace(/<span[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/span>/g,'');
- const texts=[...html.matchAll(/>([^<>]+)</g)].map(m=>m[1].trim()).filter(Boolean);
+ const texts=[...html.matchAll(/>([^<>]+)</g)].map(m=>m[1].trim().replaceAll('&amp;','&')).filter(value=>/\p{L}/u.test(value));
  const attributes=[...html.matchAll(/(?:aria-label|placeholder)="([^"]+)"/g)].map(m=>m[1]);
- const excluded=new Set(['Kieli / Language / Språk','Suomi','English','Svenska']);
+ const excluded=new Set(['Kieli / Language / Språk','Suomi','English','Svenska','Painija','CC BY 3.0']);
  for(const value of [...texts,...attributes])if(!excluded.has(value)){
   assert.notEqual(t(value,'en'),value,'Missing English: '+value);assert.notEqual(t(value,'sv'),value,'Missing Swedish: '+value);
  }

@@ -66,3 +66,10 @@ Ylläpidon tietokantalinkki avaa erillisen selainikkunan (selaimen salliman uude
 Etusivun palautus ja kilpailuluettelon siirto ylläpitoon 26.11.2026
 Kun käyttäjä on jo etusivulla ja painaa Etusivu-painiketta uudelleen, avoimet asetukset, etusivun avattavat osiot ja hakuehdotukset sulkeutuvat. Sivun alkuun palataan; hakuteksti, rajaukset ja tallennetut valinnat säilyvät.
 Erillinen Kilpailut-näkymä on siirretty ylläpitoon osoitteeseen kilpailut.html. Julkisessa valikossa ovat Etusivu, Tulokset, Ottelut ja Seurat. Etusivun erillinen Kaikki kilpailut -painike poistettiin. Tuloshaun kilpailurajaus ja etusivun uusimpien kilpailujen tuloslinkit säilyvät. Vanhat julkisen kilpailuluettelon näkymälinkit avaavat tuloshaun. Ylläpidon kilpailuhaku, vuosirajaus, painimuoto, lajittelu, lähdelinkit ja rajattuun julkiseen tuloshakuun johtavat linkit ovat käytössä.
+
+26.11.2026 · Julkisen sivuston ulkoasun kokonaisuudistus
+- Kuvareferenssin mukainen tumma ja punainen paini-ilme, uusi tunnus, kuvallinen etusivu, hakupainikkeet, päivämääräkortit ja puhelimen alavalikko.
+- Tuloshaku, ottelut, seurat, profiilit, tumma ja vaalea teema käyttävät samaa visuaalista järjestelmää.
+- Aineisto, pysyvät tunnisteet, fuzzy-haku, hakuehdotukset, suodattimet, suosikit, ilmoitukset, kielet ja hyväksyntäkäytäntö säilyvät. Kilpailuluettelo säilyy ylläpidossa.
+- Vapaasti käytettävä painikuva: © Marie-Lan Nguyen / Wikimedia Commons, CC BY 3.0. Kaksi näyttökokoon sopivaa pakattua kuvaa, lähde ja muokkaustiedot sivun alalaidassa ja assets/README.txt-tiedostossa.
+- Selaintesteissä tarkistetaan myös hakutekstin näkyvyys kummassakin teemassa ja uuden logopainikkeen Etusivu-toiminto.

@@ -28,7 +28,7 @@
   const counters=$('#home-stats');counters.replaceChildren(stat('Kilpailuja',data.competitions.length),stat('Sijoituksia',data.competitions.reduce((n,c)=>n+c.rows.length,0)));
   const bouts=stat('Otteluita',coverage?coverage.total.matches:'…');bouts.querySelector('strong').id='home-bout-count';counters.append(bouts);
   const list=$('#home-latest');list.replaceChildren();
-  [...data.competitions].sort((a,b)=>H.date(b)-H.date(a)||a.title.localeCompare(b.title,'fi')).slice(0,6).forEach(c=>{const card=node('article',undefined,'feature-card');card.append(source('h3',c.title),source('p',c.details),node('p',String(c.rows.length)+' kilpailusijoitusta'),action('Näytä tulokset',()=>H.openCompetition(c)));list.append(card);});
+  [...data.competitions].sort((a,b)=>H.date(b)-H.date(a)||a.title.localeCompare(b.title,'fi')).slice(0,6).forEach(c=>{const card=node('article',undefined,'feature-card');const timestamp=H.date(c);if(timestamp>0){const date=new Date(timestamp),badge=node('div',undefined,'competition-date');badge.setAttribute('aria-hidden','true');badge.append(node('strong',String(date.getUTCDate())),node('span',new Intl.DateTimeFormat({fi:'fi-FI',en:'en-GB',sv:'sv-SE'}[window.PAINI_I18N?.language||'fi'],{month:'short',timeZone:'UTC'}).format(date)));card.append(badge);}card.append(source('h3',c.title),source('p',c.details),node('p',String(c.rows.length)+' kilpailusijoitusta'),action('Näytä tulokset',()=>H.openCompetition(c)));list.append(card);});
  }
  function renderClubs(){
   const query=$('#club-search').value,list=$('#club-list');list.replaceChildren();
@@ -70,7 +70,7 @@
   document.querySelectorAll('[data-open-view]').forEach(button=>button.addEventListener('click',()=>H.showView(button.dataset.openView)));
   $('#club-search').addEventListener('input',renderClubs);for(const id of ['club-list-year','club-list-kind','club-list-style'])$('#'+id)?.addEventListener('change',renderClubs);$('#club-year').addEventListener('change',()=>{if(currentClub)openClub(currentClub,false);});
   refreshFeatureYears();
-  renderHome();renderClubs();window.addEventListener('paini-language-change',renderCoverages);
+  renderHome();renderClubs();window.addEventListener('paini-language-change',()=>{renderHome();renderCoverages();});
   coverage=window.PAINI_COVERAGE||null;
   renderCoverages();
   window.PAINI_SEARCH_ASSIST?.mount(data);

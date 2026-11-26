@@ -66,3 +66,18 @@ test('competition directory belongs to administration and its result links still
  await page.goto('/kilpailut.html');await expect(page.locator('#admin-competition-count')).toContainText('347 kilpailua');await page.locator('#admin-competition-query').fill('tamperen');await expect(page.locator('#admin-competition-options')).toBeVisible();await page.selectOption('#admin-competition-year','2020');
  const link=page.locator('#admin-competition-list a').filter({hasText:'Näytä tulokset'}).first(),href=await link.getAttribute('href'),identity=new URLSearchParams(new URL(href).hash.slice(1)).get('kilpailu');const opened=context.waitForEvent('page');await link.click();const results=await opened;await expect(results.locator('#search-view')).toBeVisible();await expect(results.locator('#competition')).toHaveValue(identity);await expect(results.locator('#results tr').first()).toBeVisible();await results.close();
 });
+
+test('redesigned hero preserves typed search, contrast, shortcuts and the brand Home action',async({page})=>{
+ await ready(page);
+ await expect(page.locator('.hero-picture img')).toBeVisible();
+ expect(await page.locator('.hero-picture img').evaluate(img=>img.complete&&img.naturalWidth>0)).toBeTruthy();
+ for(const theme of ['light','dark']){
+  await page.locator('#site-settings summary').click();await page.selectOption('#theme',theme);await page.locator('#site-settings summary').click();
+  await page.locator('#home-search').fill('Tahir');await expect(page.locator('#home-search-suggestions')).toBeVisible();
+  const colors=await page.locator('#home-search').evaluate(el=>{const s=getComputedStyle(el);return [s.color,s.backgroundColor,s.webkitTextFillColor];});
+  expect(colors).toEqual(['rgb(25, 28, 36)','rgb(255, 255, 255)','rgb(25, 28, 36)']);await page.locator('#home-search').press('Escape');await expect(page.locator('#home-search')).toHaveValue('Tahir');await noOverflow(page);
+ }
+ await page.locator('#home-search-form button[type=submit]').click();await expect(page.locator('#search')).toHaveValue('Tahir');await expect(page.locator('#results tr').first()).toBeVisible();
+ await page.locator('#brand-home').click();await expect(page.locator('#home-view')).toBeVisible();await page.locator('#home-customize>summary').click();await page.locator('#brand-home').click();await expect(page.locator('#home-customize')).not.toHaveAttribute('open','');
+ await page.locator('.hero-shortcuts [data-open-view="bouts"]').click();await expect(page.locator('#bouts-view')).toBeVisible();await noOverflow(page);
+});
