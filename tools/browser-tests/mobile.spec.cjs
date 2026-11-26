@@ -5,7 +5,7 @@ async function noOverflow(page){expect(await page.evaluate(()=>document.document
 test('navigation starts each section at the top and fits a narrow phone',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await ready(page);
  await page.locator('#home-filters summary').click();await page.selectOption('#home-year','2020');await page.locator('#home-search-form button[type=submit]').click();await expect(page.locator('#result-year')).toHaveValue('2020');await page.locator('#reset-filters').click();
- for(const name of ['results','competitions','clubs','home']){await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));await tab(page,name);expect(await page.evaluate(()=>scrollY)).toBeLessThan(5);await noOverflow(page);}
+ for(const name of ['results','clubs','home']){await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));await tab(page,name);expect(await page.evaluate(()=>scrollY)).toBeLessThan(5);await noOverflow(page);}
  await page.locator('#site-settings summary').click();await page.selectOption('#theme','dark');await page.locator('#site-settings summary').click();await tab(page,'results');await expect(page.locator('#results tr').first()).toBeVisible();await noOverflow(page);expect(errors).toEqual([]);
 });
 test('fuzzy suggestions, club filters and favorite star work and persist',async({page})=>{
@@ -48,4 +48,21 @@ test('an archived source opens as verified text without executing its HTML',asyn
  const zlib=require('node:zlib'),crypto=require('node:crypto'),raw=Buffer.from('<html><script>window.archiveExecuted=true</script><p>Archived source</p></html>'),sha=crypto.createHash('sha256').update(raw).digest('hex');
  await context.route('**/tietovarasto/lahteet/'+sha+'.gz',route=>route.fulfill({status:200,contentType:'application/gzip',body:zlib.gzipSync(raw)}));
  await page.goto('/lahde.html?sha256='+sha);await expect(page.locator('#source-status')).toContainText('tarkistettu');await expect(page.locator('#source-content')).toContainText('Archived source');expect(await page.evaluate(()=>window.archiveExecuted)).toBeUndefined();
+});
+
+test('tapping Home again closes its panels and suggestions while preserving selections',async({page})=>{
+ await ready(page);
+ for(const id of ['site-settings','home-customize','home-filters','notifications-details'])await page.locator('#'+id+' > summary').click();
+ await page.selectOption('#home-year','2020');await page.locator('#home-search').fill('Tahir');await expect(page.locator('#home-search-suggestions')).toBeVisible();
+ await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));await page.locator('#nav-home').click();
+ await expect(page.locator('#site-settings[open], #home-view details[open]')).toHaveCount(0);await expect(page.locator('#home-search-suggestions')).toBeHidden();expect(await page.evaluate(()=>scrollY)).toBeLessThan(5);
+ await expect(page.locator('#home-search')).toHaveValue('Tahir');await expect(page.locator('#home-year')).toHaveValue('2020');
+ await page.locator('#site-settings > summary').click();await expect(page.locator('#theme')).toBeVisible();
+});
+
+test('competition directory belongs to administration and its result links still work',async({page,context})=>{
+ await ready(page);await expect(page.locator('.view-nav button')).toHaveCount(4);await expect(page.locator('#nav-competitions, #competition-view')).toHaveCount(0);
+ await page.goto('/index.html#nakyma=competitions');await page.waitForFunction(()=>!!window.PAINI_PAGE_STATE);await expect(page.locator('#search-view')).toBeVisible();
+ await page.goto('/kilpailut.html');await expect(page.locator('#admin-competition-count')).toContainText('347 kilpailua');await page.locator('#admin-competition-query').fill('tamperen');await expect(page.locator('#admin-competition-options')).toBeVisible();await page.selectOption('#admin-competition-year','2020');
+ const link=page.locator('#admin-competition-list a').filter({hasText:'Näytä tulokset'}).first(),href=await link.getAttribute('href'),identity=new URLSearchParams(new URL(href).hash.slice(1)).get('kilpailu');const opened=context.waitForEvent('page');await link.click();const results=await opened;await expect(results.locator('#search-view')).toBeVisible();await expect(results.locator('#competition')).toHaveValue(identity);await expect(results.locator('#results tr').first()).toBeVisible();await results.close();
 });

@@ -256,7 +256,7 @@ function openProfile(athleteId, opener = null, updateUrl = true, focus = true) {
   athleteId = window.PainiRegistry.resolve(sharedData, athleteId);
   if (!athleteId || !athleteRecords.has(athleteId)) return;
   restoreGeneration++;
-  if (!profileState) {resultsScroll = {x: window.scrollX, y: window.scrollY};profileReturnView=featureViewNames.find(view=>document.getElementById(view+"-view")&&!document.getElementById(view+"-view").hidden)||(!$("#competition-view").hidden?"competitions":!$("#bouts-view").hidden?"bouts":"results");}
+  if (!profileState) {resultsScroll = {x: window.scrollX, y: window.scrollY};profileReturnView=featureViewNames.find(view=>document.getElementById(view+"-view")&&!document.getElementById(view+"-view").hidden)||(!$("#bouts-view").hidden?"bouts":"results");}
   if (opener) profileOpener = opener;
   setProfileBackLabel();
   clearProfileLinkError();
@@ -266,11 +266,9 @@ function openProfile(athleteId, opener = null, updateUrl = true, focus = true) {
   featureViewNames.forEach(view=>{const el=document.getElementById(view+"-view");if(el)el.hidden=true;});
   ["home","clubs","compare"].forEach(view=>document.getElementById("nav-"+view)?.setAttribute("aria-pressed","false"));
   $("#search-view").hidden = true;
-  $("#competition-view").hidden = true;
   if ($("#bouts-view")) $("#bouts-view").hidden = true;
   $("#nav-bouts")?.setAttribute("aria-pressed", "false");
   $("#nav-results").setAttribute("aria-pressed", "true");
-  $("#nav-competitions").setAttribute("aria-pressed", "false");
   if(document.getElementById("site-title"))$("#site-title").hidden=false;
   if(document.getElementById("search-intro"))$("#search-intro").hidden=true;
   $("#wrestler-view").hidden = false;
@@ -393,6 +391,7 @@ function renderProfile() {
 
 function showView(view, focus = true, updateUrl = true) {
   if(view === "compare") view = "home";
+  if(view === "competitions") view = "results";
   if(featureViewNames.includes(view)&&!document.getElementById(view+"-view"))view="results";
   if (updateUrl) writeSectionRoute(view);
   document.title = defaultPageTitle;
@@ -400,17 +399,14 @@ function showView(view, focus = true, updateUrl = true) {
   profileOpener = null;
   $("#wrestler-view").hidden = true;
   $("#search-view").hidden = view !== "results";
-  $("#competition-view").hidden = view !== "competitions";
   if ($("#bouts-view")) $("#bouts-view").hidden = view !== "bouts";
   $("#nav-bouts")?.setAttribute("aria-pressed", String(view === "bouts"));
   $("#nav-results").setAttribute("aria-pressed", String(view === "results"));
-  $("#nav-competitions").setAttribute("aria-pressed", String(view === "competitions"));
   if(document.getElementById("site-title"))$("#site-title").hidden=view==="home";
   if(document.getElementById("search-intro"))$("#search-intro").hidden=view!=="results";
   featureViewNames.forEach(name=>{const el=document.getElementById(name+"-view");if(el)el.hidden=view!==name;});
   ["home","clubs","compare"].forEach(name=>document.getElementById("nav-"+name)?.setAttribute("aria-pressed",String(view===name||name==="clubs"&&view==="club")));
   window.PAINI_FEATURES?.onView(view);
-  if (view === "competitions") renderCompetitionList();
   if (view === "bouts") loadBouts();
   if (focus) {window.scrollTo({top:0,left:0,behavior:"instant"});$(featureViewNames.includes(view)?(view==="club"?"#club-title":"#"+view+"-heading"):view === "bouts" ? "#bouts-heading" : view === "results" ? "#results-heading" : "#competition-heading").focus({preventScroll:true});}
 }
@@ -424,75 +420,6 @@ function openCompetition(item) {
   showView("results");
 }
 const {searchWords, matchesSearchWords, matchesCompetitionQuery, competitionTier, yearlyPlacements} = window.PAINI_UTILS;
-function renderCompetitionList() {
-  const query = normalizePerson($("#competition-query").value);
-  const sort = $("#competition-sort").value;
-  const filtered = competitions.filter(item =>
-    matchesCompetitionQuery(item.title + " " + item.details, query) &&
-    (!$("#directory-year")?.value||resultYear(item)===$("#directory-year").value) &&
-    (!$("#directory-style")?.value||item.rows.some(row=>resultStyle(item,row)===$("#directory-style").value))
-  );
-  filtered.sort((a, b) => {
-    if (sort === "importance") { const difference=competitionTier(a.title)-competitionTier(b.title); if(difference) return difference; }
-    if (sort !== "name") {
-      const left = competitionDate(a), right = competitionDate(b);
-      if (left !== right) {
-        if (left === -Infinity) return 1;
-        if (right === -Infinity) return -1;
-        return sort === "oldest" ? left - right : right - left;
-      }
-    }
-    return a.title.localeCompare(b.title, "fi") || a.details.localeCompare(b.details, "fi");
-  });
-  const list = $("#competition-list");
-  const fragment = document.createDocumentFragment();
-  filtered.forEach(item => {
-    const card = document.createElement("li");
-    const title = document.createElement("h3");
-    title.textContent = item.title;
-    const details = document.createElement("p");
-    details.className = "hint";
-    details.textContent = item.details || "Päivämäärää ja paikkaa ei tunnistettu.";
-    const counts = document.createElement("p");
-    const clubs = new Set(item.rows.map(row => normalizePerson(row.club))).size;
-    counts.textContent = item.rows.length + " tulosriviä · " + clubs + " seuraa";
-    const origin = document.createElement("p");
-    origin.className = "hint";
-    origin.textContent = "Sivuston kilpailuaineisto";
-    const actions = document.createElement("div");
-    actions.className = "competition-actions";
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "competition-open";
-    button.textContent = "Näytä tulokset";
-    button.setAttribute("aria-label", "Näytä tulokset: " + item.title + " " + item.details);
-    button.addEventListener("click", () => openCompetition(item));
-    actions.append(button);
-    if (item.source) {
-      try {
-        const url = new URL(item.source);
-        if (url.protocol === "https:" && url.hostname === "turniereklassisch.ringerdb.de") {
-          const link = document.createElement("a");
-          link.href = url.href; link.target = "_blank"; link.rel = "noopener noreferrer";
-          link.textContent = "Alkuperäinen tulossivu ↗";
-          actions.append(link);
-        }
-      } catch { /* Virheellistä lähdelinkkiä ei näytetä. */ }
-    }
-    card.append(title);
-    if(partialNotes(item).length) {
-      card.append(partialBadge(item));
-      const hint=document.createElement("p");hint.className="hint";hint.textContent="Osa painoluokista puuttuu. Näytä tulokset nähdäksesi puuttuvat luokat.";card.append(hint);
-    }
-    card.append(details, counts, origin, actions);
-    fragment.append(card);
-  });
-  list.replaceChildren(fragment);
-  $("#competition-count").textContent = filtered.length + " kilpailua · " +
-    filtered.reduce((sum, item) => sum + item.rows.length, 0) + " tulosriviä";
-  $("#competition-empty").hidden = filtered.length > 0;
-}
-
 // Searchable competition chooser. Filtering never changes identities or source data.
 function competitionPicker({inputId, rootId, listId, panelId, countId, allowAll, choose, changed}) {
   const input = document.getElementById(inputId), root = document.getElementById(rootId);
@@ -560,10 +487,7 @@ const resultCompetitionPicker = competitionPicker({
     refreshFilters();
   }
 });
-competitionPicker({
-  inputId:"competition-query",rootId:"directory-picker",listId:"directory-suggestions",panelId:"directory-suggestion-panel",countId:"directory-suggestion-count",allowAll:false,
-  choose:item => { if (item) openCompetition(item); }
-});
+
 
 document.querySelectorAll(".results-prev").forEach(button => button.addEventListener("click", () => {
   if (resultsPage === 0) return;
@@ -591,13 +515,9 @@ $("#club").addEventListener("change", render);
 $("#category").addEventListener("change", render);
 ["home","clubs","compare"].forEach(view=>document.getElementById("nav-"+view)?.addEventListener("click",()=>showView(view)));
 $("#nav-results").addEventListener("click", () => showView("results"));
-$("#nav-competitions").addEventListener("click", () => showView("competitions"));
 $('#nav-bouts')?.addEventListener('click',()=>showView('bouts'));
 $('#bouts-view')?.addEventListener('click',event=>{if(event.target.closest('#bouts-retry'))loadBouts();});
 if ($('#nav-bouts')) $('#nav-bouts').disabled = !sharedReady || !registryReady;
-$("#competition-query").addEventListener("input", renderCompetitionList);
-["directory-year","directory-style"].forEach(id=>document.getElementById(id)?.addEventListener("change",renderCompetitionList));
-$("#competition-sort").addEventListener("change", renderCompetitionList);
 $("#back-to-results").addEventListener("click", closeProfile);
 refresh();
 if (sharedReady && !registryReady) status("Painijarekisteri ei latautunut. Tulokset näkyvät, mutta nimilinkit ovat poissa käytöstä. Päivitä sivu.", "error");
@@ -830,9 +750,9 @@ window.PAINI_PAGE_STATE = Object.freeze({
     refresh();window.PAINI_FEATURES.update(bundle);
   },
   capture() {
-    const view = featureViewNames.find(name=>document.getElementById(name+"-view")&&!document.getElementById(name+"-view").hidden)||(!$("#bouts-view").hidden ? "bouts" : !$("#competition-view").hidden ? "competitions" : "results");
+    const view = featureViewNames.find(name=>document.getElementById(name+"-view")&&!document.getElementById(name+"-view").hidden)||(!$("#bouts-view").hidden ? "bouts" : "results");
     return {view:profileState?"profile":view,profile:profileState?{...profileState}:null,returnView:profileReturnView,returnScroll:resultsScroll,details:[...document.querySelectorAll("details")].map(el=>el.open),features:window.PAINI_FEATURES?.capture(),bouts:pendingBoutsState || window.PAINI_BOUTS?.getState(), results:Object.fromEntries(refreshResultFields.map(id=>[id,document.getElementById(id).value])), page:resultsPage,
-      competitionSource:competitions.find(item=>identity(item)===$("#competition").value)?.source,directory:{query:$("#competition-query").value,sort:$("#competition-sort").value}};
+      competitionSource:competitions.find(item=>identity(item)===$("#competition").value)?.source};
   },
   async restore(state) {
     if (!state || !["results", "competitions", "bouts","profile",...featureViewNames].includes(state.view)) return false;
@@ -846,8 +766,6 @@ window.PAINI_PAGE_STATE = Object.freeze({
     refreshFilters();
     ["result-sort", "search", "club", "category", "competition-search"].forEach(set);
     resultsPage=Number.isSafeInteger(state.page)&&state.page>=0?state.page:0;render(true);
-    if (typeof state.directory?.query === "string") $("#competition-query").value=state.directory.query;
-    if (typeof state.directory?.sort === "string") $("#competition-sort").value=state.directory.sort;
     pendingBoutsState=state.bouts || null;
     window.PAINI_FEATURES?.restore(state.features);
     if(state.view === "profile" && state.profile){

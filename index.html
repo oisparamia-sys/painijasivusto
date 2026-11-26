@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="style.css?v=20261031-refresh1">
 <link rel="stylesheet" href="palaute.css?v=1">
 <script src="theme.js?v=20261124" ></script>
-<script src="early-navigation.js?v=20261126-profile3" defer></script>
-<script src="mobile-ui.js?v=20261126-profile3" defer></script>
-<link rel="stylesheet" href="features.css?v=20261126-profile3">
+<script src="early-navigation.js?v=20261126-public-nav1" defer></script>
+<script src="mobile-ui.js?v=20261126-public-nav1" defer></script>
+<link rel="stylesheet" href="features.css?v=20261126-public-nav1">
 
 <style>
 #bouts-view .bout-badge{display:inline-block;vertical-align:middle;font-size:13px;font-weight:650;padding:5px 10px;border-radius:7px;background:#eaf1ff;color:#174397}
@@ -37,7 +37,7 @@
 #bouts-view details{border-top:1px solid #e0e7ef;margin-top:24px;padding-top:16px}#bouts-view summary{cursor:pointer;font-weight:650}
 @media(max-width:700px){#bouts-view table{min-width:0}#bouts-view .bout-options{max-height:240px}#bouts-view .bout-stat{flex-basis:100px}}
 </style>
-<link rel="stylesheet" href="mobile.css?v=20261126-profile3">
+<link rel="stylesheet" href="mobile.css?v=20261126-public-nav1">
 </head>
 <body>
 <header><div class="header-content"><div>Painijatulokset</div><details id="site-settings" class="site-settings" open><summary>Asetukset</summary><div class="header-preferences"><label class="language-picker" for="theme"><span>Ulkoasu</span><select id="theme"><option value="system">Järjestelmän mukaan</option><option value="light">Vaalea</option><option value="dark">Tumma</option></select></label><label class="language-picker" for="language"><span translate="no">Kieli / Language / Språk</span><select id="language"><option value="fi">Suomi</option><option value="en">English</option><option value="sv">Svenska</option></select></label><button id="feedback-open" type="button" aria-haspopup="dialog" hidden>Anna palautetta</button></div></details></div></header>
@@ -47,7 +47,6 @@
 <nav class="view-nav" aria-label="Sivuston näkymät">
   <button id="nav-home" type="button" aria-pressed="true"><svg class="nav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11 12 3l9 8 M5 10v11h5v-6h4v6h5V10"/></svg><span class="nav-desktop-label">Etusivu</span><span class="nav-mobile-label" translate="no">Etusivu</span></button>
   <button id="nav-results" type="button" aria-pressed="false"><svg class="nav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 4h12v17H4V4h4 M8 2v4h8V2 M8 11h8 M8 16h6"/></svg><span class="nav-desktop-label">Tuloshaku</span><span class="nav-mobile-label" translate="no">Tulokset</span></button>
-  <button id="nav-competitions" type="button" aria-pressed="false"><svg class="nav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h14v4c0 5-3 8-7 8S5 13 5 8V4 M5 6H2v3c0 3 2 4 5 4 M19 6h3v3c0 3-2 4-5 4 M12 16v5 M8 21h8"/></svg><span class="nav-desktop-label">Kilpailut</span><span class="nav-mobile-label" translate="no">Kilpailut</span></button>
   <button id="nav-bouts" type="button" aria-pressed="false" aria-controls="bouts-view"><svg class="nav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6.5" cy="5" r="2" fill="currentColor" stroke="none"/><circle cx="17.5" cy="5" r="2" fill="currentColor" stroke="none"/><path d="m6 9 4 3 2-2 2 2 4-3 M6 9l-3 5 5 3-3 4 M18 9l3 5-5 3 3 4 M8 17l4-4 4 4"/></svg><span class="nav-desktop-label">Ottelut</span><span class="nav-mobile-label" translate="no">Ottelut</span></button>
   <button id="nav-clubs" type="button" aria-pressed="false"><svg class="nav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6l-9-4Z M8 9h8 M8 13h8 M10 17h4"/></svg><span class="nav-desktop-label">Seurat</span><span class="nav-mobile-label" translate="no">Seurat</span></button>
 </nav>
@@ -101,7 +100,7 @@
   <section id="home-block-stats" aria-label="Aineiston määrät"><div id="home-stats" class="feature-stats" aria-label="Tallennetun aineiston määrät"></div></section>
   <section id="home-block-favorites" aria-labelledby="home-favorites-heading"><h2 id="home-favorites-heading">Suosikkien uusimmat tulokset</h2><div id="home-favorite-cards" class="feature-grid"></div></section>
   <div id="home-block-coverage"><section id="home-coverage" class="card coverage-box" aria-label="Tallennetun aineiston kattavuus"></section></div>
-  <section id="home-block-latest" aria-labelledby="home-latest-heading"><div class="heading"><h2 id="home-latest-heading">Uusimmat tallennetut kilpailut</h2><button type="button" data-open-view="competitions">Kaikki kilpailut</button></div><div id="home-latest" class="feature-grid"></div></section>
+  <section id="home-block-latest" aria-labelledby="home-latest-heading"><div class="heading"><h2 id="home-latest-heading">Uusimmat tallennetut kilpailut</h2></div><div id="home-latest" class="feature-grid"></div></section>
   </div>
 </section>
 <section id="clubs-view" class="card app-feature-view" aria-labelledby="clubs-heading" hidden><h2 id="clubs-heading" tabindex="-1">Seurat</h2>
@@ -160,34 +159,6 @@
 </nav>
 <p id="empty" hidden>Hakuehdoilla ei löytynyt tuloksia. Kokeile poistaa rajauksia.</p>
 </section>
-<section id="competition-view" class="card" aria-labelledby="competition-heading" hidden>
-  <h2 id="competition-heading" tabindex="-1">Kilpailut</h2>
-  <p class="hint">Etsi kilpailun nimellä, paikkakunnalla tai päivämäärällä. Tässä näkyvät sivuston kilpailuaineistoon kuuluvat kilpailut.</p>
-  <div class="filters">
-    <div class="field competition-picker" id="directory-picker">
-      <label for="competition-query">Etsi kilpailua</label>
-      <input aria-describedby="competition-search-help" id="competition-query" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="directory-suggestions" autocomplete="off" placeholder="Esimerkiksi Tampere tai 2026…">
-      <p id="competition-search-help" class="hint">Voit hakea nimellä, paikkakunnalla tai vuodella. Haku sietää pieniä kirjoitusvirheitä.</p>
-      <div id="directory-suggestion-panel" class="competition-suggestion-panel" hidden>
-        <p id="directory-suggestion-count" class="suggestion-count" role="status" aria-live="polite"></p>
-        <ul id="directory-suggestions" class="competition-suggestions" role="listbox" aria-label="Sopivat kilpailut"></ul>
-      </div>
-    </div>
-    <div class="field">
-      <label for="competition-sort">Järjestys</label>
-      <select id="competition-sort">
-        <option value="newest">Uusimmat ensin</option>
-        <option value="oldest">Vanhimmat ensin</option>
-        <option value="name">Nimen mukaan</option>
-        <option value="importance">Arvokkuus: SM, KLL, alue, muut</option>
-      </select>
-    </div>
-  </div>
-<details id="directory-filters" class="extra-filters"><summary>Rajaa hakua</summary><div class="filters"><div class="field"><label for="directory-year">Vuosi</label><select id="directory-year"><option value="">Kaikki vuodet</option></select></div><div class="field"><label for="directory-style">Painimuoto</label><select id="directory-style"><option value="">Kaikki painimuodot</option><option value="greco">Kreikkalais-roomalainen</option><option value="freestyle">Vapaapaini</option><option value="women">Naispaini</option><option value="unknown">Ei vahvistettu</option></select></div></div></details>  <p id="competition-count" class="hint" role="status" aria-live="polite"></p>
-  <ul id="competition-list" class="competition-list"></ul>
-  <p id="competition-empty" class="hint" hidden>Hakuehdoilla ei löytynyt kilpailuja. Kokeile toista hakusanaa.</p>
-</section>
-
 <section id="bouts-view" class="card" aria-labelledby="bouts-heading" hidden>
   <h2 id="bouts-heading" tabindex="-1">Ottelut <span class="bout-badge">Laajeneva aineisto</span></h2>
   <p>Hae painijan vastustajia ja ottelutuloksia tai vertaile kahden painijan keskinäisiä otteluita.</p>
@@ -317,10 +288,10 @@
 <footer><a href="tietosuoja.html">Tietosuoja ja selaimen tallennukset</a><br>Lähde: RingerDB / LigaDB. Tulokset ovat tallennettuja kilpailutuloksia. Aineistoa tarkistetaan ajastetusti.</footer>
 <noscript>Tämä sivu tarvitsee JavaScriptin.</noscript>
 </main>
-<script src="translations.js?v=20261126-profile3" defer></script>
-<script src="i18n.js?v=20261126-profile3" defer></script>
+<script src="translations.js?v=20261126-public-nav1" defer></script>
+<script src="i18n.js?v=20261126-public-nav1" defer></script>
 <script src="palaute.js?v=3" defer></script>
-<script src="fresh-data.js?v=20261126-profile3" defer></script>
+<script src="fresh-data.js?v=20261126-public-nav1" defer></script>
 </body>
 </html>
 

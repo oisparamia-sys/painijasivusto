@@ -62,3 +62,7 @@ Löydetty ja korjattu palautusvirhe: vanhan aineistoversion palautus ei aiemmin 
 
 Tietokantaikkuna ja tiedosto 26.11.2026
 Ylläpidon tietokantalinkki avaa erillisen selainikkunan (selaimen salliman uuden välilehden varavaihtoehto säilyy). Minillä Avaa tietokanta.command käynnistää tietokantaikkunan suoraan omaan paikalliseen porttiin. Tietokannan voi ladata myös yhtenä purettuna .sqlite-tiedostona tai alkuperäisenä .sqlite.gz-tiedostona. Tietokannan lähdeosoitteet ovat nyt oikeita linkkejä, painijatunnisteet avaavat profiilin ja tulostunnisteet liittyvän sijoituksen. Tarkistussumma avaa tallennetun lähteen varmennettuna tekstinä; arkistoitua HTML:ää ei suoriteta. Kaikki tietokantatoiminnot ovat edelleen vain lukua.
+
+Etusivun palautus ja kilpailuluettelon siirto ylläpitoon 26.11.2026
+Kun käyttäjä on jo etusivulla ja painaa Etusivu-painiketta uudelleen, avoimet asetukset, etusivun avattavat osiot ja hakuehdotukset sulkeutuvat. Sivun alkuun palataan; hakuteksti, rajaukset ja tallennetut valinnat säilyvät.
+Erillinen Kilpailut-näkymä on siirretty ylläpitoon osoitteeseen kilpailut.html. Julkisessa valikossa ovat Etusivu, Tulokset, Ottelut ja Seurat. Etusivun erillinen Kaikki kilpailut -painike poistettiin. Tuloshaun kilpailurajaus ja etusivun uusimpien kilpailujen tuloslinkit säilyvät. Vanhat julkisen kilpailuluettelon näkymälinkit avaavat tuloshaun. Ylläpidon kilpailuhaku, vuosirajaus, painimuoto, lajittelu, lähdelinkit ja rajattuun julkiseen tuloshakuun johtavat linkit ovat käytössä.
