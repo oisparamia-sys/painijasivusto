@@ -2,6 +2,7 @@
 // Usage: node tools/restore-data.cjs list|preview|apply <project-directory> [run-number]
 // Run numbers are one-based positions in tietovarasto/index.json, oldest first.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),vm=require('node:vm'),crypto=require('node:crypto'),zlib=require('node:zlib');
+const {execFileSync}=require('node:child_process');
 const Q=require('./review-core.cjs'),D=require('./review-data.cjs'),E=require('./export-bouts.cjs');
 const digest=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function index(root){
@@ -39,8 +40,11 @@ function prepare(root,number){
  try{
   fs.writeFileSync(path.join(temp,'ottelut-data.js'),files.get('ottelut-data.js'));
   fs.writeFileSync(path.join(temp,'data.js'),files.get('data.js'));
+  if(fs.existsSync(path.join(root,'tietokanta.sqlite.gz'))){fs.symlinkSync(path.resolve(root,'tietovarasto'),path.join(temp,'tietovarasto'),'dir');execFileSync(process.env.PAINI_PYTHON||'python3',[path.join(__dirname,'shared-database.py'),'build','--root',temp],{maxBuffer:1024*1024});}
   E.build(temp);
   for(const file of ['ottelut-public.json','ottelut-manifest.json','kattavuus.json','aineisto-manifest.json'])files.set(file,fs.readFileSync(path.join(temp,file)));
+  for(const file of ['tietokanta.sqlite.gz','tietokanta-tila.json','database-public-index.json','database-issues.json'])if(fs.existsSync(path.join(temp,file)))files.set(file,fs.readFileSync(path.join(temp,file)));
+  for(const file of fs.readdirSync(path.join(temp,'tulokset')))files.set('tulokset/'+file,fs.readFileSync(path.join(temp,'tulokset',file)));
  }finally{fs.rmSync(temp,{recursive:true,force:true});}
  return {files,summary:{number,at:run.at,label:run.label,competitions:data.competitions.length,results:R.rows(data).length,matches:bouts.matches.length,
   changedFiles:[...files].filter(([file,bytes])=>!fs.existsSync(path.join(root,file))||!fs.readFileSync(path.join(root,file)).equals(bytes)).map(([file])=>file)}};
@@ -55,7 +59,7 @@ function restore(root,number){
  Q.snapshot(root,'before-restore');
  const written=[];
  try{
-  for(const [file,bytes]of prepared.files){Q.atomic(path.join(root,file),bytes);written.push(file);}
+  for(const [file,bytes]of prepared.files){fs.mkdirSync(path.dirname(path.join(root,file)),{recursive:true});Q.atomic(path.join(root,file),bytes);written.push(file);}
   Q.snapshot(root,'after-restore');
  }catch(error){
   for(const file of written.reverse()){

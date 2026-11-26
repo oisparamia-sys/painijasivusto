@@ -31,7 +31,7 @@ test('preview lists impact without changing live files or snapshot history',()=>
  assert.equal(S.list(root).length,2);
  const plan=S.preview(root,1);
  assert.equal(plan.competitions,1);assert.equal(plan.results,3);assert.equal(plan.matches,1);
- assert.deepEqual(plan.changedFiles,activeFiles.slice(0,6));
+ assert.deepEqual(plan.changedFiles.filter(f=>activeFiles.includes(f)),activeFiles.slice(0,6));
  assert.deepEqual(contents(root),newer);
  assert.equal(fs.readFileSync(path.join(root,'tietovarasto/index.json'),'utf8'),indexBefore);
 }));
@@ -95,4 +95,16 @@ test('export refuses invalid result identifiers before changing public bouts or 
  fs.writeFileSync(path.join(root,'data.js'),'window.PAINI_SHARED_DATA='+JSON.stringify(context.window.PAINI_SHARED_DATA));
  assert.throws(()=>E.build(root));
  for(const file of ['ottelut-public.json','ottelut-manifest.json','kattavuus.json','aineisto-manifest.json'])assert.equal(fs.readFileSync(path.join(root,file),'utf8'),before[file]);
+}));
+
+test('restored publication contains all result chunks referenced by its manifest',()=>fixture(({root})=>{
+ S.restore(root,1);const crypto=require('node:crypto'),manifest=JSON.parse(fs.readFileSync(path.join(root,'aineisto-manifest.json'))),index=JSON.parse(fs.readFileSync(path.join(root,manifest.files.results.file)));
+ for(const part of index.parts){const bytes=fs.readFileSync(path.join(root,part.file));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),part.sha256);}
+}));
+test('restore rebuilds the shared database and its read-only publication with the restored identities',()=>fixture(({root,older})=>{
+ fs.writeFileSync(path.join(root,'tietovarasto/lahdehistoria.jsonl'),'');
+ require('node:child_process').execFileSync(process.env.PAINI_PYTHON||'python3',[path.join(__dirname,'shared-database.py'),'build','--root',root]);
+ S.restore(root,1);const saved=require('./shared-database.cjs').read(root);
+ assert.equal(saved.bouts.matches[0].points[0],4);assert.equal(saved.data.competitions[0].rows[0].athleteId,D.load(root).data.competitions[0].rows[0].athleteId);
+ const manifest=JSON.parse(fs.readFileSync(path.join(root,'aineisto-manifest.json'))),viewer=JSON.parse(fs.readFileSync(path.join(root,'database-public-index.json')));assert.equal(manifest.databaseRevision,viewer.revision);
 }));

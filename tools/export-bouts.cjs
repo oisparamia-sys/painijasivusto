@@ -23,21 +23,22 @@ function pack(data){
   return {version:3,checkedAt:data.checkedAt,competitions,participants,matches,excluded,searchSummary:data.searchSummary,coverageMissing:data.coverageMissing};
 }
 function build(directory='.'){
-  const context=vm.createContext({window:{}});
-  vm.runInContext(fs.readFileSync(path.join(directory,'ottelut-data.js'),'utf8'),context,{timeout:15000});
+  const context=vm.createContext({window:{}}),database=require('./shared-database.cjs').read(directory);
+  if(database)context.window.PAINI_BOUTS_DATA=database.bouts;else vm.runInContext(fs.readFileSync(path.join(directory,'ottelut-data.js'),'utf8'),context,{timeout:15000});
   const packed=pack(context.window.PAINI_BOUTS_DATA),content=JSON.stringify(packed);
   const revision=crypto.createHash('sha256').update(content).digest('hex');
   const manifest=JSON.stringify({version:1,file:'ottelut-public.json',revision,checkedAt:packed.checkedAt});
   const files=[['ottelut-public.json',content],['ottelut-manifest.json',manifest]];
   if(fs.existsSync(path.join(directory,'data.js'))){
     vm.runInContext(fs.readFileSync(path.join(__dirname,'../athlete-registry.js'),'utf8'),context,{timeout:15000});
-    vm.runInContext(fs.readFileSync(path.join(directory,'data.js'),'utf8'),context,{timeout:15000});
+    if(database)context.window.PAINI_SHARED_DATA=database.data;else vm.runInContext(fs.readFileSync(path.join(directory,'data.js'),'utf8'),context,{timeout:15000});
     context.window.PainiRegistry.validate(context.window.PAINI_SHARED_DATA);
     const coverage=require('../site-metrics.js').coverage(context.window.PAINI_SHARED_DATA,context.window.PAINI_BOUTS_DATA);
     files.push(['kattavuus.json',JSON.stringify(coverage)]);
     const digest=text=>crypto.createHash('sha256').update(text).digest('hex');
     const descriptors={results:require('./export-results.cjs').build(context.window.PAINI_SHARED_DATA,directory),bouts:{file:'ottelut-public.json',sha256:digest(content+'\n')},coverage:{file:'kattavuus.json',sha256:digest(JSON.stringify(coverage)+'\n')}};
-    files.push(['aineisto-manifest.json',JSON.stringify({version:2,revision:digest(JSON.stringify(descriptors)),files:descriptors})]);
+    if(database){const text=JSON.stringify({issues:database.bouts.issues,excluded:database.bouts.excluded})+'\n';files.push(['database-issues.json',text.trimEnd()]);const status=JSON.parse(fs.readFileSync(path.join(directory,'tietokanta-tila.json'),'utf8'));files.push(['database-public-index.json',JSON.stringify({...status,sourceIndex:{file:'tietovarasto/lahdehistoria.jsonl',sha256:database.metadata.archive_sha256},issues:{file:'database-issues.json',sha256:digest(text)}})]);}
+    files.push(['aineisto-manifest.json',JSON.stringify({version:2,revision:digest(JSON.stringify({descriptors,databaseRevision:database?.metadata.revision||null})),databaseRevision:database?.metadata.revision||null,files:descriptors})]);
   }
   for(const [name,text] of files){
     const file=path.join(directory,name);fs.writeFileSync(file+'.tmp',text+'\n');fs.renameSync(file+'.tmp',file);

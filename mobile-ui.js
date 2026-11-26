@@ -1,7 +1,7 @@
 "use strict";
 (() => {
  const media=window.matchMedia('(max-width: 700px)');
- const panels=['site-settings','result-filters','profile-share-details','result-help'];
+ const panels=['site-settings','result-filters','profile-share-details','result-help','profile-information','profile-charts','profile-coverage-details'];
  const labels={fi:['Etusivu','Tulokset','Kilpailut','Ottelut','Seurat'],en:['Home','Results','Events','Bouts','Clubs'],sv:['Hem','Resultat','Tävlingar','Matcher','Klubbar']};
  function language(){const values=labels[window.PAINI_I18N?.language||'fi']||labels.fi;document.querySelectorAll('.nav-mobile-label').forEach((el,i)=>el.textContent=values[i]);}
  function layout(){for(const id of panels){const el=document.getElementById(id);if(el)el.open=!media.matches;}}

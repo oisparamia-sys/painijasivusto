@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os,hashlib,tempfile
 import http.server, urllib.request, urllib.parse, json, re, html, pathlib, webbrowser, threading
 from html.parser import HTMLParser
 from source_archive import archive_response
@@ -12,9 +13,17 @@ def get(url, fields=None):
  if u.scheme!='https' or u.hostname not in [HOST,'www.ringerdb.de']:raise ValueError('Lähdeosoite ei kelpaa')
  if fields is not None and (u.hostname!='www.ringerdb.de' or u.path.lower()!='/de/turniere/turnieruebersicht.aspx'):raise ValueError('Luettelon sivutusosoite ei kelpaa')
  request=url if fields is None else urllib.request.Request(url,data=urllib.parse.urlencode(fields).encode())
- with urllib.request.urlopen(request,timeout=30) as r:
-  if urllib.parse.urlparse(r.url).hostname not in [HOST,'www.ringerdb.de']:raise ValueError('Tuntematon uudelleenohjaus')
-  b=r.read(6*1024*1024+1)
+ cache_root=os.environ.get('PAINI_RUN_CACHE')
+ cache=pathlib.Path(cache_root)/(hashlib.sha256((url+'\n'+json.dumps(fields,sort_keys=True)).encode()).hexdigest()+'.bin') if cache_root else None
+ if cache and cache.exists():b=cache.read_bytes()
+ else:
+  with urllib.request.urlopen(request,timeout=30) as r:
+   if urllib.parse.urlparse(r.url).hostname not in [HOST,'www.ringerdb.de']:raise ValueError('Tuntematon uudelleenohjaus')
+   b=r.read(6*1024*1024+1)
+  if cache and len(b)<=6*1024*1024:
+   cache.parent.mkdir(parents=True,exist_ok=True)
+   with tempfile.NamedTemporaryFile(dir=cache.parent,delete=False) as f:f.write(b);temporary=f.name
+   os.replace(temporary,cache)
  if len(b)>6*1024*1024:raise ValueError('Lähdetiedosto on liian suuri')
  archive_response(url,b)
  for encoding in ['utf-8-sig','cp1252']:

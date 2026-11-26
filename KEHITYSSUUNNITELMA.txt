@@ -52,3 +52,10 @@ Suunnitteluun, ei käyttöön: suosikkien tulosilmoitukset ja PWA, tarkempi kuva
 Myöhemmin: kilpailujen omat sivut ja jakolinkit. Rekisterinpitäjän nimi, yhteystiedot ja varsinaisen tietosuojaselosteen viimeistely siirrettiin käyttäjän päätöksellä myöhemmäksi. Julkisen repositorion käyttöoikeuksia ei muutettu.
 Yhteinen aineisto ja paikallisen kehitysversion käyttö: suunnitelmat/yhteinen-aineisto-ja-kehitysversio.txt.
 Lähdetarkistuksen rivikohtaiset havainnot: tarkistukset/lahdeaineisto.json. Tekninen tietosuojatarkistus ja avoimet päätökset: tarkistukset/tietosuoja-ja-julkinen-aineisto.txt.
+
+Profiili, ilmoitukset ja yhteinen tietokanta – toteutettu 26.11.2026
+Painijaprofiilin vuosirajaus ja tilastot näkyvät alussa. Pitkät nimet, seurahistoria, kattavuus ja kuvaajat avautuvat erikseen. Mobiilin vuosivalinnan WebKit-kosketusalue korjattu ja testattu. Painijan tuloslistan otsikko vastaa pysyvää henkilötunnusta eikä väitä rajaavansa yhteen nimeen ja seuraan.
+Suosikkipainijoiden uudet julkaistut sijoitukset näkyvät etusivun Uudet suosikkitulokset -listassa. Ilmoitukset toimivat vain tässä selaimessa sivustoa käytettäessä. Seurannan aloitus ei ilmoita historiallisia tuloksia; lukemattomien määrä, luetuksi merkitseminen, tyhjennys ja poistaminen käytöstä on toteutettu. Ilmoituksia ei tehdä hyväksyntäjonosta tai pelkistä henkilön uudelleenkohdistuksista. PWA ja push-ilmoitukset ovat edelleen myöhempiä töitä.
+Käyttäjän täsmennyksen mukainen yhteinen SQLite-tietokanta on toteutettu. Yksi ajoputki ja ajon sisäinen lähdevälimuisti keräävät tiedot. Julkinen vienti lukee tietokantaa. Ylläpitoon on lisätty vain lukutilassa toimiva tietokantaselain. Tarkempi kuvaus: suunnitelmat/yhteinen-aineisto-ja-kehitysversio.txt.
+
+Löydetty ja korjattu palautusvirhe: vanhan aineistoversion palautus ei aiemmin ottanut mukaan manifestin vaatimia tulososia. Palautus muodostaa nyt tulososat, yhteisen tietokannan ja tietokantaselaimen lukukopion yhtenä tarkistettuna kokonaisuutena. Epäonnistunut palautus säilyttää aiemman aineiston.

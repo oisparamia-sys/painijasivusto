@@ -1,5 +1,16 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Ilmoitukset toimivat tällä sivulla, mutta selain ei salli niiden tallentamista.", "Notifications work on this page, but the browser does not allow saving them.", "Aviseringarna fungerar på denna sida, men webbläsaren tillåter inte att de sparas."],
+  ["Painijan kilpailutulokset", "Wrestler competition results", "Brottarens tävlingsresultat"],
+  ["Kuvaajat ja vuosittaiset tilastot", "Charts and yearly statistics", "Diagram och årlig statistik"],
+  ["Nimet, seurat ja lähdetiedot", "Names, clubs and source details", "Namn, klubbar och källuppgifter"],
+  ["Uusi tulos", "New result", "Nytt resultat"],
+  ["Ei uusia suosikkituloksia. Nykyiset tulokset muodostavat seurannan lähtötason.", "No new favorite results. Current results form the starting point for tracking.", "Inga nya favoritresultat. Nuvarande resultat utgör utgångspunkten för bevakningen."],
+  ["Tyhjennä ilmoituslista", "Clear notifications", "Töm aviseringarna"],
+  ["Merkitse kaikki luetuiksi", "Mark all as read", "Markera alla som lästa"],
+  ["Seuraa suosikkipainijoiden uusia tuloksia", "Follow new results of favorite wrestlers", "Följ favoritbrottarnas nya resultat"],
+  ["Näet täällä suosikkipainijoiden uudet julkaistut sijoitukset. Ilmoitukset näkyvät tässä selaimessa sivuston ollessa käytössä.", "New published placements of your favorite wrestlers appear here while you use the site in this browser.", "Här visas nya publicerade placeringar för dina favoritbrottare när du använder webbplatsen i denna webbläsare."],
+  ["Uudet suosikkitulokset", "New favorite results", "Nya favoritresultat"],
   ["Rajaa suosikkihakua", "Filter favorite search", "Filtrera favoritsökning"],
   ["Rajaa hakua", "Filter search", "Filtrera sökning"],
   ["Lähdemerkinnän tyyppi", "Source entry type", "Typ av källpost"],
