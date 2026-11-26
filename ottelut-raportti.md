@@ -1,17 +1,17 @@
 # Otteluhaun raportti
 
-Tarkistettu: 2026-11-25T11:30:21.138885+00:00
+Tarkistettu: 2026-11-26T11:08:46.469885+00:00
 
 ```json
 {
-  "updated": 65,
-  "preserved": 0,
+  "updated": 61,
+  "preserved": 4,
   "failed": 0,
   "attempted": 65,
   "competitions": 302,
   "matches": 49827,
-  "excluded": 2436,
-  "sourceIssues": 687,
+  "excluded": 2434,
+  "sourceIssues": 684,
   "coverageMissing": 0
 }
 ```
@@ -28,7 +28,10 @@ Kaikki ottelukohtaiset huomiot: [JSON-raportti](ottelut-raportti.json).
 
 ## Tarkistettavat kilpailut
 
-Ei epäonnistuneita kilpailuja.
+- https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/indexFIN.htm — preserved: Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon
+- https://turniereklassisch.ringerdb.de/VT/2026/FI/260314_Kauhava/indexFIN.htm — preserved: Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon
+- https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm — preserved: Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon
+- https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm — preserved: Aiempi ottelu puuttuu tai sen tulos muuttui; vanhat ottelut säilytettiin ja muutos vietiin hyväksyntäjonoon
 
 ## Koko aineiston kilpailut ilman vahvistettuja otteluita
 
