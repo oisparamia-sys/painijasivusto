@@ -59,3 +59,6 @@ Suosikkipainijoiden uudet julkaistut sijoitukset näkyvät etusivun Uudet suosik
 Käyttäjän täsmennyksen mukainen yhteinen SQLite-tietokanta on toteutettu. Yksi ajoputki ja ajon sisäinen lähdevälimuisti keräävät tiedot. Julkinen vienti lukee tietokantaa. Ylläpitoon on lisätty vain lukutilassa toimiva tietokantaselain. Tarkempi kuvaus: suunnitelmat/yhteinen-aineisto-ja-kehitysversio.txt.
 
 Löydetty ja korjattu palautusvirhe: vanhan aineistoversion palautus ei aiemmin ottanut mukaan manifestin vaatimia tulososia. Palautus muodostaa nyt tulososat, yhteisen tietokannan ja tietokantaselaimen lukukopion yhtenä tarkistettuna kokonaisuutena. Epäonnistunut palautus säilyttää aiemman aineiston.
+
+Tietokantaikkuna ja tiedosto 26.11.2026
+Ylläpidon tietokantalinkki avaa erillisen selainikkunan (selaimen salliman uuden välilehden varavaihtoehto säilyy). Minillä Avaa tietokanta.command käynnistää tietokantaikkunan suoraan omaan paikalliseen porttiin. Tietokannan voi ladata myös yhtenä purettuna .sqlite-tiedostona tai alkuperäisenä .sqlite.gz-tiedostona. Tietokannan lähdeosoitteet ovat nyt oikeita linkkejä, painijatunnisteet avaavat profiilin ja tulostunnisteet liittyvän sijoituksen. Tarkistussumma avaa tallennetun lähteen varmennettuna tekstinä; arkistoitua HTML:ää ei suoriteta. Kaikki tietokantatoiminnot ovat edelleen vain lukua.

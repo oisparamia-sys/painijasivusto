@@ -16,12 +16,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
  def end_headers(self):
   self.send_header('Cache-Control','no-store');self.send_header('X-Robots-Tag','noindex, nofollow');self.send_header('X-Content-Type-Options','nosniff');super().end_headers()
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8875);parser.add_argument('--no-open',action='store_true');args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8875);parser.add_argument('--no-open',action='store_true');parser.add_argument('--open-page',choices=['index.html','tietokanta.html'],default='index.html');args=parser.parse_args()
  root=pathlib.Path(__file__).resolve().parents[1]
  from functools import partial
  with http.server.ThreadingHTTPServer(('127.0.0.1',args.port),partial(Handler,directory=str(root))) as server:
-  url=f'http://127.0.0.1:{args.port}/';print('Yksityinen paikallinen kehitysversio: '+url,flush=True)
-  if not args.no_open:webbrowser.open(url)
+  url=f'http://127.0.0.1:{server.server_port}/'+('tietokanta.html' if args.open_page=='tietokanta.html' else '');print('Yksityinen paikallinen kehitysversio: '+url,flush=True)
+  if not args.no_open:webbrowser.open(url,new=1 if args.open_page=='tietokanta.html' else 0)
   try:server.serve_forever()
   except KeyboardInterrupt:pass
 if __name__=='__main__':main()
