@@ -1,5 +1,12 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Aiempien mittausten ajankohta perustuu tallennettuun julkaisuversioon.","Historical measurement times are based on saved publication versions.","Tidpunkterna för tidigare mätningar baseras på sparade publiceringsversioner."],
+  ["Ei tallennettuja mittauspisteitä.", "No recorded measurements.", "Inga sparade mätpunkter."],
+  ["Yksi mittauspiste. Viiva muodostuu seuraavan mittauksen jälkeen.", "One measurement. A line will appear after the next measurement.", "En mätpunkt. En linje visas efter nästa mätning."],
+  ["Mittauspisteet taulukkona", "Measurements as a table", "Mätpunkter som tabell"],
+  ["Kattavuuden mittaushistoria", "Coverage measurement history", "Täckningens mäthistorik"],
+  ["Mittausaika (Suomen aika)", "Measurement time (Finnish time)", "Mättid (finsk tid)"],
+  ["Punaiset viivat näyttävät tallennettujen mittausten kehityksen. Kuvaajien pystyakselit on sovitettu mittauksiin. Aineiston laajentuminen voi myös laskea prosenttia.", "Red lines show the recorded measurements over time. Each chart has a vertical scale fitted to its measurements. Expanding the collection can also lower the percentage.", "Röda linjer visar de sparade mätningarnas utveckling. Diagrammens vertikala axlar är anpassade till mätningarna. Ett utökat material kan också sänka procentandelen."],
   ["Kilpailusijoitukset, ottelut ja seurat. Löydä painijasi ja seuraa suosikkejasi.","Competition placements, bouts and clubs. Find your wrestler and follow your favorites.","Tävlingsplaceringar, matcher och föreningar. Hitta din brottare och följ dina favoriter."],
   ["Painija – tulokset ja tilastot", "Painija – results and statistics", "Painija – resultat och statistik"],
   ["Painija – etusivu", "Painija – home", "Painija – startsida"],

@@ -41,6 +41,7 @@ function prepare(root,number){
   fs.writeFileSync(path.join(temp,'ottelut-data.js'),files.get('ottelut-data.js'));
   fs.writeFileSync(path.join(temp,'data.js'),files.get('data.js'));
   if(fs.existsSync(path.join(root,'tietokanta.sqlite.gz'))){fs.symlinkSync(path.resolve(root,'tietovarasto'),path.join(temp,'tietovarasto'),'dir');execFileSync(process.env.PAINI_PYTHON||'python3',[path.join(__dirname,'shared-database.py'),'build','--root',temp],{maxBuffer:1024*1024});}
+  if(fs.existsSync(path.join(root,'kattavuushistoria.json')))fs.copyFileSync(path.join(root,'kattavuushistoria.json'),path.join(temp,'kattavuushistoria.json'));
   E.build(temp);
   for(const file of ['ottelut-public.json','ottelut-manifest.json','kattavuus.json','aineisto-manifest.json'])files.set(file,fs.readFileSync(path.join(temp,file)));
   for(const file of ['tietokanta.sqlite.gz','tietokanta-tila.json','database-public-index.json','database-issues.json'])if(fs.existsSync(path.join(temp,file)))files.set(file,fs.readFileSync(path.join(temp,file)));

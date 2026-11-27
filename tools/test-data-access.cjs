@@ -24,3 +24,13 @@ test('failed private storage never prevents loading verified data',async()=>{
  const f=await fixture();const io=create({base:'https://example.test/',hash,cache:{get:()=>{throw Error();},put:()=>{throw Error();}},fetch:async url=>({ok:true,text:async()=>new URL(url).pathname==='/data.js'?'"use strict";\nwindow.PAINI_SHARED_DATA = '+JSON.stringify(f.data)+';\n':JSON.stringify({resultsVersion:'v1',total:{competitions:0}})})});
  assert.deepEqual((await io.bundle(f.manifest)).data,f.data);
 });
+
+test('coverage history is hash-verified, cached offline and rejects unsafe history references',async()=>{
+ const f=await fixture(),history={version:1,samples:[]},text=JSON.stringify(history),cache=new Map();let offline=false;
+ const manifest=structuredClone(f.manifest);manifest.files.coverageHistory={file:'kattavuushistoria.json',sha256:await hash(text)};
+ const contents={'data.js':'window.PAINI_SHARED_DATA='+JSON.stringify(f.data),'kattavuus.json':JSON.stringify({resultsVersion:'v1',total:{competitions:0}}),'kattavuushistoria.json':text};
+ manifest.files.results.sha256=await hash(contents['data.js']);
+ const io=create({base:'https://test/',hash,cache:{get:async k=>cache.get(k),put:async(k,v)=>cache.set(k,v)},fetch:async url=>{if(offline)throw Error('offline');return {ok:true,text:async()=>contents[new URL(url).pathname.slice(1)]};}});
+ assert.deepEqual((await io.bundle(manifest)).coverage.history,history);io.clearMemory();offline=true;assert.deepEqual((await io.bundle(manifest)).coverage.history,history);
+ const bad=structuredClone(manifest);bad.files.coverageHistory.file='../history.json';assert.throws(()=>validateManifest(bad));
+});

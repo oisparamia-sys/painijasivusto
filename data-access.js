@@ -4,6 +4,7 @@
  function validateManifest(value){
   if(![1,2].includes(value?.version)||!/^[a-f0-9]{64}$/.test(value.revision||''))throw Error('Aineiston versiotieto ei kelpaa');
   for(const [key,file]of Object.entries(names))if(value.files?.[key]?.file!==(key==='results'&&value.version===2?'tulokset/index.json':file)||!/^[a-f0-9]{64}$/.test(value.files[key].sha256||''))throw Error('Aineiston tiedostoviite ei kelpaa');
+  if(value.files.coverageHistory&&(value.files.coverageHistory.file!=='kattavuushistoria.json'||!/^[a-f0-9]{64}$/.test(value.files.coverageHistory.sha256||'')))throw Error('Kattavuushistorian tiedostoviite ei kelpaa');
   return value;
  }
  function parseResults(text){
@@ -41,9 +42,10 @@
    return {...index.metadata,competitions,athleteRegistry:{...index.registry,athletes}};
   }
   async function bundle(manifest,includeBouts=false){
-   const [data,coverage,bouts]=await Promise.all([results(manifest),file(manifest,'coverage'),includeBouts?file(manifest,'bouts'):null]);
+   const [data,coverage,bouts,history]=await Promise.all([results(manifest),file(manifest,'coverage'),includeBouts?file(manifest,'bouts'):null,manifest.files.coverageHistory?file(manifest,'coverageHistory'):null]);
    const metrics=JSON.parse(coverage);
    if(data.version!==1||!Array.isArray(data.competitions)||metrics.resultsVersion!==(data.exportedAt||data.updatedAt||null)||metrics.total.competitions!==data.competitions.length)throw Error('Aineistoversiot eivät täsmää');
+   if(history){const value=JSON.parse(history);if(value?.version!==1||!Array.isArray(value.samples))throw Error('Kattavuushistoria ei kelpaa');metrics.history=value;}
    return {data,coverage:metrics,bouts:bouts?JSON.parse(bouts):null};
   }
   return {manifest,file,bundle,remember:async manifest=>{await save('paini-last-manifest',JSON.stringify(manifest));try{await cache?.prune?.([new URL('paini-last-manifest',base).href,...[...Object.values(manifest.files),...(partsByRevision.get(manifest.revision)||[])].map(entry=>{const url=new URL(entry.file,base);url.searchParams.set('v',entry.sha256);return url.href;})]);}catch{}},previous:async()=>{const text=await saved('paini-last-manifest');return text?validateManifest(JSON.parse(text)):null;},clearMemory:()=>memory.clear()};

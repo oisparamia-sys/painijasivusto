@@ -108,3 +108,10 @@ test('restore rebuilds the shared database and its read-only publication with th
  assert.equal(saved.bouts.matches[0].points[0],4);assert.equal(saved.data.competitions[0].rows[0].athleteId,D.load(root).data.competitions[0].rows[0].athleteId);
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'aineisto-manifest.json'))),viewer=JSON.parse(fs.readFileSync(path.join(root,'database-public-index.json')));assert.equal(manifest.databaseRevision,viewer.revision);
 }));
+
+test('restoring a dataset preserves coverage history and publishes its verified descriptor',()=>fixture(({root})=>{
+ const state=D.load(root),coverage=require('../site-metrics.js').coverage(state.data,state.bouts),history=require('./coverage-history.cjs').append({version:1,samples:[]},coverage,'2026-11-27T06:00:00Z'),text=JSON.stringify(history)+'\n';fs.writeFileSync(path.join(root,'kattavuushistoria.json'),text);E.build(root);
+ S.restore(root,1);
+ assert.equal(fs.readFileSync(path.join(root,'kattavuushistoria.json'),'utf8'),text);
+ const descriptor=JSON.parse(fs.readFileSync(path.join(root,'aineisto-manifest.json'))).files.coverageHistory;assert.equal(descriptor.sha256,require('node:crypto').createHash('sha256').update(text).digest('hex'));
+}));

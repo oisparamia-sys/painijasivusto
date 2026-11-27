@@ -73,3 +73,9 @@ Erillinen Kilpailut-näkymä on siirretty ylläpitoon osoitteeseen kilpailut.htm
 - Aineisto, pysyvät tunnisteet, fuzzy-haku, hakuehdotukset, suodattimet, suosikit, ilmoitukset, kielet ja hyväksyntäkäytäntö säilyvät. Kilpailuluettelo säilyy ylläpidossa.
 - Vapaasti käytettävä painikuva: © Marie-Lan Nguyen / Wikimedia Commons, CC BY 3.0. Kaksi näyttökokoon sopivaa pakattua kuvaa, lähde ja muokkaustiedot sivun alalaidassa ja assets/README.txt-tiedostossa.
 - Selaintesteissä tarkistetaan myös hakutekstin näkyvyys kummassakin teemassa ja uuden logopainikkeen Etusivu-toiminto.
+
+27.11.2026 · Tallennetun aineiston kattavuuden ajallinen seuranta
+- Etusivun kolme vihreää palkkia on korvattu punaisilla ajallisilla viivadiagrammeilla. Oikeat mittausajat, prosenttiasteikot ja mittauspistetaulukko ovat näkyvissä. Mittauspisteistä ei keksitä puuttuvia havaintoja.
+- Aloitushistoria sisältää kuusi Git-versioista vahvistettua mittausta 24.–27.11.2026. Historiallisten pisteiden aika on version tallennusaika, ja alkuperäinen commit on merkitty historiatiedostoon.
+- Vientityökalu kerää jatkossa uuden tarkistetun aineistoversion mittauksen automaattihaun yhteydessä. Saman version toistuva vienti ei tee kaksoispisteitä. Muuttumaton prosentti uudessa haussa on todellinen tasainen mittaus.
+- Historia tallennetaan kattavuushistoria.json-tiedostoon, julkaistaan manifestin tarkistussummalla ja ladataan yhdessä muun aineiston kanssa. Ladattu historia säilyy yhteyskatkossa. Aineiston palautus säilyttää aiemman historian.

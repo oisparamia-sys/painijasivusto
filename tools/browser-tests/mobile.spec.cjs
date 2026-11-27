@@ -81,3 +81,13 @@ test('redesigned hero preserves typed search, contrast, shortcuts and the brand 
  await page.locator('#brand-home').click();await expect(page.locator('#home-view')).toBeVisible();await page.locator('#home-customize>summary').click();await page.locator('#brand-home').click();await expect(page.locator('#home-customize')).not.toHaveAttribute('open','');
  await page.locator('.hero-shortcuts [data-open-view="bouts"]').click();await expect(page.locator('#bouts-view')).toBeVisible();await noOverflow(page);
 });
+
+test('coverage history shows three real red trends and an accessible timestamp table without overflow',async({page,context})=>{
+ await ready(page);const box=page.locator('#home-coverage');await expect(box.locator('.coverage-line-chart')).toHaveCount(3);await expect(box.locator('meter')).toHaveCount(0);
+ const samples=await page.evaluate(()=>window.PAINI_PAGE_STATE.snapshot().coverage.history.samples.length);expect(samples).toBeGreaterThan(1);
+ expect(await box.locator('.coverage-dot').count()).toBe(samples*3);
+ expect(await box.locator('.coverage-trend').first().evaluate(el=>getComputedStyle(el).stroke)).toBe('rgb(191, 21, 32)');
+ await box.locator('summary').click();await expect(box.locator('tbody tr')).toHaveCount(samples);await noOverflow(page);
+ await page.locator('#site-settings summary').click();await page.selectOption('#theme','dark');await page.locator('#site-settings summary').click();expect(await box.locator('.coverage-trend').first().evaluate(el=>getComputedStyle(el).stroke)).toBe('rgb(255, 118, 124)');await noOverflow(page);
+ await context.setOffline(true);await page.locator('#nav-results').click();await page.locator('#nav-home').click();await expect(box.locator('.coverage-line-chart')).toHaveCount(3);await context.setOffline(false);
+});

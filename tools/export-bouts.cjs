@@ -22,7 +22,7 @@ function pack(data){
   const excluded=data.excluded.map(e=>[ci(e.competition),e.people.filter(id=>peopleIndex.has(id)).map(pi)]);
   return {version:3,checkedAt:data.checkedAt,competitions,participants,matches,excluded,searchSummary:data.searchSummary,coverageMissing:data.coverageMissing};
 }
-function build(directory='.'){
+function build(directory='.',{recordHistory=false,at=new Date().toISOString()}={}){
   const context=vm.createContext({window:{}}),database=require('./shared-database.cjs').read(directory);
   if(database)context.window.PAINI_BOUTS_DATA=database.bouts;else vm.runInContext(fs.readFileSync(path.join(directory,'ottelut-data.js'),'utf8'),context,{timeout:15000});
   const packed=pack(context.window.PAINI_BOUTS_DATA),content=JSON.stringify(packed);
@@ -35,8 +35,12 @@ function build(directory='.'){
     context.window.PainiRegistry.validate(context.window.PAINI_SHARED_DATA);
     const coverage=require('../site-metrics.js').coverage(context.window.PAINI_SHARED_DATA,context.window.PAINI_BOUTS_DATA);
     files.push(['kattavuus.json',JSON.stringify(coverage)]);
+    const historyTool=require('./coverage-history.cjs');let history=historyTool.read(directory);
+    if(recordHistory)history=historyTool.append(history,coverage,at);
+    if(history.samples.length)files.push(['kattavuushistoria.json',JSON.stringify(history)]);
     const digest=text=>crypto.createHash('sha256').update(text).digest('hex');
     const descriptors={results:require('./export-results.cjs').build(context.window.PAINI_SHARED_DATA,directory),bouts:{file:'ottelut-public.json',sha256:digest(content+'\n')},coverage:{file:'kattavuus.json',sha256:digest(JSON.stringify(coverage)+'\n')}};
+    if(history.samples.length)descriptors.coverageHistory={file:'kattavuushistoria.json',sha256:digest(JSON.stringify(history)+'\n')};
     if(database){const text=JSON.stringify({issues:database.bouts.issues,excluded:database.bouts.excluded})+'\n';files.push(['database-issues.json',text.trimEnd()]);const status=JSON.parse(fs.readFileSync(path.join(directory,'tietokanta-tila.json'),'utf8'));files.push(['database-public-index.json',JSON.stringify({...status,sourceIndex:{file:'tietovarasto/lahdehistoria.jsonl',sha256:database.metadata.archive_sha256},issues:{file:'database-issues.json',sha256:digest(text)}})]);}
     files.push(['aineisto-manifest.json',JSON.stringify({version:2,revision:digest(JSON.stringify({descriptors,databaseRevision:database?.metadata.revision||null})),databaseRevision:database?.metadata.revision||null,files:descriptors})]);
   }
@@ -46,5 +50,5 @@ function build(directory='.'){
   console.log('Julkinen otteluaineisto:',packed.matches.length,'ottelua,',Buffer.byteLength(content),'tavua');
   return packed;
 }
-if(require.main===module)build(process.argv[2]||'.');
+if(require.main===module)build(process.argv[2]||'.',{recordHistory:true});
 module.exports={pack,build};

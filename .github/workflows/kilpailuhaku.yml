@@ -64,7 +64,7 @@ jobs:
           python tools/test-shared-database.py
           python tools/test-fetch-cache.py
       - name: Testaa hyväksyntäjonon suojaukset
-        run: node --test tools/test-review.cjs tools/test-identities.cjs tools/test-restore.cjs tools/test-refresh.cjs tools/test-site-utils.cjs tools/test-i18n.cjs tools/test-bouts-ui.cjs tools/test-review-ui.cjs tools/test-site-metrics.cjs tools/test-theme.cjs tools/test-data-access.cjs tools/test-scan-gate.cjs tools/test-home-settings.cjs tools/test-bout-report-admin.cjs tools/test-mobile-ui.cjs tools/test-export-results.cjs tools/test-notifications.cjs
+        run: node --test tools/test-review.cjs tools/test-identities.cjs tools/test-restore.cjs tools/test-refresh.cjs tools/test-site-utils.cjs tools/test-i18n.cjs tools/test-bouts-ui.cjs tools/test-review-ui.cjs tools/test-site-metrics.cjs tools/test-coverage-history.cjs tools/test-theme.cjs tools/test-data-access.cjs tools/test-scan-gate.cjs tools/test-home-settings.cjs tools/test-bout-report-admin.cjs tools/test-mobile-ui.cjs tools/test-export-results.cjs tools/test-notifications.cjs
       - name: Suorita yhteinen kilpailu- ja otteluhaku
         env:
           SEARCH_YEAR: ${{ inputs.year || 'auto' }}
@@ -81,10 +81,10 @@ jobs:
           fi
       - name: Tallenna muutokset GitHubiin
         run: |
-          if ! git diff --quiet -- tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json data.js tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto || [ -n "$(git ls-files --others --exclude-standard tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto)" ]; then
+          if ! git diff --quiet -- tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json data.js tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json kattavuushistoria.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto || [ -n "$(git ls-files --others --exclude-standard tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json kattavuushistoria.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json data.js tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto
+            git add tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json data.js tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json kattavuushistoria.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto
             git commit -m "Päivitä kilpailut ja ottelut automaattihaulla"
             git push origin HEAD:main
           fi
