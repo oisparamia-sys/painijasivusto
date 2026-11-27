@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-26T15:07:07.654Z",
+  "updatedAt": "2026-11-27T04:29:06.511Z",
   "proposals": [
     {
       "id": "2b6579e5dc506e8a45a72f470c91d726366bcc6d878933176be60907485f7518",
@@ -165940,7 +165940,7 @@
       "target": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/indexFIN.htm",
       "beforeHash": "6145f3e6e4ffe1bdc2e5fe053ec87e6dae20ce8b537dd4fe33d0346148b60667",
       "afterHash": "9c23907b66569dede779a4df97246bb1911df158cd4c6c4bfe8973b9e4b6604f",
-      "status": "pending",
+      "status": "withdrawn",
       "createdAt": "2026-11-26T11:21:06.500Z",
       "lastSeen": "2026-11-26T11:21:06.500Z",
       "reason": "Ottelun tulos muuttui tai aiempi ottelu puuttuu lähteestä.",
@@ -170036,7 +170036,7 @@
       "target": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260314_Kauhava/indexFIN.htm",
       "beforeHash": "106a0da0b2d5cab51ffbb3b3fb69b36c6e2db2bb72c2d65b979018fb39e374ec",
       "afterHash": "9db58854d8701b15bec321258fafa661df0211af31087079bf9c9a283ed9cc5c",
-      "status": "pending",
+      "status": "withdrawn",
       "createdAt": "2026-11-26T11:21:06.504Z",
       "lastSeen": "2026-11-26T11:21:06.504Z",
       "reason": "Ottelun tulos muuttui tai aiempi ottelu puuttuu lähteestä.",
@@ -178895,7 +178895,7 @@
       "target": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
       "beforeHash": "45db07b8976502b24dc6ea75916aa7d3805fb0a7bad90c214ec9b0fc32951867",
       "afterHash": "6a903b9157ea673d31c373dc4548168280f47a27e5bd351a2fe5d82ff9944da7",
-      "status": "pending",
+      "status": "withdrawn",
       "createdAt": "2026-11-26T11:21:06.506Z",
       "lastSeen": "2026-11-26T11:21:06.506Z",
       "reason": "Ottelun tulos muuttui tai aiempi ottelu puuttuu lähteestä.",
@@ -181620,7 +181620,7 @@
       "target": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
       "beforeHash": "e52a76cc0e92b2e332a24dd1f67177046cdf3aed44f2766d81eca2a8110b2f1f",
       "afterHash": "dc06c5ed78b93fa0299f74d0a440aa72b7563ecd94d792bd9b163c995dbecf46",
-      "status": "pending",
+      "status": "withdrawn",
       "createdAt": "2026-11-26T11:21:06.508Z",
       "lastSeen": "2026-11-26T11:21:06.508Z",
       "reason": "Ottelun tulos muuttui tai aiempi ottelu puuttuu lähteestä.",

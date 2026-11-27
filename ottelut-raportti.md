@@ -1,13 +1,13 @@
 # Otteluhaun raportti
 
-Tarkistettu: 2026-11-26T15:06:03.365894+00:00
+Tarkistettu: 2026-11-27T04:23:16.132842+00:00
 
 ```json
 {
-  "updated": 1,
+  "updated": 65,
   "preserved": 0,
   "failed": 0,
-  "attempted": 1,
+  "attempted": 65,
   "competitions": 345,
   "matches": 56803,
   "excluded": 2686,
