@@ -84,3 +84,7 @@ Erillinen Kilpailut-näkymä on siirretty ylläpitoon osoitteeseen kilpailut.htm
 - Selaimen vierityksen automaattipalautus estetään jo sivun alussa. Sivun ensimmäinen lataus ja päivitys päättyvät yläosaan. Taustalla tehtävä automaattinen aineistopäivitys säilyttää edelleen vierityskohdan.
 - Yläreunan Painija-tunnus poistaa näkymäreitin ja lataa sivun uudelleen etusivun yläosaan. Alavalikon Etusivu säilyy nopeana näkymän vaihtona ja paneelien sulkemisena. Suosikit ja tallennetut asetukset säilyvät.
 - Kattavuuskuvaajien ja mittaustaulukon päivämäärät esitetään muodossa päivä.kuukausi. ilman kellonaikaa ja vuotta. Kaikki mittauspäivät näkyvät kuvaajan akselilla; viiva käyttää päivän viimeistä oikeaa mittausta, taulukko säilyttää kaikki mittaukset. Pitkä päivämäärälista vierittyy kuvaajan sisällä. Prosenttimerkinnöille varataan riittävästi tilaa.
+
+27.11.2026 · painija.fi-tunnus ja kuukausitekstin rivitys
+- Yläreunan tunnus on painija.fi. Sen alta poistettiin Tulokset & tilastot -teksti. Tunnuksen etusivun päivitystoiminto säilyy.
+- Etusivun kilpailukorttien kuukausilyhenteet, kuten MARRAS, säilyvät yhdellä rivillä myös puhelimessa. Päivämäärälaatikon leveyttä kasvatettiin hieman ja Safarin automaattinen tekstin suurentaminen estettiin vain näissä pienissä laatikoissa.

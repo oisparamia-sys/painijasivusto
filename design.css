@@ -24,7 +24,7 @@ html[data-theme] .public-site header{background:#0c0e12;color:#fff;border-bottom
 .public-site header .header-content{max-width:1176px;gap:24px}
 html[data-theme] .public-site .brand{display:flex;align-items:center;gap:9px;background:transparent;color:#fff;padding:0;border:0;min-height:52px;text-align:left;flex-shrink:0}
 .public-site .brand-word{font-size:36px;font-weight:900;font-style:italic;letter-spacing:-1.8px;line-height:1}
-.public-site .brand-dot{color:#f12d39}.public-site .brand small{display:block;font-size:9px;font-weight:650;letter-spacing:2px;line-height:1.7;font-style:normal;margin-top:3px}
+.public-site .brand-dot{color:#f12d39}
 .public-site .header-preferences{gap:16px}.public-site .header-preferences label{color:#c0c3ca;font-size:12px;gap:6px}
 html[data-theme] .public-site .header-preferences :is(select,button){background-color:#191c22;border-color:#3a3e48;color:#fff;min-height:40px;font-size:14px;padding:8px 12px}
 .public-site #site-settings>summary svg{display:none}
@@ -106,7 +106,7 @@ html[data-theme] .public-site .data-refresh-box{display:block;margin:0 0 12px;pa
  .public-site{--phone-bg:var(--canvas);--phone-card:var(--surface);--phone-text:var(--ink);--phone-muted:var(--muted);--phone-line:var(--line);--phone-accent:var(--accent);--phone-soft:var(--accent-soft)}
  html[data-theme] .public-site{padding-bottom:calc(82px + env(safe-area-inset-bottom,0px))}
  .public-site main{padding:0 16px 24px}.public-site header{padding:14px 18px!important}.public-site header .header-content{gap:12px;align-items:center}
- .public-site .brand-word{font-size:30px}.public-site .brand svg{width:33px;height:33px}.public-site .brand small{font-size:8px;letter-spacing:1.5px}
+ .public-site .brand-word{font-size:30px}.public-site .brand svg{width:33px;height:33px}
  .public-site #site-settings{position:static}.public-site #site-settings[open]{grid-column:auto}
  html[data-theme] .public-site #site-settings>summary{display:flex;align-items:center;justify-content:center;gap:8px;margin:0;padding:8px 10px;border:1px solid #ffffff32;background:#ffffff08;color:#fff;min-height:44px;border-radius:8px}
  .public-site #site-settings>summary svg{display:block}.public-site .settings-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
@@ -193,3 +193,8 @@ html[data-theme] .public-site .data-refresh-box{display:block;margin:0 0 12px;pa
 
 .public-site .coverage-chart-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
 .public-site .coverage-date-label{fill:var(--muted);font-size:13px;font-family:inherit}
+
+/* Fixed-width date tiles must not split a month or let Safari enlarge its label. */
+.public-site .competition-date{white-space:nowrap;overflow-wrap:normal;word-break:normal;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.public-site .competition-date span{white-space:nowrap;overflow-wrap:normal;word-break:normal}
+@media(max-width:700px){.public-site .competition-date{width:64px}}
