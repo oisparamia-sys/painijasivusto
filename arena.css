@@ -1,0 +1,90 @@
+/* Optional blue/gold comparison design. The same live views, data and controls are used. */
+html[data-appearance=arena]{background:#06132c;color-scheme:dark!important}
+html[data-appearance=arena][data-theme] .public-site{
+ --canvas:#06132c;--surface:#0c2145;--surface-soft:#102b56;--ink:#f5f7fc;--muted:#b7c7e1;--line:#294b77;--accent:#ffd04f;--accent-soft:#18365f;--shadow:0 10px 28px #0002;
+ background:radial-gradient(ellipse at 100% 0,#153d77 0,transparent 38%),var(--canvas);
+ color:var(--ink);font-family:"Trebuchet MS",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+html[data-appearance=arena][data-theme] .public-site header{background:#06132c;border-color:#24436a}
+html[data-appearance=arena] .public-site .brand-word{font-style:normal;font-weight:850;letter-spacing:-1.4px}
+html[data-appearance=arena] .public-site .brand-dot{color:#ffd04f}
+html[data-appearance=arena][data-theme] .public-site .header-preferences :is(select,button){background-color:#10264b;color:#f5f7fc;border-color:#355982}
+html[data-appearance=arena][data-theme] .public-site .header-preferences select:disabled{opacity:.6}
+html[data-appearance=arena] .public-site #appearance-note{color:#b7c7e1}
+html[data-appearance=arena][data-theme] .public-site .view-nav button[aria-pressed=true]{background:#ffd04f;color:#06132c}
+html[data-appearance=arena][data-theme] .public-site .home-hero{
+ background:#071a39;min-height:650px;padding:48px 44px 34px;border:1px solid #254e80;border-radius:0 0 24px 24px;
+}
+html[data-appearance=arena] .public-site .hero-picture{width:70%;height:100%;inset:0 0 0 auto}
+html[data-appearance=arena] .public-site .hero-picture img{object-position:60% top;opacity:.8}
+html[data-appearance=arena] .public-site .home-hero::before{
+ background:linear-gradient(90deg,#071a39 0%,#071a39e8 35%,#071a3960 80%),linear-gradient(0deg,#071a39 0%,#071a39aa 40%,transparent 100%);
+}
+html[data-appearance=arena] .public-site .home-hero::after{
+ inset:-340px auto auto -430px;width:900px;height:900px;clip-path:none;border-radius:50%;border:80px solid #1c57903d;background:transparent;transform:rotate(-20deg);
+}
+html[data-appearance=arena] .public-site .home-hero .home-eyebrow{color:#ffd04f;letter-spacing:.12em}
+html[data-appearance=arena] .public-site .home-hero h1{font-style:normal;font-size:clamp(34px,4.8vw,58px);line-height:1.08;letter-spacing:-.04em;max-width:640px}
+html[data-appearance=arena] .public-site .home-hero>p:not(.home-eyebrow){color:#d3e0f3;max-width:470px}
+html[data-appearance=arena] .public-site #home-search-form{max-width:670px}
+html[data-appearance=arena] .public-site .home-search-row{border-color:#dce5ef;border-radius:14px}
+html[data-appearance=arena][data-theme] .public-site .home-search-row>button{background:#ffd04f;color:#06132c;font-weight:800}
+html[data-appearance=arena] .public-site .home-hero .extra-filters .filters{background:#0a2146;border-color:#355982}
+html[data-appearance=arena][data-theme] .public-site .home-hero .extra-filters select{background-color:#102b56;border-color:#41668f}
+html[data-appearance=arena] .public-site .home-hero .hero-shortcuts{grid-template-columns:1fr;max-width:500px;gap:10px}
+html[data-appearance=arena][data-theme] .public-site .hero-shortcuts button{
+ display:flex;flex-direction:row;justify-content:flex-start;align-items:center;gap:16px;min-height:62px;padding:15px 20px;border:1px solid #315b90;border-radius:12px;
+ background:linear-gradient(110deg,#153e77,#0b2954);color:#f5f7fc;font-size:16px;text-align:left;box-shadow:0 5px 16px #0002;
+}
+html[data-appearance=arena] .public-site .hero-shortcuts svg{color:#ffd04f}
+html[data-appearance=arena][data-theme] .public-site .hero-shortcuts button:hover{background:#194d87;border-color:#ffd04f}
+html[data-appearance=arena][data-theme] .public-site :is(.card,.feature-card,.profile-share,dialog){border-radius:14px;background:linear-gradient(145deg,#10294e,#0b1f40)}
+html[data-appearance=arena][data-theme] .public-site #home-stats .feature-stat{background:#0b2349}
+html[data-appearance=arena][data-theme] .public-site :is(.feature-stat strong,.profile-summary dd,#bouts-view .bout-stat strong){color:#ffd04f}
+html[data-appearance=arena] .public-site #home-sections h2::before{background:#ffd04f}
+html[data-appearance=arena] .public-site .competition-date{background:#ffd04f;color:#071a39}
+html[data-appearance=arena][data-theme] .public-site .favorite-star[aria-pressed=true]{background:#ffd04f;color:#071a39;border-color:#ffd04f}
+html[data-appearance=arena][data-theme] .public-site .favorite-star{color:#ffd04f}
+html[data-appearance=arena][data-theme] .public-site .placement-center{background:#0c2145;color:#f5f7fc}
+html[data-appearance=arena][data-theme] .public-site :is(.place:not(.gold):not(.silver):not(.bronze),.yearly-track){background:#173861;color:#f5f7fc}
+html[data-appearance=arena][data-theme] .public-site #bouts-view tr[data-outcome=win]{background:#153e3c}
+html[data-appearance=arena][data-theme] .public-site #bouts-view tr[data-outcome=loss]{background:#492737}
+html[data-appearance=arena][data-theme] .public-site #bouts-view tr[data-outcome=neutral]{background:#1c304d}
+html[data-appearance=arena][data-theme] .public-site #bouts-view .bout-win{background:#1d5542;color:#dcf7e7}
+html[data-appearance=arena][data-theme] .public-site #bouts-view .bout-loss{background:#643347;color:#ffe2e9}
+html[data-appearance=arena][data-theme] .public-site .partial-results-note{background:#3e351c;color:#fff1c8;border-color:#8d7947}
+html[data-appearance=arena][data-theme] .public-site .partial-results-badge{background:#493d1b;color:#fff1c8}
+html[data-appearance=arena][data-theme] .public-site .status{background:#102b56;color:#f5f7fc}
+html[data-appearance=arena][data-theme] .public-site .status[data-kind=error]{background:#492737;color:#ffe2e9}
+html[data-appearance=arena][data-theme] .public-site .status[data-kind=success]{background:#153e3c;color:#dcf7e7}
+/* The coverage curves remain red, as requested, in both visual versions. */
+html[data-appearance=arena] .public-site .coverage-trend{stroke:#ff8b91}
+html[data-appearance=arena] .public-site .coverage-dot{fill:#ff8b91}
+html[data-appearance=arena] .public-site .photo-credit{color:#b7c7e1}
+@media(max-width:700px){
+ html[data-appearance=arena][data-theme] .public-site #site-settings>summary{background:#10264b;border-color:#355982}
+ html[data-appearance=arena] .public-site #site-settings[open] .header-preferences{background:#071a39;border-color:#355982}
+ html[data-appearance=arena][data-theme] .public-site .view-nav{background:#06132cf5;border-color:#294b77;backdrop-filter:blur(12px)}
+ html[data-appearance=arena][data-theme] .public-site .view-nav button{color:#adbfda;background:transparent}
+ html[data-appearance=arena][data-theme] .public-site .view-nav button[aria-pressed=true]{background:#17365f;color:#ffd04f}
+ html[data-appearance=arena][data-theme] .public-site .home-hero{padding:28px 22px 26px;min-height:650px;border-left:0;border-right:0;border-radius:0 0 20px 20px}
+ html[data-appearance=arena] .public-site .hero-picture{height:340px;width:100%;inset:0 0 auto}
+ html[data-appearance=arena] .public-site .hero-picture img{opacity:.66}
+ html[data-appearance=arena] .public-site .home-hero::before{background:linear-gradient(90deg,#071a39e6,#071a3960),linear-gradient(0deg,#071a39 0%,#071a39 42%,#071a3960 100%)}
+ html[data-appearance=arena] .public-site .home-hero h1{font-size:34px;max-width:330px;line-height:1.1}
+ html[data-appearance=arena] .public-site .home-hero .home-eyebrow{font-size:11px}
+ html[data-appearance=arena] .public-site .home-hero>p:not(.home-eyebrow){max-width:290px;font-size:15px}
+ html[data-appearance=arena] .public-site #home-search-form{margin-top:26px}
+ html[data-appearance=arena] .public-site .home-hero .hero-shortcuts{grid-template-columns:1fr;gap:9px;margin-top:14px}
+ html[data-appearance=arena][data-theme] .public-site .hero-shortcuts button{font-size:16px;min-height:60px;padding:14px 18px;flex-direction:row;gap:16px}
+ html[data-appearance=arena] .public-site .hero-shortcuts svg{width:25px;height:25px}
+}
+@media(max-width:700px){
+ html[data-appearance=arena][data-theme] .public-site .home-hero{min-height:0;padding:22px 22px 24px}
+ html[data-appearance=arena] .public-site .home-hero .home-eyebrow{margin-bottom:12px}
+ html[data-appearance=arena] .public-site .home-hero h1{font-size:30px;line-height:1.1;margin-bottom:14px}
+ html[data-appearance=arena] .public-site .home-hero>p:not(.home-eyebrow){display:none}
+ html[data-appearance=arena] .public-site #home-search-form{margin-top:16px}
+ html[data-appearance=arena] .public-site .home-hero .hero-shortcuts{margin-top:8px}
+ html[data-appearance=arena][data-theme] .public-site .hero-shortcuts button{min-height:52px;padding:11px 18px}
+}

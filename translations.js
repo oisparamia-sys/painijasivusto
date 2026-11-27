@@ -1,5 +1,9 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Ulkoasuversio","Visual design","Utseendeversion"],
+  ["Nykyinen · punainen","Current · red","Nuvarande · röd"],
+  ["Vertailu · sinikulta","Alternative · blue and gold","Alternativ · blå och guld"],
+  ["Sinikulta on tumma ulkoasu.","Blue and gold is a dark design.","Blått och guld är ett mörkt utseende."],
   ["Mittauspäivä","Measurement date","Mätdatum"],
   ["Aiempien mittausten ajankohta perustuu tallennettuun julkaisuversioon.","Historical measurement times are based on saved publication versions.","Tidpunkterna för tidigare mätningar baseras på sparade publiceringsversioner."],
   ["Ei tallennettuja mittauspisteitä.", "No recorded measurements.", "Inga sparade mätpunkter."],

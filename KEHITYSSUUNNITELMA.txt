@@ -88,3 +88,10 @@ Erillinen Kilpailut-näkymä on siirretty ylläpitoon osoitteeseen kilpailut.htm
 27.11.2026 · painija.fi-tunnus ja kuukausitekstin rivitys
 - Yläreunan tunnus on painija.fi. Sen alta poistettiin Tulokset & tilastot -teksti. Tunnuksen etusivun päivitystoiminto säilyy.
 - Etusivun kilpailukorttien kuukausilyhenteet, kuten MARRAS, säilyvät yhdellä rivillä myös puhelimessa. Päivämäärälaatikon leveyttä kasvatettiin hieman ja Safarin automaattinen tekstin suurentaminen estettiin vain näissä pienissä laatikoissa.
+
+27.11.2026 · Rinnakkainen sinikultainen ulkoasuversio vertailuun
+- Nykyinen punainen ulkoasu säilyy oletuksena. Sinikulta on erillinen tumma vaihtoehto: siniset pinnat, kullanväriset korostukset, oma typografia ja pystysuuntaiset etusivun pikavalinnat. Kuvan hahmoa tai kasvologoa ei käytetä eikä sen esimerkkitietoja kopioida.
+- Sama oikea aineisto, fuzzy-haku, hakuehdotukset, suodattimet, suosikit, profiilit, ottelut ja automaattipäivitys toimivat molemmissa ilmeissä. Kattavuuden aikasarjat säilyvät punaisina.
+- Asetusten Ulkoasuversio-valinnalla voi vaihtaa ilmettä ilman näkymän tai hakujen nollaamista. Valinta tallentuu vain selaimeen. Sinikulta käyttää tummaa pohjaa; aiempi vaaleusvalinta säilyy palattaessa nykyiseen ilmeeseen.
+- Suorat vertailulinkit: index.html?ilme=nykyinen ja index.html?ilme=sinikulta. Osoitteen valinta ohittaa tallennetun valinnan kyseisessä välilehdessä. ulkoasuvertailu.html-sivu näyttää molemmat toimivat versiot rinnakkain tai puhelimessa allekkain.
+- Uusi paikallinen ulkoasuvalinta sisältyy selaimen tietojen poistotoimintoon ja tietosuojasivun tallennuskuvaukseen.

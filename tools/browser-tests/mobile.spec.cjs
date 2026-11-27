@@ -113,3 +113,18 @@ test('coverage dates show every observed day without times or years',async({page
  for(const text of await box.locator('tbody th').allTextContents())expect(text).toMatch(/^\d{1,2}\.\d{1,2}\.$/);
  await noOverflow(page);
 });
+
+test('blue and gold comparison preserves fuzzy searches, favorites, theme preference and the selected view',async({page})=>{
+ await ready(page);await page.locator('#site-settings summary').click();await page.selectOption('#theme','light');await page.selectOption('#appearance','arena');
+ await expect(page.locator('html')).toHaveAttribute('data-appearance','arena');await expect(page.locator('#theme')).toBeDisabled();await page.locator('#site-settings summary').click();await noOverflow(page);
+ await tab(page,'results');await page.locator('#search').fill('Tahir');await expect(page.locator('#search-suggestions')).toBeVisible();await page.locator('#search').press('Escape');await page.locator('#results .name-button').first().click();await page.locator('#favorite-athlete').click();await expect(page.locator('#favorite-athlete')).toHaveAttribute('aria-pressed','true');
+ await page.locator('#site-settings summary').click();await page.selectOption('#appearance','current');await expect(page.locator('#theme')).toBeEnabled();await expect(page.locator('#theme')).toHaveValue('light');await page.locator('#site-settings summary').click();await expect(page.locator('#favorite-athlete')).toHaveAttribute('aria-pressed','true');await expect(page.locator('#wrestler-view')).toBeVisible();await noOverflow(page);
+ await page.goto('/index.html?ilme=sinikulta');await page.waitForFunction(()=>!!window.PAINI_PAGE_STATE);await expect(page.locator('html')).toHaveAttribute('data-appearance','arena');await expect(page.locator('#home-selected-favorites')).toContainText('Tahir');await tab(page,'home');
+ expect(await page.locator('#home-coverage .coverage-trend').first().evaluate(el=>getComputedStyle(el).stroke)).toBe('rgb(255, 139, 145)');
+ await page.locator('.hero-shortcuts [data-open-view=bouts]').click();await expect(page.locator('#bouts-view')).toBeVisible();await page.locator('#bouts-example').click();await expect(page.locator('#bouts-results tr').first()).toBeVisible();await noOverflow(page);
+});
+test('comparison page opens both real designs independently',async({page})=>{
+ await page.goto('/ulkoasuvertailu.html');await noOverflow(page);
+ const current=page.locator('iframe').nth(0),arena=page.locator('iframe').nth(1);await current.scrollIntoViewIfNeeded();await expect(current.contentFrame().locator('html')).toHaveAttribute('data-appearance','current');
+ await arena.scrollIntoViewIfNeeded();await expect(arena.contentFrame().locator('html')).toHaveAttribute('data-appearance','arena');await expect(arena.contentFrame().locator('#home-heading')).toBeVisible();await noOverflow(page);
+});

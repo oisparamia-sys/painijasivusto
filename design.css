@@ -198,3 +198,9 @@ html[data-theme] .public-site .data-refresh-box{display:block;margin:0 0 12px;pa
 .public-site .competition-date{white-space:nowrap;overflow-wrap:normal;word-break:normal;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .public-site .competition-date span{white-space:nowrap;overflow-wrap:normal;word-break:normal}
 @media(max-width:700px){.public-site .competition-date{width:64px}}
+
+.public-site .appearance-note{font-size:13px;line-height:1.4;margin:0;max-width:220px;color:var(--muted)}
+@media(max-width:700px){.public-site .header-preferences .appearance-picker,.public-site .header-preferences .appearance-note{grid-column:1/-1}.public-site .appearance-note{max-width:none}}
+
+.public-site .header-preferences .appearance-picker{flex-direction:column;align-items:flex-start;gap:4px}.public-site .appearance-picker select{max-width:235px}
+@media(max-width:700px){.public-site .header-preferences .appearance-picker{align-items:stretch}.public-site .appearance-picker select{max-width:none}}
