@@ -24,3 +24,16 @@ test('the privacy clear action removes the design preference while keeping unrel
  vm.runInNewContext(fs.readFileSync('storage-settings.js','utf8'),{document:{getElementById:id=>id==='clear-local'?{addEventListener:(_,fn)=>clear=fn}:status},localStorage:{removeItem:k=>storage.delete(k)},caches:{delete:async()=>true}});
  await clear();assert.equal(storage.has('paini-appearance-v1'),false);assert.equal(storage.get('unrelated'),'keep');
 });
+
+test('both additional styles honor direct links and saved choices without replacing the original theme',()=>{
+ for(const [slug,choice] of [['kuulas','clarity'],['kupari','copper']]){
+  const direct=page('current','https://test/index.html?ilme='+slug);assert.equal(direct.root.dataset.appearance,choice);assert.equal(direct.theme.disabled,true);assert.equal(direct.store.get('paini-theme'),'light');
+  const saved=page(choice);assert.equal(saved.root.dataset.appearance,choice);
+  const changed=page();changed.choose(choice);assert.equal(changed.store.get('paini-appearance-v1'),choice);assert.equal(new URL(changed.location.href).searchParams.get('ilme'),slug);changed.choose('current');assert.equal(changed.theme.disabled,false);
+ }
+});
+test('a visible settings menu closes and returns focus when a visual design is chosen',()=>{
+ let change,focused=false;const toggle={focus:()=>focused=true},panel={open:true,querySelector:()=>toggle},root={dataset:{}};
+ vm.runInNewContext(fs.readFileSync('appearance.js','utf8'),{URL,URLSearchParams,Event:class{},location:{href:'https://test/',search:''},history:{replaceState(){}},document:{documentElement:root,readyState:'complete',getElementById:id=>id==='site-settings'?panel:id==='appearance'?{addEventListener:(_,fn)=>change=fn}:null},localStorage:{getItem(){},setItem(){}},window:{dispatchEvent(){}},getComputedStyle:()=>({display:'block'})});
+ change({target:{value:'clarity'}});assert.equal(panel.open,false);assert.equal(focused,true);
+});

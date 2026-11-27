@@ -1,5 +1,10 @@
 "use strict";
 const PAINI_TRANSLATIONS = [
+  ["Tallennetut tulokset eivät välttämättä kata kaikkia kilpailuja tai painijoiden koko historiaa.","The saved results may not cover every competition or a wrestler’s full history.","De sparade resultaten omfattar inte nödvändigtvis alla tävlingar eller brottarnas hela historik."],
+  ["Kuulas · vaalea","Clarity · light","Klar · ljus"],
+  ["Kupari · tumma","Copper · dark","Koppar · mörk"],
+  ["Kuulas on vaalea ulkoasu.","Clarity is a light design.","Klar är ett ljust utseende."],
+  ["Kupari on tumma ulkoasu.","Copper is a dark design.","Koppar är ett mörkt utseende."],
   ["Ulkoasuversio","Visual design","Utseendeversion"],
   ["Nykyinen · punainen","Current · red","Nuvarande · röd"],
   ["Vertailu · sinikulta","Alternative · blue and gold","Alternativ · blå och guld"],

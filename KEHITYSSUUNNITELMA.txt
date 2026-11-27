@@ -95,3 +95,10 @@ Erillinen Kilpailut-näkymä on siirretty ylläpitoon osoitteeseen kilpailut.htm
 - Asetusten Ulkoasuversio-valinnalla voi vaihtaa ilmettä ilman näkymän tai hakujen nollaamista. Valinta tallentuu vain selaimeen. Sinikulta käyttää tummaa pohjaa; aiempi vaaleusvalinta säilyy palattaessa nykyiseen ilmeeseen.
 - Suorat vertailulinkit: index.html?ilme=nykyinen ja index.html?ilme=sinikulta. Osoitteen valinta ohittaa tallennetun valinnan kyseisessä välilehdessä. ulkoasuvertailu.html-sivu näyttää molemmat toimivat versiot rinnakkain tai puhelimessa allekkain.
 - Uusi paikallinen ulkoasuvalinta sisältyy selaimen tietojen poistotoimintoon ja tietosuojasivun tallennuskuvaukseen.
+
+27.11.2026 · Kuulas ja Kupari sekä etusivun selkeytys
+- Valittavana on nyt neljä ilmettä: nykyinen punainen, sinikulta, Kuulas ja Kupari. Nykyinen säilyy oletuksena. Valinta muistetaan selaimessa ja kaikki toimivat samalla aineistolla.
+- Kuulas on vaalea, valkoiseen ja turkoosiin perustuva selkeä ilme. Tietokoneella kuva on erillinen paneeli, puhelimessa haku ja sisältö ovat etusijalla. Kupari käyttää hiilenharmaata pohjaa, kuparikorostuksia ja erilaisia otsikoita; kuva on hillitty mustavalkoinen versio nykyisestä kuvasta CSS-esityksenä.
+- Suorat osoitteet: index.html?ilme=kuulas ja index.html?ilme=kupari. Vertailusivulla ovat kaikki neljä toimivaa esikatselua. Yhteinen painija.fi-tunnus säilyy, uutta hahmologoa ei oteta käyttöön.
+- Puhelimen asetusvalikko sulkeutuu ulkoasun valinnan jälkeen. Haut, suosikit ja näkymä säilyvät. Tietokoneen pysyvästi näkyviä asetuksia ei piiloteta.
+- Etusivun kattavuuskuvaajat ja mittaustaulukko poistettiin käyttäjän pyynnöstä. Tilalla on lyhyt tekstiyhteenveto aineiston kattavuusvaroituksista. Painijaprofiilien nykyhetken mittarit, alkuperäiset tulokset ja taustalla kerättävä mittaushistoria säilyvät. Etusivu ei enää lataa kuvaajien piirtoon käytettyä JavaScriptiä.

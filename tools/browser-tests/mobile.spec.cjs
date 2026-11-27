@@ -83,14 +83,10 @@ test('redesigned hero preserves typed search, contrast, shortcuts and the brand 
  await page.locator('.hero-shortcuts [data-open-view="bouts"]').click();await expect(page.locator('#bouts-view')).toBeVisible();await noOverflow(page);
 });
 
-test('coverage history shows three real red trends and an accessible timestamp table without overflow',async({page,context})=>{
- await ready(page);const box=page.locator('#home-coverage');await expect(box.locator('.coverage-line-chart')).toHaveCount(3);await expect(box.locator('meter')).toHaveCount(0);
- const samples=await page.evaluate(()=>window.PAINI_PAGE_STATE.snapshot().coverage.history.samples.length);expect(samples).toBeGreaterThan(1);
- const days=await page.evaluate(()=>window.PAINI_COVERAGE_CHART.daily(window.PAINI_COVERAGE_CHART.series(window.PAINI_PAGE_STATE.snapshot().coverage.history,'points')).length);expect(await box.locator('.coverage-dot').count()).toBe(days*3);
- expect(await box.locator('.coverage-trend').first().evaluate(el=>getComputedStyle(el).stroke)).toBe('rgb(191, 21, 32)');
- await box.locator('summary').click();await expect(box.locator('tbody tr')).toHaveCount(samples);await noOverflow(page);
- await page.locator('#site-settings summary').click();await page.selectOption('#theme','dark');await page.locator('#site-settings summary').click();expect(await box.locator('.coverage-trend').first().evaluate(el=>getComputedStyle(el).stroke)).toBe('rgb(255, 118, 124)');await noOverflow(page);
- await context.setOffline(true);await page.locator('#nav-results').click();await page.locator('#nav-home').click();await expect(box.locator('.coverage-line-chart')).toHaveCount(3);await context.setOffline(false);
+test('home coverage is a compact text summary without charts or a measurement table',async({page,context})=>{
+ await ready(page);const box=page.locator('#home-coverage');await expect(box).toContainText('Tuonnin kattavuusvaroituksia sisältäviä kilpailuja:');await expect(box.locator('svg,meter,table')).toHaveCount(0);await noOverflow(page);
+ await page.locator('#site-settings summary').click();await page.selectOption('#theme','dark');await page.locator('#site-settings summary').click();await noOverflow(page);
+ await context.setOffline(true);await tab(page,'results');await tab(page,'home');await expect(box.locator('svg,meter,table')).toHaveCount(0);await context.setOffline(false);
 });
 
 test('reload always starts at the top and the top Home brand performs a full home reload',async({page})=>{
@@ -105,26 +101,37 @@ test('reload always starts at the top and the top Home brand performs a full hom
  expect(await page.evaluate(()=>window.reloadMarker)).toBeUndefined();expect(await page.evaluate(()=>localStorage.getItem('paini-scroll-test'))).toBe('preserve');
  expect(new URL(page.url()).hash).toBe('');
 });
-test('coverage dates show every observed day without times or years',async({page})=>{
- await ready(page);const box=page.locator('#home-coverage');
- const expected=await page.evaluate(()=>window.PAINI_COVERAGE_CHART.daily(window.PAINI_COVERAGE_CHART.series(window.PAINI_PAGE_STATE.snapshot().coverage.history,'points')).map(p=>window.PAINI_COVERAGE_CHART.shortDate(p.at)));
- for(const chart of await box.locator('.coverage-line-chart').all()){expect(await chart.locator('.coverage-date-label').allTextContents()).toEqual(expected);for(const label of await chart.locator('.coverage-axis').all())expect(await label.evaluate(el=>el.getBBox().x>=0)).toBeTruthy();}
- await box.locator('summary').click();
- for(const text of await box.locator('tbody th').allTextContents())expect(text).toMatch(/^\d{1,2}\.\d{1,2}\.$/);
- await noOverflow(page);
-});
 
 test('blue and gold comparison preserves fuzzy searches, favorites, theme preference and the selected view',async({page})=>{
  await ready(page);await page.locator('#site-settings summary').click();await page.selectOption('#theme','light');await page.selectOption('#appearance','arena');
- await expect(page.locator('html')).toHaveAttribute('data-appearance','arena');await expect(page.locator('#theme')).toBeDisabled();await page.locator('#site-settings summary').click();await noOverflow(page);
+ await expect(page.locator('html')).toHaveAttribute('data-appearance','arena');await expect(page.locator('#theme')).toBeDisabled();await expect(page.locator('#site-settings')).not.toHaveAttribute('open','');await noOverflow(page);
  await tab(page,'results');await page.locator('#search').fill('Tahir');await expect(page.locator('#search-suggestions')).toBeVisible();await page.locator('#search').press('Escape');await page.locator('#results .name-button').first().click();await page.locator('#favorite-athlete').click();await expect(page.locator('#favorite-athlete')).toHaveAttribute('aria-pressed','true');
- await page.locator('#site-settings summary').click();await page.selectOption('#appearance','current');await expect(page.locator('#theme')).toBeEnabled();await expect(page.locator('#theme')).toHaveValue('light');await page.locator('#site-settings summary').click();await expect(page.locator('#favorite-athlete')).toHaveAttribute('aria-pressed','true');await expect(page.locator('#wrestler-view')).toBeVisible();await noOverflow(page);
+ await page.locator('#site-settings summary').click();await page.selectOption('#appearance','current');await expect(page.locator('#theme')).toBeEnabled();await expect(page.locator('#theme')).toHaveValue('light');await expect(page.locator('#site-settings')).not.toHaveAttribute('open','');await expect(page.locator('#favorite-athlete')).toHaveAttribute('aria-pressed','true');await expect(page.locator('#wrestler-view')).toBeVisible();await noOverflow(page);
  await page.goto('/index.html?ilme=sinikulta');await page.waitForFunction(()=>!!window.PAINI_PAGE_STATE);await expect(page.locator('html')).toHaveAttribute('data-appearance','arena');await expect(page.locator('#home-selected-favorites')).toContainText('Tahir');await tab(page,'home');
- expect(await page.locator('#home-coverage .coverage-trend').first().evaluate(el=>getComputedStyle(el).stroke)).toBe('rgb(255, 139, 145)');
+ await expect(page.locator('#home-coverage svg')).toHaveCount(0);
  await page.locator('.hero-shortcuts [data-open-view=bouts]').click();await expect(page.locator('#bouts-view')).toBeVisible();await page.locator('#bouts-example').click();await expect(page.locator('#bouts-results tr').first()).toBeVisible();await noOverflow(page);
 });
 test('comparison page opens both real designs independently',async({page})=>{
  await page.goto('/ulkoasuvertailu.html');await noOverflow(page);
  const current=page.locator('iframe').nth(0),arena=page.locator('iframe').nth(1);await current.scrollIntoViewIfNeeded();await expect(current.contentFrame().locator('html')).toHaveAttribute('data-appearance','current');
  await arena.scrollIntoViewIfNeeded();await expect(arena.contentFrame().locator('html')).toHaveAttribute('data-appearance','arena');await expect(arena.contentFrame().locator('#home-heading')).toBeVisible();await noOverflow(page);
+});
+
+test('Kuulas and Kupari keep queries and original theme while selection closes mobile settings',async({page})=>{
+ await ready(page);await page.locator('#site-settings summary').click();await page.selectOption('#theme','dark');await page.locator('#site-settings summary').click();
+ for(const [slug,appearance,note] of [['kuulas','clarity','Kuulas on vaalea ulkoasu.'],['kupari','copper','Kupari on tumma ulkoasu.']]){
+  await page.goto('/index.html?ilme='+slug);await page.waitForFunction(()=>!!window.PAINI_PAGE_STATE);await expect(page.locator('html')).toHaveAttribute('data-appearance',appearance);await noOverflow(page);
+  await page.locator('#nav-results').click();await page.locator('#search').fill('Tahir');await expect(page.locator('#search-suggestions')).toBeVisible();await page.locator('#search').press('Escape');
+  await page.locator('#site-settings summary').click();await expect(page.locator('#appearance-note')).toHaveText(note);await expect(page.locator('#theme')).toBeDisabled();await page.selectOption('#appearance','current');await expect(page.locator('#site-settings')).not.toHaveAttribute('open','');await expect(page.locator('#search')).toHaveValue('Tahir');
+  await page.locator('#site-settings summary').click();await expect(page.locator('#theme')).toHaveValue('dark');await page.selectOption('#appearance',appearance);await expect(page.locator('#site-settings')).not.toHaveAttribute('open','');await expect(page.locator('#search')).toHaveValue('Tahir');await expect(page.locator('#search-view')).toBeVisible();await noOverflow(page);
+  await page.locator('#results .name-button').first().click();await expect(page.locator('#wrestler-title')).toBeVisible();await page.locator('#nav-clubs').click();await page.locator('#club-search').fill('helsngin');await expect(page.locator('#club-list')).toContainText('Helsingin');await noOverflow(page);
+  await page.locator('#nav-bouts').click();await page.locator('#bouts-example').click();await expect(page.locator('#bouts-results tr').first()).toBeVisible();await noOverflow(page);
+ }
+});
+test('all four designs are available as independent comparison previews',async({page})=>{
+ await page.goto('/ulkoasuvertailu.html');await expect(page.locator('iframe')).toHaveCount(4);
+ for(const [i,appearance] of [[0,'current'],[1,'arena'],[2,'clarity'],[3,'copper']]){
+  const iframe=page.locator('iframe').nth(i);await iframe.scrollIntoViewIfNeeded();await expect(iframe.contentFrame().locator('html')).toHaveAttribute('data-appearance',appearance);
+ }
+ await noOverflow(page);
 });
