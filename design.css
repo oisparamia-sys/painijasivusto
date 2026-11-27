@@ -190,3 +190,6 @@ html[data-theme] .public-site .data-refresh-box{display:block;margin:0 0 12px;pa
 .public-site .coverage-history-table{min-width:750px}
 .public-site .coverage-history-details .table-wrap{overflow-x:auto}
 @media(max-width:700px){.public-site .coverage-grid{grid-template-columns:1fr}.public-site .coverage-chart-dates{font-size:12px}}
+
+.public-site .coverage-chart-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+.public-site .coverage-date-label{fill:var(--muted);font-size:13px;font-family:inherit}

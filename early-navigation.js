@@ -1,5 +1,11 @@
 "use strict";
 (() => {
+ // Run in the head, before the browser restores a previous scroll position.
+ if('scrollRestoration' in history)history.scrollRestoration='manual';
+ const top=()=>window.scrollTo({top:0,left:0,behavior:'instant'});
+ document.addEventListener('DOMContentLoaded',top,{once:true});
+ window.addEventListener('pageshow',event=>{if(!event.persisted)top();});
+ // Automatic data refresh intentionally has no scroll-reset handler.
  // A second Home tap dismisses this page's panels without changing saved choices.
  document.addEventListener('click',event=>{
   const button=event.target.closest('#nav-home');

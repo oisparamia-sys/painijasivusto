@@ -37,3 +37,8 @@ test('the exporter records a changed measurement and publishes its verified hist
   assert.equal(fs.readFileSync(path.join(root,'kattavuushistoria.json'),'utf8'),before);
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });
+
+test('daily charts retain the last real measurement per Finnish day while labels omit year and time',()=>{
+ const points=[{at:'2026-11-26T23:30:00Z',time:Date.parse('2026-11-26T23:30:00Z'),value:1},{at:'2026-11-27T05:00:00Z',time:Date.parse('2026-11-27T05:00:00Z'),value:2},{at:'2026-11-27T23:30:00Z',time:Date.parse('2026-11-27T23:30:00Z'),value:3}];
+ const days=C.daily(points);assert.deepEqual(days.map(p=>p.value),[2,3]);assert.deepEqual(days.map(p=>p.day),['2026-11-27','2026-11-28']);assert.equal(C.shortDate(points[0].at),'27.11.');assert.equal(points.length,3);
+});

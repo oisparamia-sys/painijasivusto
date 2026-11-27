@@ -79,3 +79,8 @@ Erillinen Kilpailut-näkymä on siirretty ylläpitoon osoitteeseen kilpailut.htm
 - Aloitushistoria sisältää kuusi Git-versioista vahvistettua mittausta 24.–27.11.2026. Historiallisten pisteiden aika on version tallennusaika, ja alkuperäinen commit on merkitty historiatiedostoon.
 - Vientityökalu kerää jatkossa uuden tarkistetun aineistoversion mittauksen automaattihaun yhteydessä. Saman version toistuva vienti ei tee kaksoispisteitä. Muuttumaton prosentti uudessa haussa on todellinen tasainen mittaus.
 - Historia tallennetaan kattavuushistoria.json-tiedostoon, julkaistaan manifestin tarkistussummalla ja ladataan yhdessä muun aineiston kanssa. Ladattu historia säilyy yhteyskatkossa. Aineiston palautus säilyttää aiemman historian.
+
+27.11.2026 · Sivun päivitys, yläreunan Etusivu ja lyhyet mittauspäivämäärät
+- Selaimen vierityksen automaattipalautus estetään jo sivun alussa. Sivun ensimmäinen lataus ja päivitys päättyvät yläosaan. Taustalla tehtävä automaattinen aineistopäivitys säilyttää edelleen vierityskohdan.
+- Yläreunan Painija-tunnus poistaa näkymäreitin ja lataa sivun uudelleen etusivun yläosaan. Alavalikon Etusivu säilyy nopeana näkymän vaihtona ja paneelien sulkemisena. Suosikit ja tallennetut asetukset säilyvät.
+- Kattavuuskuvaajien ja mittaustaulukon päivämäärät esitetään muodossa päivä.kuukausi. ilman kellonaikaa ja vuotta. Kaikki mittauspäivät näkyvät kuvaajan akselilla; viiva käyttää päivän viimeistä oikeaa mittausta, taulukko säilyttää kaikki mittaukset. Pitkä päivämäärälista vierittyy kuvaajan sisällä. Prosenttimerkinnöille varataan riittävästi tilaa.

@@ -1,6 +1,7 @@
 const {test,expect}=require('@playwright/test');
 async function ready(page){await page.goto('/');await page.waitForFunction(()=>!!window.PAINI_PAGE_STATE);}
 async function tab(page,name){await page.locator('#nav-'+name).click();await expect(page.locator('#'+({results:'search',competitions:'competition'}[name]||name)+'-view')).toBeVisible();}
+async function brandReload(page){await Promise.all([page.waitForEvent('load'),page.locator('#brand-home').click()]);await page.waitForFunction(()=>!!window.PAINI_PAGE_STATE);}
 async function noOverflow(page){expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();}
 test('navigation starts each section at the top and fits a narrow phone',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await ready(page);
@@ -78,16 +79,37 @@ test('redesigned hero preserves typed search, contrast, shortcuts and the brand 
   expect(colors).toEqual(['rgb(25, 28, 36)','rgb(255, 255, 255)','rgb(25, 28, 36)']);await page.locator('#home-search').press('Escape');await expect(page.locator('#home-search')).toHaveValue('Tahir');await noOverflow(page);
  }
  await page.locator('#home-search-form button[type=submit]').click();await expect(page.locator('#search')).toHaveValue('Tahir');await expect(page.locator('#results tr').first()).toBeVisible();
- await page.locator('#brand-home').click();await expect(page.locator('#home-view')).toBeVisible();await page.locator('#home-customize>summary').click();await page.locator('#brand-home').click();await expect(page.locator('#home-customize')).not.toHaveAttribute('open','');
+ await brandReload(page);await expect(page.locator('#home-view')).toBeVisible();await page.locator('#home-customize>summary').click();await brandReload(page);await expect(page.locator('#home-customize')).not.toHaveAttribute('open','');
  await page.locator('.hero-shortcuts [data-open-view="bouts"]').click();await expect(page.locator('#bouts-view')).toBeVisible();await noOverflow(page);
 });
 
 test('coverage history shows three real red trends and an accessible timestamp table without overflow',async({page,context})=>{
  await ready(page);const box=page.locator('#home-coverage');await expect(box.locator('.coverage-line-chart')).toHaveCount(3);await expect(box.locator('meter')).toHaveCount(0);
  const samples=await page.evaluate(()=>window.PAINI_PAGE_STATE.snapshot().coverage.history.samples.length);expect(samples).toBeGreaterThan(1);
- expect(await box.locator('.coverage-dot').count()).toBe(samples*3);
+ const days=await page.evaluate(()=>window.PAINI_COVERAGE_CHART.daily(window.PAINI_COVERAGE_CHART.series(window.PAINI_PAGE_STATE.snapshot().coverage.history,'points')).length);expect(await box.locator('.coverage-dot').count()).toBe(days*3);
  expect(await box.locator('.coverage-trend').first().evaluate(el=>getComputedStyle(el).stroke)).toBe('rgb(191, 21, 32)');
  await box.locator('summary').click();await expect(box.locator('tbody tr')).toHaveCount(samples);await noOverflow(page);
  await page.locator('#site-settings summary').click();await page.selectOption('#theme','dark');await page.locator('#site-settings summary').click();expect(await box.locator('.coverage-trend').first().evaluate(el=>getComputedStyle(el).stroke)).toBe('rgb(255, 118, 124)');await noOverflow(page);
  await context.setOffline(true);await page.locator('#nav-results').click();await page.locator('#nav-home').click();await expect(box.locator('.coverage-line-chart')).toHaveCount(3);await context.setOffline(false);
+});
+
+test('reload always starts at the top and the top Home brand performs a full home reload',async({page})=>{
+ await ready(page);
+ for(let attempt=0;attempt<2;attempt++){
+  await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));expect(await page.evaluate(()=>scrollY)).toBeGreaterThan(100);
+  await page.reload();await page.waitForFunction(()=>!!window.PAINI_PAGE_STATE);expect(await page.evaluate(()=>scrollY)).toBeLessThan(5);
+  await page.waitForTimeout(250);expect(await page.evaluate(()=>scrollY)).toBeLessThan(5);
+ }
+ await tab(page,'results');await page.evaluate(()=>{window.reloadMarker='must disappear';localStorage.setItem('paini-scroll-test','preserve');});
+ await brandReload(page);await expect(page.locator('#home-view')).toBeVisible();expect(await page.evaluate(()=>scrollY)).toBeLessThan(5);
+ expect(await page.evaluate(()=>window.reloadMarker)).toBeUndefined();expect(await page.evaluate(()=>localStorage.getItem('paini-scroll-test'))).toBe('preserve');
+ expect(new URL(page.url()).hash).toBe('');
+});
+test('coverage dates show every observed day without times or years',async({page})=>{
+ await ready(page);const box=page.locator('#home-coverage');
+ const expected=await page.evaluate(()=>window.PAINI_COVERAGE_CHART.daily(window.PAINI_COVERAGE_CHART.series(window.PAINI_PAGE_STATE.snapshot().coverage.history,'points')).map(p=>window.PAINI_COVERAGE_CHART.shortDate(p.at)));
+ for(const chart of await box.locator('.coverage-line-chart').all()){expect(await chart.locator('.coverage-date-label').allTextContents()).toEqual(expected);for(const label of await chart.locator('.coverage-axis').all())expect(await label.evaluate(el=>el.getBBox().x>=0)).toBeTruthy();}
+ await box.locator('summary').click();
+ for(const text of await box.locator('tbody th').allTextContents())expect(text).toMatch(/^\d{1,2}\.\d{1,2}\.$/);
+ await noOverflow(page);
 });
