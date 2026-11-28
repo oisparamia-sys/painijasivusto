@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-28T00:09:52.536Z",
+  "checkedAt": "2026-11-28T09:00:36.194Z",
   "updatedAt": "2026-11-26T14:55:26.316Z",
   "competitions": 347,
   "results": 40402,
@@ -797,7 +797,7 @@
   "errors": [
     {
       "source": "https://turniereklassisch.ringerdb.de/DM/2026/FI/261128_Rauma/indexFIN.htm",
-      "error": "Lähteessä on vain osallistujalistat, ei vahvistettuja tuloksia"
+      "error": "Tulosluetteloissa ei ole vielä vahvistettuja sijoituksia"
     },
     {
       "source": "https://turniereklassisch.ringerdb.de/LM/2026/FI/260822_Oulu/indexFIN.htm",

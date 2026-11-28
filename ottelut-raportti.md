@@ -1,6 +1,6 @@
 # Otteluhaun raportti
 
-Tarkistettu: 2026-11-28T00:09:57.516738+00:00
+Tarkistettu: 2026-11-28T09:00:40.737206+00:00
 
 ```json
 {
