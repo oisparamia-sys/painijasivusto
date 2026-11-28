@@ -15,6 +15,7 @@ for(const mode of ['local','public'])test(`database ${mode} supports Unicode sea
  await expect(page.locator('#database-right')).toBeEnabled();await page.locator('#database-right').click();await expect.poll(()=>page.locator('#database-table-scroll').evaluate(el=>el.scrollLeft)).toBeGreaterThan(0);
  const synced=await page.evaluate(()=>Math.abs(document.querySelector('#database-scroll-top').scrollLeft-document.querySelector('#database-table-scroll').scrollLeft)<2);expect(synced).toBe(true);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ const aligned=await page.evaluate(()=>{const body=document.querySelector('#database-rows'),header=[...document.querySelectorAll('#database-columns th')],cells=[...body.querySelector('tr').cells];return getComputedStyle(body).display==='table-row-group'&&header.every((th,n)=>Math.abs(th.getBoundingClientRect().left-cells[n].getBoundingClientRect().left)<2);});expect(aligned).toBe(true);
  await page.locator('#database-query').fill('no-such-row-981723987123');await expect(page.locator('#database-rows tr')).toHaveCount(0);await expect(page.locator('#database-prev')).toBeDisabled();await expect(page.locator('#database-next')).toBeDisabled();
 });
 test('random example changes the pair on every click and always shows a mutual bout',async({page})=>{

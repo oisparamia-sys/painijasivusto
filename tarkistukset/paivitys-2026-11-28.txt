@@ -50,6 +50,7 @@ Julkiset osat ja manifestit muodostettu vientityökaluilla. Työnkulkujen YAML t
 
 COMMIT
 Viesti: Korjaa aineistopuutteet, ylläpidon tallennus ja tietokannan selaus
+Viimeistelycommit: Kohdista tietokantataulukon sarakkeet puhelimessa
 Tähän muutokseen kuuluvat tiedostot luetellaan alla. Muut keskeneräiset tiedostot jätetään commitin ulkopuolelle.
 
 TIEDOSTOT COMMITTIIN (203)
