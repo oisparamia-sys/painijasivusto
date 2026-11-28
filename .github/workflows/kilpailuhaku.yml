@@ -19,6 +19,7 @@ permissions:
   actions: read
   contents: write
   pages: write
+  id-token: write
 concurrency:
   group: kilpailuhaku
   cancel-in-progress: false
@@ -42,6 +43,8 @@ jobs:
     if: needs.gate.outputs.allowed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    outputs:
+      revision: ${{ steps.version.outputs.revision }}
     env:
       PAINI_SOURCE_ARCHIVE: tietovarasto
     steps:
@@ -81,17 +84,15 @@ jobs:
           fi
       - name: Tallenna muutokset GitHubiin
         run: |
-          if ! git diff --quiet -- tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json data.js tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json kattavuushistoria.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto || [ -n "$(git ls-files --others --exclude-standard tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json kattavuushistoria.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto)" ]; then
+          if ! git diff --quiet -- tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json data.js tulokset etusivu-aineisto.json haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json kattavuushistoria.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto || [ -n "$(git ls-files --others --exclude-standard tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json kattavuushistoria.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json data.js tulokset haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json kattavuushistoria.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto
+            git add tietokanta.sqlite.gz tietokanta-tila.json database-public-index.json database-issues.json data.js tulokset etusivu-aineisto.json haun-tila.json ottelut-data.js ottelut-raportti.json ottelut-raportti.md ottelut-public.json ottelut-manifest.json kattavuus.json kattavuushistoria.json aineisto-manifest.json muutosjono.json hyvaksyntapaatokset.json tietovarasto
             git commit -m "Päivitä kilpailut ja ottelut automaattihaulla"
             git push origin HEAD:main
           fi
-      - name: Pyydä sivuston julkaisu
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+      - id: version
+        run: echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Säilytä hakuraportti
         if: always()
         uses: actions/upload-artifact@v4
@@ -105,3 +106,8 @@ jobs:
             tietovarasto/
           retention-days: 90
           if-no-files-found: ignore
+  validate-and-publish:
+    needs: update
+    uses: ./.github/workflows/mobile-tests.yml
+    with:
+      revision: ${{ needs.update.outputs.revision }}

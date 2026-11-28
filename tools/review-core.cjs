@@ -3,8 +3,8 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 const copy=x=>JSON.parse(JSON.stringify(x));
 function stable(x){if(Array.isArray(x))return x.map(stable);if(x&&typeof x==='object')return Object.fromEntries(Object.keys(x).filter(k=>!['checkedAt','fileInfo','updatedAt','exportedAt'].includes(k)).sort().map(k=>[k,stable(x[k])]));return x;}
 const hash=x=>crypto.createHash('sha256').update(JSON.stringify(stable(x))).digest('hex');
-function readQueue(file='muutosjono.json'){if(!fs.existsSync(file))return{version:1,updatedAt:null,proposals:[],history:[]};const q=JSON.parse(fs.readFileSync(file));if(q.version!==1||!Array.isArray(q.proposals)||!Array.isArray(q.history)||new Set(q.proposals.map(p=>p.id)).size!==q.proposals.length)throw Error('Muutosjonon muoto ei kelpaa');return q;}
-function atomic(file,text){fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file+'.tmp',text);fs.renameSync(file+'.tmp',file);}
+function readQueue(file='muutosjono.json'){recover(path.dirname(file));if(!fs.existsSync(file))return{version:1,updatedAt:null,proposals:[],history:[]};const q=JSON.parse(fs.readFileSync(file));if(q.version!==1||!Array.isArray(q.proposals)||!Array.isArray(q.history)||new Set(q.proposals.map(p=>p.id)).size!==q.proposals.length)throw Error('Muutosjonon muoto ei kelpaa');return q;}
+function atomic(file,text){fs.mkdirSync(path.dirname(file),{recursive:true});const temp=file+'.tmp',fd=fs.openSync(temp,'w');try{fs.writeFileSync(fd,text);fs.fsyncSync(fd);}finally{fs.closeSync(fd);}fs.renameSync(temp,file);const directory=fs.openSync(path.dirname(file),'r');try{fs.fsyncSync(directory);}finally{fs.closeSync(directory);}}
 function saveQueue(q,file='muutosjono.json'){q.updatedAt=new Date().toISOString();atomic(file,JSON.stringify(q,null,2)+'\n');}
 function withdraw(q,kind,target){for(const p of q.proposals)if(p.kind===kind&&p.target===target&&p.status==='pending')p.status='withdrawn';}
 function propose(q,kind,target,before,after,reason){
@@ -21,6 +21,7 @@ function verifyBackup(root,version){
  }catch(error){throw Error('Varmuuskopion tarkistus epäonnistui ('+version.file+'): '+error.message);}
 }
 function snapshot(root='.',label='manual'){
+ recover(root);
  const indexPath=path.join(root,'tietovarasto/index.json');
  const index=fs.existsSync(indexPath)?JSON.parse(fs.readFileSync(indexPath)):{version:1,versions:[],runs:[]};
  if(index.version!==1)throw Error('Tietovaraston versio ei kelpaa');
@@ -40,4 +41,20 @@ function snapshot(root='.',label='manual'){
  index.runs.push({at:new Date().toISOString(),label,run:process.env.GITHUB_RUN_ID||null,refs});
  atomic(indexPath,JSON.stringify(index,null,2)+'\n');return refs;
 }
-module.exports={copy,hash,stable,readQueue,saveQueue,atomic,propose,withdraw,snapshot};
+// Durable undo journal: a failed/interrupted batch is rolled back before reuse.
+const JOURNAL='.paini-transaction.json';
+function recover(root='.',force=false){
+ const file=path.join(root,JOURNAL);if(!fs.existsSync(file))return;
+ const journal=JSON.parse(fs.readFileSync(file)),entries=Array.isArray(journal)?journal:journal.entries;
+ if(!force&&journal.pid){let alive=true;try{process.kill(journal.pid,0);}catch(error){if(error.code==='ESRCH')alive=false;else throw error;}if(alive)throw Error('Hyväksynnän tallennus on vielä käynnissä. Yritä uudelleen sen valmistuttua.');}
+ for(const [name,bytes]of entries){if(!['data.js','ottelut-data.js','muutosjono.json','hyvaksyntapaatokset.json'].includes(name))throw Error('Tallennuksen palautusviite ei kelpaa');const target=path.join(root,name);if(bytes===null){if(fs.existsSync(target))fs.unlinkSync(target);}else atomic(target,Buffer.from(bytes,'base64'));}
+ fs.unlinkSync(file);
+}
+function transaction(root,files){
+ recover(root);const journal=path.join(root,JOURNAL);
+ const before=[...files.keys()].map(name=>[name,fs.existsSync(path.join(root,name))?fs.readFileSync(path.join(root,name)).toString('base64'):null]);
+ atomic(journal,JSON.stringify({pid:process.pid,entries:before}));
+ try{for(const [name,bytes]of files)atomic(path.join(root,name),bytes);fs.unlinkSync(journal);}
+ catch(error){try{recover(root,true);}catch(rollback){throw new Error('Tallennus keskeytyi. Palautus jatkuu seuraavalla käynnistyksellä: '+rollback.message,{cause:error});}throw error;}
+}
+module.exports={copy,hash,stable,readQueue,saveQueue,atomic,propose,withdraw,snapshot,transaction,recover};

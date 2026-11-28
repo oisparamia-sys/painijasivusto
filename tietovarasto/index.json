@@ -136,6 +136,22 @@
       "blob": "tietovarasto/versiot/b0e273f7b2d3ccbcc45497c5af8605c27384b94652ea35c5c6790d0a064a8772.gz",
       "createdAt": "2026-11-27T04:29:18.008Z",
       "bytes": 36500169
+    },
+    {
+      "file": "data.js",
+      "semanticHash": "af8aa7c92a86c90aa37616f8b6cec4c114b7f8be467c88f26c54d1da7cad24ea",
+      "sha256": "3f37afe332d9a560118aee879b834d182f8c27dd19d070cd239e0bd617484f4a",
+      "blob": "tietovarasto/versiot/3f37afe332d9a560118aee879b834d182f8c27dd19d070cd239e0bd617484f4a.gz",
+      "createdAt": "2026-11-28T14:55:21.788Z",
+      "bytes": 51525453
+    },
+    {
+      "file": "ottelut-data.js",
+      "semanticHash": "c29181b1d6e4e1dbf26a5e98f1c8e9d0fb0fc32542d99446b3a403f8f0c3f4e1",
+      "sha256": "cbfe2b09d97592494a5b53a7892fff49ba11259e83dab5766e8eb9268e2c258b",
+      "blob": "tietovarasto/versiot/cbfe2b09d97592494a5b53a7892fff49ba11259e83dab5766e8eb9268e2c258b.gz",
+      "createdAt": "2026-11-28T15:03:02.594Z",
+      "bytes": 36520600
     }
   ],
   "runs": [
@@ -515,6 +531,33 @@
       "refs": {
         "data.js": "c14dd05fc390896d857427f6d720b1255b94abdf70dda6497e56440c9082b0cf",
         "ottelut-data.js": "b0e273f7b2d3ccbcc45497c5af8605c27384b94652ea35c5c6790d0a064a8772"
+      }
+    },
+    {
+      "at": "2026-11-28T14:55:18.438Z",
+      "label": "before-verified-tampere-additions",
+      "run": null,
+      "refs": {
+        "data.js": "c14dd05fc390896d857427f6d720b1255b94abdf70dda6497e56440c9082b0cf",
+        "ottelut-data.js": "b0e273f7b2d3ccbcc45497c5af8605c27384b94652ea35c5c6790d0a064a8772"
+      }
+    },
+    {
+      "at": "2026-11-28T14:55:22.155Z",
+      "label": "after-verified-tampere-additions",
+      "run": null,
+      "refs": {
+        "data.js": "3f37afe332d9a560118aee879b834d182f8c27dd19d070cd239e0bd617484f4a",
+        "ottelut-data.js": "b0e273f7b2d3ccbcc45497c5af8605c27384b94652ea35c5c6790d0a064a8772"
+      }
+    },
+    {
+      "at": "2026-11-28T15:03:02.594Z",
+      "label": "after-verified-tampere-bouts",
+      "run": null,
+      "refs": {
+        "data.js": "3f37afe332d9a560118aee879b834d182f8c27dd19d070cd239e0bd617484f4a",
+        "ottelut-data.js": "cbfe2b09d97592494a5b53a7892fff49ba11259e83dab5766e8eb9268e2c258b"
       }
     }
   ]

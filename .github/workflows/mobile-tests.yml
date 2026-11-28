@@ -4,8 +4,15 @@ on:
     branches: [main, development]
   pull_request:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      revision:
+        type: string
+        required: true
 permissions:
   contents: read
+  pages: write
+  id-token: write
 concurrency:
   group: mobile-tests-${{ github.ref }}
   cancel-in-progress: true
@@ -13,8 +20,14 @@ jobs:
   mobile:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    outputs:
+      revision: ${{ steps.version.outputs.revision }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.revision || github.sha }}
+      - id: version
+        run: echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -29,3 +42,27 @@ jobs:
           name: mobiilitestien-virheraportti
           path: test-results/
           retention-days: 14
+      - name: Valmistele testattu sivusto
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        run: |
+          mkdir _site
+          git archive HEAD | tar -x -C _site
+      - uses: actions/upload-pages-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: _site
+  publish:
+    needs: mobile
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Varmista että testattu versio on yhä uusin
+        env:
+          TESTED_REVISION: ${{ needs.mobile.outputs.revision }}
+        run: test "$(git ls-remote https://github.com/${{ github.repository }}.git refs/heads/main | cut -f1)" = "$TESTED_REVISION"
+      - uses: actions/configure-pages@v5
+      - uses: actions/deploy-pages@v4
+        id: deployment

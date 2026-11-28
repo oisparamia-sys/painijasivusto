@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const Q=require('./review-core.cjs');
-function load(root='.') {const ctx={window:{}};for(const file of ['athlete-registry.js','data.js','ottelut-data.js']){const p=path.join(root,file);if(fs.existsSync(p))vm.runInNewContext(fs.readFileSync(p,'utf8'),ctx,{timeout:15000});}return{R:ctx.window.PainiRegistry,data:ctx.window.PAINI_SHARED_DATA,bouts:ctx.window.PAINI_BOUTS_DATA};}
+function load(root='.') {Q.recover(root);const ctx={window:{}};for(const file of ['athlete-registry.js','data.js','ottelut-data.js']){const p=path.join(root,file);if(fs.existsSync(p))vm.runInNewContext(fs.readFileSync(p,'utf8'),ctx,{timeout:15000});}return{R:ctx.window.PainiRegistry,data:ctx.window.PAINI_SHARED_DATA,bouts:ctx.window.PAINI_BOUTS_DATA};}
 function event(bouts,target){const meta=bouts?.competitions.find(c=>c.key===target);return meta?{meta,participants:bouts.participants.filter(p=>p.competition===target),matches:bouts.matches.filter(m=>m.competition===target),excluded:bouts.excluded.filter(e=>e.competition===target),issues:bouts.issues.filter(i=>(i.source||'').startsWith(target.slice(0,target.lastIndexOf('/')+1)))}:null;}
 function validateBouts(data,bouts,R){
  if(!bouts)return;
@@ -72,14 +72,17 @@ function ingest(root='.'){
  console.log('Odottaa hyväksyntää:',q.proposals.filter(p=>p.status==='pending').length);
 }
 function applyFiles(root='.'){
- const file=path.join(root,'hyvaksyntapaatokset.json');if(!fs.existsSync(file))return;
+ Q.recover(root);const file=path.join(root,'hyvaksyntapaatokset.json');if(!fs.existsSync(file))return;
  const document=JSON.parse(fs.readFileSync(file));if(!document.decisions?.length)return;
  const state=load(root),queue=Q.readQueue(path.join(root,'muutosjono.json')),result=apply(state,queue,document);
- // Nothing is written until the whole batch and all references validate.
- if(Q.hash(result.data)!==Q.hash(state.data)){result.data.updatedAt=new Date().toISOString();Q.atomic(path.join(root,'data.js'),state.R.exportSource(result.data));}
- if(Q.hash(result.bouts)!==Q.hash(state.bouts))Q.atomic(path.join(root,'ottelut-data.js'),'"use strict";\nwindow.PAINI_BOUTS_DATA = '+JSON.stringify(result.bouts).replace(/</g,'\\u003c')+';\n');
- Q.saveQueue(result.queue,path.join(root,'muutosjono.json'));
- Q.atomic(file,JSON.stringify({version:1,decisions:[]},null,2)+'\n');
+ // Prepare the complete decision batch before replacing any live file.
+ const files=new Map();
+ if(Q.hash(result.data)!==Q.hash(state.data)){result.data.updatedAt=new Date().toISOString();files.set('data.js',state.R.exportSource(result.data));}
+ if(Q.hash(result.bouts)!==Q.hash(state.bouts))files.set('ottelut-data.js','"use strict";\nwindow.PAINI_BOUTS_DATA = '+JSON.stringify(result.bouts).replace(/</g,'\\u003c')+';\n');
+ result.queue.updatedAt=new Date().toISOString();
+ files.set('muutosjono.json',JSON.stringify(result.queue,null,2)+'\n');
+ files.set('hyvaksyntapaatokset.json',JSON.stringify({version:1,decisions:[]},null,2)+'\n');
+ Q.transaction(root,files);
  const report='# Ylläpidon päätökset\n\nKäsitelty '+document.decisions.length+' päätöstä. Hyväksytty '+document.decisions.filter(d=>d.action==='approve').length+', hylätty '+document.decisions.filter(d=>d.action==='reject').length+'.\n';
  if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,report);
  console.log('Käsitelty päätöksiä:',document.decisions.length);

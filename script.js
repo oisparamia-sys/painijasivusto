@@ -148,7 +148,7 @@ function refreshFilters() {
     const list = document.createElement("ul");
     partialNotes(item).forEach(note=>{
       const li = document.createElement("li");
-      li.textContent = note.category + " · " + note.weight + " kg — " + (Number.isInteger(note.included) ? "Tuotuja sijoituksia: " + note.included + "; tuomatta jääneitä osallistujia: " + note.excluded + ". " : "Painoluokka on jätetty pois tuonnista. ") + (note.reason || "Kaikille osallistujille ei löytynyt vahvistettua sijoitusta.");
+      li.textContent = note.category + (note.weight ? " · " + note.weight + " kg" : "") + " — " + (Number.isInteger(note.included) ? "Tuotuja sijoituksia: " + note.included + "; tuomatta jääneitä osallistujia: " + note.excluded + ". " : "Painoluokka on jätetty pois tuonnista. ") + (note.reason || "Kaikille osallistujille ei löytynyt vahvistettua sijoitusta.");
       list.append(li);
     });
     partialNote.append(text,list);
@@ -158,12 +158,19 @@ function refreshFilters() {
   }
   render();
 }
+let resultSearchIndex=new WeakMap(),competitionSearchIndex=new WeakMap();
+function searchDocument(item,row){
+ const map=row?resultSearchIndex:competitionSearchIndex,key=row||item;
+ if(!map.has(key))map.set(key,window.PAINI_UTILS.prepareCompetitionText(row?[row.name,athleteRecords.get(row.athleteId)?.name||'',row.club,row.category,item.title,item.details].join(' '):item.title+' '+item.details));
+ return map.get(key);
+}
 function render(keepPage = false) {
   if (keepPage !== true) resultsPage = 0;
   const query = $("#search").value.trim();
   const tokens = searchWords(query.toLocaleLowerCase("fi"));
   const style = $("#result-style").value, club = $("#club").value;
   const category = $("#category").value, order = $("#result-sort").value;
+  const matchQuery=window.PAINI_UTILS.compileCompetitionQuery(query);
   const matchedNames = new Map();
   function matchesName(name) {
     if (!matchedNames.has(name)) matchedNames.set(name, matchesSearchWords(searchWords(name), tokens));
@@ -172,13 +179,13 @@ function render(keepPage = false) {
   const fragment = document.createDocumentFragment();
   const entries = [];
   for (const item of yearFilteredCompetitions()) {
-    const competitionMatches = tokens.length && matchesCompetitionQuery(item.title + " " + item.details, query);
+    const competitionMatches = tokens.length && matchQuery(searchDocument(item));
     for (const result of item.rows) {
       if (club && result.club !== club || category && result.category !== category) continue;
       if (style && resultStyle(item, result) !== style) continue;
       const canonicalName = athleteRecords.get(result.athleteId)?.name || "";
       if (tokens.length && !competitionMatches && !matchesName(result.name) && !matchesName(canonicalName) &&
-          !matchesCompetitionQuery([result.name, canonicalName, result.club, result.category, item.title, item.details].join(" "), query)) continue;
+          !matchQuery(searchDocument(item,result))) continue;
       entries.push({item, result});
     }
   }
@@ -222,7 +229,7 @@ function render(keepPage = false) {
       labelResultRow(row, "results");
       fragment.append(row);
   });
-  $("#results").replaceChildren(fragment);
+  $("#results").replaceChildren(fragment);$("#results").setAttribute("aria-busy","false");
   $("#count").textContent = count === 1 ? "1 kilpailusijoitus" : count.toLocaleString("fi-FI") + " kilpailusijoitusta";
   $("#empty").hidden = count > 0;
   window.PAINI_MOBILE?.update();
@@ -510,7 +517,8 @@ $("#competition").addEventListener("change", refreshFilters);
 $("#result-style").addEventListener("change", refreshFilters);
 $("#result-year").addEventListener("change", refreshFilters);
 $("#result-sort").addEventListener("change", render);
-$("#search").addEventListener("input", render);
+let searchTimer;
+$("#search").addEventListener("input",()=>{clearTimeout(searchTimer);$("#results").setAttribute("aria-busy","true");$("#results").querySelectorAll("button").forEach(button=>button.disabled=true);searchTimer=setTimeout(render,120);});
 $("#club").addEventListener("change", render);
 $("#category").addEventListener("change", render);
 ["home","clubs","compare"].forEach(view=>document.getElementById("nav-"+view)?.addEventListener("click",()=>showView(view)));
@@ -632,11 +640,15 @@ $("#copy-wrestler-link").addEventListener("click",async () => {
     $("#share-status").textContent = "Kopioi valittu osoite käsin ja liitä se viestiin.";
   }
 });
-window.addEventListener("popstate",routeProfileFromUrl);
+window.addEventListener("popstate",()=>{
+ const leaving=!!profileState;routeProfileFromUrl();
+ if(leaving&&!profileState&&resultsScroll){const saved=resultsScroll;window.scrollTo({left:saved.x,top:saved.y,behavior:'instant'});requestAnimationFrame(()=>{if(!profileState)window.scrollTo({left:saved.x,top:saved.y,behavior:'instant'});});}
+});
 window.addEventListener("hashchange",routeProfileFromUrl);
 window.PAINI_FEATURES.init({data:sharedData,showView,openProfile,openCompetition,date:competitionDate,year:resultYear,search:refreshFilters,style:resultStyle});
-if(typeof window.PAINI_PENDING_SEARCH === "string"){$("#search").value=window.PAINI_PENDING_SEARCH;refreshFilters();delete window.PAINI_PENDING_SEARCH;}
+if(typeof window.PAINI_PENDING_SEARCH === "string"){$("#search").value=window.PAINI_PENDING_SEARCH;refreshFilters();if(window.PAINI_PENDING_HOME_FILTERS){$('#result-year').value=window.PAINI_PENDING_HOME_FILTERS.year;$('#result-style').value=window.PAINI_PENDING_HOME_FILTERS.style;refreshFilters();delete window.PAINI_PENDING_HOME_FILTERS;}delete window.PAINI_PENDING_SEARCH;}
 routeProfileFromUrl();
+if(window.PAINI_PENDING_COMPETITION){const item=competitions.find(c=>c.source===window.PAINI_PENDING_COMPETITION);delete window.PAINI_PENDING_COMPETITION;if(item)openCompetition(item);}
 
 $("#wrestler-report-error").addEventListener("click", event => {
   if (!profileState || typeof window.PAINI_OPEN_FEEDBACK !== "function") return;
@@ -721,7 +733,7 @@ function partialNotes(item) {
 }
 function partialBadge(item) {
   const badge=document.createElement("span");badge.className="partial-results-badge";badge.textContent="Tulokset osittaiset";
-  badge.setAttribute("title", "Kilpailusta puuttuvat: " + partialNotes(item).map(n=>n.category+" "+n.weight+" kg").join(", "));
+  badge.setAttribute("title", "Kilpailusta puuttuvat: " + partialNotes(item).map(n=>n.category+(n.weight?" "+n.weight+" kg":"")).join(", "));
   return badge;
 }
 function originalResultsLink(item) {
@@ -743,15 +755,16 @@ window.PAINI_PAGE_STATE = Object.freeze({
   },
   update(bundle){
     this.validate(bundle);
+    resultSearchIndex=new WeakMap();competitionSearchIndex=new WeakMap();
     sharedData=bundle.data;window.PAINI_SHARED_DATA=sharedData;window.PAINI_COVERAGE=bundle.coverage;
     sharedCompetitions=sharedData.competitions;competitions=[...sharedCompetitions];
     athleteRecords.clear();for(const person of sharedData.athleteRegistry.athletes)athleteRecords.set(person.id,person);
     if(window.PAINI_BOUTS){window.PAINI_BOUTS.reset(bundle.bouts);boutsLoading=null;}
-    refresh();window.PAINI_FEATURES.update(bundle);
+    refresh();window.PAINI_FEATURES.update(bundle);warmSearchIndex();
   },
   capture() {
     const view = featureViewNames.find(name=>document.getElementById(name+"-view")&&!document.getElementById(name+"-view").hidden)||(!$("#bouts-view").hidden ? "bouts" : "results");
-    return {view:profileState?"profile":view,profile:profileState?{...profileState}:null,returnView:profileReturnView,returnScroll:resultsScroll,details:[...document.querySelectorAll("details")].map(el=>el.open),features:window.PAINI_FEATURES?.capture(),bouts:pendingBoutsState || window.PAINI_BOUTS?.getState(), results:Object.fromEntries(refreshResultFields.map(id=>[id,document.getElementById(id).value])), page:resultsPage,
+    return {focusId:document.activeElement?.id||null,focusResultId:document.activeElement?.closest('[data-result-id]')?.dataset.resultId||null,view:profileState?"profile":view,profile:profileState?{...profileState}:null,returnView:profileReturnView,returnScroll:resultsScroll,details:[...document.querySelectorAll("details")].map(el=>el.open),features:window.PAINI_FEATURES?.capture(),bouts:pendingBoutsState || window.PAINI_BOUTS?.getState(), results:Object.fromEntries(refreshResultFields.map(id=>[id,document.getElementById(id).value])), page:resultsPage,
       competitionSource:competitions.find(item=>identity(item)===$("#competition").value)?.source};
   },
   async restore(state) {
@@ -774,7 +787,17 @@ window.PAINI_PAGE_STATE = Object.freeze({
       openProfile(id,null,false,false);profileState={...state.profile,athleteId:id};profileReturnView=state.returnView||"results";resultsScroll=state.returnScroll;setProfileBackLabel();renderProfile();
     }else showView(state.view,false,false);
     const ready=state.view === "bouts" ? await loadBouts() : true;
+    const focus=(state.focusId&&document.getElementById(state.focusId))||(state.focusResultId&&document.querySelector('[data-result-id="'+CSS.escape(state.focusResultId)+'"] .name-button'));if(focus&&!focus.closest('[hidden]'))focus.focus({preventScroll:true});
     if(Array.isArray(state.details))document.querySelectorAll("details").forEach((el,i)=>{if(typeof state.details[i]==='boolean')el.open=state.details[i];});
     return ready;
   }
 });
+
+// Prepare searchable text in short idle slices, never ahead of navigation/input.
+function warmSearchIndex(){
+ const owner=sharedData,entries=competitions.flatMap(item=>item.rows.map(row=>({item,row})));let cursor=0;
+ const schedule=fn=>window.requestIdleCallback?window.requestIdleCallback(fn,{timeout:1000}):setTimeout(()=>fn({timeRemaining:()=>5}),32);
+ function step(deadline){if(owner!==sharedData)return;let count=0;while(cursor<entries.length&&count++<50&&deadline.timeRemaining()>1){const {item,row}=entries[cursor++];searchDocument(item,row);}if(cursor<entries.length)schedule(step);}
+ schedule(step);
+}
+warmSearchIndex();

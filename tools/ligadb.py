@@ -141,6 +141,24 @@ def confirmed_weight(group, pageurl, category_link, available_links):
  if people(final['rows'])!=sorted(group['people']):raise ValueError('Painoluokan erillisen tuloslistan osallistujat eivät täsmää')
  return final
 
+def confirm_category_weights(groups, pageurl, category_link, available_links):
+ # A stale category heading must not hide independently confirmed standings.
+ # Require every weight's own official list to agree, including all identities,
+ # places and participant counts. A missing or conflicting page keeps the old
+ # conservative omission; the category discrepancy is never marked resolved.
+ prefix=category_link.rsplit('/',1)[-1].removesuffix('tlges.htm')
+ for group in groups:
+  expected=prefix+group['weight']+'.htm'
+  candidates=[link for link in available_links if link.rsplit('/',1)[-1]==expected]
+  if len(set(candidates))!=1:return False
+  try:individual=html_results(get(urllib.parse.urljoin(pageurl,candidates[0])))
+  except (OSError,ValueError):return False
+  if len(individual)!=1:return False
+  other=individual[0]
+  signature=lambda rows:sorted(tuple(clean(c).casefold() for c in row) for row in rows)
+  if any(other[k]!=group[k] for k in ['weight','category','count','unranked','people','placeholders']) or signature(other['rows'])!=signature(group['rows']):return False
+ return bool(groups)
+
 def tab_results(text, selected=None):
  # Read official result rows without turning a participant list into standings.
  groups=[];current=None;header=[];started=False
@@ -247,8 +265,11 @@ def competition(url):
    if not groups or any(g['count'] is None for g in groups):raise ValueError('Sarjan ja painoluokkien osallistujamäärät eroavat')
    incomplete_categories=True
    reason='Sarjan osallistujamäärä '+str(count)+', tulosluettelossa '+str(observed)
-   warnings += [dict(category=category,weight=g['weight'],excluded=g['count'],unranked=g['unranked'],source=pageurl,reason=reason) for g in groups]
-   continue
+   if count>observed and confirm_category_weights(groups,pageurl,link,links(page)):
+    warnings.append(dict(category=category,weight='',included=sum(len(g['rows']) for g in groups),excluded=count-observed,unranked=0,source=pageurl,reason=reason+'; sijoitukset vahvistettu myös kaikkien painoluokkien omista tulosluetteloista. Eroa ei ole päätelty sijoitukseksi.'))
+   else:
+    warnings += [dict(category=category,weight=g['weight'],excluded=g['count'],unranked=g['unranked'],source=pageurl,reason=reason) for g in groups]
+    continue
   for g in groups:
    if g['count'] is None:g['count']=len(g['rows'])+g['unranked']
   original_unranked=sum(g['unranked'] for g in groups)

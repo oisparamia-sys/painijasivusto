@@ -4,7 +4,7 @@ const source=fs.readFileSync(path.join(__dirname,'../fresh-data.js'),'utf8');
 const settle=async()=>{for(let i=0;i<12;i++)await new Promise(resolve=>setImmediate(resolve));};
 function page(){
  const events={},docEvents={},intervals=[],updates=[],restores=[],scrolls=[];let rev='old',offline=false,invalid=false,focused=false,resolveBundle;
- const notice={},status={},state={view:'bouts',bouts:{a:'painija-000001',b:'painija-000002',mode:'pair',scope:'source',page:2},results:{search:'Urho'},page:3};
+ const notice={},status={dataset:{}},state={view:'bouts',bouts:{a:'painija-000001',b:'painija-000002',mode:'pair',scope:'source',page:2},results:{search:'Urho'},page:3};
  const io={manifest:async()=>{if(offline)throw Error();return {revision:rev};},bundle:async()=>{if(resolveBundle)await resolveBundle;if(invalid)throw Error();return {data:{version:1,competitions:[]},coverage:{}};},previous:async()=>({revision:"old"}),remember:async()=>{},clearMemory(){},file:async()=>'{"version":3}'};
  const api={snapshot:()=>({data:{},coverage:{}}),capture:()=>structuredClone(state),busy:()=>false,validate(){},update:async bundle=>updates.push(bundle),restore:async saved=>{restores.push(saved);return true;}};
  const window={scrollX:0,scrollY:720,PAINI_DATA_IO:{create:()=>io},PAINI_BOUTS:{isReady:()=>true},PainiRegistry:{validate(){}},addEventListener:(name,fn)=>events[name]=fn,dispatchEvent(){},scrollTo:value=>scrolls.push(value)};

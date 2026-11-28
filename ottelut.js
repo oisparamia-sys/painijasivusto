@@ -1,8 +1,13 @@
 "use strict";
 (() => {
-  let initialized = false,trial=null,dataPromise=null;
+  let initialized = false,trial=null,dataPromise=null,lastExamplePair=null;
   let readState=()=>null,restoreState=()=>{},template=null;
   const dataBase=typeof document==='undefined'?null:new URL('.',document.currentScript?.src || location.href);
+  function randomExample(matches,previous=null,random=Math.random){
+    const pairs=new Map();for(const match of matches){const ids=[match.red.id,match.blue.id].sort();if(!ids[0]||!ids[1]||ids[0]===ids[1])continue;const key=JSON.stringify(ids);if(!pairs.has(key))pairs.set(key,{key,red:ids[0],blue:ids[1]});}
+    const available=[...pairs.values()],choices=available.length>1?available.filter(pair=>pair.key!==previous):available;
+    return choices.length?{...choices[Math.min(choices.length-1,Math.floor(random()*choices.length))],onlyPair:available.length===1}:null;
+  }
   function unpack(value) {
     if(value?.version!==3 || !['competitions','participants','matches','excluded'].every(k=>Array.isArray(value[k])))throw Error('Otteluaineiston muoto ei kelpaa');
     const competitions=value.competitions;
@@ -172,9 +177,11 @@
     const excluded=bouts.excluded.map(m=>({competition:m.competition,people:new Set(m.people.map(id=>byResult.get(id)?.id).filter(Boolean))}));
     return {competitions:[...competitions.values()].sort((a,b)=>b.year-a.year||a.details.localeCompare(b.details,'fi')),people:[...people.values()].sort((a,b)=>a.name.localeCompare(b.name,'fi')),matches,excluded};
   }
+  let pickerController=null;
   async function init(data,registry) {
     if(initialized)return;
     if(!template)template=document.getElementById("bouts-view").cloneNode(true);
+    pickerController?.abort();pickerController=new AbortController();
     trial=await loadTrial();
     if(!['bouts-competition','bouts-results'].every(id=>document.getElementById(id)))throw Error('Sivun versio ei vastaa ottelukokeilua');
     const prepared=prepare(data,registry);
@@ -266,7 +273,7 @@
           active=event.key==='ArrowDown'?(active+1)%options.length:(active<=0?options.length-1:active-1);highlight();
         } else if(event.key==='Enter'&&!list.hidden&&options.length) {event.preventDefault();select(options[active>=0?active:0]);}
       });
-      document.addEventListener('click',event=>{if(!box.contains(event.target))close();});
+      document.addEventListener('click',event=>{if(!box.contains(event.target))close();},{signal:pickerController.signal});
       return {set(person){input.value=person?.name || '';close();},close};
     }
     const pa=picker('a',id=>{a=id;pb.close();render();}),pb=picker('b',id=>{b=id;render();});
@@ -350,12 +357,10 @@
     $('#bouts-swap').addEventListener('click',()=>{[a,b]=[b,a];pa.set(people.get(a));pb.set(people.get(b));$('#bouts-suggestions-status').textContent='Painijat vaihdettu keskenään.';render();});
     $('#bouts-clear').addEventListener('click',()=>{a=null;b=null;pa.set(null);pb.set(null);$('#bouts-suggestions-status').textContent='Valinnat tyhjennetty.';render();$('#bout-search-a').focus();});
     $('#bouts-example').addEventListener('click',()=>{
-      // Use original result IDs, so a later canonical name change cannot select another person.
-      const example=trial.matches.find(m=>m.red==='tulos-000502'&&m.blue==='tulos-000503');
-      const match=example&&prepared.matches.find(m=>m.id===example.id);
-      if(!match)return;
-      scope=match.competition.key;$('#bouts-competition').value=scope;
-      a=match.red.id;b=match.blue.id;pa.set(people.get(a));pb.set(people.get(b));setMode('pair');$('#bouts-suggestions-status').textContent='Esimerkkipari valittu.';
+      const selected=randomExample(prepared.matches.filter(inScope),lastExamplePair);
+      if(!selected){$('#bouts-suggestions-status').textContent='Näillä rajauksilla ei löydy vahvistettua keskinäistä ottelua. Kokeile muita rajauksia.';return;}
+      lastExamplePair=selected.key;a=selected.red;b=selected.blue;pa.set(people.get(a));pb.set(people.get(b));setMode('pair');
+      $('#bouts-suggestions-status').textContent=selected.onlyPair?'Rajauksissa on vain yksi keskenään otellut pari.':'Satunnainen keskenään otellut pari valittu.';
     });
     readState=()=>({mode,a,b,scope,year:chosenYear(),page:resultPage,queryA:$('#bout-search-a').value,queryB:$('#bout-search-b').value});
     restoreState=state=>{
@@ -376,8 +381,9 @@
     };
     initialized=true;$('#bouts-load-status').hidden=true;$('#bouts-retry').hidden=true;$('#bouts-app').hidden=false;render();
   }
-  if(typeof module==='object'&&module.exports){module.exports={unpack,prepare,words,distance,matchesName,matchesStrictly,createSearch,boutOutcome,yearlyBouts};return;}
+  if(typeof module==='object'&&module.exports){module.exports={randomExample,unpack,prepare,words,distance,matchesName,matchesStrictly,createSearch,boutOutcome,yearlyBouts};return;}
   window.PAINI_BOUTS=Object.freeze({isReady:()=>initialized,snapshot:()=>trial,validate:(data,registry,packed)=>prepare(data,registry,packed.version===2?packed:unpack(packed)),reset:packed=>{
+    pickerController?.abort();pickerController=null;
     if(template)document.getElementById('bouts-view').replaceChildren(...template.cloneNode(true).childNodes);
     initialized=false;trial=null;dataPromise=packed?Promise.resolve(packed.version===2?packed:unpack(packed)):null;readState=()=>null;restoreState=()=>{};
   },init,getState:()=>readState(),restore:state=>restoreState(state)});

@@ -255,7 +255,8 @@
         const c = copy(original), key = compKey(c); check(!seen.has(key), "Sama kilpailu on tuonnissa kahdesti."); seen.add(key);
         const sourceMatches=options.matchBySource && c.source?[...work.values()].filter(old=>old.source===c.source):[];
         check(sourceMatches.length<=1,'Sama lähdeosoite on useassa kilpailussa.');
-        const previous = work.get(key) || sourceMatches[0], oldGroups = new Map(), newCounts = new Map();
+        check(!sourceMatches[0]||!work.get(key)||work.get(key)===sourceMatches[0],'Kilpailun muuttunut nimi törmää toiseen kilpailuun. Tarkista lähdeosoitteet.');
+        const previous = sourceMatches[0] || work.get(key), oldGroups = new Map(), newCounts = new Map();
         (previous?.rows || []).forEach(r => { const k = rowKey(r); if (!oldGroups.has(k)) oldGroups.set(k, []); oldGroups.get(k).push(r); });
         c.rows.forEach(r => { const k = rowKey(r); newCounts.set(k, (newCounts.get(k) || 0) + 1); });
         c.rows.forEach(r => {

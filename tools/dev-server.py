@@ -7,7 +7,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
   address=urllib.parse.urlsplit(self.path)
   if address.path=='/api/database':
    try:
-    query=urllib.parse.parse_qs(address.query);root=pathlib.Path(self.directory);table=query.get('table',[None])[0];value=database.rows(root,table,query.get('page',[0])[0],query.get('query',[''])[0]) if table else database.stats(root);body=json.dumps(value,ensure_ascii=False).encode();self.send_response(200);self.send_header('Content-Type','application/json; charset=utf-8');self.end_headers();self.wfile.write(body)
+    query=urllib.parse.parse_qs(address.query);root=pathlib.Path(self.directory);table=query.get('table',[None])[0];value=database.rows(root,table,query.get('page',[0])[0],query.get('query',[''])[0],query.get('sort',['id-asc'])[0]) if table else database.stats(root);body=json.dumps(value,ensure_ascii=False).encode();self.send_response(200);self.send_header('Content-Type','application/json; charset=utf-8');self.end_headers();self.wfile.write(body)
    except (ValueError,OSError):self.send_error(400,'Tietokantapyyntö ei kelpaa')
    return
   parts=pathlib.PurePosixPath(urllib.parse.unquote(urllib.parse.urlsplit(self.path).path)).parts

@@ -128,7 +128,7 @@
 <p>Kun olet hyväksynyt muutokset, lataa kokonainen uusi data.js. Se sisältää myös aiemmat kilpailut.</p>
 <button id="undo-import" type="button" disabled>Peru viimeisin hyväksytty muutos</button>
 <button id="export" class="primary" type="button" disabled>Lataa data.js</button>
-<p class="hint">Ladattu tiedosto ei korvaa projektin tiedostoa automaattisesti. Säilytä vanha versio, siirrä lataamasi tiedosto alkuperäiseen painijasivusto-kansioon nimellä data.js ja tarkista sivu Safarissa. Lähetä muutos GitHubiin vasta tarkistuksen jälkeen.</p>
+<p class="hint">Ladattu tiedosto ei korvaa projektin tiedostoa automaattisesti. Säilytä vanha versio, siirrä lataamasi tiedosto alkuperäiseen painijasivusto-kansioon nimellä data.js ja tarkista sivu Safarissa. Pelkkä data.js-tiedoston lähettäminen ei päivitä julkista sivustoa: muodosta ensin yhteinen tietokanta ja julkiset hakutiedostot projektin vientityökaluilla (tools/shared-database.py build ja tools/export-bouts.cjs). Lähetä vasta tarkistuksen jälkeen myös muuttunut tietokantapaketti, tulokset-kansio ja julkiset manifestit GitHubiin. Julkaisu odottaa automaattisten testien onnistumista.</p>
 <p class="hint">Hyväksytyt muutokset ovat tämän ylläpitosivun muistissa, kunnes lataat uuden data.js. Sivun päivittäminen aloittaa uudelleen projektin nykyisestä tiedostosta. Säilytä päivitetty data.js ennen kuin avaat toisen ylläpitotyökalun. Samat etu- ja sukunimet yhdistetään automaattisesti, jos valinta on käytössä. Erottamispäätökset estävät uudelleenyhdistämisen.</p>
 </section>
 <noscript>Tämä työkalu tarvitsee JavaScriptin.</noscript>

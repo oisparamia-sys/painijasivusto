@@ -13,7 +13,7 @@
  const cache={async get(key){const store=await window.caches?.open('paini-data-v1');return (await store?.match(key))?.text();},async put(key,text){const store=await window.caches?.open('paini-data-v1');await store?.put(key,new Response(text));},async prune(keys){const store=await window.caches?.open('paini-data-v1');if(store)for(const request of await store.keys())if(!keys.includes(request.url))await store.delete(request);}};
  const hash=async text=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)))).map(n=>n.toString(16).padStart(2,'0')).join('');
  const scripts=new Map();
- function load(file){if(scripts.has(file))return scripts.get(file);const promise=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=new URL(file+'?v=20261127-styles2',base).href;script.onload=resolve;script.onerror=()=>{scripts.delete(file);script.remove();reject(Error(file));};document.head.append(script);});scripts.set(file,promise);return promise;}
+ function load(file){if(scripts.has(file))return scripts.get(file);const promise=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=new URL(file+'?v=20261128-fixes1',base).href;script.onload=resolve;script.onerror=()=>{scripts.delete(file);script.remove();reject(Error(file));};document.head.append(script);});scripts.set(file,promise);return promise;}
  let io;
  function canApply(){return !document.hidden&&!document.querySelector('#feedback-dialog[open]')&&!document.activeElement?.matches('input,textarea,select,[contenteditable=true]')&&!window.PAINI_PAGE_STATE?.busy();}
  async function applyPending(){
@@ -50,15 +50,17 @@
     if(!io){await load('data-access.js');io=window.PAINI_DATA_IO.create({base,fetch:request,hash,cache});}
     // Existing cached data remains a fallback if a network request or a partial Pages publication fails.
     let manifest,bundle,usingPrevious=false;
-    try{manifest=await io.manifest();bundle=await io.bundle(manifest);}catch(error){manifest=await io.previous();if(!manifest)throw error;bundle=await io.bundle(manifest);usingPrevious=true;}
+    const preview=manifest=>{if(!manifest.files?.home)return;load('home-preview.js').then(()=>io.file(manifest,'home')).then(text=>window.PAINI_HOME_PREVIEW?.render(JSON.parse(text))).catch(()=>{});};
+    try{manifest=await io.manifest();preview(manifest);bundle=await io.bundle(manifest);}catch(error){manifest=await io.previous();if(!manifest)throw error;preview(manifest);bundle=await io.bundle(manifest);usingPrevious=true;}
     await load('athlete-registry.js');window.PainiRegistry.validate(bundle.data);
     window.PAINI_SHARED_DATA=bundle.data;window.PAINI_COVERAGE=bundle.coverage;
     window.PAINI_DATA_ACCESS={current:manifest,bouts:async()=>JSON.parse(await io.file(window.PAINI_DATA_ACCESS.current,'bouts'))};
     for(const file of ['site-utils.js','search-assist.js','site-metrics.js','notifications.js','home-settings.js','site-features.js','script.js'])await load(file);
-    if(status){status.hidden=true;status.textContent='';}
+    if(!window.PAINI_PAGE_STATE?.capture||!window.PAINI_PAGE_STATE?.restore||!window.PAINI_PAGE_STATE?.validate)throw Error('Sovelluksen alustus ei valmistunut');
+    if(status){status.hidden=true;status.textContent='';delete status.dataset.kind;}
     active=manifest;io.clearMemory();await io.remember(active);window.dispatchEvent(new Event('paini-data-ready'));
     setNotice(usingPrevious?'Aiemmin ladatut tiedot ovat käytössä.':'Tiedot päivittyvät automaattisesti.');
-   }catch{if(status){status.hidden=false;status.dataset.kind='error';status.textContent='Tietoja ei voitu ladata. Tarkista verkkoyhteys. Latausta yritetään uudelleen yhteyden palattua.';}}
+   }catch{if(status){status.hidden=false;status.dataset.kind='error';status.textContent='Sivua ei voitu käynnistää. Päivitä sivu ja tarkista verkkoyhteys. Latausta yritetään uudelleen yhteyden palattua.';}}
   })().finally(()=>{starting=null;});return starting;
  }
  // Legacy cached HTML must not retain a manual refresh button or public comparison navigation.

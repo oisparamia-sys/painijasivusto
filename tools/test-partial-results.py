@@ -28,6 +28,15 @@ class PartialStandings(unittest.TestCase):
   self.assertEqual(result['warnings'][0]['unranked'],1)
  def test_category_total_conflict_keeps_the_existing_strict_rule(self):
   with self.assertRaisesRegex(ValueError,'osallistujamäärät eroavat'):run(html=category([('1.','A Testi')],count=2))
+ def test_stale_category_count_requires_matching_individual_weight_evidence(self):
+  page=category([('1.','A Testi'),('2.','B Testi')],count=3)+'<a href="FIN130.htm">30</a>'
+  individual=category([('1.','A Testi'),('2.','B Testi')])
+  pages={URL:HEADER+'<a href="FIN1tlges.htm">Pojat</a>',BASE+'FIN1tlges.htm':page,BASE+'FIN130.htm':individual}
+  with patch.object(L,'get',side_effect=lambda url:pages[url]):result=L.competition(URL)
+  self.assertEqual(result['pages'][0]['count'],2);self.assertEqual(result['warnings'][0]['excluded'],1)
+  self.assertIn('A Testi',result['text']);self.assertIn('B Testi',result['text'])
+  pages[BASE+'FIN130.htm']=category([('1.','Eri Testi'),('2.','B Testi')])
+  with patch.object(L,'get',side_effect=lambda url:pages[url]),self.assertRaises(ValueError):L.competition(URL)
  def test_unplaced_participants_alone_do_not_create_results(self):
   with self.assertRaisesRegex(ValueError,'vahvistettuja sijoituksia'):run(html=category([('','A Testi'),('','B Testi')]))
  def test_txt_only_standings_have_an_explicit_source_and_unknown_style(self):

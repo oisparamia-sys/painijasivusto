@@ -24,7 +24,7 @@
     return '# Kilpailuhaku\n\nLisätty '+state.added+', päivitetty '+state.changed+', ennallaan '+state.unchanged+'. Osittaisia kilpailuja '+partial.length+'. Hyväksyntäjonossa '+(state.pending||0)+' ehdotusta.\n\n'+
       groups.map(g=>g.title+': '+grouped[g.key].length+'.').join(' ')+'\n\n'+
       '## Lisätyt ja päivitetyt (täydellinen tuonti)\n\n'+list(state.changes.filter(c=>!c.partial).map(c=>c.title+' · '+c.details))+'\n\n'+
-      '## Osittain tuodut kilpailut\n\n'+list(partial.map(c=>c.title+' · '+c.details+' · mukana '+c.rows+' tulosta; osittaiset tai pois jätetyt painoluokat: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', ')))+'\n\n'+
+      '## Osittain tuodut kilpailut\n\n'+list(partial.map(c=>c.title+' · '+c.details+' · mukana '+c.rows+' tulosta; osittaiset tai pois jätetyt painoluokat: '+c.notes.map(n=>n.category+(n.weight?' '+n.weight+' kg':'')).join(', ')))+'\n\n'+
       groups.map(g=>'## '+g.title+' ('+grouped[g.key].length+')\n\n'+g.description+'\n\n'+list(grouped[g.key].map(errorLine))).join('\n\n')+'\n';
   }
   if (typeof module==='object' && module.exports) {
@@ -92,7 +92,7 @@
     const partial=Array.isArray(report.partial)?report.partial:[];
     summary.textContent='Haku tarkistettu '+time(report.checkedAt)+'. Lisätty yhteensä '+report.added+' kilpailua, päivitetty '+report.changed+', ennallaan '+report.unchanged+'. Hyväksyntäjonossa '+(report.pending||0)+' ehdotusta. Osittaisia kilpailuja '+(partial.length+legacy.length)+'. '+groups.map(g=>g.title+': '+grouped[g.key].length+'.').join(' ')+' Raportin aineistossa '+report.competitions+' kilpailua ja '+report.results.toLocaleString('fi-FI')+' tulosta.';
     for (const g of groups) { const count=$('#scan-'+g.key+'-count'); if(count)count.textContent=String(grouped[g.key].length); }
-    const partialLines=partial.map(c=>({source:c.source,text:c.title+' · '+c.details+' — mukana '+c.rows+' tulosta ('+({added:'lisätty tällä haulla',updated:'päivitetty tällä haulla',unchanged:'jo aineistossa, ennallaan'}[c.status]||'aineistossa')+'). Osittaiset tai pois jätetyt painoluokat: '+c.notes.map(n=>n.category+' '+n.weight+' kg').join(', ')}));
+    const partialLines=partial.map(c=>({source:c.source,text:c.title+' · '+c.details+' — mukana '+c.rows+' tulosta ('+({added:'lisätty tällä haulla',updated:'päivitetty tällä haulla',unchanged:'jo aineistossa, ennallaan'}[c.status]||'aineistossa')+'). Osittaiset tai pois jätetyt painoluokat: '+c.notes.map(n=>n.category+(n.weight?' '+n.weight+' kg':'')).join(', ')}));
     partialLines.push(...legacy.map(e=>({...errorItem(e),text:e.error+' (Vanhan raportin huomio; tuonnin tila vahvistuu seuraavalla haulla.)'})));
     for(const [selector,values] of [['#scan-changes',report.changes.filter(c=>!c.partial).map(c=>({source:c.source,text:(c.kind==='added'?'Lisätty: ':'Päivitetty: ')+c.title+' · '+c.details+' · '+c.rows+' tulosta'}))],['#scan-partial',partialLines],...groups.map(g=>['#scan-'+g.key,grouped[g.key].map(errorItem)]),['#scan-errors',blocked.map(errorItem)]]){
       const list=$(selector);if(!list)continue;

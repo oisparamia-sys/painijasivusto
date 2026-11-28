@@ -44,6 +44,7 @@
       if (!Array.isArray(window.PAINI_SHARED_DATA?.competitions)) throw new Error('data.js');
       await load('athlete-registry.js');
       if (!window.PainiRegistry) throw new Error('athlete-registry.js');
+      await load('admin-export.js?v=20261128-fixes1');
       await load('yllapito.js');
       window.dispatchEvent(new Event('paini-data-ready'));
     } catch (error) {

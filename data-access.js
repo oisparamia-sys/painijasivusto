@@ -4,6 +4,7 @@
  function validateManifest(value){
   if(![1,2].includes(value?.version)||!/^[a-f0-9]{64}$/.test(value.revision||''))throw Error('Aineiston versiotieto ei kelpaa');
   for(const [key,file]of Object.entries(names))if(value.files?.[key]?.file!==(key==='results'&&value.version===2?'tulokset/index.json':file)||!/^[a-f0-9]{64}$/.test(value.files[key].sha256||''))throw Error('Aineiston tiedostoviite ei kelpaa');
+  if(value.files.home&&(value.files.home.file!=='etusivu-aineisto.json'||!/^[a-f0-9]{64}$/.test(value.files.home.sha256||'')))throw Error('Etusivun tiedostoviite ei kelpaa');
   if(value.files.coverageHistory&&(value.files.coverageHistory.file!=='kattavuushistoria.json'||!/^[a-f0-9]{64}$/.test(value.files.coverageHistory.sha256||'')))throw Error('Kattavuushistorian tiedostoviite ei kelpaa');
   return value;
  }
@@ -28,15 +29,20 @@
   const partsByRevision=new Map();
   async function file(manifest,key){validateManifest(manifest);return entryFile(manifest.files[key]);}
   function validateParts(index){
-   if(index?.version!==1||!Array.isArray(index.parts)||index.parts.length>2000||!Number.isInteger(index.competitionCount)||!Number.isInteger(index.athleteCount))throw Error('Tulosaineiston osaluettelo ei kelpaa');
+   if(![1,2].includes(index?.version)||!Array.isArray(index.parts)||index.parts.length>2000||!Number.isInteger(index.competitionCount)||!Number.isInteger(index.athleteCount))throw Error('Tulosaineiston osaluettelo ei kelpaa');
    const seen=new Set();for(const p of index.parts){if(!['athletes','competitions'].includes(p.kind)||!/^tulokset\/(?:athletes|competitions)-[a-f0-9]{64}\.json$/.test(p.file)||!p.file.endsWith(p.sha256+'.json')||seen.has(p.file))throw Error('Aineiston osaviite ei kelpaa');seen.add(p.file);}
+  }
+  function unpackRows(value){
+   if(Array.isArray(value))return value;
+   if(!Array.isArray(value?.columns)||!Array.isArray(value.values)||value.columns.length>100||new Set(value.columns).size!==value.columns.length||value.columns.some(key=>typeof key!=='string'||['__proto__','constructor','prototype'].includes(key)))throw Error('Tulostaulukon sarakkeet eivät kelpaa');
+   return value.values.map(row=>{if(!Array.isArray(row)||row.length!==value.columns.length)throw Error('Tulostaulukon rivi ei kelpaa');return Object.fromEntries(value.columns.map((key,n)=>[key,row[n]]));});
   }
   async function results(manifest){
    const text=await file(manifest,'results');if(manifest.version===1)return parseResults(text);
    const index=JSON.parse(text);validateParts(index);const blocks=new Array(index.parts.length);let cursor=0;
    await Promise.all(Array.from({length:Math.min(4,index.parts.length)},async()=>{while(cursor<index.parts.length){const n=cursor++;blocks[n]=JSON.parse(await entryFile(index.parts[n]));}}));
    const competitions=[],athletes=[];
-   index.parts.forEach((p,n)=>{if(!Array.isArray(blocks[n]))throw Error('Aineiston osa ei kelpaa');if(p.kind==='athletes')athletes.push(...blocks[n]);else for(const e of blocks[n]){if(!Number.isInteger(e.index)||e.index<0||e.index>=index.competitionCount||!Array.isArray(e.rows))throw Error('Kilpailun osaviite ei kelpaa');if(!competitions[e.index])competitions[e.index]={...e.meta,rows:[]};else if(JSON.stringify(e.meta)!==JSON.stringify(Object.fromEntries(Object.entries(competitions[e.index]).filter(([k])=>k!=='rows'))))throw Error('Kilpailun osat eroavat');competitions[e.index].rows.push(...e.rows);}});
+   index.parts.forEach((p,n)=>{if(p.kind==='athletes')athletes.push(...unpackRows(blocks[n]));else {if(!Array.isArray(blocks[n]))throw Error('Aineiston osa ei kelpaa');for(const entry of blocks[n]){const e={...entry,rows:unpackRows(entry.rows)};if(!Number.isInteger(e.index)||e.index<0||e.index>=index.competitionCount||!Array.isArray(e.rows))throw Error('Kilpailun osaviite ei kelpaa');if(!competitions[e.index])competitions[e.index]={...e.meta,rows:[]};else if(JSON.stringify(e.meta)!==JSON.stringify(Object.fromEntries(Object.entries(competitions[e.index]).filter(([k])=>k!=='rows'))))throw Error('Kilpailun osat eroavat');competitions[e.index].rows.push(...e.rows);}}});
    if(competitions.filter(Boolean).length!==index.competitionCount||athletes.length!==index.athleteCount)throw Error('Aineiston osia puuttuu');
    partsByRevision.set(manifest.revision,index.parts);
    return {...index.metadata,competitions,athleteRegistry:{...index.registry,athletes}};

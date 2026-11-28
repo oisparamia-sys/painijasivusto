@@ -548,17 +548,18 @@
     try { data = R.undo(data); dirty = true; operationMode="overview";render(); say("Viimeisin muutos peruttiin. Lataa data.js tallentaaksesi myös perumisen.", "success"); }
     catch (error) { say(error.message, "error"); }
   });
-  $("#export-registry").addEventListener("click", () => {
+  let rebaseExport;
+  $("#export-registry").addEventListener("click", async () => {
     if (pending || !data) return;
     try {
-      const source = R.exportSource(data), url = URL.createObjectURL(new Blob([source], {type:"text/javascript;charset=utf-8"}));
+      const source = R.exportSource(await rebaseExport(data)), url = URL.createObjectURL(new Blob([source], {type:"text/javascript;charset=utf-8"}));
       const a = document.createElement("a"); a.href = url; a.download = "data.js"; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url),1000);
       say("data.js-lataus aloitettiin. Tarkista lataus ja korvaa projektikansion data.js. Muutokset eivät vielä ole GitHubissa. Älä käytä vanhassa ylläpitovälilehdessä olevaa aineistoa tämän päälle.", "success");
     } catch (error) { say("Vienti ei onnistunut: " + error.message,"error"); }
   });
   window.addEventListener("beforeunload", event => { if (dirty) { event.preventDefault(); event.returnValue = ""; } });
   try {
-    R.validate(window.PAINI_SHARED_DATA); data = window.PAINI_SHARED_DATA;
+    R.validate(window.PAINI_SHARED_DATA);rebaseExport=window.PAINI_ADMIN_EXPORT.capture(window.PAINI_SHARED_DATA); data = window.PAINI_SHARED_DATA;
     const initialPlan=R.namePlan(data);
     if(initialPlan.groups.length){data=R.autoMergeNames(data);dirty=true;}
     ["#person-search", "#person-list", "#only-unreviewed", "#duplicate-search", "#strong-search", "#kll-search"].forEach(selector => { $(selector).disabled = false; }); render();

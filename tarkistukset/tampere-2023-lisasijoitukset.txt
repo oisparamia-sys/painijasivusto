@@ -1,0 +1,44 @@
+Tarkistettu lisäys: Uolevi Setälän muistopainit, Tampere 6.5.2023
+
+35 aloittelijoiden sijoitusta, painoluokat 20, 23, 25, 28, 30, 36, 40, 50 ja 63 kg.
+Jokainen painoluokka tarkistettu sekä sarjan yhteisestä HTML-listasta että omasta painoluokan HTML-listasta.
+Lähde: https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm
+
+Testattu hyväksyntä: 40 402 → 40 437 sijoitusta. Kaikki vanhat tulosrivit ja tunnisteet säilyvät täsmälleen. Kaikki 56 803 ottelua säilyvät täsmälleen.
+Sarjaotsikon ero (36 vs. 35 osallistujaa) jää varoitukseksi. Ystävyyssarjan kaksi sijoittamatonta osallistujaa jäävät ennalleen.
+
+20 kg: 1. Noel Annala — KOOVEE
+20 kg: 2. Leevi Rantamäki — KOOVEE
+20 kg: 3. Väinö Lindholm — Porin Paini-Miehet
+20 kg: 4. Furkan-Oguz Abbassoy — Helsingin Paini-Miehet
+20 kg: 5. Aarne Enlund — Tampereen Painiseura
+23 kg: 1. Akseli Räikkä — Hyvinkään Painiklubi
+23 kg: 2. Paavo Leppänen — Nokian Pyry
+23 kg: 3. Thomas Vesterholm — Vaasan Voima-Veikot
+23 kg: 4. Aaron Roth — Nokian Pyry
+25 kg: 1. Vilperi Heikkilä — Rauman Voimailijat
+25 kg: 2. Noah Virtanen — Rauman Voimailijat
+25 kg: 3. Aatos Del Olmo — Jyvässeudun Paini-Ässät
+25 kg: 4. Oiva Alanen — Hyvinkään Painiklubi
+25 kg: 5. Hugo Orr — Tampereen Painiseura
+28 kg: 1. Nathan Czerniawska — Janakkalan Paini-Ilves
+28 kg: 2. Renny Hietaniemi — Alavuden Urheilijat
+28 kg: 3. Emil Ollila — Vaasan Toverit
+28 kg: 4. Linus Hynönen — Alavuden Urheilijat
+28 kg: 5. Niilo Loikkanen — Nokian Pyry
+30 kg: 1. Kasperi Kulmala — Tampereen Painiseura
+30 kg: 2. Urho Hirvelä — Rauman Voimailijat
+30 kg: 3. Niki Pärnänen — Nokian Pyry
+30 kg: 4. Eeli Tienhaara — Hyvinkään Painiklubi
+30 kg: 5. Leo Kannisto — Tampereen Painiseura
+36 kg: 1. Jeremias Rajakallio — Tampereen Painiseura
+36 kg: 2. Eero Komulainen — Tampereen Voimailijat
+36 kg: 3. Veeti Mäntynen — Viialan Pyry
+36 kg: 4. Eeti Alanen — Hyvinkään Painiklubi
+36 kg: 5. Otto Koivumäki — Nokian Pyry
+40 kg: 2. Lauri Linna — Tampereen Painiseura
+40 kg: 3. Ukko Ranki — Auranmaan Painiseura
+40 kg: 4. Oliver Niemi — Rauman Voimailijat
+50 kg: 1. Leo Toivonen — Auranmaan Painiseura
+50 kg: 2. Eetu Heikkilä — Rauman Voimailijat
+63 kg: 1. Lassi Viljanmaa — Tampereen Voimailijat

@@ -2,7 +2,7 @@
 (() => {
   const base = new URL('.', document.currentScript.src);
   const status = document.querySelector('#registry-status');
-  const version = '20261123-merge-undo2';
+  const version = '20261128-fixes1';
   function load(file) {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
@@ -20,6 +20,7 @@
       status.textContent = 'Aineisto ladattu. Valmistellaan ylläpitoa…';
       await load('athlete-registry.js?v=' + version);
       if (!window.PainiRegistry) throw new Error('athlete-registry.js');
+      await load('admin-export.js?v=20261128-fixes1');
       await load('painijat.js?v=' + version);
     } catch (error) {
       status.dataset.kind = 'error';

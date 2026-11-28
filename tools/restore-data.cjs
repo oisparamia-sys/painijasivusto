@@ -33,6 +33,16 @@ function prepare(root,number){
  const registryContext={window:{}};
  vm.runInNewContext(fs.readFileSync(path.join(root,'athlete-registry.js'),'utf8'),registryContext,{timeout:15000});
  const R=registryContext.window.PainiRegistry,data=context.window.PAINI_SHARED_DATA,bouts=context.window.PAINI_BOUTS_DATA;
+ // Never recycle a number that has existed in the current data or any snapshot.
+ // A restored result set is historical; the identity allocation ceiling is not.
+ const registries=[D.load(root).data.athleteRegistry];
+ for(const entry of store.versions.filter(v=>v.file==='data.js')){
+  const snapshot={window:{}};const runRef={refs:{'data.js':entry.sha256}};
+  try{vm.runInNewContext(archived(root,store,runRef,'data.js').toString('utf8'),snapshot,{timeout:15000});}catch(error){throw Error('Varmuuskopion tarkistus epäonnistui: '+error.message);}
+  registries.push(snapshot.window.PAINI_SHARED_DATA.athleteRegistry);
+ }
+ let raised=false;for(const field of ['nextAthlete','nextResult']){const value=Math.max(data.athleteRegistry[field],...registries.map(r=>r[field]));raised ||= value!==data.athleteRegistry[field];data.athleteRegistry[field]=value;}
+ if(raised)files.set('data.js',Buffer.from(R.exportSource(data)));
  R.validate(data);
  if(!bouts||bouts.version!==2)throw Error('Tallennuspisteen otteluaineisto puuttuu tai sen versio ei kelpaa');
  D.validateBouts(data,bouts,R);
@@ -43,7 +53,7 @@ function prepare(root,number){
   if(fs.existsSync(path.join(root,'tietokanta.sqlite.gz'))){fs.symlinkSync(path.resolve(root,'tietovarasto'),path.join(temp,'tietovarasto'),'dir');execFileSync(process.env.PAINI_PYTHON||'python3',[path.join(__dirname,'shared-database.py'),'build','--root',temp],{maxBuffer:1024*1024});}
   if(fs.existsSync(path.join(root,'kattavuushistoria.json')))fs.copyFileSync(path.join(root,'kattavuushistoria.json'),path.join(temp,'kattavuushistoria.json'));
   E.build(temp);
-  for(const file of ['ottelut-public.json','ottelut-manifest.json','kattavuus.json','aineisto-manifest.json'])files.set(file,fs.readFileSync(path.join(temp,file)));
+  for(const file of ['ottelut-public.json','ottelut-manifest.json','kattavuus.json','aineisto-manifest.json','etusivu-aineisto.json'])files.set(file,fs.readFileSync(path.join(temp,file)));
   for(const file of ['tietokanta.sqlite.gz','tietokanta-tila.json','database-public-index.json','database-issues.json'])if(fs.existsSync(path.join(temp,file)))files.set(file,fs.readFileSync(path.join(temp,file)));
   for(const file of fs.readdirSync(path.join(temp,'tulokset')))files.set('tulokset/'+file,fs.readFileSync(path.join(temp,'tulokset',file)));
  }finally{fs.rmSync(temp,{recursive:true,force:true});}

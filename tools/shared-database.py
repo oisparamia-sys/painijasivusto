@@ -1,32 +1,50 @@
 """One atomic SQLite store for verified standings, bouts and archived source evidence."""
-import argparse,contextlib,gzip,hashlib,json,pathlib,sqlite3,tempfile,os
+import argparse,contextlib,gzip,hashlib,json,pathlib,sqlite3,tempfile,os,unicodedata
 NAME='tietokanta.sqlite.gz'
-TABLES={'athlete_stats':('id','name','matches','wins','losses'),'competitions':('id','title','details'),'athletes':('id','name'),'placements':('id','athlete_id','competition_id','name','club','category','weight','place'),'matches':('id','competition_id','red','blue','winner','code','points','round'),'participants':('id','athlete_id','competition_id'),'issues':('id','source','reason'),'excluded':('id','competition_id','reason'),'source_versions':('id','source','sha256','fetched_at')}
+TABLES={'athlete_stats':('id','name','competitions','matches','wins','losses'),'competitions':('id','title','details'),'athletes':('id','name'),'placements':('id','athlete_id','competition_id','name','club','category','weight','place'),'matches':('id','competition_id','red','blue','winner','code','points','round'),'participants':('id','athlete_id','competition_id'),'issues':('id','source','reason'),'excluded':('id','competition_id','reason'),'source_versions':('id','source','sha256','fetched_at')}
 def js(path,marker):return json.JSONDecoder().raw_decode(path.read_text().split(marker,1)[1])[0]
 def encode(value):return json.dumps(value,ensure_ascii=False,separators=(',',':'))
+def cached_database(root):
+ source=(pathlib.Path(root)/NAME).resolve();st=source.stat()
+ directory=pathlib.Path(tempfile.gettempdir())/('paini-db-cache-'+str(os.getuid()))
+ directory.mkdir(mode=0o700,exist_ok=True)
+ if directory.is_symlink() or directory.stat().st_uid!=os.getuid() or directory.stat().st_mode & 0o077:raise ValueError('Tietokannan välimuistihakemisto ei ole yksityinen')
+ key=hashlib.sha256((str(source)+'|'+str((st.st_dev,st.st_ino,st.st_size,st.st_mtime_ns,st.st_ctime_ns))).encode()).hexdigest()
+ file=directory/(key+'.sqlite')
+ if not file.exists():
+  with tempfile.NamedTemporaryFile(dir=directory,delete=False) as stream:
+   temporary=pathlib.Path(stream.name)
+   try:stream.write(gzip.decompress(source.read_bytes()))
+   except BaseException:temporary.unlink();raise
+  temporary.replace(file)
+ return file
 @contextlib.contextmanager
 def connection(root):
- with tempfile.TemporaryDirectory(prefix='paini-db-read-') as temporary:
-  file=pathlib.Path(temporary)/'database.sqlite';file.write_bytes(gzip.decompress((pathlib.Path(root)/NAME).read_bytes()))
-  db=sqlite3.connect(file.as_uri()+'?mode=ro',uri=True)
-  try:yield db
-  finally:db.close()
+ file=cached_database(root)
+ db=sqlite3.connect(file.as_uri()+'?mode=ro',uri=True)
+ db.create_function('paini_fold',1,lambda value:unicodedata.normalize('NFKC',str(value)).casefold(),deterministic=True)
+ try:yield db
+ finally:db.close()
 def read(root):
  with connection(root) as db:return {**{key:json.loads(gzip.decompress(payload)) for key,payload in db.execute('select key,payload from documents')},'metadata':dict(db.execute('select key,value from metadata'))}
 def stats(root):
  with connection(root) as db:return {'version':1,'revision':db.execute("select value from metadata where key='revision'").fetchone()[0],'tables':{table:db.execute('select count(*) from '+table).fetchone()[0] for table in TABLES}}
-def rows(root,table,page=0,query=''):
+def rows(root,table,page=0,query='',sort='id-asc'):
  if table not in TABLES:raise ValueError('Tuntematon taulu')
- page=max(0,min(int(page),100000));query=str(query)[:200];columns=TABLES[table]
- where=' where '+' or '.join('cast('+c+' as text) like ? escape \'\\\'' for c in columns) if query else ''
+ field,_,direction=sort.rpartition('-')
+ if field not in TABLES[table] or direction not in ['asc','desc']:raise ValueError('Lajitteluperuste ei kelpaa')
+ page=max(0,min(int(page),100000));query=unicodedata.normalize('NFKC',str(query)[:200]).casefold();columns=TABLES[table]
+ where=' where '+' or '.join('paini_fold('+c+') like ? escape \'\\\'' for c in columns) if query else ''
  params=['%'+query.replace('\\','\\\\').replace('%','\\%').replace('_','\\_')+'%']*len(columns) if query else []
  with connection(root) as db:
   count=db.execute('select count(*) from '+table+where,params).fetchone()[0]
-  values=db.execute('select '+','.join(columns)+' from '+table+where+' order by id limit 50 offset ?',params+[page*50]).fetchall()
+  page=min(page,max(0,(count-1)//50))
+  order=('paini_fold('+field+')' if field in ['name','title','club','category'] else field)+' '+direction+', id asc'
+  values=db.execute('select '+','.join(columns)+' from '+table+where+' order by '+order+' limit 50 offset ?',params+[page*50]).fetchall()
   return {'columns':columns,'rows':values,'count':count,'page':page,'pageSize':50}
 def build(root='.'):
  root=pathlib.Path(root);a=root/'data.js';b=root/'ottelut-data.js';archive=root/'tietovarasto';history=archive/'lahdehistoria.jsonl';history_text=history.read_bytes().decode('utf-8') if history.exists() else ''
- revision=hashlib.sha256(b'v2\n'+a.read_bytes()+b.read_bytes()+history_text.encode()).hexdigest()
+ revision=hashlib.sha256(b'v3\n'+a.read_bytes()+b.read_bytes()+history_text.encode()).hexdigest()
  if (root/NAME).exists():
   with connection(root) as old:previous_revision=old.execute("select value from metadata where key='revision'").fetchone()[0]
   if previous_revision==revision:return stats(root)
@@ -47,7 +65,7 @@ def build(root='.'):
    union all
    select b.athlete_id,m.id,w.athlete_id,r.athlete_id from matches m join participants r on r.id=m.red join participants b on b.id=m.blue join participants w on w.id=m.winner where r.athlete_id<>b.athlete_id
   ), totals as(select athlete,count(*) as matches,sum(case when athlete=winner and athlete<>other then 1 else 0 end) as wins,sum(case when athlete<>winner and athlete<>other then 1 else 0 end) as losses from sides group by athlete)
-  select a.id,a.name,coalesce(t.matches,0) as matches,coalesce(t.wins,0) as wins,coalesce(t.losses,0) as losses from athletes a left join totals t on t.athlete=a.id;
+  select a.id,a.name,coalesce(c.competitions,0) as competitions,coalesce(t.matches,0) as matches,coalesce(t.wins,0) as wins,coalesce(t.losses,0) as losses from athletes a left join totals t on t.athlete=a.id left join (select athlete_id,count(distinct competition_id) as competitions from placements group by athlete_id) c on c.athlete_id=a.id;
   create table issues(id integer primary key,source text,reason text);
   create table excluded(id integer primary key,competition_id text references competitions(id),reason text);
   create table source_blobs(sha256 text primary key,content_gzip blob not null);
@@ -79,5 +97,5 @@ def build(root='.'):
   target=root/(NAME+'.tmp');target.write_bytes(gzip.compress(file.read_bytes(),compresslevel=6,mtime=0));target.replace(root/NAME)
  result=stats(root);(root/'tietokanta-tila.json').write_text(encode(result)+'\n');return result
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('action',choices=['build','read','stats','rows']);p.add_argument('--root',default='.');p.add_argument('--table',default='competitions');p.add_argument('--page',type=int,default=0);p.add_argument('--query',default='');a=p.parse_args()
- print(encode(build(a.root) if a.action=='build' else read(a.root) if a.action=='read' else stats(a.root) if a.action=='stats' else rows(a.root,a.table,a.page,a.query)))
+ p=argparse.ArgumentParser();p.add_argument('action',choices=['build','read','stats','rows']);p.add_argument('--root',default='.');p.add_argument('--table',default='competitions');p.add_argument('--page',type=int,default=0);p.add_argument('--query',default='');p.add_argument('--sort',default='id-asc');a=p.parse_args()
+ print(encode(build(a.root) if a.action=='build' else read(a.root) if a.action=='read' else stats(a.root) if a.action=='stats' else rows(a.root,a.table,a.page,a.query,a.sort)))

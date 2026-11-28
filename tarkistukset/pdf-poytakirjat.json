@@ -1,0 +1,3084 @@
+{
+  "records": [
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/Yst6.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Yst",
+        "weight": "6",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/FIN35018380835tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "d02ba3a31c3a820f56c0ec718dc2bf602e624fdc5414e0c8efff7c2fa39364cc",
+      "pages": 1,
+      "unknown": [
+        "ella forsell",
+        "lotte lahtinen"
+      ],
+      "seen": [
+        "lotte lahtinen",
+        "ella forsell"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/AT32.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Aloittelijat, Tytöt",
+        "weight": "32",
+        "included": 1,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595129tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "f1903bbbd9e5d943d64ff2ca5522ac700c27be1858df2d80a0740e53bab1d45f",
+      "pages": 1,
+      "unknown": [
+        "xxxxx"
+      ],
+      "seen": [
+        "xxxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/AT36.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Aloittelijat, Tytöt",
+        "weight": "36",
+        "included": 1,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595129tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "679154492db78e599cf641733fc1fd3bf20a5ee691ebe2e1c96693a1ab8ae0b5",
+      "pages": 1,
+      "unknown": [
+        "xxxx"
+      ],
+      "seen": [
+        "xxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/AP22.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Aloittelijat, Pojat",
+        "weight": "22",
+        "included": 5,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "964ff97d7790f75d6d75044c50703273f4197d8171605255468922503a4b4fae",
+      "pages": 1,
+      "unknown": [
+        "xxxx"
+      ],
+      "seen": [
+        "xxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/AP25.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Aloittelijat, Pojat",
+        "weight": "25",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "8eab3f45d3ba345efa21c87acdda78c2204d0eec83cabbdb0ef95743ac5d624d",
+      "pages": 1,
+      "unknown": [
+        "xxxx"
+      ],
+      "seen": [
+        "xxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/AP28.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Aloittelijat, Pojat",
+        "weight": "28",
+        "included": 7,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "b37c9aadf87d12a5991ad0da3b0b3ac3d1423fb80992074d697081cdf1aefb7b",
+      "pages": 1,
+      "unknown": [
+        "xxxxx"
+      ],
+      "seen": [
+        "xxxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/AP32.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Aloittelijat, Pojat",
+        "weight": "32",
+        "included": 10,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "168576744ff7f82e7ed64a07f1c12e49ccf3a15bc77912c8c373cbf3a8e574d2",
+      "pages": 1,
+      "unknown": [
+        "xxxxx"
+      ],
+      "seen": [
+        "xxxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/AP45.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Aloittelijat, Pojat",
+        "weight": "45",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595126tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "7ad09e68ee45b3ec263533704e52e3227d7a9fd94d6f30daf561a92c4050b3af",
+      "pages": 1,
+      "unknown": [
+        "xxxxx"
+      ],
+      "seen": [
+        "xxxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/dj34.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/indexFIN.htm",
+      "note": {
+        "category": "Pojat U9",
+        "weight": "34",
+        "included": 7,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/FIN146082240040tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "313dcbc8145ab39afcea05a68212de6725872f92d63832dcf69ce0a638a45964",
+      "pages": 1,
+      "unknown": [
+        "niilo vuorio",
+        "jesperi ala-seppälä"
+      ],
+      "seen": [
+        "jesperi ala-seppälä",
+        "niilo vuorio"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/dh62.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/indexFIN.htm",
+      "note": {
+        "category": "Pojat U15",
+        "weight": "62",
+        "included": 7,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/FIN146082240039tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "4d10aeadc5334084fc92053eefe086b1add0878e821bf9a05a701fe0416a89d7",
+      "pages": 1,
+      "unknown": [
+        "akseli sundell",
+        "väinö syri"
+      ],
+      "seen": [
+        "akseli sundell",
+        "väinö syri"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/YST50.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "50",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/FIN2441359364tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "255c36c11a430bc178ccb45981b37a4db45f9b525dee27db48a1c2983e504c00",
+      "pages": 1,
+      "unknown": [
+        "eetu juvonen1",
+        "peetu lundberg1"
+      ],
+      "seen": [
+        "eetu juvonen1",
+        "peetu lundberg1"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Tampere/YST57.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "57",
+        "included": 0,
+        "excluded": 4,
+        "unranked": 4,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Tampere/FIN17886990074tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "3d99260a126d71c00eec572104cc3d710ff30d46d22aaa80a9a26feed31d31f3",
+      "pages": 1,
+      "unknown": [
+        "jaro karttinen1",
+        "topi koskela1",
+        "juho niemi1",
+        "luca räikkönen1"
+      ],
+      "seen": [
+        "jaro karttinen1",
+        "topi koskela1",
+        "juho niemi1",
+        "luca räikkönen1"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/PO1.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat Ystävyysottelu",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/FIN127663347115tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "8a243a29d9c217cd8287b7daed8cd7ea9d1f2684031435085f1de8aeaf3dae67",
+      "pages": 1,
+      "unknown": [
+        "yst. leo vuorinen",
+        "yst. paavo tuominen"
+      ],
+      "seen": [
+        "yst. leo vuorinen",
+        "yst. paavo tuominen"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/YY39.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyys",
+        "weight": "39",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/FIN18041280014tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "2f1723957d32fd68fb9c48e4bdb68ed992c0231c842e5dbb6b8b300405e29eb8",
+      "pages": 1,
+      "unknown": [
+        "hilppa hulttinen y",
+        "alma casalegno y"
+      ],
+      "seen": [
+        "hilppa hulttinen y",
+        "alma casalegno y"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/YY60.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyys",
+        "weight": "60",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/FIN18041280014tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "db3c2228f0d4e1f78cd96cd9f0fdf5e9d55aa4350b23c14c2be69597e8160bc4",
+      "pages": 1,
+      "unknown": [
+        "menni haapalainen y",
+        "adele hoot y"
+      ],
+      "seen": [
+        "menni haapalainen y",
+        "adele hoot y"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/YST75.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "75",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/FIN2260913924tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "c5a507f4089da1bd1cdd8f9e36cd1556d9272efa4c6cf1b21d98496c4b2c15ff",
+      "pages": 1,
+      "unknown": [
+        "paavo pihlajamäki",
+        "luca räikkönen"
+      ],
+      "seen": [
+        "luca räikkönen",
+        "paavo pihlajamäki"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/TY1.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt Ystävyysottelu",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/FIN76774643214tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "589372f241a59b9ccafe5281444c2258498f4a9edc9473d77520e645dd745e01",
+      "pages": 1,
+      "unknown": [
+        "yst. malla tiainen",
+        "yst. aada poutanen"
+      ],
+      "seen": [
+        "yst. malla tiainen",
+        "yst. aada poutanen"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AT26.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokastytöt",
+        "weight": "26",
+        "included": 0,
+        "excluded": 5,
+        "unranked": 5,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131239tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "fd604d3bcb46dbcef515969ea927c054e3d3f47279120c792b5598a208f9c063",
+      "pages": 1,
+      "unknown": [
+        "riina salin",
+        "rianna nyman",
+        "eveliina kivelä",
+        "riina heikkilä",
+        "josephine hägglund"
+      ],
+      "seen": [
+        "riina salin",
+        "rianna nyman",
+        "eveliina kivelä",
+        "riina heikkilä",
+        "josephine hägglund"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AT28.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokastytöt",
+        "weight": "28",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131239tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "a15a48af0e6f7ad37c56935eee143a9b67c4f5096c90b7811667cad330d5d309",
+      "pages": 1,
+      "unknown": [
+        "senni vuojolainen",
+        "charlotta hägglund",
+        "ina kalliokoski"
+      ],
+      "seen": [
+        "senni vuojolainen",
+        "charlotta hägglund",
+        "ina kalliokoski"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AT33.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokastytöt",
+        "weight": "33",
+        "included": 0,
+        "excluded": 4,
+        "unranked": 4,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131239tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "5a3effef8138d78a5fe8505fb1f70788c96d108b2fe8aaece2fad45dbe7ad4f6",
+      "pages": 1,
+      "unknown": [
+        "pihka ojala",
+        "iiris kupari",
+        "helen kupari",
+        "ellinoora pellikka"
+      ],
+      "seen": [
+        "pihka ojala",
+        "iiris kupari",
+        "helen kupari",
+        "ellinoora pellikka"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AP23.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokaspojat",
+        "weight": "23",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "796cf16996976b6351b5e9712363796f12f24374d2527bb436c04f2e12976dba",
+      "pages": 1,
+      "unknown": [
+        "leevi malkola",
+        "joel kukkola",
+        "otso huhtala"
+      ],
+      "seen": [
+        "leevi malkola",
+        "joel kukkola",
+        "otso huhtala"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AP24.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokaspojat",
+        "weight": "24",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "d555772205109ccd0794b66e0ae8438bf6a315de6f04d3264efb61ec6a443a26",
+      "pages": 1,
+      "unknown": [
+        "veeti pokela",
+        "max mäki",
+        "jasper möttönen"
+      ],
+      "seen": [
+        "veeti pokela",
+        "max mäki",
+        "jasper möttönen"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AP26.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokaspojat",
+        "weight": "26",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "416d69020731749e529b9a73fa3175c601d0a53a934b41ae8f0109484f5bec63",
+      "pages": 1,
+      "unknown": [
+        "väinö kukkola",
+        "urho niemi",
+        "urho malinen"
+      ],
+      "seen": [
+        "väinö kukkola",
+        "urho niemi",
+        "urho malinen"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AP28.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokaspojat",
+        "weight": "28",
+        "included": 0,
+        "excluded": 5,
+        "unranked": 5,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "1416e0e79a2fe4155a558a3840d0e27ffba11703e7aa539d06d13615234e3e87",
+      "pages": 1,
+      "unknown": [
+        "onni huhtala",
+        "verneri hietala",
+        "urho korhonen",
+        "kalle ikäläinen",
+        "oliver vihelä"
+      ],
+      "seen": [
+        "onni huhtala",
+        "verneri hietala",
+        "urho korhonen",
+        "kalle ikäläinen",
+        "oliver vihelä"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AP29.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokaspojat",
+        "weight": "29",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "312a68f0bc313fbbb8191dcc6a7309640e7f99f0916797dccfb746d0bdd9c465",
+      "pages": 1,
+      "unknown": [
+        "aimo impiö",
+        "eesau kreivi",
+        "aleksi miettunen"
+      ],
+      "seen": [
+        "aimo impiö",
+        "eesau kreivi",
+        "aleksi miettunen"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AP31.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokaspojat",
+        "weight": "31",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "8c6a6b39cccfabd477e49309fa35697e935c599391a21d14b0036e95a055a947",
+      "pages": 1,
+      "unknown": [
+        "jalo typpö",
+        "benjamin niemi",
+        "benjamin saarelainen"
+      ],
+      "seen": [
+        "jalo typpö",
+        "benjamin niemi",
+        "benjamin saarelainen"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AP32.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokaspojat",
+        "weight": "32",
+        "included": 0,
+        "excluded": 6,
+        "unranked": 6,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "cf18f49648b21a0f3c828603fa77bc90c11eeae77b5741998d145b91653e8f06",
+      "pages": 1,
+      "unknown": [
+        "johannes lackman",
+        "roope kakko",
+        "mauri ronkanen",
+        "jasper viitanen",
+        "viljami viitanen",
+        "hugo salin"
+      ],
+      "seen": [
+        "johannes lackman",
+        "roope kakko",
+        "mauri ronkanen",
+        "jasper viitanen",
+        "viljami viitanen",
+        "hugo salin"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AP35.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokaspojat",
+        "weight": "35",
+        "included": 0,
+        "excluded": 5,
+        "unranked": 5,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "12c7b2ca66c44a8b0381d08abea4f85eb7d9bc165aabcff53fd89b20881a7323",
+      "pages": 1,
+      "unknown": [
+        "jere harju",
+        "elmeri tervo",
+        "rico kaijala",
+        "joa pehkonen",
+        "elo junttila"
+      ],
+      "seen": [
+        "jere harju",
+        "elmeri tervo",
+        "rico kaijala",
+        "joa pehkonen",
+        "elo junttila"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/AP61.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Alokaspojat",
+        "weight": "61",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131238tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "29748be193270d9e267d31fafa71bcb48b5f9698b3268788677d5139a61f9469",
+      "pages": 1,
+      "unknown": [
+        "akseli wills",
+        "elmeri moskuvaara",
+        "jaakko nurminen"
+      ],
+      "seen": [
+        "akseli wills",
+        "elmeri moskuvaara",
+        "jaakko nurminen"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/Yst60.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm",
+      "note": {
+        "category": "Freundschaftskämpfe",
+        "weight": "60",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/FIN61386790416tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "16b9e14b8616a87fa2b066d7cb5c9dbbbf3a94b695db9be589dba75bce078183",
+      "pages": 1,
+      "unknown": [
+        "sofia stenroth",
+        "paavo pihlajamäki2"
+      ],
+      "seen": [
+        "sofia stenroth",
+        "paavo pihlajamäki2"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/TY2.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt Ystävyysottelu",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838314tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "aeea4b645ab38be7a2292b842d155f6a05bd7b0bc3dd42aa62bed8f7e48e146b",
+      "pages": 1,
+      "unknown": [
+        "yst. loviisa harjuketo",
+        "yst. 2 aida lindfors"
+      ],
+      "seen": [
+        "yst. loviisa harjuketo",
+        "yst. 2 aida lindfors"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/TY3.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt Ystävyysottelu",
+        "weight": "3",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838314tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "9c25d880505860e883c853ec2fcb56a796b86efeff3eae0994d4f4774f03ca6d",
+      "pages": 1,
+      "unknown": [
+        "yst. ellen kangas",
+        "yst. aida lindfors"
+      ],
+      "seen": [
+        "yst. ellen kangas",
+        "yst. aida lindfors"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/Y1.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyyssarja",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/FIN13353537278tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "797a31ed4c0f8c968a16e2e7461e54a396ac8f42f31d6fbdaf426b35cdd192e9",
+      "pages": 1,
+      "unknown": [
+        "sofia safaei",
+        "alina halme"
+      ],
+      "seen": [
+        "sofia safaei",
+        "alina halme"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/Y2.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyyssarja",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/FIN13353537278tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "3f2f61ce91de8df5660698fea4fffb578c3175b9c67174c5fed76f728b928830",
+      "pages": 1,
+      "unknown": [
+        "netta pelkonen",
+        "saaga sorva"
+      ],
+      "seen": [
+        "netta pelkonen",
+        "saaga sorva"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/N32.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Nassikat",
+        "weight": "32",
+        "included": 3,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/FIN154841126322tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "4ec9838d1bc2027d36ddf0c34ed85d6fe764e0dd75fa8afa45d19d44201c89c2",
+      "pages": 1,
+      "unknown": [
+        "xxxxxx"
+      ],
+      "seen": [
+        "xxxxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/K40.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Karhunpennut",
+        "weight": "40",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/FIN154841126320tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "a6ef9879b342184cee9a06eec9cfb72fad306f4bc13009894326bca4348c725e",
+      "pages": 1,
+      "unknown": [
+        "xxxxx"
+      ],
+      "seen": [
+        "xxxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/T29.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Tytöt",
+        "weight": "29",
+        "included": 1,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/FIN154841126317tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "66a5cacc2d4ce568ed1f5b650e012955a7f48b029089d29d9acc1d04e4296d72",
+      "pages": 1,
+      "unknown": [
+        "xxxxxx"
+      ],
+      "seen": [
+        "xxxxxx"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240113_Nokia/PO50.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240113_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat Ystävyysottelu",
+        "weight": "50",
+        "included": 3,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240113_Nokia/FIN156571276715tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "b4cd06afd9d331503717a672d7a34a88145cb2b469bd2ffecee7e7470a43d479",
+      "pages": 1,
+      "unknown": [
+        "yst. roni kolu"
+      ],
+      "seen": [
+        "yst. roni kolu"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/YM53.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyys",
+        "weight": "53",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/FIN19728832012tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "cfecd4a243e3ef757a4f17036eade552329b1db59c2defdc6a482359154a9dfe",
+      "pages": 1,
+      "unknown": [
+        "venla vienola",
+        "laura talvensaari"
+      ],
+      "seen": [
+        "venla vienola",
+        "laura talvensaari"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/YM70.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyys",
+        "weight": "70",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/FIN19728832012tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "1dbe2ff1e293c4db24fad59999e2a97883793325dc1d5a1ee892cf19fa61505b",
+      "pages": 1,
+      "unknown": [
+        "tuomo autio",
+        "aran khaliqi"
+      ],
+      "seen": [
+        "tuomo autio",
+        "aran khaliqi"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/YM72.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyys",
+        "weight": "72",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/FIN19728832012tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "2e01705b5e2d8195baf32043ea4e7aa5f87f98b50cc6cf36230ecefd1f86ea67",
+      "pages": 1,
+      "unknown": [
+        "eetu heikkilä",
+        "moumin abdullah"
+      ],
+      "seen": [
+        "eetu heikkilä",
+        "moumin abdullah"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/YM77.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyys",
+        "weight": "77",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/FIN19728832012tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "b1b54cf6d6f0b5b0736e331f19641d064a176f700841ea8a019dfcf52a890550",
+      "pages": 1,
+      "unknown": [
+        "tuomo autio",
+        "jari sillgren"
+      ],
+      "seen": [
+        "tuomo autio",
+        "jari sillgren"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/PO1.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat Ystävyysottelu",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/FIN24309798415tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "10282effbe6b169d88106a12323dd4f79bd1aea381bdd275549dd98cfcc350f3",
+      "pages": 1,
+      "unknown": [
+        "yts. niila sulander",
+        "yst. otso ilomäki"
+      ],
+      "seen": [
+        "yts. niila sulander",
+        "yst. otso ilomäki"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/PO2.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat Ystävyysottelu",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/FIN24309798415tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "99cddbf542ba5b3d43a8357fe9149dfd577a37fe2bec7e2c55b36adff7ec0761",
+      "pages": 1,
+      "unknown": [
+        "yts. sulo paldanius",
+        "yts. abbas ahmadi"
+      ],
+      "seen": [
+        "yts. sulo paldanius",
+        "yts. abbas ahmadi"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/PO1.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat Ystävyysottelu",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN106367424015tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "f7db46f1aecdbf04d67fcd34a7066e264742beffa66a881d47f0b9f341134507",
+      "pages": 1,
+      "unknown": [
+        "yst. veikko rantala",
+        "yst. vilho sampolahti"
+      ],
+      "seen": [
+        "yst. veikko rantala",
+        "yst. vilho sampolahti"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/PO3.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat Ystävyysottelu",
+        "weight": "3",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN106367424015tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "ffc64f73970dd898ef2aef1b1fa7e0993e04f377691b111d7d32db5ce4bf0728",
+      "pages": 1,
+      "unknown": [
+        "yst. niila sulander",
+        "yst. otso ilomäki"
+      ],
+      "seen": [
+        "yst. niila sulander",
+        "yst. otso ilomäki"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/PO5.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat Ystävyysottelu",
+        "weight": "5",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN106367424015tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "cc84b43bff32bf6d96782f849a54790c384f67d66bd9bed7e74203be9bf59b6f",
+      "pages": 1,
+      "unknown": [
+        "yst. benzad ahmadi",
+        "yst. eetu juvonne"
+      ],
+      "seen": [
+        "yst. benzad ahmadi",
+        "yst. eetu juvonne"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/PO6.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat Ystävyysottelu",
+        "weight": "6",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN106367424015tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "8fbaedf201688efcdc5c8042b63e333a07128dcd2235611f70a845c03d1c99fb",
+      "pages": 1,
+      "unknown": [
+        "yst. alvar kulmala",
+        "yst. 2 vilho sampolahti"
+      ],
+      "seen": [
+        "yst. alvar kulmala",
+        "yst. 2 vilho sampolahti"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/TY1.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt Ystävyysottelu",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN106367424014tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "1443dd419f55b596385a930f6bdabeccc86d3ae531c4f85a11af4bfb777e5445",
+      "pages": 1,
+      "unknown": [
+        "milla tilli",
+        "yst. siiri aho"
+      ],
+      "seen": [
+        "milla tilli",
+        "yst. siiri aho"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260117_Nokia/PO20.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260117_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat Ystävyysottelu",
+        "weight": "20",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260117_Nokia/FIN176553203115tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "6fed07d37ad723b5cd32400a69f41a65f42083bcfdc0a0ba9a510b4140c59a90",
+      "pages": 1,
+      "unknown": [
+        "yst. malla tiainen",
+        "yst. paavo tuominen"
+      ],
+      "seen": [
+        "yst. malla tiainen",
+        "yst. paavo tuominen"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/Yst1.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/indexFIN.htm",
+      "note": {
+        "category": "Yst",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/FIN142625216039tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "19fdd804f760d0f923f84412c06d3dbb424094659eb67b36ecff748790996fb6",
+      "pages": 1,
+      "unknown": [
+        "timi ranne",
+        "emil tenev"
+      ],
+      "seen": [
+        "timi ranne",
+        "emil tenev"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/Yst2.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/indexFIN.htm",
+      "note": {
+        "category": "Yst",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/FIN142625216039tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "958615b966ac1a15e51730946a8435fc0942f7902dcfc0a1565819a4dc6d659f",
+      "pages": 1,
+      "unknown": [
+        "vilma jäntti",
+        "maikki pihlajamäki"
+      ],
+      "seen": [
+        "vilma jäntti",
+        "maikki pihlajamäki"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/E1.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+      "note": {
+        "category": "Extrat",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/FIN165949478344tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "443e115f11871733f75e105ae4b5d90fd5af0b62c1cdd0c5a77b5b5458e83a2a",
+      "pages": 1,
+      "unknown": [
+        "urho malinen",
+        "riina heikkilä"
+      ],
+      "seen": [
+        "urho malinen",
+        "riina heikkilä"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/E2.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+      "note": {
+        "category": "Extrat",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/FIN165949478344tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "193e899c64d3aaa6d077f5db7370d338b705b45dade48e9946e8ab22cc4ef70e",
+      "pages": 1,
+      "unknown": [
+        "riina heikkilä",
+        "venni yrjönheikki"
+      ],
+      "seen": [
+        "riina heikkilä",
+        "venni yrjönheikki"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/E3.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+      "note": {
+        "category": "Extrat",
+        "weight": "3",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/FIN165949478344tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "ab71ff43e2f967ec6ef9408cead634affb22effc97d2e5a9959224848325d85e",
+      "pages": 1,
+      "unknown": [
+        "urho malinen",
+        "eveliina kivelä"
+      ],
+      "seen": [
+        "urho malinen",
+        "eveliina kivelä"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/E4.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+      "note": {
+        "category": "Extrat",
+        "weight": "4",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/FIN165949478344tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "31d4231e7afa28d21efb530e99465e09a642c90854c0408489760c442dd9efa5",
+      "pages": 1,
+      "unknown": [
+        "eveliina kivelä",
+        "venni yrjönheikki"
+      ],
+      "seen": [
+        "venni yrjönheikki",
+        "eveliina kivelä"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/E5.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+      "note": {
+        "category": "Extrat",
+        "weight": "5",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/FIN165949478344tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "03675da05ad2105bad1e2495a5c600dc96978c5c768d5636fb89aef44fe0a1f5",
+      "pages": 1,
+      "unknown": [
+        "benjamin niemi",
+        "iina kalliokoski"
+      ],
+      "seen": [
+        "benjamin niemi",
+        "iina kalliokoski"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/E6.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+      "note": {
+        "category": "Extrat",
+        "weight": "6",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/FIN165949478344tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "364b8d6bf033f7d6cf71343b238e513f7454ec623a8265e6eb06131c3d27740d",
+      "pages": 1,
+      "unknown": [
+        "maikki pihlajamäki",
+        "emma patosalmi"
+      ],
+      "seen": [
+        "maikki pihlajamäki",
+        "emma patosalmi"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/E7.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm",
+      "note": {
+        "category": "Extrat",
+        "weight": "7",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/FIN165949478344tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "sha256": "446f86c6d568b0850c1abde83ec637fa853da38244f7d8e2a81f010be5eedcd0",
+      "pages": 1,
+      "unknown": [
+        "liisa lasanen",
+        "iida isokoski"
+      ],
+      "seen": [
+        "liisa lasanen",
+        "iida isokoski"
+      ],
+      "rankedCandidates": [],
+      "placementHeaderPages": 1
+    }
+  ],
+  "missing": [
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 17v",
+        "weight": "65",
+        "included": 1,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Tampere/FIN143280575921tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "U17 Tytöt Aluem.",
+        "weight": "28",
+        "included": 1,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/FIN116964595134tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/indexFIN.htm",
+      "note": {
+        "category": "Champions Cup U17",
+        "weight": "47",
+        "included": 4,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/FIN1499993623tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/indexFIN.htm",
+      "note": {
+        "category": "Champions Cup U17",
+        "weight": "71",
+        "included": 3,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/FIN1499993623tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "WW 17 NSC",
+        "weight": "57",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500734tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "WW 9",
+        "weight": "33",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500733tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "GR 12",
+        "weight": "33",
+        "included": 3,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "GR 12",
+        "weight": "36",
+        "included": 4,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "GR 12",
+        "weight": "52",
+        "included": 2,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "GR 12",
+        "weight": "57",
+        "included": 3,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500731tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "GR 9",
+        "weight": "23",
+        "included": 3,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500730tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "GR 9",
+        "weight": "25",
+        "included": 4,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500730tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "WW 12",
+        "weight": "38",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500728tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "GR 15",
+        "weight": "75",
+        "included": 3,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/FIN117839500726tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "50",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nokia/FIN131330086311tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu tytöt",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/FIN26993497630tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/FIN26993497629tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/FIN55029798421tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+      "note": {
+        "category": "Extra pojat",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940741tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+      "note": {
+        "category": "Extra pojat",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940741tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+      "note": {
+        "category": "Extra tytöt",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940740tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+      "note": {
+        "category": "Extra tytöt",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940740tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+      "note": {
+        "category": "Pojat U15",
+        "weight": "58",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940725tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm",
+      "note": {
+        "category": "Pojat U15",
+        "weight": "59",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/FIN175756940725tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260418_Pori/indexFIN.htm",
+      "note": {
+        "category": "Ystävyys",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260418_Pori/FIN79962969621tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Tytöt U11",
+        "weight": "40",
+        "included": 0,
+        "excluded": 5,
+        "unranked": 5,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131234tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U11",
+        "weight": "28",
+        "included": 0,
+        "excluded": 5,
+        "unranked": 5,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131231tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U11",
+        "weight": "35",
+        "included": 0,
+        "excluded": 6,
+        "unranked": 6,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131231tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U11",
+        "weight": "36",
+        "included": 0,
+        "excluded": 4,
+        "unranked": 4,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131231tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U11",
+        "weight": "44",
+        "included": 0,
+        "excluded": 5,
+        "unranked": 5,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131231tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Tytöt U13",
+        "weight": "42",
+        "included": 0,
+        "excluded": 4,
+        "unranked": 4,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131227tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U15",
+        "weight": "52",
+        "included": 0,
+        "excluded": 5,
+        "unranked": 5,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131225tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U9",
+        "weight": "30",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131224tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U9",
+        "weight": "33",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131224tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U13",
+        "weight": "40",
+        "included": 0,
+        "excluded": 4,
+        "unranked": 4,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U13",
+        "weight": "46",
+        "included": 0,
+        "excluded": 4,
+        "unranked": 4,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U13",
+        "weight": "49",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U13",
+        "weight": "52",
+        "included": 0,
+        "excluded": 4,
+        "unranked": 4,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm",
+      "note": {
+        "category": "Pojat U13",
+        "weight": "61",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/FIN294131219tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm",
+      "note": {
+        "category": "Extra",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/FIN173879334344tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm",
+      "note": {
+        "category": "Pojat 17v",
+        "weight": "65",
+        "included": 1,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/FIN61386790417tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm",
+      "note": {
+        "category": "Pojat 17vp",
+        "weight": "60",
+        "included": 4,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/FIN6138679043tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Tuusula/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "90",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Tuusula/FIN929489280_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/FIN2020827519_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/FIN2020827519_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/FIN223109504_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/FIN223109504_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "3",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/FIN223109504_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "4",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/FIN223109504_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "5",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/FIN223109504_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "3",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "4",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/FIN1636032896_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "41",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/FIN10872344312tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "30",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN170700838311tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "41",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/FIN17070083832tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Pojat U17",
+        "weight": "70",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217609tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Tytöt ja Pojat U15",
+        "weight": "47",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/FIN852217607tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "22",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/FIN3307196162tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "27",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/FIN3307196162tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "48",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/FIN3307196162tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "63",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/FIN3307196161tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "22",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386882tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "27",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386882tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "63",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/FIN6503386881tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Pojat U12",
+        "weight": "55",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/FIN21366951671tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Pojat U15",
+        "weight": "62",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/FIN21366951675tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240427_Vaasa/indexFIN.htm",
+      "note": {
+        "category": "Pojat 17-20 v",
+        "weight": "100",
+        "included": 0,
+        "excluded": 5,
+        "unranked": 5,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240427_Vaasa/FIN97873958423tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Tytöt U15",
+        "weight": "39",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/FIN13353537272tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Pojat U20",
+        "weight": "75",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/FIN13353537277tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Botniahalli/indexFIN.htm",
+      "note": {
+        "category": "GR13",
+        "weight": "80",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Botniahalli/FIN181589644738tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/DM/2022/FI/220506_Porvoo/indexFIN.htm",
+      "note": {
+        "category": "Miehet",
+        "weight": "77",
+        "included": 3,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/DM/2022/FI/220506_Porvoo/FIN195670054322tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Muhos/indexFIN.htm",
+      "note": {
+        "category": "Pojat U15",
+        "weight": "57",
+        "included": 1,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Muhos/FIN190826944024tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/indexFIN.htm",
+      "note": {
+        "category": "Pojat U9",
+        "weight": "26",
+        "included": 4,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/FIN124874367935tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/indexFIN.htm",
+      "note": {
+        "category": "Pojat U9",
+        "weight": "41",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/FIN124874367935tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "65",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/FIN1248743679_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu",
+        "weight": "68",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/FIN1248743679_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/LM/2024/FI/240120_LaihianMonitoimihalli/indexFIN.htm",
+      "note": {
+        "category": "WW15 Tytöt",
+        "weight": "41",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/LM/2024/FI/240120_LaihianMonitoimihalli/FIN157895103938tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu (P)",
+        "weight": "44",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/FIN1641079167_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu (P)",
+        "weight": "51",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/FIN1641079167_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu (T)",
+        "weight": "27",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/FIN1641079167_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelu (T)",
+        "weight": "60",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/FIN1641079167_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "22",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Nokia/FIN14852017912tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "48",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Nokia/FIN14852017912tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "24",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/FIN177595225511tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "63",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/FIN177595225511tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "75",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/FIN177595225511tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "22",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/FIN17759522552tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "27",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/FIN17759522552tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "85",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/FIN17759522552tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240113_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "70",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240113_Nokia/FIN156571276711tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "35",
+        "included": 0,
+        "excluded": 3,
+        "unranked": 3,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Nokia/FIN10634776322tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "56",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nokia/FIN90684659211tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "65",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nokia/FIN90684659211tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "48",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/FIN24309798411tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "42",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/FIN2430979842tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250219_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Pojat 9v",
+        "weight": "42",
+        "included": 4,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250219_Tampere/FIN118570227119tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250219_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Pojat 13v",
+        "weight": "54",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250219_Tampere/FIN118570227118tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "20",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN106367424011tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "34",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN106367424011tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "50",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN106367424011tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Pojat 12",
+        "weight": "56",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN106367424011tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "55",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/FIN10636742402tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260117_Nokia/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 12",
+        "weight": "41",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/260117_Nokia/FIN17655320312tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
+      "note": {
+        "category": "Tytöt 8v",
+        "weight": "29",
+        "included": 5,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576019tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
+      "note": {
+        "category": "YST Seka",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576018tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm",
+      "note": {
+        "category": "YST Seka 2",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/FIN98224576020tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm",
+      "note": {
+        "category": "FS U13 BOYS",
+        "weight": "50",
+        "included": 12,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/ENG41198425634tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm",
+      "note": {
+        "category": "WW U14 GIRLS",
+        "weight": "36",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/ENG41198425639tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm",
+      "note": {
+        "category": "WW U14 GIRLS",
+        "weight": "46",
+        "included": 10,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/ENG41198425639tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyys",
+        "weight": "37",
+        "included": 3,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764812tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Ystävyys",
+        "weight": "40",
+        "included": 2,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/FIN92378764812tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm",
+      "note": {
+        "category": "Super Finaali",
+        "weight": "130",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/FIN1247633792_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "note": {
+        "category": "Extra",
+        "weight": "1",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/FIN95685056045tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm",
+      "note": {
+        "category": "Extra",
+        "weight": "2",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/FIN95685056045tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2020/FI/200125_Jaervenpaeae/indexFIN.htm",
+      "note": {
+        "category": "Ystävyysottelut",
+        "weight": "23",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2020/FI/200125_Jaervenpaeae/FIN1811374464_tab.txt",
+        "reason": "Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2020/FI/200201_Tampere/indexFIN.htm",
+      "note": {
+        "category": "TUL Pojat 17v",
+        "weight": "69",
+        "included": 11,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2020/FI/200201_Tampere/FIN82338649617tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    },
+    {
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2020/FI/200307_Tampere/indexFIN.htm",
+      "note": {
+        "category": "Pojat 15",
+        "weight": "83",
+        "included": 0,
+        "excluded": 1,
+        "unranked": 1,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2020/FI/200307_Tampere/FIN9034714889tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "candidates": []
+    }
+  ],
+  "errors": [
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/YST T33.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/indexFIN.htm",
+      "note": {
+        "category": "YST Tytöt",
+        "weight": "33",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/FIN22717273618tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "error": "URL can't contain control characters. '/VT/2025/FI/251129_Kuru/YST T33.pdf' (found at least ' ')"
+    },
+    {
+      "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/YST T44.pdf",
+      "competition": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/indexFIN.htm",
+      "note": {
+        "category": "YST Tytöt",
+        "weight": "44",
+        "included": 0,
+        "excluded": 2,
+        "unranked": 2,
+        "source": "https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/FIN22717273618tlges.htm",
+        "reason": "Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu"
+      },
+      "error": "URL can't contain control characters. '/VT/2025/FI/251129_Kuru/YST T44.pdf' (found at least ' ')"
+    }
+  ]
+}

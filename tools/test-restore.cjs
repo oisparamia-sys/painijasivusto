@@ -37,7 +37,10 @@ test('preview lists impact without changing live files or snapshot history',()=>
 }));
 test('restore recovers identities, results and public bouts together and is itself reversible',()=>fixture(({root,older,newer})=>{
  const result=S.restore(root,1);assert.equal(result.applied,true);
- assert.deepEqual(contents(root),older);
+ const previous={window:{}};vm.runInNewContext(older['data.js'],previous);
+ const restored=D.load(root).data;
+ assert.deepEqual(JSON.parse(JSON.stringify(restored.competitions)),JSON.parse(JSON.stringify(previous.window.PAINI_SHARED_DATA.competitions)));
+ assert.ok(restored.athleteRegistry.nextAthlete>previous.window.PAINI_SHARED_DATA.athleteRegistry.nextAthlete);
  const state=D.load(root);state.R.validate(state.data);D.validateBouts(state.data,state.bouts,state.R);
  const packed=JSON.parse(fs.readFileSync(path.join(root,'ottelut-public.json')));
  assert.equal(packed.participants[0][1],state.bouts.participants[0].athleteId);
@@ -114,4 +117,11 @@ test('restoring a dataset preserves coverage history and publishes its verified 
  S.restore(root,1);
  assert.equal(fs.readFileSync(path.join(root,'kattavuushistoria.json'),'utf8'),text);
  const descriptor=JSON.parse(fs.readFileSync(path.join(root,'aineisto-manifest.json'))).files.coverageHistory;assert.equal(descriptor.sha256,require('node:crypto').createHash('sha256').update(text).digest('hex'));
+}));
+
+test('restore never gives an old athlete or result ID to a new person, even after a second restore',()=>fixture(({root})=>{
+ const before=D.load(root).data,ceiling=before.athleteRegistry.nextAthlete,resultCeiling=before.athleteRegistry.nextResult;
+ S.restore(root,1);S.restore(root,1);const state=D.load(root);
+ const next=R.importCompetitions(state.data,[{source:source.replace('Testi','Uusi'),title:'Uusi',fileInfo:'Testi',details:'Testi, 2.1.2026',rows:[{name:'Ville Uusi',club:'Seura',category:'Pojat',weight:'30',place:1}]}],{autoMergeNames:true});
+ const row=next.competitions.at(-1).rows[0];assert.ok(Number(row.athleteId.slice(8))>=ceiling);assert.ok(Number(row.resultId.slice(6))>=resultCeiling);
 }));

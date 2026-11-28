@@ -13,3 +13,11 @@ test('sharded public results preserve every row and stable identity while exclud
  const index=JSON.parse(fs.readFileSync(path.join(root,'tulokset/index.json')));index.parts[0].file='../data.js';const text=JSON.stringify(index);fs.writeFileSync(path.join(root,'tulokset/index.json'),text);manifest.files.results.sha256=await hash(text);offline=false;await assert.rejects(()=>io.bundle(manifest),/osaviite/);
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });
+
+test('repeated exports keep the last distinct publication available',()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'paini-previous-parts-'));
+ try{const data={version:1,updatedAt:'v1',competitions:[{title:'Test',details:'2020',rows:[{resultId:'tulos-1',athleteId:'painija-1',place:1}]}],athleteRegistry:{version:1,nextAthlete:2,nextResult:2,history:[],athletes:[{id:'painija-1',name:'Test'}]}};
+ build(data,root);const before=JSON.parse(fs.readFileSync(path.join(root,'tulokset/index.json')));data.updatedAt='v2';data.competitions[0].rows[0].place=2;build(data,root);build(data,root);
+ const previous=JSON.parse(fs.readFileSync(path.join(root,'tulokset/previous-index.json')));assert.deepEqual(previous,before);for(const p of before.parts)assert.ok(fs.existsSync(path.join(root,p.file)));
+ }finally{fs.rmSync(root,{recursive:true,force:true});}
+});

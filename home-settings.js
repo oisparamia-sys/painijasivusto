@@ -77,7 +77,7 @@
  function mount(next){if(!$('home-customize'))return;hooks=next;state=read(storage());renderControls();update(next);window.PAINI_NOTIFICATIONS?.mount(hooks.data,state.athletes,hooks.openProfile);
   for(const id of ['favorite-year','favorite-style'])$(id)?.addEventListener('change',()=>{renderSuggestions('athlete');renderSuggestions('club');});
   for(const kind of ['athlete','club'])$('home-find-'+kind).addEventListener('input',()=>renderSuggestions(kind));
-  $('home-reset').addEventListener('click',()=>{state=defaults();$('home-find-athlete').value='';$('home-find-club').value='';commit('#home-reset');if($('home-settings-status').textContent==='Etusivun valinnat tallennettu.')$('home-settings-status').textContent='Oletusnäkymä palautettu.';});
+  $('home-reset').addEventListener('click',()=>{state={...defaults(),athletes:state.athletes,clubs:state.clubs};$('home-find-athlete').value='';$('home-find-club').value='';commit('#home-reset');if($('home-settings-status').textContent==='Etusivun valinnat tallennettu.')$('home-settings-status').textContent='Oletusnäkymä palautettu.';});
   $('favorite-athlete')?.addEventListener('click',()=>{if(athleteId)toggleAthlete(athleteId);});$('favorite-club')?.addEventListener('click',()=>{if(clubId)toggleClub(clubId);});
   window.addEventListener('storage',event=>{if(event.key!==KEY&&event.key!==null)return;state=read(storage());window.PAINI_NOTIFICATIONS?.update(hooks.data,state.athletes);applyLayout();renderControls();renderSelected();renderFavorites();renderSuggestions('athlete');renderSuggestions('club');});
  }

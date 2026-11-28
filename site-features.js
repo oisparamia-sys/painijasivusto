@@ -35,7 +35,7 @@
   const query=$('#club-search').value,list=$('#club-list');list.replaceChildren();
   const year=$('#club-list-year')?.value,style=$('#club-list-style')?.value,kind=$('#club-list-kind')?.value;
   const found=clubList.filter(club=>window.PAINI_UTILS.matchesCompetitionQuery(club.name,query)&&(!kind||(kind==='kll'?club.onlyKll:!club.onlyKll))&&club.entries.some(e=>(!year||H.year(e.item)===year)&&(!style||H.style(e.item,e.result)===style)));$('#club-count').textContent='Lähdemerkintöjä: '+found.length;
-  for(const club of found){const entries=club.entries.filter(e=>(!year||H.year(e.item)===year)&&(!style||H.style(e.item,e.result)===style));const card=node('article',undefined,'feature-card');card.append(source('h3',club.name),node('p',new Set(entries.map(e=>e.result.athleteId)).size+' painijatunnusta · '+new Set(entries.map(e=>M.key(e.item))).size+' kilpailua'),action('Avaa seuran profiili',()=>{if($('#club-year'))$('#club-year').value=year||'';openClub(club.id);}));if(club.onlyKll)card.append(node('p','Vain KLL-lähteissä esiintyvä merkintä.','hint'));list.append(card);}
+  for(const club of found){const entries=club.entries.filter(e=>(!year||H.year(e.item)===year)&&(!style||H.style(e.item,e.result)===style));const card=node('article',undefined,'feature-card');card.append(source('h3',club.name),node('p',new Set(entries.map(e=>e.result.athleteId)).size+' painijatunnusta · '+new Set(entries.map(e=>M.key(e.item))).size+' kilpailua'),action('Avaa seuran profiili',()=>{if($('#club-year'))$('#club-year').value=year||'';openClub(club.id,true,true,style||'');}));if(club.onlyKll)card.append(node('p','Vain KLL-lähteissä esiintyvä merkintä.','hint'));list.append(card);}
  }
  function renderClubCoverage(){
   const club=clubList.find(c=>c.id===currentClub);if(!club)return;
@@ -43,18 +43,18 @@
   // entire bout history to this club without source-level affiliation proof.
   const box=$('#club-coverage');box.replaceChildren(node('p','Seuran tilastot lasketaan vain tämän seuramerkinnän tulosriveistä. Painijan muiden seurojen tuloksia ei lasketa seuran saavutuksiksi.','hint'));
  }
- function openClub(id,updateUrl=true){
-  if(!H)return false;const club=clubList.find(c=>c.id===id);if(!club)return false;currentClub=id;
+ function openClub(id,updateUrl=true,focus=true,style=clubStyle){
+  if(!H)return false;const club=clubList.find(c=>c.id===id);if(!club)return false;currentClub=id;clubStyle=style;
   if(updateUrl){const url=new URL(location.href);url.hash=new URLSearchParams({seura:id});history.pushState(null,'',url.href);}
   H.showView('club',false,false);$('#club-title').textContent=club.name;window.PAINI_HOME?.selectClub(id);
-  const year=$('#club-year').value;const entries=club.entries.filter(e=>!year||H.year(e.item)===year);
+  const year=$('#club-year').value;const entries=club.entries.filter(e=>(!year||H.year(e.item)===year)&&(!clubStyle||H.style(e.item,e.result)===clubStyle));
   const stats=$('#club-stats');stats.replaceChildren(stat('Painijatunnuksia',new Set(entries.map(e=>e.result.athleteId)).size),stat('Kilpailuja',new Set(entries.map(e=>M.key(e.item))).size),stat('Mitalisijoituksia',entries.filter(e=>e.result.place<=3).length));
   const people=new Map();for(const entry of entries){const id=entry.result.athleteId;if(!people.has(id))people.set(id,{name:entry.result.name,entries:[]});people.get(id).entries.push(entry);}
   const roster=$('#club-athletes');roster.replaceChildren();for(const [id,person] of [...people].sort((a,b)=>a[1].name.localeCompare(b[1].name,'fi'))){const li=node('li');const b=action(person.name,event=>H.openProfile(id,b));b.translate='no';li.append(b,node('span',' · '+person.entries.length+' tulosriviä'));roster.append(li);}
-  const years=new Map();for(const e of club.entries){const y=H.year(e.item);if(!years.has(y))years.set(y,[0,0,0,0]);const values=years.get(y);values[Math.min(e.result.place,4)-1]++;}
+  const years=new Map();for(const e of club.entries.filter(e=>!clubStyle||H.style(e.item,e.result)===clubStyle)){const y=H.year(e.item);if(!years.has(y))years.set(y,[0,0,0,0]);const values=years.get(y);values[Math.min(e.result.place,4)-1]++;}
   const body=$('#club-year-rows');body.replaceChildren();for(const [year,values] of [...years].sort((a,b)=>a[0].localeCompare(b[0],'fi'))){const tr=document.createElement('tr');[year,...values,values.reduce((a,b)=>a+b,0)].forEach((value,i)=>{const cell=node(i?'td':'th',String(value));if(!i)cell.scope='row';tr.append(cell);});body.append(tr);}
   const competitions=$('#club-competitions');competitions.replaceChildren();const seen=new Set();for(const e of [...entries].sort((a,b)=>H.date(b.item)-H.date(a.item))){if(seen.has(M.key(e.item)))continue;seen.add(M.key(e.item));const li=node('li');li.append(source('strong',e.item.title),source('p',e.item.details),node('p',String(entries.filter(entry=>M.key(entry.item)===M.key(e.item)).length)+' kilpailusijoitusta'),action('Näytä tulokset',()=>H.openCompetition(e.item)));competitions.append(li);}
-  renderClubCoverage();$('#club-title').focus();return true;
+  renderClubCoverage();if(focus)$('#club-title').focus();return true;
  }
  function profile(entries,id){
   if(!H)return;profileId=id;window.PAINI_HOME?.selectAthlete(id);const values=M.highlights(entries,H.date),parent=$('#career-highlights');parent.replaceChildren(node('h3','Uran kohokohdat tässä aineistossa'));
@@ -67,7 +67,7 @@
  }
  function init(hooks){
   if(!$('#home-view'))return;H=hooks;data=hooks.data;clubList=M.clubs(data);
-  $('#home-search-form').addEventListener('submit',event=>{event.preventDefault();$('#search').value=$('#home-search').value;$('#competition').value='';$('#result-year').value=$('#home-year')?.value||'';$('#result-style').value=$('#home-style')?.value||'';$('#club').value='';$('#category').value='';H.search();H.showView('results');});
+  $('#home-search-form').addEventListener('submit',event=>{event.preventDefault();$('#search').value=$('#home-search').value;$('#competition').value='';H.search();$('#result-year').value=$('#home-year')?.value||'';$('#result-style').value=$('#home-style')?.value||'';$('#club').value='';$('#category').value='';H.search();H.showView('results');});
   document.querySelectorAll('[data-open-view]').forEach(button=>button.addEventListener('click',()=>H.showView(button.dataset.openView)));
   $('#club-search').addEventListener('input',renderClubs);for(const id of ['club-list-year','club-list-kind','club-list-style'])$('#'+id)?.addEventListener('change',renderClubs);$('#club-year').addEventListener('change',()=>{if(currentClub)openClub(currentClub,false);});
   refreshFeatureYears();
@@ -77,7 +77,8 @@
   window.PAINI_SEARCH_ASSIST?.mount(data);
   window.PAINI_HOME?.mount({data,registry:window.PainiRegistry,clubs:clubList,date:H.date,year:H.year,style:H.style,utils:window.PAINI_UTILS,openProfile:id=>H.openProfile(id),openClub,openCompetition:H.openCompetition});
  }
- const capture=()=>!H?null:({club:currentClub,fields:Object.fromEntries(['home-search','club-search','club-year','home-year','home-style','club-list-year','club-list-style','club-list-kind','bouts-year','favorite-year','favorite-style'].map(id=>[id,$('#'+id).value]))});
- const restore=state=>{if(!state||!H)return;for(const [id,value]of Object.entries(state.fields||{})){const el=document.getElementById(id);if(el&&typeof value==='string')el.value=value;}if(state.club){currentClub=state.club;openClub(currentClub,false);}};
+ let clubStyle='';
+ const capture=()=>!H?null:({club:currentClub,clubStyle,fields:Object.fromEntries(['home-search','club-search','club-year','home-year','home-style','club-list-year','club-list-style','club-list-kind','bouts-year','favorite-year','favorite-style'].map(id=>[id,$('#'+id).value]))});
+ const restore=state=>{if(!state||!H)return;for(const [id,value]of Object.entries(state.fields||{})){const el=document.getElementById(id);if(el&&typeof value==='string')el.value=value;}if(state.club){currentClub=state.club;openClub(currentClub,false,false,state.clubStyle||'');}};
  window.PAINI_FEATURES={update:bundle=>{data=bundle.data;refreshFeatureYears();window.PAINI_SEARCH_ASSIST?.update(data);clubList=M.clubs(data);coverage=bundle.coverage;renderHome();renderClubs();renderCoverages();window.PAINI_HOME?.update({data,clubs:clubList});},init,profile,openClub,capture,restore,hashFor:view=>view==='club'?new URLSearchParams({seura:currentClub}).toString():null,onView:view=>{if(view==='clubs')renderClubs();},competitionCoverage:()=>{} /* Compatibility with an older cached script.js. */};
 })();

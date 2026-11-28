@@ -22,7 +22,7 @@
   window.scrollTo({top:0,left:0,behavior:'instant'});
  },true);
 
- document.addEventListener('submit',event=>{if(!window.PAINI_PAGE_STATE&&event.target.id==='home-search-form'){event.preventDefault();window.PAINI_PENDING_SEARCH=document.getElementById('home-search').value;document.getElementById('nav-results')?.click();}});
+ document.addEventListener('submit',event=>{if(!window.PAINI_PAGE_STATE&&event.target.id==='home-search-form'){event.preventDefault();window.PAINI_PENDING_SEARCH=document.getElementById('home-search').value;window.PAINI_PENDING_HOME_FILTERS={year:document.getElementById('home-year')?.value||'',style:document.getElementById('home-style')?.value||''};document.getElementById('nav-results')?.click();}});
  // Navigation is usable before the large result file or registry has arrived.
  document.addEventListener('click',event=>{
   if(window.PAINI_PAGE_STATE)return;

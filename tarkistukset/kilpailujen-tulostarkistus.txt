@@ -1,0 +1,1583 @@
+Kilpailujen lähdetarkistus 28.11.2026
+
+347/347 kilpailua tarkistettu alkuperäisistä lähteistä.
+40402 → 40437 sijoitusta; 35 käyttäjän hyväksymää lisäsijoitusta.
+0 lähteestä vahvistettua sijoitusta yhä tuomatta.
+347 osallistujalta puuttuu lähteessä numeerinen sijoitus. Lisäksi Tampereen 2023 sarjaotsikon osallistujamäärä eroaa vahvistetuista riveistä yhdellä.
+Osittaisia kilpailuja on yhä 60: nämä eivät automaattisesti tarkoita tuontivirhettä.
+345 ottelulähteiden merkintää tarkistettu 193 lähdesivusta: 319 ottelurivillä ei ole vahvistettua tulosta, 10 merkinnässä lähdehenkilön tunnistus ei ole yksikäsitteinen, 8 painoluokasta puuttuu ottelulinkki ja 8 painijasivua ei voitu avata. Näistä ei päätelty otteluita.
+
+TXT- ja HTML-lähteiden maiden sulkumerkinnät normalisoitiin vain vertailussa. Tallennettuja lähdenimiä ei muutettu. Epäselvät TXT-rivit säilyvät koneellisen raportin virheluettelossa; saman sarjan vahvistetut HTML-rivit tarkistettiin erikseen.
+
+Myös 59 saatavilla ollutta PDF-pöytäkirjaa tarkistettiin sijoitussarakkeen perusteella. Niistä ei löytynyt uusia sijoituksia HTML- ja TXT-lähteiden lisäksi. 2 PDF-linkkiä ei auennut, ja 119 osittaiselle painoluokalle ei löytynyt yksikäsitteistä PDF-linkkiä. PDF-todisteet on arkistoitu tietokantaan; erittely pdf-poytakirjat.json.
+
+KAIKKI KILPAILUT
+
+TARKISTETTU · Symppis painit · Karkkila, 15.2.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Karkkila/indexFIN.htm
+Aiemmin 33, nyt 33, lähteessä vahvistettu 33. Sijoittamattomia 0.
+
+TARKISTETTU · Tampereen Voimailijat Ikäkausikilpailut · Tampere, 8.3.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Tampere/indexFIN.htm
+Aiemmin 74, nyt 74, lähteessä vahvistettu 74. Sijoittamattomia 0.
+
+TARKISTETTU · Kr painin KLL SM-kilpailut · Ilmajoki, 17.5.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250517_Ilmajoki/indexFIN.htm
+Aiemmin 342, nyt 342, lähteessä vahvistettu 342. Sijoittamattomia 0.
+
+TARKISTETTU · TaPs painit 20.05.2025 · Tampere, 20.5.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250520_Tampere/indexFIN.htm
+Aiemmin 30, nyt 30, lähteessä vahvistettu 30. Sijoittamattomia 0.
+
+TARKISTETTU · TaPs painit 4.12.2025 · Tampere, 4.12.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251204_Tampere/indexFIN.htm
+Aiemmin 35, nyt 35, lähteessä vahvistettu 35. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit+Piirinmestaruuskisat · Vantaa, 26.4.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Vantaa/indexFIN.htm
+Aiemmin 103, nyt 103, lähteessä vahvistettu 103. Sijoittamattomia 0.
+
+TARKISTETTU · XXXII Ollin painit · Kouvola, 9.5.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Kouvola/indexFIN.htm
+Aiemmin 94, nyt 94, lähteessä vahvistettu 94. Sijoittamattomia 0.
+
+TARKISTETTU · Hyvinkää Open · Hyvinkää, 28.2.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260228_Hyvinkaeae/indexFIN.htm
+Aiemmin 93, nyt 93, lähteessä vahvistettu 93. Sijoittamattomia 0.
+
+TARKISTETTU · Kr painin KLL SM-kilpailut · Vantaa, 16.5.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260516_Vantaa/indexFIN.htm
+Aiemmin 370, nyt 370, lähteessä vahvistettu 370. Sijoittamattomia 0.
+
+TARKISTETTU · Finlandia Freestyle Cup · Hyvinkää, 10.10.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261010_Hyvinkaeae/indexFIN.htm
+Aiemmin 125, nyt 125, lähteessä vahvistettu 125. Sijoittamattomia 0.
+
+TARKISTETTU · Nuorten Suomi Cup (Helsingin Haka) · Helsinki, 17.10.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261017_Helsinki/indexFIN.htm
+Aiemmin 182, nyt 182, lähteessä vahvistettu 182. Sijoittamattomia 0.
+
+TARKISTETTU · Champions Cupin 5. osakilpailu · Helsinki, 31.1.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Helsinki/indexFIN.htm
+Aiemmin 25, nyt 25, lähteessä vahvistettu 25. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit · Porvoo, 7.2.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Porvoo/indexFIN.htm
+Aiemmin 56, nyt 56, lähteessä vahvistettu 56. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit (KarkU) · Karkkila, 21.3.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260321_Karkkila/indexFIN.htm
+Aiemmin 70, nyt 70, lähteessä vahvistettu 70. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet TUL vapaapainin mestaruusk. ja ikäkausik. · Tampere, 19.9.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260919_Tampere/indexFIN.htm
+Aiemmin 208, nyt 208, lähteessä vahvistettu 208. Sijoittamattomia 0.
+
+TARKISTETTU · VVV Cup XI · Vaasa, 17/10/2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261017_Vaasa/indexFIN.htm
+Aiemmin 118, nyt 118, lähteessä vahvistettu 118. Sijoittamattomia 0.
+
+TARKISTETTU · Salikisat · Järvenpää, 24.5.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220524_Jaervenpaeae/indexFIN.htm
+Aiemmin 23, nyt 23, lähteessä vahvistettu 23. Sijoittamattomia 0.
+
+TARKISTETTU · Kv. Kemi cup · Kemi, 17.9.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Kemi/indexFIN.htm
+Aiemmin 39, nyt 39, lähteessä vahvistettu 39. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit · Hyvinkää, 20.11.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221120_Hyvinkaeae/indexFIN.htm
+Aiemmin 56, nyt 56, lähteessä vahvistettu 56. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit JPI · Janakkala, 3.12.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Janakkala/indexFIN.htm
+Aiemmin 22, nyt 22, lähteessä vahvistettu 22. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit · Järvenpää, 17.12.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae/indexFIN.htm
+Aiemmin 38, nyt 38, lähteessä vahvistettu 38. Sijoittamattomia 0.
+
+TARKISTETTU · Poikien U17 Champions Cup salikisa · Järvenpää, 5.3.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230305_Jaervenpaeae/indexFIN.htm
+Aiemmin 47, nyt 47, lähteessä vahvistettu 47. Sijoittamattomia 0.
+
+TARKISTETTU · TP:n salikisat · Turku, 16.5.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230516_Turku/indexFIN.htm
+Aiemmin 24, nyt 24, lähteessä vahvistettu 24. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit (Haka) · Helsinki, 19.3.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230319_Helsinki/indexFIN.htm
+Aiemmin 69, nyt 69, lähteessä vahvistettu 69. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit · Hyvinkää, 3.9.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Hyvinkaeae/indexFIN.htm
+Aiemmin 35, nyt 35, lähteessä vahvistettu 35. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit · Lohja, 9.12.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja/indexFIN.htm
+Aiemmin 44, nyt 44, lähteessä vahvistettu 44. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit · Nummela, 20.1.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240120_Nummela/indexFIN.htm
+Aiemmin 50, nyt 50, lähteessä vahvistettu 50. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit · Hyvinkää, 16.3.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240316_Hyvinkaeae/indexFIN.htm
+Aiemmin 69, nyt 69, lähteessä vahvistettu 69. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit · Karkkila, 28.9.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240928_Karkkila/indexFIN.htm
+Aiemmin 46, nyt 46, lähteessä vahvistettu 46. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit(LoVo/NuVo) · Lohja, 26.10.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Lohja/indexFIN.htm
+Aiemmin 55, nyt 55, lähteessä vahvistettu 55. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit(Haka) · Helsinki, 9.11.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Helsinki/indexFIN.htm
+Aiemmin 56, nyt 56, lähteessä vahvistettu 56. Sijoittamattomia 0.
+
+TARKISTETTU · Nuorten Suomi Cup 1/6 + ikäkausikilpailut · Vantaa, 1.2.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Vantaa/indexFIN.htm
+Aiemmin 203, nyt 203, lähteessä vahvistettu 203. Sijoittamattomia 0.
+
+TARKISTETTU · Ikäkausikilpailut - Nuorten Suomi Cup · Kajaani, 24.5.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250524_Kajaani/indexFIN.htm
+Aiemmin 125, nyt 125, lähteessä vahvistettu 125. Sijoittamattomia 0.
+
+TARKISTETTU · Champions Cup 4/6 · Helsinki, 18.1.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Helsinki/indexFIN.htm
+Aiemmin 35, nyt 35, lähteessä vahvistettu 35. Sijoittamattomia 0.
+
+TARKISTETTU · Lohi-painit - Nuorten Suomi Cup 5/6 · Kotka, 11.10.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251011_Kotka/indexFIN.htm
+Aiemmin 127, nyt 127, lähteessä vahvistettu 127. Sijoittamattomia 0.
+
+TARKISTETTU · Kajaanin Juntta Ikäkausikilpailut · Kajaani, 12.2.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220212_Kajaani/indexFIN.htm
+Aiemmin 108, nyt 108, lähteessä vahvistettu 108. Sijoittamattomia 0.
+
+TARKISTETTU · Myhi-turnaus · Ilmajoki, 19.2.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220219_Ilmajoki/indexFIN.htm
+Aiemmin 244, nyt 244, lähteessä vahvistettu 244. Sijoittamattomia 0.
+
+TARKISTETTU · KLL:n mestaruuskilpailut, kr · Laihia, 21.-22.5.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220521_Laihia/indexFIN.htm
+Aiemmin 253, nyt 253, lähteessä vahvistettu 253. Sijoittamattomia 0.
+
+TARKISTETTU · Turun Voimamiesten ikäkausipainit · Turku, 28.5.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220528_Turku/indexFIN.htm
+Aiemmin 148, nyt 148, lähteessä vahvistettu 148. Sijoittamattomia 0.
+
+TARKISTETTU · Nuorisoturnaus · Ilmajoki, 24.9.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Ilmajoki/indexFIN.htm
+Aiemmin 145, nyt 145, lähteessä vahvistettu 145. Sijoittamattomia 0.
+
+TARKISTETTU · Raimo ja Esko Taskisen muistopainit · Kemi, 4.3.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230304_Kemi/indexFIN.htm
+Aiemmin 144, nyt 144, lähteessä vahvistettu 144. Sijoittamattomia 0.
+
+TARKISTETTU · TaVo:n ikäkausikilpailut · Tampere, 11.3.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230311_Tampere/indexFIN.htm
+Aiemmin 141, nyt 141, lähteessä vahvistettu 141. Sijoittamattomia 0.
+
+TARKISTETTU · NEPPARIN MUISTOPAINIT · Seinäjoki, 1.4.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Seinaejoki/indexFIN.htm
+Aiemmin 89, nyt 89, lähteessä vahvistettu 89. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet E-P:n pmkilpailut · Nurmo, 15.4.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nurmo/indexFIN.htm
+Aiemmin 145, nyt 145, lähteessä vahvistettu 145. Sijoittamattomia 0.
+
+TARKISTETTU · Joulumaapainit · Rovaniemi, 2.12.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231202_Rovaniemi/indexFIN.htm
+Aiemmin 129, nyt 129, lähteessä vahvistettu 129. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet U17 E-P:n pmkilpailut · Alavus, 17.2.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Alavus/indexFIN.htm
+Aiemmin 111, nyt 111, lähteessä vahvistettu 111. Sijoittamattomia 0.
+
+TARKISTETTU · International MYHI-Tournament · Ilmajoki, 24.2.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240224_Ilmajoki/indexFIN.htm
+Aiemmin 334, nyt 334, lähteessä vahvistettu 334. Sijoittamattomia 0.
+
+TARKISTETTU · Champions Cup 1/6 · Helsinki, 22.9.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240922_Helsinki/indexFIN.htm
+Aiemmin 39, nyt 39, lähteessä vahvistettu 39. Sijoittamattomia 0.
+
+TARKISTETTU · Nuoriso-turnaus · Ilmajoki, 28.9.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240928_Ilmajoki/indexFIN.htm
+Aiemmin 194, nyt 194, lähteessä vahvistettu 194. Sijoittamattomia 0.
+
+TARKISTETTU · Kotka-painit · Kotka, 24.2.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240224_Kotka/indexFIN.htm
+Aiemmin 80, nyt 80, lähteessä vahvistettu 80. Sijoittamattomia 0.
+
+TARKISTETTU · U15 & U20 vapaapainin SM-kilpailut · Jyväskylä, 26.11.2022
+https://turniereklassisch.ringerdb.de/DM/2022/FI/221126_Jyvaeskylae/indexFIN.htm
+Aiemmin 179, nyt 179, lähteessä vahvistettu 179. Sijoittamattomia 0.
+
+TARKISTETTU · XXVIII Ollin painit · Kouvola, 14.5.2022
+https://turniereklassisch.ringerdb.de/FT/2022/FI/220514_Kouvola/indexFIN.htm
+Aiemmin 138, nyt 138, lähteessä vahvistettu 138. Sijoittamattomia 0.
+
+TARKISTETTU · KLL:n mestaruuskilpailut, vapaapaini · Helsinki, 8.10.2022
+https://turniereklassisch.ringerdb.de/ST/2022/FI/221008_Helsinki/indexFIN.htm
+Aiemmin 233, nyt 233, lähteessä vahvistettu 233. Sijoittamattomia 0.
+
+TARKISTETTU · Kv. Raimo ja Esko Taskisen muistopainit · Kemi, 26.2.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220226_Kemi/indexFIN.htm
+Aiemmin 106, nyt 106, lähteessä vahvistettu 106. Sijoittamattomia 0.
+
+TARKISTETTU · Lounais-Suomen avoimet vp aluemestaruuskilpailut · Turku, 3.12.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Turku/indexFIN.htm
+Aiemmin 83, nyt 83, lähteessä vahvistettu 83. Sijoittamattomia 0.
+
+TARKISTETTU · U15 & U20 kr.room. painin SM-kilpailut · Kokkola, 9.4.2022
+https://turniereklassisch.ringerdb.de/DM/2022/FI/220409_Kokkola/indexFIN.htm
+Aiemmin 123, nyt 123, lähteessä vahvistettu 123. Sijoittamattomia 0.
+
+TARKISTETTU · U17 kr.room. painin SM-kilpailut · Vantaa, 24.4.2022
+https://turniereklassisch.ringerdb.de/DM/2022/FI/220424_Vantaa/indexFIN.htm
+Aiemmin 64, nyt 64, lähteessä vahvistettu 64. Sijoittamattomia 0.
+
+TARKISTETTU · U17 vapaapainin SM-kilpailut · Helsinki, 29.10.2022
+https://turniereklassisch.ringerdb.de/DM/2022/FI/221029_Helsinki/indexFIN.htm
+Aiemmin 88, nyt 88, lähteessä vahvistettu 88. Sijoittamattomia 0.
+
+TARKISTETTU · Miesten ja Naisten vapaapainin SM-kilpailut · Helsinki, 29.10.2022
+https://turniereklassisch.ringerdb.de/DM/2022/FI/221029_Helsinki1/indexFIN.htm
+Aiemmin 54, nyt 54, lähteessä vahvistettu 54. Sijoittamattomia 0.
+
+TARKISTETTU · SM-KILPAILUTAPAHTUMA · Kuortane OTC, 19.-21.5.2023
+https://turniereklassisch.ringerdb.de/DM/2023/FI/230519_KuortaneOTC/indexFIN.htm
+Aiemmin 266, nyt 266, lähteessä vahvistettu 266. Sijoittamattomia 0.
+
+TARKISTETTU · Rantapainin SM (Kotkan Painimiehet) · Kotka, 29.7.2023
+https://turniereklassisch.ringerdb.de/DM/2023/FI/230729_Kotka/indexFIN.htm
+Aiemmin 29, nyt 29, lähteessä vahvistettu 29. Sijoittamattomia 0.
+
+TARKISTETTU · SM-KILPAILUTAPAHTUMA, VP · Liikuntakeskus Pajulahti, 17.-19.11.2023
+https://turniereklassisch.ringerdb.de/DM/2023/FI/231117_LiikuntakeskusPajulahti/indexFIN.htm
+Aiemmin 320, nyt 320, lähteessä vahvistettu 320. Sijoittamattomia 0.
+
+TARKISTETTU · U17 SM-KILPAILUT, NP-VP-KR · Ilmajoki, 09.-10.3.2024
+https://turniereklassisch.ringerdb.de/DM/2024/FI/240309_Ilmajoki/indexFIN.htm
+Aiemmin 176, nyt 176, lähteessä vahvistettu 176. Sijoittamattomia 0.
+
+TARKISTETTU · U15 ja U20 kr.room. painin SM-kilpailut · Turku, 13.4.2024
+https://turniereklassisch.ringerdb.de/DM/2024/FI/240413_Turku/indexFIN.htm
+Aiemmin 158, nyt 158, lähteessä vahvistettu 158. Sijoittamattomia 0.
+
+TARKISTETTU · Kr.room. painin Suomenmestaruuskilpailut · Helsinki, 21.9.2024
+https://turniereklassisch.ringerdb.de/DM/2024/FI/240921_Helsinki/indexFIN.htm
+Aiemmin 46, nyt 46, lähteessä vahvistettu 46. Sijoittamattomia 0.
+
+TARKISTETTU · SM-kilpailu VP U15, U20, Miehet ja Naiset · Ylistaro, 05.-6.10.2024
+https://turniereklassisch.ringerdb.de/DM/2024/FI/241005_Ylistaro/indexFIN.htm
+Aiemmin 256, nyt 256, lähteessä vahvistettu 256. Sijoittamattomia 0.
+
+TARKISTETTU · Painin SM-kilpailut · Vaajakoski, 10.5.2025
+https://turniereklassisch.ringerdb.de/DM/2025/FI/250510_Vaajakoski/indexFIN.htm
+Aiemmin 43, nyt 43, lähteessä vahvistettu 43. Sijoittamattomia 0.
+
+TARKISTETTU · U15 & U20 kr.room. painin SM-kilpailut · Kajaani, 7.3.2026
+https://turniereklassisch.ringerdb.de/DM/2026/FI/260307_Kajaani/indexFIN.htm
+Aiemmin 133, nyt 133, lähteessä vahvistettu 133. Sijoittamattomia 0.
+
+TARKISTETTU · U17 Kr.Room. Painin SM-kilpailut · Haukipudas, 21.3.2026
+https://turniereklassisch.ringerdb.de/DM/2026/FI/260321_Haukipudas/indexFIN.htm
+Aiemmin 81, nyt 81, lähteessä vahvistettu 81. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Itä-Suomen aluemestaruuskilpailut, kr · Lappeenranta, 19.3.2022
+https://turniereklassisch.ringerdb.de/FT/2022/FI/220319_Lappeenranta/indexFIN.htm
+Aiemmin 83, nyt 83, lähteessä vahvistettu 83. Sijoittamattomia 0.
+
+TARKISTETTU · Länsi-Suomen avoimet vapaapainin aluem. kilpailut · Vaasa, Teeriniemen painisali, 25/11/2023
+https://turniereklassisch.ringerdb.de/LM/2023/FI/231028_Vaasa,Teeriniemenpainisali/indexFIN.htm
+Aiemmin 55, nyt 55, lähteessä vahvistettu 55. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Itä-Suomen aluemestaruuskilpailut, kr · Lappeenranta, 20.4.2024
+https://turniereklassisch.ringerdb.de/LM/2024/FI/240420_Lappeenranta/indexFIN.htm
+Aiemmin 86, nyt 86, lähteessä vahvistettu 86. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Itä-Suomen aluemestaruuskilpailut, kr · Lahti, 5.4.2025
+https://turniereklassisch.ringerdb.de/LM/2025/FI/250405_Lahti/indexFIN.htm
+Aiemmin 97, nyt 97, lähteessä vahvistettu 97. Sijoittamattomia 0.
+
+TARKISTETTU · Itä-Suomen aluemestaruuskilpailut, kr · Lappeenranta, 11.4.2026
+https://turniereklassisch.ringerdb.de/LM/2026/FI/260411_Lappeenranta/indexFIN.htm
+Aiemmin 82, nyt 82, lähteessä vahvistettu 82. Sijoittamattomia 0.
+
+TARKISTETTU · KLL:n mestaruuskilpailut, vapaapaini · Järvenpää, 25.10.2025
+https://turniereklassisch.ringerdb.de/ST/2025/FI/251025_Jaervenpaeae/indexFIN.htm
+Aiemmin 308, nyt 308, lähteessä vahvistettu 308. Sijoittamattomia 0.
+
+TARKISTETTU · KLL SM-kilpailut, vapaapaini · Hollola, 03.-4.10.2026
+https://turniereklassisch.ringerdb.de/ST/2026/FI/261003_Hollola/indexFIN.htm
+Aiemmin 308, nyt 308, lähteessä vahvistettu 308. Sijoittamattomia 0.
+
+TARKISTETTU · Lohi-painit · Kotka, 1.10.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Kotka/indexFIN.htm
+Aiemmin 48, nyt 48, lähteessä vahvistettu 48. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit (JäVo) · Järvenpää, 1.4.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae1/indexFIN.htm
+Aiemmin 52, nyt 52, lähteessä vahvistettu 52. Sijoittamattomia 0.
+
+TARKISTETTU · KLL:n mestaruuskilpailut, kr · Kokkola, 22.4.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230422_Kokkola/indexFIN.htm
+Aiemmin 293, nyt 293, lähteessä vahvistettu 293. Sijoittamattomia 0.
+
+TARKISTETTU · XXIX Ollin painit · Kouvola, 6.5.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Kouvola/indexFIN.htm
+Aiemmin 141, nyt 141, lähteessä vahvistettu 141. Sijoittamattomia 0.
+
+TARKISTETTU · Salikisat · Järvenpää, 23.5.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230523_Jaervenpaeae/indexFIN.htm
+Aiemmin 12, nyt 12, lähteessä vahvistettu 12. Sijoittamattomia 0.
+
+TARKISTETTU · Finlandia freestyle cup+Champions cup 3/6 · Järvenpää, 17.6.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230617_Jaervenpaeae/indexFIN.htm
+Aiemmin 76, nyt 76, lähteessä vahvistettu 76. Sijoittamattomia 0.
+
+TARKISTETTU · Av. LS, Häme ja Uusimaa aluemestaruuskilpailut · Rauma, 23.9.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230923_Rauma/indexFIN.htm
+Aiemmin 163, nyt 163, lähteessä vahvistettu 163. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit (JäVo) · Järvenpää, 7.10.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231007_Jaervenpaeae/indexFIN.htm
+Aiemmin 44, nyt 44, lähteessä vahvistettu 44. Sijoittamattomia 0.
+
+TARKISTETTU · Lohi-painit · Kotka, 7.10.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231007_Kotka/indexFIN.htm
+Aiemmin 92, nyt 92, lähteessä vahvistettu 92. Sijoittamattomia 0.
+
+TARKISTETTU · FFC +U17 CC · Hyvinkää, 14.10.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231014_Hyvinkaeae1/indexFIN.htm
+Aiemmin 112, nyt 112, lähteessä vahvistettu 112. Sijoittamattomia 0.
+
+TARKISTETTU · Pertsan Painit · Sodankylä, 28.10.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231028_Sodankylae/indexFIN.htm
+Aiemmin 68, nyt 68, lähteessä vahvistettu 68. Sijoittamattomia 0.
+
+TARKISTETTU · Kurun Ryhdin Marraspainit 2023 · Kuru, 4.11.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231104_Kuru/indexFIN.htm
+Aiemmin 56, nyt 56, lähteessä vahvistettu 56. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit (Haka) · Helsinki, 26.11.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231126_Helsinki/indexFIN.htm
+Aiemmin 49, nyt 49, lähteessä vahvistettu 49. Sijoittamattomia 0.
+
+TARKISTETTU · KLL:n mestaruuskilpailut, vapaapaini · Vaajakoski, 16.12.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231216_Vaajakoski/indexFIN.htm
+Aiemmin 285, nyt 285, lähteessä vahvistettu 285. Sijoittamattomia 0.
+
+TARKISTETTU · Mannin Matsit · Peräseinäjoki, 16.3.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240316_Peraeseinaejoki/indexFIN.htm
+Aiemmin 117, nyt 117, lähteessä vahvistettu 117. Sijoittamattomia 0.
+
+TARKISTETTU · OmaSportti -ikäkausikilpailut · Nurmo, 6.4.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nurmo/indexFIN.htm
+Aiemmin 130, nyt 130, lähteessä vahvistettu 130. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit(Haka) · Helsinki, 20.4.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240420_Helsinki/indexFIN.htm
+Aiemmin 75, nyt 75, lähteessä vahvistettu 75. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Piirinmestaruuskilpailut(Haka) · Helsinki, 20.4.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240420_Helsinki1/indexFIN.htm
+Aiemmin 55, nyt 55, lähteessä vahvistettu 55. Sijoittamattomia 0.
+
+TARKISTETTU · Nääshalli mestaruuskilpailu 24.4.2024 · Tampere, 24.4.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240424_Tampere/indexFIN.htm
+Aiemmin 36, nyt 36, lähteessä vahvistettu 36. Sijoittamattomia 0.
+
+TARKISTETTU · XXX Ollin painit · Kouvola, 4.5.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240504_Kouvola/indexFIN.htm
+Aiemmin 131, nyt 131, lähteessä vahvistettu 131. Sijoittamattomia 0.
+
+TARKISTETTU · Ikäkausikilpailut - Nuorten Suomi Cup 6/6 · Vantaa, 11.5.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240511_Vantaa/indexFIN.htm
+Aiemmin 152, nyt 152, lähteessä vahvistettu 152. Sijoittamattomia 0.
+
+TARKISTETTU · TaPs painit 23.5.2024 · Tampere, 23.5.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240523_Tampere/indexFIN.htm
+Aiemmin 22, nyt 22, lähteessä vahvistettu 22. Sijoittamattomia 0.
+
+TARKISTETTU · KUORTANE OTC JUNIOR TOURNAMENT · Kuortane OTC, 27.7.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240727_KuortaneOTC/indexFIN.htm
+Aiemmin 73, nyt 73, lähteessä vahvistettu 73. Sijoittamattomia 0.
+
+TARKISTETTU · Kalle Mäkinen Turnaus · Turku, 7.9.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240907_Turku/indexFIN.htm
+Aiemmin 375, nyt 375, lähteessä vahvistettu 375. Sijoittamattomia 0.
+
+TARKISTETTU · Kemi Cup · Kemi, 21.9.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240921_Kemi/indexFIN.htm
+Aiemmin 118, nyt 118, lähteessä vahvistettu 118. Sijoittamattomia 0.
+
+TARKISTETTU · FFC  ja Champions Cup 2/6 · Hyvinkää, 12.10.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241012_Hyvinkaeae/indexFIN.htm
+Aiemmin 94, nyt 94, lähteessä vahvistettu 94. Sijoittamattomia 0.
+
+TARKISTETTU · OP Keski-Suomi painiturnaus · Vaajakoski, 12.10.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241012_Vaajakoski/indexFIN.htm
+Aiemmin 39, nyt 39, lähteessä vahvistettu 39. Sijoittamattomia 0.
+
+TARKISTETTU · NEPPARIN MUISTOPAINIT · Seinäjoki, 19.10.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241019_Seinaejoki/indexFIN.htm
+Aiemmin 65, nyt 65, lähteessä vahvistettu 65. Sijoittamattomia 0.
+
+TARKISTETTU · Lohi-painit · Kotka, 26.10.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Kotka/indexFIN.htm
+Aiemmin 45, nyt 45, lähteessä vahvistettu 45. Sijoittamattomia 0.
+
+TARKISTETTU · Pertsan Painit · Sodankylä, 26.10.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241026_Sodankylae/indexFIN.htm
+Aiemmin 83, nyt 83, lähteessä vahvistettu 83. Sijoittamattomia 0.
+
+TARKISTETTU · Nääshalli painit  14.11.2024 · Tampere, 14.11.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241114_Tampere/indexFIN.htm
+Aiemmin 41, nyt 41, lähteessä vahvistettu 41. Sijoittamattomia 0.
+
+TARKISTETTU · Kurun Ryhdin Marraspainit 2024 · Kuru, 16.11.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241116_Kuru/indexFIN.htm
+Aiemmin 51, nyt 51, lähteessä vahvistettu 51. Sijoittamattomia 0.
+
+TARKISTETTU · KLL:n mestaruuskilpailut, vapaapaini · Rauma, 23.11.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241123_Rauma/indexFIN.htm
+Aiemmin 326, nyt 326, lähteessä vahvistettu 326. Sijoittamattomia 0.
+
+TARKISTETTU · CC 3/6+Symppispainit+Piirinmestaruuskisat · Järvenpää, 30.11.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241130_Jaervenpaeae/indexFIN.htm
+Aiemmin 135, nyt 135, lähteessä vahvistettu 135. Sijoittamattomia 0.
+
+TARKISTETTU · OmaSportti -ikäkausikilpailut · Nurmo, 5.4.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Nurmo/indexFIN.htm
+Aiemmin 149, nyt 149, lähteessä vahvistettu 149. Sijoittamattomia 0.
+
+TARKISTETTU · U17 kr.room. painin SM-kilpailut · Helsinki, 12.4.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250412_Helsinki/indexFIN.htm
+Aiemmin 81, nyt 81, lähteessä vahvistettu 81. Sijoittamattomia 0.
+
+TARKISTETTU · Avoin Uusimaa, Häme ja LS aluemestaruudet · Helsinki, 13.4.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250413_Helsinki/indexFIN.htm
+Aiemmin 120, nyt 120, lähteessä vahvistettu 120. Sijoittamattomia 0.
+
+TARKISTETTU · KOKKO-KALLE GAMES · Kokkola, 26.4.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Kokkola/indexFIN.htm
+Aiemmin 166, nyt 166, lähteessä vahvistettu 166. Sijoittamattomia 0.
+
+TARKISTETTU · XXXI Ollin painit · Kouvola, 3.5.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Kouvola/indexFIN.htm
+Aiemmin 120, nyt 120, lähteessä vahvistettu 120. Sijoittamattomia 0.
+
+TARKISTETTU · V Aikuisharrastajien painikilpailut · Helsinki, 10/05/2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250510_Helsinki/indexFIN.htm
+Aiemmin 34, nyt 34, lähteessä vahvistettu 34. Sijoittamattomia 0.
+
+TARKISTETTU · KUORTANE OTC JUNIOR TOURNAMENT · Kuortane OTC, 19.7.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250719_KuortaneOTC/indexFIN.htm
+Aiemmin 51, nyt 51, lähteessä vahvistettu 51. Sijoittamattomia 0.
+
+TARKISTETTU · Ikäkausikilpailut(HaKa/MuRi) · Pajulahti, 2.8.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250802_Pajulahti/indexFIN.htm
+Aiemmin 26, nyt 26, lähteessä vahvistettu 26. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Rantapainin SM-kilpailut · Helsinki, 09/08/2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250809_Helsinki/indexFIN.htm
+Aiemmin 91, nyt 91, lähteessä vahvistettu 91. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit (Haka) · Helsinki, 27.9.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250927_Helsinki/indexFIN.htm
+Aiemmin 68, nyt 68, lähteessä vahvistettu 68. Sijoittamattomia 0.
+
+TARKISTETTU · Nuoriso-turnaus · Ilmajoki, 27.9.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250927_Ilmajoki/indexFIN.htm
+Aiemmin 238, nyt 238, lähteessä vahvistettu 238. Sijoittamattomia 0.
+
+TARKISTETTU · Luoman Cup · Ylistaro, 04/10/2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251004_Ylistaro/indexFIN.htm
+Aiemmin 75, nyt 75, lähteessä vahvistettu 75. Sijoittamattomia 0.
+
+TARKISTETTU · VVV Cup X · Vaasa, 18/10/2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251018_Vaasa/indexFIN.htm
+Aiemmin 112, nyt 112, lähteessä vahvistettu 112. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit · Vantaa, 18.10.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251018_Vantaa/indexFIN.htm
+Aiemmin 68, nyt 68, lähteessä vahvistettu 68. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit (LoVo ja NuVo) · Lohja, 1.11.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251101_Lohja/indexFIN.htm
+Aiemmin 59, nyt 59, lähteessä vahvistettu 59. Sijoittamattomia 0.
+
+TARKISTETTU · L-S Aluemestaruuskilpailut Vp · Vaasa, 8.11.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251108_Vaasa/indexFIN.htm
+Aiemmin 188, nyt 188, lähteessä vahvistettu 188. Sijoittamattomia 0.
+
+TARKISTETTU · Yleisen sarjan ja U17 vapaa- ja naispainin SM · Janakkala, 15.-16.11.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251115_Janakkala/indexFIN.htm
+Aiemmin 181, nyt 181, lähteessä vahvistettu 181. Sijoittamattomia 0.
+
+TARKISTETTU · Tampere Cup · Tampere, 22.11.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Tampere/indexFIN.htm
+Aiemmin 177, nyt 177, lähteessä vahvistettu 177. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit + piirinmestaruus · Hyvinkää, 29.11.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Hyvinkaeae/indexFIN.htm
+Aiemmin 88, nyt 88, lähteessä vahvistettu 88. Sijoittamattomia 0.
+
+TARKISTETTU · HPM puuropainit 2025 · Helsinki, 19.12.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251219_Helsinki/indexFIN.htm
+Aiemmin 76, nyt 76, lähteessä vahvistettu 76. Sijoittamattomia 0.
+
+TARKISTETTU · TUL:n av. tyttöjen ja poikien mestaruuskilpailut · Kouvola, 31.1.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Kouvola/indexFIN.htm
+Aiemmin 139, nyt 139, lähteessä vahvistettu 139. Sijoittamattomia 0.
+
+TARKISTETTU · International MYHI-Tournament · Ilmajoki, 21.2.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260221_Ilmajoki/indexFIN.htm
+Aiemmin 340, nyt 340, lähteessä vahvistettu 340. Sijoittamattomia 0.
+
+TARKISTETTU · Revontulipainit 2026 · Sodankylä, 21.2.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260221_Sodankylae/indexFIN.htm
+Aiemmin 63, nyt 63, lähteessä vahvistettu 63. Sijoittamattomia 0.
+
+TARKISTETTU · PowerPark Painit, U17 E-P:n pm · Kauhava, 14.3.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260314_Kauhava/indexFIN.htm
+Aiemmin 141, nyt 141, lähteessä vahvistettu 141. Sijoittamattomia 0.
+
+TARKISTETTU · Eero Tapio Turnaus · Haukipudas, 22.3.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260322_Haukipudas/indexFIN.htm
+Aiemmin 139, nyt 139, lähteessä vahvistettu 139. Sijoittamattomia 0.
+
+TARKISTETTU · OmaSportti -ikäkausikilpailut · Nurmo, 11.4.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260411_Nurmo/indexFIN.htm
+Aiemmin 176, nyt 176, lähteessä vahvistettu 176. Sijoittamattomia 0.
+
+TARKISTETTU · Kokko Kalle Games 2026 · Kokkola, 25.4.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Kokkola/indexFIN.htm
+Aiemmin 188, nyt 188, lähteessä vahvistettu 188. Sijoittamattomia 0.
+
+TARKISTETTU · Lahti Junior Open · Lahti, 25.4.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Lahti/indexFIN.htm
+Aiemmin 164, nyt 164, lähteessä vahvistettu 164. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit + piirinmestaruus · Vantaa, 25.4.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260425_Vantaa/indexFIN.htm
+Aiemmin 97, nyt 97, lähteessä vahvistettu 97. Sijoittamattomia 0.
+
+TARKISTETTU · Aikuisharrastajien painikilpailut VII · Helsinki, 23.5.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260523_Helsinki/indexFIN.htm
+Aiemmin 41, nyt 41, lähteessä vahvistettu 41. Sijoittamattomia 0.
+
+TARKISTETTU · KUORTANE OTC JUNIOR TOURNAMENT · Kuortane OTC, 25.7.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260725_KuortaneOTC/indexFIN.htm
+Aiemmin 30, nyt 30, lähteessä vahvistettu 30. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Rantapainin SM-kilpailut 2026 · Helsinki, 08/08/2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260808_Helsinki/indexFIN.htm
+Aiemmin 85, nyt 85, lähteessä vahvistettu 85. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit (VaSa) · Vantaa, 12.9.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Vantaa/indexFIN.htm
+Aiemmin 49, nyt 49, lähteessä vahvistettu 49. Sijoittamattomia 0.
+
+TARKISTETTU · Nääshalli painit 22.10.2026 · Tampere, 22.10.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261022_Tampere/indexFIN.htm
+Aiemmin 46, nyt 46, lähteessä vahvistettu 46. Sijoittamattomia 0.
+
+TARKISTETTU · Pertsan Painit 2026 · Sodankylä, 24.10.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Sodankylae/indexFIN.htm
+Aiemmin 54, nyt 54, lähteessä vahvistettu 54. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 3.osakilpailu 2022 · Nokia, 12.3.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220312_Nokia/indexFIN.htm
+Aiemmin 59, nyt 59, lähteessä vahvistettu 59. Sijoittamattomia 0.
+
+TARKISTETTU · Mitalipainit · Vaasa, 23/03/2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220323_Vaasa/indexFIN.htm
+Aiemmin 67, nyt 67, lähteessä vahvistettu 67. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 4.osakilpailu 2022 · Nokia, 2.4.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220402_Nokia/indexFIN.htm
+Aiemmin 47, nyt 47, lähteessä vahvistettu 47. Sijoittamattomia 0.
+
+TARKISTETTU · Olavi Niemen muistopainit · Pori, 2.4.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220402_Pori/indexFIN.htm
+Aiemmin 120, nyt 120, lähteessä vahvistettu 120. Sijoittamattomia 0.
+
+TARKISTETTU · KOKKO-KALLE GAMES · Kokkola, 10.4.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220410_Kokkola/indexFIN.htm
+Aiemmin 217, nyt 217, lähteessä vahvistettu 217. Sijoittamattomia 0.
+
+TARKISTETTU · Ruissalon Painit · Turku, 2.7.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220702_Turku/indexFIN.htm
+Aiemmin 66, nyt 66, lähteessä vahvistettu 66. Sijoittamattomia 0.
+
+TARKISTETTU · Luoman Oy Cup · Ylistaro, 01/10/2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Ylistaro/indexFIN.htm
+Aiemmin 99, nyt 99, lähteessä vahvistettu 99. Sijoittamattomia 0.
+
+TARKISTETTU · Pertsan Painit - Nuorten Suomi Cupin osakilpailu · Sodankylä, 22/10/2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Sodankylae/indexFIN.htm
+Aiemmin 84, nyt 84, lähteessä vahvistettu 84. Sijoittamattomia 0.
+
+TARKISTETTU · Kurun Ryhdin Marraspainit 2022 · Kuru, 5.11.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221105_Kuru/indexFIN.htm
+Aiemmin 70, nyt 70, lähteessä vahvistettu 70. Sijoittamattomia 0.
+
+TARKISTETTU · Tampere Cup · Tampere, 19.11.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221119_Tampere/indexFIN.htm
+Aiemmin 111, nyt 111, lähteessä vahvistettu 111. Sijoittamattomia 0.
+
+TARKISTETTU · Eero Tapio Turnaus · Haukipudas, 25.3.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230325_Haukipudas/indexFIN.htm
+Aiemmin 132, nyt 132, lähteessä vahvistettu 132. Sijoittamattomia 0.
+
+TARKISTETTU · Olavi Niemen muistopainit · Pori, 1.4.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Pori/indexFIN.htm
+Aiemmin 127, nyt 127, lähteessä vahvistettu 127. Sijoittamattomia 0.
+
+TARKISTETTU · Tampere Cup · Tampere, 25.11.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231125_Tampere/indexFIN.htm
+Aiemmin 125, nyt 125, lähteessä vahvistettu 125. Sijoittamattomia 0.
+
+TARKISTETTU · Olavi Niemen muistopainit · Pori, 20.4.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240420_Pori/indexFIN.htm
+Aiemmin 99, nyt 99, lähteessä vahvistettu 99. Sijoittamattomia 0.
+
+TARKISTETTU · Barents Summer Games · Kemi, 25.8.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240825_Kemi/indexFIN.htm
+Aiemmin 40, nyt 40, lähteessä vahvistettu 40. Sijoittamattomia 0.
+
+TARKISTETTU · Tapsan Painit · Muhos, 7.9.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240907_Muhos/indexFIN.htm
+Aiemmin 97, nyt 97, lähteessä vahvistettu 97. Sijoittamattomia 0.
+
+TARKISTETTU · TaPs painit 28.11.2024 · Tampere, 28.11.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241128_Tampere/indexFIN.htm
+Aiemmin 29, nyt 29, lähteessä vahvistettu 29. Sijoittamattomia 0.
+
+TARKISTETTU · TWM ikäkausipainit · Turku, 7.6.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250607_Turku/indexFIN.htm
+Aiemmin 111, nyt 111, lähteessä vahvistettu 111. Sijoittamattomia 0.
+
+TARKISTETTU · Nääshalli painit 25.9.2025 · Tampere, 25.9.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250925_Tampere/indexFIN.htm
+Aiemmin 52, nyt 52, lähteessä vahvistettu 52. Sijoittamattomia 0.
+
+TARKISTETTU · Joulumaapainit · Rovaniemi, 29.11.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Rovaniemi/indexFIN.htm
+Aiemmin 120, nyt 120, lähteessä vahvistettu 120. Sijoittamattomia 0.
+
+TARKISTETTU · Nääshallin mestaruuskilpailut · Tampere, 15.4.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260415_Tampere/indexFIN.htm
+Aiemmin 41, nyt 41, lähteessä vahvistettu 41. Sijoittamattomia 0.
+
+TARKISTETTU · VVV Mitalipainit · Vaasa, 15/04/2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260415_Vaasa/indexFIN.htm
+Aiemmin 33, nyt 33, lähteessä vahvistettu 33. Sijoittamattomia 0.
+
+TARKISTETTU · Tapsan Painit · Muhos, 19.9.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260919_Muhos/indexFIN.htm
+Aiemmin 88, nyt 88, lähteessä vahvistettu 88. Sijoittamattomia 0.
+
+TARKISTETTU · Kamppailupäivät - SotUL 2023 · Sodankylä, 25.-26.10.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231025_Sodankylae/indexFIN.htm
+Aiemmin 59, nyt 59, lähteessä vahvistettu 59. Sijoittamattomia 0.
+
+TARKISTETTU · Kamppailupäivät - SotUL 2024 · Kankaanpää, 30.-31.10.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241030_Kankaanpaeae/indexFIN.htm
+Aiemmin 132, nyt 132, lähteessä vahvistettu 132. Sijoittamattomia 0.
+
+TARKISTETTU · TWM Ikäkausipainit · Turku, 6.6.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260606_Turku/indexFIN.htm
+Aiemmin 95, nyt 95, lähteessä vahvistettu 95. Sijoittamattomia 0.
+
+TARKISTETTU · Uolevi Setälän muistopainit · Tampere, 17.9.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220917_Tampere/indexFIN.htm
+Aiemmin 145, nyt 145, lähteessä vahvistettu 145. Sijoittamattomia 1.
+- Tytöt 17v 65 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · VVV Cup - Nuorten Suomi Cup · Vaasa, 12/11/2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221112_Vaasa/indexFIN.htm
+Aiemmin 260, nyt 260, lähteessä vahvistettu 260. Sijoittamattomia 2.
+- Yst 6 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Länsi-Suomen avoimet vapaapainin aluem. kilpailut · Vaasa, 03/12/2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221203_Vaasa/indexFIN.htm
+Aiemmin 88, nyt 88, lähteessä vahvistettu 88. Sijoittamattomia 9.
+- U17 Tytöt Aluem. 28 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Aloittelijat, Tytöt 32 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Aloittelijat, Tytöt 36 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Aloittelijat, Pojat 22 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Aloittelijat, Pojat 25 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Aloittelijat, Pojat 28 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Aloittelijat, Pojat 32 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Aloittelijat, Pojat 45 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Champions Cup osakilpailu 4/6 · Helsinki, 2.9.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230902_Helsinki/indexFIN.htm
+Aiemmin 32, nyt 32, lähteessä vahvistettu 32. Sijoittamattomia 2.
+- Champions Cup U17 47 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Champions Cup U17 71 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Nuorisoturnaus · Ilmajoki, 30.9.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Ilmajoki/indexFIN.htm
+Aiemmin 222, nyt 222, lähteessä vahvistettu 222. Sijoittamattomia 4.
+- Pojat U9 34 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat U15 62 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · VVV Cup - Nuorten Suomi Cup · Vaasa, Variskan koulu, 11/11/2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Vaasa/indexFIN.htm
+Aiemmin 203, nyt 203, lähteessä vahvistettu 203. Sijoittamattomia 11.
+- WW 17 NSC 57 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- WW 9 33 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- GR 12 33 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- GR 12 36 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- GR 12 52 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- GR 12 57 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- GR 9 23 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- GR 9 25 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- WW 12 38 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- GR 15 75 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 3.osakilpailu 2024 · Nokia, 6.4.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240406_Nokia/indexFIN.htm
+Aiemmin 76, nyt 76, lähteessä vahvistettu 76. Sijoittamattomia 1.
+- Pojat 12 50 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Pertti Ukkola Turnaus · Tampere, 18.5.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240518_Tampere/indexFIN.htm
+Aiemmin 118, nyt 118, lähteessä vahvistettu 118. Sijoittamattomia 2.
+- Ystävyysottelut 50 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Pertti Ukkola Turnaus · Ylöjärvi, 5.4.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250405_Tampere/indexFIN.htm
+Aiemmin 59, nyt 59, lähteessä vahvistettu 59. Sijoittamattomia 4.
+- Ystävyysottelut 57 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (4 tuomatta)
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 4.osakilpailu 2025 · Nokia, 3.5.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Nokia/indexFIN.htm
+Aiemmin 61, nyt 61, lähteessä vahvistettu 61. Sijoittamattomia 2.
+- Pojat Ystävyysottelu 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · ViVo Cup · Ylivieska, 3.5.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250503_Ylivieska/indexFIN.htm
+Aiemmin 95, nyt 95, lähteessä vahvistettu 95. Sijoittamattomia 4.
+- Ystävyysottelu tytöt 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelu 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Aikuisharrastajien painikilpailut VI · Helsinki, 22/11/2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251122_Helsinki/indexFIN.htm
+Aiemmin 21, nyt 21, lähteessä vahvistettu 21. Sijoittamattomia 2.
+- Ystävyysottelut 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Kurun Ryhdin Marraspainit 2025 · Kuru, 29.11.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251129_Kuru/indexFIN.htm
+Aiemmin 54, nyt 54, lähteessä vahvistettu 54. Sijoittamattomia 4.
+- YST Tytöt 33 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- YST Tytöt 44 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Raimo ja Esko Taskisen muistopainit · Kemi, 7.2.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Kemi/indexFIN.htm
+Aiemmin 171, nyt 171, lähteessä vahvistettu 171. Sijoittamattomia 12.
+- Extra pojat 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extra pojat 2 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extra tytöt 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extra tytöt 2 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat U15 58 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat U15 59 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Taisto Kangasniemen XXVI muistopainit · Tampere, 14.2.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260214_Tampere/indexFIN.htm
+Aiemmin 200, nyt 200, lähteessä vahvistettu 200. Sijoittamattomia 4.
+- Ystävyys 39 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyys 60 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Olavi Niemen muistopainit ja Lo-Suomen av. AM kilp · Pori, 18.4.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260418_Pori/indexFIN.htm
+Aiemmin 111, nyt 111, lähteessä vahvistettu 111. Sijoittamattomia 2.
+- Ystävyys 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Pertti Ukkola Turnaus · Tampere, 2.5.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260502_Tampere/indexFIN.htm
+Aiemmin 66, nyt 66, lähteessä vahvistettu 66. Sijoittamattomia 2.
+- Ystävyysottelut 75 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 4.osakilpailu 2026 · Nokia, 9.5.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Nokia/indexFIN.htm
+Aiemmin 61, nyt 61, lähteessä vahvistettu 61. Sijoittamattomia 2.
+- Tytöt Ystävyysottelu 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Vivo Cup · Ylivieska, 9.5.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260509_Ylivieska/indexFIN.htm
+Aiemmin 12, nyt 12, lähteessä vahvistettu 12. Sijoittamattomia 104.
+- Tytöt U11 40 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (5 tuomatta)
+- Pojat U11 28 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (5 tuomatta)
+- Pojat U11 35 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (6 tuomatta)
+- Pojat U11 36 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (4 tuomatta)
+- Pojat U11 44 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (5 tuomatta)
+- Alokastytöt 26 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (5 tuomatta)
+- Alokastytöt 28 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Alokastytöt 33 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (4 tuomatta)
+- Alokaspojat 23 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Alokaspojat 24 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Alokaspojat 26 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Alokaspojat 28 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (5 tuomatta)
+- Alokaspojat 29 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Alokaspojat 31 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Alokaspojat 32 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (6 tuomatta)
+- Alokaspojat 35 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (5 tuomatta)
+- Alokaspojat 61 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Tytöt U13 42 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (4 tuomatta)
+- Pojat U15 52 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (5 tuomatta)
+- Pojat U9 30 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Pojat U9 33 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Pojat U13 40 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (4 tuomatta)
+- Pojat U13 46 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (4 tuomatta)
+- Pojat U13 49 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+- Pojat U13 52 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (4 tuomatta)
+- Pojat U13 61 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+
+TARKISTETTU · Kemi Cup · Kemi, 12.9.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Kemi/indexFIN.htm
+Aiemmin 106, nyt 106, lähteessä vahvistettu 106. Sijoittamattomia 2.
+- Extra 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Tampere Cup · Lempäälä, 24.10.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261024_Lempaeaelae/indexFIN.htm
+Aiemmin 84, nyt 84, lähteessä vahvistettu 84. Sijoittamattomia 4.
+- Pojat 17v 65 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Freundschaftskämpfe 60 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat 17vp 60 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Kalle Mäkisen muistopainit · Turku, 10.9.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Turku/indexFIN.htm
+Aiemmin 301, nyt 301, lähteessä vahvistettu 301. Sijoittamattomia 0.
+
+TARKISTETTU · Järvenpää Cup (Penan painit) · Tuusula, 24.9.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220924_Tuusula/indexFIN.htm
+Aiemmin 146, nyt 146, lähteessä vahvistettu 146. Sijoittamattomia 2.
+- Ystävyysottelu 90 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Avoimet Uudenmaan aluemestaruuskilpailut vp · Janakkala, 22.10.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221022_Janakkala/indexFIN.htm
+Aiemmin 75, nyt 75, lähteessä vahvistettu 75. Sijoittamattomia 4.
+- Ystävyysottelu 1 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelu 2 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Turun Voimamiesten ikäkausipainit · Turku, 10.6.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230610_Turku/indexFIN.htm
+Aiemmin 106, nyt 106, lähteessä vahvistettu 106. Sijoittamattomia 0.
+
+TARKISTETTU · FFC 1 ja Champions Cup 5/6 · Laitila, 26/04/2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250426_Laitila/indexFIN.htm
+Aiemmin 75, nyt 75, lähteessä vahvistettu 75. Sijoittamattomia 10.
+- Ystävyysottelut 1 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelut 2 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelut 3 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelut 4 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelut 5 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Tapsan Painit · Muhos, 20.9.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Muhos/indexFIN.htm
+Aiemmin 127, nyt 127, lähteessä vahvistettu 127. Sijoittamattomia 0.
+
+TARKISTETTU · Luoman Cup · Ylistaro, 12/09/2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260912_Ylistaro/indexFIN.htm
+Aiemmin 142, nyt 142, lähteessä vahvistettu 142. Sijoittamattomia 0.
+
+TARKISTETTU · Nuoriso-turnaus · Ilmajoki, 26.9.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260926_Ilmajoki/indexFIN.htm
+Aiemmin 152, nyt 152, lähteessä vahvistettu 152. Sijoittamattomia 8.
+- Ystävyysottelu 1 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelu 2 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelu 3 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelu 4 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Helsinki Open 2022 · Helsinki, 10.-11.12.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221210_Helsinki/indexENG.htm
+Aiemmin 549, nyt 549, lähteessä vahvistettu 549. Sijoittamattomia 0.
+
+TARKISTETTU · Helsinki Open Wrestling Tournament 2023 · Helsinki, 02.-3.12.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231202_Helsinki/indexENG.htm
+Aiemmin 603, nyt 603, lähteessä vahvistettu 603. Sijoittamattomia 0.
+
+TARKISTETTU · Helsinki Open Wrestling Tournament 2024 · Helsinki, 14.-15.12.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241214_Helsinki/indexENG.htm
+Aiemmin 712, nyt 712, lähteessä vahvistettu 712. Sijoittamattomia 0.
+
+TARKISTETTU · VVV Mitalipainit · Vaasa, 28/10/2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261028_Vaasa/indexFIN.htm
+Aiemmin 60, nyt 60, lähteessä vahvistettu 60. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 2.osakilpailu 2026 · Nokia, 7.2.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260207_Nokia/indexFIN.htm
+Aiemmin 68, nyt 68, lähteessä vahvistettu 68. Sijoittamattomia 1.
+- Tytöt 12 41 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 3.osakilpailu 2026 · Nokia, 28.3.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260328_Nokia/indexFIN.htm
+Aiemmin 60, nyt 60, lähteessä vahvistettu 60. Sijoittamattomia 6.
+- Tytöt Ystävyysottelu 2 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Tytöt Ystävyysottelu 3 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat 12 30 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 41 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · TaPs painit 12.5.2026 · Tampere, 12.5.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260512_Tampere/indexFIN.htm
+Aiemmin 27, nyt 27, lähteessä vahvistettu 27. Sijoittamattomia 2.
+- Pojat U17 70 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt ja Pojat U15 47 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · FFC & Champions Cup 7/7 · Järvenpää, 13.6.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260613_Jaervenpaeae/indexFIN.htm
+Aiemmin 93, nyt 93, lähteessä vahvistettu 93. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Itä-Suomen aluemestaruuskilpailut(vp) · Simpele, 2.11.2024
+https://turniereklassisch.ringerdb.de/LM/2024/FI/241102_Simpele/indexFIN.htm
+Aiemmin 72, nyt 72, lähteessä vahvistettu 72. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Itä-Suomen AM-kilpailut · Simpele, 8.11.2025
+https://turniereklassisch.ringerdb.de/LM/2025/FI/251108_Simpele/indexFIN.htm
+Aiemmin 94, nyt 94, lähteessä vahvistettu 94. Sijoittamattomia 0.
+
+TARKISTETTU · OP Keski-Suomi painiturnaus · Vaajakoski, 5.3.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220305_Vaajakoski/indexFIN.htm
+Aiemmin 166, nyt 166, lähteessä vahvistettu 166. Sijoittamattomia 0.
+
+TARKISTETTU · Finlandia Freestyle Cup · Järvenpää, 18.6.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220618_Jaervenpaeae/indexFIN.htm
+Aiemmin 108, nyt 108, lähteessä vahvistettu 108. Sijoittamattomia 0.
+
+TARKISTETTU · Finlandia Freestyle Cup · Hyvinkää, 1.10.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221001_Hyvinkaeae/indexFIN.htm
+Aiemmin 127, nyt 127, lähteessä vahvistettu 127. Sijoittamattomia 0.
+
+TARKISTETTU · Finlandia freestyle cup+Champions cup · Tampere, 18.3.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Tampere/indexFIN.htm
+Aiemmin 123, nyt 123, lähteessä vahvistettu 123. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 3.osakilpailu 2023 · Nokia, 15.4.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230415_Nokia/indexFIN.htm
+Aiemmin 66, nyt 66, lähteessä vahvistettu 66. Sijoittamattomia 4.
+- Tytöt 12 22 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 27 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 48 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat 12 63 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 4.osakilpailu 2023 · Nokia, 13.5.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230513_Nokia/indexFIN.htm
+Aiemmin 74, nyt 74, lähteessä vahvistettu 74. Sijoittamattomia 3.
+- Tytöt 12 22 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 27 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat 12 63 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Järvenpää Cup, Penan Painit · Tuusula, 30.9.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230930_Tuusula/indexFIN.htm
+Aiemmin 104, nyt 104, lähteessä vahvistettu 104. Sijoittamattomia 0.
+
+TARKISTETTU · Itä-Suomen avoimet aluemestaruuskilpailut(KKV) · Kuopio, 11.11.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231111_Kuopio/indexFIN.htm
+Aiemmin 84, nyt 84, lähteessä vahvistettu 84. Sijoittamattomia 0.
+
+TARKISTETTU · Nääshalli mestaruuskilpailu 13.3.2024 · Tampere, 13.3.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240313_Tampere/indexFIN.htm
+Aiemmin 47, nyt 47, lähteessä vahvistettu 47. Sijoittamattomia 2.
+- Pojat U12 55 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat U15 62 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · KLL:n mestaruuskilpailut, kr · Vaasa, 27/04/2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240427_Vaasa/indexFIN.htm
+Aiemmin 325, nyt 325, lähteessä vahvistettu 325. Sijoittamattomia 5.
+- Pojat 17-20 v 100 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (5 tuomatta)
+
+TARKISTETTU · Finlandia freestyle cup · Järvenpää, 15.6.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240615_Jaervenpaeae/indexFIN.htm
+Aiemmin 83, nyt 83, lähteessä vahvistettu 83. Sijoittamattomia 0.
+
+TARKISTETTU · Nääshalli painit .10.10.2024 · Tampere, 10.10.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241010_Tampere/indexFIN.htm
+Aiemmin 46, nyt 46, lähteessä vahvistettu 46. Sijoittamattomia 7.
+- Tytöt U15 39 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Ystävyyssarja 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyyssarja 2 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat U20 75 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · VVV Cup · Mustasaari, Botniahalli, 09/11/2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/241109_Botniahalli/indexFIN.htm
+Aiemmin 200, nyt 200, lähteessä vahvistettu 200. Sijoittamattomia 2.
+- GR13 80 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · FFC & Champions Cup 6/6 · Järvenpää, 14.6.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250614_Jaervenpaeae/indexFIN.htm
+Aiemmin 51, nyt 51, lähteessä vahvistettu 51. Sijoittamattomia 0.
+
+TARKISTETTU · P. Asikaniuksen muistopainit / AM kilpailut · Järvenpää, 20.9.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250920_Jaervenpaeae/indexFIN.htm
+Aiemmin 159, nyt 159, lähteessä vahvistettu 159. Sijoittamattomia 0.
+
+TARKISTETTU · Tapsan Painit · Muhos, 10/09/2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/220910_Muhos/indexFIN.htm
+Aiemmin 92, nyt 92, lähteessä vahvistettu 92. Sijoittamattomia 0.
+
+TARKISTETTU · Kr.room. painin Suomenmestaruuskilpailut · Porvoo, 06.-7.5.2022
+https://turniereklassisch.ringerdb.de/DM/2022/FI/220506_Porvoo/indexFIN.htm
+Aiemmin 41, nyt 41, lähteessä vahvistettu 41. Sijoittamattomia 1.
+- Miehet 77 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Tapsan Painit 9.9. · Muhos, 9.9.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Muhos/indexFIN.htm
+Aiemmin 97, nyt 97, lähteessä vahvistettu 97. Sijoittamattomia 2.
+- Pojat U15 57 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Kalle Mäkinen turnaus · Turku, 9.9.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230909_Turku/indexFIN.htm
+Aiemmin 321, nyt 321, lähteessä vahvistettu 321. Sijoittamattomia 6.
+- Pojat U9 26 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat U9 41 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Ystävyysottelu 65 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelu 68 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · SM KILPAILUT U15/U20 · Kuortane OTC, 15.-16.3.2025
+https://turniereklassisch.ringerdb.de/DM/2025/FI/250315_KuortaneOTC/indexFIN.htm
+Aiemmin 289, nyt 289, lähteessä vahvistettu 289. Sijoittamattomia 0.
+
+TARKISTETTU · Miesten ja naisten painin SM-kilpailut · Vaajakoski, 23.-24.1.2026
+https://turniereklassisch.ringerdb.de/DM/2026/FI/260123_Vaajakoski/indexFIN.htm
+Aiemmin 68, nyt 68, lähteessä vahvistettu 68. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Itä-Suomen aluemestaruuskilpailut, kr · Lappeenranta, 25.2.2023
+https://turniereklassisch.ringerdb.de/LM/2023/FI/230225_Lappeenranta/indexFIN.htm
+Aiemmin 60, nyt 60, lähteessä vahvistettu 60. Sijoittamattomia 0.
+
+TARKISTETTU · SPTR Cup · Laihian Monitoimihalli, 20/01/2024
+https://turniereklassisch.ringerdb.de/LM/2024/FI/240120_LaihianMonitoimihalli/indexFIN.htm
+Aiemmin 143, nyt 143, lähteessä vahvistettu 143. Sijoittamattomia 1.
+- WW15 Tytöt 41 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Loppiaispainit · Järvenpää, 3.1.2026
+https://turniereklassisch.ringerdb.de/LM/2026/FI/260103_Jaervenpaeae/indexFIN.htm
+Aiemmin 136, nyt 136, lähteessä vahvistettu 136. Sijoittamattomia 0.
+
+TARKISTETTU · Loppiaispainit (Nuorten Suomi Cup) · Mäntsälä, 7.1.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230107_Maentsaelae/indexFIN.htm
+Aiemmin 128, nyt 128, lähteessä vahvistettu 128. Sijoittamattomia 8.
+- Ystävyysottelu (P) 44 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelu (P) 51 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelu (T) 27 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyysottelu (T) 60 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · International Herman Kare Tournament (UWW) · Kouvola, 14.1.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Kouvola/indexFIN.htm
+Aiemmin 40, nyt 40, lähteessä vahvistettu 40. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 1.osakilpailu 2023 · Nokia, 14.1.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230114_Nokia/indexFIN.htm
+Aiemmin 61, nyt 61, lähteessä vahvistettu 61. Sijoittamattomia 2.
+- Tytöt 12 22 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 48 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · SPTR Cup · Laihia, 21.1.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230121_Laihia/indexFIN.htm
+Aiemmin 168, nyt 168, lähteessä vahvistettu 168. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit(NuVo) · Nummela, 21.1.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230121_Nummela/indexFIN.htm
+Aiemmin 62, nyt 62, lähteessä vahvistettu 62. Sijoittamattomia 0.
+
+TARKISTETTU · T.Kangasniemen XXIII / TUL av.mestaruuspainit · Tampere, 28.1.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230128_Tampere/indexFIN.htm
+Aiemmin 224, nyt 224, lähteessä vahvistettu 224. Sijoittamattomia 0.
+
+TARKISTETTU · Kajaanin Juntan ikäkausipainit 2023 · Kajaani, 4.2.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230204_Kajaani/indexFIN.htm
+Aiemmin 111, nyt 111, lähteessä vahvistettu 111. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit · Lohja, 4.2.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230204_Lohja/indexFIN.htm
+Aiemmin 47, nyt 47, lähteessä vahvistettu 47. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 2.osakilpailu 2023 · Nokia, 11.2.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230211_Nokia/indexFIN.htm
+Aiemmin 77, nyt 77, lähteessä vahvistettu 77. Sijoittamattomia 6.
+- Pojat 12 24 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat 12 63 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat 12 75 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 22 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 27 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 85 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Kotka-painit · Kotka, 18.2.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230218_Kotka/indexFIN.htm
+Aiemmin 121, nyt 121, lähteessä vahvistettu 121. Sijoittamattomia 0.
+
+TARKISTETTU · Mitalipainit · Vaasa, 22/02/2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230222_Vaasa/indexFIN.htm
+Aiemmin 59, nyt 59, lähteessä vahvistettu 59. Sijoittamattomia 4.
+- Nassikat 32 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Karhunpennut 40 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 29 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Myhi-turnaus · Ilmajoki, 25.2.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230225_Ilmajoki/indexFIN.htm
+Aiemmin 361, nyt 361, lähteessä vahvistettu 361. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Häme, Uusimaa ja LS aluemestaruuskilpailut · Aura, 4.3.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230304_Aura/indexFIN.htm
+Aiemmin 115, nyt 115, lähteessä vahvistettu 115. Sijoittamattomia 0.
+
+TARKISTETTU · Mannin Matsit · Peräseinäjoki, 18.3.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230318_Peraeseinaejoki/indexFIN.htm
+Aiemmin 134, nyt 134, lähteessä vahvistettu 134. Sijoittamattomia 0.
+
+TARKISTETTU · Loppiaispainit · Järvenpää, 6.1.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240106_Jaervenpaeae/indexFIN.htm
+Aiemmin 94, nyt 94, lähteessä vahvistettu 94. Sijoittamattomia 0.
+
+TARKISTETTU · Champions Cup 2023 Finaali · Helsinki, 12.1.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240112_Helsinki/indexFIN.htm
+Aiemmin 39, nyt 39, lähteessä vahvistettu 39. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 1.osakilpailu 2024 · Nokia, 13.1.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240113_Nokia/indexFIN.htm
+Aiemmin 79, nyt 79, lähteessä vahvistettu 79. Sijoittamattomia 2.
+- Pojat Ystävyysottelu 50 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat 12 70 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Ikäkausikilpailut - Nuorten Suomi Cup · Kajaani, 3.2.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240203_Kajaani/indexFIN.htm
+Aiemmin 156, nyt 156, lähteessä vahvistettu 156. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit (LoVo) · Lohja, 10.2.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240210_Lohja/indexFIN.htm
+Aiemmin 43, nyt 43, lähteessä vahvistettu 43. Sijoittamattomia 0.
+
+TARKISTETTU · Eero Tapio Turnaus · Haukipudas, 17.2.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Haukipudas/indexFIN.htm
+Aiemmin 133, nyt 133, lähteessä vahvistettu 133. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 2.osakilpailu 2024 · Nokia, 17.2.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240217_Nokia/indexFIN.htm
+Aiemmin 81, nyt 81, lähteessä vahvistettu 81. Sijoittamattomia 3.
+- Tytöt 12 35 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (3 tuomatta)
+
+TARKISTETTU · TaVon ikäkausi- ja av. aluemestaruuskilpailut · Tampere, 2.3.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240302_Tampere/indexFIN.htm
+Aiemmin 176, nyt 176, lähteessä vahvistettu 176. Sijoittamattomia 0.
+
+TARKISTETTU · Loppiaispainit · Tuusula, 4.1.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250104_Tuusula/indexFIN.htm
+Aiemmin 117, nyt 117, lähteessä vahvistettu 117. Sijoittamattomia 0.
+
+TARKISTETTU · Mannin Matsit · Peräseinäjoki, 11.1.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250111_Peraeseinaejoki/indexFIN.htm
+Aiemmin 159, nyt 159, lähteessä vahvistettu 159. Sijoittamattomia 0.
+
+TARKISTETTU · OP-Turnaus · Laihia, 18/01/2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Laihia/indexFIN.htm
+Aiemmin 122, nyt 122, lähteessä vahvistettu 122. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 1.osakilpailu 2025 · Nokia, 18.1.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nokia/indexFIN.htm
+Aiemmin 73, nyt 73, lähteessä vahvistettu 73. Sijoittamattomia 2.
+- Pojat 12 56 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat 12 65 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Symppis painit · Nummela, 18.1.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250118_Nummela/indexFIN.htm
+Aiemmin 55, nyt 55, lähteessä vahvistettu 55. Sijoittamattomia 0.
+
+TARKISTETTU · TUL:n av. tyttöjen ja poikien mestaruuskilpailut · Kotka, 25.1.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250125_Kotka/indexFIN.htm
+Aiemmin 110, nyt 110, lähteessä vahvistettu 110. Sijoittamattomia 0.
+
+TARKISTETTU · Raimo ja Esko Taskisen muistopainit · Kemi, 1.2.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250201_Kemi/indexFIN.htm
+Aiemmin 140, nyt 140, lähteessä vahvistettu 140. Sijoittamattomia 0.
+
+TARKISTETTU · Taisto Kangasniemen XXV muistopainit · Tampere, 8.2.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250208_Tampere/indexFIN.htm
+Aiemmin 130, nyt 130, lähteessä vahvistettu 130. Sijoittamattomia 8.
+- Ystävyys 53 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyys 70 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyys 72 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Ystävyys 77 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Mitalipainit · Vaasa, 12/02/2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250212_Vaasa/indexFIN.htm
+Aiemmin 67, nyt 67, lähteessä vahvistettu 67. Sijoittamattomia 0.
+
+TARKISTETTU · Eero Tapio Turnaus · Haukipudas, 15.2.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Haukipudas/indexFIN.htm
+Aiemmin 135, nyt 135, lähteessä vahvistettu 135. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 2.osakilpailu 2025 · Nokia, 15.2.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250215_Nokia/indexFIN.htm
+Aiemmin 71, nyt 71, lähteessä vahvistettu 71. Sijoittamattomia 7.
+- Pojat Ystävyysottelu 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat Ystävyysottelu 2 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat 12 48 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 42 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Nääshallin mestaruuskilpailut · Tampere, 19.2.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250219_Tampere/indexFIN.htm
+Aiemmin 41, nyt 41, lähteessä vahvistettu 41. Sijoittamattomia 2.
+- Pojat 9v 42 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat 13v 54 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 3.osakilpailu 2025 · Nokia, 8.3.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250308_Nokia/indexFIN.htm
+Aiemmin 55, nyt 55, lähteessä vahvistettu 55. Sijoittamattomia 16.
+- Pojat Ystävyysottelu 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat Ystävyysottelu 3 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat Ystävyysottelu 5 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat Ystävyysottelu 6 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Tytöt Ystävyysottelu 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat 12 20 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat 12 34 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Pojat 12 50 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Pojat 12 56 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Tytöt 12 55 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Symppis painit · Hyvinkää, 15.3.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250315_Hyvinkaeae/indexFIN.htm
+Aiemmin 65, nyt 65, lähteessä vahvistettu 65. Sijoittamattomia 0.
+
+TARKISTETTU · International MYHI-Tournament (NSC 2/6) · Ilmajoki, 22.2.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250322_Ilmajoki/indexFIN.htm
+Aiemmin 317, nyt 317, lähteessä vahvistettu 317. Sijoittamattomia 0.
+
+TARKISTETTU · Olavi Niemen muistopainit · Pori, 22.3.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250322_Pori/indexFIN.htm
+Aiemmin 89, nyt 89, lähteessä vahvistettu 89. Sijoittamattomia 0.
+
+TARKISTETTU · Turun Painijoiden kämppäpainit · Turku, 23.3.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250323_Raunistulantie15/indexFIN.htm
+Aiemmin 33, nyt 33, lähteessä vahvistettu 33. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit · Järvenpää, 10.1.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260110_Jaervenpaeae/indexFIN.htm
+Aiemmin 50, nyt 50, lähteessä vahvistettu 50. Sijoittamattomia 0.
+
+TARKISTETTU · Mannin Matsit · Peräseinäjoki, 10.1.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260110_Peraeseinaejoki/indexFIN.htm
+Aiemmin 275, nyt 275, lähteessä vahvistettu 275. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 1.osakilpailu 2026 · Nokia, 17.1.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260117_Nokia/indexFIN.htm
+Aiemmin 63, nyt 63, lähteessä vahvistettu 63. Sijoittamattomia 3.
+- Pojat Ystävyysottelu 20 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Tytöt 12 41 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Kurun Ryhdin Marraspainit 2026 · Kuru, 31.10.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Kuru/indexFIN.htm
+Aiemmin 41, nyt 41, lähteessä vahvistettu 41. Sijoittamattomia 5.
+- Tytöt 8v 29 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- YST Seka 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- YST Seka 2 2 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · International Herman Kare Tournament (UWW) · Kouvola, 15.1.2022
+https://turniereklassisch.ringerdb.de/FT/2022/FI/220115_Kouvola/indexENG.htm
+Aiemmin 34, nyt 34, lähteessä vahvistettu 34. Sijoittamattomia 0.
+
+TARKISTETTU · International Arvo Haavisto Tournament (UWW) · Ilmajoki, 10.12.2022
+https://turniereklassisch.ringerdb.de/FT/2022/FI/221210_Ilmajoki/indexENG.htm
+Aiemmin 40, nyt 40, lähteessä vahvistettu 40. Sijoittamattomia 0.
+
+TARKISTETTU · Arvo Haavisto Tournament - Open Nordic Championshi · Ilmajoki, 9.12.2023
+https://turniereklassisch.ringerdb.de/FT/2023/FI/231209_Ilmajoki/indexENG.htm
+Aiemmin 78, nyt 78, lähteessä vahvistettu 78. Sijoittamattomia 0.
+
+TARKISTETTU · Arvo Haavisto Tournament · Ilmajoki, 7.12.2024
+https://turniereklassisch.ringerdb.de/FT/2024/FI/241207_Ilmajoki/indexENG.htm
+Aiemmin 65, nyt 65, lähteessä vahvistettu 65. Sijoittamattomia 0.
+
+TARKISTETTU · Arvo Haavisto Tournament · Ilmajoki, 29.11.2025
+https://turniereklassisch.ringerdb.de/FT/2025/FI/251129_Ilmajoki/indexENG.htm
+Aiemmin 51, nyt 51, lähteessä vahvistettu 51. Sijoittamattomia 0.
+
+TARKISTETTU · 42. Kalle Mäkinen tournament · Turku, 6.09.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/250906_Turku/indexENG.htm
+Aiemmin 438, nyt 438, lähteessä vahvistettu 438. Sijoittamattomia 0.
+
+TARKISTETTU · Helsinki Open Wrestling Tournament 2025 · Helsinki, 12.-14.12.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251212_Helsinki/indexENG.htm
+Aiemmin 689, nyt 689, lähteessä vahvistettu 689. Sijoittamattomia 3.
+- FS U13 BOYS 50 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- WW U14 GIRLS 36 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- WW U14 GIRLS 46 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Symppispainit (Haka) · Helsinki, 31.10.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Helsinki/indexFIN.htm
+Aiemmin 59, nyt 59, lähteessä vahvistettu 59. Sijoittamattomia 0.
+
+TARKISTETTU · Järvenpää Cup/Penan painit · Järvenpää, 14.9.2024
+https://turniereklassisch.ringerdb.de/VT/2024/FI/240914_Jaervenpaeae/indexFIN.htm
+Aiemmin 158, nyt 158, lähteessä vahvistettu 158. Sijoittamattomia 0.
+
+TARKISTETTU · FFC ja Champions Cup · Hyvinkää, 4.10.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251004_Hyvinkaeae/indexFIN.htm
+Aiemmin 125, nyt 125, lähteessä vahvistettu 125. Sijoittamattomia 0.
+
+TARKISTETTU · Laihian Lujan 30v painit · Laihia, 31/01/2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/260131_Laihia/indexFIN.htm
+Aiemmin 157, nyt 157, lähteessä vahvistettu 157. Sijoittamattomia 4.
+- Yst 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Yst 2 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Alavus Hehku-painit · Alavus, 31.10.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261031_Alavus/indexFIN.htm
+Aiemmin 101, nyt 101, lähteessä vahvistettu 101. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet piirinmestaruuskilpailut · Järvenpää, 17.12.2022
+https://turniereklassisch.ringerdb.de/VT/2022/FI/221217_Jaervenpaeae1/indexFIN.htm
+Aiemmin 21, nyt 21, lähteessä vahvistettu 21. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet Piirinmestaruuskilpailut · Järvenpää, 1.4.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230401_Jaervenpaeae/indexFIN.htm
+Aiemmin 34, nyt 34, lähteessä vahvistettu 34. Sijoittamattomia 0.
+
+TARKISTETTU · Avoin Piirinmestaruuskilpailu · Lohja, 9.12.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/231209_Lohja1/indexFIN.htm
+Aiemmin 29, nyt 29, lähteessä vahvistettu 29. Sijoittamattomia 0.
+
+TARKISTETTU · Uolevi Setälän muistopainit · Tampere, 6.5.2023
+https://turniereklassisch.ringerdb.de/VT/2023/FI/230506_Tampere/indexFIN.htm
+Aiemmin 100, nyt 135, lähteessä vahvistettu 135. Sijoittamattomia 2.
+- Aloittelijat: Sarjan osallistujamäärä 36, tulosluettelossa 35; sijoitukset vahvistettu myös kaikkien painoluokkien omista tulosluetteloista. Eroa ei ole päätelty sijoitukseksi. (1 tuomatta)
+- Ystävyys 37 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+- Ystävyys 40 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Sotilasurheiluliiton C.P.E. Kamppailupäivät · Kouvola, 09.-11.12.2025
+https://turniereklassisch.ringerdb.de/VT/2025/FI/251209_Kouvola/indexFIN.htm
+Aiemmin 103, nyt 103, lähteessä vahvistettu 103. Sijoittamattomia 0.
+
+TARKISTETTU · L-S Aluemestaruskilpailut, vp · Vaasa, Teeriniemen painisali, 07/11/2026
+https://turniereklassisch.ringerdb.de/LM/2026/FI/261107_Vaasa,Teeriniemenpainisali/indexFIN.htm
+Aiemmin 72, nyt 72, lähteessä vahvistettu 72. Sijoittamattomia 0.
+
+TARKISTETTU · AM-kilpailut (Lounais-Suomi, Uusimaa ja Häme) AuPs · Aura, 7.11.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Aura/indexFIN.htm
+Aiemmin 121, nyt 121, lähteessä vahvistettu 121. Sijoittamattomia 0.
+
+TARKISTETTU · Limingan Aluemestaruuskilpailut · Liminka, 7.11.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261107_Liminka/indexFIN.htm
+Aiemmin 92, nyt 92, lähteessä vahvistettu 92. Sijoittamattomia 14.
+- Extrat 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extrat 2 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extrat 3 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extrat 4 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extrat 5 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extrat 6 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extrat 7 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Kamppailupäivät - SotUL 2026 · Kankaanpää, 04.-5.11.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261104_Kankaanpaeae/indexFIN.htm
+Aiemmin 108, nyt 108, lähteessä vahvistettu 108. Sijoittamattomia 2.
+- Super Finaali 130 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · SM-kilpailut VP U20 miehet ja U15 tytöt ja pojat · Järvenpää, 14.11.2026
+https://turniereklassisch.ringerdb.de/DM/2026/FI/261114_Jaervenpaeae/indexFIN.htm
+Aiemmin 164, nyt 164, lähteessä vahvistettu 164. Sijoittamattomia 0.
+
+TARKISTETTU · Symppis painit (NuVo ja LoVo) · Nummela, 21.11.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Nummela/indexFIN.htm
+Aiemmin 58, nyt 58, lähteessä vahvistettu 58. Sijoittamattomia 0.
+
+TARKISTETTU · Joulumaapainit · Rovaniemi, 21.11.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Rovaniemi/indexFIN.htm
+Aiemmin 144, nyt 144, lähteessä vahvistettu 144. Sijoittamattomia 4.
+- Extra 1 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+- Extra 2 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · OP Keski-Suomi painiturnaus · Vaajakoski, 21.11.2026
+https://turniereklassisch.ringerdb.de/VT/2026/FI/261121_Vaajakoski/indexFIN.htm
+Aiemmin 82, nyt 82, lähteessä vahvistettu 82. Sijoittamattomia 0.
+
+TARKISTETTU · Suomen ja Viron juniorien mestaruuskisat (vp) · Porvoo, 18.1.2020
+https://turniereklassisch.ringerdb.de/DM/2020/FI/200118_Porvoo/indexENG.htm
+Aiemmin 77, nyt 77, lähteessä vahvistettu 77. Sijoittamattomia 0.
+
+TARKISTETTU · Miesten kr SM-kilpailut · Jyväskylä, 24.-25.1.2020
+https://turniereklassisch.ringerdb.de/DM/2020/FI/200124_Jyvaeskylae/indexFIN.htm
+Aiemmin 47, nyt 47, lähteessä vahvistettu 47. Sijoittamattomia 0.
+
+TARKISTETTU · U17 kr.room. painin SM-kilpailut · Ilmajoki, 26.9.2020
+https://turniereklassisch.ringerdb.de/DM/2020/FI/200926_Ilmajoki/indexFIN.htm
+Aiemmin 68, nyt 68, lähteessä vahvistettu 68. Sijoittamattomia 0.
+
+TARKISTETTU · Naisten ja Miesten + U15 vapaapainin SM-kilpailut · Ylistaro, 3.10.2020
+https://turniereklassisch.ringerdb.de/DM/2020/FI/201003_Ylistaro/indexFIN.htm
+Aiemmin 168, nyt 168, lähteessä vahvistettu 168. Sijoittamattomia 0.
+
+TARKISTETTU · U17 kr.room. painin SM-kilpailut · Kuortane OTC, 28.8.2021
+https://turniereklassisch.ringerdb.de/DM/2021/FI/210828_KuortaneOTC/indexFIN.htm
+Aiemmin 67, nyt 67, lähteessä vahvistettu 67. Sijoittamattomia 0.
+
+TARKISTETTU · U15 & U20 kr.room. painin SM-kilpailut · Kuortane OTC, 29.8.2021
+https://turniereklassisch.ringerdb.de/DM/2021/FI/210829_KuortaneOTC/indexFIN.htm
+Aiemmin 125, nyt 125, lähteessä vahvistettu 125. Sijoittamattomia 0.
+
+TARKISTETTU · Kr.room. painin SM-kilpailut · Ilmajoki, 10.-11.9.2021
+https://turniereklassisch.ringerdb.de/DM/2021/FI/210910_Ilmajoki/indexFIN.htm
+Aiemmin 42, nyt 42, lähteessä vahvistettu 42. Sijoittamattomia 0.
+
+TARKISTETTU · Ikäkausikilpailut · Tuusula, 25.9.2021
+https://turniereklassisch.ringerdb.de/DM/2021/FI/210925_Tuusula/indexFIN.htm
+Aiemmin 103, nyt 103, lähteessä vahvistettu 103. Sijoittamattomia 0.
+
+TARKISTETTU · U15 ja U20 vapaapainin Suomenmestaruuskilpailut · Porvoo, 23.10.2021
+https://turniereklassisch.ringerdb.de/DM/2021/FI/211023_Porvoo/indexFIN.htm
+Aiemmin 142, nyt 142, lähteessä vahvistettu 142. Sijoittamattomia 0.
+
+TARKISTETTU · Miesten ja naisten SM-kilpailut  vapaapaini · Porvoo, 24.10.2021
+https://turniereklassisch.ringerdb.de/DM/2021/FI/211024_Porvoo/indexFIN.htm
+Aiemmin 50, nyt 50, lähteessä vahvistettu 50. Sijoittamattomia 0.
+
+TARKISTETTU · Janakkala Open 2021 · Janakkala, 13.11.2021
+https://turniereklassisch.ringerdb.de/DM/2021/FI/211113_Janakkala/indexFIN.htm
+Aiemmin 48, nyt 48, lähteessä vahvistettu 48. Sijoittamattomia 0.
+
+TARKISTETTU · U17 vapaapainin SM-kilpailut · Ylivieska, 11.12.2021
+https://turniereklassisch.ringerdb.de/DM/2021/FI/211211_Ylivieska/indexFIN.htm
+Aiemmin 98, nyt 98, lähteessä vahvistettu 98. Sijoittamattomia 0.
+
+TARKISTETTU · XXXXI International Herman Kare Tournament (UWW) · Kouvola, 11.1.2020
+https://turniereklassisch.ringerdb.de/FT/2020/FI/200111_Kouvola/indexENG.htm
+Aiemmin 57, nyt 57, lähteessä vahvistettu 57. Sijoittamattomia 0.
+
+TARKISTETTU · International Arvo Haavisto Tournament (UWW) · Ilmajoki, 4.12.2021
+https://turniereklassisch.ringerdb.de/FT/2021/FI/211204_Ilmajoki/indexENG.htm
+Aiemmin 35, nyt 35, lähteessä vahvistettu 35. Sijoittamattomia 0.
+
+TARKISTETTU · Loppiaispainit · Järvenpää, 4.1.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200104_Jaervenpaeae/indexFIN.htm
+Aiemmin 118, nyt 118, lähteessä vahvistettu 118. Sijoittamattomia 0.
+
+TARKISTETTU · XXXII Loppiaispainit · Isokyrö, 6.1.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200106_Isokyroe/indexFIN.htm
+Aiemmin 114, nyt 114, lähteessä vahvistettu 114. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit (NuVo) · Nummela, 11.1.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200111_Nummela/indexFIN.htm
+Aiemmin 49, nyt 49, lähteessä vahvistettu 49. Sijoittamattomia 0.
+
+TARKISTETTU · Selecta Cup · Laihia, 18.1.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200118_Laihia/indexFIN.htm
+Aiemmin 140, nyt 140, lähteessä vahvistettu 140. Sijoittamattomia 0.
+
+TARKISTETTU · Oulun Pyrinnön kansainväliset painikilpailut, kr · Oulu, 18.1.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200118_Oulu/indexFIN.htm
+Aiemmin 113, nyt 113, lähteessä vahvistettu 113. Sijoittamattomia 0.
+
+TARKISTETTU · Olavi Niemen muistopainit · Pori, 18.1.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200118_Pori/indexFIN.htm
+Aiemmin 116, nyt 116, lähteessä vahvistettu 116. Sijoittamattomia 0.
+
+TARKISTETTU · Symppispainit (JäVo) · Järvenpää, 25.1.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200125_Jaervenpaeae/indexFIN.htm
+Aiemmin 73, nyt 73, lähteessä vahvistettu 73. Sijoittamattomia 2.
+- Ystävyysottelut 23 kg: Tekstitiedostosta puuttuu numeerisia sijoituksia; ilmoitetut sijoitukset on tuotu (2 tuomatta)
+
+TARKISTETTU · Kajaanin Juntta Ikäkausikilpailut · Kajaani, 25.1.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200125_Kajaani/indexFIN.htm
+Aiemmin 143, nyt 143, lähteessä vahvistettu 143. Sijoittamattomia 0.
+
+TARKISTETTU · T.Kangasniemen XXII muisto-ja TULav.mestaruuspaini · Tampere, 1.2.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200201_Tampere/indexFIN.htm
+Aiemmin 201, nyt 201, lähteessä vahvistettu 201. Sijoittamattomia 1.
+- TUL Pojat 17v 69 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · Kauko Lehtosen muistopainit · Janakkala, 8.2.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200208_Janakkala/indexFIN.htm
+Aiemmin 104, nyt 104, lähteessä vahvistettu 104. Sijoittamattomia 0.
+
+TARKISTETTU · Kv. Raimo ja Esko Taskisen muistopainit · Kemi, 8.2.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200208_Kemi/indexFIN.htm
+Aiemmin 133, nyt 133, lähteessä vahvistettu 133. Sijoittamattomia 0.
+
+TARKISTETTU · Avoimet P17 E-P:n pm-kilpailut kr · Alavus, 15.2.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200215_Alavus/indexFIN.htm
+Aiemmin 144, nyt 144, lähteessä vahvistettu 144. Sijoittamattomia 0.
+
+TARKISTETTU · Kotka-painit/Av. Itä-Suomen aluemestaruuskilpailut · Kotka, 15.2.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200215_Kotka/indexFIN.htm
+Aiemmin 123, nyt 123, lähteessä vahvistettu 123. Sijoittamattomia 0.
+
+TARKISTETTU · Nokian Pyryn Sarjapainit 2.osakilpailu 2020 · Nokia, 15.2.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200215_Nokia/indexFIN.htm
+Aiemmin 88, nyt 88, lähteessä vahvistettu 88. Sijoittamattomia 0.
+
+TARKISTETTU · Myhi-turnaus · Ilmajoki, 22.2.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200222_Ilmajoki/indexFIN.htm
+Aiemmin 251, nyt 251, lähteessä vahvistettu 251. Sijoittamattomia 0.
+
+TARKISTETTU · Mannin Matsit, Suomi Cup osak. ja L-S:n aluem. · Seinäjoki, 29.2.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200229_Seinaejoki/indexFIN.htm
+Aiemmin 108, nyt 108, lähteessä vahvistettu 108. Sijoittamattomia 0.
+
+TARKISTETTU · Lounais-Suomen, Hämeen ja Uudenmaan aluemestaruus · Turku, 29.2.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200229_Turku/indexFIN.htm
+Aiemmin 78, nyt 78, lähteessä vahvistettu 78. Sijoittamattomia 0.
+
+TARKISTETTU · Barentsin alueen kadettipainit · Sodankylä, 7.3.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200307_Sodankylae/indexFIN.htm
+Aiemmin 64, nyt 64, lähteessä vahvistettu 64. Sijoittamattomia 0.
+
+TARKISTETTU · Tampereen Voimailijat ikäkausikilpailut 2020 · Tampere, 7.3.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200307_Tampere/indexFIN.htm
+Aiemmin 145, nyt 145, lähteessä vahvistettu 145. Sijoittamattomia 1.
+- Pojat 15 83 kg: Osallistujilta puuttuu numeerinen sijoitus; vahvistetut sijoitukset on tuotu (1 tuomatta)
+
+TARKISTETTU · U20 ja U15 SM-kilpailut, kr · Kouvola, 12.9.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200404_Kouvola/indexFIN.htm
+Aiemmin 104, nyt 104, lähteessä vahvistettu 104. Sijoittamattomia 0.
+
+TARKISTETTU · Kuortane OTC, Junior Tournament · Kuortane, 25.7.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200725_Kuortane/indexFIN.htm
+Aiemmin 36, nyt 36, lähteessä vahvistettu 36. Sijoittamattomia 0.
+
+TARKISTETTU · XXXVII Kalle Mäkisen painit Suomi Cup · Turku, 29.8.2020
+https://turniereklassisch.ringerdb.de/VT/2020/FI/200829_Turku/indexFIN.htm
+Aiemmin 97, nyt 97, lähteessä vahvistettu 97. Sijoittamattomia 0.
+
+TARKISTETTU · Maajoukkueen katsastuskilpailu · Kuortane, 8.5.2021
+https://turniereklassisch.ringerdb.de/VT/2021/FI/210508_Kuortane/indexFIN.htm
+Aiemmin 58, nyt 58, lähteessä vahvistettu 58. Sijoittamattomia 0.
+
+TARKISTETTU · XXXVIII Kalle Mäkisen painit · Turku, 21.8.2021
+https://turniereklassisch.ringerdb.de/VT/2021/FI/210821_Turku/indexFIN.htm
+Aiemmin 97, nyt 97, lähteessä vahvistettu 97. Sijoittamattomia 0.
+
+TARKISTETTU · Tampere Cup · Tampere, 6.11.2021
+https://turniereklassisch.ringerdb.de/VT/2021/FI/211106_Tampere/indexFIN.htm
+Aiemmin 204, nyt 204, lähteessä vahvistettu 204. Sijoittamattomia 0.
+
+TARKISTETTU · Kurun Ryhdin Marraspainit 2021 · Kuru, 13.11.2021
+https://turniereklassisch.ringerdb.de/VT/2021/FI/211113_Kuru/indexFIN.htm
+Aiemmin 59, nyt 59, lähteessä vahvistettu 59. Sijoittamattomia 0.
+
+TARKISTETTU · VVV Cup · Vaasa, 13/11/2021
+https://turniereklassisch.ringerdb.de/VT/2021/FI/211113_Vaasa/indexFIN.htm
+Aiemmin 184, nyt 184, lähteessä vahvistettu 184. Sijoittamattomia 0.
+
+TARKISTETTU · KLL:n mestaruuskilpailut, kr · Muhos, 20.-21.11.2021
+https://turniereklassisch.ringerdb.de/VT/2021/FI/211120_Muhos/indexFIN.htm
+Aiemmin 203, nyt 203, lähteessä vahvistettu 203. Sijoittamattomia 0.
+
+TARKISTETTU · Kooveen jäsentenväliset · Tampere, 24.11.2021
+https://turniereklassisch.ringerdb.de/VT/2021/FI/211124_Tampere/indexFIN.htm
+Aiemmin 31, nyt 31, lähteessä vahvistettu 31. Sijoittamattomia 0.
+
+TARKISTETTU · Helsinki Open Wrestling Tournament 2021 · Helsinki, 27.-28.11.2021
+https://turniereklassisch.ringerdb.de/VT/2021/FI/211127_Helsinki/indexENG.htm
+Aiemmin 347, nyt 347, lähteessä vahvistettu 347. Sijoittamattomia 0.
+
+TARKISTETTU · Helsingin Paini-Miesten seuran mestaruuskilpailut · Helsinki, 18.12.2021
+https://turniereklassisch.ringerdb.de/VT/2021/FI/211218_Helsinki/indexFIN.htm
+Aiemmin 79, nyt 79, lähteessä vahvistettu 79. Sijoittamattomia 0.

@@ -246,15 +246,16 @@ $("#discard").addEventListener("click", () => {
   pending = null; $("#preview").hidden = true; renderWork();
   say("Esikatselu hylättiin. Aiemmin hyväksytty työaineisto säilyi ennallaan.");
 });
+let rebaseExport;
 function exportSource() {
   if (!ready || busy || pending !== null || !work.size || ![...work.values()].every(safeItem)) throw new Error("Aineisto ei ole valmis vientiin.");
   const now = new Date();
   const date = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
   return R.exportSource({ ...dataset, snapshotDate: date, competitions: [...work.values()] });
 }
-$("#export").addEventListener("click", () => {
+$("#export").addEventListener("click", async () => {
   try {
-    const content = exportSource();
+    const content = R.exportSource(await rebaseExport(window.PAINI_ADMIN_EXPORT.parse(exportSource())));
     const blob = new Blob([content], { type: "text/javascript;charset=utf-8" });
     const url = URL.createObjectURL(blob), link = document.createElement("a");
     link.href = url; link.download = "data.js"; document.body.append(link); link.click(); link.remove();
@@ -266,6 +267,7 @@ try {
   const data = window.PAINI_SHARED_DATA;
   if (!data || data.version !== 1 || !Array.isArray(data.competitions) || !data.competitions.length || !data.competitions.every(safeItem)) throw new Error("data.js puuttuu tai sen sisältö ei kelpaa.");
   R.validate(data);
+  rebaseExport=window.PAINI_ADMIN_EXPORT.capture(data);
   dataset = JSON.parse(JSON.stringify(data));
   work = new Map(dataset.competitions.map(item => [identity(item), item]));
   if (work.size !== data.competitions.length) throw new Error("data.js sisältää saman kilpailun useasti.");

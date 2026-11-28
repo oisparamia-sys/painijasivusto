@@ -15,9 +15,10 @@ function wordDistance(a, b) {
   }
   return rows[a.length][b.length];
 }
-function matchesCompetitionQuery(text, query) {
-  // Keep day and month ordered, with or without a year (3.8 or 3.8.2025).
-  // A day inside a multi-day event is also a match.
+function prepareCompetitionText(text){
+ return {text,words:searchWords(text)};
+}
+function compileCompetitionQuery(query){
   const datePattern = /(?<![\p{L}\p{N}./])(\d{1,2})(?:\.?\s*[-–]\s*(\d{1,2}))?[./](\d{1,2})(?:[./](\d{4}))?(?:[./](?=\s|$))?(?![\p{L}\p{N}./])/gu;
   const span = match => {
     const day = Number(match[1]), endDay = Number(match[2] || match[1]);
@@ -32,14 +33,19 @@ function matchesCompetitionQuery(text, query) {
     const start = timestamp(day), end = timestamp(endDay);
     return start !== null && end !== null && start <= end ? {start:day,end:endDay,month,year} : null;
   };
-  const requestedDates = [...query.matchAll(datePattern)].map(span);
-  if (requestedDates.length) {
-    const actualDates = [...text.matchAll(datePattern)].map(span).filter(Boolean);
-    if (!requestedDates.every(wanted => wanted && actualDates.some(actual => actual.month === wanted.month && (wanted.year === null || actual.year === wanted.year) && actual.start <= wanted.start && actual.end >= wanted.end))) return false;
-  }
-  const tokens = searchWords(query.replace(datePattern, " "));
-  return !tokens.length || matchesSearchWords(searchWords(text), tokens);
+  const requestedDates=[...query.matchAll(datePattern)].map(span);
+  const tokens=searchWords(query.replace(datePattern,' '));
+  const wordsCache=new Map();
+  return prepared=>{
+    if(requestedDates.length){const actualDates=[...prepared.text.matchAll(datePattern)].map(span).filter(Boolean);
+      if(!requestedDates.every(wanted=>wanted&&actualDates.some(actual=>actual.month===wanted.month&&(wanted.year===null||actual.year===wanted.year)&&actual.start<=wanted.start&&actual.end>=wanted.end)))return false;
+    }
+    return tokens.every(token=>prepared.words.some(word=>{
+      const key=token+'|'+word;if(!wordsCache.has(key))wordsCache.set(key,matchesSearchWords([word],[token]));return wordsCache.get(key);
+    }));
+  };
 }
+function matchesCompetitionQuery(text,query){return compileCompetitionQuery(query)(prepareCompetitionText(text));}
 function matchesSearchWords(words, tokens) {
   return tokens.every(token => words.some(word => {
     if (/\d/u.test(token)) return word.startsWith(token);
@@ -70,7 +76,7 @@ function yearlyPlacements(entries, yearOf) {
   return [...years.values()].sort((a,b) => /^\d{4}$/.test(a.year) ? (/^\d{4}$/.test(b.year) ? Number(a.year)-Number(b.year) : -1) : 1);
 }
 
-const api={searchWords,matchesSearchWords,matchesCompetitionQuery,competitionTier,yearlyPlacements};
+const api={prepareCompetitionText,compileCompetitionQuery,searchWords,matchesSearchWords,matchesCompetitionQuery,competitionTier,yearlyPlacements};
 if(typeof module!=="undefined"&&module.exports)module.exports=api;
 else root.PAINI_UTILS=api;
 })(typeof window!=="undefined"?window:globalThis);

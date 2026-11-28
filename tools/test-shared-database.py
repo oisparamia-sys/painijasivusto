@@ -7,10 +7,29 @@ class SharedDatabase(unittest.TestCase):
   (root/'data.js').write_text('window.PAINI_SHARED_DATA = '+json.dumps(data)+';');(root/'ottelut-data.js').write_text('window.PAINI_BOUTS_DATA = '+json.dumps(bouts)+';');return data,bouts
  def test_roundtrip_and_read_only_browsing(self):
   with tempfile.TemporaryDirectory() as temporary:
-   root=pathlib.Path(temporary);data,bouts=self.fixture(root);D.build(root);saved=D.read(root);self.assertEqual(saved['data'],data);self.assertEqual(saved['bouts'],bouts);self.assertEqual(D.rows(root,'matches')['rows'][0][6],'[4,2]');self.assertEqual(D.rows(root,'placements',query='Club')['count'],2);self.assertEqual(D.rows(root,'athlete_stats')['rows'][0][3],1)
+   root=pathlib.Path(temporary);data,bouts=self.fixture(root);D.build(root);saved=D.read(root);self.assertEqual(saved['data'],data);self.assertEqual(saved['bouts'],bouts);self.assertEqual(D.rows(root,'matches')['rows'][0][6],'[4,2]');self.assertEqual(D.rows(root,'placements',query='Club')['count'],2);self.assertEqual(D.rows(root,'athlete_stats')['rows'][0][4],1)
    with D.connection(root) as db:
     with self.assertRaises(Exception):db.execute('delete from placements')
    with self.assertRaises(ValueError):D.rows(root,'placements;drop table matches')
+ def test_unicode_search_and_cache_invalidation(self):
+  with tempfile.TemporaryDirectory() as temporary:
+   root=pathlib.Path(temporary);data,bouts=self.fixture(root);data['competitions'][0]['title']='Äänekoski';data['athleteRegistry']['athletes'][0]['name']='Ömer';data['competitions'][0]['rows'][0]['name']='Ömer'
+   (root/'data.js').write_text('window.PAINI_SHARED_DATA = '+json.dumps(data)+';');D.build(root)
+   cached=D.cached_database(root);mtime=cached.stat().st_mtime_ns
+   self.assertEqual(D.rows(root,'athletes',query='ömer')['count'],1);self.assertEqual(D.rows(root,'competitions',query='äänekoski')['count'],1)
+   self.assertEqual(D.cached_database(root),cached);self.assertEqual(cached.stat().st_mtime_ns,mtime)
+   data['athleteRegistry']['athletes'][0]['name']='Uusi';(root/'data.js').write_text('window.PAINI_SHARED_DATA = '+json.dumps(data)+';');D.build(root)
+   self.assertNotEqual(D.cached_database(root),cached);self.assertEqual(D.rows(root,'athletes',query='ömer')['count'],0)
+ def test_competition_count_sorting_and_page_bounds(self):
+  with tempfile.TemporaryDirectory() as temporary:
+   root=pathlib.Path(temporary);data,bouts=self.fixture(root)
+   row=dict(data['competitions'][0]['rows'][1],resultId='b2')
+   data['competitions'].append(dict(source='event2',title='Second',details='2021',rows=[row]))
+   (root/'data.js').write_text('window.PAINI_SHARED_DATA = '+json.dumps(data)+';');D.build(root)
+   self.assertEqual(D.rows(root,'athlete_stats',sort='competitions-desc')['rows'][0][0],'b')
+   self.assertEqual(D.rows(root,'athlete_stats',sort='wins-desc')['rows'][0][0],'a')
+   self.assertEqual(D.rows(root,'athlete_stats',page=999)['page'],0)
+   with self.assertRaises(ValueError):D.rows(root,'athlete_stats',sort='wins-desc;drop')
  def test_bad_foreign_key_cannot_replace_accepted_database(self):
   with tempfile.TemporaryDirectory() as temporary:
    root=pathlib.Path(temporary);_,bouts=self.fixture(root);D.build(root);before=(root/D.NAME).read_bytes();bouts['matches'][0]['winner']='missing';(root/'ottelut-data.js').write_text('window.PAINI_BOUTS_DATA = '+json.dumps(bouts)+';')
